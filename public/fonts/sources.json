@@ -1,0 +1,21 @@
+{
+  "checked": "2026-11-10",
+  "cssSource": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&family=Noto+Sans+Arabic:wght@400..600&family=Playfair+Display:wght@400..700&display=swap",
+  "families": {
+    "playfairdisplay": {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/PlayfairDisplay[wght].ttf",
+      "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/OFL.txt",
+      "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6"
+    },
+    "montserrat": {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat[wght].ttf",
+      "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/OFL.txt",
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7"
+    },
+    "notosansarabic": {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf",
+      "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansarabic/OFL.txt",
+      "sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e"
+    }
+  }
+}

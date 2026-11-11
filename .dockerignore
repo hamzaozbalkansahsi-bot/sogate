@@ -1,0 +1,10 @@
+node_modules
+.next
+.next-local
+.git
+.env*
+.local
+test-results
+playwright-report
+tmp
+coverage

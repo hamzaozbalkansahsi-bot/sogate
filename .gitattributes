@@ -1,0 +1,10 @@
+* text=auto eol=lf
+# Uygulanmış migration checksum'ları özgün baytlarla doğrulanır.
+migrations/*.sql -text
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
+*.woff2 binary
+*.ttf binary
+*.xlsx binary

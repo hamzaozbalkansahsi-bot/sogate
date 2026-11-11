@@ -1,0 +1,71 @@
+{
+  "name": "sexsogate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0 <25"
+  },
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1",
+    "build": "next build",
+    "verify:artifact": "tsx scripts/verify-build-artifact.ts",
+    "start": "node scripts/start.mjs",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/unit",
+    "test:integration": "tsx --env-file=.env.local scripts/integration.ts",
+    "test:e2e": "playwright test",
+    "db:migrate": "tsx --env-file=.env.local scripts/migrate.ts",
+    "db:seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "worker": "tsx --env-file=.env.local scripts/worker.ts",
+    "setup:local": "tsx scripts/setup-local.ts",
+    "backup:verify": "tsx --env-file=.env.local scripts/backup-verify.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1166.0",
+    "better-auth": "1.7.20",
+    "csv-parse": "7.0.3",
+    "exceljs": "4.4.0",
+    "kysely": "0.29.8",
+    "lucide-react": "1.71.0",
+    "next": "16.4.6",
+    "nodemailer": "10.5.0",
+    "pdfkit": "0.20.2",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sax": "1.6.1",
+    "sharp": "0.35.5",
+    "stripe": "23.1.0",
+    "yauzl": "3.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.0",
+    "@tailwindcss/postcss": "4.3.5",
+    "@types/node": "24.19.2",
+    "@types/nodemailer": "8.0.2",
+    "@types/pdfkit": "0.17.7",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/sax": "1.2.7",
+    "@types/yauzl": "3.4.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.1.0"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "11.1.1"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.1"
+    }
+  }
+}

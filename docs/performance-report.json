@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-11-11T03:03:42.763Z",
+  "url": "http://127.0.0.1:3000",
+  "environment": "Local production build, Chromium desktop engine, unthrottled localhost, one navigation sample per viewport",
+  "fieldData": false,
+  "inpFieldP75": null,
+  "note": "Observed interaction maximum is a small laboratory sample, not field INP. Real device Safari and field p75 remain unmeasured.",
+  "records": [
+    {
+      "width": 390,
+      "lcpMs": 788,
+      "cls": 0,
+      "observedInteractionMaxMs": 40,
+      "overflow": false,
+      "ttfbMs": 683
+    },
+    {
+      "width": 1440,
+      "lcpMs": 168,
+      "cls": 0,
+      "observedInteractionMaxMs": 24,
+      "overflow": false,
+      "ttfbMs": 56
+    }
+  ]
+}

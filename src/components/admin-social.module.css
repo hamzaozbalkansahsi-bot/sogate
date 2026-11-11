@@ -1,0 +1,22 @@
+/**
+ * Proje      : SEXSOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : src/components/admin-social.module.css
+ * Açıklama   : Sosyal şablon editörünün duyarlı önizleme düzeni.
+ */
+.layout{display:grid;grid-template-columns:minmax(280px,430px) minmax(0,1fr);gap:24px;align-items:start}
+.controls,.preview{min-width:0}
+.preview{background:var(--surface-soft);border:1px solid var(--border-soft);border-radius:16px;padding:24px;min-height:480px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.image{display:block;object-fit:contain;width:auto;max-width:100%;height:auto;max-height:720px;box-shadow:0 14px 36px #24191d19}
+.summary{width:100%;overflow-wrap:anywhere;display:grid;gap:6px;font-size:13px;color:var(--text-secondary)}
+.summary dt{font-weight:600;color:var(--text-primary)}
+.summary dd{margin:0 0 8px}
+.picker{display:grid;gap:10px;padding:16px;border:1px solid var(--border-soft);border-radius:12px;background:var(--surface-card)}
+.search{display:flex;gap:8px;align-items:end}.search label{flex:1;min-width:0}.search button{flex-shrink:0}
+.pagination{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px}
+.empty{text-align:center;max-width:440px;margin:auto;color:var(--text-secondary)}
+.empty h2{color:var(--text-primary)}
+.download{width:100%;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+@media(max-width:980px){.layout{grid-template-columns:minmax(0,1fr)}.preview{min-height:300px}.image{max-height:620px}}
+@media(max-width:430px){.preview{padding:14px}.search{flex-wrap:wrap}.search label{flex-basis:100%}}

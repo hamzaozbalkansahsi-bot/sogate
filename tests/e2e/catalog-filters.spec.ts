@@ -1,0 +1,36 @@
+/**
+ * Proje      : SEXSOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : tests/e2e/catalog-filters.spec.ts
+ * Açıklama   : Gerçek sunucu facetleri, aynı varyant filtreleri, URL kalıcılığı ve mobil çekmeceyi sınar.
+ */
+import {test,expect} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import {randomBytes} from 'node:crypto';
+import pg from 'pg';
+
+test('Katalog gerçek marka ve seçenekleri sunar; filtreler URL ile kalır ve mobil çekmece klavyeyle çalışır',async({page,browserName})=>{
+ test.setTimeout(90000);
+ test.skip(!['development','test'].includes(process.env.APP_ENV??''),'Yalnız yerel geliştirme/test');const dbUrl=new URL(process.env.DATABASE_URL??'');if(!['127.0.0.1','localhost'].includes(dbUrl.hostname)||!['/sexsogate_dev','/sexsogate_test'].includes(dbUrl.pathname))throw new Error('Yalnız yerel proje veritabanı.');
+ const pool=new pg.Pool({connectionString:dbUrl.href}),suffix=randomBytes(6).toString('hex'),productIds:string[]=[],variantIds:string[]=[];const brand=`Özgür Atölye ${suffix}`,query=`olcu ${suffix}`;
+ try{
+  const category=(await pool.query('SELECT slug FROM categories WHERE active=true ORDER BY slug LIMIT 1')).rows[0].slug;
+  for(let i=0;i<3;i++){
+   const product=(await pool.query("INSERT INTO products(slug,name,name_en,description,description_en,category,brand,material,image,status,fixture)VALUES($1,$2,$3,'Ölçü ve özellikler','Measurements and details',$4,$5,'İpek','/media/atelier-01.svg',$6,true)RETURNING id",[`filter-ui-${suffix}-${i}`,`Ölçü ${suffix} ${i}`,`Measurements ${suffix} ${i}`,category,i===0?brand:i===1?`Diğer Atölye ${suffix}`:`Gizli Marka ${suffix}`,i===2?'draft':'published'])).rows[0].id;productIds.push(product);
+   const options=i===0?[['M','Gül Kurusu','Şarjlı USB-C',true],['L','Siyah','AA pil',false]]:[['L','Siyah','AA pil',false]];
+   for(const [index,option]of options.entries()){
+    const variant=(await pool.query("INSERT INTO variants(product_id,sku,name,name_en,price_minor,size,color,battery_type,hygiene_sealed)VALUES($1,$2,$3,$4,10001,$5,$6,$7,$8)RETURNING id",[product,`FILTER-${suffix}-${i}-${index}`,`Özel ${option[0]}`,`Custom ${option[0]}`,option[0],option[1],option[2],option[3]])).rows[0].id;variantIds.push(variant);await pool.query("INSERT INTO variant_prices(variant_id,currency,amount_minor)VALUES($1,'TRY',10001)",[variant]);await pool.query("INSERT INTO inventory_balance(variant_id,warehouse_id,on_hand)VALUES($1,'main',2)",[variant]);
+   }
+  }
+  const apiResult=await page.request.get(`/api/catalog?q=${encodeURIComponent(query)}`);expect(apiResult.status()).toBe(200);const data=await apiResult.json();expect(data.total).toBe(2);expect(data.facets.brands.map((f:{value:string})=>f.value)).toEqual(expect.arrayContaining([brand,`Diğer Atölye ${suffix}`]));expect(data.facets.brands.some((f:{value:string})=>f.value===`Gizli Marka ${suffix}`)).toBe(false);
+  for(const raw of ['page=NaN','page=Infinity','page=0','min=NaN','sort=invalid','lotTracking=1','brand=a&brand=b'])expect((await page.request.get(`/api/catalog?${raw}`)).status()).toBe(400);
+  await page.context().addCookies([{name:'sexsogate_adult',value:'yes',domain:'127.0.0.1',path:'/'},{name:'sexsogate_currency',value:'TRY',domain:'127.0.0.1',path:'/'}]);await page.setViewportSize({width:1440,height:1000});await page.goto(`/urunler?q=${encodeURIComponent(query)}`);
+  const sidebar=page.getByRole('complementary',{name:'Filtrele'});await expect(sidebar.getByRole('combobox',{name:'Marka',exact:true})).toBeVisible();await sidebar.getByRole('combobox',{name:'Marka',exact:true}).selectOption(brand);await sidebar.getByRole('combobox',{name:'Beden',exact:true}).selectOption('M');await sidebar.getByRole('combobox',{name:'Renk',exact:true}).selectOption('Gül Kurusu');await sidebar.getByRole('combobox',{name:'Pil / güç türü',exact:true}).selectOption('Şarjlı USB-C');await sidebar.getByRole('checkbox',{name:/^Hijyen mührü/}).check();await sidebar.getByLabel('Yalnız stoktakiler',{exact:true}).check();await sidebar.getByRole('button',{name:'Filtrele',exact:true}).click();
+  await expect(page.locator('.product-card')).toHaveCount(1);await expect(page.locator('.variant-caption')).toContainText('Özel M');await expect(page.locator('.catalog-toolbar')).toContainText('1 ürün');expect(new URL(page.url()).searchParams.get('color')).toBe('Gül Kurusu');expect(new URL(page.url()).searchParams.get('power')).toBe('Şarjlı USB-C');expect(new URL(page.url()).searchParams.getAll('features')).toEqual(['hygiene-sealed']);await page.reload();await expect(sidebar.getByRole('combobox',{name:'Marka',exact:true})).toHaveValue(brand);await expect(sidebar.getByRole('combobox',{name:'Beden',exact:true})).toHaveValue('M');await expect(page.locator('.product-card')).toHaveCount(1);await page.screenshot({path:`docs/screenshots/catalog-filters-desktop-${browserName}.png`,fullPage:true});
+  await page.setViewportSize({width:390,height:844});const open=page.getByRole('button',{name:'Filtrele',exact:true});await open.click();const drawer=page.getByRole('dialog',{name:'Filtrele',exact:true});await expect(drawer).toBeVisible();await expect(drawer.getByRole('combobox',{name:'Renk',exact:true})).toHaveValue('Gül Kurusu');for(let i=0;i<18;i++){await page.keyboard.press('Tab');expect(await drawer.evaluate(element=>element.contains(document.activeElement))).toBe(true);}await drawer.evaluate(element=>element.scrollTop=0);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();expect(audit.violations).toEqual([]);await page.screenshot({path:`docs/screenshots/catalog-filters-mobile-${browserName}.png`,fullPage:true});await page.keyboard.press('Escape');await expect(drawer).not.toBeVisible();await expect(open).toBeFocused();await open.click();await drawer.getByRole('link',{name:'Filtreleri temizle',exact:true}).click();await expect(drawer).not.toBeVisible();await expect(page).toHaveURL(/\/urunler$/);await expect(page.locator('.product-card').first()).toBeVisible();
+  await page.goto(`/en/urunler?q=${encodeURIComponent(query)}&selection=mask#details`);await page.getByRole('button',{name:'Filter',exact:true}).click();const english=page.getByRole('dialog',{name:'Filter',exact:true});await expect(english.getByRole('combobox',{name:'Brand',exact:true})).toBeVisible();await expect(english.getByRole('combobox',{name:'Size',exact:true})).toBeVisible();await expect(english.getByRole('combobox',{name:'Battery / power type',exact:true})).toBeVisible();await english.getByRole('combobox',{name:'Brand',exact:true}).selectOption(brand);await english.getByRole('button',{name:'Filter',exact:true}).click();await expect(page.locator('.product-card')).toHaveCount(1);await expect(page.locator('.catalog-page').getByRole('alert')).toHaveCount(0);
+ }finally{
+  await pool.query('DELETE FROM inventory_balance WHERE variant_id=ANY($1::text[])',[variantIds]);await pool.query('DELETE FROM variant_prices WHERE variant_id=ANY($1::text[])',[variantIds]);await pool.query('DELETE FROM variants WHERE id=ANY($1::text[])',[variantIds]);await pool.query('DELETE FROM products WHERE id=ANY($1::text[])',[productIds]);await pool.end();
+ }
+});

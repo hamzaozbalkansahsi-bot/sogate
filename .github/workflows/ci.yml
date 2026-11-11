@@ -1,0 +1,70 @@
+# Proje      : SEXSOGATE
+# Geliştirici: PTYS Technoligess LLC
+# Tasarım    : Hamza ÖZBALKAN
+# Dosya      : .github/workflows/ci.yml
+# Açıklama   : İzole veritabanında kaynak, iş akışı ve tarayıcı kontrolleri.
+name: local-commerce-checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18.6-bookworm
+        env:
+          POSTGRES_USER: sexsogate
+          POSTGRES_PASSWORD: ci_isolated_not_production
+          POSTGRES_DB: sexsogate_dev
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U sexsogate -d sexsogate_dev"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      APP_ENV: test
+      APP_URL: http://127.0.0.1:3000
+      DATABASE_URL: postgresql://sexsogate:ci_isolated_not_production@127.0.0.1:5432/sexsogate_dev
+      TEST_DATABASE_URL: postgresql://sexsogate:ci_isolated_not_production@127.0.0.1:5432/sexsogate_test
+      BETTER_AUTH_URL: http://127.0.0.1:3000
+      LIVE_SALES_ENABLED: "false"
+      PAYMENT_PROVIDER: test
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with: {node-version: 24.12.0, cache: npm}
+      - run: npm ci
+      - name: Create ephemeral test secrets
+        run: node scripts/setup-ci.mjs
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run db:migrate
+      - run: npm run db:seed
+      - run: npm run test:integration
+      - run: npx tsx --env-file=.env.local scripts/import-template-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/legal-drafts-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/security-boundary-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/operations-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/shipping-tax-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/staff-orders-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/seo-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/turkish-locale-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/lot-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/cms-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/privacy-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/catalog-filters-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/bundle-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/compliance-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/social-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/address-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/quote-integration.ts
+      - run: npx tsx --env-file=.env.local scripts/purchase-lots-integration.ts
+      - run: npm run build
+      - run: npm run verify:artifact
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with: {name: browser-results, path: "test-results/"}
