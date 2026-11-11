@@ -1,6 +1,6 @@
 # İlerleme — 11 Kasım 2026
 
-Tamamen yerel geliştirme. Kullanıcının 29 bölümlük kapsamının tamamı bitmedi; canlı satış kapalı. Production/staging dağıtımı, gerçek tahsilat, remote push veya DNS/alan adı işlemi yapılmadı.
+Tamamen yerel geliştirme. Kullanıcının 29 bölümlük kapsamının tamamı bitmedi; canlı satış kapalı. Production/staging dağıtımı, gerçek tahsilat veya DNS/alan adı işlemi yapılmadı. Kullanıcı aynı GitHub deposunun eski içeriğini SEXSOGATE kaynaklarıyla değiştirmeyi sonradan açıkça yetkilendirdi; kaynak aktarımı ve CI durumu aşağıdaki Git kaydında izlenir.
 
 ## Son test edilmiş sürüm — 09:19 İstanbul
 
@@ -53,9 +53,9 @@ Başlangıçtaki boş projede marka JPG ve 12 sayfalık PDF incelendi; rapor idd
 
 Kullanıcı 11 Kasım 2026'da `https://github.com/hamzaozbalkansahsi-bot/sogate` adresini verdi. Bağlı GitHub hesabı aynı kullanıcı adı ve 240751698 hesap numarası ile doğrulandı. Yalnız bu depoda Git yazarı `hamzaozbalkansahsi-bot`, GitHub'ın ID tabanlı noreply adresi olarak ayarlandı; özel e-posta yeni commitlere eklenmez. `origin` verilen adrese bağlandı ve yalnız okuma amaçlı fetch yapıldı.
 
-**Uzak hedef uyuşmazlığı:** `origin/main` üzerindeki `85aaa5c691fea53a803729f6f1cba140f14f9d21` commit'i yalnız Lyvora ERP Windows kurulum/güncelleme deposunu anlatan README içeriyor; v1.0.9/v1.0.10/v1.0.11 etiketleri de o commit'e bağlı. Bu geçmiş SEXSOGATE kaynağına parent olarak eklenmedi, birleştirilmedi veya checkout edilmedi. Yerel başlangıç commit'i `458745fcd82328f159f370d89408bfde1afb7149`, mevcut `codex/local-commerce` dalında bağımsız oluşturuldu; uzak dosya/dal/etiket değişikliği ve push yapılmaz. Yeni remote adresi uygulama, veritabanı veya başka işletme entegrasyonu değildir.
+**GitHub kaynak aktarımı:** kullanıcı eski deponun dosyalarının yeni çalışmayla değiştirilmesini açıkça istedi. Önceki `origin/main` yalnız Lyvora README'si içeriyordu (`85aaa5c691fea53a803729f6f1cba140f14f9d21`); eski etiketler aynı commit'e bağlıdır. Doğrulanmış tam Git bundle ve refs yedeği `.local/repository-backups` altında alındı. SEXSOGATE dosya ağacı korunup eski main yalnız Git geçmişine bağlanarak normal push hazırlanır; başka işletmenin uygulama/veritabanı/ortam verisi alınmaz. Force-push veya canlı dağıtım yoktur. Tam kayıt [git-workflow.md](git-workflow.md).
 
-320 çalışma kaynağı son test manifestiyle birebir aynı. Git index kontrolünde yalnız 138 metin dosyasının standart CRLF→LF normalizasyonu var; migration bayt değişimi 0, beklenmeyen içerik farkı 0. Yerel secret/DB/backup/test raporları dışarıda. Ayrıntılı Git durumu ve commit sonucu [git-workflow.md](git-workflow.md) içinde kaydedilir.
+Aktarım hazırlığından önce 320 çalışma kaynağı son test manifestiyle birebir aynıydı; yalnız AGENTS.md depo/push yetkisi ve Git belgeleri bu aşamada güncellendi. Uygulama kaynakları ve iş kuralları değişmedi. Git index kontrolünde yalnız 138 metin dosyasının standart CRLF→LF normalizasyonu var; migration bayt değişimi 0, beklenmeyen içerik farkı 0. Yerel secret/DB/backup/test raporları dışarıda. Ayrıntılı Git durumu ve commit sonucu [git-workflow.md](git-workflow.md) içinde kaydedilir.
 
 ## Açık işler ve dış engeller
 

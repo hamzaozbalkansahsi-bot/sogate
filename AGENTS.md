@@ -9,7 +9,7 @@
 - İlerlemeyi ve gerçek test sonuçlarını docs/progress.md içinde güncelle. Çalıştırılmayan kontrolü başarılı sayma.
 - Para ve stok kararları sunucuda, işlemsel olarak alınır. İstemciden fiyat veya yetki kabul etme.
 - Yerel örnek veri production'a taşınamaz. Eksik ülke, ödeme, belge ve hukuk onaylarında satış kapalıdır.
-- Gizli değerleri yazdırma veya Git'e ekleme. Push, canlı yayın, gerçek tahsilat ve DNS değişikliği bu görevde yetkili değildir.
+- Gizli değerleri yazdırma veya Git'e ekleme. Kullanıcının 11 Kasım 2026 tarihli açık talebiyle yalnız `hamzaozbalkansahsi-bot/sogate` deposundaki eski dosyaların SEXSOGATE kaynaklarıyla değiştirilmesi ve normal Git push yetkilidir. Önce yerel yedek ve kontroller; force-push/geçmiş silme, canlı dağıtım, gerçek tahsilat ve DNS değişikliği yetkili değildir.
 - Geliştirici gösterimi PTYS Technoligess LLC, tasarım Hamza ÖZBALKAN; satıcı/veri sorumlusu bunlardan çıkarılamaz. Elle yazılmış yorum destekleyen kaynaklarda kullanıcı standardı Türkçe dosya başlığı kullan; üretilmiş/vendor dosyalara dokunma.
 - Stripe öncelikli adaptördür; işletme, hesap ülkesi, kategori kabulü ve gerçek test olmadan canlı açılmaz. Hukuk sürümleri sipariş snapshot'ında korunur. Ana kapsamın güncel sürümü 29 bölümlük kullanıcı talimatıdır.
 
