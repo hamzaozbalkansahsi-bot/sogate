@@ -51,7 +51,11 @@ Yeni kaynak değişirse kendi standalone sunucusunu Ctrl+C ile durdurun; `npm ru
 
 Başlangıçtaki boş projede marka JPG ve 12 sayfalık PDF incelendi; rapor iddiaları kanıt sayılmadı. SVG'ler referansın düzenlenebilir yorumudur; birebir kaynak vektör veya gerçek katalog fotoğrafı değildir. NDECOR başlık biçimi karşılaştırması açık; bu nedenle başka depo açılmadı.
 
-Git yazar adı/e-postası ve remote yok. Daha önce sorulan kimlik yanıtlanmadı; kimlik uydurulmadı, commit/push yapılmadı. Kaynaklar çalışma alanında kalıcıdır.
+Kullanıcı 11 Kasım 2026'da `https://github.com/hamzaozbalkansahsi-bot/sogate` adresini verdi. Bağlı GitHub hesabı aynı kullanıcı adı ve 240751698 hesap numarası ile doğrulandı. Yalnız bu depoda Git yazarı `hamzaozbalkansahsi-bot`, GitHub'ın ID tabanlı noreply adresi olarak ayarlandı; özel e-posta yeni commitlere eklenmez. `origin` verilen adrese bağlandı ve yalnız okuma amaçlı fetch yapıldı.
+
+**Uzak hedef uyuşmazlığı:** `origin/main` üzerindeki `85aaa5c691fea53a803729f6f1cba140f14f9d21` commit'i yalnız Lyvora ERP Windows kurulum/güncelleme deposunu anlatan README içeriyor; v1.0.9/v1.0.10/v1.0.11 etiketleri de o commit'e bağlı. Bu geçmiş SEXSOGATE kaynağına parent olarak eklenmedi, birleştirilmedi veya checkout edilmedi. Yerel başlangıç commit'i `458745fcd82328f159f370d89408bfde1afb7149`, mevcut `codex/local-commerce` dalında bağımsız oluşturuldu; uzak dosya/dal/etiket değişikliği ve push yapılmaz. Yeni remote adresi uygulama, veritabanı veya başka işletme entegrasyonu değildir.
+
+320 çalışma kaynağı son test manifestiyle birebir aynı. Git index kontrolünde yalnız 138 metin dosyasının standart CRLF→LF normalizasyonu var; migration bayt değişimi 0, beklenmeyen içerik farkı 0. Yerel secret/DB/backup/test raporları dışarıda. Ayrıntılı Git durumu ve commit sonucu [git-workflow.md](git-workflow.md) içinde kaydedilir.
 
 ## Açık işler ve dış engeller
 
