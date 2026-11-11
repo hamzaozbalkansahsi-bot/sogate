@@ -1,5 +1,11 @@
 # Test kanıtı — 11 Kasım 2026
 
+## GitHub aktarımı ve CI durumu
+
+Kullanıcının açık talebiyle kaynaklar `38d603d7ffab9df926d6ad0b6c4d9215b5b7e249` commit'inde GitHub main dalına yüklendi. Uzak 421 blob ile yerel commit'in bütün blob SHA'ları eşleşti; eksik/ekstra/yasak yerel dosya yok. Eski README güncel SEXSOGATE içeriğiyle değiştirildi, Git geçmişi yedeklendi ve korundu.
+
+[42985339650 numaralı CI](https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/42985339650), GitHub hesabının faturalandırma kilidi nedeniyle runner veya test adımları başlamadan sonlandı. Uzak test PASS/FAIL kanıtı oluşmadı; aşağıdaki sonuçlar gerçek yerel koşuya aittir. Uygulama iş kuralları değişmedi; AGENTS.md push yetkisi ve Git sonuç belgeleri güncellendi. Kontroller veya workflow kapatılmadı. Tam kayıt [git-workflow.md](git-workflow.md).
+
 ## Güncel tam kontrol noktası — 09:19 İstanbul
 
 Ödeme öncesi teklif, oturum yarış koruması ve 025 lotlu PO kabulü dahil kaynak/test/varlık/config **320 dosya** manifesti SHA256 `53849dbe305cd6c0466dfded498e4de0c6f1e4265cdede1344720fe53866a0bc` (`.local/owner-snapshot.json`). Son genel koşudan sonra 320 dosya baytı tekrar karşılaştırıldı; değişiklik yok. Belgeler bu manifest dışında güncellenir. Şema 001–006, 010–025; uygulanmış migration değiştirilmedi. Bu yerel bayt izi commit, canlı kabul veya hukuk sertifikası değildir.

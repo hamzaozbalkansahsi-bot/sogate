@@ -1,6 +1,6 @@
 # Canlıya hazırlık — satış kapalı
 
-Bu belge yayın onayı değildir. Yerel testler işletme, ödeme kuruluşu veya hukuk kabulünün yerine geçmez. Hiçbir staging/production dağıtımı, gerçek tahsilat, remote push, DNS işlemi veya alan adı satın alımı yapılmadı.
+Bu belge yayın onayı değildir. Yerel testler işletme, ödeme kuruluşu veya hukuk kabulünün yerine geçmez. Kullanıcının açık talebiyle kaynaklar GitHub main dalına yüklendi. Staging/production dağıtımı, gerçek tahsilat, DNS işlemi veya alan adı satın alımı yapılmadı. GitHub CI runner'ı hesap/faturalandırma kilidi nedeniyle başlamadı; [gerçek kayıt](git-workflow.md) ayrı tutulur.
 
 ## Doğrulanan yerel hazırlık
 

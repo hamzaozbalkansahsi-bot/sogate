@@ -18,9 +18,21 @@ Kullanıcı daha sonra “eski repo o boşver sen içini temizle yeni çalışma
 
 Önce `.local/repository-backups/sogate-before-replacement-20261111T081025Z.bundle` oluşturuldu; `git bundle verify` tam geçmişi doğruladı. SHA256: `283f0dc297b978239b1840a5dff326b37c8fc0b098688b3e1d23990f25f024dc`. Aynı dizindeki `sogate-before-replacement-20261111T081025Z-refs.txt` uzak main ve etiketlerin önceki değerlerini kaydeder. Bu dosyalar Git dışındadır; çalışan veritabanı veya bütün release binary'lerinin yedeği oldukları iddia edilmez.
 
-Yerel `codex/local-commerce` dalının SEXSOGATE dosya ağacı korunarak eski `origin/main`, `ours` stratejisi ve `--allow-unrelated-histories` ile yalnız Git geçmişine bağlanır. Bu yöntem uzak main'in yeni commit'in atası olmasını ve normal fast-forward push'u sağlar; eski README içeriği, başka işletmenin kodu/verisi veya ortamı uygulama dosyalarına alınmaz. Force-push, geçmiş silme, eski sürüm etiketlerini taşıma/silme veya uygulama dağıtımı yapılmaz. Yöntem [Git'in resmî strateji belgesinde](https://git-scm.com/docs/merge-strategies#_merge_strategies) açıklanır.
+Yerel `codex/local-commerce` dalının SEXSOGATE dosya ağacı korunarak eski `origin/main`, `ours` stratejisi ve `--allow-unrelated-histories` ile yalnız Git geçmişine bağlandı. Bu yöntem uzak main'in yeni commit'in atası olmasını ve normal fast-forward push'u sağlar; eski README içeriği, başka işletmenin kodu/verisi veya ortamı uygulama dosyalarına alınmaz. Force-push, geçmiş silme, eski sürüm etiketlerini taşıma/silme veya uygulama dağıtımı yapılmaz. Yöntem [Git'in resmî strateji belgesinde](https://git-scm.com/docs/merge-strategies#_merge_strategies) açıklanır.
 
-Kaynak aktarımı ve CI sonucu işlem sonunda [progress.md](progress.md) ve bu dosyada kaydedilir. Push koşularını yalnız PR olayına filtreleyen bağlı araç yerine GitHub CLI ile tam push koşusu izlenir.
+## Gerçek aktarım sonucu
+
+`937a42f` commit'i kullanıcı iznini ve yedeği kaydetti. Ardından `38d603d7ffab9df926d6ad0b6c4d9215b5b7e249` commit'i oluşturuldu: SEXSOGATE dosya ağacı önceki yerel ağaçla birebir aynı kaldı, eski main yalnız geçmişin atası olarak korundu. `git merge-base --is-ancestor origin/main HEAD` push öncesinde geçti.
+
+`git push origin HEAD:refs/heads/main` normal fast-forward ile başarılı oldu: `85aaa5c` → `38d603d`. GitHub API'den okunan 421 dosyanın her blob SHA'sı yerel commit ile aynı; eksik/ekstra dosya 0 ve yasak yerel dosya 0. Uzak README `# SEXSOGATE` ile başlıyor. Depo About açıklaması SEXSOGATE e-ticaret platformu olarak güncellendi; homepage boş, GitHub Pages kapalı. Eski etiketler ve geçmiş silinmedi; force-push veya uygulama yayını yapılmadı. Kanıt `.local/repository-push-verification.json`.
+
+## Uzak CI engeli
+
+Push koşusu [42985339650](https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/42985339650) oluşturuldu. `verify` işi 130405068097 iki saniyede, runner/test adımları başlamadan sonlandı. GitHub annotation'ı: **“The job was not started because your account is locked due to a billing issue.”** Runner adı boş, adım listesi ve çalıştırma logu yok. Bu bir uygulama testi FAIL/PASS sonucu değildir; uzak runner kabulü gerçekleşmedi.
+
+Bağlı araç push koşularını PR olayına filtrelediği için koşu GitHub CLI ile listelendi; job durumu bağlı GitHub aracı ve GitHub REST API ile ayrıca doğrulandı. Kontroller kapatılmadı, alternatif hesap/runner kullanılarak kilit aşılmadı, faturalandırma ayarı veya ödeme işlemi yapılmadı. Hesap kilidi yetkili hesap sahibi tarafından giderildikten sonra mevcut CI yeniden çalıştırılmalıdır. Yerel 246 birim/232 DB/94 E2E kanıtı bu engelden ayrı tutulur.
+
+Bu iki Git sonuç belgesinin son güncellemesi uygulama kodu değiştirmeyen ayrı bir commit'tir; kaynaklara ait son CI hâlâ hesap engeli durumundadır. Güncel kod işleri [progress.md](progress.md) içinde sürer.
 
 ## Yerel kontrol noktası
 

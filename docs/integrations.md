@@ -89,7 +89,7 @@ Yerel tanılama sırasında `.next` dışındaki kaynaklarda sekiz saniyelik izl
 
 `npm run build` sonrasında `npm start -- --port 3000`, `scripts/start.mjs` üzerinden standalone sunucuyu başlatır. `APP_ENV` açıkça verilmelidir; script sır dosyasını kendiliğinden yüklemez. `public`, `.next/static` ve PDF fontlarını içeren `assets` dizinleri standalone çıktıya kopyalanır. Development/test için origin ve yerel medya yolu düzenlenir; diğer ortamlarda dış ortam yapılandırması korunur. Bu helper tek başına DB/worker/scheduler/secret manager kurmaz veya production yayını yapmaz.
 
-Örnek yerel komut: `node --env-file=.env.local scripts/start.mjs --port 3000`. Gerçek dağıtım öncesi web, worker, scheduler, PostgreSQL ve özel nesne deposu birlikte doğrulanmalı; migration öncesi şifreli yedek/rollback planı bulunmalıdır. Bu görevde uzak push, staging/production deploy, DNS işlemi veya gerçek tahsilat yapılmadı.
+Örnek yerel komut: `node --env-file=.env.local scripts/start.mjs --port 3000`. Gerçek dağıtım öncesi web, worker, scheduler, PostgreSQL ve özel nesne deposu birlikte doğrulanmalı; migration öncesi şifreli yedek/rollback planı bulunmalıdır. Kullanıcının açık talebiyle kaynaklar GitHub main dalına normal push ile aktarıldı; staging/production deploy, DNS işlemi veya gerçek tahsilat yapılmadı. GitHub aktarım kaydı [git-workflow.md](git-workflow.md) içindedir.
 
 Gerçek S3, SMTP ve Stripe sandbox erişimi; staging geri yükleme ve remote CI çalıştırması henüz yoktur. Yerelde CI dosyalarının bulunması uzak pipeline'ın başarıyla çalıştığı anlamına gelmez.
 
@@ -105,7 +105,7 @@ Gerçek S3, SMTP ve Stripe sandbox erişimi; staging geri yükleme ve remote CI 
 
 Üçünün manifestinde Node 24 action runtime'ı görüldü: [checkout manifesti](https://raw.githubusercontent.com/actions/checkout/3d3c42e5aac5ba805825da76410c181273ba90b1/action.yml), [setup-node manifesti](https://raw.githubusercontent.com/actions/setup-node/949feb2413d6458794dcd2491c4babbbce0c15c1/action.yml), [upload-artifact manifesti](https://raw.githubusercontent.com/actions/upload-artifact/cf430e030ddbb5b0abf93d22962f4752f3646cd9/action.yml). Uygulama kurulumu ayrıca Node 24.12.0'a sabittir. Workflow yalnız `contents: read` ister; checkout `persist-credentials: false` kullanır. İzole personel ve SEO DB komutları da doğrulama sırasına eklendi.
 
-Uzak workflow **çalıştırılmadı**; remote CI PASS iddiası yoktur. Action manifesti/sürüm incelemesi runner, ağ, cache ve bütün komutların uzak çalıştırma kabulü değildir. Bu CI güncellemesi npm bağımlılıklarını değiştirmedi; exact lockfile korunur.
+Uzak push workflow'u tetiklendi; GitHub hesap/faturalandırma kilidi nedeniyle runner/test adımları başlayamadı ([42985339650](https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/42985339650)). Remote CI PASS iddiası yoktur. Action manifesti/sürüm incelemesi runner, ağ, cache ve bütün komutların uzak çalıştırma kabulü değildir. Bu CI güncellemesi npm bağımlılıklarını değiştirmedi; exact lockfile korunur.
 
 ## Paket kararı
 
