@@ -1,0 +1,50 @@
+# Proje      : SEXOGATE
+# Geliştirici: PTYS Technoligess LLC
+# Tasarım    : Hamza ÖZBALKAN
+# Dosya      : .github/workflows/php-hosting.yml
+# Açıklama   : PHP hosting hattını ayrı, atılabilir MySQL üzerinde doğrular; dağıtım yapmaz.
+name: php-hosting-checks
+on:
+  push:
+    paths: ['hosting/php/**', 'migrations/mysql/**', '.github/workflows/php-hosting.yml']
+  pull_request:
+    paths: ['hosting/php/**', 'migrations/mysql/**', '.github/workflows/php-hosting.yml']
+permissions:
+  contents: read
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0.46@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+        env:
+          MYSQL_ROOT_PASSWORD: ci_php_disposable_not_production
+          MYSQL_ROOT_HOST: '%'
+        ports: [55433:3306]
+        options: >-
+          --health-cmd "mysqladmin ping -h 127.0.0.1 -u root -pci_php_disposable_not_production --silent"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      MYSQL_TEST_ADMIN_URL: mysql://root:ci_php_disposable_not_production@127.0.0.1:55433/mysql
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: {persist-credentials: false}
+      # Kaynak/lisansı doğrulanan v2 etiketinin dereference edilmiş commit'i.
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962
+        with:
+          php-version: 8.3.36
+          extensions: pdo_mysql, mbstring, openssl, fileinfo, intl, gd, zip, dom, simplexml, xmlreader, xmlwriter
+          tools: composer:2.11.2
+          coverage: none
+      - run: mkdir -p .local
+      - name: Validate and install locked PHP packages
+        working-directory: hosting/php
+        run: |
+          composer validate --strict --no-check-publish
+          composer install --no-interaction --prefer-dist --no-scripts
+          composer audit --locked
+      - name: PHP syntax
+        run: find hosting/php -path '*/vendor' -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Real MySQL unit and integration tests
+        working-directory: hosting/php
+        run: vendor/bin/phpunit --configuration phpunit.xml

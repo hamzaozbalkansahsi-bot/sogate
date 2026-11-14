@@ -1,0 +1,6 @@
+# Proje      : SEXOGATE
+# Geliştirici: PTYS Technoligess LLC
+# Tasarım    : Hamza ÖZBALKAN
+# Dosya      : migrations/mysql/.gitattributes
+# Açıklama   : Uygulanmış SQL checksum'larını özgün baytlarla ve geçerli CRLF tanımasıyla korur.
+*.sql -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

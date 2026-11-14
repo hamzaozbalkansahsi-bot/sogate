@@ -1,4 +1,9 @@
 node_modules/
+hosting/php/vendor/
+hosting/php/.phpunit.cache/
+hosting/php/config.local.php
+hosting/php/config.local.json
+hosting/php/storage/
 .next/
 .next-local/
 .env

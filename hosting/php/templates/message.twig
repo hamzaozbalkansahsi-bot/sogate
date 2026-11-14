@@ -1,0 +1,2 @@
+{# Proje: SEXOGATE | Geliştirici: PTYS Technoligess LLC | Tasarım: Hamza ÖZBALKAN | Dosya: hosting/php/templates/message.twig | Açıklama: Doğru durum koduyla güvenli içerik/boş durum gösterir. #}
+{% extends 'layout.twig' %}{% block content %}<section class="section container narrow"><div class="card form-stack"><h1>{{ title }}</h1><div class="php-prose">{{ message|nl2br }}</div><a class="text-link" href="{{ href('/urunler') }}">{{ t('continue') }}</a></div></section>{% endblock %}

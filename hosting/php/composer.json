@@ -1,0 +1,28 @@
+{
+  "name": "sexogate/hosting",
+  "description": "SEXOGATE PHP ve MySQL hosting çalışma ortamı",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.3.36 <9",
+    "ext-fileinfo": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*",
+    "brick/math": "^1.0",
+    "phpoffice/phpspreadsheet": "^5.11.0",
+    "spomky-labs/otphp": "^11.0",
+    "stripe/stripe-php": "^23.0",
+    "symfony/http-foundation": "^7.4",
+    "symfony/mailer": "^7.4",
+    "symfony/password-hasher": "^7.4",
+    "symfony/routing": "^7.4",
+    "symfony/security-csrf": "^7.4",
+    "twig/twig": "^3.0"
+  },
+  "require-dev": {"phpunit/phpunit": "^12.0"},
+  "autoload": {"psr-4": {"Sexogate\\": "src/"}},
+  "config": {"sort-packages": true, "platform": {"php": "8.3.36"}, "allow-plugins": {}},
+  "scripts": {"test": "phpunit --configuration phpunit.xml"}
+}
