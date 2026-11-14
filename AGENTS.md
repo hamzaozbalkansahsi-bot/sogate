@@ -1,6 +1,8 @@
 # Çalışma Akışı
 
 - Tüm tasarım, geliştirme ve değişiklikler önce yerel ortamda yapılır.
+- 14 Kasım son logo/menü kararı: simge yazının üstünde ortalı kalır; footer logo bütünü ortalı, header logo bütünü soldadır. Sosyal bağlantılar ikonlu, hover/odak hareketli ve azaltılmış hareket tercihine uyumludur. Mobil Kategoriler doğrudan görselli tam sayfayı açar; alt menü Ana sayfa/Kategoriler/Favorilerim/Sepetim/Hesabım sırasındadır. xShopum, Liona, Sistina kapsamı `docs/php-supplier-research.md` içinde gerçek erişim durumlarıyla izlenir.
+- 14 Kasım son kapsam: kullanıcı NODENO'nun bütün menü/kategori/ürün/sepet/blog/öneri yapısını SEXOGATE'e uyarlamayı istedi. PHP müşteri katmanı için `docs/php-nodeno-parity.md` kabul matrisidir. NODENO yalnız okunur; işletme/müşteri/ürün/secret verisi ve sektöre özgü vergisi taşınmaz. İletişimde şimdilik yalnız mail gösterilir. Hijyen iade metni, açılmış koruyucu unsur istisnası ve ayıplı ürün haklarını ayrı korur.
 - Değişiklikler yerelde çalıştırılır, incelenir ve ilgili testlerle doğrulanır.
 - Canlıya geçiş, yerel çalışma ve doğrulamalar tamamlandıktan sonra ayrı bir aşama olarak ele alınır.
 
