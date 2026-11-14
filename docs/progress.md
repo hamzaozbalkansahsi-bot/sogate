@@ -14,6 +14,8 @@ Kullanıcı xShopum/Liona/Sistina araştırması, bütün katalog ve Liora sunum
 
 15 Kasım00:03 son koruma: yayın sonrası yedek83 tablo/901 satır/92FK ve26 migration/hash/forward kontrolüyle tekrar geri yüklendi. Cron `2026-11-14T21:03:02+00:00` anında runtime8.3.36/ok:true; son yayın doğrulaması ana kök/özel dosya/kurucu kontrolünü yeniden geçti. Geri dönüş ve devam komutları [PHP hosting rehberinde](php-hosting-guide.md); sıradaki geliştirme tam NODENO farkları, KVKK belge türü eşlemesi, hızlı inceleme varyant fiyatı ve yetkili tedarikçi feed inceleme akışıdır. Gerçek tahsilat hâlâ kapalıdır.
 
+Kod186e295 ve belge435a226 izinli GitHub deposunda `codex/local-commerce` dalına normal push edildi; diğer sohbetlerin ortak dosyaları korunarak yalnız bu görevin paragrafları commit'lendi.15 Kasım CI43641007476/43641007386 çalıştırmaları0 adımla failure: “The job was not started because your account is locked due to a billing issue.” Yerel/uzak kabul geçti; GitHub CI hesap engeli nedeniyle başlamadı, başarılı sayılmaz. Hesap faturalandırması değiştirilmedi. [Doğrudan CI kanıtları](php-category-footer-release.md).
+
 Tamamen yerel geliştirme. Kullanıcının 29 bölümlük kapsamının tamamı bitmedi; canlı satış kapalı. Production/staging dağıtımı, gerçek tahsilat veya DNS/alan adı işlemi yapılmadı. Kullanıcı aynı GitHub deposunun eski içeriğini SEXSOGATE kaynaklarıyla değiştirmeyi sonradan açıkça yetkilendirdi; kaynak aktarımı ve CI durumu aşağıdaki Git kaydında izlenir.
 
 ## Son test edilmiş sürüm — 09:19 İstanbul

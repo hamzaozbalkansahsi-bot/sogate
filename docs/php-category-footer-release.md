@@ -40,6 +40,12 @@ Uzak görseller: [header](screenshots/php-category-brand-remote/webkit-header-39
 
 Yayın ve operasyon testleri sonrasında yeni şifreli yedek83 tablo/901 satır/92FK ile tekrar geri yüklendi;26 migration/hash ve forward doğrulaması geçti. Gerçek PHP cron kontrolü `2026-11-14T21:03:02+00:00` anında `ok:true`, runtime8.3.36 verdi. Son `--verify` ana kökün değişmediğini yeniden doğruladı. Kaynak/paket karşılaştırmasında139 birinci taraf dosyasında uyuşmazlık yoktu; son commit sonrasında runtime kaynak değişikliği yapılmadı.
 
+## GitHub kaydı ve CI engeli
+
+Kod `186e295`, belge/ekran kanıtı `435a226`; yalnız izinli `hamzaozbalkansahsi-bot/sogate` deposunun `codex/local-commerce` dalına normal push yapıldı. Force push/merge yok. Paylaşılan AGENTS/progress dosyalarında yalnız bu görevin paragrafları index'e alındı; diğer sohbetlerin çalışma kopyaları bayt hash'iyle korunarak doğrulandı.
+
+15 Kasım kontrolünde [PHP CI43641007476](https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/43641007476) ve [uygulama CI43641007386](https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/43641007386) failure döndü; her ikisinde0 adım çalışmıştı. Gerçek annotation: “The job was not started because your account is locked due to a billing issue.” Bu hesap engeli giderilmedi; CI başarılı gösterilmez ve kontroller kapatılmaz. Gerçek yerel123/482 ve uzak kabul sonuçları yukarıdaki gibidir. Node/Next kodu veya bu hesap için ücret/ödeme ayarı değiştirilmedi.
+
 Komutlar:
 
 ```powershell
