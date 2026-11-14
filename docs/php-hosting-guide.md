@@ -93,12 +93,13 @@ Medya bu testte paketin SVG/font, uygulama PNG/ICO ve onaylı Liora WebP varlık
 | Manuel depo sevki, karantinalı iade/kısmi para iadesi | PHP21 test yayınında Chromium/WebKit ve gerçek DB ile test edildi; gerçek taşıyıcı API'si yok |
 | Satın alma/lot/set, CMS/hukuk/SEO kontrolü, rapor/rol/kuyruk, adres/favori/tercih | PHP21 teknik akışları test edildi; kapsam içindeki bütün yönetim özellikleri henüz tamamlanmadı |
 | Tedarikçi operasyonu ve CSV/XLSX | PHP23 test yayınında iki tarayıcıyla kabul edildi; otomatik dış API ve mevcut ürün güncelleme importu yok |
-| Gizlilik başvuruları, medya, ülke/kur/tarife kabul yönetimi | PHP portu tamamlanmadı |
+| Ülke/vergi/fiyat ve SKU/model/taşıyıcı uygunluğu | PHP25 servis/HTTP testleri ve temel admin ekranları var; uluslararası müşteri seçimi, kur/adres editörü ve kapsamlı sayfalama tamamlanmadı |
+| Gizlilik başvuruları, medya/S3 ve tam katalog düzenleme | PHP portu tamamlanmadı |
 | Resmî fatura | Kontrollü dış referans servisi var; sağlayıcı ve tam ekran akışı bekliyor |
 | Gerçek katalog, satıcı kimliği, hukuk/ülke/vergi onayları | İşletme ve hukuki onay bekliyor |
 
 Bu yayın, çalışır test akışını incelemeye açar. Ana sözleşmenin bütün modülleri tamamlandı veya gerçek satışa hazır denmez.
 
-14 Kasım devamı: PHP23 etkin paketb7e4e223ef58e41068e403d1. Operasyon kullanımı ve rapor tanımları [PHP operasyon rehberinde](php-operations-guide.md). Daha yeni yerel işlerin durumu progress dosyasında ayrıdır.
+14 Kasım son yayın: PHP25 etkin paket `7f9c90294d9c9e6b64b9cf64`. Vitrin yaş beyanı ardından hesapsız açılır; görünür krediler kaldırıldı ve ana ekran ikonları eklendi. Operasyon kullanımı ve rapor tanımları [PHP operasyon rehberinde](php-operations-guide.md). Daha yeni yerel işlerin durumu progress dosyasında ayrıdır.
 
 Yerel disk alanı için yalnız bu görevin paketleri D: üzerine taşındı. Yeni paket için `python scripts/package-php.py --output-root D:\sexogate-local-artifacts-20261114\builds`; kurulum için `python scripts/test-php-install.py --sandbox-root D:\sexogate-local-artifacts-20261114\private-installs`; yayın için `python scripts/publish-php-test.py --deploy --package-root D:\sexogate-local-artifacts-20261114\builds`. Sırlar içeren sandbox kökü yalnız kullanıcı ve SYSTEM erişimine açık tutulmalıdır. `.local/php-package.json` güncel arşiv yolunu kaydeder. Varsayılan komutlar C: üzerinde yeterli alan olduğunda yine geçerlidir.
