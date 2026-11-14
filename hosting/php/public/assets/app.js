@@ -15,11 +15,13 @@
  function show(form,text){const output=form.querySelector('.form-message');if(output){output.textContent=text;output.focus?.();}}
  function redirect(path){if(typeof path==='string'&&path.startsWith(base+'/')&&!path.startsWith('//'))location.assign(path);}
  async function quote(){const form=document.getElementById('checkout-form');const data=fields(form);delete data.quoteToken;const result=await api('/api/quote',data);form.elements.quoteToken.value=result.quoteToken;for(const node of form.querySelectorAll('[data-total]')){const value=result[node.dataset.total];if(Number.isSafeInteger(value))node.textContent=new Intl.NumberFormat(en?'en-GB':'tr-TR',{style:'currency',currency:result.currency}).format(value/100);}form.elements.privacyAccepted.checked=false;form.elements.termsAccepted.checked=false;return result;}
- for(const form of document.querySelectorAll('form[data-api]')){
+ function mountForms(root=document){for(const form of root.querySelectorAll('form[data-api]')){
   const key=form.querySelector('input[name="idempotencyKey"]');if(key&&!key.value)key.value=id();
   form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;const button=form.querySelector('button[type="submit"],button:not([type])');if(button)button.disabled=true;show(form,'');
    try{const result=await api(form.dataset.api,fields(form));
-    if(form.id==='mfa-start'){document.getElementById('mfa-secret').textContent=result.secret;document.getElementById('mfa-setup').hidden=false;form.hidden=true;}
+    if(Number.isInteger(result.count))for(const badge of document.querySelectorAll('[data-cart-count]')){badge.textContent=String(result.count);badge.dataset.empty=String(result.count===0);}
+    if(form.hasAttribute('data-cart-feedback'))show(form,en?'Added to your cart.':'Sepetinize eklendi.');
+    else if(form.id==='mfa-start'){document.getElementById('mfa-secret').textContent=result.secret;document.getElementById('mfa-setup').hidden=false;form.hidden=true;}
     else if(form.id==='mfa-confirm'){document.getElementById('mfa-setup').hidden=true;const recovery=document.getElementById('mfa-recovery');recovery.hidden=false;recovery.querySelector('pre').textContent=result.recoveryCodes.join('\n');}
     else if(result.mfaRequired){location.reload();}
     else if(result.paymentUrl){redirect(result.paymentUrl);}
@@ -31,6 +33,8 @@
    finally{if(button)button.disabled=false;}
   });
  }
+ }
+ mountForms();document.addEventListener('sexogate:content',event=>mountForms(event.detail.root));
  document.getElementById('refresh-quote')?.addEventListener('click',async()=>{try{await quote();show(document.getElementById('checkout-form'),en?'Review the updated total.':'Güncellenen toplamı inceleyin.');}catch(error){show(document.getElementById('checkout-form'),error.message);}});
  const tokenForm=document.getElementById('token-form');if(tokenForm){tokenForm.elements.token.value=new URLSearchParams(location.hash.slice(1)).get('token')||'';history.replaceState(null,'',location.pathname);}
  document.getElementById('age-exit')?.addEventListener('click',()=>location.replace('about:blank'));

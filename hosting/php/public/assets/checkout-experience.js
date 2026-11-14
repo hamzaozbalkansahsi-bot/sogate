@@ -1,0 +1,18 @@
+/**
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : hosting/php/public/assets/checkout-experience.js
+ * Açıklama   : Adımlı misafir akışı ve kullanıcı/sepet bağlı kısa ömürlü sekme taslağı.
+ */
+(()=>{
+ 'use strict';const key='sexogate.checkout-draft.v1';if(/\/siparis\//.test(location.pathname)){try{sessionStorage.removeItem(key);}catch{}return;}const form=document.getElementById('checkout-form');if(!form)return;let current=0;const en=document.body.dataset.locale==='en',owner=form.dataset.owner+':'+form.dataset.cart,steps=[...form.querySelectorAll('[data-checkout-step]')],allowed=['email','fullName','phone','line1','city','region','district','postalCode','sameBilling','billingFullName','billingLine1','billingCity','billingRegion','billingDistrict','billingPostalCode'];
+ function billing(){const box=document.getElementById('billing-address');box.hidden=form.elements.sameBilling.checked;box.disabled=box.hidden;}
+ function validAddress(){for(const input of steps[0].querySelectorAll('input,select,textarea'))if(!input.disabled&&!input.closest('fieldset[disabled]')&&!input.checkValidity()){input.reportValidity();return false;}return true;}
+ function review(){const area=document.getElementById('checkout-address-review');area.replaceChildren();for(const [title,prefix] of [[en?'Delivery address':'Teslimat adresi',''],[en?'Billing address':'Fatura adresi',form.elements.sameBilling.checked?'':'billing']]){const h=document.createElement('h2');h.textContent=title;const p=document.createElement('p');p.textContent=['fullName','line1','city','postalCode'].map(name=>form.elements[prefix?prefix+name[0].toUpperCase()+name.slice(1):name]?.value||'').filter(Boolean).join(' · ');area.append(h,p);}}
+ function go(step){if(step>0&&!validAddress())return;current=Math.max(0,Math.min(2,step));for(const [i,field] of steps.entries())field.hidden=i!==current;for(const button of document.querySelectorAll('[data-checkout-go]')){if(Number(button.dataset.checkoutGo)===current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');}if(current===2)review();const heading=steps[current].querySelector('legend');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});document.querySelector('.checkout-progress').scrollIntoView({behavior:'instant',block:'start'});}
+ try{const d=JSON.parse(sessionStorage.getItem(key));if(d?.owner===owner&&d.expiresAt>Date.now()){for(const name of allowed){const v=d.values?.[name],input=form.elements[name];if(!input)continue;if(name==='sameBilling'){if(typeof v==='boolean')input.checked=v;}else if(typeof v==='string'&&v.length<=1200)input.value=v;}}else sessionStorage.removeItem(key);}catch{}
+ billing();form.elements.sameBilling.addEventListener('change',billing);
+ function save(){const values={};for(const name of allowed){const input=form.elements[name];if(input)values[name]=name==='sameBilling'?input.checked:input.value.slice(0,1200);}try{sessionStorage.setItem(key,JSON.stringify({owner,values,expiresAt:Date.now()+1200000}));}catch{}}
+ form.addEventListener('input',save);form.addEventListener('change',save);for(const button of document.querySelectorAll('[data-checkout-go]'))button.addEventListener('click',()=>go(Number(button.dataset.checkoutGo)));for(const button of form.querySelectorAll('[data-checkout-next]'))button.addEventListener('click',()=>go(current+1));for(const button of form.querySelectorAll('[data-checkout-back]'))button.addEventListener('click',()=>go(current-1));form.addEventListener('submit',event=>{if(current!==2){event.preventDefault();event.stopImmediatePropagation();go(current+1);}},true);
+})();
