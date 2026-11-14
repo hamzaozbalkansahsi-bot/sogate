@@ -4,7 +4,7 @@
 
 ## Giriş ve yerel çalıştırma
 
-Test adresi: https://sexogate.com/test. Test ortamı ayrı erişim kapısıyla korunur; arama motorlarına `noindex, nofollow`, cevaplara `private, no-store` uygulanır. Üç izole katalog örneği ve test kuralları gerçek satış kataloğu değildir. Gerçek ödeme kapalıdır.
+Test adresi: https://sexogate.com/test. Son kullanıcı kararıyla vitrin ve misafir alışverişi yaş beyanından sonra hesapsız açılır; özel test erişim kapısı yalnız yönetim ve yönetici API'lerinde kalır. Arama motorlarına `noindex, nofollow`, cevaplara `private, no-store` uygulanır. Üç izole katalog örneği ve test kuralları gerçek satış kataloğu değildir. Gerçek ödeme kapalıdır.
 
 İki ayrı kimlik vardır. Özel test kapısı ve uygulama yöneticisinin bilgileri yalnız Git dışı `.local/php-stage-access.json` dosyasındadır. Yönetici `/test/yonetim/giris` adresinden giriş yapar; TOTP gerekir. Tarayıcı kabulünde kurulan TOTP anahtarı ve tek kullanımlık kurtarma kodları aynı yerel dosyadadır. Bunları kaynak koduna, sohbete veya destek kaydına kopyalamayın. Geliştirme ortamının ayrı bilgileri `.local/php-access.json` içindedir. Test erişim kapısı, müşterilerin hesap parolası değildir.
 
@@ -32,7 +32,7 @@ Yerel runtime `hosting/php/config.local.json`, hosting runtime webden403 ile kap
 | `db_dsn`, `db_user`, `db_password` | Yalnız bu test DB'sine erişen PDO bağlantısı |
 | `secret` | En az32 bayt; teklif, takip, MFA şifreleme ve oturumla ilişkili imzalar |
 | `payment_provider`, `live_sales` | Bu yayında test ve false; Stripe seçilmesi gerçek ödeme bağlantısı oluşturmaz |
-| `stage_access`, `stage_user`, `stage_password_sha256` | İnternetteki test ortamının zorunlu erişim kapısı |
+| `stage_access`, `stage_user`, `stage_password_sha256` | İnternetteki test ortamının zorunlu yönetim erişim kapısı; müşteri vitrini bu kapıya yönlendirilmez |
 | `asset_prefix` | Etkin sürümün `/test/assets/releases/<id>` yolu |
 | `smtp_dsn`, `mail_from` | Sunucu tarafı e-posta; yapılandırılmadığında işler SMTP_NOT_CONFIGURED ile ertelenir |
 | `bootstrap_admin` | Yalnız ilk kurulumda kullanılır; sunucudaki konfigürasyondan kurulum bitince kaldırılır |
@@ -75,7 +75,7 @@ Bir önceki özel release korunur; önceki işaretçi `/test/app/previous.php` i
 
 Şifreli dosya `.local/php-stage-backups` içine FTPS ile indirilir. Sadece yeni, rastgele adlandırılmış yerel55433 test DB'sine açılır; migration checksum'ları, bütün tablo count/hash'leri ve FK ilişkileri doğrulanır. Generated column değerleri yeniden hesaplanır. Yerel hedefin migration'dan gelen trigger tanımları veri yüklerken geçici kaldırılır ve aynen geri eklenir; dump'tan keyfî trigger kodu çalıştırılmaz. Bu, **uzak test DB'sinden yerel izole geri yükleme tatbikatıdır**; canlı üretim geri yükleme testi değildir.
 
-Medya bu testte paketin kendi SVG/font varlıklarıdır; sürümlü yayın arşivi bunları içerir. Gerçek müşteri yüklemeleri/S3, uzak yedek saklama süresi, günlük otomatik yedek ve production tatbikatı ayrıca kurulmalıdır. Şifreli yedek ile anahtar ayrı erişim/saklama süreçleriyle korunmalıdır; yalnız aynı hostingte duran kopya yeterli değildir.
+Medya bu testte paketin SVG/font, uygulama PNG/ICO ve onaylı Liora WebP varlıklarıdır; sürümlü yayın arşivi bunları içerir. Gerçek müşteri yüklemeleri/S3, uzak yedek saklama süresi, günlük otomatik yedek ve production tatbikatı ayrıca kurulmalıdır. Şifreli yedek ile anahtar ayrı erişim/saklama süreçleriyle korunmalıdır; yalnız aynı hostingte duran kopya yeterli değildir.
 
 ## Gerçek modül durumu
 

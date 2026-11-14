@@ -13,10 +13,10 @@ use Sexogate\{Suppliers,Principal,Inventory,Returns,RuleViolation};
 final class SuppliersTest extends TestCase
 {
     private function key():string{return bin2hex(random_bytes(16));}
-    private function shop():TestShop
+    private function shop(bool $paid=true):TestShop
     {
         self::assertTrue(class_exists(Suppliers::class),'PHP tedarikçi operasyonu eksik.');
-        return new TestShop(2,true,function($f,$a){
+        return new TestShop(2,$paid,function($f,$a){
             $s=new Suppliers($f->db,$f->config);$id=$s->save(['name'=>'İzole tedarikçi','leadDays'=>3],$a)['id'];
             $s->profile(['supplierId'=>$id,'enabled'=>true,'contractReference'=>'TEST sözleşme belgesi','privacyReference'=>'TEST veri aktarım belgesi','packagingReference'=>'TEST ambalaj belgesi','returnReference'=>'TEST iade belgesi'],$a);
             $s->route(['supplierId'=>$id,'country'=>'TR','currency'=>'TRY','shippingMinor'=>1200,'handlingMinor'=>100,'minDays'=>2,'maxDays'=>5,'carrier'=>'Kabul taşıyıcısı','reference'=>'TEST rota belgesi','approved'=>true],$a);
@@ -59,4 +59,8 @@ final class SuppliersTest extends TestCase
         $service->reconcile($allocation['offer_id'],[$allocation['id']],'TEST sonraki stokta düşüm teyidi',$this->key(),$s->admin);self::assertSame('reconciled',$s->f->db->one('SELECT status FROM supplier_reservations')['status']);
         $this->expectException(RuleViolation::class);$service->detail($group,new Principal('warehouse','warehouse',true));
     }
+    public function testSupplierAddressDisclosureRequiresAConfirmedPayment():void
+    {$s=$this->shop(false);$service=new Suppliers($s->f->db,$s->f->config);$group=$s->f->db->one("SELECT id FROM order_fulfillment_groups WHERE source='supplier'")['id'];$this->expectException(RuleViolation::class);$service->detail($group,$s->admin);}
+    public function testWarehouseCannotReadSupplierOnlyOrderAddress():void
+    {$s=$this->shop();$this->expectException(RuleViolation::class);(new Sexogate\Fulfillment($s->f->db,$s->f->config))->detail($s->order['orderId'],new Principal('warehouse','warehouse',true));}
 }

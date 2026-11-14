@@ -77,7 +77,7 @@ final class Commerce
     public function order(string $id,?string $tracking=null,?string $user=null):?array
     {
         $r=$this->db->one('SELECT id,number,status,payment_status,fulfillment_status,currency,subtotal_minor,discount_minor,shipping_minor,tax_minor,total_minor,created_at FROM orders WHERE id=? AND((? IS NOT NULL AND tracking_hash=?) OR(? IS NOT NULL AND user_id=?))',[$id,$tracking,$tracking===null?null:hash('sha256',$tracking),$user,$user]);if(!$r)return null;
-        $r['items']=$this->db->all('SELECT name,sku,quantity,unit_minor,variant_id,fulfillment_source FROM order_items WHERE order_id=? ORDER BY id',[$id]);$r['packages']=array_map(fn($p)=>json_decode($p['snapshot'],true),$this->db->all('SELECT snapshot FROM order_fulfillment_groups WHERE order_id=? ORDER BY id',[$id]));foreach(['subtotal_minor','discount_minor','shipping_minor','tax_minor','total_minor'] as $key)$r[$key]=(int)$r[$key];return $r;
+        $r['items']=$this->db->all('SELECT name,sku,quantity,unit_minor,variant_id,fulfillment_source FROM order_items WHERE order_id=? ORDER BY id',[$id]);$r['packages']=array_map(fn($p)=>array_intersect_key(json_decode($p['snapshot'],true),array_flip(['number','source','shippingMinor','minDays','maxDays','carrier'])),$this->db->all('SELECT snapshot FROM order_fulfillment_groups WHERE order_id=? ORDER BY id',[$id]));foreach(['subtotal_minor','discount_minor','shipping_minor','tax_minor','total_minor'] as $key)$r[$key]=(int)$r[$key];return $r;
     }
     public function testEvent(string $id,string $tracking,string $outcome):array
     {

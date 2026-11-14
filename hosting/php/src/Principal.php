@@ -14,7 +14,7 @@ final readonly class Principal
     public function require(string $resource,bool $write=false):void
     {
         RuleViolation::ensure($this->id!==''&&$this->mfa,'MFA_REQUIRED','Bu işlem için doğrulanmış yönetim oturumu gerekir.',403);
-        $roles=['catalog'=>['catalog'],'inventory'=>['warehouse'],'purchases'=>['catalog','warehouse','finance'],'orders'=>['warehouse','support','finance'],'shipping'=>['warehouse'],'returns'=>['support','warehouse','finance'],'finance'=>['finance'],'content'=>['marketing'],'customers'=>['support'],'settings'=>[]];
+        $roles=['pricing'=>['catalog','finance'],'catalog'=>['catalog'],'inventory'=>['warehouse'],'purchases'=>['catalog','warehouse','finance'],'orders'=>['warehouse','support','finance'],'shipping'=>['warehouse'],'returns'=>['support','warehouse','finance'],'finance'=>['finance'],'content'=>['marketing'],'customers'=>['support'],'settings'=>[]];
         RuleViolation::ensure($this->role==='admin'||in_array($this->role,$roles[$resource]??[],true),'FORBIDDEN','Bu işlem için yetkiniz yok.',403);
         if($write&&in_array($resource,['orders','finance'],true))RuleViolation::ensure(in_array($this->role,['admin','finance','support'],true),'FORBIDDEN','Bu işlem için yetkiniz yok.',403);
     }
