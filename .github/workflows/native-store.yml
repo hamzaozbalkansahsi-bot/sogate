@@ -6,9 +6,9 @@
 name: native-store-checks
 on:
   push:
-    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
+    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/*native*.mjs', 'scripts/*native*.php', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
   pull_request:
-    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
+    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/*native*.mjs', 'scripts/*native*.php', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
 permissions:
   contents: read
 jobs:
@@ -29,6 +29,9 @@ jobs:
       - run: python scripts/test-native-catalog-taxonomy.py
       - run: npm ci --ignore-scripts
       - run: node --test scripts/test-native-relocation.mjs
+      - run: node --test scripts/test-native-variants.mjs
       - run: php scripts/test-native-storefront-content.php
       - run: node --check native-store/catalog/admin-catalog.js && node --check native-store/catalog/apply.mjs && node --check native-store/theme/age-gate.js
       - run: php -l native-store/catalog/catalog.php && php -l native-store/deploy/dispatcher.php && php -l native-store/deploy/install.php && php -l native-store/deploy/maintenance.php
+      - run: php -l native-store/storefront/variants.php && php -l native-store/storefront/variant-build.php
+      - run: node --check native-store/storefront/variants.js && node --check native-store/storefront/variant-ui.js && node --check native-store/storefront/variant-apply.mjs
