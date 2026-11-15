@@ -534,5 +534,23 @@
     "Physical iPhone, full WCAG audit and field CWV not performed",
     "Periodic encrypted backup retention/rotation not automated",
     "GitHub Actions previously blocked by account billing; current run recorded separately"
-  ]
+  ],
+  "git": {
+    "codeCommit": "e7d7818",
+    "evidenceCommit": "6d22e6f",
+    "branch": "codex/local-commerce",
+    "normalPush": true,
+    "knownSecretMatches": 0,
+    "protectedSourceAndAssetsUnchanged": true
+  },
+  "ci": {
+    "commit": "6d22e6fb7c95f152a9d9d6c4ee73b9f1f560cb1e",
+    "runId": 43712407616,
+    "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/43712407616",
+    "status": "completed",
+    "conclusion": "failure",
+    "executedSteps": 0,
+    "reason": "The job was not started because your account is locked due to a billing issue.",
+    "localAndHostAcceptanceReportedSeparately": true
+  }
 }
