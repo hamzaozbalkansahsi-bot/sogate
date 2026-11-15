@@ -141,5 +141,20 @@
     "xshopum": "1698de31-cde4-4418-9d51-321bf1b53315",
     "liona": "d3c9655e-3732-4f5a-8119-e5f77a5da623",
     "sistina": "3ee135a3-4a8c-4185-8dcb-ba1a4341e40e"
+  },
+  "remoteVerification": {
+    "url": "https://sexogate.com/test/yonetim/tedarikci-katalogu",
+    "release": "3b0904e15c3912cfad36979d",
+    "verifiedAt": "2026-11-15T01:45:00Z",
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "products": 2194,
+    "categories": 170,
+    "parsed": 2364,
+    "privateReview": true,
+    "warehouseWritesFromImport": 0,
+    "publicPublication": false
   }
 }

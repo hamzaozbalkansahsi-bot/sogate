@@ -17,6 +17,8 @@
 
 Yerel ham/sıkıştırılmış çıktılar Git dışında `D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog/<vendor>/` altındadır. Resmî URL ve yanıt hash'li özel önbellek aynı köktedir. `scripts/source-catalog.py` yeniden çekim aracıdır; `.ndjson.gz` taşıma dosyaları2 MB'ın altındadır. PHP/MySQL029 migration ile `source_catalog_batches` ve `source_catalog_records` kalıcı inceleme kaydı tutar. Eski sürümler korunur; ana yönetim ekranı her kaynağın son sürümünü gösterir.
 
+Önbellek aynı çekimi yeniden üretmek içindir; mevcut kökü yeniden kullanmak kaynağı tazelemez. Yeni kaynak kontrolünde yeni tarih/saatli özel `--output-root` seçin. `observedAt` ayrıştırma zamanıdır; bayi stok güncelliği veya anlık fiyat garantisi değildir. Otomatik feed/stock eşitlemesi bağlı değildir.
+
 Yönetim → **Tedarikçi katalogları**: gerçek sayılar, ürün/kategori filtresi, sunucuda arama,40 kayıtlık sayfalar, kaynak başlığı/SKU/perakende fiyatı ve kaynak görsel bağlantıları. Kategori ve ürün kayıtları inceleme kuyruğundadır; müşteri kataloğunda otomatik yayımlanmaz. Katalog/yönetici oturumu ve MFA zorunludur. Yetkisiz kullanıcıya ham kayıt veya bayi bilgisi dönmez. Müşteri sayfaları ürün yayın/ülke ve hak denetimlerini korur.
 
 Onaylı görsel ve işletmenin belirlediği Türkçe/İngilizce içerik, SKU, kategori, gerçek alış maliyeti ve satış fiyatıyla tek kayıttan kontrollü **taslak** oluşturulabilir. Bu işlem ülke uygunluğu veya satış onayı vermez. Kaynak açıklaması üretici belgesi gibi gösterilmez; tıbbi/sertifika/su geçirmezlik iddiaları doğrudan yayımlanmaz. Yeni çekim mevcut ürün metnini, satış fiyatını veya geçmiş siparişi değiştirmez.
@@ -46,3 +48,8 @@ python scripts/test-php-source-browser.py
 ```
 
 Uzak aktarım yalnız yetkili `/test` yayını ve yerel kabulden sonra MFA'lı yönetim formuyla yapılır. `test-php-source-browser.py --remote --import-catalogs --catalog-root <özel-katalog-kökü>` idempotent anahtar kullanır, gerçek sayıları iki motorda ve yönetim erişilebilirliğini doğrular. Yayın/test kanıtları `docs/progress.md` içindeki güncel kayıtla değerlendirilir; bu belgenin yazılması tek başına uzak dağıtım yapıldığı anlamına gelmez.
+
+
+## Doğrulanan `/test` yayını — 15 Kasım2026
+
+Etkin sürüm `3b0904e15c3912cfad36979d` (PHP/MySQL29). Üç gerçek gzip dosyası MFA'lı yönetim formundan uzak test veritabanına aktarıldı. Chromium ve WebKit son sürümde2.194 ürün/170 kategori/2.364 ayrıştırılmış kayıt doğruladı; üç yönetim sayfası axe/taşma PASS. Kaynak verisi hâlâ özel incelemededir, satışa yayımlanmamıştır. Son veritabanı yedeği kaynak kayıtlarıyla88 tablo/3.482 satır/98 FK ve29 migration checksum'u doğrulanarak yerelde geri yüklendi. Ana site değişmedi ve gerçek tahsilat kapalıdır.

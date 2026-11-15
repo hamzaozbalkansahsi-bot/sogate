@@ -9,7 +9,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 root=Path(__file__).resolve().parent.parent
-parser=argparse.ArgumentParser();parser.add_argument('--remote',action='store_true');parser.add_argument('--import-catalogs',action='store_true');parser.add_argument('--catalog-root',type=Path);args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--remote',action='store_true');parser.add_argument('--import-catalogs',action='store_true');parser.add_argument('--catalog-root',type=Path);parser.add_argument('--engine',choices=['chromium','webkit']);args=parser.parse_args()
 base='https://sexogate.com/test' if args.remote else 'http://127.0.0.1:3183/test'
 access=json.loads((root/('.local/php-stage-access.json' if args.remote else '.local/php-access.json')).read_text(encoding='utf8'))
 source_report=json.loads((root/'docs/php-source-catalog-report.json').read_text(encoding='utf8'))
@@ -22,7 +22,7 @@ def main():
  results=[];folder=root/('docs/screenshots/php-source-remote' if args.remote else 'docs/screenshots/php-source-local');folder.mkdir(parents=True,exist_ok=True)
  axe=(root/'node_modules/axe-core/axe.min.js').read_text(encoding='utf8')
  with sync_playwright() as p:
-  for engine in ['chromium','webkit']:
+  for engine in ([args.engine] if args.engine else ['chromium','webkit']):
    browser=getattr(p,engine).launch(headless=True);context=browser.new_context(viewport={'width':1440 if engine=='chromium' else 390,'height':900});page=context.new_page();page.set_default_timeout(20000);page.set_default_navigation_timeout(60000)
    try:
     page.goto(base+'/');page.wait_for_load_state('networkidle');page.locator('#age-accept').click();page.goto(base+'/yonetim/giris')
@@ -46,7 +46,10 @@ def main():
     page.screenshot(path=str(folder/(engine+'-catalog-batches.png')),full_page=True)
     for row in rows:
      page.goto(base+'/yonetim/tedarikci-katalogu/'+row['id']+'?kind=category');assert page.locator('tbody tr').count()>0;page.locator('tbody a').first.click();page.locator('.source-detail h2').wait_for();assert not page.locator('form[data-api="/api/admin/source-catalog/draft"]').count()
-    row=next(r for r in rows if r['vendor']=='liona');page.goto(base+'/yonetim/tedarikci-katalogu/'+row['id']+'?kind=product');page.locator('tbody a').first.click();page.locator('form[data-api="/api/admin/source-catalog/draft"]').wait_for();page.screenshot(path=str(folder/(engine+'-product-review.png')),full_page=True)
+    row=next(r for r in rows if r['vendor']=='liona');page.goto(base+'/yonetim/tedarikci-katalogu/'+row['id']+'?kind=product');page.locator('tbody a').first.click();page.locator('form[data-api="/api/admin/source-catalog/draft"]').wait_for();page.wait_for_load_state('networkidle');page.evaluate('() => document.fonts.ready')
+    geometry=page.evaluate("() => {const end=document.querySelector('footer').getBoundingClientRect().bottom+scrollY;return {height:document.documentElement.scrollHeight,footerEnd:end,outliers:[...document.body.querySelectorAll('*')].filter(n=>n.getBoundingClientRect().bottom+scrollY>end+20).slice(0,12).map(n=>({tag:n.tagName,id:n.id,className:n.className,position:getComputedStyle(n).position,height:n.getBoundingClientRect().height,bottom:n.getBoundingClientRect().bottom+scrollY}))};}")
+    print(json.dumps({'engine':engine,'reviewGeometry':geometry}),flush=True);assert geometry['height']<=geometry['footerEnd']+100,geometry
+    page.screenshot(path=str(folder/(engine+'-product-review.png')),full_page=True)
     for path in ['/yonetim/tedarikci-katalogu','/yonetim/kategoriler','/yonetim/gorseller']:
      response=page.goto(base+path);assert response.status==200;page.wait_for_load_state('networkidle');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),path
      page.evaluate(axe);issues=page.evaluate("async () => (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))");assert not issues,(path,issues)

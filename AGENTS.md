@@ -1,6 +1,7 @@
 # Çalışma Akışı
 
 - Tüm tasarım, geliştirme ve değişiklikler önce yerel ortamda yapılır.
+- 15 Kasım kaynak katalog kararı: xShopum1.022/46, Liona544/75, Sistina628/49 ürün/kategori kaydı özel PHP incelemesine alınır; kamu fiyatı bayi maliyeti, gözlenen bulunabilirlik depo stoğu değildir. Kanonik durum `docs/php-supplier-research.md`, kullanım `docs/php-shopping-guide.md`. Sosyal medya bağlantıları yalnız ikon; görünür ad/ok/tooltip yok, erişilebilir adlar ve azaltılmış hareket korunur.
 - 14 Kasım son logo/menü kararı: simge yazının üstünde ortalı kalır; footer logo bütünü ortalı, header logo bütünü soldadır. Sosyal bağlantılar ikonlu, hover/odak hareketli ve azaltılmış hareket tercihine uyumludur. Mobil Kategoriler doğrudan görselli tam sayfayı açar; alt menü Ana sayfa/Kategoriler/Favorilerim/Sepetim/Hesabım sırasındadır. xShopum, Liona, Sistina kapsamı `docs/php-supplier-research.md` içinde gerçek erişim durumlarıyla izlenir.
 - 14 Kasım son kapsam: kullanıcı NODENO'nun bütün menü/kategori/ürün/sepet/blog/öneri yapısını SEXOGATE'e uyarlamayı istedi. PHP müşteri katmanı için `docs/php-nodeno-parity.md` kabul matrisidir. NODENO yalnız okunur; işletme/müşteri/ürün/secret verisi ve sektöre özgü vergisi taşınmaz. İletişimde şimdilik yalnız mail gösterilir. Hijyen iade metni, açılmış koruyucu unsur istisnası ve ayıplı ürün haklarını ayrı korur.
 - Değişiklikler yerelde çalıştırılır, incelenir ve ilgili testlerle doğrulanır.
