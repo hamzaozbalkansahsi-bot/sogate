@@ -27,19 +27,19 @@ def dismiss(page):
   button=page.get_by_role('button',name=text,exact=True)
   if button.count() and button.first.is_visible():button.first.click()
 def admin_route(page,route):
- url=BASE+'/yonetim'+route;key=route.lstrip('#').split('?',1)[0]
+ started=time.monotonic();url=BASE+'/yonetim'+route;key=route.lstrip('#').split('?',1)[0];print(json.dumps({'adminRoute':route,'started':True}),flush=True)
  if page.url!=url:
   if key=='guide':page.goto(url)
   else:
    endpoint=BASE+'/api/admin/'+{'social':'social/overview','integrations':'system'}.get(key,key)
    with page.expect_response(lambda r:r.url==endpoint and r.request.method=='GET') as result:page.goto(url)
    assert result.value.status==200,(route,result.value.status)
- page.locator('#main .loading').wait_for(state='detached');assert 'Kayıtlar alınamadı' not in page.locator('#main').inner_text(),route
+ page.locator('#main .loading').wait_for(state='detached');print(json.dumps({'adminRoute':route,'seconds':round(time.monotonic()-started,2)}),flush=True);assert 'Kayıtlar alınamadı' not in page.locator('#main').inner_text(),route
 
 results=[]
 with sync_playwright() as p:
  for engine in ['chromium','webkit']:
-  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 60000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
+  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(60000 if BASE.startswith('https://sexogate.com')else 20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 60000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
   try:
    tested_release=context.request.get(BASE+'/api/deployment-status').json()['release']if '/test'in BASE else None
    page.goto(BASE+'/yonetim');page.wait_for_load_state('networkidle');page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();time.sleep(30.5-time.time()%30);page.locator('[name=proof]').fill(otp(access['totpSecret']));page.locator('#verify button[type=submit]').click();page.locator('.sidebar').wait_for(state='attached');page.locator('#verify').wait_for(state='detached');page.wait_for_load_state('networkidle')

@@ -65,6 +65,14 @@ function sexogateCatalogInitial(array $product,string $private):array{
  foreach($product['facts']as $key=>$value)if($value!==null&&isset(sexogateCatalogFields()[$key]))$data[$key]=$value;
  if(is_int($product['salePriceMinor']??null))$data['priceMinor']=$product['salePriceMinor'];return $data;
 }
+function sexogateCatalogReviewedUpgrade(array $record,array $initial):?array{
+ if(($record['version']??0)!==1||($record['publishedVersion']??0)!==0||empty($initial['visible'])||!empty($record['data']['visible']))return null;
+ $previous=$record['data'];$next=array_map(static fn($value)=>is_string($value)?trim($value):$value,$initial);
+ foreach(['visible','coverIndex','imageApprovedIndices']as $field){unset($previous[$field],$next[$field]);}
+ ksort($previous);ksort($next);
+ // İlk aktarımın dokunulmamış taslağı dışında fiyat/içerik/görünürlük kararı değiştirilmez.
+ return $previous===$next?$initial:null;
+}
 function sexogateCatalogAdmin(array $ctx,string $route,string $method,array $body,array $catalog,array $config):?array{
  if($route==='products'&&$method==='GET'){nodenoControlRequire($ctx,'catalog.read');return ['data'=>nodenoControlStoredRows($ctx['db'],'products')];}
  if(!in_array($route,['catalog-source','catalog-import'],true))return null;
@@ -80,8 +88,9 @@ function sexogateCatalogAdmin(array $ctx,string $route,string $method,array $bod
  return nodenoControlCommand($ctx,$key,[$manifest['dataset'],$offset],static function()use($ctx,$rows,$private,$catalog,$config,$offset,$products):array{
   return nodenoControlTransaction($ctx['db'],static function()use($ctx,$rows,$private,$catalog,$config,$offset,$products):array{
    $created=$published=$preserved=0;
-   foreach($rows as $product){$id=$product['id'];if(nodenoControlRead($ctx['db'],'products',$id)){$preserved++;continue;}
-    $data=sexogateCatalogInitial($product,$private);$saved=nodenoControlResource($ctx,'products',$id,'PUT',['version'=>0,'data'=>$data],$catalog,$config);$created++;
+   foreach($rows as $product){$id=$product['id'];$record=nodenoControlRead($ctx['db'],'products',$id);$data=sexogateCatalogInitial($product,$private);
+    if($record){$upgrade=sexogateCatalogReviewedUpgrade($record,$data);if($upgrade===null){$preserved++;continue;}$data=$upgrade;}
+    $saved=nodenoControlResource($ctx,'products',$id,'PUT',['version'=>$record['version']??0,'data'=>$data],$catalog,$config);if(!$record)$created++;
     if($data['visible']){nodenoControlResource($ctx,'products',$id,'PUBLISH',['version'=>$saved['data']['version']],$catalog,$config);$published++;}
    }
    return ['created'=>$created,'published'=>$published,'preserved'=>$preserved,'nextOffset'=>$offset+count($rows),'total'=>count($products),'done'=>$offset+count($rows)>=count($products),'checkoutEnabled'=>false];

@@ -254,4 +254,45 @@ Güncel6a4df2f12a051e326bf868df yerel kabulü TAMAM: iki motorda33 yönetim+9 m�
 
 Sonraki komut: `python scripts/publish-native-test.py prepare`; dönen rastgele preview URL'sinde mount-preview,adult-preview,catalog-preview,polish-preview ve11 dil koşuları PASS olmadan `activate` çalıştırma. Sonrasında uzak sağlık,tarayıcı smoke,gerçek fotoğraf/mobil görünüm,worker ve şifreli restore doğrulanacak. Ana siteye dokunulmayacak; tahsilat409 kapalı kalacak.
 
+Yerel final6a4df2f12a051e326bf868df bütün kabulleri PASS. Kaynak commit0bc0ce9: yalnız19 görev dosyası ve sadece bu görevin progress bölümü; diğer sohbetlerin değişiklikleri korunuyor. `publish-native-test.py prepare` başladı. Dört küçük resimli kartın portreleri logical block-size ile kırpılmadan sığıyor; favori44px. Başarısız/eski adayların proof dosyaları final kabul yerine kullanılmadı. Derleme/yerel testten sonra kaynak kod değişmedi.
+
+Özel önizleme `https://sexogate.com/test/native-preview-eee91cd9a1238f46` kuruldu; paket SHA256/SQLite/2.194 kaynak/18 vitrin/checkoutfalse ve şifreli web rollback yedeği doğrulandı. Önizlemede iki motor polish ve adult,11 dil,gerçek katalog admin/SEO/fiyat/gizlilik/idempotency PASS. İlk eşzamanlı5 koşuda full admin20s loading timeout'unda durdu; başarılı gösterilmedi. Yeni kabul kabuğunda admin rota süreleri kaydediliyor ve uzak veri yükleme bütçesi diğer uzak navigasyon/katalog kabuğuyla60s olarak tutarlı; aynı33+9 istek/rol/güvenlik kontrolleri korunuyor. Diğer koşular bitince tek başına full preview tekrar başladı (D:/sexogate-local-artifacts-20261114/native-preview-full-20261115.log). Bu performans hedefinin geçtiği anlamına gelmez.
+
+Kaynak0bc0ce9 normal push tamamlandı. GitHub native43736887078,0 adımda failure; açıklama ayrıca sorgulanıyor. Test yayını aktif yapılmadı; mevcut/test4dde26c...
+
+Önizleme admin süre ölçümü:dashboard0,91s,ürünler2,25s,kampanyalar46,42s; diğer modüller çoğunlukla0,14–0,70s. Kampanya ekranı60s işlevsel bütçede açılıyor fakat bu hız kabulü değildir; büyük katalogdaki kampanya hesaplama/yükleme süresi ayrı açık performans işi olarak bırakıldı. Tüm kontroller aynı kalıyor; ilk20s hata rapordan silinmiyor. GitHub43736887078 açıklaması da faturalama kilidi,0 adım.
+
+Önizleme final kabulü PASS: iki motor33 admin+9 müşteri,iki motor yeni küçük resimli kartlar/fotoğraf çerçevesi/satın alma çakışması/yatay raflar/klavye/yaş/perde/izinsiz hesap URL'si/alt çizgisiz bağlantı,11 dil/RTL,2.194 katalog/172 kategori/SEO/fiyat/%30/idempotency/private taslak. Tekil tekrarın ikinci motorunda kampanyalar0,69s,ürünler2,30s; ilk46,42s sıçraması kalıcı hata gibi sunulmuyor ancak sebebi kanıtlanmış değil. İşlevsel kabul tamam; CWV/perf bütçesi geçti iddiası yok. Activate başlatıldı; sonucu sağlık ve yayın sonrası UI ile doğrulanacak.
+
+Activate PASS:6a4df2f12a051e326bf868df `/test`te yayında,ana sitefingerprintaynı;2194 kaynak/18 vitrin/tahsilatfalse. Yayın sonrası iki motor tam polish ve adult,katalog admin tekrar/idempotency/SEO/fiyat/private taslak PASS. Workerstatus release6a,externalPublishingfalse/checkoutfalse; yeni AESGCM yedeği D:ye indirilip2 DB/41 tablo/6829 satır/FK/hash/integrity PASS doğrulandı.
+
+Yayın sonrası eşzamanlı koşuda HTTPapple-touch-icon okuması180s TimeoutError,WebKit admin smoke60s loading timeout oldu; bunlar gizlenmedi. Aynı PNG farklı ve aynı URL'den24524 bayt tam içerikle0,11–0,14s yeniden okundu; helper get0,12s. Başarısız HTTP örneğinin nedeni kanıtlanmış değil,barındırma/yoğunluk/iletim sürekliliği açık risk. Bakım helper'ları kapanınca HTTP ve admin smoke tek başına tekrar ediliyor; eski dosyadaki eski HTTP sonucu final kanıtı sayılmayacak. Geri yükleme ve görsel çalışırlık,kesintisiz yük/perf garantisi değildir.
+
+
+Son6a4df yayını için tekil HTTP kabulü ve iki motor1 yönetim+9müşteri smoke tekrarı PASS; yeni kanıtlar `.local/native-stage-http.json` ve `.local/native-browser-mount-remote.json`. Apple ikon okuması/ilk admin beklemesi hataları geçmişten silinmedi, nedeni doğrulanmamış süreklilik/perf riski açık. Worker ve dakikalık kendi cron okuması6a sürümünü doğruladı; şifreli restore2DB/41tablo/6829satır PASS. Kaynak0bc0ce9 GitHub43736887078 faturalama kilidi,0adım; CI başarılı değildir.
+
+Liora ürün giydirme denemesi `moderation_blocked/sexual` reddi aldı,çıktı0;fotoğraf değişmedi. Ayrıntı `docs/liora-product-catalog-study.md`. Kullanıcı sektörün tamamının engellendiği sonucunu çıkarmamalı: bu tek dönüşümün araç reddidir; kesin tetikleyen ayrıntı bilinmiyor. Başka araçla aynı reddi aşma yok.
+
 <!-- END NATIVE_STOREFRONT_POLISH_20261115 -->
+
+<!-- BEGIN NATIVE_CATALOG_EXPANSION_20261115 -->
+## 15 Kasım — katalog görünürlüğü ve gerçek alt kategoriler
+
+Kullanıcı az ürün/kategori nedenini sordu.2.194 kaydın18 kapakla sınırlandığı,2.176 taslağın ve172 kaynak kategorinin6 ana grupta tutulduğu açıklandı. Kaynaklar tekrar talep edilmedi; önceki hak beyanı ve ilk kamu fiyatı+%30 yetkisi korunuyor. Yeni kapsam `docs/native-catalog-expansion.md`.
+
+1.399 fiyatlı/kaynakta bulunabilir adayın değişmemiş kapakları özel paftalara indekslendi. İlk640 kapak görüntülendi,454 seçildi;önceki onaylarla468 ürün kapağı.759 aday henüz incelenmedi.50 kategori(6ana+44alt),11dil,gerçek ürün türü eşlemesi;ürün breadcrumb'ı sahte kategoriye dönüşmüyor. Fiyat/belge/üretici/miktar uydurulmadı; gerçek tahsilat kapalı.
+
+Yeni yerel aday62d6c5ffd241a891832db8f1,ZIP472dosya/8.378.070bayt,SHAcf1b26ea4006784e0b735c24f6deef47830abd85982bafcd020acca8cf6c341e. Pythonkategori5/kaynak8,PHPkatalog18,sunum14,AST7,kaynak153 PASS;üst kaynak771/768/3/13 değişmedi. İlk517c adayında aktarım444yeni+18eski=462görünür bulundu,6sürüm1 taslağı SEOsonboşluklarını özgün motorun kırpması yüzünden eşitlik denetiminden geçmedi. Karşılaştırma trim kuralıyla düzeltildi ve regresyon eklendi. Eski6a yayınının ayrı yerel snapshot'ından yeniden geçiş sınanıyor. Başarısız durum/yayın kanıtları D:de korundu,canlı state değiştirilmedi. Mevcut fiyat/metin/gizleme ve yayımlanmış kayıtlar korunur.
+
+Yeni aday henüz sunucuya alınmadı. Sıradaki: güncel katalog→iki motor33admin+9müşteri/11dil/yaş/görsel kabul;yalnız hepsi geçince `/test` özel önizleme ve kontrollü yayın. Ana site,diğer sohbetler ve gerçek tahsilat kapsam dışı.
+
+62d6c5ffd241a891832db8f1 yerel katalog geçişi PASS:450 yeni yayın+18önceki=468;1.726taslak;50kategori/18dolu alt kategori,ürün-kategori ilişki ve kategori SSRbaşlığı doğrulandı.2.194/2.151fiyat/43eksikfiyat/%30/11dil/tekrar/CSRF/özel taslak PASS. İlk genel tarayıcı komutu eski3186varsayımını kullandı; doğru3188/test hedefinde iki motor33admin+9müşteri/MFA/5genişlik/0sayfahatası/0hariciistek PASS. İki motor tam polish PASS;resimler,4küçük kart,taşma,hizalar,yatay raf,footer tercihleri,4,8sperde aynıpakette doğrulandı.
+
+Kurucu ilk6kategori sabit kontrolünde400catalog_provenance_invalid verdi;kontrol kaldırılmadı. Altıizinli kök/200düğüm sınırı/tekilkimlik/11dil/ürün-üstkategori ilişkisi ve kaynak namespace doğrulaması eklendi. GerçekPHPHTTPkurucu22test:5bozuk kategori paketi dahil reddedildi;token/TTL/ZIP/medya/yedek korunuyor. Kurucu paketin parçası değildir(archive deploy yalnızdispatcher/worker);yayınaracı güncel ayrı süreli install.php'yi yükler. Bu nedenle uygulamaZIP62d değişmedi;güncel kurucu aynıZIPile ayrıca sınandı.
+
+Eşzamanlı dil/yaş koşuları30snetworkidle timeout aldı. Tanı yalnızmüşteriGETbeklentilerini ölçtü;static15ms,görsel47ms,katalog0,969s tekil yanıtları,yoğunkoşuda2–24sbeklemeler gözlendi. Kontroller/süreler gevşetilmedi;aynıyerel tekPHPüzerindeki tekrarlı paralel dil/katalog koşuları kendiPIDağaçlarıyla iptal edildi. Diğer sohbetlere müdahale yok. Dil→yaş→medya örnekli katalog tekil sırada yeniden doğrulanıyor;eskikısmi proofsonuçları yeni kabul değildir. Snapshot ve şifreli eskiyayın kanıtları D:dekorunur. Henüz önizleme/aktivasyon yok.
+
+
+Güncel62d yerel kabul TAMAM:iki motor33admin+9müşteri/5genişlik/MFA/securecookie/0sayfahatası/0hariciistek;iki motorpolishveyaş;11dil/RTL/HTTP+clientmeta;2.194kayıt/468yayın/1.726taslak/50kategori/18dolu altkategori/12gerçekgörselSHA256/SEO/fiyat/tekrar/CSRF/özel taslak PASS. Son kanıt native-catalog-local.json içinde mediaSamplesVerified12. Araç güncellemesi sonrasında yerel sunucu durmuş bulundu;aynırelease/kalıcıstateile gizli arka plan süreci olarak yeniden başlatıldı. Başarısız connection_refused denemesi kabul sayılmadı,son katalog koşusu yeniden PASS.22kurucu son dosyayla yeniden PASS(log native-installer-expansion-final.log). Kaynak değişiklikleri yayın öncesi dar incelemeden geçti;ana site/ödeme/diğer sohbetlerin kaynakları korunuyor. Sıradaki:publish-native-test.py prepare ve güncel önizleme kabulü;aktivasyon henüz yapılmadı.
+
+<!-- END NATIVE_CATALOG_EXPANSION_20261115 -->

@@ -29,10 +29,27 @@ def attack(name,*,symlink=False,duplicate=False):
   if duplicate:z.writestr(name,content)
  return out.getvalue(),identifier
 results=[]
+def changed_catalog(change):
+ identifier=secrets.token_hex(12)
+ with zipfile.ZipFile(p['archive'])as archive:files={name:archive.read(name)for name in archive.namelist()}
+ catalog=json.loads(files['private/catalog.json'])
+ if len(catalog['categories'])==6:catalog['categories'].append({'id':'sg_toys_fixture','parentId':'sg_toys','name':catalog['categories'][0]['name']})
+ change(catalog);files['private/catalog.json']=json.dumps(catalog,ensure_ascii=False,separators=(',',':')).encode()
+ manifest=json.loads(files['deployment-manifest.json']);manifest['release']=identifier;manifest['files']['private/catalog.json']=hashlib.sha256(files['private/catalog.json']).hexdigest();files['deployment-manifest.json']=json.dumps(manifest).encode();output=io.BytesIO()
+ with zipfile.ZipFile(output,'w',zipfile.ZIP_DEFLATED)as archive:
+  for name,content in files.items():archive.writestr(name,content)
+ return output.getvalue(),identifier
 try:
  for kind,kwargs in [('unauthenticated',{'proof':'wrong'}),('expired',{'expired':True}),('wrong-hash',{'wrong_hash':True})]:
   status,value=request(p['archive'],p['release'],**kwargs);assert status==400 and value['installed']is False,(kind,status,value);results.append(kind)
  status,value=request(p['archive'],p['release']);assert status==200 and value['installed'] and value['ownerCount']==1 and value['products']==p['products'],(status,value);results.append('valid-provenance-catalog-and-mfa-owner')
+ for kind,change in ([
+  ('category-orphan-parent',lambda c:c['categories'][6].update(parentId='missing-root')),
+  ('category-cycle',lambda c:c['categories'][6].update(parentId=c['categories'][6]['id'])),
+  ('category-duplicate-id',lambda c:c['categories'][6].update(id=c['categories'][0]['id'],parentId=None)),
+  ('category-foreign-namespace',lambda c:c['categories'][6].update(id='donor-furniture',parentId=None)),
+  ('product-unknown-category',lambda c:c['products'][0].update(categoryIds=['missing-category']))]if p['products']else []):
+  archive,identifier=changed_catalog(change);status,value=request(archive,identifier);assert status==400 and value['code']=='catalog_provenance_invalid',(kind,status,value);results.append(kind)
  entry=base/'.sexogate-native-test/releases'/p['release']/'public/index.php';php_entry="<?php define('NODENO_RUNTIME_LIBRARY',true);require '"+entry.as_posix()+"';$_SERVER['REQUEST_URI']='/api/catalog';nodenoRun();";(web/'test/fresh-catalog.php').write_text(php_entry,encoding='utf8')
  with urllib.request.urlopen('http://127.0.0.1:3189/test/fresh-catalog.php',timeout=20)as response:fresh=json.load(response)
  assert fresh['products']==[],'UNPUBLISHED_SOURCE_CATALOG_EXPOSED';results.append('unpublished_catalog_private_at_revision_zero')

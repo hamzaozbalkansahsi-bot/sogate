@@ -7,6 +7,21 @@
  * Açıklama   : Yalnız doğrulanmış test paketi için süreli kurucu; özel alan ve MFA yöneticisini hazırlar.
  */
 declare(strict_types=1);
+function sexogateNativeCategoryTree(array $categories,array $products):bool{
+ $roots=['sg_toys','sg_lingerie','sg_couples','sg_accessories','sg_care','sg_gifts'];$locales=['tr','en','ru','ar','de','az','kk','tk','uz','ky','fa'];$seen=[];$rootCount=0;
+ if(count($categories)<6||count($categories)>200)return false;
+ foreach($categories as $category){$id=$category['id']??'';$parent=$category['parentId']??null;if(!is_string($id)||array_key_exists($id,$seen))return false;
+  if($parent===null){if(!in_array($id,$roots,true))return false;$rootCount++;}
+  elseif(!in_array($parent,$roots,true)||!preg_match('/^'.preg_quote($parent,'/').'_[a-z0-9_]+$/D',$id))return false;
+  foreach($locales as $locale){$label=$category['name'][$locale]??null;if(!is_string($label)||trim($label)===''||strlen($label)>240||preg_match('//u',$label)!==1)return false;}
+  $seen[$id]=$parent;
+ }
+ if($rootCount!==6)return false;
+ foreach($products as $product){$ids=$product['categoryIds']??null;if(!is_array($ids)||!$ids)return false;
+  foreach($ids as $id)if(!is_string($id)||!array_key_exists($id,$seen)||($seen[$id]!==null&&!in_array($seen[$id],$ids,true)))return false;
+ }
+ return true;
+}
 ini_set('display_errors','0');header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Robots-Tag: noindex,nofollow');
 try{
  $request=json_decode((string)file_get_contents(__DIR__.'/app/native-request.json'),true);
@@ -38,7 +53,7 @@ try{
  if(($catalog['brand']['name']??null)!=='SEXOGATE'||count($catalog['products']??[])!==$manifest['products'])throw new RuntimeException('unexpected_catalog_data');
  if($manifest['products']===0){if($catalog['categories']!==[])throw new RuntimeException('unexpected_catalog_data');}
  else{
-  if(($catalog['catalogOrigin']??null)!=='sexogate-suppliers-v1'||($catalog['dataset']??null)!==($manifest['dataset']??null)||!preg_match('/^[a-f0-9]{32}$/D',$manifest['dataset']??'')||count($catalog['categories'])!==6)throw new RuntimeException('catalog_provenance_invalid');$ids=[];$skus=[];
+  if(($catalog['catalogOrigin']??null)!=='sexogate-suppliers-v1'||($catalog['dataset']??null)!==($manifest['dataset']??null)||!preg_match('/^[a-f0-9]{32}$/D',$manifest['dataset']??'')||!sexogateNativeCategoryTree($catalog['categories'],$catalog['products']))throw new RuntimeException('catalog_provenance_invalid');$ids=[];$skus=[];
   foreach($catalog['products']as $product){if(!preg_match('/^sg_(?:xsh|lio|sis)_[a-f0-9]{16}$/D',$product['id']??'')||isset($ids[$product['id']])||isset($skus[$product['code']])||($product['catalogOrigin']??'')!=='sexogate-suppliers-v1'||!in_array($product['sourceVendor']??'',['xshopum','liona','sistina'],true)||($product['published']??true)!==false||($product['hidden']??false)!==true||($product['stockKnown']??true)!==false||($product['stockQuantity']??null)!==null)throw new RuntimeException('catalog_provenance_invalid');$ids[$product['id']]=true;$skus[$product['code']]=true;}
  }
  $bank=json_decode((string)file_get_contents($release.'/private/blog-bank.json'),true,512,JSON_THROW_ON_ERROR);

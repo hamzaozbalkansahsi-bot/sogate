@@ -41,7 +41,18 @@ with sync_playwright()as p:
   # İlk komutu tekrar oynatmak ikinci ürün, sürüm veya fiyat değişikliği üretmemeli.
   before=request.get(BASE+'/api/admin/products').json()['data'];replay=request.post(BASE+'/api/admin/catalog-import',headers=headers,data=json.dumps({'dataset':source['dataset'],'offset':0}));assert replay.status==200,replay.text()[:300];after=request.get(BASE+'/api/admin/products').json()['data'];assert before==after
   public=request.get(BASE+'/api/catalog').json();catalog=public.get('catalog',public);assert len(catalog['products'])==expected_visible,(list(public),len(catalog.get('products',[])))
+  assert len(catalog['categories'])==len(expected['categories'])
+  public_category_ids={category for product in catalog['products']for category in product['categoryIds']}
+  children=[category for category in catalog['categories']if category.get('parentId')and category['id']in public_category_ids]
+  assert len(children)>5,('subcategories_not_visible',len(children))
+  child=children[0];category_page=request.get(BASE+'/?page=catalog&category='+child['id']+'&lang=tr');assert category_page.status==200
+  category_soup=BeautifulSoup(category_page.text(),'html.parser');assert child['name']['tr']in category_soup.title.get_text(),category_soup.title.get_text()
+  for product in catalog['products']:assert product['categoryIds']==by_id[product['id']]['categoryIds']
   chosen=catalog['products'][0];media=request.get(BASE.split('/test')[0]+chosen['images'][0]);assert media.status==200 and media.headers['content-type'].startswith('image/')
+  media_samples=catalog['products'][::max(1,len(catalog['products'])//12)]
+  for item in media_samples:
+   media=request.get(BASE.split('/test')[0]+item['images'][0]);assert media.status==200 and media.headers['content-type'].startswith('image/'),item['id']
+   assert hashlib.sha256(media.body()).hexdigest()==media.headers['x-content-sha256'],item['id']
   assert 'privateRetailReference'not in chosen and 'sourceVendor'not in chosen
   product_page=request.get(BASE+'/?product='+chosen['id']+'&lang=tr');assert product_page.status==200;soup=BeautifulSoup(product_page.text(),'lxml');assert soup.find('link',rel='canonical')['href'].startswith('https://sexogate.com'+urlsplit(BASE).path+'/')
   nodes=[]
@@ -55,5 +66,5 @@ with sync_playwright()as p:
   modal=page.locator('.sexogate-catalog-dialog');modal.get_by_role('button',name='Kapat',exact=True).click();page.get_by_role('button',name='Kaynak kategoriler',exact=True).click();page.wait_for_function('()=>document.querySelectorAll("[data-sg-category]").length===172');page.locator('[data-sg-cancel]').click()
   page.reload();page.locator('[data-edit]').first.click();page.get_by_role('link',name='Ürüne git',exact=True).wait_for();assert page.locator('[name=seoTitle_tr]').input_value();assert page.locator('[name=sourceVendor]').input_value()in ['xshopum','liona','sistina']
   folder=ROOT/('docs/screenshots/native-store-'+scope);folder.mkdir(parents=True,exist_ok=True);page.screenshot(path=str(folder/'admin-product.png'))
-  assert not errors,errors;result={'base':BASE,'products':2194,'priced':2151,'priceMissing':43,'sourceCategories':172,'publishedCovers':expected_visible,'markupPercent':30,'locales':11,'idempotent':True,'privateDrafts':True,'sourcePriceIsNotCost':True,'pageErrors':0,'release':request.get(BASE+'/api/deployment-status').json()['release']};(ROOT/('.local/native-'+scope+'.json')).write_text(json.dumps(result,indent=2),encoding='utf8');print(json.dumps(result),flush=True);anonymous.close()
+  assert not errors,errors;result={'base':BASE,'products':2194,'priced':2151,'priceMissing':43,'sourceCategories':172,'storeCategories':len(catalog['categories']),'visibleSubcategories':len(children),'categoryPageVerified':True,'mediaSamplesVerified':len(media_samples),'publishedCovers':expected_visible,'markupPercent':30,'locales':11,'idempotent':True,'privateDrafts':True,'sourcePriceIsNotCost':True,'pageErrors':0,'release':request.get(BASE+'/api/deployment-status').json()['release']};(ROOT/('.local/native-'+scope+'.json')).write_text(json.dumps(result,indent=2),encoding='utf8');print(json.dumps(result),flush=True);anonymous.close()
  finally:context.close();browser.close()
