@@ -73,6 +73,7 @@ def restore_web(ftp,report):
  if not report['mainUnchanged']:raise ValueError('MAIN_SITE_CHANGED')
 def prepare():
  package=json.loads((ROOT/'.local/native-stage-package.json').read_text('utf8'));own_local_proof(package)
+ previous=json.loads(REPORT.read_text('utf8'))if REPORT.is_file()else{}
  archive=Path(package['archive']);base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
  if not archive.resolve().is_relative_to(base) or archive.stat().st_size>15000000 or hashlib.sha256(archive.read_bytes()).hexdigest()!=package['sha256']:raise ValueError('PACKAGE_INVALID')
  if not p.panel.domain_owned(p.api('list_domains',module='DomainInfo')):raise ValueError('DOMAIN_OWNER_MISMATCH')
@@ -81,11 +82,19 @@ def prepare():
  try:
   if json.loads(p.read(ftp,'/test/app/owner.json'))['owner']!=state['owner']:raise ValueError('TEST_OWNER_MISMATCH')
   report['rollback']=web_backup(ftp,values);p.persist(REPORT,report)
-  route_before=p.read(ftp,'/test/.htaccess');needle=b'RewriteRule ^ index.php [END]'
-  if route_before==(ROOT/'native-store/deploy/.htaccess').read_bytes():
+  route_before=p.read(ftp,'/test/.htaccess');needle=b'RewriteRule ^ index.php [END]';route_base=route_before
+  if route_base!=(ROOT/'native-store/deploy/.htaccess').read_bytes()and previous.get('phase')=='preview'and hashlib.sha256(route_before).hexdigest()==previous.get('previewRoutingSha256'):
+   old_preview=previous.get('preview','')
+   if not re.fullmatch('/test/native-preview-[a-f0-9]{16}',old_preview):raise ValueError('PREVIOUS_PREVIEW_ROUTE_INVALID')
+   old_name=old_preview.rsplit('/',1)[1];old_rule=('RewriteRule ^'+old_name+'(?:/.*)?$ '+old_name+'/index.php [END]\n').encode()
+   if route_base.count(old_rule)!=1:raise ValueError('PREVIOUS_PREVIEW_ROUTE_INVALID')
+   route_base=route_base.replace(old_rule,b'')
+  if route_base!=(ROOT/'native-store/deploy/.htaccess').read_bytes():raise ValueError('UNKNOWN_NATIVE_ROUTE_CONFIGURATION')
+  if route_base==(ROOT/'native-store/deploy/.htaccess').read_bytes():
    preview_name=preview.rsplit('/',1)[1];preview_rule=('RewriteRule ^'+preview_name+'(?:/.*)?$ '+preview_name+'/index.php [END]\n').encode()
-   route_preview=route_before.replace(needle,preview_rule+needle);helper_rule=('RewriteRule ^'+re.escape(helper.rsplit('/',1)[1])+'$ - [END]\n').encode();route_during=route_preview.replace(needle,helper_rule+needle)
-   p.store_atomic(ftp,'/test/.htaccess',route_during);report['previewRoutingSha256']=hashlib.sha256(route_preview).hexdigest()
+   route_preview=route_base.replace(needle,preview_rule+needle);helper_rule=('RewriteRule ^'+re.escape(helper.rsplit('/',1)[1])+'$ - [END]\n').encode();route_during=route_preview.replace(needle,helper_rule+needle)
+   # Hosting aynı saniyedeki htaccess değişimini önbellekten eski kuralla okuyabilir.
+   time.sleep(1.1);p.store_atomic(ftp,'/test/.htaccess',route_during);report['previewRoutingSha256']=hashlib.sha256(route_preview).hexdigest()
   request={'release':package['release'],'sha256':package['sha256'],'owner':state['owner'],'expires':int(time.time())+900,'tokenHash':hashlib.sha256(token.encode()).hexdigest()}
   p.store_atomic(ftp,'/test/app/native-request.json',json.dumps(request).encode());p.store(ftp,payload,archive.read_bytes())
   if hashlib.sha256(p.read(ftp,payload)).hexdigest()!=package['sha256']:raise ValueError('REMOTE_ARCHIVE_HASH_MISMATCH')
@@ -96,8 +105,9 @@ def prepare():
   body={'email':access['email'],'passwordHash':hashed,'totpSecret':access['totpSecret']}
   for attempt in range(8):
    status,raw,_=p.get(helper,{'X-Native-Deploy':token,'Content-Type':'application/json'},json.dumps(body).encode())
-   if status!=404:break
-   time.sleep(.5)
+   # Yalnız kurucuya ulaşmayan eski router yanıtları tekrar edilir; kurucu reddi edilmez.
+   if status not in [404,405]:break
+   time.sleep(1)
   installed=json.loads(raw)
   if status!=200 or not installed.get('installed'):raise ValueError('NATIVE_INSTALL_'+installed.get('code','FAILED').upper())
   report['installation']=installed;p.ensure_dir(ftp,preview);p.store_atomic(ftp,preview+'/index.php',entry(installed['privateRoot'],package['release'],preview));p.store_atomic(ftp,preview+'/.htaccess',(ROOT/'native-store/deploy/.htaccess').read_bytes())
