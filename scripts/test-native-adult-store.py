@@ -15,8 +15,11 @@ with sync_playwright()as p:
   browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com')else 30000);errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
   try:
    page.goto(BASE+'/');page.wait_for_load_state('networkidle');gate=page.locator('#sexogate-age-gate');gate.wait_for(state='visible');assert not page.locator('#international-welcome').count();assert not page.locator('.welcome-country-map').count();page.keyboard.press('Escape');assert gate.is_visible();page.keyboard.press('Tab');assert gate.locator('.sexogate-age-exit').evaluate('(e)=>e===document.activeElement');page.keyboard.press('Shift+Tab');assert gate.locator('.sexogate-age-accept').evaluate('(e)=>e===document.activeElement')
-   page.screenshot(path=str(folder/(engine+'-age-390.png')))
-   page.set_viewport_size({'width':1440,'height':950});page.screenshot(path=str(folder/(engine+'-age-1440.png')));gate.locator('.sexogate-age-accept').click();assert not gate.count();assert 'login' not in page.url and 'giris' not in page.url
+   assert gate.locator('.sexogate-age-light').evaluate('(e)=>getComputedStyle(e).animationName')=='sg-velvet-light'
+   assert gate.locator('.sexogate-age-label').count()==0;assert gate.locator('.sexogate-age-curtain').count()==2;assert gate.locator('.sexogate-age-curtain-left').evaluate('(e)=>getComputedStyle(e).animationName')=='sg-curtain-left'
+   page.wait_for_timeout(2000);page.screenshot(path=str(folder/(engine+'-age-390.png')))
+   page.emulate_media(reduced_motion='reduce');assert gate.locator('.sexogate-age-light').evaluate('(e)=>getComputedStyle(e).animationName')=='none';assert gate.locator('.sexogate-age-arch path').first.evaluate('(e)=>getComputedStyle(e).animationName')=='none';page.emulate_media(reduced_motion='no-preference')
+   page.set_viewport_size({'width':1440,'height':950});page.screenshot(path=str(folder/(engine+'-age-1440.png')));gate.locator('.sexogate-age-accept').click();gate.wait_for(state='detached');assert 'login' not in page.url and 'giris' not in page.url
    for path in ['/','/?page=categories','/?page=collections','/?page=help','/?page=shipping','/blog']:
     response=page.goto(BASE+path);assert response.status==200,(path,response.status);page.wait_for_load_state('networkidle');assert not page.locator('#sexogate-age-gate').count()
     button=page.get_by_role('button',name='Yalnız gerekli',exact=True)
@@ -28,6 +31,6 @@ with sync_playwright()as p:
    gap=page.evaluate('()=>{const f=document.querySelector("#footer").getBoundingClientRect();return document.documentElement.scrollHeight-(f.bottom+scrollY)}');assert gap<=120,('after-footer-gap',gap)
    assert page.locator('.store-footer .social-links a').count()==4
    for link in page.locator('.store-footer .social-links a').all():assert link.inner_text()=='' and link.get_attribute('aria-label')and link.locator('svg').count()==1
-   release=context.request.get(BASE+'/api/deployment-status').json()['release'];assert not errors,errors;results.append({'base':BASE,'release':release,'engine':engine,'ageGate':True,'escapeBypassBlocked':True,'keyboardFocus':True,'guestBrowsing':True,'ackSurvivesNavigation':True,'worldMap':False,'furnitureCopy':False,'widths':[360,390,430,768,1440],'footerGap':gap,'iconOnlySocialLinks':4,'pageErrors':0});print(json.dumps(results[-1]),flush=True)
+   release=context.request.get(BASE+'/api/deployment-status').json()['release'];assert not errors,errors;results.append({'base':BASE,'release':release,'engine':engine,'ageGate':True,'archAndVelvetMotion':True,'reducedMotion':True,'escapeBypassBlocked':True,'keyboardFocus':True,'guestBrowsing':True,'ackSurvivesNavigation':True,'worldMap':False,'furnitureCopy':False,'widths':[360,390,430,768,1440],'footerGap':gap,'iconOnlySocialLinks':4,'pageErrors':0});print(json.dumps(results[-1]),flush=True)
   finally:context.close();browser.close()
 (ROOT/('.local/native-adult-'+scope+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')
