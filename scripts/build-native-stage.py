@@ -51,7 +51,23 @@ for path in sorted((ROOT/'native-store/theme').rglob('*')):
 for path in [ROOT/'native-store/source-manifest.json',ROOT/'scripts/build-native-stage.py',*sorted((ROOT/'native-store/deploy').glob('*'))]:
  if path.is_file():theme_hash.update(path.read_bytes())
 version=theme_hash.hexdigest()[:16]
+selection_file=ROOT/'.local/native-catalog-selection.json';catalog_count=0;dataset=None
+if selection_file.is_file():
+ selection=json.loads(selection_file.read_text('utf8'));prepared=Path(selection['path']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115').resolve()
+ if not prepared.is_relative_to(allowed) or hashlib.sha256((prepared/'catalog-data.json').read_bytes()).hexdigest()!=selection['sha256']:raise RuntimeError('CATALOG_SELECTION_INVALID')
+ data=json.loads((prepared/'catalog-data.json').read_text('utf8'));catalog_count=len(data['products']);dataset=data['dataset']
+ if data['catalogOrigin']!='sexogate-suppliers-v1' or catalog_count!=2194 or len(set(p['id']for p in data['products']))!=catalog_count or any(p['published']or not p['hidden']or p['stockKnown']or p['stockQuantity']is not None for p in data['products']):raise RuntimeError('CATALOG_PROVENANCE_INVALID')
+ catalog_path=bundle/'private/catalog.json';catalog=json.loads(catalog_path.read_text('utf8'));catalog.update(data);catalog_path.write_text(json.dumps(catalog,ensure_ascii=False,separators=(',',':')),encoding='utf8')
+ shutil.copytree(prepared/'catalog-workbench',bundle/'private/catalog-workbench');shutil.copy2(prepared/'catalog-sources.json',bundle/'private/catalog-sources.json')
+ shutil.copy2(prepared/'catalog-spec-labels.json',bundle/'private/catalog-spec-labels.json')
+ theme_hash.update(selection['sha256'].encode())
+ for path in sorted((ROOT/'native-store/catalog').glob('*')):
+  if path.is_file():theme_hash.update(path.read_bytes())
+ version=theme_hash.hexdigest()[:16]
+ subprocess.run(['node',str(ROOT/'native-store/catalog/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
 subprocess.run(['node',str(ROOT/'native-store/deploy/apply-store-theme.mjs'),str(bundle),version],check=True,cwd=ROOT)
+admin=bundle/'public/admin.html'
+if admin.is_file():admin.write_text(admin.read_text('utf8').replace('/sexogate-catalog.js"','/sexogate-catalog.js?v='+version+'"').replace('/sexogate-catalog.css"','/sexogate-catalog.css?v='+version+'"'),encoding='utf8')
 subprocess.run(['node',str(ROOT/'native-store/deploy/relocate.mjs'),str(bundle/'public')],check=True,cwd=ROOT)
 for p in (bundle/'public').rglob('*.js'):subprocess.run(['node','--check',str(p)],check=True,capture_output=True)
 for p in [*(bundle/'private').glob('*.php'),bundle/'public/index.php',deploy/'dispatcher.php']:subprocess.run([str(ROOT/'.local/php-runtime/php.exe'),'-l',str(p)],check=True,capture_output=True)
@@ -62,11 +78,11 @@ for p in bundle.rglob('*'):
   if p.is_symlink() or p.suffix.lower() in {'.sqlite','.db','.log','.pem'} or 'sessions' in p.parts:raise RuntimeError('PRIVATE_STATE_IN_PACKAGE')
   files[p.relative_to(bundle).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
 fingerprint=hashlib.sha256(''.join(k+'\0'+v+'\0' for k,v in sorted(files.items())).encode()).hexdigest();release=fingerprint[:24]
-manifest={'schema':1,'release':release,'fingerprint':fingerprint,'assetVersion':version,'files':files,'previewOnly':True,'checkoutEnabled':False,'products':0,'domain':'sexogate.com','mount':'/test','sourceFiles':771,'sourceSnapshotPreserved':True,'relocations':changes}
+manifest={'schema':1,'release':release,'fingerprint':fingerprint,'assetVersion':version,'files':files,'previewOnly':True,'checkoutEnabled':False,'products':catalog_count,'dataset':dataset,'domain':'sexogate.com','mount':'/test','sourceFiles':771,'sourceSnapshotPreserved':True,'relocations':changes}
 (bundle/'deployment-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 archive=base/(release+'.zip')
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as out:
  for p in bundle.rglob('*'):
   if p.is_file():out.write(p,p.relative_to(bundle).as_posix())
-report={'release':release,'archive':str(archive),'bundle':str(bundle),'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'bytes':archive.stat().st_size,'files':len(files),'previewOnly':True,'checkoutEnabled':False,'products':0}
+report={'release':release,'archive':str(archive),'bundle':str(bundle),'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'bytes':archive.stat().st_size,'files':len(files),'previewOnly':True,'checkoutEnabled':False,'products':catalog_count,'dataset':dataset}
 (ROOT/'.local/native-stage-package.json').write_text(json.dumps(report,indent=2),encoding='utf8');print(json.dumps({k:v for k,v in report.items() if k not in ['archive','bundle']}))

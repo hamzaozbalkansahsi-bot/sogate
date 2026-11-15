@@ -15,7 +15,7 @@ for route,expected in [('/test/',200),('/test/?page=categories',200),('/test/api
   html=body.decode('utf8');assert '<title>Tutkunu Keşfet. | SEXOGATE</title>'in html and 'SEXOGATE mobilya koleksiyonu'not in html;assert 'sexogate-branding.js?v=sexogate-'in html
   csp=headers.get('content-security-policy','');assert "script-src 'self'"in csp and "'unsafe-eval'"not in csp and "'unsafe-inline'"not in csp
  if route=='/test/api/deployment-status':
-  health=json.loads(body);assert health['release']==deployment['release']and health['basePath']=='/test'and health['database']and health['products']==0 and health['checkoutEnabled']is False
+  health=json.loads(body);expected=json.loads((ROOT/'.local/native-catalog-selection.json').read_text('utf8'))if deployment['installation'].get('products')else{'products':0,'reviewedCovers':0};assert health['release']==deployment['release']and health['basePath']=='/test'and health['database']and health['sourceProducts']==expected['products']and health['products']==expected['reviewedCovers']and health['checkoutEnabled']is False
   assert 'no-store'in headers.get('cache-control','')
  if route=='/test/site.webmanifest':
   manifest=json.loads(body);assert manifest['scope']=='/test/'and manifest['start_url']=='/test/'and all(i['src'].startswith('/test/')for i in manifest['icons'])

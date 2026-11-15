@@ -1,0 +1,3 @@
+# Proje: SEXOGATE · Yerelde doğrulanan katalog ayrıştırma bağımlılıkları.
+beautifulsoup4==4.15.0
+lxml==6.1.1

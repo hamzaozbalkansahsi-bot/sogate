@@ -7,6 +7,8 @@
  * Açıklama   : Özel NODENO sürümünü yalnız izinli test alt yolunda güvenli biçimde çalıştırır.
  */
 declare(strict_types=1);
+// Kaynak katalog ve yönetim sürümleri aynı istekte açılır; bellek bütçesi sınırlı ve ölçülebilirdir.
+$memory=trim((string)ini_get('memory_limit'));$bytes=(int)$memory;if(preg_match('/([KMG])$/i',$memory,$unit))$bytes*=1024**(array_search(strtoupper($unit[1]),['K','M','G'],true)+1);if($bytes>0&&$bytes<268435456)ini_set('memory_limit','256M');
 ini_set('display_errors','0');
 $mount=SEXOGATE_NATIVE_MOUNT;
 if(!preg_match('~^/test(?:/native-preview-[a-f0-9]{16})?$~D',$mount)){http_response_code(503);exit;}
@@ -39,8 +41,13 @@ if($static&&in_array($_SERVER['REQUEST_METHOD'],['GET','HEAD'],true)){
 }
 if($relative==='/api/payments/checkout')sexogateNativeFail(409,'live_sales_not_approved');
 define('NODENO_RUNTIME_LIBRARY',true);require $public.'/index.php';
+if(is_file($private.'/sexogate-catalog.php')){
+ require_once $private.'/sexogate-catalog.php';
+ if(str_starts_with($relative,'/media/sg_')&&in_array($_SERVER['REQUEST_METHOD'],['GET','HEAD'],true)){sexogateCatalogMedia($private,$relative,$_SERVER['REQUEST_METHOD']==='HEAD');exit;}
+ if($relative==='/yonetim/urun-onizleme'&&$_SERVER['REQUEST_METHOD']==='GET'){sexogateCatalogPreview($private,is_string($_GET['product']??null)?$_GET['product']:'');exit;}
+}
 if($relative==='/api/deployment-status'){
- try{$state=nodenoStoreContext($private);$db=nodenoControlDatabase($state['storage']);$ok=$db->query('PRAGMA quick_check')->fetchColumn()==='ok';$products=count($state['catalog']['products']??[]);$report=['status'=>$ok?'preview':'unavailable','runtime'=>'php','database'=>$ok,'release'=>$pointer['release'],'products'=>$products,'checkoutEnabled'=>false,'catalogReady'=>$products>0,'strictMediaHealth'=>'not_ready_empty_catalog','basePath'=>$mount];http_response_code($ok?200:503);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: private, no-store');echo json_encode($report,JSON_THROW_ON_ERROR);exit;}catch(Throwable $error){sexogateNativeFail(503,'deployment_check_failed');}
+ try{$state=nodenoStoreContext($private);$db=nodenoControlDatabase($state['storage']);$ok=$db->query('PRAGMA quick_check')->fetchColumn()==='ok';$products=count($state['catalog']['products']??[]);$report=['status'=>$ok?'preview':'unavailable','runtime'=>'php','database'=>$ok,'release'=>$pointer['release'],'products'=>$products,'sourceProducts'=>count($state['sourceCatalog']['products']??[]),'checkoutEnabled'=>false,'catalogReady'=>$products>0,'strictMediaHealth'=>'sales_and_country_acceptance_pending','basePath'=>$mount];http_response_code($ok?200:503);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: private, no-store');echo json_encode($report,JSON_THROW_ON_ERROR);exit;}catch(Throwable $error){sexogateNativeFail(503,'deployment_check_failed');}
 }
 $_SERVER['REQUEST_URI']=substr($uri,strlen($mount))?:'/';
 ob_start(static function(string $body)use($mount,$assetRevision):string{

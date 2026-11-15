@@ -1,0 +1,72 @@
+{
+  "products": 2194,
+  "sourceCategories": 172,
+  "storeCategories": 6,
+  "priced": 2151,
+  "priceMissing": 43,
+  "regulatedReview": 102,
+  "sourceDescriptionRecovered": 2167,
+  "withVariantMetadata": 629,
+  "withBarcode": 0,
+  "missingFacts": {
+    "materials": 1404,
+    "sizeOptions": 1025,
+    "colorOptions": 1034,
+    "manufacturer": 2194,
+    "origin": 2194,
+    "barcode": 2194,
+    "batteryInformation": 2119,
+    "shippingWeight": 2194,
+    "packageDimensions": 2194,
+    "ingredients": 2165,
+    "warranty": 2194,
+    "care": 2083,
+    "safety": 2194,
+    "documents": 2194,
+    "dimensions": 1534
+  },
+  "fakeStockOrCost": false,
+  "sourceHashes": [
+    {
+      "vendor": "xshopum",
+      "sha256": "52f82dea8bfe508404224526dda563bc776f01d0b25fecb1623473ad395927ae",
+      "file": "xshopum.ndjson",
+      "products": 1022
+    },
+    {
+      "vendor": "liona",
+      "sha256": "d606283cbd19d6366bc9f2626a86d419ceeab53ff6ef59634c2288045b90505e",
+      "file": "liona.ndjson",
+      "products": 544
+    },
+    {
+      "vendor": "sistina",
+      "sha256": "93a1d8473eab902fc14d89176a5e99844824ac8680bfa21d4f0aec218e9ad315",
+      "file": "sistina.ndjson",
+      "products": 628
+    }
+  ],
+  "seoDuplicateTitleGroups": {
+    "tr": 119,
+    "en": 1,
+    "ru": 1,
+    "ar": 1,
+    "de": 1,
+    "az": 1,
+    "kk": 1,
+    "tk": 1,
+    "uz": 1,
+    "ky": 1,
+    "fa": 1
+  },
+  "sourceImageUrls": 9498,
+  "acceptedImageUrls": 9494,
+  "uniqueOriginalImages": 8546,
+  "unsupportedGif": 4,
+  "missingImages": 39,
+  "reviewedPublicCovers": 18,
+  "adminDrafts": 2176,
+  "liveCheckout": false,
+  "photoBadgeReplacement": "blocked_by_image_tool_requires_clean_original",
+  "humanTranslationApproved": false
+}

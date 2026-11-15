@@ -3,7 +3,7 @@
 # Geliştirici: PTYS Technoligess LLC
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-languages.py
-# Açıklama   : Doğrudan kopyada dil seçimini, boş katalog yanıtını ve RTL yönünü doğrular.
+# Açıklama   : Kataloglu vitrinde dil seçimini, sunucu/istemci metaverisini ve RTL yönünü doğrular.
 import argparse,html,json,os,re,ssl,urllib.error,urllib.request
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -54,6 +54,7 @@ with sync_playwright() as p:
     finally:
         context.close()
         browser.close()
-report = {'locales': results, 'pageErrors': len(errors), 'emptyCatalogOnly': True}
+request=urllib.request.Request(BASE+'/api/catalog');observed=json.load(urllib.request.urlopen(request,context=ssl._create_unverified_context()if BASE.startswith('https://127.0.0.1')else ssl.create_default_context(),timeout=30));catalog=observed.get('catalog',observed)
+report = {'locales': results, 'pageErrors': len(errors), 'catalogProductsObserved':len(catalog['products'])}
 (ROOT / ('.local/native-languages'+('' if scope=='local' else '-'+scope)+'.json')).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf8')
 print(json.dumps(report, ensure_ascii=False))

@@ -13,10 +13,11 @@ export function brandText(source){return source.replace(/https:\/\/(?:www\.)?nod
 export function relocateText(source){return brandText(source).replace(/((?:href|src|action|poster)=["'])\/(?!\/|__SEXOGATE_MOUNT__)/gi,'$1'+MOUNT+'/').replace(/(url\(\s*["']?)\/(?!\/|__SEXOGATE_MOUNT__)/gi,'$1'+MOUNT+'/');}
 export function relocateJs(source,name='module.js'){
  const text=relocateText(source),file=ts.createSourceFile(name,text,ts.ScriptTarget.Latest,true,ts.ScriptKind.JS),edits=[];
+ function childPath(node){for(let current=node,parent=node.parent;parent;current=parent,parent=parent.parent){if(ts.isBinaryExpression(parent)&&parent.operatorToken.kind===ts.SyntaxKind.PlusToken){if(parent.right===current)return true;}else if(!ts.isParenthesizedExpression(parent)&&!ts.isConditionalExpression(parent))break;}return false;}
  function walk(node){
   if((ts.isStringLiteralLike(node)||ts.isTemplateHead(node))&&node.text.startsWith('/')&&!node.text.startsWith('//')&&!node.text.startsWith(MOUNT)){
    const rootUrl=node.text!=='/'||(ts.isNewExpression(node.parent)&&node.parent.expression.getText(file)==='URL');
-   if(rootUrl)edits.push(node.getStart(file)+1);
+   if(rootUrl&&!childPath(node))edits.push(node.getStart(file)+1);
   }
   ts.forEachChild(node,walk);
  }

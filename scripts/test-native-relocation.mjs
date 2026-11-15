@@ -18,3 +18,7 @@ test('template endpoints and embedded HTML resources receive one mount prefix',(
 test('own host relocates and external provider URLs remain untouched',()=>{
  const out=relocateText('https://nodenohome.com/blog https://accounts.google.com/auth');assert.ok(out.includes('https://sexogate.com'+MOUNT+'/blog'));assert.ok(out.includes('https://accounts.google.com/auth'));
 });
+test('admin child actions stay relative after encoded identifiers and conditional concatenation',()=>{
+ const code="api(route+'/'+encodeURIComponent(id)+'/editor');api(route+(id?'/'+id:'')+(publish?'/save-publish':''));const url='/api/admin/'+id+'/editor';";
+ const out=relocateJs(code);assert.ok(out.includes("encodeURIComponent(id)+'/editor'"));assert.ok(out.includes("publish?'/save-publish':''"));assert.ok(out.includes("url='"+MOUNT+"/api/admin/'+id+'/editor'"));
+});

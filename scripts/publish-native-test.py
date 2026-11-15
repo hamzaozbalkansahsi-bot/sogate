@@ -33,6 +33,9 @@ def own_local_proof(package):
  languages=json.loads(language_path.read_text('utf8'))
  if len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')for row in languages['locales']):raise ValueError('LOCAL_LANGUAGE_ACCEPTANCE_FAILED')
  adult_proof('adult-local',package['release'],'https://127.0.0.1:3188/test')
+ if package.get('products'):
+  proof=json.loads((ROOT/'.local/native-catalog-local.json').read_text('utf8'))
+  if proof.get('release')!=package['release']or proof.get('products')!=package['products']or not proof.get('idempotent')or not proof.get('privateDrafts')or proof.get('pageErrors'):raise ValueError('LOCAL_CATALOG_ACCEPTANCE_REQUIRED')
 def web_backup(ftp,values):
  names=['/test/index.php','/test/.htaccess','/test/app/active.php','/test/app/config.local.json','/test/app/owner.json'];files={name:p.read(ftp,name) for name in names};out=io.BytesIO()
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED)as archive:
@@ -86,8 +89,8 @@ def prepare():
   if status!=200 or not installed.get('installed'):raise ValueError('NATIVE_INSTALL_'+installed.get('code','FAILED').upper())
   report['installation']=installed;p.ensure_dir(ftp,preview);p.store_atomic(ftp,preview+'/index.php',entry(installed['privateRoot'],package['release'],preview));p.store_atomic(ftp,preview+'/.htaccess',(ROOT/'native-store/deploy/.htaccess').read_bytes())
   report['phase']='preview';p.persist(REPORT,report);status,raw,_=p.get(preview+'/api/deployment-status');health=json.loads(raw)
-  if status!=200 or health.get('release')!=package['release'] or health.get('basePath')!=preview or health.get('products')!=0 or health.get('checkoutEnabled')is not False or not health.get('database'):raise ValueError('PREVIEW_HEALTH_FAILED')
-  report['previewHealth']=health;print(json.dumps({'prepared':True,'release':package['release'],'preview':'https://sexogate.com'+preview,'database':True,'products':0,'checkoutEnabled':False,'rollbackVerified':True}))
+  if status!=200 or health.get('release')!=package['release'] or health.get('basePath')!=preview or health.get('sourceProducts')!=package['products'] or health.get('checkoutEnabled')is not False or not health.get('database'):raise ValueError('PREVIEW_HEALTH_FAILED')
+  report['previewHealth']=health;print(json.dumps({'prepared':True,'release':package['release'],'preview':'https://sexogate.com'+preview,'database':True,'products':health['products'],'sourceProducts':health['sourceProducts'],'checkoutEnabled':False,'rollbackVerified':True}))
  finally:
   try:
    existing={e['name'] for e in p.publisher.entries(ftp,'/test')}
@@ -104,6 +107,9 @@ def activate():
  report=json.loads(REPORT.read_text('utf8'));proof=json.loads((ROOT/'.local/native-browser-mount-preview.json').read_text('utf8'));expected='https://sexogate.com'+report['preview']
  if len(proof)!=2 or any(r['base']!=expected or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
  adult_proof('adult-preview',report['release'],expected)
+ if report['installation'].get('products'):
+  catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
+  if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')
  language_path=ROOT/'.local/native-languages-mount-preview.json';languages=json.loads(language_path.read_text('utf8'))
  if language_path.stat().st_mtime<REPORT.stat().st_mtime or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')for row in languages['locales']):raise ValueError('PREVIEW_LANGUAGE_ACCEPTANCE_REQUIRED')
  ftp=p.publisher.connect(p.publisher.env_values());changed=False
@@ -126,7 +132,7 @@ def activate():
   else:raise ValueError('ACTIVATION_HEALTH_FAILED')
   report.update(activated=True,phase='active',health=health,mainUnchanged=p.fingerprint(ftp)==report['mainBefore']);p.persist(REPORT,report)
   if not report['mainUnchanged']:raise ValueError('MAIN_SITE_CHANGED')
-  print(json.dumps({'activated':True,'url':'https://sexogate.com/test','release':report['release'],'mainUnchanged':True,'checkoutEnabled':False,'products':0}))
+  print(json.dumps({'activated':True,'url':'https://sexogate.com/test','release':report['release'],'mainUnchanged':True,'checkoutEnabled':False,'products':health['products'],'sourceProducts':health['sourceProducts']}))
  except Exception:
   if changed:restore_web(ftp,report)
   raise

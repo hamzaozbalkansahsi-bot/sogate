@@ -32,12 +32,28 @@ results=[]
 try:
  for kind,kwargs in [('unauthenticated',{'proof':'wrong'}),('expired',{'expired':True}),('wrong-hash',{'wrong_hash':True})]:
   status,value=request(p['archive'],p['release'],**kwargs);assert status==400 and value['installed']is False,(kind,status,value);results.append(kind)
- status,value=request(p['archive'],p['release']);assert status==200 and value['installed'] and value['ownerCount']==1 and value['products']==0,(status,value);results.append('valid-empty-catalog-and-mfa-owner')
+ status,value=request(p['archive'],p['release']);assert status==200 and value['installed'] and value['ownerCount']==1 and value['products']==p['products'],(status,value);results.append('valid-provenance-catalog-and-mfa-owner')
+ entry=base/'.sexogate-native-test/releases'/p['release']/'public/index.php';php_entry="<?php define('NODENO_RUNTIME_LIBRARY',true);require '"+entry.as_posix()+"';$_SERVER['REQUEST_URI']='/api/catalog';nodenoRun();";(web/'test/fresh-catalog.php').write_text(php_entry,encoding='utf8')
+ with urllib.request.urlopen('http://127.0.0.1:3189/test/fresh-catalog.php',timeout=20)as response:fresh=json.load(response)
+ assert fresh['products']==[],'UNPUBLISHED_SOURCE_CATALOG_EXPOSED';results.append('unpublished_catalog_private_at_revision_zero')
  for kind,name,options in [('traversal','../escape.php',{}),('absolute','/escape.php',{}),('dot-alias','public/./escape.js',{}),('symlink','public/escape.js',{'symlink':True}),('duplicate','public/duplicate.js',{'duplicate':True})]:
   archive,identifier=attack(name,**options);status,value=request(archive,identifier);assert status==400 and value['installed']is False and value['code']=='archive_path_invalid',(kind,status,value);results.append(kind)
  assert not (base/'escape.php').exists() and not (base/'.sexogate-native-test/escape.php').exists()
  result=subprocess.run([str(php),'-d','extension=pdo_sqlite','-d','extension=sqlite3',str(base/'.sexogate-native-test/worker.php')],capture_output=True);assert result.returncode==0,'ORIGINAL_CONTENT_WORKER_FAILED';results.append('cli-content-worker')
- shutil.copy2(ROOT/'native-store/deploy/maintenance.php',web/'test/maintenance.php');(app/'native-maintenance-request.json').write_text(json.dumps({'owner':owner,'expires':int(time.time())+300,'tokenHash':hashlib.sha256(token.encode()).hexdigest()}),encoding='utf8');identifier=secrets.token_hex(12);key=secrets.token_bytes(32)
+ shutil.copy2(ROOT/'native-store/deploy/maintenance.php',web/'test/maintenance.php');(app/'native-maintenance-request.json').write_text(json.dumps({'owner':owner,'expires':int(time.time())+300,'tokenHash':hashlib.sha256(token.encode()).hexdigest()}),encoding='utf8')
+ image=next((base/'.sexogate-native-test/releases'/p['release']/'public').rglob('apple-touch-icon.png')).read_bytes();image_name=hashlib.sha256(image).hexdigest()+'.png'
+ def media_request(name,content):
+  identifier=secrets.token_hex(12);output=io.BytesIO()
+  with zipfile.ZipFile(output,'w')as archive:archive.writestr(name,content)
+  raw=output.getvalue();(app/('native-media-'+identifier+'.zip')).write_bytes(raw);req=urllib.request.Request('http://127.0.0.1:3189/test/maintenance.php',data=json.dumps({'action':'media','id':identifier,'sha256':hashlib.sha256(raw).hexdigest()}).encode(),headers={'X-Native-Maintenance':token,'Content-Type':'application/json'})
+  try:
+   with urllib.request.urlopen(req,timeout=20)as response:return response.status,json.load(response)
+  except urllib.error.HTTPError as error:return error.code,json.load(error)
+ status,receipt=media_request(image_name,image);assert status==200 and receipt['created']==1;assert (base/'.sexogate-native-test/media'/image_name).read_bytes()==image;results.append('private-original-media')
+ status,receipt=media_request(image_name,image);assert status==200 and receipt['existing']==1;results.append('media-idempotency')
+ for label,name,content in [('media-traversal','../escape.png',image),('media-hash',image_name,b'wrong'),('media-mime',hashlib.sha256(b'not-an-image').hexdigest()+'.png',b'not-an-image')]:
+  status,receipt=media_request(name,content);assert status==400 and not receipt.get('stored');results.append(label)
+ identifier=secrets.token_hex(12);key=secrets.token_bytes(32)
  req=urllib.request.Request('http://127.0.0.1:3189/test/maintenance.php',data=json.dumps({'action':'backup','id':identifier,'key':key.hex()}).encode(),headers={'X-Native-Maintenance':token,'Content-Type':'application/json'})
  with urllib.request.urlopen(req,timeout=30)as response:receipt=json.load(response)
  assert receipt['created'] and receipt['databases']>=2;encrypted=(app/'native-backups'/(identifier+'.aesgcm')).read_bytes();assert hashlib.sha256(encrypted).hexdigest()==receipt['sha256'];plain=AESGCM(key).decrypt(encrypted[9:21],encrypted[37:]+encrypted[21:37],b'sexogate-native-backup-v1')
