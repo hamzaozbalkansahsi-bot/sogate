@@ -1,10 +1,22 @@
 # Native PHP test yayını
 
+<!-- BEGIN NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+## Güncel test yayını — 554e78f543311a4d7e250b89
+
+Yalnız https://sexogate.com/test üzerinde etkin. İlk sunucu HTML'si artık istemciyle aynı küçük resimli kart düzenindedir; eski büyük yeşil kampanya ilk açılışta gösterilmez. Kaynak `f6463b3`, yayın yönlendirmesi `009c67f`, test kabuğu `f34775e`. 468 görünür ürün, 1.726 taslak; 6 ana+44 alt kategori tanımı, 18 dolu alt kategori. Ana hazırlanıyor site korunur ve gerçek tahsilat 409 ile kapalıdır.
+
+Yerel ve özel önizlemede iki motor 33 yönetim+9 müşteri rotası, 11 dil/RTL, yaş, katalog ve görsel kabul geçti. Yayın sonrası iki motor 1 yönetim+9 müşteri smoke, görsel düzen, yaş ve ilk HTML; gerçek katalog/SEO/fiyat/medya/tekrar güvenliği ve HTTP korumaları geçti. JavaScript kapalı ilk HTML kontrolü 390/1440px ve 11 dilde yapıldı. Ekranlar `docs/screenshots/native-store-paint-remote/` ve `native-store-polish-remote/` altındadır. Bunlar fiziksel iPhone veya saha CWV ölçümü değildir.
+
+İşçi aynı554e sürümünde sağlıklı; kendi dakikalık cron'u salt okunur kontrolde tek kayıt. Son gerçek şifreli geri yükleme 2 veritabanı, 41 tablo, 10.079 satır; bütünlük/FK/hash geçti. Tam medya felaket kurtarma ve sürekli yedek rotasyonu tamamlanmadı. Uygulama dosya geçişi, ortak test verisindeki ürün yayınını geri almaz.
+
+Kur uç noktası 503 verdi. Görsel testler isteğe bağlı kur isteğini UI hazır olma ölçütünden ayırır; kritik istekler, gerçek istemci bileşeni, yükleme ekranı ve bütün işlevsel kontroller korunur. Kur/foreign-currency entegrasyonu kabul edilmiş sayılmaz. Ayrıntı `native-first-paint.md`. Önceki SSL/TCP kesintileri ve bazı ilk koşu zaman aşımları raporda korunur; kökeni tamamen çözülmedi. GitHub43757608050/f34775e faturalama kilidi yüzünden 0 adım; CI başarılı değildir. Aşağıdaki eski sürüm notları tarihsel akıştır.
+<!-- END NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+
 15 Kasım 2026. Kullanıcı doğrudan NODENO yazılım kopyasının yayımlanmasını istedi; NODENO ürünlerinin taşınmasını açıkça reddetti. Hedef yalnız **https://sexogate.com/test** ve yönetim **https://sexogate.com/test/yonetim**. Ana hazırlanıyor sayfası, DNS, gerçek tahsilat ve diğer projeler bu yayının kapsamında değildir.
 
 ## Veri sınırı ve gerçek durum
 
-- Katalog artık **2.194 gerçek tedarikçi kaydı /6 mağaza ana grubu** içerir;172 kaynak kategori yönetimde ayrıca incelenir.18 temiz kapak test vitrininde,2.176 kayıt taslaktır. Kurucu marka, kaynak namespace/hash ve taslak başlangıcını ayrıca doğrular; NODENO ürün/fiyat/görsel/müşteri/veritabanı veya işletme kimliği alınmaz. Kaynak testlerin referans kataloğu yayın ZIP'ine girmez.
+- Katalog **2.194 gerçek tedarikçi kaydı** içerir; 172 kaynak kategori yönetimde ayrıca incelenir. Son veri incelemesinde 468 kapak test vitrini için seçildi, 1.726 kayıt taslakta kaldı. Yeni kategori ağacı 6 ana grup ve 44 alt kategoriden oluşur; seçilen ürünler 18 alt kategoriyi doldurur. Boş alt kategoriler vitrinde çoğaltılmaz. Kurucu marka, kaynak namespace/hash ve taslak başlangıcını ayrıca doğrular; NODENO ürün/fiyat/görsel/müşteri/veritabanı veya işletme kimliği alınmaz. Kaynak testlerin referans kataloğu yayın ZIP'ine girmez. Etkin sürüm ve son kanıtlar `native-deployment-report.json` içindedir.
 - Yalnız mevcut SEXOGATE rehberlerinden üç içerik bankası ve kendi yönetici erişimi kullanılır. Üyelik belgeleri TR/EN taslaktır. Eski MySQL inceleme verisi korunur. Yeni kaynak katalog kendi doğrulanmış dosyalarından özgün MFA/CSRF yönetim akışıyla SQLite kayıtlarına yüklendi; müşteri veya eski işletme verisi alınmadı.
 - Gerçek ödeme **kapalıdır**. `/api/payments/checkout` dağıtım sınırında409 döner; arayüzden ayar değiştirmek bu sınırı kaldırmaz. Yeni ülke/ürün/belge/hukuk/Stripe kabulü olmadan satış açılamaz.
 - Bu bir test uygulaması yayınıdır; bütün ticaret modülleri gerçek ürün ve dış sağlayıcıyla kabul edildi anlamına gelmez.
@@ -44,12 +56,13 @@ Tarayıcı kabulünde `SEXOGATE_NATIVE_TEST_URL` ve `SEXOGATE_NATIVE_TEST_SCOPE`
 
 ```powershell
 python scripts/publish-native-test.py prepare
-# Sunucu önizlemesinde tarayıcı/dil kabulü tamamlanır.
+# Önizleme URL'sinde aynı release için katalog/ilk HTML/tarayıcı/görsel/yaş/dil kabulü tamamlanır.
+python scripts/publish-native-test.py activate
+python scripts/test-native-stage-http.py
+# Yayın sonrası tarayıcı smoke ve ilk HTML/gerçek görsel kontrolü yapılır.
 python scripts/native-stage-operations.py cron
 python scripts/native-stage-operations.py status
 python scripts/native-stage-operations.py backup
-python scripts/publish-native-test.py activate
-python scripts/test-native-stage-http.py
 ```
 
 `prepare` kurucuyu süreli token ile çalıştırır, ZIP/hash/yol/symlink/mükerrerlik/kaynak katalog denetimlerini yapar; kurucu ve payload silinir. Yönetici kimliği ve kalıcı state sonraki kurulumlarda sıfırlanmaz. `activate` ana site ve önceki test giriş dosyalarını tekrar doğrular, kontrollü giriş/yönlendirme geçişi yapar. İlk sağlık başarısızlığında geri dönüş vardır.
@@ -72,7 +85,7 @@ Bu komut yalnız bu yayının giriş/yönlendirmesini doğrulanmış şifreli ye
 
 ## Kabul ve kalan koşullar
 
-Kaynak çekirdek regresyonu153 PASS; URL taşıma4 PASS; gerçek PHP HTTP kurucusunda17 güvenlik/kurulum/yedek senaryosu PASS. ZIP traversal, mutlak yol, nokta takma adı, symlink, mükerrer giriş, token/TTL ve103 karakterli TOTP ele alındı. Kaynak snapshot ve13 marka varlığı doğrulandı. Gerçek yerel/uzak tarayıcı, dil, header, kurucu temizliği, CLI heartbeat ve restore kanıtları `docs/native-deployment-report.json` ile `docs/progress.md` içindedir.
+Kaynak çekirdek regresyonu153 PASS; URL taşıma7 PASS; gerçek PHP HTTP kurucusunda22 güvenlik/kurulum/yedek senaryosu PASS. ZIP traversal, mutlak yol, nokta takma adı, symlink, mükerrer giriş, token/TTL,103 karakterli TOTP ve beş bozuk kategori ağacı ele alındı. Kaynak snapshot ve13 marka varlığı doğrulandı. Gerçek yerel/uzak tarayıcı, dil, header, kurucu temizliği, CLI heartbeat ve restore kanıtları `docs/native-deployment-report.json` ile `docs/progress.md` içindedir.
 
 ## Yetişkin mağazası katmanı
 
@@ -80,7 +93,7 @@ NODENO'nun mobilya metinleri ve dünya haritalı karşılaması SEXOGATE deneyim
 
 Bordo kemer ve krem yüzeyli yerel `dialog`, 18+ beyanı ve çıkış seçeneği sunar. Escape ile beyan atlanamaz; klavye odağı ve onaydan sonra misafir gezintisi sınanır. Beyan en fazla30 gün, yalnız sürüm ve bitiş zamanı ile cihazda saklanır; üyelik, doğum tarihi veya kimlik istenmez. Bu marka bildirimi ülke bazlı güçlü yaş doğrulaması yerine geçmez. Gerçek tahsilatın kapalı olması devam eder.
 
-Sosyal bağlantılar görünür yazısız dört SVG ikonudur; erişilebilir adları, klavye odağı ve azaltılmış hareket tercihi vardır. Gizlilik tercihi düğmesi belge akışından çıkarılarak sabitlenir; footer sonrasında yalnız mobil alt menüye ayrılan yaklaşık84px kalır. Header logo hizası solda, footer logo hizası ortadadır. Bu davranışlar `scripts/test-native-adult-store.py` ile iki motorda denetlenir.
+Sosyal bağlantılar görünür yazısız dört SVG ikonudur; erişilebilir adları, klavye odağı ve azaltılmış hareket tercihi vardır. Gizlilik tercihi footer akışında tema renkli bir düğmedir; bağlantı veya satın alma alanının üzerine sabitlenmez. Footer sonrasında yalnız mobil alt menüye ayrılan yaklaşık84px kalır. Header logo hizası solda, footer logo hizası ortadadır. Bu davranışlar `scripts/test-native-adult-store.py` ve `scripts/test-native-storefront-polish.py` ile iki motorda denetlenir.
 
 Varlık revizyonu tema, dağıtım kodu ve kaynak manifest'inden türetilir. Yeni paket tüm modül/stil sorgu revizyonlarını değiştirir; eski iPhone/PWA önbelleğinin mobilya metinlerini sürdürmesi önlenir. Native sürümden sonraki önizleme için parent yönlendirmesinde yalnız ilgili rastgele önizleme girişine yol açılır; kurucuya açılan tek dosyalık istisna işlem sonunda kaldırılır. Önizlemenin gerçekten yeni release ve kendi basePath'i olduğu ayrıca denetlenir.
 
@@ -90,7 +103,7 @@ Gerçek Stripe/taşıyıcı/fatura kabulü, gerçek ürün/stok/görsel belgeler
 
 ## 15 Kasım kaynak katalog ve yeni yetişkin girişi
 
-Aktif test sürümü `4dde26c2a496aaecbef1027e`; uygulama commitleri `f511d8d` ve `afa3ec6`. Kurulumun revision0 API yanıtında taslak kataloğu döndürmemesi ayrıca test edilir. Katalog işleminde mevcut fiyat/içerik ezilmez; 40 kayıtlık güvenli tekrarlar, gerçek stok kodu çakışması, güncel MFA ve yetki denetlenir. Dinamik kategori metni 11 dilde şablonla üretilir; sözlük hatası gizlenmez.256 MB bellek bütçesi yerel/hosting kabulünde doğrulandı.
+İlk katalog sürümü `4dde26c2a496aaecbef1027e`, kaynak commitleri `f511d8d` ve `afa3ec6` idi; güncel etkin sürüm raporda tutulur. Kurulumun revision0 API yanıtında taslak kataloğu döndürmemesi ayrıca test edilir. Katalog işleminde mevcut fiyat/içerik ezilmez; 40 kayıtlık güvenli tekrarlar, gerçek stok kodu çakışması, güncel MFA ve yetki denetlenir. Dinamik kategori metni 11 dilde şablonla üretilir; sözlük hatası gizlenmez.256 MB bellek bütçesi yerel/hosting kabulünde doğrulandı.
 
 Girişteki üst yazı ve nokta kaldırıldı. Bordo perde açılışı, kemer çizgisi ve ışık katmanı kullanılır; üyelik istenmez, ek hareket ayarı arayüzü yoktur. Mevcut30 günlük yaş beyanı korunur. Yeni ilk ekran gizli pencerede görülebilir. Ekranlar `docs/screenshots/native-store-adult-remote/`, hareket kaydı `docs/screenshots/native-store-adult-local/age-opening.webm`.
 

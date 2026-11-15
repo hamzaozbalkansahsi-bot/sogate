@@ -1,5 +1,13 @@
 # Native ürün yükleme ve yaş ekranı — 15 Kasım 2026
 
+<!-- BEGIN NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+## Güncel test durumu
+
+Etkin sürüm554e78f543311a4d7e250b89. Önceki62d yalnız adaydı; güncel sürümde aynı veri incelemesi ile ilk HTML düzeltmesi birlikte yayımlandı. 2.194 yönetim kaydının468'i görünür,1.726'sı taslak. Mağazada6 ana+44 alt tanım,18 dolu alt kategori var; boş kategoriler çoğaltılmaz. Kaynak172 kategori özel inceleme ekranındadır. Yerel, önizleme ve yayın sonrası gerçek katalog kabulü geçti; 12 görünür medya orijinal hash ile ayrıca karşılaştırıldı.
+
+Önceki bölümdeki ilk18 kapak, ilk aktarım aşamasının tarihsel sayısıdır. Güncel sayımlar `native-catalog-report.json` ve `native-deployment-report.json` içindedir. Katalog doluluğu bütün zorunlu olguların doğrulandığı veya gerçek tahsilatın açıldığı anlamına gelmez.
+<!-- END NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+
 Kullanıcı bu görevde mevcut üç tedarikçinin ürünlerinin yeni yönetim paneline, ürün alanları ve SEO bilgileriyle yüklenmesini istedi. İlk fiyat **kaynak kamu fiyatı ×1,30**, kuruşa en yakın yuvarlamadır; maliyet diye kaydedilmez. Sonraki aktarım yönetici fiyatını ezmez. Üç kaynağın fotoğraf/içerik yayın izni kullanıcı tarafından bu sohbet içinde beyan edildi; yazılı sözleşme varmış gibi kayıt tutulmaz. Bu beyan ürün sertifikası, ülke/taşıyıcı veya ödeme kabulü değildir.
 
 1. Mevcut 2.194 kaynak kaydını orijinal yanıt hash'iyle oku; Liona form seçeneklerini ve Sistina kamu `pageSpecificData` alanlarını geri kazan. Gerçek barkod/SKU/üretici/belge yoksa uydurma; eksik ve uygulanmayan alanları ayır.
@@ -13,7 +21,7 @@ Gerçek sonuçlar bu belgeye ve `docs/progress.md` içine iş tamamlandıkça ek
 
 ## Yönetimde kullanım
 
-`/test/yonetim` adresinde mevcut MFA hesabıyla girin. **Ürünler → Ürünleri yükle** kaynak sayısını ve ilk fiyat kuralını gösterir. **Yüklemeyi başlat** 40 kayıtlık işlemlerle ilerler; bağlantı kesilirse güvenle yeniden denenebilir. Aynı işlem ikinci kayıt/sürüm üretmez; başka yönetici yeniden yüklediğinde de mevcut fiyat ve içerik korunur. **Kaynak kategoriler** 172 kaynağı tedarikçisiyle aratır; müşteriye yönelik sınıflandırma altı SEXOGATE ana grubudur. Kaynak kategoriler bağımsız 172 yayımlanmış mağaza kategorisi gibi gösterilmez.
+`/test/yonetim` adresinde mevcut MFA hesabıyla girin. **Ürünler → Ürünleri yükle** kaynak sayısını ve ilk fiyat kuralını gösterir. **Yüklemeyi başlat** 40 kayıtlık işlemlerle ilerler; bağlantı kesilirse güvenle yeniden denenebilir. Aynı işlem ikinci kayıt/sürüm üretmez; başka yönetici yeniden yüklediğinde de mevcut fiyat ve içerik korunur. **Kaynak kategoriler** 172 kaynağı tedarikçisiyle aratır; müşteriye yönelik sınıflandırma altı SEXOGATE ana grubu ve ürün türlerine bağlı alt kategorilerden oluşur. Kaynak kategoriler bağımsız 172 yayımlanmış mağaza kategorisi gibi gösterilmez.
 
 **Düzenle** içinde 11 dilin ad, açıklama ve SEO alanları; mağaza stok kodu, marka, gerçek barkod, üretici/menşe, malzeme, ölçü/beden/renk, pil, ağırlık/paket, içerik, bakım, güvenlik, garanti ve belge referansları yer alır. Kaynak URL, fiyat, gözlem zamanı, varyantlar, izin dayanağı ve bulunmayan bilgiler ayrıca salt okunur görünür. Kaynak kamu fiyatı alış maliyeti değildir. **Ürüne git** görünür ürünü vitrinde, taslağı yetkili özel önizlemede açar. Sipariş/tahsilat açmaz.
 
@@ -32,3 +40,9 @@ Kapak ve incelenen görsel sıraları sıfırdan başlar. `0` ilk karedir; `0,2`
 - Katalog büyüklüğünün yönetim yanıtı128 MB PHP sınırını aştığı yerel testte yakalandı; uygulama başlangıcında sınırlı256 MB bütçesi istenir. Hosting kabul testleri ayrıca zorunludur. Bellek bütçesini sınırsız yapma veya kontrol kapatma uygulanmadı.
 
 18+ ekranındaki açıklama üst başlığı ve nokta son kullanıcı kararıyla kaldırıldı. İmza hareketi bordo perdelerin açılışı, kemer çizgisi ve kadife ışığıdır; ayrı hareket ayarı arayüzü bulunmaz. Yaş onayından sonra üyelik gerekmez. Son test/yayın durumu ilerleme kaydındadır.
+
+## 15 Kasım — genişletilen test kataloğu
+
+İlk18 kapağın ardından640 aday kapak ayrıca incelendi. Yeni aday62d6c5ffd241a891832db8f1,2.194 yönetim kaydından468 ürünü görünür yapıyor;1.726 taslak kalıyor. Altıana+44alt olmak üzere50 kategori tanımı,bu ürünlerle dolu18 alt kategori var. Boş alt kategoriler vitrinde gösterilmez. Kaynak172 kategori özel inceleme ekranında korunur. Yönetim yükleme penceresindeki “Vitrin450”,bu işlemde yeni yayımlanan sayısıdır;önceden yayımlanan18 ile toplam468 olur.
+
+Yeni veri sürümü yüklenirken yalnız ilk kaydından beri değişmemiş sürüm1 taslağın kapak onayı yükseltilir. Elle değiştirilen fiyat/metin ve sonradan gizlenen ürünler korunur. Önizleme/aktif test aynı veritabanını kullanır; ürün yükleme veri değişikliğidir, uygulama giriş rollback'i bunu geri almaz. Önceki şifreli veritabanı yedeği ayrıca saklanır. Son kanıt/yayın durumu [katalog genişletme kaydı](native-catalog-expansion.md) ve [ilerlemededir](progress.md). Yeni adayın bütün tedarikçi,üretici,belge,galeri ve satış kabulü tamamlandı denmez.

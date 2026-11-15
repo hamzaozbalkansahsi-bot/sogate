@@ -1,5 +1,15 @@
 # Vitrin düzeltmesi — 15 Kasım 2026
 
+<!-- BEGIN NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+## Yayımlanan ilk HTML düzeltmesi — 554e78f543311a4d7e250b89
+
+6a/62d adaylarının istemcideki küçük kartları, PHP'nin ilk HTML'sinde eski büyük yeşil kampanyayla uyuşmuyordu. Yeni sunucu renderer'ı aynı merkezi CSS ve mevcut 11 dil sözlüğüyle gerçek ürün/kategori verisinden küçük kartları üretir. Gövde gizlenmedi veya yapay yükleme ekranı konmadı. NODENO snapshot'ı korunur.
+
+Yeni sürüm yalnız `/test` üzerinde etkin. Yerel/önizleme 33 yönetim+9 müşteri ve 11 dil; yayın sonrası iki motor 1 yönetim+9 müşteri, tam görsel, yaş, katalog ve JavaScript kapalı ilk HTML kabulü geçti. 360/390/430/768/1440px hizalar, taşmayan gerçek fotoğraflar, fiyat/CTA hizası, yatay raflar, footer gizlilik girişi ve 4,8s perde korunur. Son mobil/masaüstü ekranlar ayrıca görüntülenerek incelendi. 468 gerçek katalog kapağı görünürdür; Liora ürün giydirme çıktısı oluşturulmadı.
+
+Kur isteği503/iptal verdiği halde hazır UI'yi bekleten küresel networkidle koşulu, kritik istekler ve gerçek yükleme durumu ile değiştirildi. 15 tarayıcı,32 polish,23 yaş assert'i ve mevcut süre ayarları AST karşılaştırmasında aynı kaldı. İki motorda gerçek HTTP fixture'ı kritik istek ve loading durumunun halen başarısız olduğunu doğrular. FX entegrasyonu başarılı sayılmaz; SSL/TCP ve ilk bazı koşu zaman aşımları raporda açık tutulur. Kaynak/ayrıntı `native-first-paint.md`. Tam WCAG, fiziksel iPhone ve saha performansı kabulü yapılmadı.
+<!-- END NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
+
 Kullanıcının on ekran görüntüsü yeni kabul şartıdır. Canlı `/test` sürümü `4dde26c2a496aaecbef1027e`; yeni çalışma önce yerelde yapılır, ana hazırlanıyor sayfası korunur. Kaynak snapshot değiştirilmez. Güncel yayın adayı `74273b724eb189698f2bda61` olarak derlendi.
 
 ## Gerçek teşhis
@@ -47,6 +57,10 @@ Kullanıcı büyük tek kampanya alanını reddetti ve Trendyol ana sayfasını 
 
 Resmî referans: [Trendyol ana sayfası](https://www.trendyol.com/),15 Kasım2026. Web okuyucusunda canlı ana sayfa akışı/kategori kısayolları/ürün rafları görüldü; otomatik görsel tarayıcı403 döndürdüğü için güncel kişiselleştirilmiş ekranla piksel bazlı birebirlik doğrulanmadı. Başka markanın logosu, fotoğrafı, yorumları veya indirim iddiası alınmadı. Yeni resimli kart adayının ayrıca derlenip yerel/özel önizleme kabulünden geçmesi gerekiyor.
 
-## Güncel yerel kabul — 6a4df2f12a051e326bf868df
+## Önceki yayın — 6a4df2f12a051e326bf868df
 
-Tüm yerel kontroller tamamlandı: Chromium+WebKit dört gerçek resimli kart/5 genişlik/fotoğrafın çerçeve sınırları/başlık-fiyat-CTA hizası/yatay benzer ve son gezilenler/izin geri alma/alt çizgisiz bağlantılar/perde4,8s/çiftlenmeyen hesap yolları PASS.33 yönetim+9 müşteri sayfası iki motorda,11 dil+RTL metaverisi,yaş/klavye/üyeliksiz gezinti ve yönetim kataloğu2.194/172/11/%30/idempotency/private taslak kontrolleri PASS. Yeni kaynaklar JS/PHP sözdizimi ve paket derlemesi de geçti. Kaynak çekirdek34 dosya/153 assertion,URL7,PHP sunum14,katalog8+12,izole kurulum/güvenlik/yedek17 başarılı. Sıradaki işlem aynı paketi yalnız `/test` özel önizlemeye almak; mevcut canlı test halen4dde26c2a496aaecbef1027e. Tam WCAG,gerçek iPhone,CWV saha ölçümü ve sağlayıcı/işletme kabulü tamamlandı sayılmıyor.
+Bu aday bütün yerel,özel önizleme ve yayın sonrası kabullerden sonra `/test`te yayımlandı. Kaynak0bc0ce9. İki motor33admin+9müşteri,11dil,yaş,katalog ve tam polish PASS;18 incelenmiş kapak/2.194yönetim kaydı. URL7,PHPsunum14,katalog8+12,izolekurucu17,kaynak153 PASS. Yeni şifreli restore2DB/41tablo/6829satır PASS;heartbeat ve kendi dakikalık cron okuması doğrulandı. İlk eşzamanlı admin ve ikon zaman aşımı hataları,sonraki tekil başarılı tekrarlarla birlikte `native-deployment-report.json` gözlemlerinde kayıtlıdır;sebep kesinleştirilmedi. GitHub43736887078 faturalama kilidi,0adım;CI yeşil değildir.
+
+## Katalog genişletme adayı — 62d6c5ffd241a891832db8f1
+
+Aynı dört küçük resimli kart ve mobil davranış,468ürün/50kategoriyle yerelde iki motorda doğrulandı. Kaynak46b95ee. Yerel33admin+9müşteri,11dil/RTL,yaş,polish ve gerçek katalog PASS;18dolu altkategori,12örnek gerçek görsel SHA256 eşleşmesi var. Katalog PHP18,Python8+5,kurucu22;sunum14/AST7/kaynak153 korunuyor. Güncel özel önizleme `/test/native-preview-801b2803909f4c81`;katalog/fiyat/SEO/medya/tekrar/özel taslak PASS. Kalan önizleme ve aktivasyon kanıtları henüz tamamlanmadı. Ayrıntı `native-catalog-expansion.md`. Tam WCAG,fiziksel iPhone,CWV saha ölçümü ve sağlayıcı/işletme kabulleri açık.

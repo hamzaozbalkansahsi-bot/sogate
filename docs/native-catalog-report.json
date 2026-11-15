@@ -1,7 +1,7 @@
 {
   "products": 2194,
   "sourceCategories": 172,
-  "storeCategories": 6,
+  "storeCategories": 50,
   "priced": 2151,
   "priceMissing": 43,
   "regulatedReview": 102,
@@ -64,9 +64,16 @@
   "uniqueOriginalImages": 8546,
   "unsupportedGif": 4,
   "missingImages": 39,
-  "reviewedPublicCovers": 18,
-  "adminDrafts": 2176,
+  "reviewedPublicCovers": 468,
+  "adminDrafts": 1726,
   "liveCheckout": false,
   "photoBadgeReplacement": "blocked_by_image_tool_requires_clean_original",
-  "humanTranslationApproved": false
+  "humanTranslationApproved": false,
+  "storeRootCategories": 6,
+  "storeSubcategories": 44,
+  "visibleSubcategories": 18,
+  "reviewCandidates": 1399,
+  "additionalCoversReviewed": 640,
+  "remainingCandidateCovers": 759,
+  "currentTestRelease": "554e78f543311a4d7e250b89"
 }
