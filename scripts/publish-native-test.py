@@ -31,6 +31,10 @@ def entry(home,release,mount):
 def first_paint_proof(scope,release,base):
  rows=json.loads((ROOT/('.local/native-'+scope+'.json')).read_text('utf8'))
  if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('base')!=base or row.get('release')!=release or row.get('serverHtmlCompactCards')!=4 or row.get('serverLocales')!=11 or row.get('legacyHero')is not False or not row.get('javascriptDisabled')or not row.get('realImages')for row in rows):raise ValueError('FIRST_PAINT_ACCEPTANCE_REQUIRED')
+
+def selection_proof(scope,release,base):
+ report=json.loads((ROOT/('docs/native-'+scope+'-results.json')).read_text('utf8'));rows=report['results']
+ if report.get('base')!=base or len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('release')!=release or row.get('realPayment')is not False or row.get('consentNormalHoverFocus')!='brand-burgundy/wine' or not all(row.get(key)is True for key in ['selectionRequired','sizeColorCartLines','editMergeReload','legacyCartRepair','sourceMatrix','rtl'])for row in rows):raise ValueError('PRODUCT_SELECTION_ACCEPTANCE_REQUIRED')
 def own_local_proof(package):
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')
@@ -46,6 +50,7 @@ def own_local_proof(package):
  adult_proof('adult-local',package['release'],'https://127.0.0.1:3188/test')
  storefront_proof('polish-local',package['release'],'https://127.0.0.1:3188/test')
  first_paint_proof('paint-local',package['release'],'https://127.0.0.1:3188/test')
+ selection_proof('variants-local',package['release'],'https://127.0.0.1:3188/test')
  if package.get('products'):
   proof=json.loads((ROOT/'.local/native-catalog-local.json').read_text('utf8'))
   if proof.get('release')!=package['release']or proof.get('products')!=package['products']or not proof.get('idempotent')or not proof.get('privateDrafts')or proof.get('pageErrors'):raise ValueError('LOCAL_CATALOG_ACCEPTANCE_REQUIRED')
@@ -132,6 +137,7 @@ def activate():
  adult_proof('adult-preview',report['release'],expected)
  storefront_proof('polish-preview',report['release'],expected)
  first_paint_proof('paint-preview',report['release'],expected)
+ selection_proof('variants-preview',report['release'],expected)
  if report['installation'].get('products'):
   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')

@@ -5,7 +5,7 @@
  * Dosya      : native-store/storefront/apply.mjs
  * Açıklama   : Korunmuş kaynağa dokunmadan yetişkin mağazası bileşenlerini yayın kopyasına bağlar.
  */
-import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import{fileURLToPath,pathToFileURL}from'node:url';
+import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import{fileURLToPath,pathToFileURL}from'node:url';import{execFileSync}from'node:child_process';
 const root=path.dirname(fileURLToPath(import.meta.url)),bundle=path.resolve(process.argv[2]);if(!bundle.includes('native-stage-'))throw Error('STOREFRONT_BUILD_SCOPE');
 const copy=JSON.parse(fs.readFileSync(path.join(root,'copy.json'),'utf8'));
 for(const [source,target]of [['content.php','private/sexogate-storefront-content.php'],['copy.json','private/sexogate-storefront-copy.json'],['renderers.js','public/sexogate-storefront-renderers.js'],['ui.js','public/sexogate-storefront.js'],['storefront.css','public/sexogate-storefront.css']])fs.copyFileSync(path.join(root,source),path.join(bundle,target));
@@ -41,4 +41,5 @@ fs.writeFileSync(path.join(bundle,'public/home-vitrine.js'),"import {renderSexog
 fileEdit('private','control-catalog.php',"require_once __DIR__.'/suppliers.php';","require_once __DIR__.'/suppliers.php';\nrequire_once __DIR__.'/sexogate-storefront-content.php';");
 fileEdit('private','control-catalog.php','$products[]=$p;','$products[]=sexogateStorefrontProduct($p);');
 fileEdit('private','seo.php',"return ['verification'=>$config['seo']??[]", "if($kind==='home'){require_once __DIR__.'/sexogate-storefront-content.php';require_once __DIR__.'/sexogate-storefront-home.php';$body=sexogateStorefrontHome($catalog,$config,$locale);}\n return ['verification'=>$config['seo']??[]");
+execFileSync(process.execPath,[path.join(root,'variant-apply.mjs'),bundle],{stdio:'inherit'});
 console.log(JSON.stringify({storefrontComponents:true,automaticFurnitureScenes:false,roomFitTools:false,sourceSnapshotChanged:false}));
