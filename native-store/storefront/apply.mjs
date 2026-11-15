@@ -5,11 +5,17 @@
  * Dosya      : native-store/storefront/apply.mjs
  * Açıklama   : Korunmuş kaynağa dokunmadan yetişkin mağazası bileşenlerini yayın kopyasına bağlar.
  */
-import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import{fileURLToPath}from'node:url';
+import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import{fileURLToPath,pathToFileURL}from'node:url';
 const root=path.dirname(fileURLToPath(import.meta.url)),bundle=path.resolve(process.argv[2]);if(!bundle.includes('native-stage-'))throw Error('STOREFRONT_BUILD_SCOPE');
 const copy=JSON.parse(fs.readFileSync(path.join(root,'copy.json'),'utf8'));
 for(const [source,target]of [['content.php','private/sexogate-storefront-content.php'],['copy.json','private/sexogate-storefront-copy.json'],['renderers.js','public/sexogate-storefront-renderers.js'],['ui.js','public/sexogate-storefront.js'],['storefront.css','public/sexogate-storefront.css']])fs.copyFileSync(path.join(root,source),path.join(bundle,target));
 fs.writeFileSync(path.join(bundle,'public/sexogate-storefront-copy.js'),'export const storefrontCopy='+JSON.stringify(copy)+';\n');
+fs.copyFileSync(path.join(root,'home.php'),path.join(bundle,'private/sexogate-storefront-home.php'));
+const dictionaries=await Promise.all(['i18n.js','shop-i18n.js','shopping-i18n.js'].map(name=>import(pathToFileURL(path.join(bundle,'public',name)).href)));
+const uiKeys=['allProducts','add','favorites','compare','addCollection'],uiCopy={};
+for(const locale of ['tr','en','ru','ar']){const dictionary={...dictionaries[0].copy[locale],...dictionaries[1].shopCopy[locale],...dictionaries[2].shoppingCopy[locale]};uiCopy[locale]=Object.fromEntries(uiKeys.map(key=>{if(typeof dictionary[key]!=='string')throw Error('SSR_LABEL_MISSING:'+locale+':'+key);return[key,dictionary[key]];}));}
+for(const locale of ['de','az','kk','tk','uz','ky','fa']){const dictionary=JSON.parse(fs.readFileSync(path.join(bundle,'public/locales',locale+'.json'),'utf8')).translations;uiCopy[locale]=Object.fromEntries(uiKeys.map(key=>{const value=dictionary[uiCopy.en[key]];if(typeof value!=='string')throw Error('SSR_TRANSLATION_MISSING:'+locale+':'+key);return[key,value];}));}
+fs.writeFileSync(path.join(bundle,'private/sexogate-storefront-ui-copy.json'),JSON.stringify(uiCopy));
 function fileEdit(folder,file,from,to){const p=path.join(bundle,folder,file),source=fs.readFileSync(p,'utf8');if(source.split(from).length!==2)throw Error('STOREFRONT_HOOK_CHANGED:'+file);fs.writeFileSync(p,source.replace(from,to));}
 function functionEdit(file,name,replacement){const p=path.join(bundle,'public',file),source=fs.readFileSync(p,'utf8'),tree=ts.createSourceFile(file,source,ts.ScriptTarget.Latest,true,ts.ScriptKind.JS),found=[];function walk(node){if(ts.isFunctionDeclaration(node)&&node.name?.text===name)found.push(node);ts.forEachChild(node,walk);}walk(tree);if(found.length!==1)throw Error('STOREFRONT_FUNCTION_CHANGED:'+name);const node=found[0];fs.writeFileSync(p,source.slice(0,node.getStart(tree))+replacement+source.slice(node.end));}
 const app=path.join(bundle,'public/app.js');fs.writeFileSync(app,"import {renderSexogateHome,renderSexogateStory,renderSexogateFeatures,renderSexogateShelf} from './sexogate-storefront-renderers.js?v=storefront';\nimport {storefrontCopy as sexogateCopy} from './sexogate-storefront-copy.js?v=storefront';\n"+fs.readFileSync(app,'utf8'));
@@ -34,4 +40,5 @@ let recent=fs.readFileSync(shopping,'utf8');const recentStart=recent.indexOf('fu
 fs.writeFileSync(path.join(bundle,'public/home-vitrine.js'),"import {renderSexogateHero} from './sexogate-storefront-renderers.js?v=storefront';\nexport const renderHomeVitrine=renderSexogateHero;\nexport function mountHomeVitrine(){return ()=>{};}\n");
 fileEdit('private','control-catalog.php',"require_once __DIR__.'/suppliers.php';","require_once __DIR__.'/suppliers.php';\nrequire_once __DIR__.'/sexogate-storefront-content.php';");
 fileEdit('private','control-catalog.php','$products[]=$p;','$products[]=sexogateStorefrontProduct($p);');
+fileEdit('private','seo.php',"return ['verification'=>$config['seo']??[]", "if($kind==='home'){require_once __DIR__.'/sexogate-storefront-content.php';require_once __DIR__.'/sexogate-storefront-home.php';$body=sexogateStorefrontHome($catalog,$config,$locale);}\n return ['verification'=>$config['seo']??[]");
 console.log(JSON.stringify({storefrontComponents:true,automaticFurnitureScenes:false,roomFitTools:false,sourceSnapshotChanged:false}));

@@ -295,4 +295,29 @@ Eşzamanlı dil/yaş koşuları30snetworkidle timeout aldı. Tanı yalnızmüşt
 
 Güncel62d yerel kabul TAMAM:iki motor33admin+9müşteri/5genişlik/MFA/securecookie/0sayfahatası/0hariciistek;iki motorpolishveyaş;11dil/RTL/HTTP+clientmeta;2.194kayıt/468yayın/1.726taslak/50kategori/18dolu altkategori/12gerçekgörselSHA256/SEO/fiyat/tekrar/CSRF/özel taslak PASS. Son kanıt native-catalog-local.json içinde mediaSamplesVerified12. Araç güncellemesi sonrasında yerel sunucu durmuş bulundu;aynırelease/kalıcıstateile gizli arka plan süreci olarak yeniden başlatıldı. Başarısız connection_refused denemesi kabul sayılmadı,son katalog koşusu yeniden PASS.22kurucu son dosyayla yeniden PASS(log native-installer-expansion-final.log). Kaynak değişiklikleri yayın öncesi dar incelemeden geçti;ana site/ödeme/diğer sohbetlerin kaynakları korunuyor. Sıradaki:publish-native-test.py prepare ve güncel önizleme kabulü;aktivasyon henüz yapılmadı.
 
+
+Kaynak commit46b95eef42255d6393b900be1d2c1a72aa02a46b,14yalnızgörev dosyası(normalpush). Diğer sohbetlerin değişiklikleri stage edilmedi;progressyalnız iki görevmarkerıyla HEADüzerine işlendi. Geçerliönizleme:https://sexogate.com/test/native-preview-801b2803909f4c81,release62d,yedek/hash/özelDB/MFA PASS;ilkdurum18public/2194source/checkoutfalse. Yeni468için gerçek yönetim yüklemesi önizlemede başladı. Önizleme aynıteststate'ini kullanır;buadminyayınları eski/test uygulamasında da veri görünürlüğünü etkileyebilir,ana hazırlanıyor siteye/tahsilata etkisi yoktur. Atomik girişgeçişi veri içeaktarımından ayrıdır;yalnız dosyaların geri dönüşü öncesiürünsayısını geri almaz. Önceki6aşifreli DBrestore kanıtı ve arşivi korunuyor. GitHub43745006286/source-and-behavior132906259201:0adım/failure;mevcutfaturalama engeli nedeniyle CIyeşil değildir.
+
+
+Önizleme62d:gerçek yönetim yüklemesi450yeni+18önceki=468görünür,50kategori/18dolu alt/12örnek medyaSHA/%30/SEO/idempotency/CSRF/özel taslak PASS. İki motor33admin+9müşteri/MFA/5genişlik/0sayfahatası/0hariciistek PASS. İlkpolishWebKit tüm ürün/raf/mahremiyet kontrollerinden sonra koleksiyon sayfasında60snetworkidle timeout verdi. Yeni WebKit saltokunur tanı ilkHTTPSbağlantıdaSSLconnecterror verdi;HTTPSPython doğrulaması aynıönizlemedehealth200/0,75s,CSS200/0,16s,koleksiyonHTML200/0,36s. Hangi katmanın arızalı olduğu kanıtlanmış değil. TLSdoğrulaması/süreler/kontroller kapatılmadı. Yeni aynıpolish koşusu tekil tekrarda,ardından yaş/dil sırada;aktivasyon halen YOK. GitHub43745006286 anotasyonu faturalamakilidini doğruladı,0adım.
+
+
+İkinciönizleme polish denemesinde WebKit bütün akışı geçti;Chromium son gezilenler için ürün açışında `.sg-product-intro`30sbeklentisinde durdu. Uygulamakodu değiştirilmedi. Teste yalnız hata anında mevcutURL/sayfahatası/başarısızistekyolu ve özel tanı ekranı kaydı eklendi;hiçbirassert/TLS/süre gevşetilmedi. Yeni koşu native-expansion-preview-polish-diagnostic.log içinde. Yerelde gerçek publicJSON4.401.577bayt/92.274.688baytpeak(256MBsınırı)/geçerliJSON ölçüldü;tek başına PHPbelleklimitihatası kanıtı yok. `/test/error_log` FTPSokuması550dosyayok döndü;sunucudahataolmadığı sonucu çıkarılmadı. DNStekIPv4,AAAAyok;DNSdeğişikliği yapılmadı. Yeniaktivasyon halen yapılmadı.
+
 <!-- END NATIVE_CATALOG_EXPANSION_20261115 -->
+
+<!-- BEGIN NATIVE_FIRST_PAINT_20261115 -->
+## 15 Kasım — ana sayfanın ilk HTML düzeltmesi
+
+Kullanıcının 21.33 ekranında ilk açılışta eski büyük yeşil kampanya görünüyordu. PHP SEO şablonu eski `main-campaign` alanını üretirken istemci katalog isteğinden sonra küçük kartları çiziyordu. Önceki görsel kontroller ilk HTML'yi sınamadığı için bu farkı kaçırdı. Yeni `python scripts/test-native-first-paint.py`, eski 62d adayında `FIRST_HTML_USES_LEGACY_HOMEPAGE` ile RED verdi.
+
+`native-store/storefront/home.php` gerçek yayımlanmış katalogdan aynı CSS sınıflarıyla resimli kısayolları, dört küçük kartı ve ürün rafını üretir. Etiketler mevcut 11 dil sözlüğünden derlenir. İçerik gizlenmez, yapay yükleme ekranı eklenmez; korunmuş kaynak snapshot'ı değişmez. Ayrıntı: `docs/native-first-paint.md`.
+
+Yeni aday **554e78f543311a4d7e250b89**, asset 3265ae7969f51876: 474 dosya, 8.381.344 bayt ZIP; SHA256 1945f47925d1d15dfe567c507280f5ab2c58c5ae2aee930b8c538b0f6bee5214. Dataset d347cf6111d41f5b243e7a3a42f2a37d; 468 görünür ürün, 50 kategori tanımı, 18 dolu alt kategori, 2.194 kaynak. Node yalnız yerel derleme aracıdır.
+
+Yerel kabul PASS: ilk HTTP HTML'sinde 11 dil/başlık/RTL; JavaScript kapalı Chromium ve WebKit'te 390/1440px gerçek dört küçük resimli kart ve taşma kontrolü. Aynı yeni sürümde katalog, iki motorda 33 yönetim+9 müşteri rotası, 5 genişlik, MFA/güvenli çerez, tam polish ve yaş bildirimi; 11 dil/RTL PASS. Katalogda 468 yayın/1.726 taslak/50 kategori/18 dolu alt/12 gerçek medya SHA, %30 fiyat/SEO/tekrar güvenliği/CSRF/özel taslaklar doğrulandı. PHP sunum14/katalog18/URL AST7, 66 JS ve PHP sözdizimi, kaynak771/768/3/13 PASS. İzole kurucu22 PASS. Çıktılar D:/sexogate-local-artifacts-20261114/native-paint-local-*.log ve native-paint-installer.log içindedir.
+
+Yeni sürüm henüz sunucuda etkin değildir. Önceki 62d önizlemesinin son tanı koşusu bu düzeltmeye geçmek için yalnız kendi PID45032 ağacıyla durduruldu; başarılı sayılmadı. Aktif /test girişi6a4df; daha önce önizlemede yapılan admin yayını ortak test DB'sine 450 ürün eklediği için görünür toplam468, eski aktif uygulamanın kategori şeması6'dır. Ana site/DNS/gerçek tahsilat etkilenmedi. Önceki 60s networkidle, SSL connect ve 30s ürün bekleme hatalarının nedeni kanıtlanmış değildir; TLS/süre/assert kontrolleri kaldırılmadı.
+
+Sıradaki: dar kaynak commit'i ve normal push; yeni554e özel önizleme; katalog/ilk HTML/full/polish/yaş/11 dil aynı sürümde PASS sonrası yalnız /test aktivasyonu; ardından HTTP/smoke/ilk HTML/worker/şifreli gerçek restore. Yayın kapısı yerel ve önizleme ilk HTML kanıtını zorunlu tutar. Eski veya başarısız kanıt yeni sürüme ait gibi kullanılmaz.
+<!-- END NATIVE_FIRST_PAINT_20261115 -->

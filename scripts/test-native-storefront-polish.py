@@ -5,6 +5,7 @@
 # Dosya      : scripts/test-native-storefront-polish.py
 # Açıklama   : Gerçek fotoğraf yüklemesi, mobilya temizliği, kart hizası ve mobil çakışmaları ölçer.
 import json,os,re
+from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3188/test').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','polish-local');assert re.fullmatch('[a-z-]+',scope)
@@ -30,7 +31,9 @@ def image_bounds(page):
 def no_overflow(page):assert page.evaluate('()=>document.documentElement.scrollWidth<=innerWidth'),page.viewport_size
 with sync_playwright()as p:
  for engine in ['webkit','chromium']:
-  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();page.set_default_timeout(30000);page.set_default_navigation_timeout(60000);errors=[];account_mount_errors=[];page.on('response',lambda r:account_mount_errors.append(r.url)if '/api/account'in r.url and r.status==404 else None);page.on('pageerror',lambda error:errors.append(str(error)))
+  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();page.set_default_timeout(30000);page.set_default_navigation_timeout(60000);errors=[];account_mount_errors=[];network_failures=[];page.on('response',lambda r:account_mount_errors.append(r.url)if '/api/account'in r.url and r.status==404 else None);page.on('pageerror',lambda error:errors.append(str(error)))
+  page.on('requestfailed',lambda r:network_failures.append({'path':urlsplit(r.url).path,'error':r.failure}))
+  page.on('response',lambda r:network_failures.append({'path':urlsplit(r.url).path,'status':r.status})if r.status>=400 else None)
   try:
    log(engine+': curtains');page.goto(BASE+'/?lang=tr',wait_until='domcontentloaded');gate=page.locator('#sexogate-age-gate');gate.wait_for(state='visible');curtain=gate.locator('.sexogate-age-curtain-left');assert curtain.evaluate('(e)=>parseFloat(getComputedStyle(e).animationDuration)')>=4.8
    page.wait_for_function('()=>document.querySelector("#sexogate-age-gate").classList.contains("is-ready")');start=curtain.evaluate('(e)=>Math.abs(new DOMMatrix(getComputedStyle(e).transform).m41)');page.screenshot(path=str(folder/(engine+'-curtain-initial.png')),timeout=15000);page.wait_for_timeout(1000);middle=curtain.evaluate('(e)=>Math.abs(new DOMMatrix(getComputedStyle(e).transform).m41)');page.screenshot(path=str(folder/(engine+'-curtain-mid.png')));page.wait_for_timeout(4000);final=curtain.evaluate('(e)=>Math.abs(new DOMMatrix(getComputedStyle(e).transform).m41)');assert final>start+30 and middle>=start,(start,middle,final);dismiss(page);log(engine+': home images');image_check(page);text_check(page)
@@ -67,5 +70,11 @@ with sync_playwright()as p:
     log(engine+': '+path);page.goto(BASE+path);page.wait_for_load_state('networkidle');dismiss(page);text_check(page);no_overflow(page)
    page.goto(BASE+'/');page.wait_for_load_state('networkidle');page.screenshot(path=str(folder/(engine+'-home-390.png')));page.set_viewport_size({'width':1440,'height':1000});page.screenshot(path=str(folder/(engine+'-home-1440.png')))
    assert not errors,errors;assert not account_mount_errors,account_mount_errors;release=context.request.get(BASE+'/api/deployment-status').json()['release'];result={'base':BASE,'release':release,'engine':engine,'realImagesLoaded':True,'furnitureCopy':False,'alignedCards':True,'stickyOverlap':False,'footerPrivacyEntry':True,'readableFeatures':True,'horizontalRelatedRail':True,'horizontalRecentRail':True,'curtainDurationSeconds':4.8,'consentRevocation':True,'accountHelperMountedOnce':True,'underlinedLinks':False,'compactImageCampaignCards':4,'productImageBounds':True,'widths':[360,390,430,768,1440],'pageErrors':0};results.append(result);print(json.dumps(result),flush=True)
+  except Exception:
+   try:
+    print(json.dumps({'diagnostic':True,'engine':engine,'url':page.url,'pageErrors':errors,'networkFailures':network_failures[-24:],'body':page.locator('body').inner_text(timeout=2000)[:900]},ensure_ascii=False),flush=True)
+    page.screenshot(path=str(folder/('diagnostic-'+engine+'.png')),timeout=5000)
+   except Exception as diagnostic_error:print('Diagnostic capture: '+type(diagnostic_error).__name__,flush=True)
+   raise
   finally:context.close();browser.close()
 (ROOT/('.local/native-'+scope+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')

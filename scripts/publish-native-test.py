@@ -27,6 +27,10 @@ def entry(home,release,mount):
  if not re.fullmatch(r'/home/[A-Za-z0-9_]+/\.sexogate-native-test',home) or not re.fullmatch('[a-f0-9]{24}',release) or not re.fullmatch('/test(?:/native-preview-[a-f0-9]{16})?',mount):raise ValueError('NATIVE_ENTRY_SCOPE_INVALID')
  quote=lambda value:"'"+value.replace("'","\\'")+"'"
  return ("<?php\n/** SEXOGATE — özel PHP test uygulaması; kaynak: native-store/deploy. */\ndefine('SEXOGATE_NATIVE_MOUNT',"+quote(mount)+");define('SEXOGATE_NATIVE_RELEASE',"+quote(release)+");require "+quote(home+'/releases/'+release+'/deploy/dispatcher.php')+';\n').encode('utf8')
+
+def first_paint_proof(scope,release,base):
+ rows=json.loads((ROOT/('.local/native-'+scope+'.json')).read_text('utf8'))
+ if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('base')!=base or row.get('release')!=release or row.get('serverHtmlCompactCards')!=4 or row.get('serverLocales')!=11 or row.get('legacyHero')is not False or not row.get('javascriptDisabled')or not row.get('realImages')for row in rows):raise ValueError('FIRST_PAINT_ACCEPTANCE_REQUIRED')
 def own_local_proof(package):
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')
@@ -41,6 +45,7 @@ def own_local_proof(package):
  if len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')for row in languages['locales']):raise ValueError('LOCAL_LANGUAGE_ACCEPTANCE_FAILED')
  adult_proof('adult-local',package['release'],'https://127.0.0.1:3188/test')
  storefront_proof('polish-local',package['release'],'https://127.0.0.1:3188/test')
+ first_paint_proof('paint-local',package['release'],'https://127.0.0.1:3188/test')
  if package.get('products'):
   proof=json.loads((ROOT/'.local/native-catalog-local.json').read_text('utf8'))
   if proof.get('release')!=package['release']or proof.get('products')!=package['products']or not proof.get('idempotent')or not proof.get('privateDrafts')or proof.get('pageErrors'):raise ValueError('LOCAL_CATALOG_ACCEPTANCE_REQUIRED')
@@ -116,6 +121,7 @@ def activate():
  if len(proof)!=2 or any(r['base']!=expected or r.get('release')!=report['release']or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
  adult_proof('adult-preview',report['release'],expected)
  storefront_proof('polish-preview',report['release'],expected)
+ first_paint_proof('paint-preview',report['release'],expected)
  if report['installation'].get('products'):
   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')
