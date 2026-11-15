@@ -1,0 +1,45 @@
+<?php
+/**
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : hosting/php/src/SourceCatalog.php
+ * Açıklama   : Gerçek kaynak kataloglarını özel, sürümlü incelemeye alan güvenli aktarım.
+ */
+declare(strict_types=1);
+namespace Sexogate;
+final class SourceCatalog
+{
+    private const HOSTS=['liona'=>['www.liona.com.tr','liona.com.tr'],'sistina'=>['sistinaicgiyim.com.tr','www.sistinaicgiyim.com.tr','www.sistinaicgiyim.com','sistinaicgiyim.com'],'xshopum'=>['www.xshopum.com','xshopum.com']];
+    private const FIELDS=['vendor','kind','sourceUrl','title','sku','brand','description','images','breadcrumbs','observedAt','sourceLastModified','quotedRetailMinor','quotedCurrency','publicInStock','supplierQuantity','metadataState','accessReason','sourceStatus','errorType','sourceHtmlSha256','sourceMethod','sourceApiId','parentSourceId','variants','attributes','categories'];
+    public function __construct(private Database $db,private Config $config){}
+    public function import(string $file,string $vendor,string $key,Principal $actor):array
+    {
+        $actor->require('catalog',true);RuleViolation::ensure(isset(self::HOSTS[$vendor])&&is_file($file)&&filesize($file)<=33554432,'SOURCE_FORMAT','Kaynak ve en fazla32 MB katalog dosyası gerekir.',400);$sha=hash_file('sha256',$file);
+        return (new Audit($this->db))->command($actor,$key,[$vendor,$sha],function()use($file,$vendor,$sha,$actor){
+            $id=Database::id();$this->db->execute('INSERT INTO source_catalog_batches(id,vendor,file_sha256,created_by) VALUES(?,?,?,?)',[$id,$vendor,$sha,$actor->id]);$compressed=file_get_contents($file,false,null,0,2)==="\x1f\x8b";$stream=$compressed?gzopen($file,'rb'):fopen($file,'rb');$decoded=0;$products=0;$categories=0;$parsed=0;$access=0;$count=0;
+            try{while(($line=$compressed?gzgets($stream,65538):fgets($stream,65538))!==false){$decoded+=strlen($line);RuleViolation::ensure($decoded<=33554432,'SOURCE_SIZE','Catalog too large.',400);if(trim($line)==='')continue;RuleViolation::ensure(strlen($line)<=65536&&++$count<=20000,'SOURCE_SIZE','Kayıt veya satır sınırı aşıldı.',400);try{$data=json_decode($line,true,32,JSON_THROW_ON_ERROR);}catch(\Throwable){throw new RuleViolation('SOURCE_JSON','Kaynak satırı geçerli UTF-8 JSON olmalıdır.',400);}RuleViolation::ensure(is_array($data)&&!array_is_list($data),'SOURCE_JSON','Kaynak kaydı geçersiz.',400);$data=array_intersect_key($data,array_flip(self::FIELDS));$this->validate($data,$vendor);$type=$data['kind'];$state=$data['metadataState'];$sourceKey=hash('sha256',$data['sourceUrl']);$this->db->execute('INSERT INTO source_catalog_records(batch_id,source_key,kind,source_url,title,payload,metadata_state) VALUES(?,?,?,?,?,?,?)',[$id,$sourceKey,$type,$data['sourceUrl'],$data['title']??null,$this->config->json($data),$state]);$products+=$type==='product';$categories+=$type==='category';$parsed+=$state==='parsed';$access+=$state==='access_required';}}
+            finally{if($compressed)gzclose($stream);else fclose($stream);}
+            RuleViolation::ensure($count>0,'SOURCE_EMPTY','Katalog dosyası boş.',400);$this->db->execute('UPDATE source_catalog_batches SET product_count=?,category_count=?,parsed_count=?,access_required_count=? WHERE id=?',[$products,$categories,$parsed,$access,$id]);(new Audit($this->db))->record($actor,'import','source_catalog',$id,['records'=>$count,'vendor'=>$vendor]);return ['id'=>$id,'productCount'=>$products,'categoryCount'=>$categories,'parsedCount'=>$parsed,'accessRequiredCount'=>$access];
+        });
+    }
+    private function validate(array $d,string $vendor):void
+    {
+        $u=is_string($d['sourceUrl']??null)?parse_url($d['sourceUrl']):false;RuleViolation::ensure($u&&($u['scheme']??'')==='https'&&in_array($u['host']??'',self::HOSTS[$vendor],true)&&!isset($u['user'])&&!isset($u['pass'])&&!isset($u['port'])&&strlen($d['sourceUrl'])<=2000&&($d['vendor']??null)===$vendor,'SOURCE_URL_REJECTED','Yalnız seçili tedarikçinin HTTPS katalog adresi kabul edilir.',400);
+        RuleViolation::ensure(in_array($d['kind']??null,['product','category'],true)&&in_array($d['metadataState']??null,['indexed','parsed','access_required','error'],true),'SOURCE_STATE','Kaynak türü veya inceleme durumu geçersiz.',400);foreach(['title'=>500,'sku'=>300,'brand'=>300,'description'=>10000] as $field=>$max)RuleViolation::ensure(!isset($d[$field])||is_string($d[$field])&&mb_strlen($d[$field])<=$max,'SOURCE_TEXT','Kaynak metni veya uzunluğu geçersiz.',400);
+        RuleViolation::ensure(($d['supplierQuantity']??null)===null,'SOURCE_STOCK_NOT_CONFIRMED','Genel katalogdan doğrulanmış tedarikçi stoğu oluşturulamaz.',400);if(isset($d['quotedRetailMinor'])){Money::amount($d['quotedRetailMinor']);RuleViolation::ensure(in_array($d['quotedCurrency']??null,['TRY','EUR','USD','GBP'],true),'SOURCE_CURRENCY','Kaynak fiyatının para birimi gerekir.',400);}
+        $images=$d['images']??[];RuleViolation::ensure(is_array($images)&&count($images)<=30,'SOURCE_IMAGES','Görsel bağlantılarını kontrol edin.',400);foreach($images as $url){$p=is_string($url)?parse_url($url):false;RuleViolation::ensure($p&&in_array($p['scheme']??'',['http','https'],true)&&isset($p['host'])&&!isset($p['user'])&&!isset($p['pass'])&&strlen($url)<=3000,'SOURCE_IMAGES','Geçersiz görsel bağlantısı.',400);}
+    }
+    public function listing(Principal $actor):array
+    {$actor->require('catalog');return $this->db->all('SELECT id,vendor,product_count,category_count,parsed_count,access_required_count,created_at,versions FROM(SELECT id,vendor,product_count,category_count,parsed_count,access_required_count,created_at,COUNT(*) OVER(PARTITION BY vendor) versions,ROW_NUMBER() OVER(PARTITION BY vendor ORDER BY created_at DESC,id DESC) position FROM source_catalog_batches) latest WHERE position=1 ORDER BY vendor');}
+    public function records(string $id,array $filters,Principal $actor):array
+    {
+        $actor->require('catalog');$batch=$this->db->one('SELECT id,vendor,product_count,category_count,parsed_count,access_required_count,created_at FROM source_catalog_batches WHERE id=?',[$id]);RuleViolation::ensure($batch,'SOURCE_NOT_FOUND','Aktarım bulunamadı.',404);$where=['batch_id=?'];$args=[$id];$q=$filters['q']??'';RuleViolation::ensure(is_string($q)&&mb_strlen($q)<=100,'INVALID_SEARCH','Arama metnini kontrol edin.',400);if($q!==''){$where[]="(title LIKE ? ESCAPE '=' OR source_url LIKE ? ESCAPE '=')";$q='%'.str_replace(['=','%','_'],['==','=%','=_'],$q).'%';array_push($args,$q,$q);}foreach(['kind','metadata_state','status'] as $key)if(($filters[$key]??'')!==''){RuleViolation::ensure(is_string($filters[$key])&&strlen($filters[$key])<=30,'INVALID_FILTER','Filtreyi kontrol edin.',400);$where[]=$key.'=?';$args[]=$filters[$key];}$page=max(1,min(10000,(int)($filters['page']??1)));$sql=implode(' AND ',$where);$total=(int)$this->db->one('SELECT COUNT(*) n FROM source_catalog_records WHERE '.$sql,$args)['n'];$rows=$this->db->all('SELECT source_key,kind,title,source_url,metadata_state,status,product_id FROM source_catalog_records WHERE '.$sql.' ORDER BY kind,title,source_key LIMIT 40 OFFSET '.(($page-1)*40),$args);return ['batch'=>$batch,'rows'=>$rows,'total'=>$total,'page'=>$page,'filters'=>$filters,'query'=>$filters['q']??''];
+    }
+    public function record(string $batch,string $key,Principal $actor):array
+    {$actor->require('catalog');$r=$this->db->one('SELECT * FROM source_catalog_records WHERE batch_id=? AND source_key=?',[$batch,$key]);RuleViolation::ensure($r,'SOURCE_NOT_FOUND','Kaynak kaydı bulunamadı.',404);$r['data']=json_decode($r['payload'],true,32,JSON_THROW_ON_ERROR);unset($r['payload']);return $r;}
+    public function draft(array $i,Principal $actor):array
+    {
+        $actor->require('catalog',true);return (new Audit($this->db))->command($actor,(string)($i['key']??''),['source-draft',$i],function()use($i,$actor){$batch=$i['batchId']??'';$source=$i['sourceKey']??'';$row=$this->db->one('SELECT kind,status,metadata_state FROM source_catalog_records WHERE batch_id=? AND source_key=? FOR UPDATE',[$batch,$source]);RuleViolation::ensure($row,'SOURCE_NOT_FOUND','Kaynak kaydı bulunamadı.',404);RuleViolation::ensure($row['kind']==='product'&&$row['status']==='review'&&$row['metadata_state']==='parsed','SOURCE_REVIEW_REQUIRED','Ayrıntıları alınmış ve henüz işlenmemiş ürün gerekir.');RuleViolation::ensure(($i['rightsConfirmed']??false)===true&&mb_strlen(trim($i['rightsReference']??''))>=5,'MEDIA_RIGHTS_REQUIRED','Görsel kullanım hakkı referansını onaylayın.',400);(new CatalogPresentation($this->db,$this->config))->localImage($i['image']??'');Money::amount($i['costMinor']??null);$result=(new Catalog($this->db,$this->config))->insertDraft($i,$actor);$this->db->execute("UPDATE source_catalog_records SET status='drafted',product_id=? WHERE batch_id=? AND source_key=?",[$result['id'],$batch,$source]);(new Audit($this->db))->record($actor,'draft','source_catalog',$source,['productId'=>$result['id']]);return $result;});
+    }
+}

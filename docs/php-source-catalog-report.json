@@ -1,0 +1,145 @@
+{
+  "checkedAt": "2026-11-15",
+  "storage": "private-review",
+  "warehouseWrites": 0,
+  "publicPublication": false,
+  "suppliers": [
+    {
+      "vendor": "xshopum",
+      "products": 1022,
+      "categories": 46,
+      "parsed": 1068,
+      "errors": 0,
+      "sha256": "5612d10f4dad49a5e263ccff346cae66b2b98ca177a41d55186dcae661058ce6",
+      "gzipSha256": "00ec6f9e79c059ee7f7de781ddffad9787f9fe9f4a9c8f0112573e78dc315f42",
+      "gzipBytes": 405073,
+      "metadataFields": {
+        "withSku": 1022,
+        "withDescription": 1022,
+        "withImageReferences": 1022,
+        "withRetailQuote": 984
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.xshopum.com/product-sitemap1.xml",
+          "sha256": "2d2f1897bc561264f7c4db2fec1a77f3260ad7b5e1c0614519163647289c137c"
+        },
+        {
+          "url": "https://www.xshopum.com/product-sitemap2.xml",
+          "sha256": "7634e65a154d58ca8ae0e1a606437d3716956d373819c243df068eb9bda15504"
+        },
+        {
+          "url": "https://www.xshopum.com/product-sitemap3.xml",
+          "sha256": "80dce93dce79a0add8ce92468decd166fb141b132e89eb00999085452cd77e9c"
+        },
+        {
+          "url": "https://www.xshopum.com/product-sitemap4.xml",
+          "sha256": "ae00161c9600e81ff1d51b0a35dfcf601c2e1202c55491440e989043a27c97e0"
+        },
+        {
+          "url": "https://www.xshopum.com/product-sitemap5.xml",
+          "sha256": "34426a1ef930fc2c7609a2c037f208b4ff2f99f2578e866a476e93f86f0b29b5"
+        },
+        {
+          "url": "https://www.xshopum.com/product-sitemap6.xml",
+          "sha256": "1ef75d98e4f15bbec690d8610a65317a46cc7bf2432503b7c5356321cedfa71f"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=1",
+          "sha256": "19d79b52640803b4270d3b29cf952eb7704270d0c5444f622b149498523daf2a"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=2",
+          "sha256": "b22e59016180340aaa50ba7238e4d076a5bf5f3d441d4d348a95647678946602"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=3",
+          "sha256": "4c78a8744491d90fe32f35dec350343d7b741e5e1311a4c66a8deb2f4ddc4244"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=4",
+          "sha256": "9503e1cacba6dbdd01c78a6e07b3fdb89ccdbdda5eda57c1565f003fa418effb"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=5",
+          "sha256": "a35ce01b4d1a03270af3e23cb457730a1ab20b6dd7207123a1f77bc1fdfb7773"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=6",
+          "sha256": "d6f9bab0d71fd872e57078420e4d963435455a557084c32c4900275bff4dfa11"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=7",
+          "sha256": "2fd0b50bb96019ba3f9e0a557dcef0b07db813e01aa86023cc60c88c6e09202e"
+        },
+        {
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products/categories?per_page=100&page=1",
+          "sha256": "d09df5d93f86c03e71695c62de1188f311984b81d81b950cab26ba1918a466a9"
+        }
+      ],
+      "observedCompletedAt": "2026-11-15T00:34:48.899711+00:00",
+      "categoriesRecheckedAt": "2026-11-15T00:58:44.110759+00:00"
+    },
+    {
+      "vendor": "liona",
+      "products": 544,
+      "categories": 75,
+      "parsed": 619,
+      "errors": 0,
+      "sha256": "d606283cbd19d6366bc9f2626a86d419ceeab53ff6ef59634c2288045b90505e",
+      "gzipSha256": "b0fddb54f201cc90a3dee8d9b6c49ea93ab135e700cfc401e8005e2a990374bf",
+      "gzipBytes": 68079,
+      "metadataFields": {
+        "withSku": 543,
+        "withDescription": 544,
+        "withImageReferences": 544,
+        "withRetailQuote": 544
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.liona.com.tr/sitemaps/tr-tr/product_sitemap_1.xml",
+          "sha256": "686d2d74bce03001eccdba520ee0cdfcd1f0099edeb78182cf8d60f09185e285"
+        },
+        {
+          "url": "https://www.liona.com.tr/sitemaps/tr-tr/category_sitemap.xml",
+          "sha256": "f9f564f4fc6d2d2d2c138799500233c2e1646c6261a14d5a19f6aacb21478d98"
+        }
+      ],
+      "observedCompletedAt": "2026-11-15T00:35:52.766698+00:00",
+      "categoriesRecheckedAt": "2026-11-15T00:59:33.408205+00:00"
+    },
+    {
+      "vendor": "sistina",
+      "products": 628,
+      "categories": 49,
+      "parsed": 677,
+      "errors": 0,
+      "sha256": "93a1d8473eab902fc14d89176a5e99844824ac8680bfa21d4f0aec218e9ad315",
+      "gzipSha256": "efab678a74537e6c0a8f4197975e6813e08abe7fad9c54694c29a431560e5e1c",
+      "gzipBytes": 89468,
+      "metadataFields": {
+        "withSku": 437,
+        "withDescription": 628,
+        "withImageReferences": 589,
+        "withRetailQuote": 623
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://sistinaicgiyim.com.tr/products.xml",
+          "sha256": "5644d18d6ed2a64f0c1c72fb7b74576534e75131e73eda217da3b8d1df6e4d8c"
+        },
+        {
+          "url": "https://sistinaicgiyim.com.tr/collections.xml",
+          "sha256": "ee933ca140a1a43362c4827f32e459d6ed0b15d1b02b69e6adc5eaa3ac51fb4e"
+        }
+      ],
+      "observedCompletedAt": "2026-11-15T00:46:24.090262+00:00",
+      "categoriesRecheckedAt": "2026-11-15T01:00:07.150881+00:00"
+    }
+  ],
+  "localBatches": {
+    "xshopum": "1698de31-cde4-4418-9d51-321bf1b53315",
+    "liona": "d3c9655e-3732-4f5a-8119-e5f77a5da623",
+    "sistina": "3ee135a3-4a8c-4185-8dcb-ba1a4341e40e"
+  }
+}

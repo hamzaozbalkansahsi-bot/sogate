@@ -24,7 +24,7 @@ with sync_playwright() as p:
             assert page.locator('#age-notice button').count()==2, 'Exit must be a keyboard-reachable action'
             page.locator('#age-accept').focus();page.keyboard.press('Tab');assert page.locator('#age-exit').evaluate('(node)=>node===document.activeElement')
             page.keyboard.press('Shift+Tab');assert page.locator('#age-accept').evaluate('(node)=>node===document.activeElement');page.keyboard.press('Enter');assert not page.locator('#age-notice').is_visible();assert page.locator('main').evaluate('(node)=>node===document.activeElement')
-            for path in ['/','/kategoriler','/en/kategoriler','/urunler','/urun/saten-bag-detayi','/sepet','/hesap','/rehber','/sss','/en/hesap','/blog','/blog/beden-tablosunu-okumak','/site-haritasi','/yasal/kvkk','/yasal/gizlilik','/yasal/mesafeli-satis','/yasal/iade','/iletisim','/en/blog','/en/yasal/iade']:
+            for path in ['/','/kategoriler','/en/kategoriler','/urunler','/urun/saten-bag-detayi','/favoriler','/listeler','/karsilastir','/en/favoriler','/en/listeler','/en/karsilastir','/sepet','/hesap','/rehber','/sss','/en/hesap','/blog','/blog/beden-tablosunu-okumak','/site-haritasi','/yasal/kvkk','/yasal/gizlilik','/yasal/mesafeli-satis','/yasal/iade','/iletisim','/en/blog','/en/yasal/iade']:
                 response=page.goto(base+path);assert response.status==200,(path,response.status);page.wait_for_load_state('networkidle');page.evaluate(axe)
                 report=page.evaluate("async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})")
                 violations=[{'rule':v['id'],'impact':v['impact'],'targets':[n['target'] for n in v['nodes']]} for v in report['violations']]

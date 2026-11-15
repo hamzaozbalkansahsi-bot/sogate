@@ -1,5 +1,14 @@
 # NODENO müşteri deneyiminin PHP uyarlaması
 
+## 15 Kasım2026 — yeni PHP müşteri katmanı ve kaynak katalog incelemesi
+
+Bu bölüm aşağıdaki tarihsel açık maddelerin güncel karşılığıdır; yayın kanıtı son `docs/progress.md` kaydıyla değerlendirilir. PHP027–029: sunucu misafir/hesap favorileri, sahiplikli/sürümlü özel listeler,4 ürün karşılaştırması, mevcut sepet adedini koruyan toplu ekleme ve açık cihaz→hesap aktarımı uygulanmıştır. Türkçe tek-hata arama/SKU sıralaması, klavyeli öneriler, kategori ağacı/mega menü, hesap menüsü, ayrı dil/gösterim para birimi/teslimat tercihi, hero+iki yan alan/kategori halkası/ürün rafı/gerçek CMS rehberleri eklenmiştir. Stok filtresi artık toplu CTE kullanır. PDP gerçek galeri/seçenek bağlantısı, hızlı incelemede seçili fiyat, footer KVKK `privacy` türü ve ayrı gizlilik politikası bağlanmıştır. Sosyal bağlantılarda görünür yazı/ok/tooltip yoktur; yalnız ikon ve erişilebilir ad vardır.
+
+Katalog/kategori ve izinli medya yönetimi, gerçek kaynak kayıtlarından kontrollü taslak ve xShopum/Liona/Sistina **2.194 ürün +170 kategori** özel incelemesi vardır. Bu sayılar mağazada yayımlanan ürün veya fiziksel depo stoğu değildir. Son kaynaklar için [rapor](php-source-catalog-report.json), [erişim/kullanım durumu](php-supplier-research.md) ve [kullanım rehberi](php-shopping-guide.md) kanoniktir.
+
+Açık farklar korunur: NODENO'nun opsiyonel gezinme geçmişi burada varsayılan kapalıdır ve etkinleştirilmemiştir; bütün öneri algoritmaları, tam ürün/varyant editörü, bütün admin listelerinde gelişmiş sayfalama, S3/medya geri yükleme ve ülke/kur editörleri eksiksiz port edilmedi. Bayi XML/authoritative stok, gerçek SKU fotoğrafı ve hakları, gerçek ödeme/taşıma/hukuk/ülke kabulü bekler. Bu sürüme “bütün sistem birebir tamamlandı” denmez.
+
+
 14 Kasım 2026 son kullanıcı talebi: menü, kategori, ürün, sepet, blog ve önerilenler için NODENO davranışını bütün olarak uygula; tek tek özellik talebi bekleme. SEXOGATE marka kimliği ve yalnız `/test` yayın sınırı korunur. Kaynak `C:/Users/Hamza ÖZBALKAN/Desktop/Nodeno`, salt okunur; şirket, müşteri, ürün, görsel, anahtar ve kabul bilgileri aktarılmaz. Önceki Node hedefli uyarlama belgelerinin yerini PHP müşteri katmanı için bu kabul matrisi alır.
 
 Kaynaklar: `web/app.js` kategori/mega menü/ürün/sepet render'ları; `shopping-core.js`, `shopping-ui.js`, `catalog-search.js`, `product-presentation.js`, `checkout-draft.js`, `guest-checkout.js`, `blog-entry.js`, `blog-tools.js`; `docs/commerce-experience.md`, `docs/product-page-and-sharing.md`, `docs/superpowers/specs/2026-11-01-shopping-experience-design.md`. NODENO'nun mobilyaya özel ölçü/boya araçları yetişkin ürünleri için sahte özellik üretmeye dönüştürülmez.

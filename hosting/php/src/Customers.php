@@ -20,7 +20,7 @@ final class Customers
     public function deleteAddress(string $user,string $id):void
     {$this->user($user);RuleViolation::ensure($this->db->execute('DELETE FROM customer_addresses WHERE id=? AND user_id=?',[$id,$user])===1,'ADDRESS_NOT_FOUND','Adres bulunamadı.',404);}
     public function favorite(string $user,string $product,bool $selected):array
-    {$this->user($user);if($selected){RuleViolation::ensure($this->db->one("SELECT id FROM products WHERE id=? AND status='published' AND(fixture=false OR ?=true)",[$product,$this->config->local()?1:0]),'PRODUCT_NOT_FOUND','Ürün bulunamadı.',404);$this->db->execute('INSERT INTO favorites(user_id,product_id) VALUES(?,?) ON DUPLICATE KEY UPDATE product_id=product_id',[$user,$product]);}else $this->db->execute('DELETE FROM favorites WHERE user_id=? AND product_id=?',[$user,$product]);return ['selected'=>$selected];}
+    {$this->user($user);return (new PersonalShopping($this->db,$this->config))->legacyFavorite($user,$product,$selected);}
     public function favorites(string $user):array
     {$this->user($user);return $this->db->all("SELECT p.id,p.name,p.name_en,p.slug,p.image FROM favorites f JOIN products p ON p.id=f.product_id WHERE f.user_id=? AND p.status='published' AND(p.fixture=false OR ?=true) ORDER BY p.name LIMIT 200",[$user,$this->config->local()?1:0]);}
     public function preferences(string $user):array

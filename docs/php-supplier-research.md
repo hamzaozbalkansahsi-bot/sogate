@@ -1,25 +1,48 @@
-# Tedarikçi aktarımı: araştırma ve erişim durumu
+# Tedarikçi katalogları: gerçek çekim ve kullanım durumu
 
-Kontrol: 14 Kasım 2026. Kullanıcının son kapsamı xShopum, Liona ve Sistina'nın kategori/ürünlerini almak ve uygun ürünleri markanın kurgusal yetişkin yüzü Liora ile sunmaktır. Bu belge bağlantının çalıştığını veya ürünlerin aktarıldığını göstermez. Başka işletmenin bayi hesabı kullanılmadı; başvuru, sözleşme, evrak gönderimi veya sipariş verilmedi.
+15 Kasım 2026. Kullanıcının istediği xShopum, Liona ve Sistina kamu katalogları gerçekten çekildi. İlk araştırmadaki “katalog alınmadı” durumu aşağıdaki sonuçla değişmiştir. Başvuru, hesap açılışı, sözleşme veya sipariş verilmedi; başka işletmenin bayi erişimi kullanılmadı.
 
-| Tedarikçi | Resmî kaynakta görülen koşul | Gerçek erişim durumu |
-| --- | --- | --- |
-| xShopum | Aktif bayiler için XML/API ve stok-fiyat webhook hizmetleri ücretsiz; dropshipping paketlemesi20 TL+KDV, ürün/kargo ayrıca. Ürün ekleme/silme için XML; webhook yalnız stok/fiyat. | Bayi tokenı yok. Örnek XML adresine doğrudan yerel GET yaş bildirim sayfası verdi; normal form POST403 döndü, XML alınmış sayılmaz. API doküman adresi de403 verdi. Erişim kontrolü aşılmadı. |
-| Liona | XML bayiliği için ücretsiz ifadesi ve aynı sayfada tek sefer ödeme başlığı var. Referans satış fiyatının altında satışa kısıt koyuyor. Sayfanın sonunda bayi girişlerinin bir süreliğine durdurulduğu yazıyor. | Onaylı hesap/özel XML yok. Yeni bayi kabulü, mevcut hesapların feed erişimi, güncel ücret ve görsel kullanımı yazılı teyit bekliyor. |
-| Sistina | `.com.tr` toptan bayilik sayfasının arama önbelleği onaylı bayilere ücretsiz XML/Excel ve içerik/görsel aktarımı sunulduğunu belirtiyor. | İlgili sayfanın doğrudan güncel açılışı başarısız; `.com.tr` ve `.com` genel katalogları açıldı. Bunların bayi/feed kapsamı ve güncel koşulları teyit bekliyor. Özel XML yok. |
+| Kaynak | Ürün kaydı | Kategori kaydı | Ayrıntısı çözümlenen | Yöntem |
+| --- | ---: | ---: | ---: | --- |
+| xShopum | 1.022 | 46 | 1.068 | Normal 18+ bildirim formu; kamu WooCommerce Store API ve ürün sitemap'leri/HTML |
+| Liona | 544 | 75 | 619 | Resmî sitemap ve kamu ürün/kategori sayfaları |
+| Sistina | 628 | 49 | 677 | Güncel `.com.tr` products.xml, collections.xml ve kamu sayfaları |
+| Toplam | **2.194** | **170** | **2.364** | Kaynak başına tekil URL; markalar arasında veya varyant düzeyinde tekil SKU sayısı değildir |
 
-Kaynaklar: [xShopum bayilik](https://www.xshopum.com/sex-shop-bayilik/), [xShopum resmî XML rehberi](https://www.xshopum.com/xml-entegrasyon-rehberi/), [Liona XML bayilik](https://www.liona.com.tr/liona-ucretsiz-fantazi-ic-giyim-dropshipping-xml-bayilik), [Sistina toptan bayilik](https://sistinaicgiyim.com.tr/ic/toptan-bayilik), [Sistina genel katalog](https://www.sistinaicgiyim.com/). Tedarikçinin iade veya pazaryeri iddiası bizim hukuk/kanal kabulümüz sayılmaz.
+İlk xShopum yaş formu denemesi gerekli Origin/Referer olmadan403 vermişti. Normal aynı kaynak form isteğiyle giriş bildirimi tamamlandı; özel bayi oturumu, anahtar veya erişim atlatma kullanılmadı. Store API668 ürün veriyor; sitemap'teki diğer354 ürünün kamu sayfaları ayrıca çözümlendi. API ile sitemap sayıları toplanıp iki kez sayılmadı. Liona'nın Türkçe URL'si standart yüzde kodlamasıyla işlendi. Sistina kategori sayfasındaki ürün karuseli kategori adı sayılmaz; kategori h1'i esas alındı.
 
-## Güvenli bağlantı alanları
+`parsed`, kaynak sayfanın ayrıştırıldığını belirtir. Bütün ürünlerin SKU, teknik belge, hak veya fiyat bilgisinin eksiksiz olduğu anlamına gelmez. Kalite alanlarının gerçek sayıları ve dosya hash'leri [çekim raporundadır](php-source-catalog-report.json).
 
-Git dışı kök `.env.local` içine boş `XSHOPUM_XML_URL`, `LIONA_XML_URL`, `SISTINA_XML_URL` alanları hazırlandı. Mevcut sırlar değiştirilmedi veya yazdırılmadı. Kişiye özel bağlantılar/tokenlar sohbet, Git veya tarayıcıya gönderilmez. Bu alanlar henüz PHP runtime'a bağlanmış bir feed adaptörü değildir; yalnız güvenli yapılandırma yeridir. Kullanıcıya onaylı bayi hesabı/bağlantı bulunup bulunmadığı soruldu.
+## Verinin bulunduğu yer ve kullanım
 
-## Uygulanacak veri sınırı ve kalan iş
+Yerel ham/sıkıştırılmış çıktılar Git dışında `D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog/<vendor>/` altındadır. Resmî URL ve yanıt hash'li özel önbellek aynı köktedir. `scripts/source-catalog.py` yeniden çekim aracıdır; `.ndjson.gz` taşıma dosyaları2 MB'ın altındadır. PHP/MySQL029 migration ile `source_catalog_batches` ve `source_catalog_records` kalıcı inceleme kaydı tutar. Eski sürümler korunur; ana yönetim ekranı her kaynağın son sürümünü gösterir.
 
-Mevcut PHP CSV/XLSX önizleme/onay akışı çalışır; XML indirme, tedarikçiye özgü eşleme, kalıcı inceleme kuyruğu ve tam katalog aktarımı **tamamlanmadı**. xShopum rehberi gerçek SKU, başlık, kategori, görsel URL, stok ve maliyet/satış fiyatının ayrı alanlarını tarif ediyor; üretici bilgisi yalnız kaynakta varsa korunacak. Ürünleri yayımlamak ayrı onaydır. Eksik feed, eksik görsel hakkı ve örnek XML gerçek tedarikçi kataloğuna dönüştürülmez.
+Yönetim → **Tedarikçi katalogları**: gerçek sayılar, ürün/kategori filtresi, sunucuda arama,40 kayıtlık sayfalar, kaynak başlığı/SKU/perakende fiyatı ve kaynak görsel bağlantıları. Kategori ve ürün kayıtları inceleme kuyruğundadır; müşteri kataloğunda otomatik yayımlanmaz. Katalog/yönetici oturumu ve MFA zorunludur. Yetkisiz kullanıcıya ham kayıt veya bayi bilgisi dönmez. Müşteri sayfaları ürün yayın/ülke ve hak denetimlerini korur.
 
-Sonraki adım: onaylı feed örneğini özel dosyadan al; HTTPS host izin listesi, özel ağ/DNS yönlendirme engeli, boyut/zaman sınırı, XXE/DTD reddi ve akışlı XML okuma testlerini yaz; SKU ve kategori eşlemesini inceleme kaydına al. Tedarikçi fiyatı maliyet/perakende ayrımıyla korunur; stok bildirimi zaman damgalı ayrı kayıttır, fiziksel depo bakiyesi değildir. Tekrar çekme özgün yerel ürün metnini veya geçmiş siparişi değiştirmemelidir. Gerçek kategori/ürün sayısı alınmadan sayım uydurulmaz.
+Onaylı görsel ve işletmenin belirlediği Türkçe/İngilizce içerik, SKU, kategori, gerçek alış maliyeti ve satış fiyatıyla tek kayıttan kontrollü **taslak** oluşturulabilir. Bu işlem ülke uygunluğu veya satış onayı vermez. Kaynak açıklaması üretici belgesi gibi gösterilmez; tıbbi/sertifika/su geçirmezlik iddiaları doğrudan yayımlanmaz. Yeni çekim mevcut ürün metnini, satış fiyatını veya geçmiş siparişi değiştirmez.
 
-## Liora ürün sunumu
+## Birbirinden ayrı kalan ticari veriler
 
-Kanonik kimlik [brand-face-liora.md](brand-face-liora.md) ve `public/brand/liora/identity.json` içindedir. Liora yaklaşık30 yaşında kurgusal yetişkindir. Tedarikçi ürün fotoğrafını kullanma/değiştirme hakkı ve gerçek SKU referansı henüz doğrulanmadı; Liora üzerinde gerçek ürünü gösteren yeni varlık bu aşamada üretilmedi. İzinli referans geldiğinde yüz kimliği ve gerçek ürün ayrıntıları korunarak sunum hazırlanır; özgün ürün fotoğrafı ayrı tutulur, üretilmiş sunum gerçek model çekimi veya beden/uyum kanıtı gibi sunulmaz.
+- Kaynaktaki fiyat **kamu perakende fiyatıdır**, bayi alış maliyeti veya bizim satış fiyatımız değildir.
+- Kamu `InStock`/`OutOfStock` bilgisi yalnız gözlemdir. `supplierQuantity=null`; doğrulanmış teklif, fiziksel depo bakiyesi veya rezervasyon oluşturulmaz.
+- Görsel URL'sinin alınması yayınlama/değiştirme izni vermez. Kaynak görselleri özel incelemede bağlantı olarak sunulur; müşteri ekranlarına kopyalanmaz.
+- Bayi XML/API, güncel maliyet/stok, kullanım hakkı, gönderim/iadeler ve kanal kabulü ayrıca doğrulanmalıdır. Bu katalog çekimi gerçek dropshipping sipariş entegrasyonu değildir.
+
+Git dışı `.env.local` içindeki boş `XSHOPUM_XML_URL`, `LIONA_XML_URL`, `SISTINA_XML_URL` alanları güvenli giriş yeridir. Mevcut sırlar korunur. Bu alanlar şu an otomatik feed/stock adaptörü değildir; anahtar varlığını bağlantı başarısı diye göstermeyin. Ayrı ücret/şartlar resmî bayi sözleşmesiyle doğrulanmalıdır.
+
+## Kaynaklar ve izin bekleyen konular
+
+[xShopum](https://www.xshopum.com/), [bayilik](https://www.xshopum.com/sex-shop-bayilik/), [XML rehberi](https://www.xshopum.com/xml-entegrasyon-rehberi/), [resmî WooCommerce Store API](https://developer.woocommerce.com/docs/apis/store-api/resources-endpoints/products/), [Liona sitemap](https://www.liona.com.tr/sitemap_index.xml), [Liona bayilik](https://www.liona.com.tr/liona-ucretsiz-fantazi-ic-giyim-dropshipping-xml-bayilik), [Sistina ürün sitemap](https://sistinaicgiyim.com.tr/products.xml), [Sistina kategori sitemap](https://sistinaicgiyim.com.tr/collections.xml), [Sistina bayilik](https://sistinaicgiyim.com.tr/ic/toptan-bayilik). Kontrol tarihi15 Kasım2026; koşullar canlı satış öncesinde yazılı güncellenmelidir.
+
+Liora'nın kanonik yüzü [kimlik rehberinde](brand-face-liora.md) korunur. Gerçek SKU fotoğrafını kullanma/değiştirme hakkı henüz teyit edilmediği için Liora üzerinde tedarikçi ürününü gösteren yeni görsel üretilmedi. Genel katalog resmi bu hakkı kanıtlamaz. İzinli ürün referansıyla yeni editoryal sunum hazırlanabilir; özgün ürün fotoğrafı ve teknik ayrıntıları ayrıca korunur.
+
+## Çalıştırma
+
+```powershell
+python scripts/test-source-catalog.py
+python scripts/source-catalog.py --vendor all --output-root D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog
+.local/php-runtime/php.exe hosting/php/bin/source-catalog.php --vendor liona --file D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog/liona/liona.ndjson.gz
+python scripts/test-php-source-browser.py
+```
+
+Uzak aktarım yalnız yetkili `/test` yayını ve yerel kabulden sonra MFA'lı yönetim formuyla yapılır. `test-php-source-browser.py --remote --import-catalogs --catalog-root <özel-katalog-kökü>` idempotent anahtar kullanır, gerçek sayıları iki motorda ve yönetim erişilebilirliğini doğrular. Yayın/test kanıtları `docs/progress.md` içindeki güncel kayıtla değerlendirilir; bu belgenin yazılması tek başına uzak dağıtım yapıldığı anlamına gelmez.

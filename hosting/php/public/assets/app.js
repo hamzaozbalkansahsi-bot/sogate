@@ -15,7 +15,7 @@
  function show(form,text){const output=form.querySelector('.form-message');if(output){output.textContent=text;output.focus?.();}}
  function redirect(path){if(typeof path==='string'&&path.startsWith(base+'/')&&!path.startsWith('//'))location.assign(path);}
  async function quote(){const form=document.getElementById('checkout-form');const data=fields(form);delete data.quoteToken;const result=await api('/api/quote',data);form.elements.quoteToken.value=result.quoteToken;for(const node of form.querySelectorAll('[data-total]')){const value=result[node.dataset.total];if(Number.isSafeInteger(value))node.textContent=new Intl.NumberFormat(en?'en-GB':'tr-TR',{style:'currency',currency:result.currency}).format(value/100);}form.elements.privacyAccepted.checked=false;form.elements.termsAccepted.checked=false;return result;}
- function mountForms(root=document){for(const form of root.querySelectorAll('form[data-api]')){
+ function mountForms(root=document){for(const key of root.querySelectorAll('[data-command-key]'))if(!key.value)key.value=id();for(const form of root.querySelectorAll('form[data-api]')){
   const key=form.querySelector('input[name="idempotencyKey"]');if(key&&!key.value)key.value=id();
   form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;const button=form.querySelector('button[type="submit"],button:not([type])');if(button)button.disabled=true;show(form,'');
    try{const result=await api(form.dataset.api,fields(form));

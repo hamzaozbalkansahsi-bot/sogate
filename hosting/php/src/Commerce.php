@@ -47,7 +47,7 @@ final class Commerce
     public function quote(string $token,array $input,?string $caller=null):array
     {
         $selection=$this->selection($input);return $this->db->transaction(function()use($token,$selection,$caller){$cart=$this->cart->row($token,$caller,false,false);$p=$this->evaluate($cart,$selection,false);$claims=['version'=>1,'cartId'=>$cart['id'],'cartHash'=>Cart::token($token),'selectionHash'=>$this->fingerprint($selection),'evaluationHash'=>$p['binding'],'issuedAt'=>time(),'expiresAt'=>time()+300];$payload=rtrim(strtr(base64_encode($this->config->json($claims)),'+/','-_'),'=');
-            return $p['totals']+['currency'=>$selection['currency'],'quoteToken'=>$payload.'.'.hash_hmac('sha256','quote:'.$payload,$this->config->get('secret')),'expiresAt'=>gmdate('c',$claims['expiresAt']),'deliveryTerm'=>$p['country']['delivery_term'],'profile'=>$p['profile'],'packages'=>array_map(fn($g)=>array_intersect_key($g,array_flip(['source','shippingMinor','minDays','maxDays'])),$p['plan']['groups'])];
+            return $p['totals']+['country'=>$selection['country'],'currency'=>$selection['currency'],'quoteToken'=>$payload.'.'.hash_hmac('sha256','quote:'.$payload,$this->config->get('secret')),'expiresAt'=>gmdate('c',$claims['expiresAt']),'deliveryTerm'=>$p['country']['delivery_term'],'profile'=>$p['profile'],'packages'=>array_map(fn($g)=>array_intersect_key($g,array_flip(['source','shippingMinor','minDays','maxDays'])),$p['plan']['groups'])];
         },true);
     }
     private function verifyQuote(string $value,string $token,array $cart,array $selection,array $pricing):array

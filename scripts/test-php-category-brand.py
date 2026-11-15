@@ -41,6 +41,8 @@ with sync_playwright() as p:
                     assert social.count() == 4
                     for a in social.all():
                         assert a.locator('svg[aria-hidden="true"]').count() == 1, a.inner_text()
+                        assert not a.inner_text().strip(), 'Social links must contain icons only'
+                        assert a.get_attribute('aria-label') in ['Instagram','Facebook','X','TikTok']
                         assert a.get_attribute('rel') == 'noopener noreferrer'
                     first = social.first
                     first.hover()

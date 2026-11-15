@@ -21,7 +21,7 @@ final class Config
         if(!$this->local())RuleViolation::ensure($this->get('payment_provider')!=='test','TEST_PROVIDER_DISABLED','Test ödemesi üretimde kullanılamaz.',503);
     }
     public static function load(string $file):self
-    {if(!is_file($file))throw new RuleViolation('CONFIG_REQUIRED','Uygulama kurulumu tamamlanmadı.',503);$values=str_ends_with($file,'.json')?json_decode(file_get_contents($file),true,64,JSON_THROW_ON_ERROR):require $file;if(!is_array($values))throw new \RuntimeException('CONFIG_INVALID');return new self($values);}
+    {if(!is_file($file))throw new RuleViolation('CONFIG_REQUIRED','Uygulama kurulumu tamamlanmadı.',503);$values=str_ends_with($file,'.json')?json_decode(file_get_contents($file),true,64,JSON_THROW_ON_ERROR):require $file;if(!is_array($values))throw new \RuntimeException('CONFIG_INVALID');$values['media_root']??=dirname($file).'/storage/media';return new self($values);}
     public function get(string $key,string $fallback=''):string{return isset($this->values[$key])?(string)$this->values[$key]:$fallback;}
     public function flag(string $key):bool{return ($this->values[$key]??false)===true;}
     public function local():bool{return in_array($this->get('env'),['development','test'],true);}

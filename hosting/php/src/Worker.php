@@ -15,6 +15,7 @@ final class Worker
     public function __construct(private Database $db,private Config $config){}
     public function tick(int $limit=5):array
     {
+        (new PersonalShopping($this->db,$this->config))->purgeExpired();
         $this->db->execute('DELETE FROM cart_undo WHERE expires_at<DATE_SUB(CURRENT_TIMESTAMP(3),INTERVAL 1 DAY) LIMIT 500');
         $expired=(new Commerce($this->db,$this->config))->expire();$done=0;$failed=0;$exhausted=0;$deadline=microtime(true)+45;
         for($i=0;$i<min(20,max(1,$limit))&&microtime(true)<$deadline;$i++){

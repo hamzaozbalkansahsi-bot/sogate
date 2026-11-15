@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Sexogate;
 final class Information
 {
-    public const LEGAL=['kvkk'=>'privacy-notice','gizlilik'=>'privacy-policy','mesafeli-satis'=>'terms','iade'=>'returns','cerez'=>'cookies','teslimat'=>'delivery'];
+    public const LEGAL=['kvkk'=>'privacy','gizlilik'=>'privacy-policy','mesafeli-satis'=>'terms','iade'=>'returns','cerez'=>'cookies','teslimat'=>'delivery'];
     public function __construct(private Database $db,private Config $config){}
     public function footer():array
     {

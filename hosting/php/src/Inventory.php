@@ -32,7 +32,7 @@ final class Inventory
     public function offers(string $id,string $country='TR',string $currency='TRY'):array
     {return $this->db->all('SELECT a.* FROM supplier_offer_availability a JOIN variants v ON v.id=a.variant_id WHERE a.variant_id=? AND a.country=? AND a.currency=? AND(a.fixture=false OR ?=true) AND v.lot_tracking=false AND NOT EXISTS(SELECT 1 FROM bundle_components WHERE bundle_variant_id=v.id) ORDER BY a.cost_minor,a.supplier_id,a.id',[$id,$country,$currency,$this->config->local()?1:0]);}
     public function available(string $id):int
-    {$v=$this->db->one('SELECT fulfillment_mode FROM variants WHERE id=?',[$id]);if(!$v)return 0;$own=$v['fulfillment_mode']==='dropship'?0:$this->warehouse($id);if($v['fulfillment_mode']==='warehouse')return $own;$offers=$this->offers($id);return max($own,$offers?max(array_map('intval',array_column($offers,'available'))):0);}
+    {return (new Availability($this->db,$this->config))->many([$id])[$id]??0;}
     public function plan(array $items,array $country,bool $locked):array
     {
         $ids=array_column($items,'id');$components=$this->db->all('SELECT * FROM bundle_components WHERE bundle_variant_id IN('.Database::slots($ids).') ORDER BY component_variant_id,bundle_variant_id',$ids);

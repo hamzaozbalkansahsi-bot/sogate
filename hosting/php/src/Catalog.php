@@ -42,39 +42,15 @@ final class Catalog
             $this->db->execute("UPDATE products SET status='published',updated_at=CURRENT_TIMESTAMP(3) WHERE id=?",[$id]);(new Audit($this->db))->record($actor,'publish','products',$id,['country'=>$country]);
         });
     }
-    public function search(array $filters=[]):array
-    {
-        foreach($filters as $value)RuleViolation::ensure(is_string($value)||is_int($value),'INVALID_FILTER','Filtre değerini kontrol edin.',400);
-        $page=max(1,min(100000,(int)($filters['page']??1)));$where=["p.status='published'","(p.fixture=false OR ?=true)"];$args=[$this->config->local()?1:0];
-        $query=$filters['q']??'';RuleViolation::ensure(is_string($query),'INVALID_SEARCH','Arama metnini kontrol edin.',400);$terms=preg_split('/\s+/u',mb_substr(trim($query),0,100),-1,PREG_SPLIT_NO_EMPTY);$terms=array_slice($terms,0,8);
-        foreach($terms as $term){if(!preg_match('/[\p{L}\p{N}]/u',$term)){$where[]='false';continue;}$q=str_replace(['=','%','_'],['==','=%','=_'],$term);$compact=preg_replace('/[^\p{L}\p{N}]/u','',$term);$where[]="(p.name COLLATE utf8mb4_tr_0900_ai_ci LIKE ? ESCAPE '=' OR p.name_en COLLATE utf8mb4_tr_0900_ai_ci LIKE ? ESCAPE '=' OR p.brand LIKE ? ESCAPE '=' OR EXISTS(SELECT 1 FROM variants sv WHERE sv.product_id=p.id AND REPLACE(REPLACE(REPLACE(sv.sku,'-',''),'_',''),' ','') LIKE ?))";array_push($args,'%'.$q.'%','%'.$q.'%','%'.$q.'%','%'.$compact.'%');}
-        if(($filters['category']??'')!==''){$where[]='p.category=?';$args[]=$filters['category'];}
-        foreach(['brand','material'] as $field)if(($filters[$field]??'')!==''){RuleViolation::ensure(is_string($filters[$field])&&mb_strlen($filters[$field])<=150,'INVALID_FILTER','Filtreyi kontrol edin.',400);$where[]='p.'.$field.'=?';$args[]=$filters[$field];}
-        $variant=['fv.product_id=p.id','fv.active=true'];$variantArgs=[];
-        foreach(['minPrice'=>'>=','maxPrice'=>'<='] as $field=>$operator)if(($filters[$field]??'')!==''){$variant[]='fv.price_minor'.$operator.'?';$variantArgs[]=Money::parseDecimal((string)$filters[$field]);}
-        foreach(['color','size'] as $field)if(($filters[$field]??'')!==''){RuleViolation::ensure(is_string($filters[$field])&&mb_strlen($filters[$field])<=100,'INVALID_FILTER','Filtreyi kontrol edin.',400);$variant[]='fv.'.$field.'=?';$variantArgs[]=$filters[$field];}
-        $where[]='EXISTS(SELECT 1 FROM variants fv WHERE '.implode(' AND ',$variant).')';$args=array_merge($args,$variantArgs);
-        if(($filters['exclude']??'')!==''){$where[]='p.id<>?';$args[]=$filters['exclude'];}
-        $condition=implode(' AND ',$where);
-        if(($filters['available']??'')==='1'){
-            $candidates=$this->db->all('SELECT p.id FROM products p WHERE '.$condition.' LIMIT 5001',$args);RuleViolation::ensure(count($candidates)<=5000,'SEARCH_FILTER_TOO_BROAD','Stok filtresinden önce kategori veya aramayı daraltın.',400);$ids=[];$stock=new Inventory($this->db,$this->config);foreach($candidates as $candidate)foreach($this->db->all('SELECT id FROM variants WHERE product_id=? AND active=true',[$candidate['id']]) as $v)if($stock->available($v['id'])>0){$ids[]=$candidate['id'];break;}$condition.=$ids?' AND p.id IN('.Database::slots($ids).')':' AND false';$args=array_merge($args,$ids);
-        }
-        $price="(SELECT MIN(sv.price_minor) FROM variants sv WHERE sv.product_id=p.id AND sv.active=true)";$sort=match($filters['sort']??'recommended'){'price-asc'=>$price.' ASC,p.id','price-desc'=>$price.' DESC,p.id','name'=>'p.name COLLATE utf8mb4_tr_0900_ai_ci,p.id',default=>'p.created_at DESC,p.id'};
-        $total=(int)$this->db->one('SELECT COUNT(*) n FROM products p WHERE '.$condition,$args)['n'];
-        $rows=$this->db->all('SELECT p.id,p.slug,p.name,p.name_en,p.description,p.description_en,p.category,p.image,p.brand,p.material,p.warnings,p.care,p.manufacturer,p.origin FROM products p WHERE '.$condition.' ORDER BY '.$sort.' LIMIT 24 OFFSET '.(($page-1)*24),$args);
-        $inventory=new Inventory($this->db,$this->config);foreach($rows as &$p){$p['variants']=$this->db->all('SELECT id,sku,name,name_en,price_minor,currency,color,size FROM variants WHERE product_id=? AND active=true ORDER BY id',[$p['id']]);foreach($p['variants'] as &$v){$v['price_minor']=(int)$v['price_minor'];$v['available']=$inventory->available($v['id']);}}unset($p,$v);
-        return ['rows'=>$rows,'total'=>$total,'page'=>$page];
-    }
-    public function related(string $id,int $limit=4):array
-    {$p=$this->db->one("SELECT category FROM products WHERE id=? AND status='published'",[$id]);if(!$p)return [];return array_slice($this->search(['category'=>$p['category'],'exclude'=>$id])['rows'],0,max(1,min(12,$limit)));}
-    public function categories():array
-    {return $this->db->all("SELECT c.slug,c.name,c.name_en,(SELECT COUNT(*) FROM products p WHERE p.category=c.slug AND p.status='published' AND(p.fixture=false OR ?=true)) product_count,(SELECT p.image FROM products p WHERE p.category=c.slug AND p.status='published' AND(p.fixture=false OR ?=true) ORDER BY p.created_at DESC LIMIT 1) image FROM categories c WHERE c.active=true ORDER BY c.name",[$this->config->local()?1:0,$this->config->local()?1:0]);}
+    public function search(array $filters=[],string $locale='tr',string $currency='TRY'):array
+    {return (new CatalogReader($this->db,$this->config))->search($filters,$locale,$currency);}
+    public function related(string $id,int $limit=4,string $locale='tr',string $currency='TRY'):array
+    {$p=$this->db->one("SELECT category FROM products WHERE id=? AND status='published'",[$id]);if(!$p)return [];return array_slice($this->search(['category'=>$p['category'],'exclude'=>$id],$locale,$currency)['rows'],0,max(1,min(12,$limit)));}
+    public function categories():array{return (new CatalogReader($this->db,$this->config))->categories();}
     public function facets():array
     {$result=[];foreach(['brand','material'] as $field)$result[$field]=$this->db->all("SELECT DISTINCT p.".$field." value FROM products p WHERE p.status='published' AND(p.fixture=false OR ?=true) AND p.".$field."<>'' ORDER BY p.".$field." LIMIT 100",[$this->config->local()?1:0]);foreach(['color','size'] as $field)$result[$field]=$this->db->all("SELECT DISTINCT v.".$field." value FROM variants v JOIN products p ON p.id=v.product_id WHERE v.active=true AND p.status='published' AND(p.fixture=false OR ?=true) AND v.".$field." IS NOT NULL AND v.".$field."<>'' ORDER BY v.".$field." LIMIT 100",[$this->config->local()?1:0]);return $result;}
-    public function product(string $slug):?array
-    {$id=$this->db->one("SELECT id FROM products WHERE slug=? AND status='published' AND(fixture=false OR ?=true)",[$slug,$this->config->local()?1:0]);if(!$id)return null;foreach($this->search()['rows'] as $row)if($row['id']===$id['id'])return $row;return $this->detail($id['id']);}
-    private function detail(string $id):?array
-    {$p=$this->db->one('SELECT id,slug,name,name_en,description,description_en,category,image,brand,material,warnings,care,manufacturer,origin FROM products WHERE id=?',[$id]);if(!$p)return null;$p['variants']=$this->db->all('SELECT id,sku,name,name_en,price_minor,currency,color,size FROM variants WHERE product_id=? AND active=true ORDER BY id',[$id]);foreach($p['variants'] as &$v)$v['available']=(new Inventory($this->db,$this->config))->available($v['id']);return $p;}
+    public function product(string $slug,string $currency='TRY'):?array
+    {return (new CatalogReader($this->db,$this->config))->product($slug,$currency);}
     public function admin(Principal $actor):array
     {
         RuleViolation::ensure($actor->mfa&&in_array($actor->role,['admin','catalog','warehouse','finance'],true),'FORBIDDEN','Bu liste için yetkiniz yok.',403);
