@@ -26,5 +26,8 @@ jobs:
       - run: node --test native-store/upstream/tests/shopping-experience.test.mjs native-store/upstream/tests/guest-checkout.test.mjs native-store/upstream/tests/locale-runtime.test.mjs native-store/upstream/tests/date-time.test.mjs
       - run: python -m pip install -r scripts/requirements-native-catalog.txt
       - run: python scripts/test-native-catalog.py
+      - run: npm ci --ignore-scripts
+      - run: node --test scripts/test-native-relocation.mjs
+      - run: php scripts/test-native-storefront-content.php
       - run: node --check native-store/catalog/admin-catalog.js && node --check native-store/catalog/apply.mjs && node --check native-store/theme/age-gate.js
       - run: php -l native-store/catalog/catalog.php && php -l native-store/deploy/dispatcher.php && php -l native-store/deploy/install.php && php -l native-store/deploy/maintenance.php

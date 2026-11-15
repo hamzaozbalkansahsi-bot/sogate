@@ -24,7 +24,8 @@ body.sexogate-age-open{overflow:hidden}.sexogate-age-gate{border:1px solid #E7B4
 .sexogate-age-arch path{fill:none;stroke:#E7B4BD;stroke-width:.7;stroke-opacity:.45;stroke-dasharray:1300;stroke-dashoffset:0;animation:sg-arch-draw 1.8s cubic-bezier(.25,.7,.2,1) both}
 .sexogate-age-arch path+path{stroke-opacity:.2;animation-delay:.15s}
 .sexogate-age-mark{width:100%;display:flex;flex-direction:column;align-items:center;z-index:1;animation:sg-mark-reveal 2s cubic-bezier(.22,.65,.2,1) both}.sexogate-age-art img{width:min(274px,86%);filter:drop-shadow(0 10px 25px #21010f44)}
-.sexogate-age-curtain{position:absolute;top:-7%;bottom:-7%;width:58%;z-index:2;pointer-events:none;background:repeating-linear-gradient(92deg,#370819 0,#8e123d 12%,#50091f 22%,#a3264e 28%,#4e0920 40%,#6b102e 50%);box-shadow:0 0 35px #1e001c88;transform-origin:top;animation-duration:2.2s;animation-timing-function:cubic-bezier(.3,.7,.2,1);animation-fill-mode:both}
+.sexogate-age-curtain{position:absolute;top:-7%;bottom:-7%;width:58%;z-index:2;pointer-events:none;background:repeating-linear-gradient(92deg,#370819 0,#8e123d 12%,#50091f 22%,#a3264e 28%,#4e0920 40%,#6b102e 50%);box-shadow:0 0 35px #1e001c88;transform-origin:top;animation-duration:4.8s;animation-timing-function:cubic-bezier(.42,0,.3,1);animation-fill-mode:both;animation-play-state:paused}
+.sexogate-age-gate.is-ready .sexogate-age-curtain{animation-play-state:running}
 .sexogate-age-curtain-left{left:-3%;border-radius:0 0 70% 0;animation-name:sg-curtain-left}.sexogate-age-curtain-right{right:-3%;border-radius:0 0 0 70%;animation-name:sg-curtain-right;background-position:80px 0}
 .sexogate-age-signature{font-size:10px;letter-spacing:.12em;margin-top:40px;animation:sg-mark-enter .8s .2s both}
 .sexogate-age-copy{padding:54px 46px;background:radial-gradient(ellipse at 100% 0,#f3e6e8 0,transparent 65%),#FBF4EF}

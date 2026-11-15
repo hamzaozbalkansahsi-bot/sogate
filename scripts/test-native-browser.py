@@ -39,8 +39,9 @@ def admin_route(page,route):
 results=[]
 with sync_playwright() as p:
  for engine in ['chromium','webkit']:
-  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 20000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
+  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 60000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
   try:
+   tested_release=context.request.get(BASE+'/api/deployment-status').json()['release']if '/test'in BASE else None
    page.goto(BASE+'/yonetim');page.wait_for_load_state('networkidle');page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();time.sleep(30.5-time.time()%30);page.locator('[name=proof]').fill(otp(access['totpSecret']));page.locator('#verify button[type=submit]').click();page.locator('.sidebar').wait_for(state='attached');page.locator('#verify').wait_for(state='detached');page.wait_for_load_state('networkidle')
    cookies=context.cookies();assert any(c['name'].startswith('__Host-') and c['secure'] and c['httpOnly'] for c in cookies)
    routes=page.locator('.sidebar a[href^="#"]').evaluate_all('(nodes)=>[...new Set(nodes.map(n=>n.getAttribute("href")))]');assert len(routes)>=20,routes
@@ -55,6 +56,7 @@ with sync_playwright() as p:
    public=[]
    paths=['/blog'] if args.branding_only else ['/','/?page=categories','/?page=cart','/?page=favorites','/?page=collections','/?page=compare','/?page=account','/blog','/yonetim/blog']
    for path in paths:
+    print(json.dumps({'engine':engine,'publicRoute':path}),flush=True)
     response=page.goto(BASE+path);assert response.status==200,(path,response.status);page.wait_for_load_state('networkidle');dismiss(page)
     for width in [360,390,430,768,1440]:
      page.set_viewport_size({'width':width,'height':900});assert page.evaluate('() => document.documentElement.scrollWidth<=innerWidth'),(path,width)
@@ -62,6 +64,7 @@ with sync_playwright() as p:
     if path in ['/blog','/?page=categories','/yonetim/blog']:page.screenshot(path=str(folder/(engine+'-'+{'/blog':'blog','/?page=categories':'categories','/yonetim/blog':'blog-admin'}[path]+'.png')),full_page=True)
     public.append(path)
    assert not errors,errors;assert not external,external
-   results.append({'engine':engine,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)
+   if tested_release:assert context.request.get(BASE+'/api/deployment-status').json()['release']==tested_release,'RELEASE_CHANGED_DURING_TEST'
+   results.append({'engine':engine,'release':tested_release,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)
   finally:context.close();browser.close()
 (ROOT/('.local/native-browser'+('-branding' if args.branding_only else '')+('' if scope=='local' else '-'+scope)+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')

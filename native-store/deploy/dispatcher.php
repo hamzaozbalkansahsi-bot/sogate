@@ -50,13 +50,14 @@ if($relative==='/api/deployment-status'){
  try{$state=nodenoStoreContext($private);$db=nodenoControlDatabase($state['storage']);$ok=$db->query('PRAGMA quick_check')->fetchColumn()==='ok';$products=count($state['catalog']['products']??[]);$report=['status'=>$ok?'preview':'unavailable','runtime'=>'php','database'=>$ok,'release'=>$pointer['release'],'products'=>$products,'sourceProducts'=>count($state['sourceCatalog']['products']??[]),'checkoutEnabled'=>false,'catalogReady'=>$products>0,'strictMediaHealth'=>'sales_and_country_acceptance_pending','basePath'=>$mount];http_response_code($ok?200:503);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: private, no-store');echo json_encode($report,JSON_THROW_ON_ERROR);exit;}catch(Throwable $error){sexogateNativeFail(503,'deployment_check_failed');}
 }
 $_SERVER['REQUEST_URI']=substr($uri,strlen($mount))?:'/';
-ob_start(static function(string $body)use($mount,$assetRevision):string{
+ob_start(static function(string $body)use($mount,$assetRevision,$relative):string{
  foreach(headers_list()as $header){if(str_starts_with(strtolower($header),'location: /')&&!str_starts_with(substr($header,10),'//'))header('Location: '.$mount.substr($header,10),true,http_response_code());}
  $type='';foreach(headers_list()as $header)if(str_starts_with(strtolower($header),'content-type:'))$type=strtolower($header);
  header('X-Robots-Tag: noindex, nofollow');
  if(str_contains($type,'text/html')){
   $body=preg_replace('~((?:href|src|action|poster)=["\'])/(?!/|__SEXOGATE_MOUNT__)~i','$1/__SEXOGATE_MOUNT__/',$body);
   if(!str_contains($body,'sexogate.css'))$body=str_replace('</head>','<link rel="stylesheet" href="/__SEXOGATE_MOUNT__/sexogate.css?v=sexogate-'.$assetRevision.'"><script defer src="/__SEXOGATE_MOUNT__/sexogate-branding.js?v=sexogate-'.$assetRevision.'"></script></head>',$body);
+  if(!preg_match('~^/(?:yonetim|admin)(?:/|$|\.)~',$relative))$body=str_replace('</head>','<link rel="stylesheet" href="/__SEXOGATE_MOUNT__/sexogate-storefront.css?v=sexogate-'.$assetRevision.'"><script type="module" src="/__SEXOGATE_MOUNT__/sexogate-storefront.js?v=sexogate-'.$assetRevision.'"></script></head>',$body);
  }
  if(str_contains($type,'json')){
   $body=preg_replace('~("(?:\\\\/|/))(api|assets|media|legal|social-media|locales|blog|yonetim)(?=\\\\/|/|["?])~','$1__SEXOGATE_MOUNT__/$2',$body);

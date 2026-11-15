@@ -48,6 +48,8 @@ for folder in ['public','private']:
 theme_hash=hashlib.sha256()
 for path in sorted((ROOT/'native-store/theme').rglob('*')):
  if path.is_file():theme_hash.update(path.read_bytes())
+for path in sorted((ROOT/'native-store/storefront').glob('*')):
+ if path.is_file():theme_hash.update(path.read_bytes())
 for path in [ROOT/'native-store/source-manifest.json',ROOT/'scripts/build-native-stage.py',*sorted((ROOT/'native-store/deploy').glob('*'))]:
  if path.is_file():theme_hash.update(path.read_bytes())
 version=theme_hash.hexdigest()[:16]
@@ -65,6 +67,7 @@ if selection_file.is_file():
   if path.is_file():theme_hash.update(path.read_bytes())
  version=theme_hash.hexdigest()[:16]
  subprocess.run(['node',str(ROOT/'native-store/catalog/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
 subprocess.run(['node',str(ROOT/'native-store/deploy/apply-store-theme.mjs'),str(bundle),version],check=True,cwd=ROOT)
 admin=bundle/'public/admin.html'
 if admin.is_file():admin.write_text(admin.read_text('utf8').replace('/sexogate-catalog.js"','/sexogate-catalog.js?v='+version+'"').replace('/sexogate-catalog.css"','/sexogate-catalog.css?v='+version+'"'),encoding='utf8')

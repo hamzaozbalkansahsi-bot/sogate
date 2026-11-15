@@ -16,6 +16,13 @@ def adult_proof(scope,release,base):
  if not path.is_file():raise ValueError('ADULT_STORE_ACCEPTANCE_REQUIRED')
  rows=json.loads(path.read_text('utf8'))
  if len(rows)!=2 or {row['engine']for row in rows}!={'chromium','webkit'} or any(row.get('base')!=base or row.get('release')!=release or row.get('worldMap')is not False or row.get('furnitureCopy')is not False or not row.get('guestBrowsing')or not row.get('ageGate')or row.get('pageErrors')for row in rows):raise ValueError('ADULT_STORE_ACCEPTANCE_FAILED')
+
+def storefront_proof(scope,release,base):
+ path=ROOT/('.local/native-'+scope+'.json')
+ if not path.is_file():raise ValueError('STOREFRONT_VISUAL_ACCEPTANCE_REQUIRED')
+ rows=json.loads(path.read_text('utf8'))
+ required=['realImagesLoaded','alignedCards','footerPrivacyEntry','readableFeatures','horizontalRelatedRail','horizontalRecentRail','consentRevocation','accountHelperMountedOnce','productImageBounds']
+ if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('base')!=base or row.get('release')!=release or row.get('furnitureCopy')is not False or row.get('stickyOverlap')is not False or row.get('underlinedLinks')is not False or row.get('compactImageCampaignCards')!=4 or row.get('curtainDurationSeconds',0)<4.8 or row.get('pageErrors')or not all(row.get(key)is True for key in required)for row in rows):raise ValueError('STOREFRONT_VISUAL_ACCEPTANCE_FAILED')
 def entry(home,release,mount):
  if not re.fullmatch(r'/home/[A-Za-z0-9_]+/\.sexogate-native-test',home) or not re.fullmatch('[a-f0-9]{24}',release) or not re.fullmatch('/test(?:/native-preview-[a-f0-9]{16})?',mount):raise ValueError('NATIVE_ENTRY_SCOPE_INVALID')
  quote=lambda value:"'"+value.replace("'","\\'")+"'"
@@ -24,7 +31,7 @@ def own_local_proof(package):
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')
  results=json.loads(path.read_text('utf8'))
- if len(results)!=2 or {r['engine'] for r in results}!={'chromium','webkit'} or any(r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in results):raise ValueError('LOCAL_MOUNT_ACCEPTANCE_FAILED')
+ if len(results)!=2 or {r['engine'] for r in results}!={'chromium','webkit'} or any(r.get('release')!=package['release']or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in results):raise ValueError('LOCAL_MOUNT_ACCEPTANCE_FAILED')
  local=json.loads((ROOT/'.local/native-stage-local.json').read_text('utf8'))
  if local['release']!=package['release']:raise ValueError('LOCAL_PROOF_RELEASE_MISMATCH')
  if path.stat().st_mtime<(ROOT/'.local/native-stage-package.json').stat().st_mtime:raise ValueError('STALE_LOCAL_ACCEPTANCE')
@@ -33,6 +40,7 @@ def own_local_proof(package):
  languages=json.loads(language_path.read_text('utf8'))
  if len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')for row in languages['locales']):raise ValueError('LOCAL_LANGUAGE_ACCEPTANCE_FAILED')
  adult_proof('adult-local',package['release'],'https://127.0.0.1:3188/test')
+ storefront_proof('polish-local',package['release'],'https://127.0.0.1:3188/test')
  if package.get('products'):
   proof=json.loads((ROOT/'.local/native-catalog-local.json').read_text('utf8'))
   if proof.get('release')!=package['release']or proof.get('products')!=package['products']or not proof.get('idempotent')or not proof.get('privateDrafts')or proof.get('pageErrors'):raise ValueError('LOCAL_CATALOG_ACCEPTANCE_REQUIRED')
@@ -105,8 +113,9 @@ def prepare():
   finally:ftp.close()
 def activate():
  report=json.loads(REPORT.read_text('utf8'));proof=json.loads((ROOT/'.local/native-browser-mount-preview.json').read_text('utf8'));expected='https://sexogate.com'+report['preview']
- if len(proof)!=2 or any(r['base']!=expected or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
+ if len(proof)!=2 or any(r['base']!=expected or r.get('release')!=report['release']or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
  adult_proof('adult-preview',report['release'],expected)
+ storefront_proof('polish-preview',report['release'],expected)
  if report['installation'].get('products'):
   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')

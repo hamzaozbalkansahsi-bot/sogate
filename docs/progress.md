@@ -225,3 +225,33 @@ Kaynaklarda119 Türkçe ve diğer10 dilin her birinde1 yinelenen SEO başlık gr
 
 Ek doğrulama notu:yayın sonrası tekrarda tekil SSL/chunk gövde okuma timeout'u gözlendi. Rota kaydı eklendi; altı pozitif HTTP rota ayrı okuması0,08–0,58sn,ardından tam HTTP/FTP/gizli dosya/409/main/cleanup tekrarı3,78sn PASS. Kalıcı neden belirlenmedi; kontrol kaldırılmadı.
 <!-- END NATIVE_CATALOG_MOTION_20261115 -->
+
+<!-- BEGIN NATIVE_STOREFRONT_POLISH_20261115 -->
+
+## 15 Kasım — Gerçek vitrin görselleri ve mobil düzen düzeltmesi (devam ediyor)
+
+Kullanıcının on görselindeki kabul açık: mobilya/oda araçları ve metinleri, reddedilen `/test/media` fotoğrafları, hizasız kartlar, örtüşen sabit kontroller, karmaşık açıklamalar, hızlı perde ve yatay raflar. Korunmuş upstream snapshot'a dokunulmadı; yeni `native-store/storefront` modülü türetilmiş yayın kopyasına bağlandı. Ana site/tahsilat etkilenmez.
+
+RED kanıt: önceki `/test` kopyası gerçek DOM'da ürün görseli oluşturmuyordu; iki medya regex'inden yalnız biri mount edilmişti. Yeni regex testi düzeltme öncesi 1!=2; düzeltme sonrası 5/5. İlk görsel kabul koşusu kart/alt alan kontrollerinden geçti, koleksiyon boş ekranındaki `Yeni eviniz.../odalara...` nedeniyle başarısız oldu; bu kalıntı da düzeltildi. Yeni malzeme testi reklam paragrafını özellik olarak göstermeyi engelliyor (PHP 14 kontrol PASS).
+
+Yeni değişiklikler henüz canlıya alınmadı. Son paket, tarayıcılar ve ekran görüntüleri incelenip hatalar giderildikten sonra yalnız `/test` özel önizleme ve atomik geçiş yapılacak. Görsel hazırlanıyor yerine sahte resim üretmek yok; 18 seçili kapak orijinal gerçek görsellerdir. 2.194 ürün yönetimde; görsel/hukuk/operasyon incelemeleri nedeniyle diğer ürünlerin taslak durumları korunur. İşletme/Stripe/ülke/vergi/gerçek stok onayı eksikleri ile önceki tedarikçi rozeti araç reddi halen açık; bunlar tamamlandı gösterilmez.
+
+Sıradaki komutlar: `python scripts/build-native-stage.py`, durdurulan **yalnız kendi** yerel sunucu süreçleriyle `python scripts/prepare-native-stage-local.py --reuse-state` / `python scripts/run-native-stage-local.py`, `python scripts/test-native-storefront-polish.py`; ardından güncel sürümün native/admin/dil/yaş/katalog kontrolleri ve yalnız başarılıysa preview yayını.
+
+Ek yerel bulgular: koleksiyon boş ekranı RED sonrası temizlendi. Hesap sarmalayıcısındaki `/social`, `/state`, koşullu giriş/kayıt ve kimlik eklenen adres yolları çift mount oluyordu; yeni iki regresyon (RED→GREEN) ile toplam 7 AST testi PASS. Geri alım/tekrar dönüşüm idempotency'si de sınandı. Yeni PHP sunum 14, katalog 8+12, izole kurucu/güvenlik/yedek 17 kontrol PASS. WebKit ilk hareket ölçümünde ekran görüntüsünün geç yakalanması nedeniyle koşu başarısız oldu; perde eğrisi düzeltildi ve DOM-ready başlangıç ölçümü eklendi. Eşzamanlı eski admin koşusu networkidle20s zaman aşımında durdu, yeni sürüm daha çalıştırılmadan başarılı işaretlenmedi.
+
+Disk engeli: C: 0 bayt; ekran görüntüsü OSError28 ile durdu. Kendi eski yedeği ve yeni polish ekranları D:ye hash doğrulamasıyla taşındı, aynı erişim yolu junction ile korundu. Diğer aktif PHP süreçleri görüldüğü için ortak PHP çalışma dosyaları taşınmadı. Kullanıcı geçici dosya temizliğine/taşımaya yetki verdi. Önbellek silme denemesi araç politikasıyla reddedildi; aynı silme başka araçla denenmedi, daha güvenli veri koruyan taşıma seçildi. Geçici tarayıcı alanı D:ye yönlendirildi. Yeni yayının yerel kabulü halen devam ediyor.
+
+Son durum:74273b724eb189698f2bda61 adayının iki motor görsel/33 admin+9 müşteri/11 dil/yaş/katalog kabulleri PASS. Ancak kullanıcı ana sayfadaki büyük bloğu reddederek Trendyol ana sayfasına göre küçük resimli kartlar istedi;74273b yayımlanmadı. Resmî Trendyol sayfası web okuyucusunda incelendi; görsel tarayıcı403 döndü, piksel eşitliği iddia edilmiyor.
+
+Yeni ana sayfa dört küçük resimli kart (desktop4,mobil2 sütun),resimli kısayol şeridi,gerçek seçili/son gezilen ürün raflarıdır. Yönetimde seçilen kampanya ürünü ilk kartta desteklenir. İlk10d29f adayındaki portre görselinin106px çerçeveden287px taşması gerçek DOM ile ölçüldü; CSS Grid min-content/height yerine flex+logical block-size/max-block-size kullanıldı ve fotoğraf sınırı testi eklendi.44px favori alanı/RTL kart oku/fontu da korundu.
+
+Güncel derleme ve yerel sunucu:6a4df2f12a051e326bf868df,asset c108e2474496a8a7;66JS modülü,472 dosya,8.367.107 bayt ZIP;2194 kaynak,18 vitrin,checkoutfalse. Güncel görsel test scripts/test-native-storefront-polish.py çalışıyor; başarılı olunca yeni sürümün admin,dil,yaş,katalog kanıtları yenilenip publish-native-test.py prepare/preview/activate yapılacak. Canlı/test halen4dde26c2a496aaecbef1027e; ana site korunuyor. Kodu güncel kabul geçmeden yayımlama.
+
+C: önbellek taşıma/yerel eski süreçlerin kapanması sonrası son ölçüm5,29GB boş; pip Cache640 dosya D:de SHA256 doğrulanıp junction ile korunur. Kaynak projeler taşınmadı. D: geçici test alanı kullanılıyor.
+
+Güncel6a4df2f12a051e326bf868df yerel kabulü TAMAM: iki motorda33 yönetim+9 müşteri,iki motorda gerçek resimli küçük kartlar/taşmayan fotoğraf kutuları/ürün fiyat+CTA hizası/yatay raflar/mağaza gizliliği/perde/yaş/klavye/5 genişlik;11 dil/RTL;2.194 ürünün fiyat/SEO alanı/tekrar güvenliği/private taslakları PASS. JS/PHP source syntax PASS. Tüm proof dosyaları `.local/native-...-local.json` içinde bu sürüme bağlıdır. Kaynak regresyonunun gerçek son çıktısı `.local/native-core-tests-final.log`:153 test/153 pass/0 fail/0 skip. GitHub43726018210 adımları faturalama kilidi yüzünden başlamadı; CI yeşil gösterilmiyor.
+
+Sonraki komut: `python scripts/publish-native-test.py prepare`; dönen rastgele preview URL'sinde mount-preview,adult-preview,catalog-preview,polish-preview ve11 dil koşuları PASS olmadan `activate` çalıştırma. Sonrasında uzak sağlık,tarayıcı smoke,gerçek fotoğraf/mobil görünüm,worker ve şifreli restore doğrulanacak. Ana siteye dokunulmayacak; tahsilat409 kapalı kalacak.
+
+<!-- END NATIVE_STOREFRONT_POLISH_20261115 -->
