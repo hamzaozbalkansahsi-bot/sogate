@@ -5,6 +5,7 @@
 # Dosya      : scripts/test-native-languages.py
 # Açıklama   : Kataloglu vitrinde dil seçimini, sunucu/istemci metaverisini ve RTL yönünü doğrular.
 import argparse,html,json,os,re,ssl,urllib.error,urllib.request
+from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -31,6 +32,11 @@ with sync_playwright() as p:
     context.add_init_script("window.__nativeTranslationErrors=[];for(const type of ['error','unhandledrejection'])addEventListener(type,e=>{const error=e.error||e.reason;if(error?.translationSource)window.__nativeTranslationErrors.push(error.translationSource);});")
     page = context.new_page()
     errors = []
+    pending = set()
+    failed = []
+    page.on('request', lambda request: pending.add(request))
+    page.on('requestfinished', lambda request: pending.discard(request))
+    page.on('requestfailed', lambda request: (pending.discard(request), failed.append({'path':urlsplit(request.url).path,'error':request.failure})))
     page.on('pageerror', lambda error: errors.append(str(error)))
     try:
         for locale in args.locales:
@@ -51,6 +57,11 @@ with sync_playwright() as p:
             missing = page.evaluate('() => window.__nativeTranslationErrors')
             if missing: print(json.dumps({'missingTranslation': locale, 'source': missing}), flush=True)
         assert not errors, errors
+    except Exception:
+        try:
+            print(json.dumps({'diagnostic':True,'locale':locale,'path':urlsplit(page.url).path,'pending':[{'path':urlsplit(request.url).path,'type':request.resource_type}for request in pending],'failed':failed[-12:],'pageErrors':errors,'ready':page.evaluate('()=>({document:document.readyState,language:document.querySelector("#language")?.value,currency:!!document.querySelector("#currency")})')},ensure_ascii=False),flush=True)
+        except Exception: print('Language diagnostic unavailable',flush=True)
+        raise
     finally:
         context.close()
         browser.close()
