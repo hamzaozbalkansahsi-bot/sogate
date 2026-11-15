@@ -4,7 +4,7 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-catalog-browser.py
 # Açıklama   : Gerçek yönetim oturumunda kaynak yükleme, fiyat, SEO, mükerrerlik ve özel görselleri sınar.
-import base64,hashlib,hmac,json,os,re,struct,time
+import base64,hashlib,hmac,json,os,re,struct,time,sys
 from decimal import Decimal
 from urllib.parse import urlsplit
 from bs4 import BeautifulSoup
@@ -13,6 +13,12 @@ from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3188/test').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','catalog-local')
 assert re.fullmatch('[a-z-]+',scope)and re.fullmatch(r'https://(?:127\.0\.0\.1:3188|sexogate\.com)/test(?:/native-preview-[a-f0-9]{16})?',BASE)
 access=json.loads((ROOT/'.local'/('php-stage-access.json'if BASE.startswith('https://sexogate.com')else'php-access.json')).read_text('utf8'))
+def safe_error(kind,error,trace):
+ message=str(error)
+ for key in ['email','password','totpSecret']:
+  if access.get(key):message=message.replace(access[key],'[redacted]')
+ print(kind.__name__+': '+message[:1600],file=sys.stderr)
+sys.excepthook=safe_error
 def otp():
  secret=access['totpSecret'];key=base64.b32decode(secret+'='*((8-len(secret)%8)%8));d=hmac.new(key,struct.pack('>Q',int(time.time())//30),hashlib.sha1).digest();o=d[-1]&15;return str((struct.unpack('>I',d[o:o+4])[0]&0x7fffffff)%1000000).zfill(6)
 with sync_playwright()as p:

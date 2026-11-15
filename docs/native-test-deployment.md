@@ -4,8 +4,8 @@
 
 ## Veri sınırı ve gerçek durum
 
-- Katalog **0 ürün /0 kategori** ile açılır. Kurucu marka ve boş katalog içeriğini ayrıca doğrular; NODENO ürün/fiyat/görsel/müşteri/veritabanı veya işletme kimliği alınmaz. Kaynak testlerin referans kataloğu yayın ZIP'ine girmez.
-- Yalnız mevcut SEXOGATE rehberlerinden üç içerik bankası ve kendi yönetici erişimi kullanılır. Üyelik belgeleri TR/EN taslaktır. Tedarikçi inceleme kayıtları ve eski MySQL verisi eski özel uygulamada korunur; yeni SQLite verisine aktarılmış gösterilmez.
+- Katalog artık **2.194 gerçek tedarikçi kaydı /6 mağaza ana grubu** içerir;172 kaynak kategori yönetimde ayrıca incelenir.18 temiz kapak test vitrininde,2.176 kayıt taslaktır. Kurucu marka, kaynak namespace/hash ve taslak başlangıcını ayrıca doğrular; NODENO ürün/fiyat/görsel/müşteri/veritabanı veya işletme kimliği alınmaz. Kaynak testlerin referans kataloğu yayın ZIP'ine girmez.
+- Yalnız mevcut SEXOGATE rehberlerinden üç içerik bankası ve kendi yönetici erişimi kullanılır. Üyelik belgeleri TR/EN taslaktır. Eski MySQL inceleme verisi korunur. Yeni kaynak katalog kendi doğrulanmış dosyalarından özgün MFA/CSRF yönetim akışıyla SQLite kayıtlarına yüklendi; müşteri veya eski işletme verisi alınmadı.
 - Gerçek ödeme **kapalıdır**. `/api/payments/checkout` dağıtım sınırında409 döner; arayüzden ayar değiştirmek bu sınırı kaldırmaz. Yeni ülke/ürün/belge/hukuk/Stripe kabulü olmadan satış açılamaz.
 - Bu bir test uygulaması yayınıdır; bütün ticaret modülleri gerçek ürün ve dış sağlayıcıyla kabul edildi anlamına gelmez.
 
@@ -25,7 +25,7 @@ Ana bekleme sayfasının sabit script hash'li CSP'si alt uygulamaya uygun değil
 
 Yalnız bu uygulamanın CLI içerik işçisi cPanel cron'unda dakikada bir çalışır. Diğer cron komutları değişmedi; gerçek heartbeat ve içerik kuyruğu çalışması gözlendi. E-posta, ödeme mutabakatı, tedarikçi ve sosyal platform bağlantıları bu işçiyle tamamlanmış sayılmaz; dış sosyal yayın kapalıdır.
 
-`/test/api/deployment-status` gerçek SQLite `quick_check`, sürüm ve önizleme durumunu gösterir. `catalogReady=false`, `checkoutEnabled=false` ve ürün sayısı0'dır. Özgün `/api/health` içindeki tam katalog/medya onay kapısı kaldırılmadı; boş katalog ve henüz hazırlanmamış tam medya/release kaydı nedeniyle bu kontrol satışa hazır değildir ve503 döner. Deployment kontrolü, bu medya kabulünü geçtiğimiz anlamına gelmez.
+`/test/api/deployment-status` gerçek SQLite `quick_check`, sürüm ve önizleme durumunu gösterir. `catalogReady=true`, `checkoutEnabled=false`, görünür ürün18 ve kaynak ürün2.194'tür. Özgün `/api/health` içindeki tam katalog/medya onay kapısı kaldırılmadı; henüz satış/ülke onayı verilmemiş tam medya/release kaydı nedeniyle bu kontrol satışa hazır değildir ve503 döner. Deployment kontrolü, bu medya kabulünü geçtiğimiz anlamına gelmez.
 
 ## Yerel kurulum ve yayın komutları
 
@@ -40,7 +40,7 @@ python scripts/run-native-stage-local.py
 python scripts/test-native-installer.py
 ```
 
-Tarayıcı kabulünde `SEXOGATE_NATIVE_TEST_URL` ve `SEXOGATE_NATIVE_TEST_SCOPE` yalnız izinli loopback/test/önizleme hedeflerini seçer. Yerel kabul hem tek parçalı `/test` hem uzun önizleme yolu için yapıldı. `test-native-browser.py` 33 yönetim bölümü/9 müşteri yolunu iki motorda ve beş genişlikte sınar; `--release-smoke` geçiş sonrası1 yönetim bölümü/9 yolu sınar. Bunlar aynı kapsam diye raporlanmaz. `test-native-languages.py` boş katalogda11 dil seçimini ve RTL yönünü sınar; ürün/hukuk çevirilerini onaylamaz.
+Tarayıcı kabulünde `SEXOGATE_NATIVE_TEST_URL` ve `SEXOGATE_NATIVE_TEST_SCOPE` yalnız izinli loopback/test/önizleme hedeflerini seçer. Yerel kabul hem tek parçalı `/test` hem uzun önizleme yolu için yapıldı. `test-native-browser.py` 33 yönetim bölümü/9 müşteri yolunu iki motorda ve beş genişlikte sınar; `--release-smoke` geçiş sonrası1 yönetim bölümü/9 yolu sınar. Bunlar aynı kapsam diye raporlanmaz. `test-native-languages.py` kataloglu vitrinde11 dil seçimini, sunucu/istemci metaverisini ve RTL yönünü sınar; ürün/hukuk çevirilerini onaylamaz.
 
 ```powershell
 python scripts/publish-native-test.py prepare
@@ -52,17 +52,17 @@ python scripts/publish-native-test.py activate
 python scripts/test-native-stage-http.py
 ```
 
-`prepare` kurucuyu süreli token ile çalıştırır, ZIP/hash/yol/symlink/mükerrerlik/boş katalog denetimlerini yapar; kurucu ve payload silinir. Yönetici kimliği ve kalıcı state sonraki kurulumlarda sıfırlanmaz. `activate` ana site ve önceki test giriş dosyalarını tekrar doğrular, kontrollü giriş/yönlendirme geçişi yapar. İlk sağlık başarısızlığında geri dönüş vardır.
+`prepare` kurucuyu süreli token ile çalıştırır, ZIP/hash/yol/symlink/mükerrerlik/kaynak katalog denetimlerini yapar; kurucu ve payload silinir. Yönetici kimliği ve kalıcı state sonraki kurulumlarda sıfırlanmaz. `activate` ana site ve önceki test giriş dosyalarını tekrar doğrular, kontrollü giriş/yönlendirme geçişi yapar. İlk sağlık başarısızlığında geri dönüş vardır.
 
 ## Yedek ve geri dönüş
 
 Önce eski MySQL'in şifreli yedeği yeni yerel veritabanına geri yüklendi:91 tablo/4.589 satır/103 FK,30 migration checksum ve30→30 PASS. Eski test giriş dosyaları ve özel yapılandırma ayrıca AES-GCM ile yedeklenip geri okunarak doğrulandı.
 
-Yeni native verinin SQLite yedeği `VACUUM INTO` ile tutarlı snapshot olarak alınır. Veritabanları ve gerekli anahtar dosyaları AES-256-GCM ile şifreli ZIP'te indirilir. Yerelde hash, SQLite integrity, foreign key ve tablo satır sayıları doğrulanır. Gerçek sayılar güvenli özet raporunda kayıtlıdır. Bu, katalog medyası yedek/restore testi değildir; ürün medyası henüz yoktur.
+Yeni native verinin SQLite yedeği `VACUUM INTO` ile tutarlı snapshot olarak alınır. Veritabanları ve gerekli anahtar dosyaları AES-256-GCM ile şifreli ZIP'te indirilir. Yerelde hash, SQLite integrity, foreign key ve tablo satır sayıları doğrulanır. Gerçek sayılar güvenli özet raporunda kayıtlıdır. Bu, tam katalog medyası felaket geri yükleme testi değildir.8.546 orijinal rasterin yerel hash kopyası ve web dışı sunucu aktarımı doğrulandı; sürekli şifreli medya yedek/rotasyonu ayrı kurulmalıdır.
 
 `native-stage-operations.py` yayından sonra gerektiğinde yalnız tek rastgele bakım dosyasına süreli, token kontrollü yol açar. İşlem sonunda dosya/token kaydı kaldırılır ve özgün `/test/.htaccess` geri konur; beklenmeyen eşzamanlı yönlendirme değişikliği ezilmez. Sırlar yalnız yerel `.env.local` ve sunucunun özel alanındadır. Yedek anahtarı `BACKUP_ENCRYPTION_KEY` sohbet veya Git'e konmaz. Sürekli periyodik yedek saklama/rotasyon otomasyonu ayrıca kurulmalıdır.
 
-Hostingte aynı saniyede değişen yönlendirme dosyası bazen404/405 üretti. Geçici kuraldan önce mtime'ın farklı saniyeye geçmesi sağlanır; yalnız bakım dosyasının hiç çalışmadığını gösteren404/405 için sınırlı tekrar vardır. Diğer hata cevabı başarı sayılmaz. Son gerçek şifreli restore2DB/41tablo/62satır PASS; kurucu/bakım dosyaları temizliği ve ana site fingerprint'i ayrıca yeniden doğrulandı.
+Hostingte aynı saniyede değişen yönlendirme dosyası bazen404/405 üretti. Geçici kuraldan önce mtime'ın farklı saniyeye geçmesi sağlanır; yalnız bakım dosyasının hiç çalışmadığını gösteren404/405 için sınırlı tekrar vardır. Diğer hata cevabı başarı sayılmaz. Son gerçek şifreli restore2DB/41tablo/6.797satır PASS; kurucu/bakım dosyaları temizliği ve ana site fingerprint'i ayrıca yeniden doğrulandı.
 
 ```powershell
 python scripts/publish-native-test.py rollback
@@ -72,7 +72,7 @@ Bu komut yalnız bu yayının giriş/yönlendirmesini doğrulanmış şifreli ye
 
 ## Kabul ve kalan koşullar
 
-Kaynak çekirdek regresyonu153 PASS; URL taşıma3 PASS; gerçek PHP HTTP kurucusunda11 güvenlik/kurulum/yedek senaryosu PASS. ZIP traversal, mutlak yol, nokta takma adı, symlink, mükerrer giriş, token/TTL ve103 karakterli TOTP ele alındı. Kaynak snapshot ve13 marka varlığı doğrulandı. Gerçek yerel/uzak tarayıcı, dil, header, kurucu temizliği, CLI heartbeat ve restore kanıtları `docs/native-deployment-report.json` ile `docs/progress.md` içindedir.
+Kaynak çekirdek regresyonu153 PASS; URL taşıma4 PASS; gerçek PHP HTTP kurucusunda17 güvenlik/kurulum/yedek senaryosu PASS. ZIP traversal, mutlak yol, nokta takma adı, symlink, mükerrer giriş, token/TTL ve103 karakterli TOTP ele alındı. Kaynak snapshot ve13 marka varlığı doğrulandı. Gerçek yerel/uzak tarayıcı, dil, header, kurucu temizliği, CLI heartbeat ve restore kanıtları `docs/native-deployment-report.json` ile `docs/progress.md` içindedir.
 
 ## Yetişkin mağazası katmanı
 
@@ -87,3 +87,11 @@ Varlık revizyonu tema, dağıtım kodu ve kaynak manifest'inden türetilir. Yen
 İlk yerel TLS bağlantı kuyruğu CSS yüklemelerini aksattı; test kabuğu düzeltildi. Uzun alt yol regex kaçışı düzeltildi. Uzak20 saniyelik yükleme timeout'u sonrası public varlık cache'i düzeltildi; fonksiyonel uzak navigasyon bütçesi60 saniyedir, performans hedefi geçti denmez. İlk geçişte ana sitenin CSP mirası JavaScript'i engelledi; doğrulanmış eski sürüme geri dönüldü, yalnız alt uygulama başlığı ayrılıp önizlemede yeniden test edildi.
 
 Gerçek Stripe/taşıyıcı/fatura kabulü, gerçek ürün/stok/görsel belgeleri, ülke/yaş kuralları, onaylı hukuk/satıcı kimliği, tüm yedek rotasyonu, tam WCAG/klavye, fiziksel iPhone ve CWV saha ölçümü bu test yayınıyla tamamlanmış sayılmaz. İlk 153 testin dış sağlayıcıları izole fixture'dır; gerçek tahsilat yapılmadı.
+
+## 15 Kasım kaynak katalog ve yeni yetişkin girişi
+
+Aktif test sürümü `4dde26c2a496aaecbef1027e`; uygulama commitleri `f511d8d` ve `afa3ec6`. Kurulumun revision0 API yanıtında taslak kataloğu döndürmemesi ayrıca test edilir. Katalog işleminde mevcut fiyat/içerik ezilmez; 40 kayıtlık güvenli tekrarlar, gerçek stok kodu çakışması, güncel MFA ve yetki denetlenir. Dinamik kategori metni 11 dilde şablonla üretilir; sözlük hatası gizlenmez.256 MB bellek bütçesi yerel/hosting kabulünde doğrulandı.
+
+Girişteki üst yazı ve nokta kaldırıldı. Bordo perde açılışı, kemer çizgisi ve ışık katmanı kullanılır; üyelik istenmez, ek hareket ayarı arayüzü yoktur. Mevcut30 günlük yaş beyanı korunur. Yeni ilk ekran gizli pencerede görülebilir. Ekranlar `docs/screenshots/native-store-adult-remote/`, hareket kaydı `docs/screenshots/native-store-adult-local/age-opening.webm`.
+
+Katalog hazırlama, alanların doğruluk sınırları, ürün paneli ve açık SEO/rozet işleri [katalog kılavuzunda](native-catalog-loading.md); gerçek sayımlar [raporda](native-catalog-report.json). `prepare-native-catalog.py` yalnız özel yerel kaynaklarla çalışır. `publish-native-catalog-media.py` geçici token/yol, hash/MIME/boyut denetimi ve ana site fingerprint kontrolüyle web dışı fotoğraf aktarır; payload/helper sonunda kaldırılır. Gerçek ödeme, stok teyidi, vergi/hukuk/ülke/satıcı ve sağlayıcı kabulü halen kapalıdır.

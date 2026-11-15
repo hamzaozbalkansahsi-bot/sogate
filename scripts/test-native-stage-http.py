@@ -10,6 +10,7 @@ ROOT=Path(__file__).resolve().parent.parent;sys.dont_write_bytecode=True
 spec=importlib.util.spec_from_file_location('publisher',ROOT/'scripts/publish-php-test.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 deployment=json.loads((ROOT/'.local/native-stage-deployment.json').read_text('utf8'));assert deployment['activated'];result={}
 for route,expected in [('/test/',200),('/test/?page=categories',200),('/test/api/catalog',200),('/test/api/deployment-status',200),('/test/app/config.local.json',403),('/test/.env',403),('/test/private/accounts.sqlite',404),('/test/site.webmanifest',200),('/test/apple-touch-icon.png',200)]:
+ print(json.dumps({'checking':route}),flush=True)
  status,body,headers=p.get(route);headers={key.lower():value for key,value in headers.items()};assert status==expected,(route,status);result[route]=status
  if route=='/test/':
   html=body.decode('utf8');assert '<title>Tutkunu Keşfet. | SEXOGATE</title>'in html and 'SEXOGATE mobilya koleksiyonu'not in html;assert 'sexogate-branding.js?v=sexogate-'in html
