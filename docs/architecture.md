@@ -111,3 +111,9 @@ Hukuki gereklilikler doğrulanmadan ülke açılmaz. PDF tedarik raporu hukuki, 
 <!-- BEGIN NATIVE_DIRECT_COPY_20261115 -->
 15 Kasım son karar: NODENO'nun bütün uygulama kodu doğrudan kopyalanır, yalnız SEXOGATE marka/tema katmanı ayrılır. Yerel yeni temel PHP/SQLite/WAL ile `native-store/` altında; mevcut PHP/MySQL `/test` korunur. Kaynak, yöntem, gerçek testler ve dağıtım sınırı [doğrudan devir kaydındadır](native-store-transfer.md). Önceki parça parça arayüz uyarlaması yeni temel olarak ilerletilmez.
 <!-- END NATIVE_DIRECT_COPY_20261115 -->
+
+<!-- BEGIN NATIVE_TEST_ADULT_RELEASE_20261115 -->
+## 15 Kasım güncel Native test mimarisi
+
+`/test` güncel runtime:PHP8.3.36/PDO SQLite WAL, web kökü dışındaki sürümlü release + kalıcı state, CLI içerik worker'ı/cPanel cron. Sunucu Node çalıştırmaz. Korunmuş NODENO snapshot'ı değiştirilmez; ayrı derleme katmanı marka/URL mount, yetişkin metinleri/18+ ve sunucu SEO sunumunu uygular. Eski Next/MySQL/legacy PHP kaynak/verisi silinmez; yeni state'e taşınmış gösterilmez. Kapsamlı test/backup/geri dönüş/gerçek engeller [Native yayın rehberinde](native-test-deployment.md). Ana site ayrı tutulur; gerçek ödeme dağıtım sınırında409 ile kapalıdır.
+<!-- END NATIVE_TEST_ADULT_RELEASE_20261115 -->

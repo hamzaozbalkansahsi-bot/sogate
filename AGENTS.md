@@ -34,3 +34,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - 15 Kasım son kullanıcı kararı: önce NODENO uygulaması bütün kaynak/modülleriyle doğrudan alınır, yeniden/parçalı arayüz uyarlaması yapılmaz. Yeni temel `native-store/upstream`, marka/renk/font/varlık katmanı `native-store/theme`; kanonik kayıt `docs/native-store-transfer.md`. Kaynak çekirdek byte olarak korunur; sır/müşteri/sipariş/NODENO ticari kataloğu taşınmaz. Yerel Native PHP/SQLite kopyası ile mevcut MySQL `/test` yayını ayrı durumdur; eski yayın henüz değiştirilmedi.
 - Kaynak testlerindeki üç açık sahte Stripe sabiti için tek istisna `scripts/native_fixture_safety.py` ve manifest'teki özgün/güvenli hash çiftleridir; özgün52 PHP/61 JS uygulama motoru değiştirilmez. Bu istisnayı kaldırıp ham sabitleri Git'e geri koyma.
 <!-- END NATIVE_DIRECT_COPY_20261115 -->
+
+<!-- BEGIN NATIVE_TEST_ADULT_RELEASE_20261115 -->
+## 15 Kasım Native PHP yayın kararı
+
+- Güncel test runtime `native-store/` içindeki korunmuş NODENO kaynağının SEXOGATE derlemesidir; yalnız `https://sexogate.com/test`. Ayrıntı `docs/native-test-deployment.md`; son kanıt `docs/native-deployment-report.json` ve `docs/progress.md`.
+- NODENO katalog/ürün/müşteri/işletme verisi taşınmaz. Mobilya, kurulum, haritalı karşılama veya başka işletmenin satıcı unvanı SEXOGATE müşteri ekranına konmaz. 18+ marka bildirimi ve onaydan sonra üyelik istemeyen gezinti korunur; ülke bazlı gerçek yaş kabulü ayrıca gerekir.
+- Sunucuda Node çalıştırılmaz. PHP/SQLite özel state web kökü dışındadır; legacy MySQL verisi korunur. Gerçek tahsilat teknik olarak kapalıdır; boş katalog medya/sağlayıcı kabulü geçmiş sayılmaz. Ana site/DNS/gerçek tahsilat bu yayın yetkisinin dışındadır.
+<!-- END NATIVE_TEST_ADULT_RELEASE_20261115 -->

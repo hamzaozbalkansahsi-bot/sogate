@@ -32,3 +32,9 @@ Hukuki satıcı, vergi numarası, adres/banka/destek, gerçek SKU/stok/görsel h
 <!-- BEGIN NATIVE_DIRECT_COPY_20261115 -->
 15 Kasım son karar: NODENO'nun bütün uygulama kodu doğrudan kopyalanır, yalnız SEXOGATE marka/tema katmanı ayrılır. Yerel yeni temel PHP/SQLite/WAL ile `native-store/` altında; mevcut PHP/MySQL `/test` korunur. Kaynak, yöntem, gerçek testler ve dağıtım sınırı [doğrudan devir kaydındadır](native-store-transfer.md). Önceki parça parça arayüz uyarlaması yeni temel olarak ilerletilmez.
 <!-- END NATIVE_DIRECT_COPY_20261115 -->
+
+<!-- BEGIN NATIVE_TEST_ADULT_RELEASE_20261115 -->
+## 15 Kasım güncel test kapsamı
+
+Kullanıcının son kararıyla NODENO yazılım yapısı `native-store/` altında korunur, SEXOGATE tema ve yetişkin mağazası metinleri uygulanır. Bu aktarım NODENO katalog/ürün/fiyat/müşteri/satıcı verisini kapsamaz. 18+ beyanı üyelikten bağımsızdır; dünya haritası ve mobilya/kurulum içeriği kullanılmaz. Yalnız `/test` PHP/SQLite yayını doğrulandı; eski MySQL kaynakları/verisi korunur. Ayrıntılı gerçek kabul ve eksikler [Native yayın kaydındadır](native-test-deployment.md). Gerçek katalog ve dış kabul olmadan tahsilat kapalı kalır.
+<!-- END NATIVE_TEST_ADULT_RELEASE_20261115 -->

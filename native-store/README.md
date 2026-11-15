@@ -18,3 +18,5 @@ Yerel çalıştırma bilgisi Git dışı `.local/native-store-build.json` dosyas
 
 
 Son kaynak:771 dosya;52 PHP ve61 JS motor dosyası değiştirilmeden çalıştırıldı. Son153 regresyon, iki tarayıcıda33 yönetim bölümü/9 müşteri yolu, beş genişlik ve11 dil seçiminin yerel sonuçları [devir kaydında](../docs/native-store-transfer.md). Güncel kopya şu an yereldedir; eski `/test` yayını değiştirilmedi. `--refresh` yalnız hash'i bozulmamış kaynak kopyasını yeniler ve eski sürümü özel yerel arşivde saklar.
+
+15 Kasım son durum:yalnız [sexogate.com/test](https://sexogate.com/test) PHP/SQLite sürümü `d6ae100648e17c0204db628b` ile yayımlandı; ana site değişmedi. Ürün/kategori0, gerçek tahsilat kapalı. Mobilya ve dünya haritası yerine yetişkin metinleri/18+ katmanı uygulanır. Önceki "yerelde/yayımlanmadı" ifadeleri o aşamanın tarihsel kaydıdır; güncel [yayın kanıtı](../docs/native-test-deployment.md) esas alınır.
