@@ -4,12 +4,14 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-browser.py
 # Açıklama   : Doğrudan kopyanın gerçek HTTPS/MFA yönetimini ve özgün müşteri ekranlarını sınar.
-import argparse,base64,hashlib,hmac,json,struct,sys,time
+import argparse,base64,hashlib,hmac,json,os,re,struct,sys,time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-ROOT=Path(__file__).resolve().parent.parent;BASE='https://127.0.0.1:3186';access=json.loads((ROOT/'.local/php-access.json').read_text('utf8'));folder=ROOT/'docs/screenshots/native-store-local';folder.mkdir(parents=True,exist_ok=True)
-parser=argparse.ArgumentParser();parser.add_argument('--branding-only',action='store_true');args=parser.parse_args()
+ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3186').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','local');assert re.fullmatch('[a-z-]+',scope)
+assert BASE in ['https://127.0.0.1:3186','https://127.0.0.1:3188/test','https://sexogate.com/test'] or re.fullmatch('https://(?:sexogate.com|127.0.0.1:3188)/test/native-preview-[a-f0-9]{16}',BASE)
+access_name='php-stage-access.json' if BASE.startswith('https://sexogate.com') else 'php-access.json';access=json.loads((ROOT/'.local'/access_name).read_text('utf8'));folder=ROOT/('docs/screenshots/native-store-'+scope);folder.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser();parser.add_argument('--branding-only',action='store_true');parser.add_argument('--release-smoke',action='store_true');args=parser.parse_args()
 def safe_error(kind,error,trace):
  message=str(error)
  for name in ['password','totpSecret','email']:
@@ -19,6 +21,8 @@ sys.excepthook=safe_error
 def otp(secret):
  key=base64.b32decode(secret+'='*((8-len(secret)%8)%8));digest=hmac.new(key,struct.pack('>Q',int(time.time())//30),hashlib.sha1).digest();offset=digest[-1]&15;return str((struct.unpack('>I',digest[offset:offset+4])[0]&0x7fffffff)%1000000).zfill(6)
 def dismiss(page):
+ age=page.locator('#sexogate-age-gate')
+ if age.count() and age.is_visible():age.locator('.sexogate-age-accept').click()
  for text in ['Mağazayı keşfet','Yalnız gerekli']:
   button=page.get_by_role('button',name=text,exact=True)
   if button.count() and button.first.is_visible():button.first.click()
@@ -35,12 +39,12 @@ def admin_route(page,route):
 results=[]
 with sync_playwright() as p:
  for engine in ['chromium','webkit']:
-  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=True,viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(20000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
+  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 20000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
   try:
    page.goto(BASE+'/yonetim');page.wait_for_load_state('networkidle');page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();time.sleep(30.5-time.time()%30);page.locator('[name=proof]').fill(otp(access['totpSecret']));page.locator('#verify button[type=submit]').click();page.locator('.sidebar').wait_for(state='attached');page.locator('#verify').wait_for(state='detached');page.wait_for_load_state('networkidle')
    cookies=context.cookies();assert any(c['name'].startswith('__Host-') and c['secure'] and c['httpOnly'] for c in cookies)
    routes=page.locator('.sidebar a[href^="#"]').evaluate_all('(nodes)=>[...new Set(nodes.map(n=>n.getAttribute("href")))]');assert len(routes)>=20,routes
-   if args.branding_only:routes=['#products']
+   if args.branding_only or args.release_smoke:routes=['#products']
    for route in routes:
     admin_route(page,route);assert page.evaluate('() => document.documentElement.scrollWidth<=innerWidth'),route
    print(json.dumps({'engine':engine,'adminNavigationChecked':len(routes)}),flush=True)
@@ -58,6 +62,6 @@ with sync_playwright() as p:
     if path in ['/blog','/?page=categories','/yonetim/blog']:page.screenshot(path=str(folder/(engine+'-'+{'/blog':'blog','/?page=categories':'categories','/yonetim/blog':'blog-admin'}[path]+'.png')),full_page=True)
     public.append(path)
    assert not errors,errors;assert not external,external
-   results.append({'engine':engine,'scope':'brand-overrides' if args.branding_only else 'full-navigation','adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceEngineUnchanged':True});print(json.dumps(results[-1]),flush=True)
+   results.append({'engine':engine,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)
   finally:context.close();browser.close()
-(ROOT/('.local/native-browser-branding.json' if args.branding_only else '.local/native-browser.json')).write_text(json.dumps(results,indent=2),encoding='utf8')
+(ROOT/('.local/native-browser'+('-branding' if args.branding_only else '')+('' if scope=='local' else '-'+scope)+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')

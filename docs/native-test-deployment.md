@@ -1,0 +1,89 @@
+# Native PHP test yayını
+
+15 Kasım 2026. Kullanıcı doğrudan NODENO yazılım kopyasının yayımlanmasını istedi; NODENO ürünlerinin taşınmasını açıkça reddetti. Hedef yalnız **https://sexogate.com/test** ve yönetim **https://sexogate.com/test/yonetim**. Ana hazırlanıyor sayfası, DNS, gerçek tahsilat ve diğer projeler bu yayının kapsamında değildir.
+
+## Veri sınırı ve gerçek durum
+
+- Katalog **0 ürün /0 kategori** ile açılır. Kurucu marka ve boş katalog içeriğini ayrıca doğrular; NODENO ürün/fiyat/görsel/müşteri/veritabanı veya işletme kimliği alınmaz. Kaynak testlerin referans kataloğu yayın ZIP'ine girmez.
+- Yalnız mevcut SEXOGATE rehberlerinden üç içerik bankası ve kendi yönetici erişimi kullanılır. Üyelik belgeleri TR/EN taslaktır. Tedarikçi inceleme kayıtları ve eski MySQL verisi eski özel uygulamada korunur; yeni SQLite verisine aktarılmış gösterilmez.
+- Gerçek ödeme **kapalıdır**. `/api/payments/checkout` dağıtım sınırında409 döner; arayüzden ayar değiştirmek bu sınırı kaldırmaz. Yeni ülke/ürün/belge/hukuk/Stripe kabulü olmadan satış açılamaz.
+- Bu bir test uygulaması yayınıdır; bütün ticaret modülleri gerçek ürün ve dış sağlayıcıyla kabul edildi anlamına gelmez.
+
+## Sunucuda çalışan yapı
+
+PHP8.3.36, PDO SQLite/WAL, OpenSSL ve ZipArchive gerçek hostingte doğrulandı. Node sunucuda kullanılmaz. TypeScript AST aracı yalnız yerel JavaScript URL derlemesinde kullanılır.
+
+`native-store/upstream` korunmuş kaynaktır. Yayın kopyasında marka/alan adı, kök URL'leri ve mağazanın sunum metinleri taşınır. `deploy/apply-store-theme.mjs` yetişkin ürünlerine uygun metinleri ve yaş karşılamasını ekler; mobilya hesaplayıcılarını müşteri rehberinden çıkarır. Bu derlenmiş paket, kaynak snapshot ile byte olarak aynı diye sunulmaz. `deploy/relocate.mjs` API/bağlantı köklerini taşırken çocuk yol ayraçlarını ve tarih ayraçlarını korur. Taşınan URL token'ları PHP yanıtında gerçek alt yola çevrilir; regex/JSON kaçışlı URL'ler önce ele alınır.
+
+Kod ve kalıcı state web kökünün **dışındaki**, bu uygulamaya ait özel dizindedir. `releases/<id>` ayrı, `state` ortak ve kalıcıdır. Web kökünde yalnız test giriş dosyası/yönlendirme bulunur; özel PHP/SQLite/anahtarlar doğrudan HTTP'den sunulmaz. Eski `/test/app` ağacı ve MySQL korunur.
+
+Özgün yönetici MFA, CSRF, kayıt sahipliği ve secure/HttpOnly `__Host-` çerezi devam eder. Mevcut kendi yönetici parola/TOTP bilgisi yerel `.local/php-stage-access.json` üzerinden güvenli sunucu kurulumuna alınır. Legacy kurtarma kodlarının yeni uygulamada aynı olduğu varsayılmaz. Parola/TOTP/anahtar Git'e veya sohbete yazılmaz.
+
+Ana bekleme sayfasının sabit script hash'li CSP'si alt uygulamaya uygun değildir. Yalnız `/test/.htaccess`, uygulamanın aynı köken betik/stil politikasını belirler; `unsafe-inline` veya `unsafe-eval` açılmaz. Public CSS/JS/fontlarda önbellek, hassas API cevaplarında `private, no-store` korunur. Blog ve sosyal medya dosyaları genel statik yoluna alınmaz; özgün yayın/erişim doğrulamasından geçer. Yayımlanmamış rehber görseli404 döndü.
+
+## İşçi ve sağlık durumunun anlamı
+
+Yalnız bu uygulamanın CLI içerik işçisi cPanel cron'unda dakikada bir çalışır. Diğer cron komutları değişmedi; gerçek heartbeat ve içerik kuyruğu çalışması gözlendi. E-posta, ödeme mutabakatı, tedarikçi ve sosyal platform bağlantıları bu işçiyle tamamlanmış sayılmaz; dış sosyal yayın kapalıdır.
+
+`/test/api/deployment-status` gerçek SQLite `quick_check`, sürüm ve önizleme durumunu gösterir. `catalogReady=false`, `checkoutEnabled=false` ve ürün sayısı0'dır. Özgün `/api/health` içindeki tam katalog/medya onay kapısı kaldırılmadı; boş katalog ve henüz hazırlanmamış tam medya/release kaydı nedeniyle bu kontrol satışa hazır değildir ve503 döner. Deployment kontrolü, bu medya kabulünü geçtiğimiz anlamına gelmez.
+
+## Yerel kurulum ve yayın komutları
+
+Bu bilgisayarın mevcut Git dışı PHP/erişim araçları ve D: özel çıktı alanı kullanılır; bunlar genel bir Linux geliştirme kurucusu değildir. Sunucuya yalnız doğrulanmış PHP paketi yüklenir.
+
+```powershell
+python scripts/verify-native-snapshot.py
+node --test scripts/test-native-relocation.mjs
+python scripts/build-native-stage.py
+python scripts/prepare-native-stage-local.py
+python scripts/run-native-stage-local.py
+python scripts/test-native-installer.py
+```
+
+Tarayıcı kabulünde `SEXOGATE_NATIVE_TEST_URL` ve `SEXOGATE_NATIVE_TEST_SCOPE` yalnız izinli loopback/test/önizleme hedeflerini seçer. Yerel kabul hem tek parçalı `/test` hem uzun önizleme yolu için yapıldı. `test-native-browser.py` 33 yönetim bölümü/9 müşteri yolunu iki motorda ve beş genişlikte sınar; `--release-smoke` geçiş sonrası1 yönetim bölümü/9 yolu sınar. Bunlar aynı kapsam diye raporlanmaz. `test-native-languages.py` boş katalogda11 dil seçimini ve RTL yönünü sınar; ürün/hukuk çevirilerini onaylamaz.
+
+```powershell
+python scripts/publish-native-test.py prepare
+# Sunucu önizlemesinde tarayıcı/dil kabulü tamamlanır.
+python scripts/native-stage-operations.py cron
+python scripts/native-stage-operations.py status
+python scripts/native-stage-operations.py backup
+python scripts/publish-native-test.py activate
+python scripts/test-native-stage-http.py
+```
+
+`prepare` kurucuyu süreli token ile çalıştırır, ZIP/hash/yol/symlink/mükerrerlik/boş katalog denetimlerini yapar; kurucu ve payload silinir. Yönetici kimliği ve kalıcı state sonraki kurulumlarda sıfırlanmaz. `activate` ana site ve önceki test giriş dosyalarını tekrar doğrular, kontrollü giriş/yönlendirme geçişi yapar. İlk sağlık başarısızlığında geri dönüş vardır.
+
+## Yedek ve geri dönüş
+
+Önce eski MySQL'in şifreli yedeği yeni yerel veritabanına geri yüklendi:91 tablo/4.589 satır/103 FK,30 migration checksum ve30→30 PASS. Eski test giriş dosyaları ve özel yapılandırma ayrıca AES-GCM ile yedeklenip geri okunarak doğrulandı.
+
+Yeni native verinin SQLite yedeği `VACUUM INTO` ile tutarlı snapshot olarak alınır. Veritabanları ve gerekli anahtar dosyaları AES-256-GCM ile şifreli ZIP'te indirilir. Yerelde hash, SQLite integrity, foreign key ve tablo satır sayıları doğrulanır. Gerçek sayılar güvenli özet raporunda kayıtlıdır. Bu, katalog medyası yedek/restore testi değildir; ürün medyası henüz yoktur.
+
+`native-stage-operations.py` yayından sonra gerektiğinde yalnız tek rastgele bakım dosyasına süreli, token kontrollü yol açar. İşlem sonunda dosya/token kaydı kaldırılır ve özgün `/test/.htaccess` geri konur; beklenmeyen eşzamanlı yönlendirme değişikliği ezilmez. Sırlar yalnız yerel `.env.local` ve sunucunun özel alanındadır. Yedek anahtarı `BACKUP_ENCRYPTION_KEY` sohbet veya Git'e konmaz. Sürekli periyodik yedek saklama/rotasyon otomasyonu ayrıca kurulmalıdır.
+
+Hostingte aynı saniyede değişen yönlendirme dosyası bazen404/405 üretti. Geçici kuraldan önce mtime'ın farklı saniyeye geçmesi sağlanır; yalnız bakım dosyasının hiç çalışmadığını gösteren404/405 için sınırlı tekrar vardır. Diğer hata cevabı başarı sayılmaz. Son gerçek şifreli restore2DB/41tablo/62satır PASS; kurucu/bakım dosyaları temizliği ve ana site fingerprint'i ayrıca yeniden doğrulandı.
+
+```powershell
+python scripts/publish-native-test.py rollback
+```
+
+Bu komut yalnız bu yayının giriş/yönlendirmesini doğrulanmış şifreli yedekten geri getirir. Eski uygulama/DB silinmediğinden yıkıcı migration veya tablo geri alma gerekmez. Yeni native state de silinmez. Başka bir dağıtım dosyaları değiştirmişse geri dönüş durur; başka işin değişikliği ezilmez.
+
+## Kabul ve kalan koşullar
+
+Kaynak çekirdek regresyonu153 PASS; URL taşıma3 PASS; gerçek PHP HTTP kurucusunda11 güvenlik/kurulum/yedek senaryosu PASS. ZIP traversal, mutlak yol, nokta takma adı, symlink, mükerrer giriş, token/TTL ve103 karakterli TOTP ele alındı. Kaynak snapshot ve13 marka varlığı doğrulandı. Gerçek yerel/uzak tarayıcı, dil, header, kurucu temizliği, CLI heartbeat ve restore kanıtları `docs/native-deployment-report.json` ile `docs/progress.md` içindedir.
+
+## Yetişkin mağazası katmanı
+
+NODENO'nun mobilya metinleri ve dünya haritalı karşılaması SEXOGATE deneyimine ait değildir. Güncel derleme; mobilya/kurulum/toplu mobilya alımı metinlerini, boya ve oda araçlarını, kaynak işletmenin fatura unvanı iddiasını müşteri sunumundan çıkarır. İlk HTML, PHP'nin ürettiği SEO ve istemcinin sonradan güncellediği başlık/açıklama/OG metni yetişkin koleksiyonlarına uygundur. HTTP kontrolü PHP fallback'ini, tarayıcı başlığı kontrolü ikinci istemci kaynağını yakaladı. İkisi birlikte düzeltildi; derleme sırasında4 temel dilde deterministik istemci SEO kabulü ve tarayıcı testinde11 dilde hem gerçek HTTP hem sayfa açıldıktan sonraki başlık kabulü vardır. Kaynak işletme klasörü ve korunmuş snapshot değiştirilmez.
+
+Bordo kemer ve krem yüzeyli yerel `dialog`, 18+ beyanı ve çıkış seçeneği sunar. Escape ile beyan atlanamaz; klavye odağı ve onaydan sonra misafir gezintisi sınanır. Beyan en fazla30 gün, yalnız sürüm ve bitiş zamanı ile cihazda saklanır; üyelik, doğum tarihi veya kimlik istenmez. Bu marka bildirimi ülke bazlı güçlü yaş doğrulaması yerine geçmez. Gerçek tahsilatın kapalı olması devam eder.
+
+Sosyal bağlantılar görünür yazısız dört SVG ikonudur; erişilebilir adları, klavye odağı ve azaltılmış hareket tercihi vardır. Gizlilik tercihi düğmesi belge akışından çıkarılarak sabitlenir; footer sonrasında yalnız mobil alt menüye ayrılan yaklaşık84px kalır. Header logo hizası solda, footer logo hizası ortadadır. Bu davranışlar `scripts/test-native-adult-store.py` ile iki motorda denetlenir.
+
+Varlık revizyonu tema, dağıtım kodu ve kaynak manifest'inden türetilir. Yeni paket tüm modül/stil sorgu revizyonlarını değiştirir; eski iPhone/PWA önbelleğinin mobilya metinlerini sürdürmesi önlenir. Native sürümden sonraki önizleme için parent yönlendirmesinde yalnız ilgili rastgele önizleme girişine yol açılır; kurucuya açılan tek dosyalık istisna işlem sonunda kaldırılır. Önizlemenin gerçekten yeni release ve kendi basePath'i olduğu ayrıca denetlenir.
+
+İlk yerel TLS bağlantı kuyruğu CSS yüklemelerini aksattı; test kabuğu düzeltildi. Uzun alt yol regex kaçışı düzeltildi. Uzak20 saniyelik yükleme timeout'u sonrası public varlık cache'i düzeltildi; fonksiyonel uzak navigasyon bütçesi60 saniyedir, performans hedefi geçti denmez. İlk geçişte ana sitenin CSP mirası JavaScript'i engelledi; doğrulanmış eski sürüme geri dönüldü, yalnız alt uygulama başlığı ayrılıp önizlemede yeniden test edildi.
+
+Gerçek Stripe/taşıyıcı/fatura kabulü, gerçek ürün/stok/görsel belgeleri, ülke/yaş kuralları, onaylı hukuk/satıcı kimliği, tüm yedek rotasyonu, tam WCAG/klavye, fiziksel iPhone ve CWV saha ölçümü bu test yayınıyla tamamlanmış sayılmaz. İlk 153 testin dış sağlayıcıları izole fixture'dır; gerçek tahsilat yapılmadı.
