@@ -4,43 +4,7 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-variants-browser.py
 # Açıklama   : Gerçek mobil tarayıcıda seçenek zorunluluğunu, sepet kalıcılığını ve izin renklerini sınar.
-import json,os,re,sys,traceback
-from pathlib import Path
-from playwright.sync_api import sync_playwright
-from native_browser_ready import NativePageReadiness
-ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3188/test').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','variants-local');assert re.fullmatch('[a-z-]+',scope)
-assert re.fullmatch(r'https://(?:127\.0\.0\.1:3188|sexogate\.com)/test(?:/native-preview-[a-f0-9]{16})?',BASE)
-folder=ROOT/('docs/screenshots/native-store-'+scope);folder.mkdir(parents=True,exist_ok=True);results=[]
-def safe_error(kind,error,trace):
- message=re.sub(r'^.*(?:cookie:|authorization:|x-csrf-token:).*$','[private request headers redacted]',str(error),flags=re.M|re.I);print(kind.__name__+': '+message[:1800],file=sys.stderr);print([(Path(f.filename).name,f.lineno)for f in traceback.extract_tb(trace)[-3:]],file=sys.stderr)
-sys.excepthook=safe_error
-def stored(page):return page.evaluate('()=>JSON.parse(localStorage.getItem(Object.keys(localStorage).find(k=>k.endsWith(".cart.v1")))||"[]")')
-def pick(page,values):
- dialog=page.locator('.sg-variant-dialog');dialog.wait_for(state='visible')
- for axis,value in values.items():dialog.locator('[data-axis="'+axis+'"] [data-choice="'+value+'"]').click()
- assert dialog.locator('.sg-variant-add').is_enabled();element=dialog.element_handle();dialog.locator('.sg-variant-add').click();page.wait_for_function('(el)=>!el.isConnected',arg=element)
-with sync_playwright()as p:
- for engine in ['chromium','webkit']:
-  print(engine+': selection and consent',flush=True);browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();page.set_default_timeout(30000);page.set_default_navigation_timeout(60000);errors=[];page.on('pageerror',lambda error:errors.append(str(error)));ready=NativePageReadiness(page,BASE,timeout=60000)
-  page.goto(BASE+'/?lang=tr',wait_until='domcontentloaded');ready.wait();gate=page.locator('#sexogate-age-gate')
-  if gate.count():gate.locator('.sexogate-age-accept').click();gate.wait_for(state='detached')
-  consent=page.locator('.insights-banner .button-dark');consent.wait_for(state='visible');assert consent.evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(90, 10, 32)';consent.hover();page.wait_for_timeout(250);assert consent.evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(142, 15, 56)';page.mouse.move(0,0);page.keyboard.press('Tab');consent.focus();page.wait_for_timeout(250);assert consent.evaluate('(e)=>getComputedStyle(e).outlineStyle')!='none';page.screenshot(path=str(folder/(engine+'-consent-390.png')))
-  page.get_by_role('button',name='Yalnız gerekli',exact=True).click();page.locator('.insights-banner').wait_for(state='detached');page.locator('.insights-settings').click();dialog=page.locator('.insights-dialog');assert dialog.locator('.button-dark').evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(90, 10, 32)';dialog.get_by_role('button',name='Kapat',exact=True).click()
-  print(engine+': consent colours verified',flush=True);catalog=context.request.get(BASE+'/api/catalog',timeout=60000).json();products=catalog.get('catalog',catalog)['products'];health=context.request.get(BASE+'/api/deployment-status',timeout=60000).json()
-  candidates=[x for x in products if x.get('variantSelection',{}).get('required') and not x['variantSelection']['blocked']]
-  product=next(x for x in candidates if x['variantSelection']['mode']=='options' and any(a['id']=='size' and len(a['values'])>1 for a in x['variantSelection']['axes']));schema=product['variantSelection'];values={a['id']:a['values'][0]['id']for a in schema['axes']};other={**values,'size':next(a for a in schema['axes']if a['id']=='size')['values'][-1]['id']};url=BASE+'/?product='+product['id']+'&lang=tr'
-  page.goto(url,wait_until='domcontentloaded');ready.wait();page.locator('[data-detail-add]:visible').first.click();dlg=page.locator('.sg-variant-dialog');assert dlg.locator('.sg-variant-add').is_disabled();assert dlg.locator('[aria-pressed=true]').count()==0;assert stored(page)==[];page.keyboard.press('Escape');dlg.wait_for(state='detached');assert stored(page)==[]
-  page.locator('[data-detail-add]:visible').first.click();pick(page,values);page.wait_for_function('()=>Object.keys(localStorage).some(k=>k.endsWith(".cart.v1")&&JSON.parse(localStorage[k]).length===1)');assert stored(page)[0]['options']['selection']==values
-  page.locator('[data-detail-add]:visible').first.click();pick(page,other);page.wait_for_function('()=>JSON.parse(localStorage[Object.keys(localStorage).find(k=>k.endsWith(".cart.v1"))]).length===2');assert len(stored(page))==2
-  page.goto(BASE+'/?page=cart&lang=tr',wait_until='domcontentloaded');ready.wait();assert page.locator('.basket-item').count()==2;assert page.locator('.sg-cart-selection').count()==2;assert stored(page)[0]['key']!=stored(page)[1]['key'];page.screenshot(path=str(folder/(engine+'-cart-390.png')))
-  page.locator('[data-selection-edit]').first.click();pick(page,other);page.wait_for_function('()=>JSON.parse(localStorage[Object.keys(localStorage).find(k=>k.endsWith(".cart.v1"))]).length===1');assert stored(page)[0]['quantity']==2;page.reload(wait_until='domcontentloaded');ready.wait();assert page.locator('.basket-item').count()==1;assert stored(page)[0]['options']['selection']==other
-  # Old unconfigured carts remain visible and require repair; no first-size default.
-  page.evaluate('(id)=>{const key=Object.keys(localStorage).find(k=>k.endsWith(".cart.v1"));localStorage.setItem(key,JSON.stringify([{id,quantity:2}]))}',product['id']);page.reload(wait_until='domcontentloaded');ready.wait();assert page.locator('.sg-selection-pending').count()==1;page.locator('[data-selection-edit]').click();pick(page,values);assert stored(page)[0]['quantity']==2
-  for width in [360,390,430,768,1440]:
-   page.set_viewport_size({'width':width,'height':900});page.locator('[data-selection-edit]').click();dlg=page.locator('.sg-variant-dialog');assert dlg.evaluate('(e)=>{const b=e.getBoundingClientRect();return b.left>=0&&b.right<=innerWidth+1&&b.top>=0&&b.bottom<=innerHeight+1}');assert dlg.locator('[data-choice]').evaluate_all('(es)=>es.every(e=>e.getBoundingClientRect().height>=44)');assert page.evaluate('()=>document.documentElement.scrollWidth<=innerWidth');page.keyboard.press('Escape')
-  page.set_viewport_size({'width':390,'height':844});matrix=next(x for x in candidates if x['variantSelection']['mode']=='matrix' and sum(v['active']for v in x['variantSelection']['variants'])>=2);variant=next(v for v in matrix['variantSelection']['variants']if v['active']);page.goto(BASE+'/?product='+matrix['id']+'&lang=en',wait_until='domcontentloaded');ready.wait();page.locator('[data-detail-add]:visible').first.click();assert page.locator('#sg-variant-title').inner_text()=='Choose your options';pick(page,variant['values']);assert any(row['id']==matrix['id']and row['options']['selection']==variant['values']for row in stored(page))
-  page.evaluate('(ids)=>{const key=Object.keys(localStorage).find(k=>k.endsWith(".cart.v1"));localStorage.setItem(key,"[]");localStorage.setItem(key.replace(".cart.v1",".saved.v1"),JSON.stringify(ids))}',[product['id'],matrix['id']]);page.goto(BASE+'/?page=favorites&lang=tr',wait_until='domcontentloaded');ready.wait();page.locator('[data-shopping="favorite-cart"]').click();pick(page,values);pick(page,variant['values']);assert {row['id']for row in stored(page)}=={product['id'],matrix['id']}
-  page.evaluate('()=>{const key=Object.keys(localStorage).find(k=>k.endsWith(".cart.v1"));localStorage.setItem(key,"[]")}');page.reload(wait_until='domcontentloaded');ready.wait();page.locator('[data-shopping="favorite-cart"]').click();pick(page,values);page.locator('.sg-variant-dialog').wait_for(state='visible');page.keyboard.press('Escape');page.locator('.sg-variant-dialog').wait_for(state='detached');assert len(stored(page))==1 and stored(page)[0]['id']==product['id']
-  page.goto(BASE+'/?product='+product['id']+'&lang=ar',wait_until='domcontentloaded');ready.wait();page.locator('[data-detail-add]:visible').first.click();assert page.locator('.sg-variant-dialog').get_attribute('dir')=='rtl';page.screenshot(path=str(folder/(engine+'-selection-rtl-390.png')));page.keyboard.press('Escape')
-  assert errors==[],errors;results.append({'engine':engine,'scenario':'selection-consent-and-bulk','release':health['release'],'selectionRequired':True,'sizeColorCartLines':True,'editMergeReload':True,'legacyCartRepair':True,'sourceMatrix':True,'bulkAllItems':True,'bulkCancellation':True,'consentNormalHoverFocus':'brand-burgundy/wine','widths':[360,390,430,768,1440],'rtl':True,'realPayment':False});context.close();browser.close()
-report={'base':BASE,'scope':scope,'results':results};(ROOT/('docs/native-'+scope+'-results.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8');print(json.dumps(report,ensure_ascii=False),flush=True)
+from native_variant_cases import main
+
+if __name__ == "__main__":
+ main()
