@@ -16,6 +16,7 @@ final class Worker
     public function tick(int $limit=5):array
     {
         (new PersonalShopping($this->db,$this->config))->purgeExpired();
+        (new SourceApi($this->db,$this->config))->scheduleDue();
         $this->db->execute('DELETE FROM cart_undo WHERE expires_at<DATE_SUB(CURRENT_TIMESTAMP(3),INTERVAL 1 DAY) LIMIT 500');
         $expired=(new Commerce($this->db,$this->config))->expire();$done=0;$failed=0;$exhausted=0;$deadline=microtime(true)+45;
         for($i=0;$i<min(20,max(1,$limit))&&microtime(true)<$deadline;$i++){
@@ -31,6 +32,7 @@ final class Worker
     private function dispatch(array $job):void
     {
         $payload=json_decode($job['payload'],true,32,JSON_THROW_ON_ERROR);
+        if($job['type']==='source.api.page'){(new SourceApi($this->db,$this->config))->process($payload['runId'],$payload['resource'],(int)$payload['page'],(int)$job['attempts']);return;}
         if(in_array($job['type'],['stripe.event','stripe.session','stripe.reconcile','payment.refund'],true)){$p=new Payments($this->db,$this->config);match($job['type']){'stripe.event'=>$p->process($payload['eventId']),'stripe.session'=>$p->createForOrder($payload['orderId']),'payment.refund'=>$p->refund($payload['refundId']),'stripe.reconcile'=>$p->reconcile()};return;}
         if($job['type']==='reservation.expire'){(new Commerce($this->db,$this->config))->expire();return;}
         RuleViolation::ensure(in_array($job['type'],['order.confirmation','email.auth'],true),'JOB_HANDLER_NOT_CONFIGURED','Bu iş için operasyon bağlantısı yapılandırılmadı.',503);

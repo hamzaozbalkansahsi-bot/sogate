@@ -7,12 +7,12 @@
     {
       "vendor": "xshopum",
       "products": 1022,
-      "categories": 46,
-      "parsed": 1068,
+      "categories": 48,
+      "parsed": 1070,
       "errors": 0,
-      "sha256": "5612d10f4dad49a5e263ccff346cae66b2b98ca177a41d55186dcae661058ce6",
-      "gzipSha256": "00ec6f9e79c059ee7f7de781ddffad9787f9fe9f4a9c8f0112573e78dc315f42",
-      "gzipBytes": 405073,
+      "sha256": "52f82dea8bfe508404224526dda563bc776f01d0b25fecb1623473ad395927ae",
+      "gzipSha256": "8f24774f378f39b1c19dd8c9e64b12dd4115745b2e0581e658c75248f859a641",
+      "gzipBytes": 409682,
       "metadataFields": {
         "withSku": 1022,
         "withDescription": 1022,
@@ -21,64 +21,57 @@
       },
       "sourceEvidence": [
         {
-          "url": "https://www.xshopum.com/product-sitemap1.xml",
-          "sha256": "2d2f1897bc561264f7c4db2fec1a77f3260ad7b5e1c0614519163647289c137c"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=1&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "b41bdb7b1708e21040571a77dcc599c815ed6aa820b5d45e6d55042068f5dc82"
         },
         {
-          "url": "https://www.xshopum.com/product-sitemap2.xml",
-          "sha256": "7634e65a154d58ca8ae0e1a606437d3716956d373819c243df068eb9bda15504"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=2&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "37541e0a3459577dd8c5586aef3799e1a8ffbb508035c0ce268beec85d7a1dd3"
         },
         {
-          "url": "https://www.xshopum.com/product-sitemap3.xml",
-          "sha256": "80dce93dce79a0add8ce92468decd166fb141b132e89eb00999085452cd77e9c"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=3&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "1b6cfbcde90e4e65c5c834f68619586a6ec3b5e5680af1e33e0814c7d374e06a"
         },
         {
-          "url": "https://www.xshopum.com/product-sitemap4.xml",
-          "sha256": "ae00161c9600e81ff1d51b0a35dfcf601c2e1202c55491440e989043a27c97e0"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=4&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "f12ce14e287830e3002f1af422bf9169ea31e09baffbeb9f7840b61e4e62b838"
         },
         {
-          "url": "https://www.xshopum.com/product-sitemap5.xml",
-          "sha256": "34426a1ef930fc2c7609a2c037f208b4ff2f99f2578e866a476e93f86f0b29b5"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=5&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "6c00c097c2d5c31faa645cc19f3018e5bc70b3cf46c19845841931506ab7ff18"
         },
         {
-          "url": "https://www.xshopum.com/product-sitemap6.xml",
-          "sha256": "1ef75d98e4f15bbec690d8610a65317a46cc7bf2432503b7c5356321cedfa71f"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=6&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "e13da9e0344f0a5c5cf728d7c213f447036f7dd0f9c7fe88938cc41486eb6460"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=1",
-          "sha256": "19d79b52640803b4270d3b29cf952eb7704270d0c5444f622b149498523daf2a"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=7&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "308e4ac1abd41e127d6baec90aeec9b1865cd8d1d93885a8d01c8d00377d8753"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=2",
-          "sha256": "b22e59016180340aaa50ba7238e4d076a5bf5f3d441d4d348a95647678946602"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=8&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "025645bf42ec359f00c4f3ab357e6c92ec5a5648eff6f0f7037ae18ac697df88"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=3",
-          "sha256": "4c78a8744491d90fe32f35dec350343d7b741e5e1311a4c66a8deb2f4ddc4244"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=9&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "e2e25c73d58d900d24fd100345861f3c3a1ab03cd95c0f9bd8913cf2b773bee9"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=4",
-          "sha256": "9503e1cacba6dbdd01c78a6e07b3fdb89ccdbdda5eda57c1565f003fa418effb"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=10&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "558db1f24864617cb4ccb9dd07192877ca1a2464fcd3a929e607ed939b017e1e"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=5",
-          "sha256": "a35ce01b4d1a03270af3e23cb457730a1ab20b6dd7207123a1f77bc1fdfb7773"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=11&orderby=id&order=asc&stock_status=instock%2Coutofstock%2Conbackorder",
+          "sha256": "f79c2fe9eb7bb6a4f475c8c7e05542f329804cf5956ab35757e05f71d2830f29"
         },
         {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=6",
-          "sha256": "d6f9bab0d71fd872e57078420e4d963435455a557084c32c4900275bff4dfa11"
-        },
-        {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products?per_page=100&page=7",
-          "sha256": "2fd0b50bb96019ba3f9e0a557dcef0b07db813e01aa86023cc60c88c6e09202e"
-        },
-        {
-          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products/categories?per_page=100&page=1",
-          "sha256": "d09df5d93f86c03e71695c62de1188f311984b81d81b950cab26ba1918a466a9"
+          "url": "https://www.xshopum.com/wp-json/wc/store/v1/products/categories?per_page=100&page=1&orderby=name&order=asc&hide_empty=false",
+          "sha256": "96b94301d85b1cdd3a3f2e9838e0a5d83a4b7becec104e196fca238d3301f510"
         }
       ],
-      "observedCompletedAt": "2026-11-15T00:34:48.899711+00:00",
-      "categoriesRecheckedAt": "2026-11-15T00:58:44.110759+00:00"
+      "observedCompletedAt": "2026-11-15T04:13:10.253366+00:00",
+      "categoriesRecheckedAt": "2026-11-15T04:13:10.253366+00:00",
+      "sourceMethod": "woocommerce-public-store-api-only"
     },
     {
       "vendor": "liona",
@@ -138,11 +131,10 @@
     }
   ],
   "localBatches": {
-    "xshopum": "1698de31-cde4-4418-9d51-321bf1b53315",
     "liona": "d3c9655e-3732-4f5a-8119-e5f77a5da623",
     "sistina": "3ee135a3-4a8c-4185-8dcb-ba1a4341e40e"
   },
-  "remoteVerification": {
+  "previousRemoteVerification": {
     "url": "https://sexogate.com/test/yonetim/tedarikci-katalogu",
     "release": "3b0904e15c3912cfad36979d",
     "verifiedAt": "2026-11-15T01:45:00Z",
@@ -156,5 +148,6 @@
     "privateReview": true,
     "warehouseWritesFromImport": 0,
     "publicPublication": false
-  }
+  },
+  "liveApiServerStatus": "HTTP 403; automation disabled; local API capture requires private review upload"
 }

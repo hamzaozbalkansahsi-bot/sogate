@@ -26,4 +26,10 @@ class SourceCatalogTest(unittest.TestCase):
         r=self.m.product_data(raw,'https://www.liona.com.tr/ödeme','category')
         self.assertEqual(r['title'],'İç Giyim');self.assertIsNone(r['sku']);self.assertIsNone(r['quotedRetailMinor'])
         self.assertEqual(self.m.canonical('https://www.liona.com.tr/ödeme?ad=İç','liona'),'https://www.liona.com.tr/%C3%B6deme?ad=%C4%B0%C3%A7')
+    def test_api_query_includes_unavailable_products(self):
+        self.assertTrue(hasattr(self.m,'api_url'),'Documented full-catalog API query is missing.')
+        u=self.m.urllib.parse.urlsplit(self.m.api_url('products',2));q=self.m.urllib.parse.parse_qs(u.query)
+        self.assertEqual(q['stock_status'],['instock,outofstock,onbackorder']);self.assertEqual(q['page'],['2']);self.assertEqual(u.hostname,'www.xshopum.com')
+        categories=self.m.urllib.parse.parse_qs(self.m.urllib.parse.urlsplit(self.m.api_url('products/categories',1)).query);self.assertNotEqual(categories.get('orderby'),['id'])
+        with self.assertRaises(ValueError):self.m.api_url('http://127.0.0.1/',1)
 if __name__=='__main__':unittest.main()

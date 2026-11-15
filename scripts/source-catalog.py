@@ -122,9 +122,18 @@ class Fetcher:
             if len(raw)>12000000:raise ValueError('SOURCE_TOO_LARGE')
         file.write_bytes(raw);self.requests=getattr(self,'requests',0)+1;return raw
 
-def collect(vendor,folder,index_only=False):
+def api_url(resource,page):
+    if resource not in ['products','products/categories'] or not isinstance(page,int) or not 1<=page<=200:raise ValueError('API_REQUEST_REJECTED')
+    params={'per_page':100,'page':page,'orderby':'id' if resource=='products' else 'name','order':'asc'}
+    if resource=='products':params['stock_status']='instock,outofstock,onbackorder'
+    else:params['hide_empty']='false'
+    return BASE['xshopum']+'/wp-json/wc/store/v1/'+resource+'?'+urllib.parse.urlencode(params)
+
+def collect(vendor,folder,index_only=False,api_only=False):
+    if api_only and (vendor!='xshopum' or index_only):raise ValueError('API_NOT_DOCUMENTED')
     folder.mkdir(parents=True,exist_ok=True);fetch=Fetcher(vendor,folder/'cache');records=[];base=BASE[vendor];sources=[]
-    if vendor=='sistina':maps=[(base+'/products.xml','product'),(base+'/collections.xml','category')]
+    if api_only:maps=[]
+    elif vendor=='sistina':maps=[(base+'/products.xml','product'),(base+'/collections.xml','category')]
     else:
         index=xml_root(fetch.get(base+('/sitemap.xml' if vendor=='xshopum' else '/sitemap_index.xml')));maps=[]
         for item in index.findall('s:sitemap/s:loc',NS):
@@ -142,7 +151,7 @@ def collect(vendor,folder,index_only=False):
         for resource,kind in [('products','product'),('products/categories','category')]:
             page=1
             while page<=1000:
-                endpoint=base+'/wp-json/wc/store/v1/'+resource+'?per_page=100&page='+str(page);raw=fetch.get(endpoint);data=json.loads(raw);sources.append({'url':endpoint,'sha256':hashlib.sha256(raw).hexdigest()})
+                endpoint=api_url(resource,page);raw=fetch.get(endpoint);data=json.loads(raw);sources.append({'url':endpoint,'sha256':hashlib.sha256(raw).hexdigest()})
                 if not isinstance(data,list):raise ValueError('PUBLIC_API_FORMAT')
                 for p in data:
                     url=canonical(p['permalink'],vendor);prices=p.get('prices',{});price=prices.get('price');currency=prices.get('currency_code');minor=int(price) if isinstance(price,str) and price.isdigit() and int(price)>0 and currency in ['TRY','EUR','USD','GBP'] and prices.get('currency_minor_unit')==2 else None
@@ -168,13 +177,13 @@ def collect(vendor,folder,index_only=False):
         if (n+1)%20==0:print(json.dumps({'vendor':vendor,'processed':n+1,'total':len(records),'parsed':report['parsed'],'accessRequired':report['accessRequired']}),flush=True)
     output.write_text(''.join(json.dumps(r,ensure_ascii=False,default=str)+'\n' for r in records),encoding='utf8');output.with_suffix('.ndjson.gz').write_bytes(gzip.compress(output.read_bytes(),mtime=0));report.update({'complete':True,'allMetadataParsed':report['parsed']==len(records),'records':len(records),'output':str(output),'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'finishedAt':datetime.now(timezone.utc).isoformat()});(folder/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8');print(json.dumps(report),flush=True);return report
 
-def run_vendor(vendor,folder,index_only=False):
-    try:return collect(vendor,folder,index_only)
+def run_vendor(vendor,folder,index_only=False,api_only=False):
+    try:return collect(vendor,folder,index_only,api_only)
     except (urllib.error.HTTPError,ValueError,OSError) as e:
         folder.mkdir(parents=True,exist_ok=True);report={'vendor':vendor,'complete':False,'errorType':type(e).__name__,'sourceStatus':getattr(e,'code',None)};(folder/'failure.json').write_text(json.dumps(report,indent=2),encoding='utf8');print(json.dumps(report),flush=True);return report
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--vendor',choices=list(HOSTS)+['all'],default='all');parser.add_argument('--output-root',type=Path,required=True);parser.add_argument('--index-only',action='store_true');args=parser.parse_args();vendors=list(HOSTS) if args.vendor=='all' else [args.vendor]
+    parser=argparse.ArgumentParser();parser.add_argument('--vendor',choices=list(HOSTS)+['all'],default='all');parser.add_argument('--output-root',type=Path,required=True);parser.add_argument('--index-only',action='store_true');parser.add_argument('--api-only',action='store_true');args=parser.parse_args();vendors=list(HOSTS) if args.vendor=='all' else [args.vendor]
     with ThreadPoolExecutor(max_workers=len(vendors)) as pool:
-        results=list(pool.map(lambda v:run_vendor(v,args.output_root/v,args.index_only),vendors))
+        results=list(pool.map(lambda v:run_vendor(v,args.output_root/v,args.index_only,args.api_only),vendors))
     (args.output_root/'summary.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf8')

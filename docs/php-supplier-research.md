@@ -4,20 +4,20 @@
 
 | Kaynak | Ürün kaydı | Kategori kaydı | Ayrıntısı çözümlenen | Yöntem |
 | --- | ---: | ---: | ---: | --- |
-| xShopum | 1.022 | 46 | 1.068 | Normal 18+ bildirim formu; kamu WooCommerce Store API ve ürün sitemap'leri/HTML |
+| xShopum | 1.022 | 48 | 1.070 | Yalnız kamu WooCommerce Store API; tüm stok durumları ve boş kategoriler dahil |
 | Liona | 544 | 75 | 619 | Resmî sitemap ve kamu ürün/kategori sayfaları |
 | Sistina | 628 | 49 | 677 | Güncel `.com.tr` products.xml, collections.xml ve kamu sayfaları |
-| Toplam | **2.194** | **170** | **2.364** | Kaynak başına tekil URL; markalar arasında veya varyant düzeyinde tekil SKU sayısı değildir |
+| Toplam | **2.194** | **172** | **2.366** | Kaynak başına tekil URL; markalar arasında veya varyant düzeyinde tekil SKU sayısı değildir |
 
-İlk xShopum yaş formu denemesi gerekli Origin/Referer olmadan403 vermişti. Normal aynı kaynak form isteğiyle giriş bildirimi tamamlandı; özel bayi oturumu, anahtar veya erişim atlatma kullanılmadı. Store API668 ürün veriyor; sitemap'teki diğer354 ürünün kamu sayfaları ayrıca çözümlendi. API ile sitemap sayıları toplanıp iki kez sayılmadı. Liona'nın Türkçe URL'si standart yüzde kodlamasıyla işlendi. Sistina kategori sayfasındaki ürün karuseli kategori adı sayılmaz; kategori h1'i esas alındı.
+İlk xShopum yaş formu denemesi gerekli Origin/Referer olmadan403 vermişti. Normal aynı kaynak form isteğiyle giriş bildirimi tamamlandı; özel bayi oturumu, anahtar veya erişim atlatma kullanılmadı. Son API çekiminde `stock_status=instock,outofstock,onbackorder` ile1.022 ürünün tamamı, `hide_empty=false` ile48 kategori alındı. Önceki varsayılan API sorgusunun668 ürün vermesi ve iki boş kategoriyi gizlemesi düzeltildi. Ürün HTML/sitemap verisi bu son xShopum çekimine katılmadı. Liona'nın Türkçe URL'si standart yüzde kodlamasıyla işlendi. Sistina kategori sayfasındaki ürün karuseli kategori adı sayılmaz; kategori h1'i esas alındı.
 
 `parsed`, kaynak sayfanın ayrıştırıldığını belirtir. Bütün ürünlerin SKU, teknik belge, hak veya fiyat bilgisinin eksiksiz olduğu anlamına gelmez. Kalite alanlarının gerçek sayıları ve dosya hash'leri [çekim raporundadır](php-source-catalog-report.json).
 
 ## Verinin bulunduğu yer ve kullanım
 
-Yerel ham/sıkıştırılmış çıktılar Git dışında `D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog/<vendor>/` altındadır. Resmî URL ve yanıt hash'li özel önbellek aynı köktedir. `scripts/source-catalog.py` yeniden çekim aracıdır; `.ndjson.gz` taşıma dosyaları2 MB'ın altındadır. PHP/MySQL029 migration ile `source_catalog_batches` ve `source_catalog_records` kalıcı inceleme kaydı tutar. Eski sürümler korunur; ana yönetim ekranı her kaynağın son sürümünü gösterir.
+Son xShopum API yanıtları ve çıktısı Git dışında `D:/sexogate-local-artifacts-20261114/private-installs/supplier-api-live-20261115/xshopum/` altındadır. Liona/Sistina önceki çekimleri korunur. Önceki yerel ham/sıkıştırılmış çıktılar Git dışında `D:/sexogate-local-artifacts-20261114/private-installs/supplier-catalog/<vendor>/` altındadır. Resmî URL ve yanıt hash'li özel önbellek aynı köktedir. `scripts/source-catalog.py` yeniden çekim aracıdır; `.ndjson.gz` taşıma dosyaları2 MB'ın altındadır. PHP/MySQL029 migration ile `source_catalog_batches` ve `source_catalog_records` kalıcı inceleme kaydı tutar. Eski sürümler korunur; ana yönetim ekranı her kaynağın son sürümünü gösterir.
 
-Önbellek aynı çekimi yeniden üretmek içindir; mevcut kökü yeniden kullanmak kaynağı tazelemez. Yeni kaynak kontrolünde yeni tarih/saatli özel `--output-root` seçin. `observedAt` ayrıştırma zamanıdır; bayi stok güncelliği veya anlık fiyat garantisi değildir. Otomatik feed/stock eşitlemesi bağlı değildir.
+Önbellek aynı çekimi yeniden üretmek içindir; mevcut kökü yeniden kullanmak kaynağı tazelemez. Yeni kaynak kontrolünde yeni tarih/saatli özel `--output-root` seçin. `observedAt` ayrıştırma zamanıdır; bayi stok güncelliği veya anlık fiyat garantisi değildir. PHP030 API kuyruğu ve saatlik zamanlama eklendi; hostingten gerçek isteğin HTTP403 alması nedeniyle otomatik bağlantı kapalıdır. Bayi stock/maliyet eşitlemesi hâlâ bağlı değildir. [API durumu ve kullanım](php-supplier-api-guide.md).
 
 Yönetim → **Tedarikçi katalogları**: gerçek sayılar, ürün/kategori filtresi, sunucuda arama,40 kayıtlık sayfalar, kaynak başlığı/SKU/perakende fiyatı ve kaynak görsel bağlantıları. Kategori ve ürün kayıtları inceleme kuyruğundadır; müşteri kataloğunda otomatik yayımlanmaz. Katalog/yönetici oturumu ve MFA zorunludur. Yetkisiz kullanıcıya ham kayıt veya bayi bilgisi dönmez. Müşteri sayfaları ürün yayın/ülke ve hak denetimlerini korur.
 

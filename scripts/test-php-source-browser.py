@@ -4,12 +4,12 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-php-source-browser.py
 # Açıklama   : Gerçek kaynak kataloglarını MFA ile yalnız /test incelemesine aktarır ve doğrular.
-import argparse,base64,hashlib,hmac,json,os,struct,sys,time
+import argparse,base64,hashlib,hmac,json,os,struct,subprocess,sys,time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 root=Path(__file__).resolve().parent.parent
-parser=argparse.ArgumentParser();parser.add_argument('--remote',action='store_true');parser.add_argument('--import-catalogs',action='store_true');parser.add_argument('--catalog-root',type=Path);parser.add_argument('--engine',choices=['chromium','webkit']);args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--remote',action='store_true');parser.add_argument('--import-catalogs',action='store_true');parser.add_argument('--catalog-root',type=Path);parser.add_argument('--engine',choices=['chromium','webkit']);parser.add_argument('--test-api',action='store_true');args=parser.parse_args()
 base='https://sexogate.com/test' if args.remote else 'http://127.0.0.1:3183/test'
 access=json.loads((root/('.local/php-stage-access.json' if args.remote else '.local/php-access.json')).read_text(encoding='utf8'))
 source_report=json.loads((root/'docs/php-source-catalog-report.json').read_text(encoding='utf8'))
@@ -43,7 +43,37 @@ def main():
     for row in rows:
      assert (int(row['product_count']),int(row['category_count']))==expected[row['vendor']]
      assert int(row['parsed_count'])==sum(expected[row['vendor']]) and int(row['access_required_count'])==0
+    api_evidence=None
+    if args.test_api:
+     card=page.locator('[data-source-api="xshopum"]');assert card.count()==1
+     response=context.request.get(base+'/api/admin/source-api');assert response.status==200
+     connection=next(r for r in response.json()['rows'] if r['vendor']=='xshopum')
+     if engine=='chromium':
+      if not connection['active_run_id']:
+       form=card.locator('form').first
+       with page.expect_navigation(wait_until='networkidle'):form.locator('button').click()
+      if not args.remote:
+       time.sleep(2);code="require 'vendor/autoload.php';$c=Sexogate\\Config::load('config.local.json');$db=new Sexogate\\Database($c);for($i=0;$i<6;$i++){(new Sexogate\\Worker($db,$c))->tick(20);if(!$db->one(\"SELECT active_run_id FROM source_api_connections WHERE vendor='xshopum'\")['active_run_id'])break;}";result=subprocess.run([str(root/'.local/php-runtime/php.exe'),'-r',code],cwd=root/'hosting/php',capture_output=True);assert result.returncode==0,'Local worker failed'
+      deadline=time.monotonic()+125
+      while time.monotonic()<deadline:
+       response=context.request.get(base+'/api/admin/source-api');assert response.status==200
+       connection=next(r for r in response.json()['rows'] if r['vendor']=='xshopum')
+       if not connection['active_run_id']:break
+       page.wait_for_timeout(5000)
+     assert not connection['active_run_id'],'Actual API cron did not finish'
+     assert connection['run_status']=='access_required' and connection['last_error']=='SOURCE_API_HTTP_403',connection
+     assert not int(connection['enabled']) and connection['last_success_at'] is None
+     if engine=='chromium':
+      page.locator('[data-source-api="xshopum"] [data-api-status]').filter(has_text='Sunucu erişimi engellendi').wait_for();page.locator('[data-api-refresh]').wait_for(state='visible')
+     latest=context.request.get(base+'/api/admin/source-catalog').json()['rows'];assert {r['id'] for r in latest}=={r['id'] for r in rows},'Denied API replaced last complete catalogs'
+     page.reload(wait_until='networkidle');card=page.locator('[data-source-api="xshopum"]');assert card.locator('[name=enabled]').is_disabled();assert 'HTTP 403' in card.inner_text()
+     api_evidence={'actualServerHttp':403,'automationEnabled':False,'lastCompleteCatalogPreserved':True,'cronProcessed':engine=='chromium'}
     page.screenshot(path=str(folder/(engine+'-catalog-batches.png')),full_page=True)
+    widths=[360,390,430,768,1440]
+    for width in widths:
+     page.set_viewport_size({'width':width,'height':900});page.evaluate('() => document.fonts.ready');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),('API panel overflow',engine,width)
+     button=page.locator('[data-source-api="xshopum"] form').first.locator('button');button.focus();assert button.evaluate('(node)=>document.activeElement===node');assert button.bounding_box()['height']>=44
+    page.set_viewport_size({'width':1440 if engine=='chromium' else 390,'height':900})
     for row in rows:
      page.goto(base+'/yonetim/tedarikci-katalogu/'+row['id']+'?kind=category');assert page.locator('tbody tr').count()>0;page.locator('tbody a').first.click();page.locator('.source-detail h2').wait_for();assert not page.locator('form[data-api="/api/admin/source-catalog/draft"]').count()
     row=next(r for r in rows if r['vendor']=='liona');page.goto(base+'/yonetim/tedarikci-katalogu/'+row['id']+'?kind=product');page.locator('tbody a').first.click();page.locator('form[data-api="/api/admin/source-catalog/draft"]').wait_for();page.wait_for_load_state('networkidle');page.evaluate('() => document.fonts.ready')
@@ -53,7 +83,7 @@ def main():
     for path in ['/yonetim/tedarikci-katalogu','/yonetim/kategoriler','/yonetim/gorseller']:
      response=page.goto(base+path);assert response.status==200;page.wait_for_load_state('networkidle');assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),path
      page.evaluate(axe);issues=page.evaluate("async () => (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))");assert not issues,(path,issues)
-    results.append({'engine':engine,'actualProducts':sum(v[0] for v in expected.values()),'actualCategories':sum(v[1] for v in expected.values()),'allMetadataParsed':True,'privateReview':True,'adminPages':3,'axeViolations':0})
+    results.append({'engine':engine,'actualProducts':sum(v[0] for v in expected.values()),'actualCategories':sum(v[1] for v in expected.values()),'allMetadataParsed':True,'privateReview':True,'adminPages':3,'axeViolations':0,'widths':widths,'keyboardFocus':True,'liveApi':api_evidence})
    finally:context.close();browser.close()
  (root/('.local/php-source-browser-remote.json' if args.remote else '.local/php-source-browser-local.json')).write_text(json.dumps(results,indent=2),encoding='utf8');print(json.dumps(results))
 

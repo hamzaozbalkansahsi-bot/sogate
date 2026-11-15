@@ -39,3 +39,8 @@ Arama adı/kodu Türkçe normalleştirerek özgün metni değiştirmeden çalı�
 ## Gerçek sınırlar
 
 Bu akışlar bütün NODENO işlevlerinin eksiksiz eşdeğeri veya satış onayı değildir. Tam ürün/varyant düzenleme ve geniş admin sayfalaması, opsiyonel gezinme geçmişi, kanala özel öneri kuralları, S3 ve medya geri yükleme, gerçek bayi feed/stock/sipariş API'si, gerçek ödeme/taşıyıcı/fatura, işletme/hukuk/ülke onayları ayrıca izlenir. Kaynakların kamu kataloglarını çekmek ile gerçek dropshipping siparişi vermek ayrı işlemlerdir. Güncel yayın ve gerçek test komutları `docs/progress.md` içinde kaydedilir.
+
+
+## Canlı katalog API kontrolü
+
+Tedarikçi katalogları ekranında xShopum için **API bağlantısını dene** ve gerçek sunucu başarısından sonra açılabilen zamanlama bulunur. Katalog önce özel incelemeye gelir; müşteri yayını, maliyet ve depo stoğu değişmez. Hosting HTTP403 verirse otomasyon kapanır ve son başarılı katalog kalır. Liona/Sistina onaylı bayi erişimi bekler. Ayrıntılar, güvenli erişim alanları ve hata çözümü [API rehberinde](php-supplier-api-guide.md).
