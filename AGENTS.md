@@ -25,3 +25,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+<!-- BEGIN PHP_SOURCE_API_20261115 -->
+- PHP kaynak API kuralları `docs/php-supplier-api-guide.md`: yalnız tam/başarılı snapshot incelemede görünür; yarım/başarısız katalog eskisini ezmez. Kamu fiyatı bayi maliyeti, bulunabilirlik fiziksel depo stoğu değildir. Hosting HTTP401/403 alırsa otomatik bağlantı kapanır; yerel dosya yüklemesi sunucudan başarılı API bağlantısı sayılmaz. Liona/Sistina onaylı bayi erişimi olmadan bağlı gösterilemez.
+<!-- END PHP_SOURCE_API_20261115 -->

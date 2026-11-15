@@ -149,5 +149,32 @@
     "warehouseWritesFromImport": 0,
     "publicPublication": false
   },
-  "liveApiServerStatus": "HTTP 403; automation disabled; local API capture requires private review upload"
+  "liveApiServerStatus": "HTTP 403; automation disabled; local API capture requires private review upload",
+  "remoteVerification": {
+    "url": "https://sexogate.com/test/yonetim/tedarikci-katalogu",
+    "release": "4dbb961204505bceb41bb5be",
+    "verifiedAt": "2026-11-15T04:36:56.975844+00:00",
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "widths": [
+      360,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "products": 2194,
+    "categories": 172,
+    "parsed": 2366,
+    "privateReview": true,
+    "warehouseWritesFromImport": 0,
+    "publicPublication": false,
+    "xshopumIntake": "fresh public API capture locally, authenticated private review upload",
+    "actualHostingApiHttp": 403,
+    "automaticApiEnabled": false,
+    "lastCompleteCatalogPreserved": true,
+    "axeViolations": 0
+  }
 }

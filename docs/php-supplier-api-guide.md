@@ -55,3 +55,19 @@ Yalnız `/test` paketi kullanılır.030 öncesi uzak şifreli DB yedeği yerelde
 030'dan önceki uygulama kodu snapshot durumlarını tanımaz. API çalıştırması oluşturulduktan sonra29 koduna yalnız aktif dosya değiştirerek dönülmez: önce otomasyonu durdurun, yeni inceleme çıktısını güvenli saklayın ve doğrulanmış030 öncesi test DB yedeğini kontrollü geri yükleyin; ardından önceki paketi etkinleştirip sağlık/katalog/cron kontrolünü tekrarlayın. Ana site DB'si veya başka işletmenin yedeği kullanılmaz. Kod/schema birlikte korunmalıdır.
 
 Açık operasyon işleri: onaylı bayi API formatı, gerçek maliyet/miktar/sipariş ve görsel lisansı; kaynak snapshot'ları için işletmenin belirleyeceği saklama/temizleme süresi. Şu an otomasyon kapalıdır; saatlik sınırsız arşiv üretildiği varsayılmaz. DB yedeği özel medya dosyası yedeği değildir.
+
+
+## Son test yayını ve modül durumu
+
+15 Kasım2026 etkin `/test` paketi `4dbb961204505bceb41bb5be`,30 migration. Yerel150 test/636 assertion PASS; iki tarayıcı ×beş genişlik ve uzak3 admin sayfası axe/klavye/taşma PASS. Gerçek API403 cron'da kaydedildi ve son katalog korundu. Yayın sonrası şifreli DB geri yüklemesi91 tablo/4.589 satır/103 FK ve30 checksum ile PASS. Ana site değişmedi. GitHub Actions hesap faturalama kilidi yüzünden0 adımda engellendi; CI yeşil diye sunulmaz.
+
+| Modül | Gerçek durum |
+| --- | --- |
+| xShopum kamu API'sinden1.022 ürün/48 kategori alımı | Çalışıyor ve test edildi; yerel gerçek ağ çekimi, yetkili `/test` inceleme yüklemesi |
+| PHP API kuyruğu, snapshot koruması, panel ve cron | Yalnız test ortamında çalışıyor;12 gerçek kayıtlı API sayfası izole DB'de,403 gerçek sunucuda sınandı |
+| xShopum hostingten otomatik API alımı | Dış erişim bekliyor; HTTP403, otomasyon kapalı |
+| Liona/Sistina bayi API/XML | Dış erişim bekliyor; erişim/format doğrulanmadan bağlantı kurulmadı |
+| Bayi maliyeti, kesin miktar, otomatik tedarikçi siparişi | Tamamlanmadı; kamu API bulunabilirliği bu alanlara çevrilmez |
+| Kaynak ürün/görsellerin müşteri kataloğunda yayını | İşletme/hak/SKU/ülke onayı bekliyor; kaynak kayıtları özel incelemede |
+
+Komutlar, tam test kanıtları ve açık iş `docs/progress.md` içindeki `PHP_SOURCE_API_20261115` bölümündedir. Kullanıcı erişim dosyasını bildirirse anahtar çıktıya yazılmadan izinli resmî adaptör doğrulanmalıdır.
