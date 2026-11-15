@@ -16,6 +16,7 @@ def safe_error(kind,error,trace):
  message=str(error)
  for name in ['password','totpSecret','email']:
   if access.get(name):message=message.replace(access[name],'[redacted]')
+ message=re.sub(r'^.*(?:cookie:|authorization:|x-csrf-token:).*$','[private request headers redacted]',message,flags=re.M|re.I)
  print(kind.__name__+': '+message[:1600],file=sys.stderr)
 sys.excepthook=safe_error
 def otp(secret):
@@ -56,13 +57,13 @@ with sync_playwright() as p:
    public=[]
    paths=['/blog'] if args.branding_only else ['/','/?page=categories','/?page=cart','/?page=favorites','/?page=collections','/?page=compare','/?page=account','/blog','/yonetim/blog']
    for path in paths:
-    print(json.dumps({'engine':engine,'publicRoute':path}),flush=True)
+    route_started=time.monotonic();print(json.dumps({'engine':engine,'publicRoute':path}),flush=True)
     response=page.goto(BASE+path);assert response.status==200,(path,response.status);page.wait_for_load_state('networkidle');dismiss(page)
     for width in [360,390,430,768,1440]:
      page.set_viewport_size({'width':width,'height':900});assert page.evaluate('() => document.documentElement.scrollWidth<=innerWidth'),(path,width)
     page.set_viewport_size({'width':390,'height':844})
     if path in ['/blog','/?page=categories','/yonetim/blog']:page.screenshot(path=str(folder/(engine+'-'+{'/blog':'blog','/?page=categories':'categories','/yonetim/blog':'blog-admin'}[path]+'.png')),full_page=True)
-    public.append(path)
+    public.append(path);print(json.dumps({'engine':engine,'publicRoute':path,'seconds':round(time.monotonic()-route_started,2)}),flush=True)
    assert not errors,errors;assert not external,external
    if tested_release:assert context.request.get(BASE+'/api/deployment-status').json()['release']==tested_release,'RELEASE_CHANGED_DURING_TEST'
    results.append({'engine':engine,'release':tested_release,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)

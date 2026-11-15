@@ -17,6 +17,7 @@ def safe_error(kind,error,trace):
  message=str(error)
  for key in ['email','password','totpSecret']:
   if access.get(key):message=message.replace(access[key],'[redacted]')
+ message=re.sub(r'^.*(?:cookie:|authorization:|x-csrf-token:).*$','[private request headers redacted]',message,flags=re.M|re.I)
  print(kind.__name__+': '+message[:1600],file=sys.stderr)
 sys.excepthook=safe_error
 def otp():
