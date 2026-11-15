@@ -5,8 +5,10 @@
 # Dosya      : scripts/test-native-browser.py
 # Açıklama   : Doğrudan kopyanın gerçek HTTPS/MFA yönetimini ve özgün müşteri ekranlarını sınar.
 import argparse,base64,hashlib,hmac,json,os,re,struct,sys,time
+from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from native_browser_ready import NativePageReadiness
 
 ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3186').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','local');assert re.fullmatch('[a-z-]+',scope)
 assert BASE in ['https://127.0.0.1:3186','https://127.0.0.1:3188/test','https://sexogate.com/test'] or re.fullmatch('https://(?:sexogate.com|127.0.0.1:3188)/test/native-preview-[a-f0-9]{16}',BASE)
@@ -41,9 +43,11 @@ results=[]
 with sync_playwright() as p:
  for engine in ['chromium','webkit']:
   browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':1440,'height':950});page=context.new_page();page.set_default_timeout(60000 if BASE.startswith('https://sexogate.com')else 20000);page.set_default_navigation_timeout(60000 if BASE.startswith('https://sexogate.com') else 60000);errors=[];external=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:external.append(r.url) if not r.url.startswith(BASE) and r.url.startswith(('http:','https:')) else None)
+  readiness=NativePageReadiness(page,BASE,timeout=60000 if BASE.startswith('https://sexogate.com')else 20000)
+  pending=set();page.on('request',lambda request:pending.add(request));page.on('requestfinished',lambda request:pending.discard(request));page.on('requestfailed',lambda request:pending.discard(request))
   try:
    tested_release=context.request.get(BASE+'/api/deployment-status').json()['release']if '/test'in BASE else None
-   page.goto(BASE+'/yonetim');page.wait_for_load_state('networkidle');page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();time.sleep(30.5-time.time()%30);page.locator('[name=proof]').fill(otp(access['totpSecret']));page.locator('#verify button[type=submit]').click();page.locator('.sidebar').wait_for(state='attached');page.locator('#verify').wait_for(state='detached');page.wait_for_load_state('networkidle')
+   page.goto(BASE+'/yonetim');readiness.wait();page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();time.sleep(30.5-time.time()%30);page.locator('[name=proof]').fill(otp(access['totpSecret']));page.locator('#verify button[type=submit]').click();page.locator('.sidebar').wait_for(state='attached');page.locator('#verify').wait_for(state='detached');readiness.wait()
    cookies=context.cookies();assert any(c['name'].startswith('__Host-') and c['secure'] and c['httpOnly'] for c in cookies)
    routes=page.locator('.sidebar a[href^="#"]').evaluate_all('(nodes)=>[...new Set(nodes.map(n=>n.getAttribute("href")))]');assert len(routes)>=20,routes
    if args.branding_only or args.release_smoke:routes=['#products']
@@ -58,7 +62,7 @@ with sync_playwright() as p:
    paths=['/blog'] if args.branding_only else ['/','/?page=categories','/?page=cart','/?page=favorites','/?page=collections','/?page=compare','/?page=account','/blog','/yonetim/blog']
    for path in paths:
     route_started=time.monotonic();print(json.dumps({'engine':engine,'publicRoute':path}),flush=True)
-    response=page.goto(BASE+path);assert response.status==200,(path,response.status);page.wait_for_load_state('networkidle');dismiss(page)
+    response=page.goto(BASE+path);assert response.status==200,(path,response.status);readiness.wait();dismiss(page)
     for width in [360,390,430,768,1440]:
      page.set_viewport_size({'width':width,'height':900});assert page.evaluate('() => document.documentElement.scrollWidth<=innerWidth'),(path,width)
     page.set_viewport_size({'width':390,'height':844})
@@ -66,6 +70,10 @@ with sync_playwright() as p:
     public.append(path);print(json.dumps({'engine':engine,'publicRoute':path,'seconds':round(time.monotonic()-route_started,2)}),flush=True)
    assert not errors,errors;assert not external,external
    if tested_release:assert context.request.get(BASE+'/api/deployment-status').json()['release']==tested_release,'RELEASE_CHANGED_DURING_TEST'
-   results.append({'engine':engine,'release':tested_release,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)
+   results.append({'engine':engine,'release':tested_release,'scope':'release-smoke' if args.release_smoke else 'brand-overrides' if args.branding_only else 'full-navigation','base':BASE,'adminRoutes':len(routes),'publicRoutes':len(public),'widths':[360,390,430,768,1440],'mfa':True,'secureCookie':True,'pageErrors':0,'externalRequests':0,'readiness':'critical_requests_and_rendered_ui','optionalFxObserved':readiness.optional_observed,'sourceSnapshotPreserved':True,'domainAndMountRelocated':BASE.endswith('/test') or '/native-preview-' in BASE});print(json.dumps(results[-1]),flush=True)
+  except Exception:
+   try:print(json.dumps({'diagnostic':True,'engine':engine,'path':urlsplit(page.url).path,'pending':[{'path':urlsplit(request.url).path,'type':request.resource_type}for request in pending],'pageErrors':errors,'ready':page.evaluate('()=>({document:document.readyState,currency:!!document.querySelector("#display-currency"),loading:!!document.querySelector("main .loading,main .loading-state")})')},ensure_ascii=False),flush=True)
+   except Exception:print('Navigation diagnostic unavailable',flush=True)
+   raise
   finally:context.close();browser.close()
 (ROOT/('.local/native-browser'+('-branding' if args.branding_only else '')+('' if scope=='local' else '-'+scope)+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')
