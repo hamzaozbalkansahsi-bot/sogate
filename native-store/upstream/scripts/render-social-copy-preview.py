@@ -1,0 +1,13 @@
+"""Exercise the exact candidate's free worker in isolated QA storage."""
+from pathlib import Path
+import json,subprocess,shutil
+R=Path(__file__).resolve().parents[1];E=R/'artifacts/social-copy-20261112';p=json.loads((E/'release.json').read_bytes());C=R/p['release'];W=R/'artifacts/social-engine-20261112/preview'
+def q(path):return "'"+str(path).replace('\\','/').replace("'","\\'")+"'"
+code="require "+q(C/'private/social-worker.php')+";$db=nodenoControlDatabase($argv[1]);$settings=nodenoStudioSettings($db);if($settings['paidEnabled']||$settings['autoPublish'])exit(3);$runs=[];for($i=0;$i<3;$i++)$runs[]=nodenoStudioTick($argv[1],$argv[2],$argv[3],$argv[4]);$rows=$db->query(\"SELECT * FROM social_posts WHERE status!='cancelled' AND substr(id,1,5)='auto_' ORDER BY scheduled_at,id\")->fetchAll();echo json_encode(['runs'=>$runs,'posts'=>array_map('nodenoStudioPost',$rows),'paidEnabled'=>nodenoStudioSettings($db)['paidEnabled']]);"
+r=subprocess.run([str(R/'artifacts/runtime-php/php.exe'),'-d','extension=gd','-d','display_errors=0','-r',code,str(W/'storage'),str(C/'private'),str(W/'media'),str(W/'public')],capture_output=True,text=True,encoding='utf8');assert r.returncode==0,r.stderr[:700];data=json.loads(r.stdout);assert len(data['posts'])>=40 and all(x['payload']['segment']=='finished'for x in data['posts']);assert data['paidEnabled']is False
+examples=[]
+for topic,productId in [('coffee','5015'),('work','3653'),('storage','2395')]:
+ program="require "+q(C/'private/social-worker.php')+";$db=nodenoControlDatabase($argv[1]);$c=json_decode(file_get_contents($argv[2].'/catalog.json'),true);$product=nodenoStudioProduct($c,$argv[5]);$post=['id'=>'preview-only','platform'=>'instagram','locale'=>'tr','format'=>'image','payload_json'=>json_encode(nodenoStudioCaption($product,'tr','instagram'))];echo json_encode(nodenoStudioRenderImage($db,$argv[1],$post,$product,$argv[2],$argv[3],$argv[4]));"
+ result=subprocess.run([str(R/'artifacts/runtime-php/php.exe'),'-d','extension=gd','-d','display_errors=0','-r',program,str(W/'storage'),str(C/'private'),str(W/'media'),str(W/'public'),productId],capture_output=True,text=True,encoding='utf8');assert result.returncode==0,result.stderr[:500]
+ asset=json.loads(result.stdout)[0];target=E/('launch-'+topic+'-tr.png');shutil.copyfile(W/'storage/social-media'/(asset+'.png'),target);examples.append({'theme':topic,'locale':'tr','productId':productId,'file':str(target.relative_to(R))})
+record={'passed':True,'testOnly':True,'releaseHash':p['releaseHash'],'activeAutomaticPosts':len(data['posts']),'segments':['finished'],'runs':data['runs'],'examples':examples,'paidCalls':0};(E/'campaign-local.json').write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record))

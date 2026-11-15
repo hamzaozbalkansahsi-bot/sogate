@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import path from 'node:path';
+import {seoPage,seoSitemap} from '../lib/seo.mjs';
+const catalog={products:[{id:'123',code:'NDN-123',name:{tr:'Dolap',en:'Cabinet',ru:'Шкаф',ar:'خزانة'},modelName:{tr:'Dolap',en:'Cabinet',ru:'Шкаф',ar:'خزانة'},images:['/media/123/0'],salePriceMinor:12345,currency:'TRY',categoryIds:['storage']}],categories:[{id:'storage',name:{tr:'Dolaplar',en:'Cabinets',ru:'Шкафы',ar:'الخزائن'}}],meta:{}};
+test('wholesale landing with eleven language alternates is crawlable with real images, reciprocal locale URLs and honest quote-only schema',()=>{
+ for(const lang of ['tr','en','ru','ar']){
+  const query='?page=wholesale&lang='+lang;const want=seoPage(catalog,{},new URL('https://nodenohome.com/'+query));assert.equal(want.status,200);assert.equal(want.indexable,true);assert.equal(want.kind,'wholesale');assert.equal(want.canonical,'https://nodenohome.com/?lang='+lang+'&page=wholesale');assert.equal(want.alternates.length,12);assert.ok(want.body.includes('/media/123/0'));assert.ok(want.body.includes(catalog.products[0].name[lang]));assert.ok(want.jsonld.some(r=>r['@type']==='Service'));assert.ok(!JSON.stringify(want.jsonld).includes('"Offer"'));assert.ok(seoSitemap(catalog,{},'pages',lang).includes('page=wholesale'));
+  const r=spawnSync(path.resolve('artifacts/runtime-php/php.exe'),['tests/fixtures/seo-runtime.php'],{encoding:'utf8',input:JSON.stringify({catalog,config:{},query})});assert.equal(r.status,0,r.stderr);const actual=JSON.parse(r.stdout);for(const key of ['status','indexable','canonical','alternates','title','description'])assert.deepEqual(actual[key],want[key],key+lang);assert.ok(actual.body.includes(catalog.products[0].name[lang]));assert.ok(actual.jsonld.some(r=>r['@type']==='Service'));
+ }
+});
+test('wholesale preselection and filters cannot generate duplicate canonical or fake B2B prices on retail products',()=>{
+ const page=seoPage(catalog,{},new URL('https://nodenohome.com/?page=wholesale&item=123&lang=en'));assert.equal(page.canonical,'https://nodenohome.com/?lang=en&page=wholesale');assert.equal(seoPage(catalog,{},new URL('https://nodenohome.com/?page=wholesale&q=desk')).indexable,false);const retail=seoPage(catalog,{},new URL('https://nodenohome.com/?product=123&lang=en'));const selected=retail.jsonld.find(r=>r['@type']==='Product');assert.equal(selected.sku,'NDN-123');assert.equal(selected.offers.price,'123.45');assert.ok(retail.body.includes('page=wholesale'));
+});

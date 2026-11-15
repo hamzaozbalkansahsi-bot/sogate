@@ -1,0 +1,15 @@
+# Ürün fotoğraf galerisi
+
+Ürün sayfasındaki ana fotoğraf, büyütülmeden de sağa veya sola kaydırılabilir. Yatay hareket yalnız fotoğraf alanını ilerletir; fotoğrafın üzerinde dikey hareket sayfayı kaydırır. İki parmakla yakınlaştırma engellenmez. Küçük önizlemeler, önceki/sonraki düğmeleri ve sayaç aynı seçimi izler. Fotoğrafa dokunmak veya Fotoğrafı büyüt düğmesini kullanmak seçili görseli büyütür. Kaydırmak büyütme penceresini açmaz.
+
+Ana galeri tarayıcının yerel kaydırmasını ve CSS scroll snap kullanır; hareket sırasında ürün sayfası yeniden çizilmez. Bölgeye klavyeyle odaklanıldığında sağ/sol, Home ve End tuşları kullanılabilir. Ekran genişliği değiştiğinde seçili görsel korunur. Diller ve Arapça sayfa yönü değişse de fotoğrafların fiziksel sırası aynıdır. Ürün değişiminde galeri yeni ürünün kapak fotoğrafından başlar.
+
+Ürün fotoğrafına dokunulduğunda o anda seçili fotoğraf büyütülür. Açılan pencere, ürünün onaylı görsellerini yatay bir galeride gösterir. Telefonda sağa/sola kaydırma; bilgisayarda önceki/sonraki düğmeleri, klavyenin sağ/sol okları ve yatay kaydırma kullanılabilir. Fotoğraf sayacı ve düğme etiketleri dört dilde sunulur. İlk ve son fotoğrafta ilgili düğme devre dışıdır; galeri başa sarmaz.
+
+Kaydırma tarayıcının yerel yatay kaydırması ve CSS scroll snap ile çalışır. Özel bir parmak hareketi engelleyicisi eklenmez. Fotoğraflar alanın içine orantılı sığar; kırpılmaz. Sayaç ve seçili fotoğraf kaydırma sırasında güncellenir. Ekran boyutu değiştiğinde aynı görsel korunur. Kapatma veya Escape sonrasında ürün sayfasında aynı fotoğraf görünür ve odak büyütme düğmesine döner. Gözlemci pencere kapanırken kaldırılır. Tek görselli bir ürün eklenirse gezinme düğmeleri gizlenir; mevcut katalogda bu durum bulunmadığından gerçek katalog kabulünde tek görsel senaryosu sınandığı iddia edilmez.
+
+Türkçe, İngilizce, Rusça ve Arapça/RTL desteklenir. Fotoğraf sırası ve fiziksel sağ/sol kontrolleri bütün dillerde aynıdır. Ürün kodları, fiyatları, teknik bilgileri, görseller ve kalıcı müşteri verileri değiştirilmez.
+
+Büyütülmüş galerinin önceki yayınına ait yerel ve canlı kabul `artifacts/photo-swipe/` raporlarındadır. Bu tarihsel tarayıcı kontrolleri iki gerçek ürünü, dört dili, 320/390/1366 genişliklerini, dokunma olaylarıyla kaydırmayı, düğmeleri, klavyeyi, sınırları, yeniden açmayı, boyut değiştirmeyi ve odak dönüşünü kapsar. Bunlar Chromium ve mobil dokunma emülasyonu kontrolleridir; fiziksel iPhone/Safari testi yapıldığı iddia edilmez. Genel önceki sayfa yerleşim raporu yeni galeri sürümünün testi gibi sunulmaz.
+
+Ana fotoğraf düzeltmesinin tekrar çalıştırılabilir kabul testi `tests/browser/product-gallery.mjs` dosyasıdır. Hata eski canlı sürümde gerçek Chromium dokunma girdisiyle kaydedilir. Yeni paket ve canlı kabul `artifacts/inline-gallery/` altında ayrı tutulur. Chromium ve Windows WebKit, dört dil, 320/390/430/1366 genişlikleri, kullanıcının HMA-012-NT-5 kodlu ürünü ve 2393 kimlikli ürün sınanır. Chromium mobil kontrolleri gerçek tarayıcı dokunma girdisi; WebKit kontrolleri yerel kaydırma alanı, düğme ve klavye davranışıdır. Fiziksel iPhone doğrulaması yapılmış sayılmaz.

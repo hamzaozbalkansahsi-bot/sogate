@@ -1,0 +1,23 @@
+{
+  "scope": "Empty local catalogue metadata and exact inherited UI dictionary additions; no product or stock claims",
+  "emptyCategoryDescription": {
+    "de": "Entdecke 0 Modelle in der SEXOGATE-Kollektion.",
+    "az": "SEXOGATE kolleksiyasında 0 modelə baxın.",
+    "kk": "SEXOGATE топтамасындағы 0 үлгіні қараңыз.",
+    "tk": "SEXOGATE ýygyndysyndaky 0 modeli gözden geçiriň.",
+    "uz": "SEXOGATE kolleksiyasidagi 0 modelni ko‘ring.",
+    "ky": "SEXOGATE коллекциясындагы 0 моделди караңыз.",
+    "fa": "۰ مدل را در مجموعه SEXOGATE ببینید."
+  },
+  "uiAdditions": {
+    "With your permission, we measure site visits, referral sources, selected countries, devices, product views, cart and favourites, and remember recently viewed products and searches in this browser. Your choice lasts 90 days.": {
+      "de": "Mit deiner Einwilligung messen wir Websitebesuche, Verweisquellen, ausgewählte Länder, Geräte, Produktansichten sowie Warenkorb und Favoriten und speichern kürzlich angesehene Produkte und Suchanfragen in diesem Browser. Deine Auswahl gilt 90 Tage.",
+      "az": "İcazənizlə sayt ziyarətlərini, yönləndirmə mənbələrini, seçilmiş ölkələri, cihazları, məhsul baxışlarını, səbət və sevimliləri ölçür, son baxılan məhsulları və axtarışları bu brauzerdə yadda saxlayırıq. Seçiminiz 90 gün qüvvədədir.",
+      "kk": "Рұқсатыңызбен сайтқа кірулерді, өту көздерін, таңдалған елдерді, құрылғыларды, тауар қаралымдарын, себет пен таңдаулыларды өлшейміз және соңғы қаралған тауарлар мен іздеулерді осы браузерде сақтаймыз. Таңдауыңыз 90 күн сақталады.",
+      "tk": "Rugsadyňyz bilen saýta girişleri, ugrukdyryş çeşmelerini, saýlanan ýurtlary, enjamlary, önüm görkezişlerini, sebedi we halanýanlary ölçeýäris hem-de soňky görülen önümleri we gözlegleri şu brauzerde ýatda saklaýarys. Saýlawyňyz 90 gün güýjünde bolýar.",
+      "uz": "Ruxsatingiz bilan saytga tashriflar, yo‘naltirish manbalari, tanlangan mamlakatlar, qurilmalar, mahsulot ko‘rishlari, savat va sevimlilarni o‘lchaymiz hamda yaqinda ko‘rilgan mahsulotlar va qidiruvlarni shu brauzerda saqlaymiz. Tanlovingiz 90 kun amal qiladi.",
+      "ky": "Уруксатыңыз менен сайтка кирүүлөрдү, өтүү булактарын, тандалган өлкөлөрдү, түзмөктөрдү, товар көрүүлөрүн, себетти жана тандалмаларды өлчөйбүз жана жакында көрүлгөн товарлар менен издөөлөрдү ушул браузерде сактайбыз. Тандооңуз 90 күн сакталат.",
+      "fa": "با اجازه شما، بازدیدهای سایت، منابع ارجاع، کشورهای انتخاب‌شده، دستگاه‌ها، بازدید محصولات، سبد خرید و علاقه‌مندی‌ها را اندازه‌گیری می‌کنیم و محصولات و جست‌وجوهای اخیر را در این مرورگر به خاطر می‌سپاریم. انتخاب شما ۹۰ روز اعتبار دارد."
+    }
+  }
+}

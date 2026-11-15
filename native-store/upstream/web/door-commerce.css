@@ -1,0 +1,173 @@
+.currency-picker{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--ink);font-size:13px;font-weight:400}
+.currency-picker label{color:var(--muted);white-space:nowrap}
+.currency-picker select{min-inline-size:92px;min-block-size:44px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.currency-picker select:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.product-price-block{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.product-price-block .currency-picker{margin-inline-start:auto}
+.product-price-block .product-scope-note{flex-basis:100%}
+.basket-summary>.currency-picker{justify-content:space-between;padding-block:14px 0}
+.home-page .product-shelf .section-heading{flex-wrap:wrap;gap:12px 20px}
+.home-page .product-shelf .section-heading>.currency-picker{margin-inline-start:auto}
+.home-page .product-shelf .section-heading>.text-link{order:1}
+.catalog-toolbar>.currency-picker{margin-inline-start:auto}
+@media(max-width:767px){.currency-picker select{font-size:16px}.home-page .product-shelf .section-heading>.currency-picker{flex-basis:100%;justify-content:flex-end}.product-price-block .currency-picker{gap:8px}.product-price-block .currency-picker label{font-size:12px}.catalog-toolbar>.currency-picker{flex:1;justify-content:flex-end}}
+.door-collection-banner{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:12px;background:#F5F2E9;margin:30px 0}
+.door-collection-banner>div{padding:44px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.door-collection-banner h2{font-size:clamp(30px,3.4vw,52px);line-height:1.1;letter-spacing:-.035em;margin:12px 0 18px}
+.door-collection-banner p{max-width:36ch;line-height:1.65}
+.door-collection-photo{display:block;min-height:400px;overflow:hidden}
+.door-collection-photo img{width:100%;height:100%;max-height:520px;object-fit:cover;object-position:center;display:block}
+.door-minimum-caption{font-size:13px;color:#536770;margin-block:18px 0}
+.door-variants{margin:20px 0}
+.door-variants h2{font-size:15px;margin:0 0 12px}
+.door-variant-list{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;padding:3px 3px 10px;max-width:100%}
+.door-variant-list a{flex:0 0 116px;border:1px solid #DADDD6;border-radius:8px;padding:7px;text-decoration:none;color:#172D38;background:#fff;line-height:1.4}
+.door-variant-list a[aria-current]{border:2px solid #172D38;background:#F5F2E9;padding:6px}
+.door-variant-list img{width:100%;height:105px;object-fit:contain;display:block;border-radius:4px;margin-bottom:7px}
+.door-variant-list span{font-size:12px;display:block}
+.door-configurator{padding:18px;border:1px solid #DADDD6;border-radius:10px;margin:20px 0;min-width:0;background:#fff}
+.door-configurator legend{font-size:17px;font-weight:700;padding:0 6px}
+.door-option-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.door-configurator .form-field,.door-request-section .form-field{min-width:0}
+.door-configurator :is(input[type=number],select),.door-cart-policy select{width:100%;max-width:100%;min-height:44px;box-sizing:border-box;color:#172D38;border:1px solid #DADDD6;border-radius:6px;background:#fff;padding:10px;font:inherit}
+.door-configurator .field-hint,.door-cart-policy .field-hint{font-size:12px;line-height:1.6;color:#536770;margin:8px 0 12px}
+.door-addons{border-block:1px solid #DADDD6;margin:16px 0 6px}
+.door-addon{display:flex;align-items:center;gap:10px;min-height:48px;font-size:13px;line-height:1.5;cursor:pointer;padding-block:6px}
+.door-addon+ .door-addon{border-top:1px solid #eeeeea}
+.door-addon input{flex:none;inline-size:18px;block-size:18px;accent-color:#172D38}
+.door-addon span{flex:1;min-width:0}
+.door-addon bdi{white-space:nowrap;font-weight:700;max-width:42%}
+.door-measurements summary{font-size:13px;cursor:pointer;min-height:44px;display:list-item;align-content:center}
+.door-measurements[open]{padding-bottom:12px}
+.door-price-basis{font-size:12px;font-weight:700;line-height:1.7;margin:12px 0 4px}
+.door-quote-note{padding:12px 14px;background:#F5F2E9;border-radius:7px;font-size:13px;line-height:1.6;margin:12px 0}
+.door-quote-note p{margin:5px 0 0}
+.door-cart-policy{padding:16px 0;border-top:1px solid #DADDD6;margin-top:14px;font-size:13px;line-height:1.6}
+.door-cart-policy p{margin:8px 0}
+.door-minimum-ready{font-weight:700;color:#294e20}
+.door-minimum-missing{font-weight:700;color:#90411d}
+.door-cart-config{font-size:12px;color:#536770;line-height:1.5;margin:10px 0}
+.door-cart-config p{margin:3px 0}
+.door-request-section{margin-top:24px}
+.door-request-section .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.door-request-section :is(input:not([type=checkbox]),textarea){width:100%;min-height:44px;border:1px solid #DADDD6;border-radius:6px;background:#fff;padding:10px;box-sizing:border-box;font:inherit;color:#172D38}
+.door-request-section textarea{min-height:100px}
+.door-request-section form{display:grid;gap:18px;margin-top:20px}
+.door-request-section .checkbox-label{font-size:13px;line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.door-request-section .checkbox-label input{margin-top:3px;flex:none;inline-size:18px;block-size:18px;accent-color:#172D38}
+.door-honeypot{display:none!important}
+.door-request-success{padding:18px;background:#e7ebe0;border-radius:8px}
+.door-fire-panel{border:1px solid #DADDD6;border-radius:10px;background:#fff;padding:26px;margin:30px 0}
+.door-fire-panel h2{font-size:22px;margin-top:0}
+.door-fire-panel p{max-width:75ch;line-height:1.7;color:#536770}
+.parent-company{font-size:12px;line-height:1.65;color:#536770;max-width:35ch}
+.front-calculation{display:grid;gap:10px;margin:18px 0;padding:16px;background:#F5F2E9;border-radius:8px;font-size:14px}
+.front-calculation>div{display:flex;align-items:baseline;justify-content:space-between;gap:18px}
+.front-calculation dd{margin:0;text-align:end;font-weight:700}
+.front-calculation>div:last-child{padding-top:12px;border-top:1px solid #DADDD6;font-size:17px}
+.front-collection-banner{background:#172D38;color:#fff}
+.front-collection-banner .door-minimum-caption{color:#DADDD6}
+.front-collection-banner .button{background:#D9ED81;color:#172D38}
+.product-page:has(.door-configurator) .gallery-main{aspect-ratio:4/5}
+.product-page:has(.door-configurator) .gallery-viewport{height:100%}
+@media(max-width:760px){
+ .currency-toolbar-inner{justify-content:flex-start;gap:8px;min-height:48px}
+ .currency-toolbar-inner .field-hint{flex-basis:100%;font-size:12px}
+ .exchange-explanation{flex:1;min-width:0}
+ .door-collection-banner{grid-template-columns:1fr 1fr;margin:20px 0}
+ .door-collection-banner>div{padding:20px 16px}
+ .door-collection-banner h2{font-size:27px}
+ .door-collection-banner p{font-size:13px;line-height:1.6}
+ .door-collection-photo{min-height:340px}
+ .door-collection-banner .button{font-size:13px;padding:12px;min-height:44px}
+ .door-collection-banner .eyebrow{font-size:10px}
+ .door-configurator{padding:14px}
+ .door-option-grid{gap:10px}
+ .door-configurator :is(input[type=number],select){font-size:16px}
+ .door-addon{font-size:12px;gap:8px}
+ .door-request-section .form-grid{grid-template-columns:1fr}
+ .door-request-section :is(input:not([type=checkbox]),textarea){font-size:16px}
+ .door-request-section .button{width:100%}
+ .door-fire-panel{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){.door-variant-list{scroll-behavior:auto}}
+
+.measurement-configurator{min-inline-size:0;padding:18px;border-color:var(--line,#DADDD6)}
+.measurement-base-caption{display:block;font-size:12px;font-weight:400;color:#536770;margin-block-end:6px}
+.product-page:has(.measurement-configurator) .purchase-choice-row{grid-template-columns:minmax(0,1fr)}
+.measurement-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-block-end:16px}
+.measurement-toolbar p{margin:0;font-size:13px;line-height:1.6;color:var(--muted,#536770)}
+.measurement-demo-button{min-height:44px;padding:8px 0;background:none;border:0;text-decoration:underline;text-underline-offset:4px;font:700 13px 'NODENO Sans',sans-serif;color:var(--navy,#172D38);cursor:pointer}
+.measurement-rows{display:grid;gap:14px}
+.measurement-row{border:1px solid var(--line,#DADDD6);border-radius:8px;padding:14px;min-width:0;background:#fff}
+.measurement-row>header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-block-end:10px}
+.measurement-row h3{font-size:14px;margin:0}
+.measurement-row-actions{display:flex;gap:4px}
+.measurement-row-actions button{inline-size:36px;block-size:36px;display:grid;place-items:center;border:0;background:transparent;color:#172D38;border-radius:5px;cursor:pointer}
+.measurement-row-actions button:hover{background:#F5F2E9}
+.measurement-row-actions button:disabled{opacity:.3;cursor:default}
+.measurement-row-actions svg,.measurement-add svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6}
+.measurement-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:10px}
+.measurement-door-fields{grid-template-columns:repeat(4,minmax(0,1fr))}
+.measurement-fields .form-field{gap:6px;min-width:0;font-size:12px}
+.measurement-fields input,.measurement-fields select{min-width:0;width:100%;padding-inline:9px!important;font-variant-numeric:tabular-nums}
+.measurement-row-options{margin-block-start:12px}
+.measurement-row-options .form-field{font-size:13px;gap:6px}
+.measurement-row-options select{font-size:14px}
+.measurement-check{display:flex;align-items:center;gap:10px;min-height:44px;font-size:13px;cursor:pointer}
+.measurement-check input{inline-size:18px;block-size:18px;flex:none;accent-color:#172D38}
+.measurement-addons{margin-block-start:6px}
+.measurement-addons summary{cursor:pointer;min-height:44px;align-content:center;font-size:13px;color:#536770}
+.measurement-line-price{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-block-start:12px;padding-block-start:10px;border-block-start:1px solid #eee;font-size:13px;line-height:1.6}
+.measurement-line-price strong{margin-inline-start:auto;font-variant-numeric:tabular-nums}
+.measurement-line-price>span:only-child{color:#536770}
+.measurement-add{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-block-start:14px;min-height:46px;border:1px dashed #536770;background:#fff;font-size:14px}
+.measurement-totals{background:#F5F2E9;padding:16px;border-radius:8px;margin-block-start:16px;font-size:13px;line-height:1.6}
+.measurement-totals>div{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.measurement-totals p{font-size:12px;margin-block:8px 0;color:#536770}
+.measurement-total-price{border-block-start:1px solid #DADDD6;margin-block-start:10px;padding-block-start:12px}
+.measurement-total-price strong{font-size:20px;font-variant-numeric:tabular-nums}
+.measurement-status{font-size:13px;color:#90411d;line-height:1.6;margin-block:10px}
+.measurement-status:empty{display:none}
+.measurement-fields input[aria-invalid=true]{border-color:#90411d;background:#fff9f4}
+.measurement-glass-preview{display:flex;align-items:center;gap:12px;margin-block-start:12px}
+.measurement-glass-preview img{inline-size:62px;block-size:86px;object-fit:contain;flex:none;border:1px solid #DADDD6;border-radius:4px}
+.measurement-glass-preview span{font-size:12px;line-height:1.6;color:#536770}
+.measurement-finish{margin-block-end:16px}
+.measurement-demo{inline-size:min(620px,calc(100vw - 32px));max-block-size:calc(100dvh - 40px);box-sizing:border-box;padding:24px;border:1px solid #DADDD6;border-radius:14px;background:#fff;color:#172D38;overflow:auto;overscroll-behavior:contain}
+.measurement-demo::backdrop{background:rgba(23,45,56,.65)}
+body:has(.measurement-demo[open]){overflow:hidden}
+.measurement-demo-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.measurement-demo-header p{font-size:11px;font-weight:700;margin:0 0 6px}
+.measurement-demo-header h2{font-size:23px;margin:0;line-height:1.3}
+.measurement-demo-header .icon-button{flex:none;min-width:44px;min-height:44px}
+.measurement-demo-stage{margin-block-start:24px;min-height:260px}
+.measurement-demo-counter{font-size:12px;color:#536770;margin-block:0 8px;font-variant-numeric:tabular-nums}
+.measurement-demo-stage h3{font-size:19px;margin-block:0 10px;line-height:1.4}
+.measurement-demo-product{font-size:12px;color:#536770;margin-block:0 16px}
+.measurement-demo-list{display:grid;gap:8px}
+.measurement-demo-example{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px;border:1px solid #DADDD6;border-radius:7px;font-size:13px;line-height:1.6}
+.measurement-demo-example div{display:grid;gap:4px}
+.measurement-demo-example span{font-size:12px;color:#536770}
+.measurement-demo-example bdi{display:grid;gap:4px;text-align:end}
+.measurement-demo-example.is-active{border-color:#172D38;box-shadow:inset 3px 0 #D8EC81}
+.measurement-demo-note{color:#536770;font-size:12px;margin-block:18px 12px}
+.measurement-demo-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.measurement-demo-controls .button{min-width:0;padding-inline:10px;font-size:14px}
+.measurement-demo-apply{width:100%;margin-block-start:12px;min-height:48px;background:#D8EC81;color:#172D38;border-color:#D8EC81;font-size:14px}
+.product-page:has(.measurement-configurator) .mobile-purchase>span{display:grid;gap:3px}
+.product-page:has(.measurement-configurator) .mobile-purchase>span small{font-size:10px;font-weight:400;color:#536770}
+.product-page:has(.measurement-configurator) .mobile-purchase>span strong{font-size:13px;line-height:1.3}
+@media(max-width:760px){
+ .measurement-configurator{padding:12px}
+ .measurement-row{padding:12px}
+ .measurement-fields,.measurement-door-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .measurement-row-actions{gap:8px}
+ .measurement-row-actions button{inline-size:44px;block-size:44px}
+ .measurement-row-options select{font-size:16px}
+ .measurement-demo{padding:18px;max-block-size:calc(100dvh - 28px)}
+ .measurement-demo-header h2{font-size:20px}
+ .measurement-demo-example{gap:8px;padding:10px;flex-wrap:wrap}
+ .measurement-demo-example bdi{margin-inline-start:auto}
+ .measurement-demo-controls{gap:8px}
+}

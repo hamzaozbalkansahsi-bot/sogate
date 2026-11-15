@@ -1,0 +1,14 @@
+# Satın alma deneyimi — tamamlandı ve canlıda
+
+12/11/2026 tarihinde ödeme deneyimi, kargo dahil fiyat politikası ve kapı/kapak %20 artışı yayımlandı. Canlı sürüm: `df20b6a01dd32c0ddb5238b3e10d36eddbd5e4b535f3783f4abebb226ebe3b54`.
+
+- Türkiye içi standart kargo tüm ürünlerde dahildir; ayrı taşıyıcı ödemesi ve onay kutusu kaldırıldı. Mobilya fiyatı korunur, kapı/kapak ve profil net tabanlarına %20 eklenir. Kapı ölçü/donanım farkları aynı katsayıya tabidir. Artış bir kez, KDV'den önce uygulanır. Doğrulanmamış fiyatlar teklif olarak kalır. Uluslararası nakliye ve gümrük teklif yolundadır.
+- Ödeme düğmesi doğrulanmış Stripe adresine doğrudan gider. Otomatik HTML indirmesi ve ikinci devam düğmesi kaldırıldı. Sunucu belge protokolü 2 kullanır; koşul sürümü, içerik ve fiyat revizyonu yeniden doğrulanır. Şifreli/değişmez eski sipariş belgeleri korunur.
+- İletişim ve adres taslağı sekme oturumunda korunur; yenilemede geri gelir. Hesap sahibi değişiminde temizlenir. Sepet/dil/para birimi değişimi adresi silmez. Formda Enter/Tab gezinmesi, daha kısa alan boşlukları ve özet uygulanır.
+- Ön bilgilendirme, satış/mesafeli satış ve iadeye tıklanabilir pencereler eklendi. X/Escape kapanır, odak açan düğmeye döner. Dört ana dil, RTL ve mevcut yedi ek dil korunur. Yeni sözleşmeler ortak ülke tarih/saat biçimlendiricisini kullanır.
+
+Paket, güncel canlı sürüme dar kapsamla uygulandı. Yayın sırasında başka sohbette eklenen boya ürünü saptandı; eski 3.725 ürün satırı ve tüm ödeme/arayüz kodunun aynı kaldığı hash ile kanıtlanıp yeni 3.726 ürünlü taban korundu. Hesap, sipariş, anahtar ve görsel kasası sürüm klasörü dışında aynı kaldı. Yedek ve yayın kilidi kullanıldı; canlı dosya/hash geri okuması geçti.
+
+49 otomatik test başarılı. Dört dilde Chromium masaüstü/mobil ve WebKit mobilde 12 senaryo; Almanca/Farsça 2 senaryo; katalog güncellemesi sonrası aynı kodla ek 2 mobil senaryo geçti. 5.129 referansın kaynak/çıktı medya kapıları doğrulandı. Canlıda dört alan adı, 3.726 ürünün fiyatı, üç ürün tipinin net/KDV/kargo hesabı ve 11 dilde sözleşme sayfaları kontrol edildi. Canlı masaüstü/mobilde beş senaryo; adresin yenilemede korunması, Enter/Tab, X/Escape, gerçek fotoğraflar ve dosya indirmeden yönlendirme geçti. Gerçek sağlayıcıya ödeme isteği tarayıcı testinde yakalandı; gerçek tahsilat veya test siparişi oluşturulmadı. Fiziksel cihaz/banka tahsilatı testi iddia edilmez.
+
+Kanıtlar: `artifacts/checkout-experience-20261112/{completion,deployment,live-commerce,live-browser,browser,browser-native,browser-rebase,media,code-review,rebase}.json` ve `payment-tests.log`. Canlı ekran görüntüleri aynı klasörde `live-*-review.png` biçimindedir. Kullanım ve fiyat açıklamaları `docs/mobile-guest-checkout.md`, `docs/stripe-checkout.md`, `docs/kapi-ve-kapak-ticareti.md` ile birlikte güncellendi.

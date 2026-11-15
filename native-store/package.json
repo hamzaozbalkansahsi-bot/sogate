@@ -1,0 +1,14 @@
+{
+  "name": "sexogate-native-store",
+  "private": true,
+  "description": "NODENO uygulamasının doğrudan kopyası ve SEXOGATE tema katmanı",
+  "scripts": {
+    "build": "python ../scripts/build-native-store.py",
+    "dev": "python ../scripts/run-native-store.py",
+    "verify": "python ../scripts/test-native-source.py",
+    "test:core": "python ../scripts/test-native-core.py",
+    "test:browser": "python ../scripts/test-native-browser.py",
+    "test:languages": "python ../scripts/test-native-languages.py",
+    "content:local": "python ../scripts/seed-native-content.py"
+  }
+}

@@ -1,0 +1,47 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+RewriteEngine On
+
+# Preserve the visited .com hostname while requiring trusted HTTPS.
+# ACME HTTP-01 validation must remain available for certificate renewal.
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^((?:www\.)?nodenohome\.com(?:\.tr)?)(?::80)?$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+RewriteRule ^assets/blog/ index.php [END]
+
+# Keep source, configuration and caches unreachable even after a mistaken upload.
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+RewriteRule ^(?:private|cache|hosting|data|lib|scripts|tests|node_modules|artifacts|dist)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:catalog|config|media|release|package(?:-lock)?)\.json$ - [F,L,NC]
+RewriteRule ^(?:nodeno-runtime\.php|php\.ini|user\.ini|composer\.(?:json|lock)|AGENTS\.md)$ - [F,L,NC]
+RewriteRule \.(?:env|ini|log|sql|bak|old|map|ya?ml|lock|sh|mjs|py|ps1)$ - [F,L,NC]
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$
+RewriteRule ^ index.php [END]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^\.well-known/acme-challenge/[A-Za-z0-9_-]+$ - [END]
+RewriteRule ^(?:index\.html|index\.php)?$ index.php [END]
+RewriteRule ^(?:api(?:/.*)?|media(?:/.*)?|robots\.txt)$ index.php [END]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^locales/(?:de|az|kk|tk|uz|ky|fa)(?:\.catalogue)?\.json$ - [END]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.(?:css|js|svg|png|jpe?g|webp|gif|avif|ico|woff2?|ttf|webmanifest|txt)$ - [END,NC]
+RewriteRule ^ index.php [END]
+
+<FilesMatch "^(?!index\.php$).*\.php$">
+ Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+ Header always set X-Content-Type-Options "nosniff"
+ Header always set Referrer-Policy "strict-origin-when-cross-origin"
+ Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+ Header always set X-Frame-Options "DENY"
+ Header always set Cross-Origin-Resource-Policy "same-origin"
+</IfModule>
+
+<IfModule mod_mime.c>
+ AddType font/woff .woff
+ AddType font/woff2 .woff2
+ AddType application/manifest+json .webmanifest
+</IfModule>

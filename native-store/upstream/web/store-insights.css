@@ -1,0 +1,16 @@
+.insights-banner{position:fixed;inset:auto 20px 22px auto;width:min(450px,calc(100% - 40px));padding:22px;background:#fff;border:1px solid #d9dfd3;border-radius:10px;box-shadow:0 8px 35px #172d3826;z-index:70;color:#172d38}.insights-banner p,.insights-dialog p{font-size:14px;line-height:1.65;margin:0 0 17px}.insights-actions{display:flex;gap:10px;flex-wrap:wrap}.insights-actions .button{min-height:44px;padding:10px 15px;font-size:13px}.insights-settings{position:fixed;bottom:0;inset-inline-end:12px;z-index:15;background:#fff;border:1px solid #d9dfd3;border-radius:6px 6px 0 0;font:11px NODENOSans,Arial,sans-serif;color:#465d63;min-height:30px;padding:5px 12px}.insights-dialog{padding:27px;width:min(480px,calc(100% - 32px));border:1px solid #d9dfd3;border-radius:11px;color:#172d38}.insights-dialog::backdrop{background:#172d3866}.insights-dialog h2{font-size:21px;line-height:1.35;margin:0 0 14px}@media(max-width:760px){.insights-banner{inset:auto 12px calc(90px + env(safe-area-inset-bottom)) 12px;width:auto;padding:19px}.insights-settings{position:static;display:block;margin:18px auto 110px;min-height:44px;border-radius:6px;font-size:12px}}
+
+.store-support{margin-top:25px}.store-support-form{display:grid;gap:16px;max-width:650px}.store-support-form label{display:grid;gap:8px}.store-support-form input,.store-support-form textarea{width:100%;min-height:44px;padding:12px;border:1px solid #DADDD6;border-radius:5px;font:inherit;background:#fff;color:#172D38}.store-support-form textarea{min-height:150px;resize:vertical}.store-support-form button{justify-self:start}.store-support-form [role=status]:empty{display:none}
+
+/* Explicit rows keep the policy link, wrapped actions and focus indicators apart. */
+.insights-dialog{box-sizing:border-box;position:fixed;inset:0;margin:auto;max-inline-size:calc(100vw - 24px);max-block-size:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;padding:24px}
+.insights-dialog[open]{display:grid;gap:16px}
+.insights-dialog h2{margin:0;padding-inline-end:44px;min-inline-size:0;overflow-wrap:break-word}
+.insights-dialog p,.insights-banner p{margin:0;overflow-wrap:break-word}
+.insights-dialog>a,.insights-banner>a{display:flex;align-items:center;justify-self:start;min-block-size:44px;max-inline-size:100%;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+.insights-dialog .insights-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;min-inline-size:0}
+.insights-dialog .insights-actions .button,.insights-banner .insights-actions .button{min-inline-size:0;max-inline-size:100%;min-block-size:44px;height:auto;white-space:normal;overflow-wrap:break-word;line-height:1.5}
+.insights-close{position:absolute;inset-inline-end:12px;inset-block-start:12px;inline-size:44px;block-size:44px;display:grid;place-items:center;border:1px solid var(--line,#d9dfd3);border-radius:6px;background:white;color:inherit}
+.insights-close svg{inline-size:20px;block-size:20px}
+.insights-banner{display:grid;gap:12px;box-sizing:border-box;max-block-size:calc(100dvh - 120px - env(safe-area-inset-bottom));overflow:auto}
+@media(max-width:760px){.insights-banner .insights-actions{display:grid;grid-template-columns:minmax(0,1fr)}.insights-dialog{padding:24px 20px}.insights-dialog h2{font-size:22px}}

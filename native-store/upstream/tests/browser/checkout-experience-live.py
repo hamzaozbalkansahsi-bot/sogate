@@ -1,0 +1,23 @@
+"""Real live UI/quotes; intercept Checkout before it can create any provider session."""
+from pathlib import Path
+import json
+from playwright.sync_api import sync_playwright,expect
+R=Path(__file__).resolve().parents[2];E=R/'artifacts/checkout-experience-20261112';proof=json.loads((E/'build.json').read_bytes());checks=[]
+with sync_playwright()as pw:
+ for engine,width,lang in [('chromium',1440,'tr'),('chromium',390,'tr'),('webkit',390,'ar'),('chromium',390,'de'),('chromium',390,'fa')]:
+  exe=Path.home()/'AppData/Local/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-win64/chrome-headless-shell.exe'if engine=='chromium'else R/'artifacts/runtime-browsers/webkit-2370/Playwright.exe';browser=getattr(pw,engine).launch(executable_path=str(exe),headless=True);context=browser.new_context(viewport={'width':width,'height':1000 if width>768 else 844},is_mobile=width<768,has_touch=width<768);page=context.new_page();errors=[];downloads=[];commands=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('download',lambda d:downloads.append(d))
+  def checkout(route):commands.append(route.request.post_data_json);route.fulfill(json={'checkoutUrl':'https://checkout.stripe.com/c/pay/nodeno-isolated-acceptance'})
+  page.route('**/api/payments/checkout',checkout);page.route('https://checkout.stripe.com/**',lambda route:route.fulfill(body='<h1>Isolated redirect accepted</h1>',content_type='text/html'))
+  h=context.request.get('https://nodenohome.com/api/health').json();assert h['releaseHash']==proof['releaseHash']and h['checkoutEnabled'];page.add_init_script("localStorage.setItem('nodeno.international-welcome.hidden','1');localStorage.setItem('nodeno.delivery-country.v1',JSON.stringify('TR'));localStorage.setItem('nodeno.currency.v1',JSON.stringify('TRY'));localStorage.setItem('nodeno.cart.v1',JSON.stringify([{id:'2395',quantity:2},{id:'2393',quantity:1}]))")
+  page.goto('https://nodenohome.com/?lang='+lang+'&page=checkout',wait_until='networkidle');necessary=page.locator('#insights-banner .insights-actions button').last
+  if necessary.is_visible():necessary.click()
+  page.locator('[data-action=guest-start]').click();form=page.locator('#guest-checkout-form')
+  for name,value in {'name':'Deniz Test','email':'qa@example.test','phone':'+905551112233','city':'İzmir','district':'Buca','postalCode':'35040','line1':'Örnek Mahallesi\nDeneme Sokak 12'}.items():form.locator('[name="'+name+'"]').fill(value)
+  form.locator('[name=name]').focus();page.keyboard.press('Enter');expect(form.locator('[name=email]')).to_be_focused();page.keyboard.press('Tab');expect(form.locator('[name=phone]')).to_be_focused();form.locator('[name=country]').select_option('TR');form.locator('[type=submit]').click();expect(page.locator('.payment-form')).to_be_visible(timeout=20000);expect(page.locator('[name=freight]')).to_have_count(0)
+  page.reload(wait_until='networkidle');expect(page.locator('.guest-review')).to_contain_text('qa@example.test');expect(page.locator('.payment-form')).to_be_visible(timeout=20000);assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1');page.wait_for_function('Array.from(document.querySelectorAll(".checkout-product-photo img")).every(i=>i.complete&&i.naturalWidth>0)',timeout=20000)
+  page.screenshot(path=str(E/f'live-{engine}-{width}-{lang}-review.png'),full_page=True)
+  for button in page.locator('[data-checkout-terms]').all():
+   button.click();dialog=page.locator('#checkout-terms-dialog');expect(dialog).to_be_visible();expect(dialog.locator('article')).not_to_be_empty();dialog.locator('header button').click();expect(dialog).not_to_be_visible();button.click();page.keyboard.press('Escape');expect(dialog).not_to_be_visible()
+  page.locator('.payment-form [name=terms]').check();page.locator('.payment-form [type=submit]').click();expect(page.locator('h1')).to_have_text('Isolated redirect accepted');assert len(commands)==1 and commands[0]['documentFlowVersion']==2 and 'acceptFreight'not in commands[0];assert not downloads and not errors,(downloads,errors)
+  checks.append({'engine':engine,'width':width,'locale':lang,'realLiveQuote':True,'realPhotosLoaded':True,'noOverflow':True,'refreshPreservesAddress':True,'enterTab':True,'modalXEscape':True,'noDownload':True,'providerRequestIntercepted':True});print(json.dumps({'passed':True,**checks[-1]}),flush=True);context.close();browser.close()
+(E/'live-browser.json').write_text(json.dumps({'passed':True,'live':True,'releaseHash':proof['releaseHash'],'ordersCreated':0,'chargesCreated':0,'providerRequestsIntercepted':True,'checks':checks},indent=2)+'\n')

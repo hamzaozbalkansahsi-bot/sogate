@@ -1,0 +1,27 @@
+# Uluslararası karşılama posteri
+
+3 Kasım 2026: Kullanıcı Almanya, Birleşik Krallık, Azerbaycan, Kazakistan, Türkmenistan, Özbekistan, Kırgızistan, Irak, İran ve Suriye'den sipariş kabul edildiğini doğruladı. Metin, gerçekleşmiş sevkiyat veya tüm adreslere teslimat garantisi iddia etmez.
+
+Tasarım: NODENO Sans, kanonik lacivert `#172D38`, kırık beyaz `#F5F2E9`, lime `#D8EC81`; özgün logo ve marka sloganı. Sol tarafta marka/tanıtım, sağda İzmir merkezli bölgesel harita ve okunabilir ülke listesi. Mobilde aynı içerik tek sütuna iner. Süs okları ve emoji kullanılmaz.
+
+Poster her yeni uygun mağaza sayfası yüklenişinde açılır; sayfa içi gezinme sırasında tekrar açılmaz. Sağ üstteki çarpı, Escape, arka plan veya devam düğmesiyle kapanır. Açıldığı andan itibaren 30 saniye sonunda otomatik kapanır; haritada gezinmek bu süreyi uzatmaz. Arka planda kalan sekme geri getirildiğinde süre dolmuşsa hemen kapanır.
+
+Yalnız ziyaretçi **Bir daha gösterme** kutusunu işaretlerse `localStorage` içindeki `nodeno.international-welcome.hidden` anahtarına `1` yazılır. İşareti kaldırmak tercihi siler. Normal kapatma veya süre dolması kalıcı tercih oluşturmaz. Önceki otomatik `nodeno.international-welcome.seen` kaydı dikkate alınmaz. Tercih bu tarayıcı ve alan adına aittir; IP adresi veya Wi-Fi ağına göre paylaşılmaz. Başka cihaz/tarayıcı, gizli oturum, silinmiş site verileri ve ayrı alan adı bağımsızdır. Saklama engelliyse poster yine açılır; kutu seçildiğinde tercihin kaydedilemediği bildirilir.
+
+Sepet, ödeme ve hesap işlemleri bölünmez. Başka bir iletişim penceresi açıksa otomatik olarak üstüne açılmaz. Dört dil ve Arapça RTL aynı kapsamda uygulanır. Kapatma düğmesi Arapçada da kullanıcının istediği fiziksel sağ üst köşededir. Yerel test ve canlı kabul sonuçları ayrı kaydedilir.
+
+Fareyle bir ülkenin üzerine gelindiğinde yalnız o ülkenin gerçek sınır şekli %9 büyür, lime yeşile döner ve ülke adıyla bilgi kartı açılır. Diğer ülkeler ve rotalar soluklaşır. Büyüyen şekil ayrı katmandır; seçim sınırları hareket etmez. Fare haritadan ayrılınca normal görünüm geri gelir. Yalnız onaylanan on ülkede sipariş kabul edildiği belirtilir; diğer ülkeler için iletişim önerilir.
+
+Ülke listesi aynı seçimi yapar. Mobilde haritaya veya ülke adına dokunulabilir; isim seçilince harita görünür alana getirilir. Klavye ile harita odağındayken ok tuşları, Home ve End kullanılabilir. `prefers-reduced-motion: reduce` büyüme animasyonunu kaldırır; isim ve seçim çalışmaya devam eder. Poster sitenin seçili dilini kullanır; açık URL dili ve ziyaretçinin elle kaydettiği dil tercihi ülkeye göre başlangıç dilinden önce gelir. Desteklenmeyen ülke dillerinde mevcut İngilizce karşılık kullanılır; her ülke için ayrı bir çeviri varmış gibi davranılmaz.
+
+Harita kaynağı: [Natural Earth, 1:110m ülkeler](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/), [kamu malı kullanım koşulları](https://www.naturalearthdata.com/about/terms-of-use/). `scripts/build-international-map.py`, 79 bölgenin sınır ve dört dilde isim verisini üretir; harita servisine ziyaretçi isteği gönderilmez. Ülke listesi erişilebilir metin olarak ayrıca yer alır.
+
+## Yayın ve doğrulama
+
+Canlı sürüm: `f72d422fc4c4b9b99e448374a840ac560c58381b5c45ab52cca27cec17828a5a`. `scripts/build-welcome-v2-release.py`, doğrulanmış `c828f61d…` canlı paketinin sabit kopyasına yedi dosyalık arayüz değişikliği uygular. Katalog/fiyat, hesap kodu ve medya sürümü korunur. Kaynak/hedef özetleriyle kapsam doğrulanır. `scripts/deploy-welcome-v2-release.py` standart yükleyicinin bütün medya onay denetimini, yedek, yayın kilidi, geri alma ve HTTPS sağlık kontrollerini çalıştırır; dış yazma öncesinde aynı aday için başarılı yerel tarayıcı kabulü zorunludur. Yayın yedeği `/home/nodenoho/nodeno-backups/20261103T141859Z-f72d422fc4c4-a68a72`.
+
+Bu revizyonun kanıtları `artifacts/welcome-poster-v2/` altındadır. Özellik/komşu davranış testleri 11/11, yayın araçları 21/21 geçti. Gerçek PHP yerel kabulünde Chromium ve Windows WebKit üzerinde dört dil, 1440/390/320 genişliklerini kapsayan 16 görünüm geçti. Ülke seçimi/isim kartı/yeşil büyüme/diğerlerini soldurma, dokunmatik ve klavye, eski gizleme kaydının yok sayılması, varsayılan tekrar açılma, açık tercih ile gizleme, engelli saklama ve 30 saniye kapanma ayrıca doğrulandı. Fiziksel telefon testi yapılmadı.
+
+Canlı kabul tamamlandı: dört alan adında 32 gerçek HTTPS dosya/HTML/sağlık doğrulaması, dört dilde 16 Chromium/Windows WebKit görünümü ve ayrı gerçek 30 saniye kapanma kontrolü geçti. Yeniden açılma, açık tercih ile gizleme, işaretin geri alınması, ülke hover/isim/renk/büyüme, mobil liste seçimi ve hareket azaltma doğrulandı. İç tarayıcıda gerçek ülke seçimi de görüntülendi. Her yerel dilde tekrar/gizleme kontrolü yapılırken canlıda bu kontroller her görünümün Türkçe senaryosunda; ek dokunma/tercihi geri alma kontrolleri İngilizce senaryosunda çalıştırıldı. Yetkili sonuçlar `live-https.json`, `live-acceptance.json` ve `final-acceptance.json` dosyalarındadır. Önceki sürümün kanıtları `artifacts/welcome-poster/` altında tarihsel olarak korunur. Kalıcı müşteri verisi veya gerçek sipariş oluşturulmadı.
+
+Önceki genel Node taraması 256/259 sonucunu verdi: üç tam paketleme testi değişen web dosyalarıyla eski üretilmiş Worker arasındaki fark nedeniyle tamamlanamadı. Standart tam kaynak derlemesi 24 saatlik fiyat tazeliği kapısında durdu; kapı gevşetilmedi ve fiyat tarihleri değiştirilmedi. Arayüz paketi mevcut doğrulanmış katalog baytlarını korur. Bu revizyon, söz konusu genel derleme sorunlarını çözülmüş saymaz.

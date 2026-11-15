@@ -1,0 +1,25 @@
+/**
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : native-store/theme/sexogate.css
+ * Açıklama   : NODENO ekran düzenlerini değiştirmeden SEXOGATE marka tokenlarını uygular.
+ */
+@font-face{font-family:Montserrat;src:url('/assets/sexogate/fonts/montserrat-variable.woff2') format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('/assets/sexogate/fonts/playfairdisplay-variable.woff2') format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Noto Sans Arabic';src:url('/assets/sexogate/fonts/notosansarabic-variable.woff2') format('woff2');font-weight:400 700;font-display:swap}
+:root{--ink:#5A0A20;--paper:#FBF4EF;--accent:#E7B4BD;--lime:#E7B4BD;--muted:#716168;--line:#E6D8DC;--white:#fff;--font:Montserrat,Arial,sans-serif;color:#24191D;font-family:var(--font)}
+html,body{font-family:var(--font)}h1,h2,.hero-title{font-family:'Playfair Display',Georgia,serif}
+.store-header,.mobile-nav{background:#FBF4EF}.utility-bar,.store-footer,.sidebar{background:#5A0A20;color:#FBF4EF}
+.sidebar .sidebar-brand,.sidebar .nav-link,.sidebar .nav-group summary,.sidebar .nav-link svg{color:#FBF4EF}.sidebar .nav-link.active{background:#F3E6E8;color:#5A0A20}
+.sidebar .nav-link:hover{background:#8E0F38;color:#fff}.sidebar .nav-search input{background:#fff;color:#24191D;border-color:#E7B4BD}
+.sidebar .nav-link[aria-current=page],.sidebar .nav-link[aria-current=page] svg{background:#F3E6E8;color:#5A0A20}
+.sidebar .sidebar-brand span,.sidebar .sidebar-foot,.sidebar .sidebar-foot a{color:#FBF4EF}.avatar{background:#F3E6E8;color:#5A0A20}
+.sidebar-brand img{filter:brightness(0) invert(1)}.logo img,.sidebar-brand img{object-fit:contain}
+.store-footer .footer-logo img{filter:brightness(0) invert(1)}
+.store-footer img[src*="logo"],.store-footer img[src*="wordmark"]{filter:brightness(0) invert(1)}
+img[src*="logo"],img[src*="wordmark"]{object-fit:contain}
+.button.primary,.btn-primary{background:#5A0A20;color:#fff;border-color:#5A0A20}
+.auth-stage{background:#FBF4EF}.auth-tabs button[aria-pressed=true],.auth-tabs [aria-selected=true],.auth-tabs .active{background:#F3E6E8;border-color:#8E0F38;color:#5A0A20}
+[dir=rtl] body{font-family:'Noto Sans Arabic',Montserrat,sans-serif}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

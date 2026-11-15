@@ -1,0 +1,13 @@
+/* Route headings retain screen-reader focus without a browser-drawn touch frame. */
+#page:focus,#page [tabindex="-1"]:not(a,button,input,select,textarea,summary,[role="button"],[role="link"]):focus{outline:none}
+.collection-discovery{padding-block:24px 40px}
+.collection-discovery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:4px}
+.collection-discovery-card{display:block;min-inline-size:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);text-decoration:none}
+.collection-discovery-card:hover{text-decoration:none;border-color:var(--ink)}
+.collection-discovery-photo{aspect-ratio:5/4;overflow:hidden;border-start-start-radius:var(--radius);border-start-end-radius:var(--radius);background:var(--paper)}
+.collection-discovery-photo img{display:block;inline-size:100%;block-size:100%;object-fit:cover;object-position:center}
+.collection-discovery-copy{padding:16px}
+.collection-discovery-copy h3{font-size:18px;line-height:1.45;margin:0 0 6px;overflow-wrap:anywhere}
+.collection-discovery-copy p{font-size:14px;line-height:1.5;color:var(--muted);margin:0}
+@media(max-width:999px){.collection-discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:700px){.collection-discovery{padding-block:20px 28px}.collection-discovery-grid{gap:12px}.collection-discovery-copy{padding:12px}.collection-discovery-copy h3{font-size:16px}.collection-discovery-copy p{font-size:13px}}

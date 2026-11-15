@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+test('every store language renders its legal corpus and membership consent with the correct direction and language links',()=>{
+ const code=`require 'hosting/legal.php';require 'hosting/membership-legal.php';$out=[];foreach(NODENO_STORE_LOCALES as $locale){$corpus=nodenoLegalCorpus('data/legal',$locale);$html=nodenoLegalPage($corpus,'kvkk',[]);preg_match('~<div class="legal-language">(.*?)</div>~s',$html,$links);$terms=nodenoMembershipTerms($locale);$out[]=['locale'=>$locale,'htmlLocale'=>str_contains($html,'<html lang="'.$locale.'" dir="'.(nodenoLocaleRtl($locale)?'rtl':'ltr').'"'),'languages'=>substr_count($links[1],'<a '),'membershipLocale'=>$terms['locale'],'hash'=>$terms['hash']];}echo json_encode($out,JSON_THROW_ON_ERROR);`;
+ const r=spawnSync('artifacts/runtime-php/php.exe',['-r',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr||r.stdout);const rows=JSON.parse(r.stdout);assert.equal(rows.length,11);
+ for(const row of rows){assert.equal(row.htmlLocale,true,row.locale);assert.equal(row.languages,11,row.locale);assert.equal(row.membershipLocale,row.locale);assert.match(row.hash,/^[a-f0-9]{64}$/);}
+});

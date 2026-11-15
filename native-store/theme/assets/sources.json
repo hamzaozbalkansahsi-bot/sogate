@@ -1,0 +1,19 @@
+{
+  "source": "Existing approved SEXOGATE local brand assets",
+  "fontLicenses": "fonts/*-OFL.txt",
+  "files": {
+    "fonts/montserrat-OFL.txt": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e",
+    "fonts/montserrat-variable.woff2": "b4e04b1bcdcfa4db3a1e77ab023db6152250045879fcbf5b92a284a108024ea1",
+    "fonts/notosansarabic-OFL.txt": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+    "fonts/notosansarabic-variable.woff2": "593f53c171216665997a0b67ece0175dc26f506f441120861488e9eb0c0cf7de",
+    "fonts/playfairdisplay-OFL.txt": "566be814f8e96e93dfa16101331557eb6b5467e9e03f627c0910fe93ca12300e",
+    "fonts/playfairdisplay-variable.woff2": "f9429700f1688c25fac01e1bd1a3f201ff5808efa35a47918acc4e4bea2ed124",
+    "brand/favicon.svg": "ac90c92231f35a9e1b2f389c9085f99d224d3d8aa6d81acbfde49f91a58a9633",
+    "brand/app/logo-stacked.svg": "40604e7cbc9b46a7ad32fd27f37c9891079270cd2f06b3a173eec61afae2af2b",
+    "brand/app/logo-stacked-light.svg": "cab3dc91c019e9ab47edb8d8cc6fe29f2497745ee6390f85913d3bd4880068da",
+    "brand/app/favicon.ico": "a1971c0eebce669f0323f8c0fe6d29a6d3b0c2a91f9050e5a7009ff473552337",
+    "brand/app/apple-touch-icon.png": "2bae26c36317b80703811314aa92fe755dab762f7b416c3b1f5ca7d496efc197",
+    "brand/app/app-icon-192.png": "035ef6702f3fb4ea5094adc620bf6f6378bca2918c24982387e57d8089b0e495",
+    "brand/app/app-icon-512.png": "ed2fb21ae00db80f5e84b90e75d9f5518284e76d9ec91e63403047efee8943af"
+  }
+}

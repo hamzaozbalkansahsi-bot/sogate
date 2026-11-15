@@ -1,0 +1,34 @@
+# Blog yayını bağımsız kod incelemesi
+
+İnceleme başlangıcı ve kaynak SHA-256 değerleri `artifacts/blog-20261112/code-review-findings.json` içindedir. İnceleme kaynakları değiştirmeden yürütülmektedir; canlıya yazma, sipariş oluşturma veya ücretli servis çağrısı yapılmamıştır.
+
+## İlk tur bulguları
+
+- **BLOG-REVIEW-001 / P1:** `scripts/publish-blog.py` ilk sürümünde bütün SVG dosyalarını public alana yükleyip 200 yanıtıyla doğruladıktan sonra koruyucu `.htaccess` yönlendirmesini kuruyordu. İlk kurulum sırasında gelecekteki yayınların SVG başlıkları/etiketleri erişilebilir; geri alma yeni dosyaları kaldırmadığı için eski statik yönlendirme ile erişim sürebilirdi. Ana uygulayıcı bulguyu kabul etti; görselleri private paket üzerinden sunacak düzeltme bekleniyor.
+- **BLOG-REVIEW-002 / P1:** `scripts/compile-blog.py` ilk sürümünün çeviri kapısı kaynak hashini ve editör durumunu doğruluyor, editörün onayladığı `editorialContentSha256` değerini güncel `content` gövdesiyle karşılaştırmıyordu. İnceleme sonrasında değiştirilmiş metin aynı onayla derlenebilirdi. Ana uygulayıcı bulguyu kabul etti; son gövde hashinin zorunlu doğrulaması bekleniyor.
+- **BLOG-REVIEW-003 / P2:** `hosting/blog-i18n.php` dizisinde `color` hem başlangıç rengi etiketi hem kategori başlığı olarak tanımlıdır. İkinci anahtar ilkini ezer; palet aracının giriş etiketi kategori adına dönüşür. Ayrı çeviri anahtarı önerildi.
+- **BLOG-REVIEW-004 / P2:** PHP tarih ülke haritası JavaScript haritasından eksiktir. Desteklenen Brezilya için `2026-11-12T21:05:00Z` değeri PHP'de `en_BR / UTC / 21:05`, JavaScript'te `pt-BR / America/Sao_Paulo / 18:05` üretir. Önceden doğru ülke saat dilimi çerezi yoksa sunucu çıktısı ve ülke parametresiyle oluşturulan belgeler yanlış saat gösterebilir. İki haritanın aynı ülke yerel ayarlarını ve varsayılan saat dilimlerini kullanması önerildi.
+- **BLOG-REVIEW-005 / P1:** `prepare-blog-release.py` değişiklik kümesine baz ile aynı dosyaları da eklerken, `publish-blog.py` yalnız gerçek byte farkını kabul eder. Tarih düzeltmesi içeren gerçek `68b66c…` bazda `private/date-time.php` ve `public/date-time.js` değişiklik gibi listelenir; `verify_scope` dağıtımı `blog_delta_changed` ile durdurur. `changes_for` sonucunun bazla aynı dosyaları elemesi gerekir. Hazır olmayan görsel paketi yerine yalnız boş paket yer tutucusu kullanılan, gerçek tarih bazını okuyan izole yeniden üretimde bu iki dosya doğrulandı.
+- **BLOG-REVIEW-006 / P1:** `diagram_font` içindeki varsayılan `TTFont` kaydetme davranışı font zaman damgasını yeniler. Aynı `home-001` kaynağıyla, font önbelleği temizlenerek 1,2 saniye arayla oluşturulan iki SVG farklı SHA verdi. Gömülü font zaman damgasının yeniden hesaplanması kapatılarak aynı kaynağın aynı görsel byte'larını üretmesi gerekir.
+- **BLOG-REVIEW-007 / P1:** Yeni özel görsel paketi yalnız güncel bankanın dosyalarını içeriyor; önceki yayımlanmış içerik görüntüleri ise eski hashli URL'leri saklıyor. Sonraki içerik/görsel düzenlemesi veya deterministik olmayan yeniden derleme, yeni sürümde eski makalenin görselini 404 yapar. Gerçek PHP ile iki özel paket ve aynı kalıcı SQLite verisi kullanılarak yeniden üretildi: ilk sürüm yayımladı; ikinci sürüm eski URL'yi koruyan içerik görüntüsünü döndürdü, ancak `nodenoBlogImageBytes` `image_integrity_failed` verdi. Dağıtımın yeni paketi hazırlanırken baz sürümün özel görselleri de korunmalıdır.
+
+## Tamamlanan kontroller
+
+Yerel gerçek PHP/SQLite çalışma zamanı dahil 34 Node testi ve 7 Python testi geçti. Bunlar iki İstanbul yayın saatini, 288 adet beş dakikalık kontrolü, tekrar güvenliğini, ayrı süreçlerde kilidi, kalıcı duraklatmayı, hata sonrası beklemeyi, değişmez yayımlanmış içerik görüntüsünü, özel önizlemenin yetkisini, bozuk görsel hashini, güvenli yolları, hesap formüllerini, canonical/hreflang ve Türkiye tarih biçimini kapsar.
+
+Kaynak incelemesinde blog yönetiminin mevcut `__Host-NODENOADMIN` oturumunu, pazarlama okuma/yazma yetkisini, beş dakikalık yeniden doğrulamayı, aynı origin denetimini ve CSRF tokenini kullandığı doğrulandı. İçerik HTML çıktısı kaçışlanıyor; kamu sorguları yalnız `published` satırlarının kalıcı içerik görüntülerini döndürüyor. Dağıtım güncel canlı sürümü ortak cPanel kilidi içinde yeniden karşılaştırıyor, çalışma zamanı işaretçisini ve üzerine yazdığı mevcut public dosyaları yedekliyor.
+
+Özel görsel paketi düzeltmesiyle gerçek PHP/SQLite, yerel TLS proxy ve Chromium üzerinde ek tur geçti: TR/EN/RU/AR liste ve makaleleri 390/1440 pikselde açıldı; taşma görülmedi. Taslak HTML ve dört dil SVG'si 404, yayımlanmış SVG 200 ve beklenen SHA verdi; feed/sitemap taslak içermedi. Anonim özel önizleme 401, eksik CSRF ve yabancı origin 403 döndürdü. Geçerli CSRF anonim kullanıcıya yazma hakkı vermedi. Gerçek oturum dosyalarıyla analist yetkisi 403, süresi geçmiş yeniden doğrulama 403 verdi; pazarlama kullanıcısı önizledi, seçili makaleyi bir kez yayımladı, tekrarında `alreadyPublished` aldı ve kalıcı duraklatma/sürdürmeyi çalıştırdı. Tüm hesaplar ve veriler geçici klasördeydi.
+
+Çeviri gövdesi düzeltmesinden sonra özgün editör receipt'i kabul edildi; `title`, `description`, `intro`, `visualLabels`, `checklist` veya bölüm paragrafını değiştirmek ve gövde hashini kaldırmak ayrı ayrı reddedildi. İlk iki P1'in davranış düzeltmesi doğrulandı; son kaynak turu hâlâ gereklidir.
+
+## Durum
+
+**İlk tam inceleme tamamlandı; değişiklik gerekli.** Açık P1'ler: deterministik SVG üretimi (006) ve yeni sürümde geçmiş yayımlanmış medyanın korunması (007). Açık P2: PHP/JavaScript ülke tarih eşleşmesi (004). Özel görsel paketi (001), editör gövde SHA kapısı (002), palet giriş etiketi (003) ve bazla aynı dosyaların değişiklik kümesinden elenmesi (005) davranışları düzeltme sonrasında doğrulandı.
+
+Son olağan sonuç **36/36 Node testi, 8/8 Python testi** ve yukarıdaki bağımsız HTTPS/Chromium turudur. Font zaman damgası sorununun `recalcTimestamp=False` ile giderildiği izole denemede ayrıca doğrulandı; gerçek kaynak düzeltmesi ve eski medya taşıma düzeltmesi henüz son turdan geçmemiştir. Kaynakların ilk ve tur sonu hashleri, ek bağımlılık/test hashleri ve açık bulgular JSON kaydındadır. Bu rapor henüz yayın onayı vermez; kalan düzeltmelerden sonra değişen kaynaklar ve iki sürümlü medya senaryosu tekrar denetlenmelidir.
+
+
+## Final disposition — 13/11/2026
+
+All seven findings were fixed and behaviorally verified by root. The original independent report is preserved; final source hashes and exact candidate scope are recorded in `artifacts/blog-20261112/code-review.json`. Focused Node46 + all250-country format check, Python27 and real HTTPS browser38 checks passed. The full shared-checkout suite reports475 tests,470 pass and5 unrelated failures (native dictionary build/fingerprint/runtime, stale membership fixture and social provider fixture). The candidate is a narrow overlay over the current live release, preserving those unrelated source areas.

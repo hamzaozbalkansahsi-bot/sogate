@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NODENO — düzenlenmemiş garanti belgesi çalışma şablonu</title>
+  <style>
+    @font-face { font-family: 'NODENO Sans'; src: url('../../web/assets/fonts/NODENOSans-Regular.woff') format('woff'); font-weight: 400; }
+    @font-face { font-family: 'NODENO Sans'; src: url('../../web/assets/fonts/NODENOSans-Bold.woff') format('woff'); font-weight: 700; }
+    :root { color-scheme: light; --navy: #172D38; --ivory: #F5F2E9; --line: #DADDD6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px; background: var(--ivory); color: var(--navy); font: 16px/1.5 'NODENO Sans', sans-serif; }
+    main { max-width: 880px; margin: auto; padding: 32px; background: white; border: 1px solid var(--line); }
+    h1 { font-size: 26px; margin: 18px 0; } h2 { font-size: 19px; margin-top: 26px; }
+    .status { padding: 14px; border: 2px solid var(--navy); font-weight: bold; }
+    .brand { display: block; width: 200px; height: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; table-layout: fixed; }
+    th, td { text-align: left; vertical-align: top; border: 1px solid var(--line); padding: 10px; overflow-wrap: anywhere; }
+    th { width: 35%; font-weight: bold; background: #F5F2E9; }
+    p, li { orphans: 3; widows: 3; } .note { font-size: 14px; }
+    @page { size: A4; margin: 18mm; }
+    @media print { body { padding: 0; background: white; font-size: 12pt; } main { border: 0; padding: 0; max-width: none; } h1, h2 { break-after: avoid; } tr { break-inside: avoid; } .note { font-size: 11pt; } }
+  </style>
+</head>
+<body>
+<main>
+  <img class="brand" src="../../web/assets/brand/logo-horizontal.svg" width="1600" height="360" alt="NODENO">
+  <h1>Garanti belgesi çalışma şablonu</h1>
+  <p class="status">DÜZENLENMEMİŞ ŞABLON — ÜRÜNE AİT GEÇERLİ GARANTİ BELGESİ DEĞİLDİR</p>
+  <p>Bu dosyada üretici/ithalatçı ve ürüne ait zorunlu bilgiler tamamlanmamıştır. Gerçek üretici veya ithalatçının yetkili belgesi, ilgili ürün mevzuatı ve imza/onay usulü doğrulanıp tüketiciye teslim edilmeden kesin belge olarak kullanılamaz. Bu işaretleri kaldırmak tek başına belge düzenlemek anlamına gelmez.</p>
+  <h2>1. Gerçek düzenleyici ve satıcı</h2>
+  <table aria-label="Düzenleyici ve satıcı alanları">
+    <tbody>
+      <tr><th scope="row">Üretici/ithalatçı unvanı</th><td>[GERÇEK DÜZENLEYİCİ UNVANI GEREKİYOR]</td></tr>
+      <tr><th scope="row">Düzenleyici adresi ve iletişim</th><td>[AÇIK ADRES, TELEFON VE İLGİLİ İLETİŞİM]</td></tr>
+      <tr><th scope="row">Belge kaynağı ve yetkili</th><td>[ORİJİNAL BELGE REFERANSI VE YETKİLİ ONAYI]</td></tr>
+      <tr><th scope="row">Satıcı</th><td>PTYS Technologies L.L.C. / NODENO — satıştaki gerçek satıcı kaydıyla teyit edilecek</td></tr>
+      <tr><th scope="row">Satıcı adresi ve iletişim</th><td>[SİPARİŞTEKİ DOĞRULANMIŞ ADRES, TELEFON VE E-POSTA]</td></tr>
+    </tbody>
+  </table>
+  <h2>2. Ürün, işlem ve teslim</h2>
+  <table aria-label="Ürün ve işlem alanları">
+    <tbody>
+      <tr><th scope="row">Belge numarası ve tarihi</th><td>[GERÇEK BELGE NO / DÜZENLEME TARİHİ]</td></tr>
+      <tr><th scope="row">Malın cinsi, markası ve modeli</th><td>[GERÇEK ÜRÜN VE MODEL; VARSA VARYANT]</td></tr>
+      <tr><th scope="row">Seri / parti / bandrol</th><td>[ÜRÜNDE VARSA GERÇEK BİLGİ; YOKSA UYGULANMAZ OLDUĞU DOĞRULANIR]</td></tr>
+      <tr><th scope="row">Sipariş ve fatura</th><td>[GERÇEK SİPARİŞ NO, FATURA TARİHİ VE SAYISI]</td></tr>
+      <tr><th scope="row">Teslim tarihi ve yeri</th><td>[GERÇEK TESLİM BİLGİSİ — ÖDEME TARİHİNDEN TAHMİN EDİLMEZ]</td></tr>
+      <tr><th scope="row">Garanti süresi / başlangıcı</th><td>[ÜRÜN SINIFI VE ÜRETİCİ BELGESİYLE DOĞRULANACAK YASAL SÜRE / BAŞLANGIÇ]</td></tr>
+      <tr><th scope="row">Azami tamir süresi</th><td>[BU ÜRÜNE UYGULANAN GERÇEK MEVZUAT SÜRESİ]</td></tr>
+      <tr><th scope="row">Servis / başvuru</th><td>[GERÇEK YETKİLİ SERVİS VEYA ÜRETİCİ/İTHALATÇI BAŞVURU YOLU]</td></tr>
+      <tr><th scope="row">Kullanım ve montaj kılavuzu</th><td>[BU MODELE AİT KILAVUZUN SÜRÜMÜ VE TESLİMİ]</td></tr>
+    </tbody>
+  </table>
+  <h2>3. Kesin belgede korunacak haklar</h2>
+  <p>Gerçek düzenleyicinin mevzuata uygun koşulları; bütün parçalar dahil garanti kapsamını, ücretsiz onarım ve diğer kanuni seçimlik hakları, kullanım hatasının değerlendirme usulünü ve ilgili tüketici başvuru yollarını içermelidir. Tüketicinin ayıplı mala ilişkin hakları veya mesafeli satıştaki cayma hakları bu şablonla daraltılamaz. Fatura, garanti belgesinin yerine geçmez.</p>
+  <p>[ÜRÜNE VE GÜNCEL MEVZUATA UYGUN, YETKİLİ DÜZENLEYİCİDEN ALINAN GARANTİ KOŞULLARI BURAYA TAM OLARAK EKLENECEK.]</p>
+  <h2>4. Düzenleme ve teslim kontrolü</h2>
+  <table aria-label="Yetkili onay ve teslim alanları">
+    <tbody>
+      <tr><th scope="row">Üretici/ithalatçı yetkili onayı</th><td>[GERÇEK YETKİLİ, İMZA/ONAY VE GEREKEN KAŞE USULÜ TAMAMLANMADI]</td></tr>
+      <tr><th scope="row">Satıcı kontrol/onayı</th><td>[GERÇEK YETKİLİ KONTROLÜ TAMAMLANMADI]</td></tr>
+      <tr><th scope="row">Tüketiciye belge teslimi</th><td>[GERÇEK YÖNTEM, TARİH/SAAT VE TESLİM KANITI]</td></tr>
+    </tbody>
+  </table>
+  <p class="note">İç kullanım: müşteri verisi, gerçek imza veya kimlik belgesini kaynak kod deposuna kaydetmeyin. Doldurulmuş belgeyi erişimi kısıtlı işlem dosyasında saklayın. Kontrol kaynağı: <a href="https://tuketici.ticaret.gov.tr/yayinlar/tuketici-bilgi-rehberi/garanti-belgeleri-hakkinda-bilgilendirme">Ticaret Bakanlığı garanti belgesi bilgisi</a>.</p>
+  <p class="status">YETKİLİ ONAYI VE TÜKETİCİYE TESLİMİ TAMAMLANMAMIŞTIR</p>
+</main>
+</body>
+</html>

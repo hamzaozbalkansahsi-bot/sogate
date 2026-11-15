@@ -1,0 +1,9457 @@
+{
+  "schema": 1,
+  "calendar": "gregory",
+  "sourceHelperSha256": "30f2eded40dc62411af316de921406f5d337c1685f2735bed37f8564c8e8d575",
+  "icuVersion": "77.1",
+  "regions": {
+    "AD": {
+      "locale": "ca-AD",
+      "timeZone": "Europe/Andorra",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AE": {
+      "locale": "ar-AE",
+      "timeZone": "Asia/Dubai",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AF": {
+      "locale": "fa-AF",
+      "timeZone": "Asia/Kabul",
+      "datePattern": "m/d/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "۰",
+        "۱",
+        "۲",
+        "۳",
+        "۴",
+        "۵",
+        "۶",
+        "۷",
+        "۸",
+        "۹"
+      ]
+    },
+    "AG": {
+      "locale": "en-AG",
+      "timeZone": "America/Antigua",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AI": {
+      "locale": "en-AI",
+      "timeZone": "America/Anguilla",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AL": {
+      "locale": "sq-AL",
+      "timeZone": "Europe/Tirane",
+      "datePattern": "d.m.Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "e paradites",
+        "pm": "e pasdites"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AM": {
+      "locale": "hy-AM",
+      "timeZone": "Asia/Yerevan",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AO": {
+      "locale": "pt-AO",
+      "timeZone": "Africa/Luanda",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AQ": {
+      "locale": "en-AQ",
+      "timeZone": "Antarctica/Casey",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AR": {
+      "locale": "es-AR",
+      "timeZone": "America/Argentina/Buenos_Aires",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AS": {
+      "locale": "sm-AS",
+      "timeZone": "Pacific/Pago_Pago",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AT": {
+      "locale": "de-AT",
+      "timeZone": "Europe/Vienna",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AU": {
+      "locale": "en-AU",
+      "timeZone": "Australia/Sydney",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AW": {
+      "locale": "nl-AW",
+      "timeZone": "America/Aruba",
+      "datePattern": "d-m-Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AX": {
+      "locale": "sv-AX",
+      "timeZone": "Europe/Mariehamn",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "AZ": {
+      "locale": "az-AZ",
+      "timeZone": "Asia/Baku",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BA": {
+      "locale": "bs-BA",
+      "timeZone": "Europe/Sarajevo",
+      "datePattern": "d. m. Y.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BB": {
+      "locale": "en-BB",
+      "timeZone": "America/Barbados",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BD": {
+      "locale": "bn-BD",
+      "timeZone": "Asia/Dhaka",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "০",
+        "১",
+        "২",
+        "৩",
+        "৪",
+        "৫",
+        "৬",
+        "৭",
+        "৮",
+        "৯"
+      ]
+    },
+    "BE": {
+      "locale": "nl-BE",
+      "timeZone": "Europe/Brussels",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BF": {
+      "locale": "fr-BF",
+      "timeZone": "Africa/Ouagadougou",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BG": {
+      "locale": "bg-BG",
+      "timeZone": "Europe/Sofia",
+      "datePattern": "d.m.Y г.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BH": {
+      "locale": "ar-BH",
+      "timeZone": "Asia/Bahrain",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "BI": {
+      "locale": "rn-BI",
+      "timeZone": "Africa/Bujumbura",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BJ": {
+      "locale": "fr-BJ",
+      "timeZone": "Africa/Porto-Novo",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BL": {
+      "locale": "fr-BL",
+      "timeZone": "America/St_Barthelemy",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BM": {
+      "locale": "en-BM",
+      "timeZone": "Atlantic/Bermuda",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BN": {
+      "locale": "ms-BN",
+      "timeZone": "Asia/Brunei",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "PG",
+        "pm": "PTG"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BO": {
+      "locale": "es-BO",
+      "timeZone": "America/La_Paz",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BQ": {
+      "locale": "pap-BQ",
+      "timeZone": "America/Kralendijk",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BR": {
+      "locale": "pt-BR",
+      "timeZone": "America/Sao_Paulo",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BS": {
+      "locale": "en-BS",
+      "timeZone": "America/Nassau",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BT": {
+      "locale": "dz-BT",
+      "timeZone": "Asia/Thimphu",
+      "datePattern": "Y-m-d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "literal",
+          "value": "ཆུ་ཚོད་ "
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": " སྐར་མ་ "
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "སྔ་ཆ་",
+        "pm": "ཕྱི་ཆ་"
+      },
+      "digits": [
+        "༠",
+        "༡",
+        "༢",
+        "༣",
+        "༤",
+        "༥",
+        "༦",
+        "༧",
+        "༨",
+        "༩"
+      ]
+    },
+    "BV": {
+      "locale": "no-BV",
+      "timeZone": "UTC",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BW": {
+      "locale": "en-BW",
+      "timeZone": "Africa/Gaborone",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BY": {
+      "locale": "be-BY",
+      "timeZone": "Europe/Minsk",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "BZ": {
+      "locale": "en-BZ",
+      "timeZone": "America/Belize",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CA": {
+      "locale": "en-CA",
+      "timeZone": "America/Toronto",
+      "datePattern": "Y-m-d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a.m.",
+        "pm": "p.m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CC": {
+      "locale": "ms-CC",
+      "timeZone": "Indian/Cocos",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "PG",
+        "pm": "PTG"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CD": {
+      "locale": "fr-CD",
+      "timeZone": "Africa/Kinshasa",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CF": {
+      "locale": "sg-CF",
+      "timeZone": "Africa/Bangui",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CG": {
+      "locale": "fr-CG",
+      "timeZone": "Africa/Brazzaville",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CH": {
+      "locale": "de-CH",
+      "timeZone": "Europe/Zurich",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CI": {
+      "locale": "fr-CI",
+      "timeZone": "Africa/Abidjan",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CK": {
+      "locale": "en-CK",
+      "timeZone": "Pacific/Rarotonga",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CL": {
+      "locale": "es-CL",
+      "timeZone": "America/Santiago",
+      "datePattern": "d-m-Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CM": {
+      "locale": "fr-CM",
+      "timeZone": "Africa/Douala",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CN": {
+      "locale": "zh-CN",
+      "timeZone": "Asia/Shanghai",
+      "datePattern": "Y/m/d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CO": {
+      "locale": "es-CO",
+      "timeZone": "America/Bogota",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CR": {
+      "locale": "es-CR",
+      "timeZone": "America/Costa_Rica",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CU": {
+      "locale": "es-CU",
+      "timeZone": "America/Havana",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a.m.",
+        "pm": "p.m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CV": {
+      "locale": "pt-CV",
+      "timeZone": "Atlantic/Cape_Verde",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CW": {
+      "locale": "pap-CW",
+      "timeZone": "America/Curacao",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CX": {
+      "locale": "en-CX",
+      "timeZone": "Indian/Christmas",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CY": {
+      "locale": "el-CY",
+      "timeZone": "Asia/Famagusta",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "π.μ.",
+        "pm": "μ.μ."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "CZ": {
+      "locale": "cs-CZ",
+      "timeZone": "Europe/Prague",
+      "datePattern": "d. m. Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DE": {
+      "locale": "de-DE",
+      "timeZone": "Europe/Berlin",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DJ": {
+      "locale": "fr-DJ",
+      "timeZone": "Africa/Djibouti",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DK": {
+      "locale": "da-DK",
+      "timeZone": "Europe/Copenhagen",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": "."
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DM": {
+      "locale": "en-DM",
+      "timeZone": "America/Dominica",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DO": {
+      "locale": "es-DO",
+      "timeZone": "America/Santo_Domingo",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "DZ": {
+      "locale": "ar-DZ",
+      "timeZone": "Africa/Algiers",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "EC": {
+      "locale": "es-EC",
+      "timeZone": "America/Guayaquil",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "EE": {
+      "locale": "et-EE",
+      "timeZone": "Europe/Tallinn",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "EG": {
+      "locale": "ar-EG",
+      "timeZone": "Africa/Cairo",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "EH": {
+      "locale": "ar-EH",
+      "timeZone": "Africa/El_Aaiun",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ER": {
+      "locale": "ti-ER",
+      "timeZone": "Africa/Asmera",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ቅ.ቀ.",
+        "pm": "ድ.ቀ."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ES": {
+      "locale": "es-ES",
+      "timeZone": "Europe/Madrid",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ET": {
+      "locale": "am-ET",
+      "timeZone": "Africa/Addis_Ababa",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ጥዋት",
+        "pm": "ከሰዓት"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FI": {
+      "locale": "fi-FI",
+      "timeZone": "Europe/Helsinki",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": "."
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FJ": {
+      "locale": "en-FJ",
+      "timeZone": "Pacific/Fiji",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FK": {
+      "locale": "en-FK",
+      "timeZone": "Atlantic/Stanley",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FM": {
+      "locale": "en-FM",
+      "timeZone": "Pacific/Kosrae",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FO": {
+      "locale": "fo-FO",
+      "timeZone": "Atlantic/Faeroe",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "FR": {
+      "locale": "fr-FR",
+      "timeZone": "Europe/Paris",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GA": {
+      "locale": "fr-GA",
+      "timeZone": "Africa/Libreville",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GB": {
+      "locale": "en-GB",
+      "timeZone": "Europe/London",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GD": {
+      "locale": "en-GD",
+      "timeZone": "America/Grenada",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GE": {
+      "locale": "ka-GE",
+      "timeZone": "Asia/Tbilisi",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GF": {
+      "locale": "fr-GF",
+      "timeZone": "America/Cayenne",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GG": {
+      "locale": "en-GG",
+      "timeZone": "Europe/Guernsey",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GH": {
+      "locale": "ak-GH",
+      "timeZone": "Africa/Accra",
+      "datePattern": "Y/m/d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AN",
+        "pm": "EW"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GI": {
+      "locale": "en-GI",
+      "timeZone": "Europe/Gibraltar",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GL": {
+      "locale": "kl-GL",
+      "timeZone": "America/Danmarkshavn",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": "."
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GM": {
+      "locale": "en-GM",
+      "timeZone": "Africa/Banjul",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GN": {
+      "locale": "fr-GN",
+      "timeZone": "Africa/Conakry",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GP": {
+      "locale": "fr-GP",
+      "timeZone": "America/Guadeloupe",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GQ": {
+      "locale": "es-GQ",
+      "timeZone": "Africa/Malabo",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GR": {
+      "locale": "el-GR",
+      "timeZone": "Europe/Athens",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "π.μ.",
+        "pm": "μ.μ."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GS": {
+      "locale": "en-GS",
+      "timeZone": "Atlantic/South_Georgia",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GT": {
+      "locale": "es-GT",
+      "timeZone": "America/Guatemala",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GU": {
+      "locale": "en-GU",
+      "timeZone": "Pacific/Guam",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GW": {
+      "locale": "pt-GW",
+      "timeZone": "Africa/Bissau",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "GY": {
+      "locale": "en-GY",
+      "timeZone": "America/Guyana",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HK": {
+      "locale": "zh-HK",
+      "timeZone": "Asia/Hong_Kong",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "dayPeriod"
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "上午",
+        "pm": "下午"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HM": {
+      "locale": "en-HM",
+      "timeZone": "UTC",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HN": {
+      "locale": "es-HN",
+      "timeZone": "America/Tegucigalpa",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HR": {
+      "locale": "hr-HR",
+      "timeZone": "Europe/Zagreb",
+      "datePattern": "d. m. Y.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HT": {
+      "locale": "ht-HT",
+      "timeZone": "America/Port-au-Prince",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "HU": {
+      "locale": "hu-HU",
+      "timeZone": "Europe/Budapest",
+      "datePattern": "Y. m. d.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ID": {
+      "locale": "id-ID",
+      "timeZone": "Asia/Jakarta",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": "."
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IE": {
+      "locale": "en-IE",
+      "timeZone": "Europe/Dublin",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IL": {
+      "locale": "he-IL",
+      "timeZone": "Asia/Jerusalem",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IM": {
+      "locale": "en-IM",
+      "timeZone": "Europe/Isle_of_Man",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IN": {
+      "locale": "hi-IN",
+      "timeZone": "Asia/Kolkata",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IO": {
+      "locale": "en-IO",
+      "timeZone": "Indian/Chagos",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IQ": {
+      "locale": "ar-IQ",
+      "timeZone": "Asia/Baghdad",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "IR": {
+      "locale": "fa-IR",
+      "timeZone": "Asia/Tehran",
+      "datePattern": "Y/m/d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "۰",
+        "۱",
+        "۲",
+        "۳",
+        "۴",
+        "۵",
+        "۶",
+        "۷",
+        "۸",
+        "۹"
+      ]
+    },
+    "IS": {
+      "locale": "is-IS",
+      "timeZone": "Atlantic/Reykjavik",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "IT": {
+      "locale": "it-IT",
+      "timeZone": "Europe/Rome",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "JE": {
+      "locale": "en-JE",
+      "timeZone": "Europe/Jersey",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "JM": {
+      "locale": "en-JM",
+      "timeZone": "America/Jamaica",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "JO": {
+      "locale": "ar-JO",
+      "timeZone": "Asia/Amman",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "JP": {
+      "locale": "ja-JP",
+      "timeZone": "Asia/Tokyo",
+      "datePattern": "Y/m/d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KE": {
+      "locale": "sw-KE",
+      "timeZone": "Africa/Nairobi",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KG": {
+      "locale": "ky-KG",
+      "timeZone": "Asia/Bishkek",
+      "datePattern": "Y-d-m",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KH": {
+      "locale": "km-KH",
+      "timeZone": "Asia/Phnom_Penh",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KI": {
+      "locale": "en-KI",
+      "timeZone": "Pacific/Enderbury",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KM": {
+      "locale": "ar-KM",
+      "timeZone": "Indian/Comoro",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "KN": {
+      "locale": "en-KN",
+      "timeZone": "America/St_Kitts",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KP": {
+      "locale": "ko-KP",
+      "timeZone": "Asia/Pyongyang",
+      "datePattern": "Y. m. d.",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "dayPeriod"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "오전",
+        "pm": "오후"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KR": {
+      "locale": "ko-KR",
+      "timeZone": "Asia/Seoul",
+      "datePattern": "Y. m. d.",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "dayPeriod"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "오전",
+        "pm": "오후"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KW": {
+      "locale": "ar-KW",
+      "timeZone": "Asia/Kuwait",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "KY": {
+      "locale": "en-KY",
+      "timeZone": "America/Cayman",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "KZ": {
+      "locale": "ru-KZ",
+      "timeZone": "Asia/Almaty",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LA": {
+      "locale": "lo-LA",
+      "timeZone": "Asia/Vientiane",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LB": {
+      "locale": "ar-LB",
+      "timeZone": "Asia/Beirut",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "LC": {
+      "locale": "en-LC",
+      "timeZone": "America/St_Lucia",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LI": {
+      "locale": "de-LI",
+      "timeZone": "Europe/Vaduz",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LK": {
+      "locale": "si-LK",
+      "timeZone": "Asia/Colombo",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": "."
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LR": {
+      "locale": "en-LR",
+      "timeZone": "Africa/Monrovia",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LS": {
+      "locale": "st-LS",
+      "timeZone": "Africa/Maseru",
+      "datePattern": "Y-m-d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "Hoseng",
+        "pm": "Thapama"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LT": {
+      "locale": "lt-LT",
+      "timeZone": "Europe/Vilnius",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LU": {
+      "locale": "fr-LU",
+      "timeZone": "Europe/Luxembourg",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LV": {
+      "locale": "lv-LV",
+      "timeZone": "Europe/Riga",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "LY": {
+      "locale": "ar-LY",
+      "timeZone": "Africa/Tripoli",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MA": {
+      "locale": "ar-MA",
+      "timeZone": "Africa/Casablanca",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MC": {
+      "locale": "fr-MC",
+      "timeZone": "Europe/Monaco",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MD": {
+      "locale": "ro-MD",
+      "timeZone": "Europe/Chisinau",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ME": {
+      "locale": "sr-ME",
+      "timeZone": "Europe/Podgorica",
+      "datePattern": "d.m.Y.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MF": {
+      "locale": "fr-MF",
+      "timeZone": "America/Marigot",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MG": {
+      "locale": "mg-MG",
+      "timeZone": "Indian/Antananarivo",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MH": {
+      "locale": "en-MH",
+      "timeZone": "Pacific/Kwajalein",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MK": {
+      "locale": "mk-MK",
+      "timeZone": "Europe/Skopje",
+      "datePattern": "d.m.Y г.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ML": {
+      "locale": "bm-ML",
+      "timeZone": "Africa/Bamako",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MM": {
+      "locale": "my-MM",
+      "timeZone": "Asia/Rangoon",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "၀",
+        "၁",
+        "၂",
+        "၃",
+        "၄",
+        "၅",
+        "၆",
+        "၇",
+        "၈",
+        "၉"
+      ]
+    },
+    "MN": {
+      "locale": "mn-MN",
+      "timeZone": "Asia/Hovd",
+      "datePattern": "Y.m.d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MO": {
+      "locale": "zh-MO",
+      "timeZone": "Asia/Macau",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "dayPeriod"
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "上午",
+        "pm": "下午"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MP": {
+      "locale": "en-MP",
+      "timeZone": "Pacific/Saipan",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MQ": {
+      "locale": "fr-MQ",
+      "timeZone": "America/Martinique",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MR": {
+      "locale": "ar-MR",
+      "timeZone": "Africa/Nouakchott",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "MS": {
+      "locale": "en-MS",
+      "timeZone": "America/Montserrat",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MT": {
+      "locale": "mt-MT",
+      "timeZone": "Europe/Malta",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MU": {
+      "locale": "fr-MU",
+      "timeZone": "Indian/Mauritius",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MV": {
+      "locale": "dv-MV",
+      "timeZone": "Indian/Maldives",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MW": {
+      "locale": "en-MW",
+      "timeZone": "Africa/Blantyre",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MX": {
+      "locale": "es-MX",
+      "timeZone": "America/Mexico_City",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a.m.",
+        "pm": "p.m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MY": {
+      "locale": "ms-MY",
+      "timeZone": "Asia/Kuala_Lumpur",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "PG",
+        "pm": "PTG"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "MZ": {
+      "locale": "pt-MZ",
+      "timeZone": "Africa/Maputo",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NA": {
+      "locale": "af-NA",
+      "timeZone": "Africa/Windhoek",
+      "datePattern": "Y-m-d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "vm.",
+        "pm": "nm."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NC": {
+      "locale": "fr-NC",
+      "timeZone": "Pacific/Noumea",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NE": {
+      "locale": "ha-NE",
+      "timeZone": "Africa/Niamey",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NF": {
+      "locale": "en-NF",
+      "timeZone": "Pacific/Norfolk",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NG": {
+      "locale": "en-NG",
+      "timeZone": "Africa/Lagos",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NI": {
+      "locale": "es-NI",
+      "timeZone": "America/Managua",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NL": {
+      "locale": "nl-NL",
+      "timeZone": "Europe/Amsterdam",
+      "datePattern": "d-m-Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NO": {
+      "locale": "nb-NO",
+      "timeZone": "Europe/Oslo",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NP": {
+      "locale": "ne-NP",
+      "timeZone": "Asia/Katmandu",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "०",
+        "१",
+        "२",
+        "३",
+        "४",
+        "५",
+        "६",
+        "७",
+        "८",
+        "९"
+      ]
+    },
+    "NR": {
+      "locale": "en-NR",
+      "timeZone": "Pacific/Nauru",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NU": {
+      "locale": "en-NU",
+      "timeZone": "Pacific/Niue",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "NZ": {
+      "locale": "en-NZ",
+      "timeZone": "Pacific/Auckland",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "OM": {
+      "locale": "ar-OM",
+      "timeZone": "Asia/Muscat",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "PA": {
+      "locale": "es-PA",
+      "timeZone": "America/Panama",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PE": {
+      "locale": "es-PE",
+      "timeZone": "America/Lima",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PF": {
+      "locale": "fr-PF",
+      "timeZone": "Pacific/Gambier",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PG": {
+      "locale": "tpi-PG",
+      "timeZone": "Pacific/Bougainville",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PH": {
+      "locale": "fil-PH",
+      "timeZone": "Asia/Manila",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PK": {
+      "locale": "ur-PK",
+      "timeZone": "Asia/Karachi",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PL": {
+      "locale": "pl-PL",
+      "timeZone": "Europe/Warsaw",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PM": {
+      "locale": "fr-PM",
+      "timeZone": "America/Miquelon",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PN": {
+      "locale": "en-PN",
+      "timeZone": "Pacific/Pitcairn",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PR": {
+      "locale": "es-PR",
+      "timeZone": "America/Puerto_Rico",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PS": {
+      "locale": "ar-PS",
+      "timeZone": "Asia/Gaza",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "PT": {
+      "locale": "pt-PT",
+      "timeZone": "Europe/Lisbon",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PW": {
+      "locale": "pau-PW",
+      "timeZone": "Pacific/Palau",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "PY": {
+      "locale": "gn-PY",
+      "timeZone": "America/Asuncion",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "QA": {
+      "locale": "ar-QA",
+      "timeZone": "Asia/Qatar",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "RE": {
+      "locale": "fr-RE",
+      "timeZone": "Indian/Reunion",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "RO": {
+      "locale": "ro-RO",
+      "timeZone": "Europe/Bucharest",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "RS": {
+      "locale": "sr-RS",
+      "timeZone": "Europe/Belgrade",
+      "datePattern": "d.m.Y.",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "RU": {
+      "locale": "ru-RU",
+      "timeZone": "Europe/Moscow",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "RW": {
+      "locale": "rw-RW",
+      "timeZone": "Africa/Kigali",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SA": {
+      "locale": "ar-SA",
+      "timeZone": "Asia/Riyadh",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "SB": {
+      "locale": "en-SB",
+      "timeZone": "Pacific/Guadalcanal",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SC": {
+      "locale": "fr-SC",
+      "timeZone": "Indian/Mahe",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SD": {
+      "locale": "ar-SD",
+      "timeZone": "Africa/Khartoum",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "SE": {
+      "locale": "sv-SE",
+      "timeZone": "Europe/Stockholm",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SG": {
+      "locale": "en-SG",
+      "timeZone": "Asia/Singapore",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SH": {
+      "locale": "en-SH",
+      "timeZone": "Atlantic/St_Helena",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SI": {
+      "locale": "sl-SI",
+      "timeZone": "Europe/Ljubljana",
+      "datePattern": "d. m. Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SJ": {
+      "locale": "nb-SJ",
+      "timeZone": "Arctic/Longyearbyen",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SK": {
+      "locale": "sk-SK",
+      "timeZone": "Europe/Bratislava",
+      "datePattern": "d. m. Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SL": {
+      "locale": "en-SL",
+      "timeZone": "Africa/Freetown",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SM": {
+      "locale": "it-SM",
+      "timeZone": "Europe/San_Marino",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SN": {
+      "locale": "wo-SN",
+      "timeZone": "Africa/Dakar",
+      "datePattern": "d-m-Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SO": {
+      "locale": "so-SO",
+      "timeZone": "Africa/Mogadishu",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "GH",
+        "pm": "GD"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SR": {
+      "locale": "nl-SR",
+      "timeZone": "America/Paramaribo",
+      "datePattern": "d-m-Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SS": {
+      "locale": "ar-SS",
+      "timeZone": "Africa/Juba",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "ST": {
+      "locale": "pt-ST",
+      "timeZone": "Africa/Sao_Tome",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SV": {
+      "locale": "es-SV",
+      "timeZone": "America/El_Salvador",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SX": {
+      "locale": "en-SX",
+      "timeZone": "America/Lower_Princes",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "SY": {
+      "locale": "ar-SY",
+      "timeZone": "Asia/Damascus",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "SZ": {
+      "locale": "en-SZ",
+      "timeZone": "Africa/Mbabane",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TC": {
+      "locale": "en-TC",
+      "timeZone": "America/Grand_Turk",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TD": {
+      "locale": "ar-TD",
+      "timeZone": "Africa/Ndjamena",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "TF": {
+      "locale": "fr-TF",
+      "timeZone": "Indian/Kerguelen",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TG": {
+      "locale": "fr-TG",
+      "timeZone": "Africa/Lome",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TH": {
+      "locale": "th-TH",
+      "timeZone": "Asia/Bangkok",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TJ": {
+      "locale": "tg-TJ",
+      "timeZone": "Asia/Dushanbe",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TK": {
+      "locale": "tkl-TK",
+      "timeZone": "Pacific/Fakaofo",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TL": {
+      "locale": "pt-TL",
+      "timeZone": "Asia/Dili",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TM": {
+      "locale": "tk-TM",
+      "timeZone": "Asia/Ashgabat",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TN": {
+      "locale": "ar-TN",
+      "timeZone": "Africa/Tunis",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TO": {
+      "locale": "to-TO",
+      "timeZone": "Pacific/Tongatapu",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "hengihengi",
+        "pm": "efiafi"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TR": {
+      "locale": "tr-TR",
+      "timeZone": "Europe/Istanbul",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TT": {
+      "locale": "en-TT",
+      "timeZone": "America/Port_of_Spain",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TV": {
+      "locale": "tvl-TV",
+      "timeZone": "Pacific/Funafuti",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TW": {
+      "locale": "zh-TW",
+      "timeZone": "Asia/Taipei",
+      "datePattern": "Y/m/d",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "dayPeriod"
+        },
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "上午",
+        "pm": "下午"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "TZ": {
+      "locale": "sw-TZ",
+      "timeZone": "Africa/Dar_es_Salaam",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "UA": {
+      "locale": "uk-UA",
+      "timeZone": "Europe/Kyiv",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "UG": {
+      "locale": "sw-UG",
+      "timeZone": "Africa/Kampala",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "UM": {
+      "locale": "en-UM",
+      "timeZone": "Pacific/Midway",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "US": {
+      "locale": "en-US",
+      "timeZone": "America/New_York",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "UY": {
+      "locale": "es-UY",
+      "timeZone": "America/Montevideo",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "UZ": {
+      "locale": "uz-UZ",
+      "timeZone": "Asia/Tashkent",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VA": {
+      "locale": "it-VA",
+      "timeZone": "Europe/Vatican",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VC": {
+      "locale": "en-VC",
+      "timeZone": "America/St_Vincent",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VE": {
+      "locale": "es-VE",
+      "timeZone": "America/Caracas",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "a. m.",
+        "pm": "p. m."
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VG": {
+      "locale": "en-VG",
+      "timeZone": "America/Tortola",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VI": {
+      "locale": "en-VI",
+      "timeZone": "America/St_Thomas",
+      "datePattern": "m/d/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "AM",
+        "pm": "PM"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VN": {
+      "locale": "vi-VN",
+      "timeZone": "Asia/Saigon",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "VU": {
+      "locale": "bi-VU",
+      "timeZone": "Pacific/Efate",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "WF": {
+      "locale": "fr-WF",
+      "timeZone": "Pacific/Wallis",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "WS": {
+      "locale": "sm-WS",
+      "timeZone": "Pacific/Apia",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "XK": {
+      "locale": "sq-XK",
+      "timeZone": "UTC",
+      "datePattern": "d.m.Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "YE": {
+      "locale": "ar-YE",
+      "timeZone": "Asia/Aden",
+      "datePattern": "d‏/m‏/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "ص",
+        "pm": "م"
+      },
+      "digits": [
+        "٠",
+        "١",
+        "٢",
+        "٣",
+        "٤",
+        "٥",
+        "٦",
+        "٧",
+        "٨",
+        "٩"
+      ]
+    },
+    "YT": {
+      "locale": "fr-YT",
+      "timeZone": "Indian/Mayotte",
+      "datePattern": "d/m/Y",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ZA": {
+      "locale": "en-ZA",
+      "timeZone": "Africa/Johannesburg",
+      "datePattern": "Y/m/d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ZM": {
+      "locale": "en-ZM",
+      "timeZone": "Africa/Lusaka",
+      "datePattern": "d/m/Y",
+      "hour12": true,
+      "hourCycle": "h12",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        },
+        {
+          "type": "literal",
+          "value": " "
+        },
+        {
+          "type": "dayPeriod"
+        }
+      ],
+      "dayPeriods": {
+        "am": "am",
+        "pm": "pm"
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    "ZW": {
+      "locale": "sn-ZW",
+      "timeZone": "Africa/Harare",
+      "datePattern": "Y-m-d",
+      "hour12": false,
+      "hourCycle": "h23",
+      "timeParts": [
+        {
+          "type": "hour"
+        },
+        {
+          "type": "literal",
+          "value": ":"
+        },
+        {
+          "type": "minute"
+        }
+      ],
+      "dayPeriods": {
+        "am": "",
+        "pm": ""
+      },
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    }
+  }
+}

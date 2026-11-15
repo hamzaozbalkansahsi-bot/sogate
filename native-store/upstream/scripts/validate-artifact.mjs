@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {pathToFileURL,fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {loadArtifactExpectations,assertArtifactCatalog} from '../lib/artifact-validation.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const file=fileURLToPath(new URL('../dist/server/index.js',import.meta.url));
+const {default:worker}=await import(pathToFileURL(file));
+const manifest=JSON.parse(await readFile(new URL('../dist/.openai/hosting.json',import.meta.url),'utf8'));
+assert.ok(manifest.project_id);
+assert.equal(typeof worker.fetch,'function');
+const r=await worker.fetch(new Request('https://nodeno.test/api/catalog'),{});
+assert.equal(r.status,200);
+const catalog=await r.json();
+assert.ok(catalog.products.length>0);
+const reviewed=await loadArtifactExpectations(root),catalogueValidation=assertArtifactCatalog(catalog,reviewed);
+assert.equal((await worker.fetch(new Request('https://nodeno.test/'),{})).status,200);
+const brand=JSON.parse(await readFile(new URL('../data/brand.json',import.meta.url),'utf8'));
+const config=await(await worker.fetch(new Request('https://nodeno.test/api/config'),{})).json();
+assert.equal(config.contactEmail,brand.contact.email);
+assert.equal(config.contactPhoneUri,'tel:'+brand.contact.phoneE164);
+assert.equal(config.checkoutEnabled,false);
+assert.deepEqual(catalog.brand.slogan,brand.slogan);
+const originals=JSON.parse(await readFile(new URL('../data/brand-assets.json',import.meta.url),'utf8'));
+for(const original of originals) {
+ const response=await worker.fetch(new Request('https://nodeno.test/'+original.published),{});
+ assert.equal(response.status,200,original.published);
+ const bytes=new Uint8Array(await response.arrayBuffer());
+ assert.equal(bytes.length,original.bytes,original.published);
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),original.sha256.toLowerCase(),original.published);
+}
+const appManifest=await(await worker.fetch(new Request('https://nodeno.test/site.webmanifest'),{})).json();
+for(const icon of appManifest.icons) assert.equal((await worker.fetch(new Request('https://nodeno.test'+icon.src),{})).status,200,icon.src);
+console.log(JSON.stringify({valid:true,...catalogueValidation,verifiedOriginalBrandAssets:originals.length,domain:config.domain,contact:config.contactEmail,project:manifest.project_id}));

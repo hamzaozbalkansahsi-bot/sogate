@@ -1,0 +1,86 @@
+/* NODENO international welcome. Brand tokens mirror data/brand.json. */
+.welcome-poster{--welcome-navy:#172D38;--welcome-ivory:#F5F2E9;--welcome-lime:#D8EC81;--welcome-muted:#536770;position:fixed;inset:0;margin:auto;padding:0;border:0;border-radius:14px;inline-size:min(1120px,calc(100vw - 40px));max-inline-size:calc(100vw - 40px);max-block-size:calc(100dvh - 40px);overflow:hidden;background:var(--welcome-ivory);color:var(--welcome-navy);box-shadow:0 28px 110px #07131c66;font-family:'NODENO Sans',sans-serif;animation:welcome-enter .24s ease-out}
+.welcome-poster::backdrop{background:#172d38a8;backdrop-filter:blur(5px)}
+.welcome-poster-scroll{max-block-size:calc(100dvh - 40px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.welcome-poster-layout{display:grid;grid-template-columns:.9fr 1.1fr;min-block-size:640px}
+.welcome-poster-close{position:absolute;top:16px;right:16px;z-index:3;display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid #172d3826;border-radius:50%;background:#fff;color:var(--welcome-navy);cursor:pointer;box-shadow:0 2px 10px #172d3814;transition:background .15s}
+.welcome-poster-close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.welcome-poster-close:hover{background:var(--welcome-lime)}
+.welcome-poster :is(button,a,input,[role=listbox]):focus-visible{outline:3px solid var(--welcome-lime);outline-offset:4px;box-shadow:0 0 0 6px var(--welcome-navy)}
+.welcome-poster-story{display:flex;flex-direction:column;align-items:flex-start;padding:44px 44px 32px;min-inline-size:0}
+.welcome-poster-logo{inline-size:188px;block-size:auto;display:block}
+.welcome-poster-eyebrow{font-size:12px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:62px 0 14px}
+.welcome-poster #welcome-poster-title{margin:0;font-size:52px;line-height:1.13;letter-spacing:-.045em;font-weight:400;text-wrap:balance}
+.welcome-poster #welcome-poster-title span{display:block}
+.welcome-poster #welcome-poster-intro{font-size:16px;line-height:1.75;margin:24px 0 28px;max-inline-size:330px;color:var(--welcome-muted)}
+.welcome-poster-continue{display:inline-flex;justify-content:center;align-items:center;min-block-size:50px;padding:13px 26px;background:var(--welcome-navy);border:1px solid var(--welcome-navy);border-radius:5px;color:#fff;font:700 15px/1.5 'NODENO Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s}
+.welcome-poster-continue:hover{background:var(--welcome-lime);color:var(--welcome-navy)}
+.welcome-poster-origin{font-size:12px;line-height:1.5;letter-spacing:.04em;margin:14px 0 0;color:var(--welcome-muted)}
+.welcome-poster-preference{display:flex;align-items:center;gap:10px;min-block-size:44px;margin-block-start:12px;font-size:13px;line-height:1.5;color:var(--welcome-muted);cursor:pointer}
+.welcome-poster-preference input{appearance:auto;accent-color:var(--welcome-navy);inline-size:18px;block-size:18px;min-inline-size:18px;margin:0;padding:0;flex:none;cursor:pointer}
+.welcome-preference-error{font-size:12px;line-height:1.5;color:#8a2929;margin-block-start:4px}
+.welcome-poster-world{display:flex;flex-direction:column;min-inline-size:0;background:var(--welcome-navy);color:#fff}
+.welcome-poster-map{position:relative;min-block-size:320px;flex:1;overflow:hidden;background:var(--welcome-navy);isolation:isolate}
+.welcome-country-map{display:block;inline-size:100%;block-size:100%;position:absolute;inset:0;overflow:visible}
+.welcome-map-region{fill:#2D4650;stroke:var(--welcome-navy);stroke-width:.9;stroke-linejoin:round;cursor:pointer;transition:opacity .2s,fill .2s;pointer-events:fill}
+.welcome-map-region.is-destination{fill:#9FAF76}
+.welcome-map-region.is-origin{fill:var(--welcome-ivory)}
+.has-country .welcome-map-region{opacity:.22}
+.welcome-map-routes{fill:none;stroke:#F5F2E9;stroke-opacity:.24;stroke-width:.9;pointer-events:none;transition:opacity .2s}
+.has-country .welcome-map-routes{opacity:.2}
+.welcome-map-emphasis{pointer-events:none}
+.welcome-map-emphasis path{fill:var(--welcome-lime);stroke:#F5F2E9;stroke-width:1.3;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;transform:scale(1.09);filter:drop-shadow(0 3px 5px #040d1477);animation:welcome-country-rise .24s cubic-bezier(.2,.7,.3,1) both}
+.welcome-map-origin{pointer-events:none;transition:opacity .2s}
+.has-country .welcome-map-origin{opacity:.3}
+.welcome-map-origin-halo{fill:none;stroke:var(--welcome-ivory);stroke-opacity:.45}
+.welcome-map-origin-pin{fill:var(--welcome-navy);stroke:var(--welcome-ivory);stroke-width:2}
+.welcome-map-tooltip{position:absolute;z-index:4;max-inline-size:min(240px,calc(100% - 24px));display:flex;flex-direction:column;gap:4px;padding:12px 16px;border:1px solid #ffffffa6;border-radius:8px;background:var(--welcome-ivory);color:var(--welcome-navy);box-shadow:0 8px 24px #05131a55;pointer-events:none}
+.welcome-map-tooltip[hidden]{display:none}
+.welcome-map-tooltip strong{font-size:17px;line-height:1.35;font-weight:700}
+.welcome-map-tooltip span{font-size:11px;line-height:1.5;color:var(--welcome-muted)}
+.welcome-poster-regions{position:absolute;z-index:1;inset-inline-start:32px;inset-block-end:20px;inline-size:fit-content;max-inline-size:calc(100% - 64px);padding:4px 8px;border-radius:3px;background:#172d38ed;font-size:11px;line-height:1.7;letter-spacing:.025em;color:#e0e8e2;pointer-events:none}
+.welcome-poster-destinations{border-block-start:1px solid #ffffff24;padding:22px 32px 26px}
+.welcome-poster-destinations h3{font-size:15px;line-height:1.5;font-weight:400;margin:0 0 20px;color:var(--welcome-lime)}
+.welcome-poster-destinations ul{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;row-gap:0;list-style:none;margin:0;padding:0}
+.welcome-poster-destinations li{min-inline-size:0;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.welcome-poster-destinations button{display:flex;align-items:center;gap:10px;inline-size:100%;min-block-size:44px;padding:6px 0;border:0;border-radius:3px;background:transparent;color:#F5F2E9;font:inherit;text-align:start;cursor:pointer;transition:opacity .2s,color .2s}
+.welcome-poster-destinations button.is-active{color:var(--welcome-lime);font-weight:700}
+.welcome-poster-world:has(.has-country) .welcome-poster-destinations button:not(.is-active){opacity:.5}
+.welcome-country-dot{display:block;flex:none;inline-size:4px;block-size:4px;border-radius:50%;background:var(--welcome-lime)}
+.welcome-poster-progress{position:absolute;inset-inline:0;inset-block-end:0;block-size:3px;background:#ffffff18;pointer-events:none}
+.welcome-poster-progress span{display:block;inline-size:100%;block-size:100%;background:var(--welcome-lime);transform-origin:left;animation:welcome-countdown 30s linear forwards}
+.welcome-poster:lang(ru) #welcome-poster-title{font-size:39px;letter-spacing:-.035em}
+.welcome-poster:lang(ru) .welcome-poster-destinations li{font-size:14px}
+.welcome-poster:lang(ar) #welcome-poster-title{font-size:47px;letter-spacing:0;line-height:1.4}
+.welcome-poster:lang(ar) .welcome-poster-eyebrow{letter-spacing:0}
+.welcome-poster:lang(ar) .welcome-poster-logo{align-self:flex-end}
+@keyframes welcome-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes welcome-countdown{to{transform:scaleX(0)}}
+@keyframes welcome-country-rise{from{transform:scale(1);opacity:.5}to{transform:scale(1.09);opacity:1}}
+@media(max-width:760px){
+ .welcome-poster{inline-size:min(470px,calc(100vw - 24px));max-inline-size:calc(100vw - 24px);max-block-size:calc(100dvh - 24px);border-radius:12px}
+ .welcome-poster-scroll{max-block-size:calc(100dvh - 24px)}
+ .welcome-poster-layout{grid-template-columns:1fr;min-block-size:0}
+ .welcome-poster-story{padding:22px 26px 20px}
+ .welcome-poster-logo{inline-size:140px}
+ .welcome-poster-close{top:12px;right:12px;width:44px;height:44px}
+ .welcome-poster-eyebrow{margin:20px 0 9px;font-size:10px}
+ .welcome-poster #welcome-poster-title{font-size:32px;line-height:1.12;letter-spacing:-.04em}
+ .welcome-poster #welcome-poster-title span{display:inline}
+ .welcome-poster #welcome-poster-title span+span::before{content:' '}
+ .welcome-poster #welcome-poster-intro{font-size:13px;line-height:1.6;margin:14px 0 16px;max-inline-size:none}
+ .welcome-poster-continue{min-block-size:44px;font-size:14px;padding:10px 20px}
+ .welcome-poster-origin{display:none}
+ .welcome-poster-preference{margin-block-start:8px;font-size:12px}
+ .welcome-poster-map{min-block-size:145px;flex:none}
+ .welcome-poster-regions{inset-inline-start:26px;inset-block-end:9px;max-inline-size:calc(100% - 52px);font-size:10px}
+ .welcome-poster-destinations{padding:16px 26px 18px}
+ .welcome-poster-destinations h3{font-size:13px;margin-block-end:10px}
+ .welcome-poster-destinations ul{row-gap:0;column-gap:15px}
+ .welcome-poster-destinations li{font-size:13px}
+ .welcome-poster-destinations button{gap:8px}
+ .welcome-poster:lang(ru) #welcome-poster-title{font-size:28px}
+ .welcome-poster:lang(ru) .welcome-poster-destinations li{font-size:12px}
+ .welcome-poster:lang(ar) #welcome-poster-title{font-size:32px;line-height:1.3}
+}
+@media(prefers-reduced-motion:reduce){.welcome-poster{animation:none}.welcome-poster-progress{display:none}.welcome-poster button,.welcome-map-region,.welcome-map-routes,.welcome-map-origin{transition:none}.welcome-map-emphasis path{animation:none}}

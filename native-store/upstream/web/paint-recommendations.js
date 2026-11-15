@@ -1,0 +1,14 @@
+import {localeCopy} from './locale-runtime.js?v=storefront-recovery-20261112-r1';
+
+export function paintRecommendations(product,products){
+ if(product?.finishState!=='unpainted'||!['wood','mdf','metal'].includes(product?.paintSurface))return [];
+ const seen=new Set();return products.filter(p=>{
+  if(p.productBrand===undefined||p.productType!=='supplier-item'||!p.paintUse?.directUnpainted?.includes(product.paintSurface)||(p.paintUse.excludeHorizontal&&product.paintPlacement!=='vertical')||p.published===false||p.hidden||!Number.isSafeInteger(p.salePriceMinor)||p.salePriceMinor<=0||!p.images?.length)return false;
+  const key=p.modelId||p.id;if(seen.has(key))return false;seen.add(key);return true;
+ }).sort((a,b)=>(a.paintUse?.priority??99)-(b.paintUse?.priority??99)).slice(0,8);
+}
+export function renderPaintRecommendations(product,products,lang,{esc,renderCard}){
+ const choices=paintRecommendations(product,products);if(!choices.length)return '';
+ const c=localeCopy({tr:{title:'Boyanızı da seçin',body:'Bu boyasız ürünü kendi renginizle tamamlayın. Boyanın yüzey hazırlığı ve uygulama adımlarını ürün sayfasından inceleyebilirsiniz.'},en:{title:'Choose your paint',body:'Finish this unpainted piece in your own colour. See each paint’s product page for surface preparation and application steps.'},ru:{title:'Выберите краску',body:'Завершите эту неокрашенную вещь в своём цвете. Подготовка поверхности и порядок нанесения указаны на странице краски.'},ar:{title:'اختر الطلاء أيضاً',body:'أضف لونك الخاص إلى هذه القطعة غير المطلية. راجع صفحة الطلاء لمعرفة تحضير السطح وخطوات الاستخدام.'},de:{title:'Wählen Sie Ihre Farbe',body:'Gestalten Sie dieses unbehandelte Möbelstück in Ihrer Farbe. Hinweise zu Vorbereitung und Verarbeitung finden Sie auf der Farbproduktseite.'},az:{title:'Boyanızı da seçin',body:'Bu boyasız məhsulu öz rənginizlə tamamlayın. Səthin hazırlanması və tətbiq qaydalarını boyanın səhifəsində oxuyun.'},kk:{title:'Бояуыңызды да таңдаңыз',body:'Бұл боялмаған бұйымды өз түсіңізбен әрлеңіз. Бетті дайындау және жағу нұсқауларын бояу парағынан қараңыз.'},tk:{title:'Boýagyňyzy hem saýlaň',body:'Bu boýalmadyk önümi öz reňkiňiz bilen tamamlaň. Ýüz taýýarlamak we ulanmak görkezmelerini boýagyň sahypasyndan okaň.'},uz:{title:'Bo‘yog‘ingizni ham tanlang',body:'Bu bo‘yalmagan buyumni o‘z rangingiz bilan bezang. Sirtni tayyorlash va qo‘llash bosqichlarini bo‘yoq sahifasidan ko‘ring.'},ky:{title:'Боёгуңузду да тандаңыз',body:'Бул боёлбогон буюмду өз түсүңүз менен бүтүрүңүз. Бетти даярдоо жана колдонуу нускамаларын боёктун барагынан караңыз.'},fa:{title:'رنگ خود را هم انتخاب کنید',body:'این محصول رنگ‌نشده را با رنگ دلخواه خود تکمیل کنید. مراحل آماده‌سازی سطح و اجرا را در صفحه رنگ بخوانید.'}})[lang];
+ return `<section class="detail-section paint-recommendations" id="paint-recommendations"><h2>${esc(c.title)}</h2><p class="subtle">${esc(c.body)}</p><div class="product-row">${choices.map(renderCard).join('')}</div></section>`;
+}

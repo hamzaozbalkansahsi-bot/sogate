@@ -107,3 +107,7 @@ Admin kategori/marka listeleri sunucu araması, 25 kayıtlık sayfa ve toplam il
 - https://www.postgresql.org/docs/current/explicit-locking.html
 
 Hukuki gereklilikler doğrulanmadan ülke açılmaz. PDF tedarik raporu hukuki, lisans veya ödeme kabul kanıtı değildir.
+
+<!-- BEGIN NATIVE_DIRECT_COPY_20261115 -->
+15 Kasım son karar: NODENO'nun bütün uygulama kodu doğrudan kopyalanır, yalnız SEXOGATE marka/tema katmanı ayrılır. Yerel yeni temel PHP/SQLite/WAL ile `native-store/` altında; mevcut PHP/MySQL `/test` korunur. Kaynak, yöntem, gerçek testler ve dağıtım sınırı [doğrudan devir kaydındadır](native-store-transfer.md). Önceki parça parça arayüz uyarlaması yeni temel olarak ilerletilmez.
+<!-- END NATIVE_DIRECT_COPY_20261115 -->

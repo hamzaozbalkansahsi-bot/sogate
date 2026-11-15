@@ -1,0 +1,24 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawn,spawnSync} from 'node:child_process';import {mkdtemp,mkdir,writeFile} from 'node:fs/promises';import os from 'node:os';import path from 'node:path';import net from 'node:net';import {createHmac} from 'node:crypto';
+const PHP=path.resolve('artifacts/runtime-php/php.exe');
+test('payment HTTP requires same-origin CSRF, stays closed without configuration and verifies exact signed webhook bytes',async t=>{
+ const root=await mkdtemp(path.join(os.tmpdir(),'nodeno-payment-http-')),pub=path.join(root,'public'),storage=path.join(root,'data');await mkdir(pub);await mkdir(storage);
+ const listener=net.createServer();await new Promise(r=>listener.listen(0,'127.0.0.1',r));const port=listener.address().port;await new Promise(r=>listener.close(r));const origin='http://127.0.0.1:'+port;
+ let logs='';const server=spawn(PHP,['-S','127.0.0.1:'+port,'-t',pub,path.resolve('tests/fixtures/payments-runtime.php')],{env:{...process.env,NODENO_PAYMENT_TEST:'isolated-only',NODENO_PAYMENT_TEST_ROOT:storage}});server.stderr.on('data',v=>logs+=v);t.after(()=>server.kill());
+ let cookie='',csrf='';async function request(route,method='GET',body,headers={}){const r=await fetch(origin+'/api/payments/'+route,{method,headers:{Cookie:cookie,...(method!=='GET'?{Origin:origin,'Content-Type':'application/json','X-CSRF-Token':csrf}:{}),...headers},...(body?{body:typeof body==='string'?body:JSON.stringify(body)}:{})});if(r.headers.get('set-cookie'))cookie=r.headers.get('set-cookie').split(';')[0];const data=await r.json();if(data.csrfToken)csrf=data.csrfToken;return{status:r.status,data};}
+ for(let i=0;i<100;i++){try{await request('status');break;}catch{await new Promise(r=>setTimeout(r,25));}}
+ const s=await request('status');assert.equal(s.status,200,logs);assert.equal(s.data.enabled,false);assert.ok(csrf);
+ const body={items:[{id:'p1',quantity:3}],country:'TR'};assert.equal((await request('quote','POST',body)).data.totalMinor,33003);
+ assert.equal((await request('quote','POST',body,{'X-CSRF-Token':'wrong'})).status,403);
+ assert.equal((await request('quote','POST',body,{Origin:'https://evil.example'})).status,403);
+ assert.equal((await request('quote','POST',{...body,items:[{id:'p1',quantity:3,unitPriceMinor:1}]})).status,422);
+ assert.equal((await request('checkout','POST',body)).status,409);
+ const seed=spawnSync(PHP,['-r',`require 'hosting/payment-admin.php';$db=nodenoControlDatabase($argv[1]);nodenoPaymentSchema($db);$cred=['secretKey'=>'sk_test_fixture_never_used','webhookSecret'=>'whsec_fixture_local_only'];nodenoControlSetSetting($db,'payment:stripe',['accountId'=>'acct_fixture','mode'=>'test','enabled'=>false,'version'=>1,'credentials'=>nodenoControlEncrypt($argv[1],json_encode($cred),'stripe-credentials')]);$q=nodenoPaymentQuote(['products'=>[['id'=>'p1','code'=>'FIXTURE','name'=>['tr'=>'Test'],'currency'=>'TRY','salePriceMinor'=>10001]]],[['id'=>'p1','quantity'=>3]],'TR');$o=nodenoPaymentBegin($db,$argv[1],'actor','fixture_key_123456',$q,['email'=>'private@example.test'],'tr',['accountId'=>'acct_fixture','mode'=>'test','seller'=>[]]);echo json_encode(['id'=>$o['id'],'token'=>$o['returnToken']]);`,storage],{encoding:'utf8'});assert.equal(seed.status,0,seed.stderr);const order=JSON.parse(seed.stdout);
+ const event={id:'evt_fixture',type:'checkout.session.completed',livemode:false,data:{object:{id:'cs_test_fixture',client_reference_id:order.id,metadata:{nodeno_order_id:order.id},amount_total:33003,currency:'try',livemode:false,payment_status:'paid',payment_intent:'pi_fixture'}}};const raw=JSON.stringify(event),now=Math.floor(Date.now()/1000),sig='t='+now+',v1='+createHmac('sha256','whsec_fixture_local_only').update(now+'.'+raw).digest('hex');
+ assert.equal((await request('stripe/webhook','POST',raw+' ',{'Stripe-Signature':sig})).status,400);
+ await writeFile(path.join(storage,'fixture-provider-event.json'),JSON.stringify({...event,id:'evt_other_account'}));
+ assert.equal((await request('stripe/webhook','POST',raw,{'Stripe-Signature':sig})).status,400);
+ const wrongMode=JSON.stringify({...event,livemode:true});const wrongSig='t='+now+',v1='+createHmac('sha256','whsec_fixture_local_only').update(now+'.'+wrongMode).digest('hex');assert.equal((await request('stripe/webhook','POST',wrongMode,{'Stripe-Signature':wrongSig})).status,400);
+ await writeFile(path.join(storage,'fixture-provider-event.json'),raw);
+ const received=await request('stripe/webhook','POST',raw,{'Stripe-Signature':sig});assert.equal(received.status,200,JSON.stringify(received));assert.equal((await request('stripe/webhook','POST',raw,{'Stripe-Signature':sig})).data.duplicate,true);
+ const status=await request('order/'+order.token);assert.equal(status.data.status,'paid');assert.equal(status.data.totalMinor,33003);assert.ok(!JSON.stringify(status).includes('private@example'));assert.equal((await request('order/'+'0'.repeat(64))).status,404);
+});

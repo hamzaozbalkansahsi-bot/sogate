@@ -29,3 +29,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- BEGIN PHP_SOURCE_API_20261115 -->
 - PHP kaynak API kuralları `docs/php-supplier-api-guide.md`: yalnız tam/başarılı snapshot incelemede görünür; yarım/başarısız katalog eskisini ezmez. Kamu fiyatı bayi maliyeti, bulunabilirlik fiziksel depo stoğu değildir. Hosting HTTP401/403 alırsa otomatik bağlantı kapanır; yerel dosya yüklemesi sunucudan başarılı API bağlantısı sayılmaz. Liona/Sistina onaylı bayi erişimi olmadan bağlı gösterilemez.
 <!-- END PHP_SOURCE_API_20261115 -->
+
+<!-- BEGIN NATIVE_DIRECT_COPY_20261115 -->
+- 15 Kasım son kullanıcı kararı: önce NODENO uygulaması bütün kaynak/modülleriyle doğrudan alınır, yeniden/parçalı arayüz uyarlaması yapılmaz. Yeni temel `native-store/upstream`, marka/renk/font/varlık katmanı `native-store/theme`; kanonik kayıt `docs/native-store-transfer.md`. Kaynak çekirdek byte olarak korunur; sır/müşteri/sipariş/NODENO ticari kataloğu taşınmaz. Yerel Native PHP/SQLite kopyası ile mevcut MySQL `/test` yayını ayrı durumdur; eski yayın henüz değiştirilmedi.
+- Kaynak testlerindeki üç açık sahte Stripe sabiti için tek istisna `scripts/native_fixture_safety.py` ve manifest'teki özgün/güvenli hash çiftleridir; özgün52 PHP/61 JS uygulama motoru değiştirilmez. Bu istisnayı kaldırıp ham sabitleri Git'e geri koyma.
+<!-- END NATIVE_DIRECT_COPY_20261115 -->

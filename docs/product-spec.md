@@ -28,3 +28,7 @@ Roller: yönetici, katalog, depo/sevkiyat, müşteri hizmetleri, finans, pazarla
 
 ## Dış önkoşullar
 Hukuki satıcı, vergi numarası, adres/banka/destek, gerçek SKU/stok/görsel hakları, ödeme sağlayıcısının bu kategori için yazılı kabulü, taşıyıcı ve batarya/sıvı kabulü, tarife, e-Fatura sağlayıcısı, ülkeye göre mevzuat ve hukuk metni onayı, alan adı/DNS sahipliği henüz verilmedi. Admin kurulum alanları boş kalır. Her önkoşul docs/launch-checklist.md içinde izlenir.
+
+<!-- BEGIN NATIVE_DIRECT_COPY_20261115 -->
+15 Kasım son karar: NODENO'nun bütün uygulama kodu doğrudan kopyalanır, yalnız SEXOGATE marka/tema katmanı ayrılır. Yerel yeni temel PHP/SQLite/WAL ile `native-store/` altında; mevcut PHP/MySQL `/test` korunur. Kaynak, yöntem, gerçek testler ve dağıtım sınırı [doğrudan devir kaydındadır](native-store-transfer.md). Önceki parça parça arayüz uyarlaması yeni temel olarak ilerletilmez.
+<!-- END NATIVE_DIRECT_COPY_20261115 -->

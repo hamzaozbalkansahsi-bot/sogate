@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {mkdtemp} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+
+const setup=`require 'hosting/payment-admin.php';require 'scripts/private-maintenance.php';$root=$argv[1];$db=nodenoControlDatabase($root);$credentials=nodenoControlEncrypt($root,json_encode(['secretKey'=>('rk_live_'.str_repeat('F',32)),'webhookSecret'=>'whsec_fixture000000000000000000']),'stripe-credentials');$original=['version'=>3,'enabled'=>false,'mode'=>'live','accountId'=>'acct_1UaASFLFNjlPPKTy','credentials'=>$credentials,'verifiedAt'=>123,'webhookVerifiedAt'=>456,'seller'=>['name'=>'PTYS Technologies L.L.C.','address'=>'30 N Gould St Ste N, Sheridan, WY 82801, United States','email'=>'info@ptys.com.tr','authorityConfirmed'=>true,'taxConfirmed'=>false,'termsVersion'=>'2026-11-10.1-draft','terms'=>array_fill_keys(['tr','en','ru','ar'],'Existing draft sale conditions.'),'returns'=>array_fill_keys(['tr','en','ru','ar'],'Existing draft return conditions.')]];nodenoControlSetSetting($db,'payment:stripe',$original);$job=['schema'=>1,'nonce'=>str_repeat('f',64),'action'=>'activate-payments','expiresAt'=>time()+600,'expectedVersion'=>3,'documents'=>['termsVersion'=>'2026-11-10.2','terms'=>array_fill_keys(['tr','en','ru','ar'],'Owner approved US invoice, Türkiye dispatch.'),'returns'=>array_fill_keys(['tr','en','ru','ar'],'Return address and consumer rights retained.')],'billingDecision'=>['invoiceCountry'=>'US','dispatchCountry'=>'TR','furnitureVatRate'=>10,'doorsAndFrontsVatRate'=>20,'approvalSource'=>'explicit_owner_instruction']];$provider=static fn()=>['id'=>'acct_1UaASFLFNjlPPKTy','charges_enabled'=>true,'capabilities'=>['card_payments'=>'active']];`;
+async function php(code){const root=await mkdtemp(path.join(os.tmpdir(),'nodeno-payment-activate-'));const r=spawnSync(path.resolve('artifacts/runtime-php/php.exe'),['-r',setup+code,root],{encoding:'utf8'});assert.equal(r.status,0,r.stderr||r.stdout);return JSON.parse(r.stdout);}
+
+test('explicit owner-approved US invoicing activates only the verified PTYS live account without claiming government tax verification',async()=>{
+ const value=await php(`$out=nodenoPrivateMaintenance($db,$root,$job,$provider);$saved=nodenoControlSetting($db,'payment:stripe');$cfg=nodenoPaymentConfiguration($db,$root);echo json_encode([$out,$saved['version'],$saved['credentials']===$credentials,$saved['seller']['taxConfirmed'],$saved['billingDecision'],nodenoPaymentReady($cfg),(int)$db->query('SELECT COUNT(*) FROM control_audit')->fetchColumn()]);`);
+ const [receipt,version,keysPreserved,approved,decision,ready,audit]=value;
+ assert.equal(receipt.status,'payments_activated');assert.equal(receipt.checkoutEnabled,true);assert.equal(version,4);assert.equal(keysPreserved,true);assert.equal(approved,true);assert.equal(decision.approvalSource,'explicit_owner_instruction');assert.equal(decision.invoiceCountry,'US');assert.equal(decision.dispatchCountry,'TR');assert.equal(decision.governmentTaxRegistrationVerified,false);assert.equal(ready,true);assert.equal(audit,1);
+});
+
+test('activation rejects missing owner decision, unverified webhook, mismatched provider, inactive payments and stale settings',async()=>{
+ const value=await php(`$out=[];foreach(['decision','webhook','account','inactive','version','draft']as $case){$j=$job;$c=$original;$p=$provider;if($case==='decision')unset($j['billingDecision']);if($case==='webhook')$c['webhookVerifiedAt']=null;if($case==='account')$p=static fn()=>['id'=>'acct_other','charges_enabled'=>true,'capabilities'=>['card_payments'=>'active']];if($case==='inactive')$p=static fn()=>['id'=>'acct_1UaASFLFNjlPPKTy','charges_enabled'=>false,'capabilities'=>['card_payments'=>'inactive']];if($case==='version')$j['expectedVersion']=2;if($case==='draft')$j['documents']['termsVersion']='2026-11-10.2-draft';nodenoControlSetSetting($db,'payment:stripe',$c);try{nodenoPrivateMaintenance($db,$root,$j,$p);$out[$case]='accepted';}catch(InvalidArgumentException $e){$out[$case]=$e->getMessage();}if(nodenoControlSetting($db,'payment:stripe')['enabled']!==false)throw new RuntimeException('activation_not_atomic');}echo json_encode($out);`);
+ assert.deepEqual(value,{decision:'maintenance_billing_decision_required',webhook:'maintenance_payment_verification_required',account:'maintenance_stripe_account_not_ready',inactive:'maintenance_stripe_account_not_ready',version:'maintenance_version_conflict',draft:'maintenance_documents_invalid'});
+});
+
+test('activation audit failure leaves charging disabled and existing documents untouched',async()=>{
+ const value=await php(`$db->exec("CREATE TRIGGER reject_activation_audit BEFORE INSERT ON control_audit BEGIN SELECT RAISE(ABORT,'activation_audit_failed');END");$auditFailed=false;try{nodenoPrivateMaintenance($db,$root,$job,$provider);}catch(Throwable $e){$auditFailed=$e instanceof PDOException&&str_contains($e->getMessage(),'activation_audit_failed');}echo json_encode([$auditFailed,nodenoControlSetting($db,'payment:stripe')===$original]);`);
+ assert.deepEqual(value,[true,true]);
+});

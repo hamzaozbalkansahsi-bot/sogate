@@ -1,0 +1,26 @@
+# Proje      : SEXOGATE
+# Geliştirici: PTYS Technoligess LLC
+# Tasarım    : Hamza ÖZBALKAN
+# Dosya      : .github/workflows/native-store.yml
+# Açıklama   : Doğrudan kaynak kopyasını ve veri bağımsız özgün NODENO regresyonlarını denetler.
+name: native-store-checks
+on:
+  push:
+    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
+  pull_request:
+    paths: ['native-store/**', 'scripts/*native*.py', 'scripts/copy-nodeno-source.py', '.github/workflows/native-store.yml']
+permissions:
+  contents: read
+jobs:
+  source-and-behavior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 24.12.0
+      - run: python scripts/verify-native-snapshot.py
+      - run: node --test native-store/upstream/tests/shopping-experience.test.mjs native-store/upstream/tests/guest-checkout.test.mjs native-store/upstream/tests/locale-runtime.test.mjs native-store/upstream/tests/date-time.test.mjs
