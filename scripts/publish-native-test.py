@@ -34,7 +34,7 @@ def first_paint_proof(scope,release,base):
 
 def selection_proof(scope,release,base):
  report=json.loads((ROOT/('docs/native-'+scope+'-results.json')).read_text('utf8'));rows=report['results']
- if report.get('base')!=base or len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('release')!=release or row.get('realPayment')is not False or row.get('consentNormalHoverFocus')!='brand-burgundy/wine' or not all(row.get(key)is True for key in ['selectionRequired','sizeColorCartLines','editMergeReload','legacyCartRepair','sourceMatrix','rtl'])for row in rows):raise ValueError('PRODUCT_SELECTION_ACCEPTANCE_REQUIRED')
+ if report.get('base')!=base or len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'} or any(row.get('release')!=release or row.get('realPayment')is not False or row.get('consentNormalHoverFocus')!='brand-burgundy/wine' or not all(row.get(key)is True for key in ['selectionRequired','sizeColorCartLines','editMergeReload','legacyCartRepair','sourceMatrix','rtl','bulkAllItems','bulkCancellation'])for row in rows):raise ValueError('PRODUCT_SELECTION_ACCEPTANCE_REQUIRED')
 def own_local_proof(package):
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')

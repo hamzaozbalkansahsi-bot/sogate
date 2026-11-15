@@ -31,7 +31,7 @@ imports('shop-core.js',"import {normalizeSelectionCart} from './sexogate-variant
 edit('public/shop-core.js','export function normalizeCart(value,products)', 'function legacyNormalizeCart(value,products)');
 fs.appendFileSync(path.join(bundle,'public/shop-core.js'),'\nexport function normalizeCart(value,products){return normalizeSelectionCart(value,products,legacyNormalizeCart);}\n');
 imports('app.js',"import {requiresSelection,selectionDescription,mergeSelectionLine} from './sexogate-variants.js?v=variants';\nimport {openSelection} from './sexogate-variant-ui.js?v=variants';\nimport {variantCopy} from './sexogate-variant-copy.js?v=variants';");
-prepend('app.js','addCart',"if(requiresSelection(byId(id))){void chooseAdultVariant(id,quantity);return false;}");
+prepend('app.js','addCart',"if(requiresSelection(byId(id)))return chooseAdultVariant(id,quantity);");
 prepend('app.js','buyProduct',"if(requiresSelection(byId(id))){void chooseAdultVariant(id,detailQuantity,null,true);return;}");
 prepend('app.js','cartLineProduct',"if(requiresSelection(p))return {...p,variantColor:Object.fromEntries(Object.keys(variantCopy).map(lang=>[lang,selectionDescription(p,item,lang,variantCopy[lang])]))};");
 const oldColor="${!isSupplierProduct(p)&&p.variantColor?`<p class=\"basket-color\">${esc(t('productColor'))}: ${esc(loc(p.variantColor))}</p>`:''}";
@@ -39,10 +39,11 @@ edit('public/app.js',oldColor,"${requiresSelection(p)?`<p class=\"sg-cart-select
 edit('public/app.js',"(!isSupplierProduct(p)?experience?.cartVariantButton(p):'')", "(!isSupplierProduct(p)&&!requiresSelection(p)?experience?.cartVariantButton(p):'')");
 edit('public/app.js',"if(experience.handleClick(event,el))return;", "if(el.dataset.selectionEdit){const line=cart.find(row=>cartLineKey(row)===el.dataset.selectionEdit);if(line)void chooseAdultVariant(line.id,line.quantity,cartLineKey(line));return;}if(experience.handleClick(event,el))return;");
 // Bulk additions must use the same picker. They cannot create an ambiguous size behind it.
-prepend('shopping-ui.js','bulkAdd',"const configurable=ids.find(id=>ctx.byId(id)?.variantSelection?.required);if(configurable){if(allowed())addCart(configurable);return;}");
+imports('shopping-ui.js',"import {selectCartItems} from './sexogate-variants.js?v=variants';");
+prepend('shopping-ui.js','bulkAdd',"if(ids.some(id=>ctx.byId(id)?.variantSelection?.required)){void selectCartItems(ids,addCart,allowed);return;}");
 fs.appendFileSync(path.join(bundle,'public/app.js'),`\nasync function chooseAdultVariant(id,quantity,replaceKey=null,buy=false){
- if(selectionsBlocked()){toast(t('loading'));return;}const product=byId(id),old=replaceKey?cart.find(row=>cartLineKey(row)===replaceKey):null;if(!product)return;
- const line=await openSelection({product,quantity:clamp(quantity,product),locale,copy:variantCopy[locale],esc,image,name:productName(product),price:priceMarkup(product),current:old});if(!line||selectionsBlocked()||byId(id)!==product)return;
- try{cart=mergeSelectionLine(cart,line,replaceKey);if(replaceKey)selected.delete(replaceKey);selected.add(line.key);guestCheckout={details:guestCheckout.details,review:null};saveCheckoutDraft(guestCheckout,session.user?.id||'guest');selectionsChanged();insights?.event('cart',id);toast(t('added'));if(buy){selected=new Set([line.key]);navigate(href('checkout'));}}catch{toast(variantCopy[locale].limit);}
+ if(selectionsBlocked()){toast(t('loading'));return false;}const product=byId(id),old=replaceKey?cart.find(row=>cartLineKey(row)===replaceKey):null;if(!product)return false;
+ const line=await openSelection({product,quantity:clamp(quantity,product),locale,copy:variantCopy[locale],esc,image,name:productName(product),price:priceMarkup(product),current:old});if(!line||selectionsBlocked()||byId(id)!==product)return false;
+ try{cart=mergeSelectionLine(cart,line,replaceKey);if(replaceKey)selected.delete(replaceKey);selected.add(line.key);guestCheckout={details:guestCheckout.details,review:null};saveCheckoutDraft(guestCheckout,session.user?.id||'guest');selectionsChanged();insights?.event('cart',id);toast(t('added'));if(buy){selected=new Set([line.key]);navigate(href('checkout'));}return true;}catch{toast(variantCopy[locale].limit);return false;}
 }\n`);
 console.log(JSON.stringify({requiredProductSelection:true,serverValidation:true,orderSnapshot:true,consentBrandStates:true,sourceSnapshotChanged:false}));

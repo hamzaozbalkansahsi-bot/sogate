@@ -32,3 +32,6 @@ export function mergeSelectionLine(cart,line,replaceKey=null){
  const rows=cart.filter(row=>(row.key||row.id)!==replaceKey).map(row=>({...row})),existing=rows.find(row=>(row.key||row.id)===line.key);
  if(existing){if(existing.quantity+line.quantity>99)throw Error('variant_quantity_limit');existing.quantity+=line.quantity;}else{if(rows.length>=100)throw Error('cart_limit');rows.push(line);}return rows;
 }
+export async function selectCartItems(ids,add,allowed=()=>true){
+ let added=0;for(const id of [...new Set(ids)]){if(!allowed()||await add(id)!==true)return{added,complete:false};added++;}return{added,complete:true};
+}

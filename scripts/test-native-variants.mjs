@@ -8,7 +8,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {selectionLine,normalizeSelectionCart,selectionDescription,mergeSelectionLine} from '../native-store/storefront/variants.js';
+import {selectionLine,normalizeSelectionCart,selectionDescription,mergeSelectionLine,selectCartItems} from '../native-store/storefront/variants.js';
 const p={id:'sg_test',variantSelection:{required:true,mode:'matrix',axes:[{id:'size',label:'Beden',values:[{id:'s',label:'S'},{id:'xl',label:'XL'}]},{id:'color',label:'Renk',values:[{id:'red',label:'Kırmızı'},{id:'black',label:'Siyah'}]}],variants:[{id:'v1',values:{size:'s',color:'red'},active:true},{id:'v2',values:{size:'xl',color:'black'},active:true},{id:'v3',values:{size:'xl',color:'red'},active:false}]}};
 const line=(size='xl',color='black',quantity=1)=>({id:p.id,quantity,options:{selection:{size,color}}});
 test('Seçim olmadan veya eksik seçimle eklenmez',()=>{assert.throws(()=>selectionLine(p,{id:p.id,quantity:1}));assert.throws(()=>selectionLine(p,{...line(),options:{selection:{size:'xl'}}}));});
@@ -19,3 +19,5 @@ test('Seçim değişikliği yalnız ilgili satırı değiştirir ve aynı varyan
 test('Stok veya tedarikçi SKU uydurulmadan bağımsız kaynak seçenekleri doğrulanır',()=>{const product={...p,variantSelection:{...p.variantSelection,mode:'options',variants:[]}};assert.equal(selectionLine(product,line('s','black')).options.selection.color,'black');assert.throws(()=>selectionLine(product,line('XXL','black')));});
 test('Diğer çekirdeğin miktar kuralları korunur',()=>{const original=rows=>[{...rows[0],quantity:rows.reduce((sum,row)=>sum+row.quantity,0)}];assert.equal(normalizeSelectionCart([{id:'door',quantity:500},{id:'door',quantity:200}],[{id:'door'}],original)[0].quantity,700);});
 test('Seçim metinleri bütün açık dillerde tam ve UTF-8 kalır',()=>{const copy=JSON.parse(fs.readFileSync(new URL('../native-store/storefront/variant-copy.json',import.meta.url),'utf8'));assert.deepEqual(Object.keys(copy).sort(),['tr','en','de','ru','ar','fa','az','kk','tk','uz','ky'].sort());for(const values of Object.values(copy)){assert.deepEqual(Object.keys(values).sort(),Object.keys(copy.tr).sort());for(const value of Object.values(values))assert.ok(typeof value==='string'&&value.trim()&&!value.includes('\uFFFD'));}});
+test('Toplu ekleme her ürünün seçimini sırayla bekler',async()=>{const seen=[];assert.deepEqual(await selectCartItems(['a','b','b','c'],async id=>{seen.push(id);await Promise.resolve();return true;}),{added:3,complete:true});assert.deepEqual(seen,['a','b','c']);});
+test('Toplu eklemede vazgeçilen ürün ve sonrası seçimsiz eklenmez',async()=>{const seen=[];assert.deepEqual(await selectCartItems(['a','b','c'],async id=>{seen.push(id);return id!=='b';}),{added:1,complete:false});assert.deepEqual(seen,['a','b']);});
