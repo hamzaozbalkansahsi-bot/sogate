@@ -4,7 +4,7 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-first-paint.py
 # Açıklama   : İlk sunucu HTML'sinin JavaScript beklemeden aynı küçük resimli ana sayfayı göstermesini sınar.
-import json,os,re,ssl,urllib.request
+import json,os,re,ssl,time,urllib.request
 from pathlib import Path
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
@@ -25,6 +25,7 @@ assert len(soup.select('main .sg-campaign-card img'))==4,'FIRST_HTML_REAL_IMAGES
 assert soup.select_one('main h1').get_text(strip=True)=='Tutkunu Keşfet.'
 brand=json.loads((ROOT/'native-store/theme/store-copy.json').read_text('utf8'))
 for locale,copy in brand.items():
+ print(json.dumps({'firstPaintServerLocale':locale}),flush=True)
  document=BeautifulSoup(urllib.request.urlopen(BASE+'/?lang='+locale,context=tls,timeout=30).read(),'html.parser')
  assert len(document.select('main .sg-campaign-card'))==4,locale
  assert document.select_one('main h1').get_text(strip=True)==copy['slogan'],locale
@@ -36,12 +37,20 @@ with sync_playwright()as p:
   try:
    page=context.new_page();page.set_default_navigation_timeout(60000)
    for width in [390,1440]:
-    page.set_viewport_size({'width':width,'height':900});page.goto(BASE+'/?lang=tr');page.locator('.sg-campaign-card').first.wait_for()
+    print(json.dumps({'firstPaintEngine':engine,'width':width}),flush=True)
+    page.set_viewport_size({'width':width,'height':900});page.goto(BASE+'/?lang=tr',wait_until='domcontentloaded');page.locator('.sg-campaign-card').first.wait_for()
+    deadline=time.monotonic()+30
+    # JavaScript kapalı bağlamda tarayıcı rAF zamanlayıcısına güvenilmez.
+    while True:
+     state=page.evaluate('()=>({fonts:document.fonts.status==="loaded",css:[...document.querySelectorAll("link[rel=stylesheet]")].every(link=>!!link.sheet),images:document.querySelectorAll(".sg-campaign-card img").length===4&&[...document.querySelectorAll(".sg-campaign-card img")].every(image=>image.complete&&image.naturalWidth>0)})')
+     if all(state.values()):break
+     assert time.monotonic()<deadline,('FIRST_PAINT_RESOURCES_UNREADY',state)
+     page.wait_for_timeout(50)
     assert page.locator('.sg-campaign-card').count()==4
     assert page.locator('.sg-campaign-card').evaluate_all('(cards)=>cards.every(e=>e.getBoundingClientRect().height<240)')
     assert page.locator('.sg-campaign-card img').evaluate_all('(images)=>images.every(i=>i.complete&&i.naturalWidth>0)')
     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
     page.screenshot(path=str(folder/f'{engine}-no-javascript-{width}.png'))
-   result={'base':BASE,'release':release,'engine':engine,'serverHtmlCompactCards':4,'serverLocales':11,'javascriptDisabled':True,'legacyHero':False,'realImages':True,'widths':[390,1440]};results.append(result);print(json.dumps(result),flush=True)
+   result={'base':BASE,'release':release,'engine':engine,'serverHtmlCompactCards':4,'serverLocales':11,'javascriptDisabled':True,'legacyHero':False,'realImages':True,'widths':[390,1440],'readiness':'dom_css_fonts_and_campaign_images'};results.append(result);print(json.dumps(result),flush=True)
   finally:context.close();browser.close()
 (ROOT/('.local/native-'+scope+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8')
