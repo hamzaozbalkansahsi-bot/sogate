@@ -55,3 +55,5 @@ fileEdit('public','app.js','<div class="basket-select"><label>','<div class="bas
 fileEdit('public','app.js','${basketSummary()}</div>${cartSuggestions()}','${basketSummary()}</div>${sexogateCartBar()}${cartSuggestions()}');
 fs.appendFileSync(app,`\nfunction sexogateCartBar(){const sum=cartPrices(selectedCart(),catalog.products),total=sum.subtotalMinor;return \`<div class="sg-cart-bar"><button type="button" data-sg-cart-summary aria-haspopup="dialog"><span>\${esc(t('subtotal'))}</span><strong>\${total===null?esc(t('notPriced')):esc(formatMoney(total,locale))}</strong><span aria-hidden="true">⌃</span></button>\${config.checkoutEnabled&&sum.quantity&&doorUI.status().eligible?navLink('checkout','guestContinueCheckout','button button-dark'):\`<button class="button button-dark" disabled>\${esc(locale==='tr'?'Sepeti onayla':t('guestContinueCheckout'))}</button>\`}</div>\`;}\n`);
 console.log(JSON.stringify({storefrontComponents:true,automaticFurnitureScenes:false,roomFitTools:false,sourceSnapshotChanged:false}));
+
+execFileSync(process.execPath,[path.join(root,'category-build.mjs'),bundle],{stdio:'inherit'});
