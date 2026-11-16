@@ -13,6 +13,6 @@ if(!preg_match('/^[a-f0-9]{24}$/D',$active['release']??''))exit(1);
 $lock=fopen($home.'/worker.lock','c');if(!$lock||!flock($lock,LOCK_EX|LOCK_NB))exit;
 try{
  $release=$home.'/releases/'.$active['release'];define('NODENO_RUNTIME_LIBRARY',true);require $release.'/public/index.php';require $release.'/private/blog-worker.php';
- $result=nodenoBlogTick($home.'/state',$release.'/private',$release.'/public');$health=['ok'=>true,'at'=>time(),'release'=>$active['release'],'blog'=>$result,'externalPublishingEnabled'=>false,'checkoutEnabled'=>false];
+ $result=nodenoBlogTick($home.'/state',$release.'/private',$release.'/public');require_once $release.'/private/sexogate-notifications.php';$context=nodenoStoreContext($release.'/private');$notifications=sgNotifyTick($home.'/state',$context['catalog']);$health=['ok'=>true,'at'=>time(),'release'=>$active['release'],'blog'=>$result,'notifications'=>$notifications,'externalPublishingEnabled'=>false,'checkoutEnabled'=>false];
 }catch(Throwable $error){$health=['ok'=>false,'at'=>time(),'error'=>'native_worker_failed'];}
 file_put_contents($home.'/worker-health.json.tmp',json_encode($health,JSON_THROW_ON_ERROR),LOCK_EX);chmod($home.'/worker-health.json.tmp',0600);rename($home.'/worker-health.json.tmp',$home.'/worker-health.json');flock($lock,LOCK_UN);fclose($lock);exit($health['ok']?0:1);

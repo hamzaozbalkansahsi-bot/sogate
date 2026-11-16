@@ -37,10 +37,11 @@ if($static&&in_array($_SERVER['REQUEST_METHOD'],['GET','HEAD'],true)){
  $extension=strtolower(pathinfo($file,PATHINFO_EXTENSION));$types=['css'=>'text/css; charset=utf-8','js'=>'text/javascript; charset=utf-8','json'=>'application/json; charset=utf-8','svg'=>'image/svg+xml','woff'=>'font/woff','woff2'=>'font/woff2','ttf'=>'font/ttf','webmanifest'=>'application/manifest+json','ico'=>'image/x-icon','png'=>'image/png','jpg'=>'image/jpeg','jpeg'=>'image/jpeg','webp'=>'image/webp','gif'=>'image/gif','avif'=>'image/avif'];
  $bytes=file_get_contents($file);if($bytes===false)sexogateNativeFail(503,'asset_unavailable');
  if(in_array($extension,['js','css','json','svg','webmanifest'],true))$bytes=sexogateNativeUrls($bytes,$mount);
- header('Content-Type: '.$types[$extension]);header('Cache-Control: public, max-age=3600');header('Cross-Origin-Resource-Policy: same-origin');header('ETag: "'.hash('sha256',$bytes).'"');header('Content-Length: '.strlen($bytes));if($_SERVER['REQUEST_METHOD']!=='HEAD')echo $bytes;exit;
+ header('Content-Type: '.$types[$extension]);header('Cache-Control: '.($relative==='/sg-notifications-sw.js'?'no-cache':'public, max-age=3600'));header('Cross-Origin-Resource-Policy: same-origin');header('ETag: "'.hash('sha256',$bytes).'"');header('Content-Length: '.strlen($bytes));if($_SERVER['REQUEST_METHOD']!=='HEAD')echo $bytes;exit;
 }
 if($relative==='/api/payments/checkout')sexogateNativeFail(409,'live_sales_not_approved');
 define('NODENO_RUNTIME_LIBRARY',true);require $public.'/index.php';
+if($relative==='/api/notifications'){require_once $private.'/sexogate-notifications.php';sgNotifyHandle($private,$mount,$_SERVER['REQUEST_METHOD']);exit;}
 if(is_file($private.'/sexogate-catalog.php')){
  require_once $private.'/sexogate-catalog.php';
  if(str_starts_with($relative,'/media/sg_')&&in_array($_SERVER['REQUEST_METHOD'],['GET','HEAD'],true)){sexogateCatalogMedia($private,$relative,$_SERVER['REQUEST_METHOD']==='HEAD');exit;}

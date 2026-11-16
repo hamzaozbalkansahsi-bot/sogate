@@ -50,6 +50,8 @@ for path in sorted((ROOT/'native-store/theme').rglob('*')):
  if path.is_file():theme_hash.update(path.read_bytes())
 for path in sorted((ROOT/'native-store/storefront').glob('*')):
  if path.is_file():theme_hash.update(path.read_bytes())
+for path in [ROOT/'native-store/notifications/composer.json',ROOT/'native-store/notifications/composer.lock']:
+ theme_hash.update(path.read_bytes())
 for path in [ROOT/'native-store/source-manifest.json',ROOT/'scripts/build-native-stage.py',*sorted((ROOT/'native-store/deploy').glob('*'))]:
  if path.is_file():theme_hash.update(path.read_bytes())
 version=theme_hash.hexdigest()[:16]
@@ -67,6 +69,11 @@ if selection_file.is_file():
   if path.is_file():theme_hash.update(path.read_bytes())
  version=theme_hash.hexdigest()[:16]
  subprocess.run(['node',str(ROOT/'native-store/catalog/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+vendor=ROOT/'native-store/notifications/vendor'
+locked=json.loads((ROOT/'native-store/notifications/composer.lock').read_text('utf8'))['packages']
+installed=json.loads((vendor/'composer/installed.json').read_text('utf8'))['packages']
+if {p['name']:p['version']for p in locked}!={p['name']:p['version']for p in installed}:raise RuntimeError('NOTIFICATION_VENDOR_LOCK_MISMATCH')
+shutil.copytree(vendor,bundle/'private/notifications-vendor')
 subprocess.run(['node',str(ROOT/'native-store/storefront/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
 subprocess.run(['node',str(ROOT/'native-store/deploy/apply-store-theme.mjs'),str(bundle),version],check=True,cwd=ROOT)
 admin=bundle/'public/admin.html'

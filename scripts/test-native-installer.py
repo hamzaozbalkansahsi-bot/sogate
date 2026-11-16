@@ -15,7 +15,8 @@ def request(archive,identifier,*,wrong_hash=False,proof=token,expired=False):
  req=urllib.request.Request('http://127.0.0.1:3189/test/install.php',data=body,headers={'X-Native-Deploy':proof,'Content-Type':'application/json'})
  for attempt in range(20):
   try:
-   with urllib.request.urlopen(req,timeout=20)as response:return response.status,json.load(response)
+   # Kilitli Web Push bağımlılıklarıyla 1.300 dosyanın Windows'ta gerçek açılışı 20 saniyeyi aşabilir.
+   with urllib.request.urlopen(req,timeout=60)as response:return response.status,json.load(response)
   except urllib.error.HTTPError as error:return error.code,json.load(error)
   except urllib.error.URLError:
    if attempt==19:raise

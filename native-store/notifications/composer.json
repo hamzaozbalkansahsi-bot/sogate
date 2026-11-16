@@ -1,0 +1,9 @@
+{
+  "name": "sexogate/notifications",
+  "description": "Private PHP Web Push transport for SEXOGATE",
+  "type": "project",
+  "require": { "minishlink/web-push": "11.0.0", "guzzlehttp/guzzle": "^7.10" },
+  "config": { "allow-plugins": false, "sort-packages": true },
+  "autoload": {},
+  "license": "proprietary"
+}

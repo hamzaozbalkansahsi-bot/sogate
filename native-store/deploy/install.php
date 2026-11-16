@@ -33,6 +33,8 @@ try{
  if(is_link($home))throw new RuntimeException('private_symlink');
  if(!is_dir($home)){if(!mkdir($home,0700))throw new RuntimeException('private_create_failed');file_put_contents($home.'/owner.json',json_encode(['owner'=>$request['owner'],'purpose'=>'sexogate-native-test-v1'],JSON_THROW_ON_ERROR));}
  $owner=json_decode((string)file_get_contents($home.'/owner.json'),true);if(($owner['owner']??null)!==$request['owner']||($owner['purpose']??null)!=='sexogate-native-test-v1')throw new RuntimeException('private_owner_mismatch');
+ // Yalnız kimliği doğrulanmış bakım isteği; kilitli SDK dosyaları da tek tek hash ile denetlenir.
+ if(function_exists('set_time_limit'))set_time_limit(90);
  $real=realpath($home);if($real===false||str_starts_with($real.'/',rtrim($doc,'/').'/'))throw new RuntimeException('private_inside_webroot');
  foreach(['releases','state']as $name){if(is_link($home.'/'.$name))throw new RuntimeException('private_symlink');if(!is_dir($home.'/'.$name)&&!mkdir($home.'/'.$name,0700))throw new RuntimeException('private_create_failed');}
  $archive=__DIR__.'/app/native-payload-'.$id.'.zip';if(!hash_equals($request['sha256'],hash_file('sha256',$archive)))throw new RuntimeException('archive_hash_mismatch');

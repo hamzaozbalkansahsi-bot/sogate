@@ -22,5 +22,6 @@ function enhance(){queued=false;for(const element of observed)if(!element.isConn
  chrome();
 }
 document.addEventListener('click',event=>{const link=event.target.closest('a[href="#product-specs"]');if(link){const details=document.querySelector('#sg-all-features');if(details)details.open=true;}},true);
+document.addEventListener('click',event=>{const trigger=event.target.closest('[data-sg-cart-summary]');if(!trigger)return;const summary=document.querySelector('.basket-summary');if(!summary)return;const dialog=document.createElement('dialog');dialog.className='sg-cart-summary-dialog';dialog.setAttribute('aria-label',summary.querySelector('h2')?.textContent||'Sepet');const close=document.createElement('button');close.type='button';close.className='button';close.textContent=copy().close||'Kapat';close.addEventListener('click',()=>dialog.close());dialog.append(summary.cloneNode(true),close);document.body.append(dialog);dialog.addEventListener('close',()=>{dialog.remove();trigger.focus({preventScroll:true});},{once:true});dialog.showModal();});
 function schedule(){if(!queued){queued=true;requestAnimationFrame(enhance);}}
 new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});addEventListener('resize',schedule,{passive:true});enhance();

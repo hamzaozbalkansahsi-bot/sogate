@@ -29,7 +29,9 @@ class Proxy(http.server.BaseHTTPRequestHandler):
    if self.command!='HEAD':self.wfile.write(body)
   finally:c.close()
  do_GET=do_HEAD=do_POST=do_PUT=do_PATCH=do_DELETE=do_OPTIONS=serve
-env=os.environ.copy();env['SEXOGATE_NATIVE_LOCAL_TLS']='loopback-only';log=(base/'php.log').open('wb');php=subprocess.Popen([str(ROOT/'.local/php-runtime/php.exe'),'-d','extension=pdo_sqlite','-d','extension=sqlite3','-S','127.0.0.1:3187','-t',b['web'],b['router']],env=env,stdout=log,stderr=log)
+env=os.environ.copy();env['SEXOGATE_NATIVE_LOCAL_TLS']='loopback-only'
+if os.name=='nt':env.setdefault('OPENSSL_CONF',str(ROOT/'.local/php-runtime/extras/ssl/openssl.cnf'))
+log=(base/'php.log').open('wb');php=subprocess.Popen([str(ROOT/'.local/php-runtime/php.exe'),'-d','extension=pdo_sqlite','-d','extension=sqlite3','-S','127.0.0.1:3187','-t',b['web'],b['router']],env=env,stdout=log,stderr=log)
 http.server.ThreadingHTTPServer.request_queue_size=128
 server=http.server.ThreadingHTTPServer(('127.0.0.1',3188),Proxy);context=ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER);context.load_cert_chain(cert,key);server.socket=context.wrap_socket(server.socket,server_side=True)
 try:print(b['url'],flush=True);server.serve_forever()

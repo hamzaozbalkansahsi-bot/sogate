@@ -368,3 +368,17 @@ Sıradaki somut işler: gerçek kur bağlantısının503 nedenini ve aralıklıT
 
 Kanonik kullanım/sınırlar `docs/native-variant-selection.md`; gerçek sürüm kanıtı `docs/native-deployment-report.json`; seçim sonuçları `docs/native-variants-*-results.json`, görüntüler `docs/screenshots/native-store-variants-*/`. Sonraki somut işletme işleri: gerçek bayi varyant SKU/stok/fiyat eşlemesi, varyant stok defteri ve ülke/ödeme/vergi/taşıyıcı/hukuk kabulü. Fiziksel iPhone, saha Core Web Vitals veya tam WCAG denetimi yapılmış sayılmaz. Sonraki oturum bu kayıt ve kanonik rapordan devam eder.
 <!-- END NATIVE_VARIANTS_20261116 -->
+
+<!-- BEGIN NATIVE_CART_NOTIFICATIONS_20261116 -->
+## 16 Kasım — Ürün eylemleri, mobil sepet ve stok bildirimleri
+
+Kullanıcı aynı görevde ürün düğmelerini düzeltme, favori stok bildirimi ve örnekteki mobil sepet davranışını istedi. Yerel kaynaklar ve kanonik durum `docs/native-cart-notifications.md` içindedir. `native-store/upstream` değişmedi; ana site ve gerçek tahsilat kapalı kapsamda korunuyor.
+
+- Regresyon eski pakette 360 px / 92 px genişlik / iki satır pembe sepete ekle ile yakalandı. Kendi CSS katmanında boş üçlü sütun kaldırıldı. Ara yerel pakette Chromium/WebKit 5 genişlik, miktar, favori/karşılaştırma, zorunlu beden/renk, paylaş ve RTL geçti. Paylaşın yerel HTTPS/test URL reddi de düzeltildi.
+- Sepet satır seçimi, miktar, varyant etiketi, yatay öneri ve sabit toplam/özet dialogu eklendi. Testte yakalanan geçici ödeme yükleme metninin özete kopyalanması düzeltildi. Kapalı tahsilat için onay düğmesi kapalı; taksit/kargo/kupon başarısı uydurulmadı.
+- Bildirim API, cihaz sahipliği/CSRF/Origin, şifreli abonelik/VAPID, doğrulanmış stok geçişi, kalıcı retry/iptal, önbelleksiz service worker hazırlandı. Resmi SDK 11.0.0 ve kilitli Composer bağımlılıkları: audit temiz. PHP izole 26 kontrol ve Node worker 4/4 ve ilgili Node toplam 32/32 geçti. Dış cihaza gerçek bildirim teslimi yapılmadı; fiziksel stok ve iOS native Canlı Etkinlik tamamlandı sayılmıyor.
+- Son paket `324b855ec1f632a73b3221a4`, SHA256 `7320bcd3d17bda125e8829416caea1dad7f4856fd3b5821031b9d348ba220a17`, varlık `1aba96a6cd66cd2e`, 1.300 dosya/72 JS modülü. Yerel 3188 bu pakette. Ürün eylemleri ve sepet/bildirim API tarayıcı kabulü iki motorda/5 genişlikte geçti; başka cihazın aboneliğini değiştirme reddi ve otomatik izin istenmemesi gözlendi. Tam yönetim 33+kamu 9 gezinti iki motorda geçti; yaş/gizlilik, görsel düzen, ilk HTML ve 11 dil + EN/DE/AR istemci geçişleri de geçti. Tüm dokuz yerel yayın kapısı aynı nihai pakette tamamlandı. Uzak yayın hâlâ `c4788429f85aec52b435c76e`.
+- Güncel kurucu ile 1.300 dosyalı ön paket üzerinde 22 güvenlik/backup kontrolü geçti. İlk testte 20 saniye HTTP ve ardından PHP 30 saniye sınırı görüldü; yalnız yetkilendirilmiş geçici kurucu isteği 90 saniye, test istemcisi 60 saniye ile sonlu kaldı. Hash/yol/symlink/token/sahiplik kontrolleri değişmedi. Nihai pakette stok, gönderimden hemen önce de doğrulanır; artık geçersiz stok olayı iptal edilir. Ülke uygunluk kapısı sepet CTA'sında korunur.
+
+Sıradaki: yalnız `/test` özel önizleme kurulumu, aynı pakette uzak dokuz kontrol ve aktivasyon. Yeni `cart_actions_proof` bu iki pakete bağlı tarayıcı kabulünü ayrıca zorunlu tutar. Kaynak/test dosyaları henüz commit edilmedi; diğer sohbetlerin kirli dosyaları korunur.
+<!-- END NATIVE_CART_NOTIFICATIONS_20261116 -->
