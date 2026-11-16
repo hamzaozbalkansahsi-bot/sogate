@@ -1,0 +1,22 @@
+/**
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : native-store/storefront/home-build.mjs
+ * Açıklama   : Mağaza ana sayfasını korunmuş motorun türetilmiş kopyasına bağlar.
+ */
+import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import{fileURLToPath}from'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url)),bundle=path.resolve(process.argv[2]);if(!bundle.includes('native-stage-'))throw Error('HOME_BUILD_SCOPE');
+for(const file of ['home-core.js','home-renderers.js'])fs.copyFileSync(path.join(root,file),path.join(bundle,'public','sexogate-'+file));
+const copy=JSON.parse(fs.readFileSync(path.join(root,'home-copy.json'),'utf8'));fs.writeFileSync(path.join(bundle,'public/sexogate-home-copy.js'),'export const homeCopy='+JSON.stringify(copy)+';\n');fs.copyFileSync(path.join(root,'home-copy.json'),path.join(bundle,'private/sexogate-home-copy.json'));
+fs.copyFileSync(path.join(root,'home-model.php'),path.join(bundle,'private/sexogate-home-model.php'));fs.appendFileSync(path.join(bundle,'public/sexogate-storefront.css'),fs.readFileSync(path.join(root,'home.css'),'utf8'));
+const app=path.join(bundle,'public/app.js');let source=fs.readFileSync(app,'utf8');const tree=ts.createSourceFile('app.js',source,ts.ScriptTarget.Latest,true,ts.ScriptKind.JS),found=[];function visit(n){if(ts.isFunctionDeclaration(n)&&n.name?.text==='renderHome')found.push(n);ts.forEachChild(n,visit);}visit(tree);if(found.length!==1)throw Error('HOME_RENDER_HOOK_CHANGED');const node=found[0];source=source.slice(0,node.getStart(tree))+'function renderHome(){return renderSexogateMarketHome(sexogateHomeContext());}'+source.slice(node.end);
+source="import {renderHome as renderSexogateMarketHome,renderHomeDiscovery as renderSexogateHomeDiscovery} from './sexogate-home-renderers.js?v=storefront';\n"+source+`
+function sexogateHomeContext(){return {catalog,config,locale,esc,t,href,image,productName,productLink,productCard,homeCollections,recent,selectedHomeCategory:new URLSearchParams(location.search).get('homeCategory')||''};}
+document.addEventListener('click',event=>{const button=event.target.closest('[data-home-category]');if(!button)return;const area=button.closest('#sg-home-discovery');if(!area)return;const id=button.dataset.homeCategory;if(id&&!rootCategories().some(c=>c.id===id&&categoryCount(c.id)))return;const x=scrollX,y=scrollY,tabOffset=button.closest('[role=tablist]').scrollLeft,url=new URL(location.href);if(id)url.searchParams.set('homeCategory',id);else url.searchParams.delete('homeCategory');history.replaceState(history.state,'',url.pathname+url.search+url.hash);area.outerHTML=renderSexogateHomeDiscovery(sexogateHomeContext());updateStoreSEO(catalog,config);const next=document.getElementById('sg-home-tab-'+(id||'all'));next.closest('[role=tablist]').scrollLeft=tabOffset;next.focus({preventScroll:true});next.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});window.scrollTo({left:x,top:y,behavior:'instant'});});
+document.addEventListener('keydown',event=>{const button=event.target.closest('[data-home-category]');if(!button||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const buttons=[...button.closest('[role=tablist]').querySelectorAll('[role=tab]')],index=buttons.indexOf(button),step=(event.key==='ArrowRight'?1:-1)*(document.documentElement.dir==='rtl'?-1:1),next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+step+buttons.length)%buttons.length;event.preventDefault();buttons[next].click();});
+`;
+fs.writeFileSync(app,source);
+const seo=path.join(bundle,'private/seo.php');let php=fs.readFileSync(seo,'utf8');if(php.split('sexogateStorefrontHome($catalog,$config,$locale)').length!==2)throw Error('HOME_SSR_HOOK_CHANGED');fs.writeFileSync(seo,php.replace('sexogateStorefrontHome($catalog,$config,$locale)','sexogateStorefrontHome($catalog,$config,$locale,$query)'));
+for(const relative of ['private/seo.php','public/seo-core.js']){const file=path.join(bundle,relative),value=fs.readFileSync(file,'utf8'),hook="'brand','size','material','section']";if(value.split(hook).length!==2)throw Error('HOME_SEO_HOOK_CHANGED');fs.writeFileSync(file,value.replace(hook,"'brand','size','material','section','homeCategory']"));}
+console.log(JSON.stringify({homeProductFirst:true,balancedCatalogShelves:true,discoveryTabs:true,sourceSnapshotChanged:false}));

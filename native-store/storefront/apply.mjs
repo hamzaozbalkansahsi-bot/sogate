@@ -57,3 +57,5 @@ fs.appendFileSync(app,`\nfunction sexogateCartBar(){const sum=cartPrices(selecte
 console.log(JSON.stringify({storefrontComponents:true,automaticFurnitureScenes:false,roomFitTools:false,sourceSnapshotChanged:false}));
 
 execFileSync(process.execPath,[path.join(root,'category-build.mjs'),bundle],{stdio:'inherit'});
+
+execFileSync(process.execPath,[path.join(root,'home-build.mjs'),bundle],{stdio:'inherit'});

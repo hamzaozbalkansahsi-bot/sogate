@@ -45,6 +45,12 @@ def categories_proof(suffix,release,base):
  required=['categoryImages','hierarchy','backRestoresSelection','sizeFilter','brandFilter','colorFilter','sortPreservesFilters','invalidPriceRejected','variantSelectionRequired','search','rtl','singleStore','serverCategoryLayout','keyboardDrawer','facetNoindex']
  checksum=hashlib.sha256((ROOT/'scripts/test-native-category-browser.py').read_bytes()).hexdigest()
  if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'}or any(row.get('base')!=base or row.get('release')!=release or row.get('pageErrors')or row.get('scriptSha256')!=checksum or not all(row.get(key)is True for key in required)for row in rows):raise ValueError('CATEGORY_EXPERIENCE_ACCEPTANCE_REQUIRED')
+
+def home_proof(suffix,release,base):
+ rows=json.loads((ROOT/('.local/native-home-'+suffix+'.json')).read_text('utf8'))
+ required=['productFirstLayout','compactHeader','balancedSelection','alignedCards','realCategoryTabs','tabsPreserveScrollAndFocus','tabDeepLink','keyboardRail','variantSelectionRequired','blogRoute','serverClientParity','mountedServerLinks','rtl']
+ checksum=hashlib.sha256((ROOT/'scripts/test-native-home-browser.py').read_bytes()).hexdigest()
+ if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'}or any(row.get('base')!=base or row.get('release')!=release or row.get('pageErrors')or row.get('prototype')or row.get('scriptSha256')!=checksum or not all(row.get(key)is True for key in required)for row in rows):raise ValueError('HOME_EXPERIENCE_ACCEPTANCE_REQUIRED')
 def own_local_proof(package):
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')
@@ -63,6 +69,7 @@ def own_local_proof(package):
  selection_proof('variants-local',package['release'],'https://127.0.0.1:3188/test')
  cart_actions_proof('local',package['release'],'https://127.0.0.1:3188/test')
  categories_proof('local',package['release'],'https://127.0.0.1:3188/test')
+ home_proof('local',package['release'],'https://127.0.0.1:3188/test')
  if package.get('products'):
   proof=json.loads((ROOT/'.local/native-catalog-local.json').read_text('utf8'))
   if proof.get('release')!=package['release']or proof.get('products')!=package['products']or not proof.get('idempotent')or not proof.get('privateDrafts')or proof.get('pageErrors'):raise ValueError('LOCAL_CATALOG_ACCEPTANCE_REQUIRED')
@@ -152,6 +159,7 @@ def activate():
  selection_proof('variants-preview',report['release'],expected)
  cart_actions_proof('preview',report['release'],expected)
  categories_proof('preview',report['release'],expected)
+ home_proof('preview',report['release'],expected)
  if report['installation'].get('products'):
   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')

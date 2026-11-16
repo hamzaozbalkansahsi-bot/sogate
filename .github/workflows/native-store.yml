@@ -33,6 +33,7 @@ jobs:
       - run: node --test scripts/test-native-variants.mjs
       - run: node --test scripts/test-native-public-read.mjs
       - run: node --test scripts/test-native-categories.mjs
+      - run: node --test scripts/test-native-home.mjs
       - run: node --test scripts/test-native-notification-worker.mjs
       - run: composer install --working-dir=native-store/notifications --no-dev --no-interaction --no-plugins --no-scripts --prefer-dist
       - run: php scripts/test-native-notifications.php --source
@@ -42,5 +43,7 @@ jobs:
       - run: php -l native-store/catalog/catalog.php && php -l native-store/deploy/dispatcher.php && php -l native-store/deploy/install.php && php -l native-store/deploy/maintenance.php
       - run: php -l native-store/storefront/variants.php && php -l native-store/storefront/variant-build.php
       - run: php -l native-store/storefront/categories.php
+      - run: php -l native-store/storefront/home.php && php -l native-store/storefront/home-model.php
       - run: node --check native-store/storefront/variants.js && node --check native-store/storefront/variant-ui.js && node --check native-store/storefront/variant-apply.mjs
       - run: node --check native-store/storefront/category-core.js && node --check native-store/storefront/category-renderers.js && node --check native-store/storefront/category-ui.js && node --check native-store/storefront/category-build.mjs
+      - run: node --check native-store/storefront/home-core.js && node --check native-store/storefront/home-renderers.js && node --check native-store/storefront/home-build.mjs
