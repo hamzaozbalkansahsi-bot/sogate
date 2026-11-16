@@ -8,7 +8,7 @@ from contextlib import closing
 from pathlib import Path
 
 DISCOVERY_KEYS=('productFirstLayout','compactHeader','compactCampaignCards','balancedSelection','alignedCards','realCategoryTabs','tabsPreserveScrollAndFocus','tabDeepLink','keyboardRail','variantSelectionRequired','blogRoute','serverClientParity','mountedServerLinks','categoryImages','hierarchy','backRestoresSelection','sizeFilter','brandFilter','colorFilter','validCombinedFacets','sortPreservesFilters','invalidPriceRejected','keyboardDrawer','facetNoindex','facetCanonical','search','rtl','singleStore','serverCategoryLayout')
-SOURCE_TESTS={'data':'scripts/test-native-marketplace-data.py','payload':'scripts/test-native-marketplace-payload.php','returnsCore':'scripts/test-native-returns-php.php','returnsCoreSource':'scripts/test-native-returns-php.php','returnOrdering':'scripts/test-native-return-ordering.php','returnOrderingSource':'scripts/test-native-return-ordering.php'}
+SOURCE_TESTS={'data':'scripts/test-native-marketplace-data.py','payload':'scripts/test-native-marketplace-payload.php','installer':'scripts/test-native-installer.php','seo':'scripts/test-native-marketplace-seo.php','returnsCore':'scripts/test-native-returns-php.php','returnsCoreSource':'scripts/test-native-returns-php.php','returnOrdering':'scripts/test-native-return-ordering.php','returnOrderingSource':'scripts/test-native-return-ordering.php'}
 
 def file_sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -52,6 +52,10 @@ def validate_marketplace_source_proof(root,proof,suffix,release,base,selection,v
  if set(executions)!=set(SOURCE_TESTS)or any(not isinstance(result,dict)or result.get('exitCode')!=0 or result.get('scriptSha256')!=file_sha(root/SOURCE_TESTS[name])for name,result in executions.items()):raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')
  data=executions['data'];payload=executions['payload']
  if data.get('passed')!=6 or payload.get('passed')!=3*selection['newProducts']+10 or payload.get('newProducts')!=selection['newProducts']or payload.get('publishCandidates')!=visible_new or payload.get('isolatedDatabase')is not True or payload.get('publishedToRemote')is not False:raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')
+ installer=executions['installer']
+ if installer.get('release')!=release or installer.get('products')!=selection['products']or not isinstance(installer.get('passed'),int)or installer['passed']<30 or len(installer.get('checks',[]))!=installer['passed']or not isinstance(installer.get('archiveFiles'),int)or not 2000<installer['archiveFiles']<=5000 or installer.get('pureValidationOnly')is not True or installer.get('networkCalled')is not False or installer.get('installed')is not False:raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')
+ seo=executions['seo']
+ if seo.get('release')!=release or seo.get('dataset')!=selection['dataset']or seo.get('publicProducts')!=visible_new or seo.get('pages')!=11*visible_new or seo.get('locales')!=11 or not isinstance(seo.get('passed'),int)or seo['passed']<seo['pages']or seo.get('testSha256')!=file_sha(root/SOURCE_TESTS['seo'])or seo.get('warningsAsErrors')is not True or seo.get('networkCalled')is not False or seo.get('realPayments')is not False:raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')
  for name,required in [('returnsCore',53),('returnsCoreSource',53),('returnOrdering',17),('returnOrderingSource',17)]:
   result=executions[name]
   if result.get('passed')!=required or len(result.get('checks',[]))!=required or result.get('testSha256')!=file_sha(root/SOURCE_TESTS[name])or result.get('isolatedDatabase')is not True or result.get('realPaymentOrFiscalApiCalled')is not False:raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')

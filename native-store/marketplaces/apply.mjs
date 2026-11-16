@@ -15,6 +15,9 @@ for(const file of ['private/sexogate-catalog.php','private/seo.php','private/sex
  text=text.replaceAll('(?:xsh|lio|sis)','(?:xsh|lio|sis|ty)');fs.writeFileSync(p,text);
 }
 edit('public/seo-core.js',"product.catalogOrigin==='sexogate-suppliers-v1'","['sexogate-suppliers-v1','sexogate-marketplaces-v1'].includes(product.catalogOrigin)");
+const sourceBrandHook="if(in_array(($product['catalogOrigin']??''),['sexogate-suppliers-v1','sexogate-marketplaces-v1','sexogate-catalog-v2'],true)){if(!empty($product['brand']))$data['brand']=['@type'=>'Brand','name'=>$product['brand']];else unset($data['brand']);}";
+edit('private/seo.php',sourceBrandHook,'');
+edit('private/seo.php',"$data['description']=nodenoSeoDescription($product,$locale,$catalog);",sourceBrandHook+"$data['description']=nodenoSeoDescription($product,$locale,$catalog);");
 edit('public/sexogate-catalog.js','(xsh|lio|sis)','(xsh|lio|sis|ty)');
 edit('public/sexogate-catalog.js',"let editorId='',queued=false;","let editorId=new URLSearchParams(location.hash.split('?')[1]??'').get('record')??'',queued=false;");
 edit('private/sexogate-catalog.php',"'initialMarkup'=>'İlk aktarımda kaynak kamu fiyatı +%30. Sonraki aktarım yönetici fiyatını değiştirmez.'","'initialMarkup'=>'İlk aktarım: kaynak indirimsiz kamu fiyatı +%'.($work['initialMarkupPercent']??30).'. Sonraki aktarım yönetici fiyatını değiştirmez.'");

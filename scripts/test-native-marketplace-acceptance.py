@@ -23,7 +23,7 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
   fingerprint_patch=patch.object(gate,'marketplace_source_fingerprint',return_value=self.fingerprint);self.fingerprint_mock=fingerprint_patch.start();self.addCleanup(fingerprint_patch.stop)
   self.selection={'dataset':DATASET,'newProducts':131,'sourceProducts':138,'products':2325,'path':str(self.root/'prepared'),'sha256':'4'*64}
   self.write('.local/native-marketplace-selection.json',self.selection)
-  scripts=['test-native-languages.py','test-native-marketplace-variants.py','native_variant_cases.py','test-native-marketplace-browser.py','test-native-marketplace-http.py','test-native-returns-public.py','test-native-returns-browser.py','test-native-returns-php.php','test-native-return-ordering.php','test-native-marketplace-discovery.py','test-native-marketplace-source-proof.py','test-native-marketplace-data.py','test-native-marketplace-payload.php']
+  scripts=['test-native-languages.py','test-native-marketplace-variants.py','native_variant_cases.py','test-native-marketplace-browser.py','test-native-marketplace-http.py','test-native-returns-public.py','test-native-returns-browser.py','test-native-returns-php.php','test-native-return-ordering.php','test-native-marketplace-discovery.py','test-native-marketplace-source-proof.py','test-native-marketplace-data.py','test-native-marketplace-payload.php','test-native-installer.php','test-native-marketplace-seo.php']
   for name in scripts:self.bytes('scripts/'+name,('temporary fixture '+name).encode())
   for scope in BASES:self.baseline(scope)
   # Her olumsuz örnekten önce aynı geçici temel gerçekten kabul edilmelidir.
@@ -62,6 +62,8 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
   self.write('docs/native-marketplace-discovery-'+scope+'-results.json',{'base':BASES[scope],'results':self.rows(scope,DISCOVERY_KEYS,{'publicProducts':82,'occupiedRoots':6,'realPayments':False,'adminAccessed':False},'test-native-marketplace-discovery.py')})
   def isolated_execution(name,count):return {'exitCode':0,'passed':count,'checks':['fixture_check_'+str(n)for n in range(count)],'scriptSha256':self.checksum('scripts/'+name),'testSha256':self.checksum('scripts/'+name),'isolatedDatabase':True,'realPaymentOrFiscalApiCalled':False}
   source={'schema':1,'profile':'marketplace-source-v1','scope':scope,'targetBase':BASES[scope],'release':RELEASE,'dataset':DATASET,'sourceDetails':138,'loadedNew':131,'runnerSha256':self.checksum('scripts/test-native-marketplace-source-proof.py'),'fingerprint':self.fingerprint,'allMarketplaceProductsTransferred':False,'publishedToRemote':False,'realPaymentOrFiscalApiCalled':False,'executionEnvironment':'local-isolated-cli','executions':{'data':{'exitCode':0,'passed':6,'scriptSha256':self.checksum('scripts/test-native-marketplace-data.py')},'payload':{'exitCode':0,'passed':403,'newProducts':131,'publishCandidates':82,'isolatedDatabase':True,'publishedToRemote':False,'scriptSha256':self.checksum('scripts/test-native-marketplace-payload.php')},'returnsCore':isolated_execution('test-native-returns-php.php',53),'returnsCoreSource':isolated_execution('test-native-returns-php.php',53),'returnOrdering':isolated_execution('test-native-return-ordering.php',17),'returnOrderingSource':isolated_execution('test-native-return-ordering.php',17)}}
+  source['executions']['installer']={'exitCode':0,'scriptSha256':self.checksum('scripts/test-native-installer.php'),'passed':30,'checks':['fixture_installer_check_'+str(n)for n in range(30)],'release':RELEASE,'products':2325,'archiveFiles':2500,'pureValidationOnly':True,'networkCalled':False,'installed':False}
+  source['executions']['seo']={'exitCode':0,'scriptSha256':self.checksum('scripts/test-native-marketplace-seo.php'),'testSha256':self.checksum('scripts/test-native-marketplace-seo.php'),'passed':902,'pages':902,'publicProducts':82,'locales':11,'release':RELEASE,'dataset':DATASET,'warningsAsErrors':True,'networkCalled':False,'realPayments':False}
   self.write('docs/native-marketplace-source-'+scope+'-results.json',source)
 
  def accept(self,scope='local'):
@@ -146,6 +148,20 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
    for field,value in [('testSha256','0'*64),('checks',[]),('isolatedDatabase',False),('realPaymentOrFiscalApiCalled',True)]:
     with self.subTest(execution=execution,field=field):
      data=json.loads(json.dumps(original));data['executions'][execution][field]=value;self.write(name,data);self.assert_rejected()
+
+ def test_installer_requires_package_context_complete_checks_and_no_install(self):
+  name='docs/native-marketplace-source-local-results.json';original=self.read(name)
+  fields=[('passed',29),('release','9'*24),('products',2324),('archiveFiles',2000),('archiveFiles',5001),('archiveFiles',2500.0),('checks',[]),('pureValidationOnly',False),('networkCalled',True),('installed',True)]
+  for field,value in fields:
+   with self.subTest(field=field,value=value):
+    data=json.loads(json.dumps(original));data['executions']['installer'][field]=value;self.write(name,data);self.assert_rejected()
+
+ def test_seo_requires_every_public_product_locale_context_and_safe_execution(self):
+  name='docs/native-marketplace-source-local-results.json';original=self.read(name)
+  fields=[('passed',901),('pages',901),('publicProducts',81),('locales',10),('release','9'*24),('dataset','9'*32),('testSha256','0'*64),('warningsAsErrors',False),('networkCalled',True),('realPayments',True)]
+  for field,value in fields:
+   with self.subTest(field=field):
+    data=json.loads(json.dumps(original));data['executions']['seo'][field]=value;self.write(name,data);self.assert_rejected()
 
  def test_changed_inputs_invalidate_completed_source_proof(self):
   self.fingerprint_mock.return_value={**self.fingerprint,'catalogSha256':'9'*64};self.assert_rejected()
