@@ -22,7 +22,7 @@ folder=ROOT/('docs/screenshots/native-store-'+SCOPE);folder.mkdir(parents=True,e
 results=[]
 with sync_playwright()as p:
  for engine in ['chromium','webkit']:
-  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();errors=[];page.on('pageerror',lambda error:errors.append(str(error)));ready=NativePageReadiness(page,BASE,60000)
+  browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();errors=[];network=[];page.on('pageerror',lambda error:errors.append(str(error)));page.on('requestfailed',lambda request:network.append({'path':request.url.split('?',1)[0].split('/test',1)[-1],'error':request.failure}));ready=NativePageReadiness(page,BASE,60000)
   if args.css_preview:page.route('**/sexogate-storefront.css?*',lambda route:route.fulfill(status=200,content_type='text/css',body=(ROOT/'native-store/storefront/storefront.css').read_text('utf8')))
   try:
    page.goto(BASE+'/?lang=tr',wait_until='domcontentloaded');ready.wait()
@@ -52,6 +52,9 @@ with sync_playwright()as p:
    page.goto(BASE+'/?product='+product['id']+'&lang=ar',wait_until='domcontentloaded');ready.wait();assert page.locator('html').get_attribute('dir')=='rtl';assert page.evaluate('()=>document.documentElement.scrollWidth<=innerWidth');assert page.locator('.product-buy-actions [data-detail-add]').evaluate('e=>e.getBoundingClientRect().width>200');assert not errors,errors
    results.append({'engine':engine,'base':BASE,'release':context.request.get(BASE+'/api/deployment-status').json()['release'],'cssPreview':args.css_preview,'widths':[360,390,430,768,1440],'primarySingleLine':True,'touchTargets':True,'quantityButtons':True,'favoriteAndCompare':True,'variantRequired':True,'shareDialog':True,'rtl':True,'pageErrors':0})
   except Exception:
-   print(json.dumps({'pageErrors':errors,'openDialogs':page.locator('dialog[open]').evaluate_all('nodes=>nodes.map(e=>e.id)')}),flush=True);page.screenshot(path=str(folder/(engine+'-diagnostic.png')));raise
+   print(json.dumps({'pageErrors':errors,'network':network,'fonts':page.evaluate('()=>[...document.fonts].filter(f=>f.status!=="loaded").map(f=>({family:f.family,weight:f.weight,status:f.status}))'),'openDialogs':page.locator('dialog[open]').evaluate_all('nodes=>nodes.map(e=>e.id)')}),flush=True)
+   try:page.screenshot(path=str(folder/(engine+'-diagnostic.png')),timeout=5000)
+   except Exception as capture_error:print('Diagnostic capture: '+type(capture_error).__name__,flush=True)
+   raise
   finally:context.close();browser.close()
 (ROOT/('.local/native-'+SCOPE+'.json')).write_text(json.dumps(results,indent=2),encoding='utf8');print(json.dumps(results),flush=True)

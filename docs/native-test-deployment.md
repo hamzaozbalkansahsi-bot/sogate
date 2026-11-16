@@ -1,7 +1,13 @@
 # Native PHP test yayını
 
+<!-- BEGIN NATIVE_CART_RELEASE_20261116 -->
+## Güncel test yayını — 324b855ec1f632a73b3221a4
+
+16 Kasım: ürün eylemleri, mobil sepet ve bildirim tercihleri aynı PHP test paketinde yayımlandı. Ana site korunur; gerçek tahsilat kapalıdır. Yerel/özel önizleme dokuz kabul grubu ve etkin adreste iki motorlu buton/sepet/API kontrolleri geçti. Gerçek push cihaz teslimi doğrulanmadı; native Chrome aboneliği izin hatası verdi. Güncel kullanım, sınırlar ve testler [sepet/bildirim rehberinde](native-cart-notifications.md), makine kanıtı [yayın raporunda](native-deployment-report.json). Aşağıdaki eski sürüm kayıtları tarihseldir.
+<!-- END NATIVE_CART_RELEASE_20261116 -->
+
 <!-- BEGIN NATIVE_FIRST_PAINT_DELIVERY_20261115 -->
-## Güncel test yayını — 554e78f543311a4d7e250b89
+## Tarihsel ilk HTML teslimi — 554e78f543311a4d7e250b89
 
 Yalnız https://sexogate.com/test üzerinde etkin. İlk sunucu HTML'si artık istemciyle aynı küçük resimli kart düzenindedir; eski büyük yeşil kampanya ilk açılışta gösterilmez. Kaynak `f6463b3`, yayın yönlendirmesi `009c67f`, test kabuğu `f34775e`. 468 görünür ürün, 1.726 taslak; 6 ana+44 alt kategori tanımı, 18 dolu alt kategori. Ana hazırlanıyor site korunur ve gerçek tahsilat 409 ile kapalıdır.
 

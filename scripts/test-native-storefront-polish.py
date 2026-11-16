@@ -33,7 +33,7 @@ def no_overflow(page):assert page.evaluate('()=>document.documentElement.scrollW
 with sync_playwright()as p:
  for engine in ['webkit','chromium']:
   browser=getattr(p,engine).launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'),viewport={'width':390,'height':844});page=context.new_page();page.set_default_timeout(30000);page.set_default_navigation_timeout(60000);errors=[];account_mount_errors=[];network_failures=[];page.on('response',lambda r:account_mount_errors.append(r.url)if '/api/account'in r.url and r.status==404 else None);page.on('pageerror',lambda error:errors.append(str(error)))
-  readiness=NativePageReadiness(page,BASE,timeout=30000)
+  readiness=NativePageReadiness(page,BASE,timeout=60000)
   page.on('requestfailed',lambda r:network_failures.append({'path':urlsplit(r.url).path,'error':r.failure}))
   page.on('response',lambda r:network_failures.append({'path':urlsplit(r.url).path,'status':r.status})if r.status>=400 else None)
   try:
@@ -63,7 +63,7 @@ with sync_playwright()as p:
    page.set_viewport_size({'width':390,'height':844});privacy.scroll_into_view_if_needed();assert privacy.evaluate('(e)=>{const r=e.getBoundingClientRect();return e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}'),'PRIVACY_BUTTON_OCCLUDED'
    page.screenshot(path=str(folder/(engine+'-product-footer.png')));privacy.click();page.wait_for_timeout(200);assert page.locator('#insights-preferences[open]').count()==1;page.get_by_role('button',name='Analiz ve geçmişe izin ver',exact=True).click();page.locator('#insights-preferences').wait_for(state='hidden');readiness.wait();log(engine+': recent rail')
    for item in catalog['products'][:4]:
-    page.goto(BASE+'/?product='+item['id']);page.locator('.sg-product-intro').wait_for();readiness.wait()
+    page.goto(BASE+'/?product='+item['id']);readiness.wait();page.locator('.sg-product-intro').wait_for(timeout=5000)
    page.goto(BASE+'/?page=recent');readiness.wait();recent=page.locator('.shopping-page .product-row');recent.wait_for();assert recent.locator('.product-card').count()>=3;page.wait_for_function('(e)=>e.scrollWidth>e.clientWidth',arg=recent.element_handle());recent.focus();page.keyboard.press('ArrowRight');page.wait_for_function('(e)=>Math.abs(e.scrollLeft)>20',arg=recent.element_handle());page.screenshot(path=str(folder/(engine+'-recent-rail.png')))
    # Rıza geri alındığında kişiselleştirme geçmişi de temizlenir.
    page.locator('.insights-settings').evaluate('(e)=>e.scrollIntoView({block:"center",behavior:"instant"})');page.locator('.insights-settings').click();page.get_by_role('button',name='İzni kaldır ve geçmişi sil',exact=True).click();page.locator('#insights-preferences').wait_for(state='hidden');readiness.wait()

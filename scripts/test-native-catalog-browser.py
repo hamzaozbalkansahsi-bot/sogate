@@ -10,6 +10,7 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from native_browser_ready import NativePageReadiness
 ROOT=Path(__file__).resolve().parent.parent;BASE=os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3188/test').rstrip('/');scope=os.environ.get('SEXOGATE_NATIVE_TEST_SCOPE','catalog-local')
 assert re.fullmatch('[a-z-]+',scope)and re.fullmatch(r'https://(?:127\.0\.0\.1:3188|sexogate\.com)/test(?:/native-preview-[a-f0-9]{16})?',BASE)
 access=json.loads((ROOT/'.local'/('php-stage-access.json'if BASE.startswith('https://sexogate.com')else'php-access.json')).read_text('utf8'))
@@ -23,7 +24,7 @@ sys.excepthook=safe_error
 def otp():
  secret=access['totpSecret'];key=base64.b32decode(secret+'='*((8-len(secret)%8)%8));d=hmac.new(key,struct.pack('>Q',int(time.time())//30),hashlib.sha1).digest();o=d[-1]&15;return str((struct.unpack('>I',d[o:o+4])[0]&0x7fffffff)%1000000).zfill(6)
 with sync_playwright()as p:
- browser=p.chromium.launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'));page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+ browser=p.chromium.launch();context=browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'));page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda e:errors.append(str(e)));readiness=NativePageReadiness(page,BASE,60000)
  try:
   page.goto(BASE+'/yonetim');page.locator('[name=email]').fill(access['email']);page.locator('[name=password]').fill(access['password']);page.get_by_role('button',name='Devam et',exact=True).click();page.locator('#verify').wait_for();
   if time.time()%30>27:time.sleep(3)
@@ -65,7 +66,10 @@ with sync_playwright()as p:
   draft=next(r['id']for r in records if not r['data']['visible']);assert anonymous.request.get(BASE+'/media/'+draft+'/0').status==404;assert anonymous.request.get(BASE+'/yonetim/urun-onizleme?product='+draft).status in [401,403]
   assert context.request.get(BASE+'/yonetim/urun-onizleme?product='+draft).status==200
   modal=page.locator('.sexogate-catalog-dialog');modal.get_by_role('button',name='Kapat',exact=True).click();page.get_by_role('button',name='Kaynak kategoriler',exact=True).click();page.wait_for_function('()=>document.querySelectorAll("[data-sg-category]").length===172');page.locator('[data-sg-cancel]').click()
-  page.reload();page.locator('[data-edit]').first.click();page.get_by_role('link',name='Ürüne git',exact=True).wait_for();assert page.locator('[name=seoTitle_tr]').input_value();assert page.locator('[name=sourceVendor]').input_value()in ['xshopum','liona','sistina']
+  page.reload();readiness.wait();page.locator('[data-edit]').first.click();page.get_by_role('link',name='Ürüne git',exact=True).wait_for();assert page.locator('[name=seoTitle_tr]').input_value();assert page.locator('[name=sourceVendor]').input_value()in ['xshopum','liona','sistina']
   folder=ROOT/('docs/screenshots/native-store-'+scope);folder.mkdir(parents=True,exist_ok=True);page.screenshot(path=str(folder/'admin-product.png'))
   assert not errors,errors;result={'base':BASE,'products':2194,'priced':2151,'priceMissing':43,'sourceCategories':172,'storeCategories':len(catalog['categories']),'visibleSubcategories':len(children),'categoryPageVerified':True,'mediaSamplesVerified':len(media_samples),'publishedCovers':expected_visible,'markupPercent':30,'locales':11,'idempotent':True,'privateDrafts':True,'sourcePriceIsNotCost':True,'pageErrors':0,'release':request.get(BASE+'/api/deployment-status').json()['release']};(ROOT/('.local/native-'+scope+'.json')).write_text(json.dumps(result,indent=2),encoding='utf8');print(json.dumps(result),flush=True);anonymous.close()
+ except Exception:
+  print(json.dumps({'diagnostic':True,'pageErrors':errors,'editButtons':page.locator('[data-edit]').count(),'sidebar':page.locator('.sidebar').count(),'readyState':page.evaluate('()=>document.readyState'),'visibleErrors':page.locator('.error:visible,[role=alert]:visible').all_text_contents()[:3]},ensure_ascii=False),flush=True)
+  raise
  finally:context.close();browser.close()

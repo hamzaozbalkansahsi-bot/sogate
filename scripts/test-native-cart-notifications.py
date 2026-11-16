@@ -17,8 +17,11 @@ def line(product):
  model=product['variantSelection'];values={a['id']:a['values'][0]['id']for a in model['axes']}
  if model['mode']=='matrix':values=next(v for v in model['variants']if v['active'])['selection']
  return {'id':product['id'],'quantity':1,'options':{'selection':values}}
+def read_notification(context,url):
+ # Playwright bu salt okunur GET için yalnız ECONNRESET'i bir kez tekrarlar; HTTP redleri ve yazmalar tekrarlanmaz.
+ return context.request.get(url,max_retries=1)
 def notify_api(context,products):
- endpoint=BASE+'/api/notifications';state=context.request.get(endpoint).json();assert 'csrfToken'in state and 'publicKey'in state,state
+ endpoint=BASE+'/api/notifications';state=read_notification(context,endpoint).json();assert 'csrfToken'in state and 'publicKey'in state,state
  origin=BASE.split('/test')[0];headers={'Origin':origin,'X-CSRF-Token':state['csrfToken']};id=products[0]['id'];b64=lambda b:base64.urlsafe_b64encode(b).decode().rstrip('=')
  subscription={'endpoint':'https://fcm.googleapis.com/wp/sexogate-isolated-'+secrets.token_hex(10),'keys':{'p256dh':state['publicKey'],'auth':b64(secrets.token_bytes(16))}}
  data={'consent':True,'productIds':[id],'subscription':subscription}
@@ -28,19 +31,19 @@ def notify_api(context,products):
  bad={**data,'productIds':['not_a_public_product']};assert context.request.post(endpoint,data=bad,headers=headers).status==422
  try:
   response=context.request.post(endpoint,data=data,headers=headers);assert response.status==200,{'status':response.status,'body':response.text()[:100]}
-  assert context.request.get(endpoint).json()['enabled']is True
+  assert read_notification(context,endpoint).json()['enabled']is True
   other=context.browser.new_context(ignore_https_errors=BASE.startswith('https://127.0.0.1'))
   try:
-   foreign=other.request.get(endpoint).json();assert foreign['enabled']is False and foreign['productIds']==[]
+   foreign=read_notification(other,endpoint).json();assert foreign['enabled']is False and foreign['productIds']==[]
    denied=other.request.post(endpoint,data=data,headers={'Origin':origin,'X-CSRF-Token':foreign['csrfToken']});assert denied.status==409
    assert other.request.delete(endpoint,data={},headers={'Origin':origin,'X-CSRF-Token':foreign['csrfToken']}).status==200
-   assert context.request.get(endpoint).json()['enabled']is True
+   assert read_notification(context,endpoint).json()['enabled']is True
   finally:other.close()
   assert context.request.put(endpoint,data={'productIds':[]},headers=headers).status==200
-  assert context.request.get(endpoint).json()['productIds']==[]
+  assert read_notification(context,endpoint).json()['productIds']==[]
  finally:
   assert context.request.delete(endpoint,data={},headers=headers).status==200
- assert context.request.get(endpoint).json()['enabled']is False
+ assert read_notification(context,endpoint).json()['enabled']is False
  return {'csrf':True,'origin':True,'ssrf':True,'publicProductValidation':True,'deviceOwnership':True,'subscribeAndRevoke':True,'externalPushSent':False}
 with sync_playwright()as p:
  for engine in ['chromium','webkit']:

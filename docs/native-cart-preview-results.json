@@ -1,0 +1,107 @@
+{
+  "release": "324b855ec1f632a73b3221a4",
+  "actions": [
+    {
+      "engine": "chromium",
+      "base": "https://sexogate.com/test/native-preview-5dfafb0d3d363ab9",
+      "release": "324b855ec1f632a73b3221a4",
+      "cssPreview": false,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "primarySingleLine": true,
+      "touchTargets": true,
+      "quantityButtons": true,
+      "favoriteAndCompare": true,
+      "variantRequired": true,
+      "shareDialog": true,
+      "rtl": true,
+      "pageErrors": 0
+    },
+    {
+      "engine": "webkit",
+      "base": "https://sexogate.com/test/native-preview-5dfafb0d3d363ab9",
+      "release": "324b855ec1f632a73b3221a4",
+      "cssPreview": false,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "primarySingleLine": true,
+      "touchTargets": true,
+      "quantityButtons": true,
+      "favoriteAndCompare": true,
+      "variantRequired": true,
+      "shareDialog": true,
+      "rtl": true,
+      "pageErrors": 0
+    }
+  ],
+  "cartAndNotificationApi": [
+    {
+      "engine": "chromium",
+      "base": "https://sexogate.com/test/native-preview-5dfafb0d3d363ab9",
+      "release": "324b855ec1f632a73b3221a4",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "cartSelectionTotals": true,
+      "quantityUpdates": true,
+      "variantLabels": true,
+      "moveToFavoritesAndRemove": true,
+      "summaryDialog": true,
+      "stickyOverlap": false,
+      "notificationApi": {
+        "csrf": true,
+        "origin": true,
+        "ssrf": true,
+        "publicProductValidation": true,
+        "deviceOwnership": true,
+        "subscribeAndRevoke": true,
+        "externalPushSent": false
+      },
+      "permissionNotRequestedAutomatically": true,
+      "pageErrors": 0
+    },
+    {
+      "engine": "webkit",
+      "base": "https://sexogate.com/test/native-preview-5dfafb0d3d363ab9",
+      "release": "324b855ec1f632a73b3221a4",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "cartSelectionTotals": true,
+      "quantityUpdates": true,
+      "variantLabels": true,
+      "moveToFavoritesAndRemove": true,
+      "summaryDialog": true,
+      "stickyOverlap": false,
+      "notificationApi": {
+        "csrf": true,
+        "origin": true,
+        "ssrf": true,
+        "publicProductValidation": true,
+        "deviceOwnership": true,
+        "subscribeAndRevoke": true,
+        "externalPushSent": false
+      },
+      "permissionNotRequestedAutomatically": true,
+      "pageErrors": 0
+    }
+  ]
+}

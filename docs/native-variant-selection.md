@@ -2,6 +2,8 @@
 
 16 Kasım 2026. Kapsam yalnız PHP `/test` uygulaması; ana site ve korunmuş NODENO kaynak kopyası değiştirilmez.
 
+Güncel etkin sürüm `324b855ec1f632a73b3221a4`: düğme/sepet düzeni ve bildirim tercihleri [güncel rehberdedir](native-cart-notifications.md). Varyant davranışı korunur; yerel ve önizlemede tüm varyant/bulk senaryoları, etkin adreste zorunlu seçim ve sepet etiketleri yeniden doğrulandı. Aşağıdaki c478 kayıtları önceki varyant tesliminin tarihsel kanıtıdır.
+
 ## Davranış
 
 Seçenekli üründe Sepete ekle, beden/renk penceresini açar. Hiçbir seçenek müşterinin yerine işaretlenmez. Gerekli seçimler tamamlanmadan ekleme yapılamaz. Gerçek kaynak varyant tablosu varsa yalnız aktif ve kayıtlı birleşimler kabul edilir. Kamu kaynağı bağımsız beden/renk alanları sunuyorsa bunlar bağımsız seçim olarak saklanır; bunlardan tedarikçi SKU’su, barkodu veya stok miktarı üretilmez.
@@ -62,7 +64,7 @@ WebKit'in belge değişimi sırasında iptal edilen sorguyu erişim hatası gibi
 
 ## Yayın ve kaynak durumu
 
-Son paket `https://sexogate.com/test` üzerinde etkin: `c4788429f85aec52b435c76e`. Sağlık kontrolü DB, 468 kamu ürünü / 2.194 kaynak kaydı ve tahsilatın kapalı olduğunu doğruladı; ana site aynı. Yerel/önizleme yedi kabul adımı yayın öncesinde geçti. Etkin adreste iki motor × yedi seçenek/izin senaryosu ve iki motorlu MFA/yönetim/blog dar kabulü geçti. Yeni sürümün şifreli DB yedeği yerelde 2 SQLite / 41 tablo / 10.114 satır ve geçerli yabancı anahtarlarla geri yüklendi; cron ve worker sağlıklı, diğer işler aynı. Medya restore testi bu kontrolün dışında.
+Önceki varyant teslimi `https://sexogate.com/test` üzerinde `c4788429f85aec52b435c76e` sürümüyle yapılmıştı. Sağlık kontrolü DB, 468 kamu ürünü / 2.194 kaynak kaydı ve tahsilatın kapalı olduğunu doğruladı; ana site aynı. Yerel/önizleme yedi kabul adımı yayın öncesinde geçti. Etkin adreste iki motor × yedi seçenek/izin senaryosu ve iki motorlu MFA/yönetim/blog dar kabulü geçti. Yeni sürümün şifreli DB yedeği yerelde 2 SQLite / 41 tablo / 10.114 satır ve geçerli yabancı anahtarlarla geri yüklendi; cron ve worker sağlıklı, diğer işler aynı. Medya restore testi bu kontrolün dışında.
 
 Kaynak/test commit'leri `44c27e6`, `e107bc5`, `2d1ab4a`, `9a70120`, `7a49a08`, `36e93aa`, `83597d6`, `0d3a7e1`, `351883d`, `b40346d`, `f9f4528` normal push edildi. Son doğrulanan native CI `43781811340`, ana CI `43781811248`, GitHub hesap faturalama kilidi nedeniyle sıfır adımda durdu. Resmî API bildirimi doğrulandı; CI başarılı sayılmadı veya kapatılmadı.
 
