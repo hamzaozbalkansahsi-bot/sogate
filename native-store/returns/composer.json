@@ -1,0 +1,8 @@
+{
+  "name": "sexogate/returns",
+  "description": "Private return and refund provider adapters for SEXOGATE",
+  "type": "project",
+  "license": "proprietary",
+  "require": { "stripe/stripe-php": "23.0.0" },
+  "config": { "allow-plugins": false, "sort-packages": true }
+}
