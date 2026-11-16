@@ -1,0 +1,160 @@
+{
+  "checkedAt": "2026-11-16T13:09:53.238839+00:00",
+  "base": "https://127.0.0.1:3188/test",
+  "release": "0c0e76d696171c6fba60f5da",
+  "packageSha256": "537856e71eeac4ad076d9d75c285c8c15844598996377dc37603506815c1c709",
+  "status": "local_acceptance_passed",
+  "home": [
+    {
+      "engine": "chromium",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "0c0e76d696171c6fba60f5da",
+      "scriptSha256": "12c1e3d0e162f0b1e2c3a743b8ee637f9a0608b2b00ce77e719dbe22aa6d9f47",
+      "prototype": false,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "productFirstLayout": true,
+      "compactHeader": true,
+      "balancedSelection": true,
+      "alignedCards": true,
+      "realCategoryTabs": true,
+      "tabsPreserveScrollAndFocus": true,
+      "tabDeepLink": true,
+      "keyboardRail": true,
+      "variantSelectionRequired": true,
+      "blogRoute": true,
+      "serverClientParity": true,
+      "mountedServerLinks": true,
+      "rtl": true,
+      "pageErrors": 0
+    },
+    {
+      "engine": "webkit",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "0c0e76d696171c6fba60f5da",
+      "scriptSha256": "12c1e3d0e162f0b1e2c3a743b8ee637f9a0608b2b00ce77e719dbe22aa6d9f47",
+      "prototype": false,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "productFirstLayout": true,
+      "compactHeader": true,
+      "balancedSelection": true,
+      "alignedCards": true,
+      "realCategoryTabs": true,
+      "tabsPreserveScrollAndFocus": true,
+      "tabDeepLink": true,
+      "keyboardRail": true,
+      "variantSelectionRequired": true,
+      "blogRoute": true,
+      "serverClientParity": true,
+      "mountedServerLinks": true,
+      "rtl": true,
+      "pageErrors": 0
+    }
+  ],
+  "gateGroups": 11,
+  "gateEvidenceSha256": {
+    ".local/native-home-local.json": "fe2550546eedc64b92fc399608083f3798325a18d54b46b3f1380a232a2d64b9",
+    ".local/native-categories-local.json": "137fc57b242139832dbc36ad3858073dc319bd45e4d9569764d99484d585458d",
+    ".local/native-actions-local.json": "d81be30ce7accee2c6e065884740fe0b5768f87762b69172a667bb8483a8806c",
+    ".local/native-cart-notifications-local.json": "dc22cd8087d0ee8b5f18691e09b0feff879b07fc1d448f885660c9226685a2c5",
+    ".local/native-polish-local.json": "76916b5a567129630e0e8f362781e49d5cf70931aba6791858a9d497dc2e7566",
+    ".local/native-paint-local.json": "b952fd1cbb442fd7f365b46ad4b99d35fd6566d8d647e1b210faa762a86bd440",
+    ".local/native-adult-adult-local.json": "3475e4ecc4d8084e60bb3eacb6d3f2d4f71600fcfa8ed418b988178f60c28296",
+    "docs/native-variants-local-results.json": "88de537f50b3e2665503532f07f22d2b607dfa9c62cb87c1e39239b74fddf79a",
+    ".local/native-browser-mount-local.json": "3ee3b1d2df6a7ae0aff046762fe3e3c140558ffba169844703dac0446ea9cf5a",
+    ".local/native-catalog-local.json": "142030008040c15ea87f6cf9bc60750f0c4ae7082cec6ebf7a445c316638e0a9",
+    ".local/native-languages-mount-local.json": "2295be9fcaed802b2439a10950b6c149a01a34b3e0725fbf0b4365bd2beaebaf"
+  },
+  "categories": [
+    {
+      "engine": "chromium",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "0c0e76d696171c6fba60f5da",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "categoryImages": true,
+      "hierarchy": true,
+      "backRestoresSelection": true,
+      "sizeFilter": true,
+      "brandFilter": true,
+      "colorFilter": true,
+      "sortPreservesFilters": true,
+      "invalidPriceRejected": true,
+      "variantSelectionRequired": true,
+      "search": true,
+      "rtl": true,
+      "singleStore": true,
+      "serverCategoryLayout": true,
+      "keyboardDrawer": true,
+      "facetNoindex": true,
+      "pageErrors": 0,
+      "scriptSha256": "ea666c53036cf7d6911b76e906adbe834a21698ed751a4768eca2828bdffedd6"
+    },
+    {
+      "engine": "webkit",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "0c0e76d696171c6fba60f5da",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "categoryImages": true,
+      "hierarchy": true,
+      "backRestoresSelection": true,
+      "sizeFilter": true,
+      "brandFilter": true,
+      "colorFilter": true,
+      "sortPreservesFilters": true,
+      "invalidPriceRejected": true,
+      "variantSelectionRequired": true,
+      "search": true,
+      "rtl": true,
+      "singleStore": true,
+      "serverCategoryLayout": true,
+      "keyboardDrawer": true,
+      "facetNoindex": true,
+      "pageErrors": 0,
+      "scriptSha256": "ea666c53036cf7d6911b76e906adbe834a21698ed751a4768eca2828bdffedd6"
+    }
+  ],
+  "realPayment": false,
+  "mainSiteChanged": false,
+  "unitAndPhp": {
+    "nodePassed": 47,
+    "nodeScripts": {
+      "scripts/test-native-home.mjs": "5d740db45f1ea44497f651fc8135a530826d0f5933e3a8720c06a576c9146594",
+      "scripts/test-native-categories.mjs": "57bf3359b79f3efaa4ebf6178b8466a1a81a36b0e4a9cde29c090d1ef3efb947",
+      "scripts/test-native-public-read.mjs": "104c69588cc4d0c370aa7ab9c1bbfad98df3eae231d351f5f731bb492739b6aa",
+      "scripts/test-native-variants.mjs": "41f15075d6d7e7b46b11d2df719fbb6b9d03ce3dc76ee49e59452cb6f50cc693",
+      "scripts/test-native-variant-artifact.mjs": "2b8ec7ba4e98f8f37270a3a803a2bbc65d0f299aca42cc982130cb30bf00fba0",
+      "scripts/test-native-relocation.mjs": "3d18455a673ce23557c0b432c87eb1067ca6383b4bb68d9f10e6e39a069dd7b5",
+      "scripts/test-native-notification-worker.mjs": "012af7a91a2b049fa4a6173ea8a91eb18320b63b5cb676ff7c7f61d9849f481a"
+    },
+    "phpPassed": {
+      "variants": 23,
+      "catalog": 18,
+      "content": 14
+    }
+  }
+}

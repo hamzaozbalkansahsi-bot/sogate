@@ -399,3 +399,17 @@ Kanonik kullanım ve açık işler `docs/native-cart-notifications.md`; gerçek 
 
 Kanonik kullanım `docs/native-category-experience.md`; yerel/önizleme/etkin kanıt `docs/native-category-*-results.json`, gerçek yayın/geri yükleme durumu `docs/native-deployment-report.json`. Açık işler: bağlantı kök nedeninin ölçümü; gerçek cihaz/erişilebilirlik/saha performansı kabulü; mevcut işletme/ödeme/vergi/taşıyıcı/hukuk kapıları. Kategori teslimi bütün platformun canlı satışa hazır olduğu iddiası değildir.
 <!-- END NATIVE_CATEGORY_EXPERIENCE_20261116 -->
+
+<!-- BEGIN NATIVE_HOME_EXPERIENCE_20261116 -->
+## 16 Kasım — mağaza ana sayfası /test üzerinde doğrulandı
+
+- Kullanıcının netleştirdiği hedef yalnız `/test` ana sayfası ve ortak düzen. Resmî Trendyol HTML ve gerçek uygulama içi masaüstü görünümü incelendi. Ürün rafı önce gelir; dolu kategorilerden on görselli kısayol, dört küçük koleksiyon kartı, ilgili kategori rafı, klavye/odak/URL ile çalışan keşif sekmeleri ve gerçek blog/yardım bağlantıları eklendi. Satıcı, sahte kampanya/puan ve başka markanın kataloğu taşınmadı.
+- Etkin paket `0c0e76d696171c6fba60f5da`, varlık `0b38e931cf14b213`, ZIP SHA256 `537856e71eeac4ad076d9d75c285c8c15844598996377dc37603506815c1c709`; 1.312 dosya/79 JS. Kaynak `06d111c3d97338e5ed25077d62abce1de94d58c5` normal push ve uzak hash ile doğrulandı. Korunan 771 kaynakta 768 byte eşliği ve 3 kayıtlı güvenli fixture istisnası korunur. Hosting PHP/SQLite; Node sunucuda yok.
+- 47 Node (8 yeni ana sayfa), 23 PHP varyant, 18 katalog ve 14 içerik kontrolü; 60 PHP syntax kontrolü geçti. Yerel/özel önizleme 11 kapı: iki motor, ana sayfada 360/390/430/768/1024/1440, genel 33 yönetim+9 müşteri rotası, 11 dil ve 3 istemci geçişi. Etkin adreste ana sayfa/kategori/ürün düğmesi/sepet iki motorda yeniden geçti. İlk HTML aynı model sırasını gösterir; beden/renk seçimi atlanmaz.
+- Ana site fingerprint’i aynı; yalnız `/test` atomik geçiş. Gerçek tahsilat HTTP409 kapalı, worker sağlıklı, şifreli iki SQLite yedeği gerçekten geri yüklenip FK/hash/satır kontrolünden geçti (44 tablo/10201 satır). Cron tek ve diğer işler aynı; geçici yardımcı/istek kalmadı.
+- CI native 43871630929 / ana 43871630902 hesap faturalama kilidiyle sıfır adım: başarılı değil. Tam WCAG, fiziksel iPhone, saha CWV ve medya felaket kurtarma açık; mevcut aralıklı uzak bağlantı kök nedeni ve işletme/ödeme/ülke/vergi/kargo/hukuk kabulü bu arayüz teslimiyle tamamlanmış sayılmaz.
+
+Üç ilk zaman aşımı (önizleme yönetim API, az dil girişi, etkin kategori yüklemesi) korundu; değişmeyen kurallarla bağımsız tekrarlar geçti. Bağlantı kök nedeni çözülmüş sayılmaz.
+
+Kanonik kullanım `docs/native-home-experience.md`; kanıt `docs/native-home-*-results.json` ve `docs/native-deployment-report.json`. Diğer sohbetlerin Next/MySQL/sosyal değişiklikleri bu commitlere alınmadı.
+<!-- END NATIVE_HOME_EXPERIENCE_20261116 -->

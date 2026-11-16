@@ -1,7 +1,13 @@
 # Native PHP test yayını
 
+<!-- BEGIN NATIVE_HOME_RELEASE_20261116 -->
+## Güncel test yayını — 0c0e76d696171c6fba60f5da
+
+16 Kasım: ürün öncelikli ana sayfa, küçük resimli koleksiyonlar, kategori keşif sekmeleri ve ortak kompakt header yayımlandı. Kullanıcı hedefi yalnız `/test`; ana hazırlanıyor site aynı, gerçek tahsilat kapalı. Yerel ve özel önizleme 11 kabul grubu; etkin adreste ana sayfa/kategori/CTA/sepet iki motor turu geçti. Worker ve gerçek şifreli DB geri yükleme doğrulandı. [Ana sayfa rehberi](native-home-experience.md), [kanonik yayın raporu](native-deployment-report.json). Aşağıdaki yayın kayıtları tarihseldir.
+<!-- END NATIVE_HOME_RELEASE_20261116 -->
+
 <!-- BEGIN NATIVE_CATEGORY_RELEASE_20261116 -->
-## Güncel test yayını — b1dc3d43d52fecf813c301a9
+## Önceki kategori yayını — b1dc3d43d52fecf813c301a9
 
 16 Kasım kategori deneyimi etkin. Kısa resimli kategori kartları, sekme/alt kategori gezintisi ve gerçek varyant filtreleri [kategori rehberinde](native-category-experience.md). Yerel/önizleme 10 kapı ve etkin adreste kategori/CTA/sepet iki motor turu geçti. Worker, şifreli DB geri yükleme ve yalnız `/test` kapsamı yeniden doğrulandı. Ana site aynı, gerçek tahsilat kapalı. Önceki teslim kayıtları aşağıda tarihseldir; kanonik durum [yayın raporundadır](native-deployment-report.json).
 <!-- END NATIVE_CATEGORY_RELEASE_20261116 -->
