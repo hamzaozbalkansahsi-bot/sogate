@@ -4,10 +4,13 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/test-native-languages.py
 # Açıklama   : Kataloglu vitrinde dil seçimini, sunucu/istemci metaverisini ve RTL yönünü doğrular.
-import argparse,html,json,os,re,ssl,urllib.error,urllib.request
+import argparse,html,json,os,re,ssl,sys,urllib.error,urllib.request
 from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from native_test_errors import safe_error
+
+sys.excepthook=safe_error
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = os.environ.get('SEXOGATE_NATIVE_TEST_URL','https://127.0.0.1:3186').rstrip('/')
@@ -46,7 +49,7 @@ with sync_playwright() as p:
             assert page.locator('#language').input_value() == locale, locale
             expected = 'rtl' if locale in ['ar', 'fa'] else 'ltr'
             assert page.locator('html').get_attribute('dir') == expected, locale
-            document=context.request.get(BASE+'/?lang='+locale)
+            document=context.request.get(BASE+'/?lang='+locale,max_retries=1)
             assert document.status==200,('metadata',locale,document.status)
             title=re.search(r'<title>(.*?)</title>',document.text()).group(1)
             assert store_copy[locale]['slogan']in html.unescape(title),('adult-metadata',locale,title)
