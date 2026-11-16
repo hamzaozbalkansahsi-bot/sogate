@@ -46,7 +46,7 @@ def own_local_proof(package):
  language_path=ROOT/'.local/native-languages-mount-local.json'
  if language_path.stat().st_mtime<(ROOT/'.local/native-stage-package.json').stat().st_mtime:raise ValueError('STALE_LOCAL_LANGUAGE_ACCEPTANCE')
  languages=json.loads(language_path.read_text('utf8'))
- if languages.get('base')!='https://127.0.0.1:3188/test' or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('LOCAL_LANGUAGE_ACCEPTANCE_FAILED')
+ if languages.get('base')!='https://127.0.0.1:3188/test' or languages.get('release')!=package['release']or not languages.get('finalized')or languages.get('scriptSha256')!=hashlib.sha256((ROOT/'scripts/test-native-languages.py').read_bytes()).hexdigest()or len(languages.get('clientSwitches',[]))!=3 or any(not all(row.get(key)for key in ['selected','clientMetadata','catalogUiReady'])for row in languages.get('clientSwitches',[]))or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('LOCAL_LANGUAGE_ACCEPTANCE_FAILED')
  adult_proof('adult-local',package['release'],'https://127.0.0.1:3188/test')
  storefront_proof('polish-local',package['release'],'https://127.0.0.1:3188/test')
  first_paint_proof('paint-local',package['release'],'https://127.0.0.1:3188/test')
@@ -142,7 +142,7 @@ def activate():
   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')
  language_path=ROOT/'.local/native-languages-mount-preview.json';languages=json.loads(language_path.read_text('utf8'))
- if language_path.stat().st_mtime<REPORT.stat().st_mtime or languages.get('base')!=expected or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('PREVIEW_LANGUAGE_ACCEPTANCE_REQUIRED')
+ if language_path.stat().st_mtime<REPORT.stat().st_mtime or languages.get('base')!=expected or languages.get('release')!=report['release']or not languages.get('finalized')or languages.get('scriptSha256')!=hashlib.sha256((ROOT/'scripts/test-native-languages.py').read_bytes()).hexdigest()or len(languages.get('clientSwitches',[]))!=3 or any(not all(row.get(key)for key in ['selected','clientMetadata','catalogUiReady'])for row in languages.get('clientSwitches',[]))or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('PREVIEW_LANGUAGE_ACCEPTANCE_REQUIRED')
  ftp=p.publisher.connect(p.publisher.env_values());changed=False
  try:
   if p.fingerprint(ftp)!=report['mainBefore']:raise ValueError('MAIN_CHANGED_SINCE_PREPARE')
