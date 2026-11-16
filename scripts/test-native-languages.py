@@ -9,6 +9,7 @@ from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from native_test_errors import safe_error
+from native_browser_ready import NativePageReadiness
 
 sys.excepthook=safe_error
 
@@ -41,11 +42,14 @@ with sync_playwright() as p:
     page.on('requestfinished', lambda request: pending.discard(request))
     page.on('requestfailed', lambda request: (pending.discard(request), failed.append({'path':urlsplit(request.url).path,'error':request.failure})))
     page.on('pageerror', lambda error: errors.append(str(error)))
+    # Katalog gövdesi için iki 20 saniyelik deneme ve arayüzün işleme payı.
+    readiness=NativePageReadiness(page,BASE,timeout=45000)
     try:
         for locale in args.locales:
             response = page.goto(BASE + '/?page=categories&lang=' + locale)
             assert response.status == 200, (locale, response.status)
-            page.wait_for_load_state('networkidle')
+            readiness.wait()
+            assert page.locator('#root-links a').count()>0,('catalog-ui',locale)
             assert page.locator('#language').input_value() == locale, locale
             expected = 'rtl' if locale in ['ar', 'fa'] else 'ltr'
             assert page.locator('html').get_attribute('dir') == expected, locale
@@ -53,9 +57,10 @@ with sync_playwright() as p:
             assert document.status==200,('metadata',locale,document.status)
             title=re.search(r'<title>(.*?)</title>',document.text()).group(1)
             assert store_copy[locale]['slogan']in html.unescape(title),('adult-metadata',locale,title)
-            page.goto(BASE+'/?lang='+locale);page.wait_for_load_state('networkidle')
+            page.goto(BASE+'/?lang='+locale);readiness.wait()
+            assert page.locator('#root-links a').count()>0,('home-catalog-ui',locale)
             assert store_copy[locale]['slogan']in page.title(),('client-adult-metadata',locale,page.title())
-            results.append({'locale': locale, 'status': response.status, 'selected': True, 'direction': expected,'adultMetadata':True,'clientAdultMetadata':True})
+            results.append({'locale': locale, 'status': response.status, 'selected': True, 'direction': expected,'adultMetadata':True,'clientAdultMetadata':True,'catalogUiReady':True})
             print(json.dumps(results[-1]), flush=True)
             missing = page.evaluate('() => window.__nativeTranslationErrors')
             if missing: print(json.dumps({'missingTranslation': locale, 'source': missing}), flush=True)
@@ -69,6 +74,6 @@ with sync_playwright() as p:
         context.close()
         browser.close()
 request=urllib.request.Request(BASE+'/api/catalog');observed=json.load(urllib.request.urlopen(request,context=ssl._create_unverified_context()if BASE.startswith('https://127.0.0.1')else ssl.create_default_context(),timeout=30));catalog=observed.get('catalog',observed)
-report = {'locales': results, 'pageErrors': len(errors), 'catalogProductsObserved':len(catalog['products'])}
+report = {'base':BASE,'locales': results, 'pageErrors': len(errors), 'catalogProductsObserved':len(catalog['products']),'readiness':'critical_requests_and_rendered_ui','optionalFxObserved':readiness.optional_observed}
 (ROOT / ('.local/native-languages'+('' if scope=='local' else '-'+scope)+'.json')).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf8')
 print(json.dumps(report, ensure_ascii=False))
