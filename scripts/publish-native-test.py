@@ -8,6 +8,7 @@ import argparse,hashlib,importlib.util,io,json,re,secrets,subprocess,sys,time,zi
 from pathlib import Path
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 ROOT=Path(__file__).resolve().parent.parent;sys.dont_write_bytecode=True
+from native_marketplace_acceptance import marketplace_package,marketplace_acceptance
 spec=importlib.util.spec_from_file_location('legacy_publish',ROOT/'scripts/publish-php-test.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 REPORT=ROOT/'.local/native-stage-deployment.json';DENY=b'Options -Indexes\nRequire all denied\n'
 
@@ -52,6 +53,9 @@ def home_proof(suffix,release,base):
  checksum=hashlib.sha256((ROOT/'scripts/test-native-home-browser.py').read_bytes()).hexdigest()
  if len(rows)!=2 or {row.get('engine')for row in rows}!={'chromium','webkit'}or any(row.get('base')!=base or row.get('release')!=release or row.get('pageErrors')or row.get('prototype')or row.get('scriptSha256')!=checksum or not all(row.get(key)is True for key in required)for row in rows):raise ValueError('HOME_EXPERIENCE_ACCEPTANCE_REQUIRED')
 def own_local_proof(package):
+ if marketplace_package(ROOT,package):
+  marketplace_acceptance(ROOT,'local',package['release'],'https://127.0.0.1:3188/test',(ROOT/'.local/native-stage-package.json').stat().st_mtime)
+  return
  path=ROOT/'.local/native-browser-mount-local.json'
  if not path.is_file():raise ValueError('LOCAL_MOUNT_ACCEPTANCE_REQUIRED')
  results=json.loads(path.read_text('utf8'))
@@ -101,7 +105,7 @@ def prepare():
  archive=Path(package['archive']);base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
  if not archive.resolve().is_relative_to(base) or archive.stat().st_size>15000000 or hashlib.sha256(archive.read_bytes()).hexdigest()!=package['sha256']:raise ValueError('PACKAGE_INVALID')
  if not p.panel.domain_owned(p.api('list_domains',module='DomainInfo')):raise ValueError('DOMAIN_OWNER_MISMATCH')
- state=json.loads(p.STATE.read_text('utf8'));values=p.publisher.env_values();ftp=p.publisher.connect(values);main=p.fingerprint(ftp);token=secrets.token_hex(32);helper='/test/__native_install_'+secrets.token_hex(12)+'.php';payload='/test/app/native-payload-'+package['release']+'.zip';preview='/test/native-preview-'+secrets.token_hex(8);report={'release':package['release'],'mainBefore':main,'activated':False,'preview':preview,'phase':'preparing'}
+ state=json.loads(p.STATE.read_text('utf8'));values=p.publisher.env_values();ftp=p.publisher.connect(values);main=p.fingerprint(ftp);token=secrets.token_hex(32);helper='/test/__native_install_'+secrets.token_hex(12)+'.php';payload='/test/app/native-payload-'+package['release']+'.zip';preview='/test/native-preview-'+secrets.token_hex(8);report={'release':package['release'],'mainBefore':main,'activated':False,'preview':preview,'phase':'preparing'};report['acceptanceProfile']='marketplace-returns-v1'if marketplace_package(ROOT,package)else'legacy-v1'
  route_before=route_preview=route_during=None
  try:
   if json.loads(p.read(ftp,'/test/app/owner.json'))['owner']!=state['owner']:raise ValueError('TEST_OWNER_MISMATCH')
@@ -151,20 +155,24 @@ def prepare():
    report['mainUnchanged']=p.fingerprint(ftp)==main;report['installerRemoved']=helper.rsplit('/',1)[1]not in {e['name'] for e in p.publisher.entries(ftp,'/test')};p.persist(REPORT,report)
   finally:ftp.close()
 def activate():
- report=json.loads(REPORT.read_text('utf8'));proof=json.loads((ROOT/'.local/native-browser-mount-preview.json').read_text('utf8'));expected='https://sexogate.com'+report['preview']
- if len(proof)!=2 or any(r['base']!=expected or r.get('release')!=report['release']or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
- adult_proof('adult-preview',report['release'],expected)
- storefront_proof('polish-preview',report['release'],expected)
- first_paint_proof('paint-preview',report['release'],expected)
- selection_proof('variants-preview',report['release'],expected)
- cart_actions_proof('preview',report['release'],expected)
- categories_proof('preview',report['release'],expected)
- home_proof('preview',report['release'],expected)
- if report['installation'].get('products'):
-  catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
-  if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')
- language_path=ROOT/'.local/native-languages-mount-preview.json';languages=json.loads(language_path.read_text('utf8'))
- if language_path.stat().st_mtime<REPORT.stat().st_mtime or languages.get('base')!=expected or languages.get('release')!=report['release']or not languages.get('finalized')or languages.get('scriptSha256')!=hashlib.sha256((ROOT/'scripts/test-native-languages.py').read_bytes()).hexdigest()or len(languages.get('clientSwitches',[]))!=3 or any(not all(row.get(key)for key in ['selected','clientMetadata','catalogUiReady'])for row in languages.get('clientSwitches',[]))or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('PREVIEW_LANGUAGE_ACCEPTANCE_REQUIRED')
+ report=json.loads(REPORT.read_text('utf8'));expected='https://sexogate.com'+report['preview']
+ if report.get('acceptanceProfile')=='marketplace-returns-v1':
+  marketplace_acceptance(ROOT,'preview',report['release'],expected,REPORT.stat().st_mtime)
+ else:
+  proof=json.loads((ROOT/'.local/native-browser-mount-preview.json').read_text('utf8'))
+  if len(proof)!=2 or any(r['base']!=expected or r.get('release')!=report['release']or r['adminRoutes']<33 or r['publicRoutes']<9 or r['pageErrors'] or r['externalRequests'] for r in proof):raise ValueError('PREVIEW_BROWSER_ACCEPTANCE_REQUIRED')
+  adult_proof('adult-preview',report['release'],expected)
+  storefront_proof('polish-preview',report['release'],expected)
+  first_paint_proof('paint-preview',report['release'],expected)
+  selection_proof('variants-preview',report['release'],expected)
+  cart_actions_proof('preview',report['release'],expected)
+  categories_proof('preview',report['release'],expected)
+  home_proof('preview',report['release'],expected)
+  if report['installation'].get('products'):
+   catalog=json.loads((ROOT/'.local/native-catalog-preview.json').read_text('utf8'))
+   if catalog.get('release')!=report['release']or catalog.get('base')!=expected or catalog.get('products')!=report['installation']['products']or not catalog.get('idempotent')or not catalog.get('privateDrafts'):raise ValueError('PREVIEW_CATALOG_ACCEPTANCE_REQUIRED')
+  language_path=ROOT/'.local/native-languages-mount-preview.json';languages=json.loads(language_path.read_text('utf8'))
+  if language_path.stat().st_mtime<REPORT.stat().st_mtime or languages.get('base')!=expected or languages.get('release')!=report['release']or not languages.get('finalized')or languages.get('scriptSha256')!=hashlib.sha256((ROOT/'scripts/test-native-languages.py').read_bytes()).hexdigest()or len(languages.get('clientSwitches',[]))!=3 or any(not all(row.get(key)for key in ['selected','clientMetadata','catalogUiReady'])for row in languages.get('clientSwitches',[]))or len(languages['locales'])!=11 or languages['pageErrors'] or any(row['status']!=200 or not row['selected']or not row.get('adultMetadata')or not row.get('clientAdultMetadata')or not row.get('catalogUiReady')for row in languages['locales']):raise ValueError('PREVIEW_LANGUAGE_ACCEPTANCE_REQUIRED')
  ftp=p.publisher.connect(p.publisher.env_values());changed=False
  try:
   if p.fingerprint(ftp)!=report['mainBefore']:raise ValueError('MAIN_CHANGED_SINCE_PREPARE')

@@ -7,6 +7,12 @@
  * Açıklama   : Yalnız doğrulanmış test paketi için süreli kurucu; özel alan ve MFA yöneticisini hazırlar.
  */
 declare(strict_types=1);
+function sexogateNativeProductProvenance(array $product,string $catalogOrigin):bool{
+ $origin=$product['catalogOrigin']??'';$vendor=$product['sourceVendor']??'';$id=$product['id']??'';
+ if(!in_array($catalogOrigin,['sexogate-suppliers-v1','sexogate-catalog-v2'],true)||!is_string($origin)||!is_string($vendor)||!is_string($id))return false;
+ if($origin==='sexogate-suppliers-v1'){$prefix=['xshopum'=>'xsh','liona'=>'lio','sistina'=>'sis'][$vendor]??null;return $prefix!==null&&preg_match('/^sg_'.$prefix.'_[a-f0-9]{16}$/D',$id)===1;}
+ return $catalogOrigin==='sexogate-catalog-v2'&&$origin==='sexogate-marketplaces-v1'&&$vendor==='trendyol'&&preg_match('/^sg_ty_[a-f0-9]{16}$/D',$id)===1&&is_string($product['code']??null)&&str_starts_with($product['code'],'seo-')&&strlen($product['code'])>4;
+}
 function sexogateNativeCategoryTree(array $categories,array $products):bool{
  $roots=['sg_toys','sg_lingerie','sg_couples','sg_accessories','sg_care','sg_gifts'];$locales=['tr','en','ru','ar','de','az','kk','tk','uz','ky','fa'];$seen=[];$rootCount=0;
  if(count($categories)<6||count($categories)>200)return false;
@@ -21,6 +27,31 @@ function sexogateNativeCategoryTree(array $categories,array $products):bool{
   foreach($ids as $id)if(!is_string($id)||!array_key_exists($id,$seen)||($seen[$id]!==null&&!in_array($seen[$id],$ids,true)))return false;
  }
  return true;
+}
+function sexogateNativeManifestValid(array $manifest,string $release,int $archiveFiles):bool{
+ if(($manifest['schema']??null)!==1||!preg_match('/^[a-f0-9]{24}$/D',$release)||($manifest['release']??null)!==$release||($manifest['checkoutEnabled']??null)!==false||($manifest['previewOnly']??null)!==true||($manifest['domain']??null)!=='sexogate.com'||($manifest['mount']??null)!=='/test')return false;
+ $count=$manifest['products']??null;$files=$manifest['files']??null;$dataset=$manifest['dataset']??null;
+ if(!is_int($count)||$count<0||$count>20000||!is_array($files)||!$files||$archiveFiles<2||$archiveFiles>5000||count($files)+1!==$archiveFiles)return false;
+ if($count===0?$dataset!==null:(!is_string($dataset)||preg_match('/^[a-f0-9]{32}$/D',$dataset)!==1))return false;
+ foreach($files as $name=>$hash)if(!is_string($name)||!preg_match('~^(?:public|private|deploy)/[A-Za-z0-9_./-]+$~D',$name)||str_contains($name,'..')||in_array('.',explode('/',$name),true)||str_contains($name,'//')||!is_string($hash)||preg_match('/^[a-f0-9]{64}$/D',$hash)!==1)return false;
+ ksort($files,SORT_STRING);$payload='';foreach($files as $name=>$hash)$payload.=$name."\0".$hash."\0";
+ $fingerprint=hash('sha256',$payload);
+ return is_string($manifest['fingerprint']??null)&&hash_equals($fingerprint,$manifest['fingerprint'])&&substr($fingerprint,0,24)===$release;
+}
+function sexogateNativeCatalogValid(array $catalog,array $manifest):bool{
+ try{
+  $products=$catalog['products']??null;$categories=$catalog['categories']??null;$count=$manifest['products']??null;
+  if(!is_int($count)||$count<0||$count>20000||($catalog['brand']['name']??null)!=='SEXOGATE'||!is_array($products)||!array_is_list($products)||count($products)!==$count||!is_array($categories)||!array_is_list($categories))return false;
+  if($count===0)return $categories===[];
+  $origin=$catalog['catalogOrigin']??null;
+  if(!in_array($origin,['sexogate-suppliers-v1','sexogate-catalog-v2'],true)||($origin==='sexogate-suppliers-v1'&&$count!==2194)||($catalog['dataset']??null)!==($manifest['dataset']??null)||!is_string($manifest['dataset']??null)||preg_match('/^[a-f0-9]{32}$/D',$manifest['dataset'])!==1||!sexogateNativeCategoryTree($categories,$products))return false;
+  $ids=[];$skus=[];
+  foreach($products as $product){
+   if(!is_array($product)||!is_string($product['id']??null)||!is_string($product['code']??null)||$product['code']===''||!sexogateNativeProductProvenance($product,$origin)||isset($ids[$product['id']])||isset($skus[$product['code']])||($product['published']??null)!==false||($product['hidden']??null)!==true||($product['stockKnown']??null)!==false||!array_key_exists('stockQuantity',$product)||$product['stockQuantity']!==null)return false;
+   $ids[$product['id']]=true;$skus[$product['code']]=true;
+  }
+  return true;
+ }catch(Throwable $error){return false;}
 }
 ini_set('display_errors','0');header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Robots-Tag: noindex,nofollow');
 try{
@@ -38,8 +69,8 @@ try{
  $real=realpath($home);if($real===false||str_starts_with($real.'/',rtrim($doc,'/').'/'))throw new RuntimeException('private_inside_webroot');
  foreach(['releases','state']as $name){if(is_link($home.'/'.$name))throw new RuntimeException('private_symlink');if(!is_dir($home.'/'.$name)&&!mkdir($home.'/'.$name,0700))throw new RuntimeException('private_create_failed');}
  $archive=__DIR__.'/app/native-payload-'.$id.'.zip';if(!hash_equals($request['sha256'],hash_file('sha256',$archive)))throw new RuntimeException('archive_hash_mismatch');
- $zip=new ZipArchive();if($zip->open($archive)!==true||$zip->numFiles>2000)throw new RuntimeException('archive_unavailable');
- $manifest=json_decode($zip->getFromName('deployment-manifest.json'),true,512,JSON_THROW_ON_ERROR);if(($manifest['release']??null)!==$id||($manifest['checkoutEnabled']??null)!==false||!in_array($manifest['products']??null,[0,2194],true)||($manifest['previewOnly']??null)!==true)throw new RuntimeException('manifest_invalid');
+ $zip=new ZipArchive();if($zip->open($archive)!==true||$zip->numFiles>5000)throw new RuntimeException('archive_unavailable');
+ $manifest=json_decode($zip->getFromName('deployment-manifest.json'),true,512,JSON_THROW_ON_ERROR);if(!is_array($manifest)||!sexogateNativeManifestValid($manifest,$id,$zip->numFiles))throw new RuntimeException('manifest_invalid');
  $release=$home.'/releases/'.$id;if(is_link($release))throw new RuntimeException('release_symlink');$fresh=!is_dir($release);if($fresh&&!mkdir($release,0700))throw new RuntimeException('release_create_failed');$total=0;$seen=[];
  for($i=0;$i<$zip->numFiles;$i++){
   $item=$zip->statIndex($i);$name=$item['name'];$zip->getExternalAttributesIndex($i,$system,$attributes);
@@ -52,12 +83,7 @@ try{
  }
  $zip->close();if(count($seen)!==count($manifest['files'])+1)throw new RuntimeException('archive_incomplete');
  $catalog=json_decode((string)file_get_contents($release.'/private/catalog.json'),true,512,JSON_THROW_ON_ERROR);
- if(($catalog['brand']['name']??null)!=='SEXOGATE'||count($catalog['products']??[])!==$manifest['products'])throw new RuntimeException('unexpected_catalog_data');
- if($manifest['products']===0){if($catalog['categories']!==[])throw new RuntimeException('unexpected_catalog_data');}
- else{
-  if(($catalog['catalogOrigin']??null)!=='sexogate-suppliers-v1'||($catalog['dataset']??null)!==($manifest['dataset']??null)||!preg_match('/^[a-f0-9]{32}$/D',$manifest['dataset']??'')||!sexogateNativeCategoryTree($catalog['categories'],$catalog['products']))throw new RuntimeException('catalog_provenance_invalid');$ids=[];$skus=[];
-  foreach($catalog['products']as $product){if(!preg_match('/^sg_(?:xsh|lio|sis)_[a-f0-9]{16}$/D',$product['id']??'')||isset($ids[$product['id']])||isset($skus[$product['code']])||($product['catalogOrigin']??'')!=='sexogate-suppliers-v1'||!in_array($product['sourceVendor']??'',['xshopum','liona','sistina'],true)||($product['published']??true)!==false||($product['hidden']??false)!==true||($product['stockKnown']??true)!==false||($product['stockQuantity']??null)!==null)throw new RuntimeException('catalog_provenance_invalid');$ids[$product['id']]=true;$skus[$product['code']]=true;}
- }
+ if(!is_array($catalog)||!sexogateNativeCatalogValid($catalog,$manifest))throw new RuntimeException('catalog_provenance_invalid');
  $bank=json_decode((string)file_get_contents($release.'/private/blog-bank.json'),true,512,JSON_THROW_ON_ERROR);
  foreach($bank['articles']??[]as $article)if(!str_starts_with($article['id']??'','sexogate-'))throw new RuntimeException('unexpected_article_data');
  $runtime=['privateRoot'=>$release.'/private','storageRoot'=>$home.'/state','mediaRoot'=>$home.'/media'];

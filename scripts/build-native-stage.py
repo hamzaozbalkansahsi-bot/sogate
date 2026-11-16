@@ -50,17 +50,25 @@ for path in sorted((ROOT/'native-store/theme').rglob('*')):
  if path.is_file():theme_hash.update(path.read_bytes())
 for path in sorted((ROOT/'native-store/storefront').glob('*')):
  if path.is_file():theme_hash.update(path.read_bytes())
+for path in sorted((ROOT/'native-store/marketplaces').glob('*')):
+ if path.is_file():theme_hash.update(path.read_bytes())
+for path in sorted((ROOT/'native-store/returns').glob('*')):
+ if path.is_file():theme_hash.update(path.read_bytes())
 for path in [ROOT/'native-store/notifications/composer.json',ROOT/'native-store/notifications/composer.lock']:
  theme_hash.update(path.read_bytes())
 for path in [ROOT/'native-store/source-manifest.json',ROOT/'scripts/build-native-stage.py',*sorted((ROOT/'native-store/deploy').glob('*'))]:
  if path.is_file():theme_hash.update(path.read_bytes())
 version=theme_hash.hexdigest()[:16]
-selection_file=ROOT/'.local/native-catalog-selection.json';catalog_count=0;dataset=None
+selection_file=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native-marketplace-selection.json').is_file()else'.local/native-catalog-selection.json');catalog_count=0;dataset=None
 if selection_file.is_file():
- selection=json.loads(selection_file.read_text('utf8'));prepared=Path(selection['path']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115').resolve()
+ selection=json.loads(selection_file.read_text('utf8'));prepared=Path(selection['path']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/'+('marketplace-catalog-20261116'if selection_file.name=='native-marketplace-selection.json'else'native-catalog-20261115')).resolve()
  if not prepared.is_relative_to(allowed) or hashlib.sha256((prepared/'catalog-data.json').read_bytes()).hexdigest()!=selection['sha256']:raise RuntimeError('CATALOG_SELECTION_INVALID')
  data=json.loads((prepared/'catalog-data.json').read_text('utf8'));catalog_count=len(data['products']);dataset=data['dataset']
- if data['catalogOrigin']!='sexogate-suppliers-v1' or catalog_count!=2194 or len(set(p['id']for p in data['products']))!=catalog_count or any(p['published']or not p['hidden']or p['stockKnown']or p['stockQuantity']is not None for p in data['products']):raise RuntimeError('CATALOG_PROVENANCE_INVALID')
+ if data['catalogOrigin']not in ['sexogate-suppliers-v1','sexogate-catalog-v2'] or catalog_count!=selection['products'] or len(set(p['id']for p in data['products']))!=catalog_count or any(p['published']or not p['hidden']or p['stockKnown']or p['stockQuantity']is not None for p in data['products']):raise RuntimeError('CATALOG_PROVENANCE_INVALID')
+ if data['catalogOrigin']=='sexogate-catalog-v2':
+  original=json.loads((Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115/prepared/catalog-data.json')).read_text('utf8'))
+  if data['products'][:2194]!=original['products']or catalog_count!=2194+selection['newProducts']or any(p['catalogOrigin']!='sexogate-marketplaces-v1'or p['sourceVendor']!='trendyol'or not re.fullmatch('sg_ty_[a-f0-9]{16}',p['id'])or not str(p['code']).startswith('seo-')for p in data['products'][2194:]):raise RuntimeError('MARKETPLACE_PROVENANCE_INVALID')
+ elif catalog_count!=2194:raise RuntimeError('LEGACY_CATALOG_COUNT_CHANGED')
  catalog_path=bundle/'private/catalog.json';catalog=json.loads(catalog_path.read_text('utf8'));catalog.update(data);catalog_path.write_text(json.dumps(catalog,ensure_ascii=False,separators=(',',':')),encoding='utf8')
  shutil.copytree(prepared/'catalog-workbench',bundle/'private/catalog-workbench');shutil.copy2(prepared/'catalog-sources.json',bundle/'private/catalog-sources.json')
  shutil.copy2(prepared/'catalog-spec-labels.json',bundle/'private/catalog-spec-labels.json')
@@ -75,6 +83,11 @@ installed=json.loads((vendor/'composer/installed.json').read_text('utf8'))['pack
 if {p['name']:p['version']for p in locked}!={p['name']:p['version']for p in installed}:raise RuntimeError('NOTIFICATION_VENDOR_LOCK_MISMATCH')
 shutil.copytree(vendor,bundle/'private/notifications-vendor')
 subprocess.run(['node',str(ROOT/'native-store/storefront/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+if selection_file.name=='native-marketplace-selection.json':subprocess.run(['node',str(ROOT/'native-store/marketplaces/apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+returns_vendor=ROOT/'native-store/returns/vendor'
+if any(p.is_symlink()for p in returns_vendor.rglob('*')):raise RuntimeError('RETURN_VENDOR_LINK_REJECTED')
+shutil.copytree(returns_vendor,bundle/'private/returns-vendor')
+subprocess.run(['node',str(ROOT/'native-store/returns/build.mjs'),str(bundle),version],check=True,cwd=ROOT)
 subprocess.run(['node',str(ROOT/'native-store/deploy/apply-store-theme.mjs'),str(bundle),version],check=True,cwd=ROOT)
 admin=bundle/'public/admin.html'
 if admin.is_file():admin.write_text(admin.read_text('utf8').replace('/sexogate-catalog.js"','/sexogate-catalog.js?v='+version+'"').replace('/sexogate-catalog.css"','/sexogate-catalog.css?v='+version+'"'),encoding='utf8')

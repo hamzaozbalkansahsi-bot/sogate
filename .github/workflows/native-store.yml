@@ -39,6 +39,13 @@ jobs:
       - run: php scripts/test-native-notifications.php --source
       - run: composer audit --working-dir=native-store/notifications --locked --no-interaction --no-plugins
       - run: php scripts/test-native-storefront-content.php
+      - run: composer install --working-dir=native-store/returns --no-dev --no-interaction --no-plugins --no-scripts --prefer-dist
+      - run: composer audit --working-dir=native-store/returns --locked --no-interaction --no-plugins
+      - run: php scripts/test-native-returns-php.php --source
+      - run: php scripts/test-native-return-ordering.php --source
+      - run: python scripts/test-native-marketplaces.py
+      - run: python scripts/test-native-marketplace-acceptance.py
+      - run: node --check native-store/returns/ui.js && node --check native-store/returns/admin.js && node --check native-store/returns/build.mjs
       - run: node --check native-store/catalog/admin-catalog.js && node --check native-store/catalog/apply.mjs && node --check native-store/theme/age-gate.js
       - run: php -l native-store/catalog/catalog.php && php -l native-store/deploy/dispatcher.php && php -l native-store/deploy/install.php && php -l native-store/deploy/maintenance.php
       - run: php -l native-store/storefront/variants.php && php -l native-store/storefront/variant-build.php

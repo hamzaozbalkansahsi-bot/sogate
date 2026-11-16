@@ -8,7 +8,15 @@ import hashlib,importlib.util,io,json,re,secrets,time,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 spec=importlib.util.spec_from_file_location('publisher',ROOT/'scripts/publish-php-test.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-selection=json.loads((ROOT/'.local/native-catalog-selection.json').read_text('utf8'));prepared=Path(selection['path']);media=Path(selection['mediaRoot']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115/media').resolve();assert media==allowed
+selection_path=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native-marketplace-selection.json').is_file()else'.local/native-catalog-selection.json')
+selection=json.loads(selection_path.read_text('utf8'));prepared=Path(selection['path']);allowed_base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
+media_roots=[Path(selection['mediaRoot']).resolve()]+([Path(selection['legacyMediaRoot']).resolve()]if selection.get('legacyMediaRoot')else[])
+assert all(p in [allowed_base/'native-catalog-20261115/media',allowed_base/'marketplace-catalog-20261116/media']for p in media_roots)
+def media_file(name):
+ assert re.fullmatch(r'[a-f0-9]{64}\.(jpg|png|webp)',name)
+ matches=[folder/name for folder in media_roots if(folder/name).is_file()and not(folder/name).is_symlink()]
+ assert matches,'MEDIA_FILE_MISSING'
+ return matches[0]
 rows=json.loads((prepared/'media-manifest.json').read_text('utf8'));checkpoint=ROOT/'.local/native-catalog-media-upload.json';done=set(json.loads(checkpoint.read_text('utf8')).get('verified',[]))if checkpoint.is_file()else set();pending=[r for r in rows if r['file']not in done]
 ftp=p.publisher.connect(p.publisher.env_values());before=p.fingerprint(ftp);token=secrets.token_hex(32);state=json.loads(p.STATE.read_text('utf8'));helper='/test/__native_maintenance_'+secrets.token_hex(12)+'.php';record='/test/app/native-maintenance-request.json';route_before=route_during=None;payload=None
 try:
@@ -18,10 +26,10 @@ try:
  while pending:
   batch=[];size=0
   while pending and len(batch)<100 and (not batch or size+pending[0]['bytes']<7500000):
-   row=pending.pop(0);path=media/row['file'];assert re.fullmatch(r'[a-f0-9]{64}\.(jpg|png|webp)',path.name)and not path.is_symlink()and hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'];batch.append(row);size+=row['bytes']
+   row=pending.pop(0);path=media_file(row['file']);assert re.fullmatch(r'[a-f0-9]{64}\.(jpg|png|webp)',path.name)and not path.is_symlink()and hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'];batch.append(row);size+=row['bytes']
   output=io.BytesIO()
   with zipfile.ZipFile(output,'w',zipfile.ZIP_STORED)as archive:
-   for row in batch:archive.write(media/row['file'],row['file'])
+   for row in batch:archive.write(media_file(row['file']),row['file'])
   body=output.getvalue();assert len(body)<9000000;identifier=secrets.token_hex(12);payload='/test/app/native-media-'+identifier+'.zip';p.store(ftp,payload,body)
   for attempt in range(12):
    status,raw,_=p.get(helper,{'X-Native-Maintenance':token,'Content-Type':'application/json'},json.dumps({'action':'media','id':identifier,'sha256':hashlib.sha256(body).hexdigest()}).encode())

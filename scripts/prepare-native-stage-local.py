@@ -20,13 +20,15 @@ runtime={'privateRoot':private.as_posix(),'storageRoot':state.as_posix(),'mediaR
 php_literal=lambda value: "'"+str(value).replace('\\','/').replace("'","\\'")+"'"
 (release/'nodeno-runtime.php').write_text('<?php return ['+','.join(php_literal(k)+'=>'+php_literal(v) for k,v in runtime.items())+'];',encoding='utf8')
 (home/'active.json').write_text(json.dumps({'release':package['release']}),encoding='utf8');shutil.copy2(release/'deploy/worker.php',home/'worker.php');(private/'cache').mkdir(exist_ok=True);(home/'media').mkdir()
-selection=ROOT/'.local/native-catalog-selection.json'
+selection=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native-marketplace-selection.json').is_file()else'.local/native-catalog-selection.json')
 if package.get('products')and selection.is_file():
  import os
- source=Path(json.loads(selection.read_text('utf8'))['mediaRoot']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115/media').resolve()
- assert source==allowed
- for file in source.iterdir():
-  if file.is_file()and not file.is_symlink():os.link(file,home/'media'/file.name)
+ media_selection=json.loads(selection.read_text('utf8'));allowed_base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
+ roots=[media_selection['mediaRoot']]+([media_selection['legacyMediaRoot']]if media_selection.get('legacyMediaRoot')else[])
+ for media_path in roots:
+  source=Path(media_path).resolve();assert source in [(allowed_base/'native-catalog-20261115/media'),(allowed_base/'marketplace-catalog-20261116/media')]
+  for file in source.iterdir():
+   if file.is_file()and not file.is_symlink()and not(home/'media'/file.name).exists():os.link(file,home/'media'/file.name)
 web=base/'web';(web/'test').mkdir(parents=True)
 entry="<?php define('SEXOGATE_NATIVE_MOUNT','/test');define('SEXOGATE_NATIVE_RELEASE',"+php_literal(package['release'])+");require "+php_literal(release/'deploy/dispatcher.php')+';'
 (web/'test/index.php').write_text(entry,encoding='utf8')
