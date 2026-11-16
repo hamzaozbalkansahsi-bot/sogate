@@ -46,3 +46,8 @@ Kapak ve incelenen görsel sıraları sıfırdan başlar. `0` ilk karedir; `0,2`
 İlk18 kapağın ardından640 aday kapak ayrıca incelendi. Yeni aday62d6c5ffd241a891832db8f1,2.194 yönetim kaydından468 ürünü görünür yapıyor;1.726 taslak kalıyor. Altıana+44alt olmak üzere50 kategori tanımı,bu ürünlerle dolu18 alt kategori var. Boş alt kategoriler vitrinde gösterilmez. Kaynak172 kategori özel inceleme ekranında korunur. Yönetim yükleme penceresindeki “Vitrin450”,bu işlemde yeni yayımlanan sayısıdır;önceden yayımlanan18 ile toplam468 olur.
 
 Yeni veri sürümü yüklenirken yalnız ilk kaydından beri değişmemiş sürüm1 taslağın kapak onayı yükseltilir. Elle değiştirilen fiyat/metin ve sonradan gizlenen ürünler korunur. Önizleme/aktif test aynı veritabanını kullanır; ürün yükleme veri değişikliğidir, uygulama giriş rollback'i bunu geri almaz. Önceki şifreli veritabanı yedeği ayrıca saklanır. Son kanıt/yayın durumu [katalog genişletme kaydı](native-catalog-expansion.md) ve [ilerlemededir](progress.md). Yeni adayın bütün tedarikçi,üretici,belge,galeri ve satış kabulü tamamlandı denmez.
+
+
+## 16 Kasım — zorunlu ürün seçimi
+
+Beden/renk alanları artık yalnız açıklama metni değildir. Sepete eklerken müşteri seçimi, farklı seçeneklere ayrı satır, sunucu doğrulaması ve sipariş snapshot desteği eklendi. Bu değişiklik ayrı fiziksel stok kaydı, tedarikçi miktarı veya canlı ödeme kabulü oluşturmaz. İşleyiş ve güncel test/yayın durumu [seçenek seçimi kaydındadır](native-variant-selection.md).

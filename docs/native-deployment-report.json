@@ -1,1234 +1,1129 @@
 {
-  "checkedAt": "2026-11-15T20:43:10.398237+00:00",
-  "release": "554e78f543311a4d7e250b89",
+  "checkedAt": "2026-11-16T00:57:03.890098+00:00",
+  "release": "c4788429f85aec52b435c76e",
+  "previousRelease": "554e78f543311a4d7e250b89",
   "url": "https://sexogate.com/test",
   "adminUrl": "https://sexogate.com/test/yonetim",
   "activated": true,
+  "phase": "active_verified",
   "mainUnchanged": true,
   "runtime": "PHP 8.3.36 / SQLite WAL; no server Node process",
   "products": 468,
+  "sourceProducts": 2194,
   "categories": 50,
   "checkoutEnabled": false,
-  "catalogMediaAcceptance": "reviewed_cover_preview_only_sales_closed",
+  "health": {
+    "status": "preview",
+    "runtime": "php",
+    "database": true,
+    "release": "c4788429f85aec52b435c76e",
+    "products": 468,
+    "sourceProducts": 2194,
+    "checkoutEnabled": false,
+    "catalogReady": true,
+    "strictMediaHealth": "sales_and_country_acceptance_pending",
+    "basePath": "/test"
+  },
+  "package": {
+    "sha256": "f5b250a5985108b0c1649fd99fc13193bab0e9117920b9a1850b804f52961572",
+    "bytes": 8509746,
+    "files": 480,
+    "dataset": "d347cf6111d41f5b243e7a3a42f2a37d"
+  },
   "sourceSnapshot": {
     "files": 771,
     "byteIdentical": 768,
     "syntheticFixtureExceptions": 3,
-    "brandAssets": 13,
     "donorCatalogRecords": 0
   },
-  "coreRegression": {
-    "passed": 153,
-    "files": 34,
-    "evidence": "native-core-tests-final.log",
-    "sameProtectedSource": true
+  "validation": {
+    "javascriptAndArtifactTests": 28,
+    "phpSelectionChecks": 23,
+    "phpCatalogChecks": 18,
+    "phpContentChecks": 14,
+    "installerChecks": 22,
+    "bodyDeadlineBrowserCases": 4,
+    "actualStorefrontConnectionResetCases": 2,
+    "isolatedOrderViewEngines": 2,
+    "testHeaderRedactionChecks": 6,
+    "readinessTimingFixtures": 6,
+    "protectedCoreRegression": {
+      "tests": 153,
+      "files": 34,
+      "previousRunWithSameSourceManifest": true
+    },
+    "localeCheckpointResume": {
+      "onlyMissingLocaleExecuted": true,
+      "sourceHashMismatchRejected": true,
+      "originalDeploymentProofUnchanged": true,
+      "realLocalBrowserUsed": true,
+      "fixtureOnly": true
+    }
   },
-  "urlRelocationTests": 7,
-  "installerChecks": 22,
   "proofs": {
-    "localFull": [
-      {
-        "engine": "chromium",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "full-navigation",
-        "base": "https://127.0.0.1:3188/test",
-        "adminRoutes": 33,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      },
-      {
-        "engine": "webkit",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "full-navigation",
-        "base": "https://127.0.0.1:3188/test",
-        "adminRoutes": 33,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      }
-    ],
-    "previewFull": [
-      {
-        "engine": "chromium",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "full-navigation",
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "adminRoutes": 33,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      },
-      {
-        "engine": "webkit",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "full-navigation",
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "adminRoutes": 33,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      }
-    ],
-    "remoteSmoke": [
-      {
-        "engine": "chromium",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "release-smoke",
-        "base": "https://sexogate.com/test",
-        "adminRoutes": 1,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      },
-      {
-        "engine": "webkit",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "release-smoke",
-        "base": "https://sexogate.com/test",
-        "adminRoutes": 1,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      }
-    ],
-    "localReadinessSmoke": [
-      {
-        "engine": "chromium",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "release-smoke",
-        "base": "https://127.0.0.1:3188/test",
-        "adminRoutes": 1,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      },
-      {
-        "engine": "webkit",
-        "release": "554e78f543311a4d7e250b89",
-        "scope": "release-smoke",
-        "base": "https://127.0.0.1:3188/test",
-        "adminRoutes": 1,
-        "publicRoutes": 9,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "mfa": true,
-        "secureCookie": true,
-        "pageErrors": 0,
-        "externalRequests": 0,
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "sourceSnapshotPreserved": true,
-        "domainAndMountRelocated": true
-      }
-    ],
-    "localLanguages": {
-      "locales": [
+    "local": {
+      "navigation": [
         {
-          "locale": "tr",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
+          "engine": "chromium",
+          "release": "c4788429f85aec52b435c76e",
+          "scope": "full-navigation",
+          "base": "https://127.0.0.1:3188/test",
+          "adminRoutes": 33,
+          "publicRoutes": 9,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "mfa": true,
+          "secureCookie": true,
+          "pageErrors": 0,
+          "externalRequests": 0,
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "sourceSnapshotPreserved": true,
+          "domainAndMountRelocated": true
         },
         {
-          "locale": "en",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ru",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ar",
-          "status": 200,
-          "selected": true,
-          "direction": "rtl",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "de",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "az",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "kk",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "tk",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "uz",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ky",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "fa",
-          "status": 200,
-          "selected": true,
-          "direction": "rtl",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
+          "engine": "webkit",
+          "release": "c4788429f85aec52b435c76e",
+          "scope": "full-navigation",
+          "base": "https://127.0.0.1:3188/test",
+          "adminRoutes": 33,
+          "publicRoutes": 9,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "mfa": true,
+          "secureCookie": true,
+          "pageErrors": 0,
+          "externalRequests": 0,
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "sourceSnapshotPreserved": true,
+          "domainAndMountRelocated": true
         }
       ],
-      "pageErrors": 0,
-      "catalogProductsObserved": 468
-    },
-    "previewLanguages": {
-      "locales": [
+      "catalog": {
+        "base": "https://127.0.0.1:3188/test",
+        "products": 2194,
+        "priced": 2151,
+        "priceMissing": 43,
+        "sourceCategories": 172,
+        "storeCategories": 50,
+        "visibleSubcategories": 18,
+        "categoryPageVerified": true,
+        "mediaSamplesVerified": 12,
+        "publishedCovers": 468,
+        "markupPercent": 30,
+        "locales": 11,
+        "idempotent": true,
+        "privateDrafts": true,
+        "sourcePriceIsNotCost": true,
+        "pageErrors": 0,
+        "release": "c4788429f85aec52b435c76e"
+      },
+      "storefront": [
         {
-          "locale": "tr",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "realImagesLoaded": true,
+          "furnitureCopy": false,
+          "alignedCards": true,
+          "stickyOverlap": false,
+          "footerPrivacyEntry": true,
+          "readableFeatures": true,
+          "horizontalRelatedRail": true,
+          "horizontalRecentRail": true,
+          "curtainDurationSeconds": 4.8,
+          "consentRevocation": true,
+          "accountHelperMountedOnce": true,
+          "underlinedLinks": false,
+          "compactImageCampaignCards": 4,
+          "productImageBounds": true,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "pageErrors": 0
         },
         {
-          "locale": "en",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ru",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ar",
-          "status": 200,
-          "selected": true,
-          "direction": "rtl",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "de",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "az",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "kk",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "tk",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "uz",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "ky",
-          "status": 200,
-          "selected": true,
-          "direction": "ltr",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
-        },
-        {
-          "locale": "fa",
-          "status": 200,
-          "selected": true,
-          "direction": "rtl",
-          "adultMetadata": true,
-          "clientAdultMetadata": true
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "realImagesLoaded": true,
+          "furnitureCopy": false,
+          "alignedCards": true,
+          "stickyOverlap": false,
+          "footerPrivacyEntry": true,
+          "readableFeatures": true,
+          "horizontalRelatedRail": true,
+          "horizontalRecentRail": true,
+          "curtainDurationSeconds": 4.8,
+          "consentRevocation": true,
+          "accountHelperMountedOnce": true,
+          "underlinedLinks": false,
+          "compactImageCampaignCards": 4,
+          "productImageBounds": true,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "pageErrors": 0
         }
       ],
-      "pageErrors": 0,
-      "catalogProductsObserved": 468
-    },
-    "localAge": [
-      {
+      "ageAndGuest": [
+        {
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "ageGate": true,
+          "archAndVelvetMotion": true,
+          "reducedMotion": true,
+          "escapeBypassBlocked": true,
+          "keyboardFocus": true,
+          "guestBrowsing": true,
+          "ackSurvivesNavigation": true,
+          "worldMap": false,
+          "furnitureCopy": false,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "footerGap": 83.84375,
+          "iconOnlySocialLinks": 4,
+          "pageErrors": 0
+        },
+        {
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "ageGate": true,
+          "archAndVelvetMotion": true,
+          "reducedMotion": true,
+          "escapeBypassBlocked": true,
+          "keyboardFocus": true,
+          "guestBrowsing": true,
+          "ackSurvivesNavigation": true,
+          "worldMap": false,
+          "furnitureCopy": false,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "footerGap": 83.84375,
+          "iconOnlySocialLinks": 4,
+          "pageErrors": 0
+        }
+      ],
+      "firstHtml": [
+        {
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "serverHtmlCompactCards": 4,
+          "serverLocales": 11,
+          "javascriptDisabled": true,
+          "legacyHero": false,
+          "realImages": true,
+          "widths": [
+            390,
+            1440
+          ],
+          "readiness": "dom_css_fonts_and_campaign_images"
+        },
+        {
+          "base": "https://127.0.0.1:3188/test",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "serverHtmlCompactCards": 4,
+          "serverLocales": 11,
+          "javascriptDisabled": true,
+          "legacyHero": false,
+          "realImages": true,
+          "widths": [
+            390,
+            1440
+          ],
+          "readiness": "dom_css_fonts_and_campaign_images"
+        }
+      ],
+      "languages": {
         "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
+        "scope": "mount-local",
+        "release": "c4788429f85aec52b435c76e",
+        "scriptSha256": "dc7bb614f89cb7cb3286bce4ee826952f81f62429dc3b0d17ac5a99be41b98a6",
+        "locales": [
+          {
+            "locale": "tr",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "en",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ru",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ar",
+            "status": 200,
+            "selected": true,
+            "direction": "rtl",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "de",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "az",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "kk",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "tk",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "uz",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ky",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "fa",
+            "status": 200,
+            "selected": true,
+            "direction": "rtl",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          }
         ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
+        "clientSwitches": [
+          {
+            "locale": "en",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "de",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ar",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          }
+        ],
+        "failedAttempts": [],
+        "attempts": {
+          "tr": 1,
+          "en": 1,
+          "ru": 1,
+          "ar": 1,
+          "de": 1,
+          "az": 1,
+          "kk": 1,
+          "tk": 1,
+          "uz": 1,
+          "ky": 1,
+          "fa": 1,
+          "client-switches": 1
+        },
+        "pageErrors": 0,
+        "finalized": true,
+        "readiness": "critical_requests_and_rendered_ui",
+        "execution": "isolated_locale_entries_and_client_switches",
+        "optionalFxObserved": true,
+        "catalogProductsObserved": 468,
+        "catalogCountSource": "deployment-status"
       },
-      {
+      "variantsAndConsent": {
         "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
+        "scope": "variants-local",
+        "results": [
+          {
+            "engine": "chromium",
+            "scenario": "isolated-selection-consent-and-bulk",
+            "release": "c4788429f85aec52b435c76e",
+            "selectionRequired": true,
+            "sizeColorCartLines": true,
+            "editMergeReload": true,
+            "legacyCartRepair": true,
+            "sourceMatrix": true,
+            "bulkAllItems": true,
+            "bulkCancellation": true,
+            "consentNormalHoverFocus": "brand-burgundy/wine",
+            "widths": [
+              360,
+              390,
+              430,
+              768,
+              1440
+            ],
+            "rtl": true,
+            "realPayment": false,
+            "isolatedCases": [
+              "consent",
+              "cart-options-edit-and-reload",
+              "legacy-cart-and-responsive-dialog",
+              "real-matrix-english",
+              "bulk-all-products",
+              "bulk-cancel",
+              "rtl"
+            ],
+            "teardownErrors": []
+          },
+          {
+            "engine": "webkit",
+            "scenario": "isolated-selection-consent-and-bulk",
+            "release": "c4788429f85aec52b435c76e",
+            "selectionRequired": true,
+            "sizeColorCartLines": true,
+            "editMergeReload": true,
+            "legacyCartRepair": true,
+            "sourceMatrix": true,
+            "bulkAllItems": true,
+            "bulkCancellation": true,
+            "consentNormalHoverFocus": "brand-burgundy/wine",
+            "widths": [
+              360,
+              390,
+              430,
+              768,
+              1440
+            ],
+            "rtl": true,
+            "realPayment": false,
+            "isolatedCases": [
+              "consent",
+              "cart-options-edit-and-reload",
+              "legacy-cart-and-responsive-dialog",
+              "real-matrix-english",
+              "bulk-all-products",
+              "bulk-cancel",
+              "rtl"
+            ],
+            "teardownErrors": []
+          }
+        ]
       }
-    ],
-    "previewAge": [
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
-      },
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
-      }
-    ],
-    "remoteAge": [
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
-      },
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "ageGate": true,
-        "archAndVelvetMotion": true,
-        "reducedMotion": true,
-        "escapeBypassBlocked": true,
-        "keyboardFocus": true,
-        "guestBrowsing": true,
-        "ackSurvivesNavigation": true,
-        "worldMap": false,
-        "furnitureCopy": false,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "footerGap": 83.84375,
-        "iconOnlySocialLinks": 4,
-        "pageErrors": 0
-      }
-    ],
-    "localCatalog": {
-      "base": "https://127.0.0.1:3188/test",
-      "products": 2194,
-      "priced": 2151,
-      "priceMissing": 43,
-      "sourceCategories": 172,
-      "storeCategories": 50,
-      "visibleSubcategories": 18,
-      "categoryPageVerified": true,
-      "mediaSamplesVerified": 12,
-      "publishedCovers": 468,
-      "markupPercent": 30,
-      "locales": 11,
-      "idempotent": true,
-      "privateDrafts": true,
-      "sourcePriceIsNotCost": true,
-      "pageErrors": 0,
-      "release": "554e78f543311a4d7e250b89"
     },
-    "previewCatalog": {
-      "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-      "products": 2194,
-      "priced": 2151,
-      "priceMissing": 43,
-      "sourceCategories": 172,
-      "storeCategories": 50,
-      "visibleSubcategories": 18,
-      "categoryPageVerified": true,
-      "mediaSamplesVerified": 12,
-      "publishedCovers": 468,
-      "markupPercent": 30,
-      "locales": 11,
-      "idempotent": true,
-      "privateDrafts": true,
-      "sourcePriceIsNotCost": true,
-      "pageErrors": 0,
-      "release": "554e78f543311a4d7e250b89"
-    },
-    "remoteCatalog": {
+    "preview": {
+      "navigation": [
+        {
+          "engine": "chromium",
+          "release": "c4788429f85aec52b435c76e",
+          "scope": "full-navigation",
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "adminRoutes": 33,
+          "publicRoutes": 9,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "mfa": true,
+          "secureCookie": true,
+          "pageErrors": 0,
+          "externalRequests": 0,
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "sourceSnapshotPreserved": true,
+          "domainAndMountRelocated": true
+        },
+        {
+          "engine": "webkit",
+          "release": "c4788429f85aec52b435c76e",
+          "scope": "full-navigation",
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "adminRoutes": 33,
+          "publicRoutes": 9,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "mfa": true,
+          "secureCookie": true,
+          "pageErrors": 0,
+          "externalRequests": 0,
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "sourceSnapshotPreserved": true,
+          "domainAndMountRelocated": true
+        }
+      ],
+      "catalog": {
+        "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+        "products": 2194,
+        "priced": 2151,
+        "priceMissing": 43,
+        "sourceCategories": 172,
+        "storeCategories": 50,
+        "visibleSubcategories": 18,
+        "categoryPageVerified": true,
+        "mediaSamplesVerified": 12,
+        "publishedCovers": 468,
+        "markupPercent": 30,
+        "locales": 11,
+        "idempotent": true,
+        "privateDrafts": true,
+        "sourcePriceIsNotCost": true,
+        "pageErrors": 0,
+        "release": "c4788429f85aec52b435c76e"
+      },
+      "storefront": [
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "realImagesLoaded": true,
+          "furnitureCopy": false,
+          "alignedCards": true,
+          "stickyOverlap": false,
+          "footerPrivacyEntry": true,
+          "readableFeatures": true,
+          "horizontalRelatedRail": true,
+          "horizontalRecentRail": true,
+          "curtainDurationSeconds": 4.8,
+          "consentRevocation": true,
+          "accountHelperMountedOnce": true,
+          "underlinedLinks": false,
+          "compactImageCampaignCards": 4,
+          "productImageBounds": true,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "pageErrors": 0
+        },
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "realImagesLoaded": true,
+          "furnitureCopy": false,
+          "alignedCards": true,
+          "stickyOverlap": false,
+          "footerPrivacyEntry": true,
+          "readableFeatures": true,
+          "horizontalRelatedRail": true,
+          "horizontalRecentRail": true,
+          "curtainDurationSeconds": 4.8,
+          "consentRevocation": true,
+          "accountHelperMountedOnce": true,
+          "underlinedLinks": false,
+          "compactImageCampaignCards": 4,
+          "productImageBounds": true,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "pageErrors": 0
+        }
+      ],
+      "ageAndGuest": [
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "ageGate": true,
+          "archAndVelvetMotion": true,
+          "reducedMotion": true,
+          "escapeBypassBlocked": true,
+          "keyboardFocus": true,
+          "guestBrowsing": true,
+          "ackSurvivesNavigation": true,
+          "worldMap": false,
+          "furnitureCopy": false,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "footerGap": 83.84375,
+          "iconOnlySocialLinks": 4,
+          "pageErrors": 0
+        },
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "readiness": "critical_requests_and_rendered_ui",
+          "optionalFxObserved": true,
+          "ageGate": true,
+          "archAndVelvetMotion": true,
+          "reducedMotion": true,
+          "escapeBypassBlocked": true,
+          "keyboardFocus": true,
+          "guestBrowsing": true,
+          "ackSurvivesNavigation": true,
+          "worldMap": false,
+          "furnitureCopy": false,
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "footerGap": 83.84375,
+          "iconOnlySocialLinks": 4,
+          "pageErrors": 0
+        }
+      ],
+      "firstHtml": [
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "chromium",
+          "serverHtmlCompactCards": 4,
+          "serverLocales": 11,
+          "javascriptDisabled": true,
+          "legacyHero": false,
+          "realImages": true,
+          "widths": [
+            390,
+            1440
+          ],
+          "readiness": "dom_css_fonts_and_campaign_images"
+        },
+        {
+          "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+          "release": "c4788429f85aec52b435c76e",
+          "engine": "webkit",
+          "serverHtmlCompactCards": 4,
+          "serverLocales": 11,
+          "javascriptDisabled": true,
+          "legacyHero": false,
+          "realImages": true,
+          "widths": [
+            390,
+            1440
+          ],
+          "readiness": "dom_css_fonts_and_campaign_images"
+        }
+      ],
+      "languages": {
+        "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+        "scope": "mount-preview",
+        "release": "c4788429f85aec52b435c76e",
+        "scriptSha256": "dc7bb614f89cb7cb3286bce4ee826952f81f62429dc3b0d17ac5a99be41b98a6",
+        "locales": [
+          {
+            "locale": "tr",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "en",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ru",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ar",
+            "status": 200,
+            "selected": true,
+            "direction": "rtl",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "de",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "az",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "kk",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "tk",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "uz",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ky",
+            "status": 200,
+            "selected": true,
+            "direction": "ltr",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "fa",
+            "status": 200,
+            "selected": true,
+            "direction": "rtl",
+            "adultMetadata": true,
+            "clientAdultMetadata": true,
+            "catalogUiReady": true
+          }
+        ],
+        "clientSwitches": [
+          {
+            "locale": "en",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "de",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          },
+          {
+            "locale": "ar",
+            "selected": true,
+            "clientMetadata": true,
+            "catalogUiReady": true
+          }
+        ],
+        "failedAttempts": [],
+        "attempts": {
+          "tr": 1,
+          "en": 1,
+          "ru": 1,
+          "ar": 1,
+          "de": 1,
+          "az": 1,
+          "kk": 1,
+          "tk": 1,
+          "uz": 1,
+          "ky": 1,
+          "fa": 1,
+          "client-switches": 1
+        },
+        "pageErrors": 0,
+        "finalized": true,
+        "readiness": "critical_requests_and_rendered_ui",
+        "execution": "isolated_locale_entries_and_client_switches",
+        "optionalFxObserved": true,
+        "catalogProductsObserved": 468,
+        "catalogCountSource": "deployment-status"
+      },
+      "variantsAndConsent": {
+        "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+        "scope": "variants-preview",
+        "results": [
+          {
+            "engine": "chromium",
+            "scenario": "isolated-selection-consent-and-bulk",
+            "release": "c4788429f85aec52b435c76e",
+            "selectionRequired": true,
+            "sizeColorCartLines": true,
+            "editMergeReload": true,
+            "legacyCartRepair": true,
+            "sourceMatrix": true,
+            "bulkAllItems": true,
+            "bulkCancellation": true,
+            "consentNormalHoverFocus": "brand-burgundy/wine",
+            "widths": [
+              360,
+              390,
+              430,
+              768,
+              1440
+            ],
+            "rtl": true,
+            "realPayment": false,
+            "isolatedCases": [
+              "consent",
+              "cart-options-edit-and-reload",
+              "legacy-cart-and-responsive-dialog",
+              "real-matrix-english",
+              "bulk-all-products",
+              "bulk-cancel",
+              "rtl"
+            ],
+            "teardownErrors": []
+          },
+          {
+            "engine": "webkit",
+            "scenario": "isolated-selection-consent-and-bulk",
+            "release": "c4788429f85aec52b435c76e",
+            "selectionRequired": true,
+            "sizeColorCartLines": true,
+            "editMergeReload": true,
+            "legacyCartRepair": true,
+            "sourceMatrix": true,
+            "bulkAllItems": true,
+            "bulkCancellation": true,
+            "consentNormalHoverFocus": "brand-burgundy/wine",
+            "widths": [
+              360,
+              390,
+              430,
+              768,
+              1440
+            ],
+            "rtl": true,
+            "realPayment": false,
+            "isolatedCases": [
+              "consent",
+              "cart-options-edit-and-reload",
+              "legacy-cart-and-responsive-dialog",
+              "real-matrix-english",
+              "bulk-all-products",
+              "bulk-cancel",
+              "rtl"
+            ],
+            "teardownErrors": []
+          }
+        ]
+      }
+    }
+  },
+  "activeVerification": {
+    "state": "passed_after_one_retry",
+    "variantsAndConsent": {
       "base": "https://sexogate.com/test",
-      "products": 2194,
-      "priced": 2151,
-      "priceMissing": 43,
-      "sourceCategories": 172,
-      "storeCategories": 50,
-      "visibleSubcategories": 18,
-      "categoryPageVerified": true,
-      "mediaSamplesVerified": 12,
-      "publishedCovers": 468,
-      "markupPercent": 30,
-      "locales": 11,
-      "idempotent": true,
-      "privateDrafts": true,
-      "sourcePriceIsNotCost": true,
-      "pageErrors": 0,
-      "release": "554e78f543311a4d7e250b89"
-    },
-    "localPolish": [
-      {
-        "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      },
-      {
-        "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      }
-    ],
-    "previewPolish": [
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      },
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      }
-    ],
-    "remotePolish": [
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      },
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "readiness": "critical_requests_and_rendered_ui",
-        "optionalFxObserved": true,
-        "realImagesLoaded": true,
-        "furnitureCopy": false,
-        "alignedCards": true,
-        "stickyOverlap": false,
-        "footerPrivacyEntry": true,
-        "readableFeatures": true,
-        "horizontalRelatedRail": true,
-        "horizontalRecentRail": true,
-        "curtainDurationSeconds": 4.8,
-        "consentRevocation": true,
-        "accountHelperMountedOnce": true,
-        "underlinedLinks": false,
-        "compactImageCampaignCards": 4,
-        "productImageBounds": true,
-        "widths": [
-          360,
-          390,
-          430,
-          768,
-          1440
-        ],
-        "pageErrors": 0
-      }
-    ],
-    "localFirstPaint": [
-      {
-        "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      },
-      {
-        "base": "https://127.0.0.1:3188/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      }
-    ],
-    "previewFirstPaint": [
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      },
-      {
-        "base": "https://sexogate.com/test/native-preview-230f86c96da9b48c",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      }
-    ],
-    "remoteFirstPaint": [
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "chromium",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      },
-      {
-        "base": "https://sexogate.com/test",
-        "release": "554e78f543311a4d7e250b89",
-        "engine": "webkit",
-        "serverHtmlCompactCards": 4,
-        "serverLocales": 11,
-        "javascriptDisabled": true,
-        "legacyHero": false,
-        "realImages": true,
-        "widths": [
-          390,
-          1440
-        ]
-      }
-    ]
-  },
-  "http": {
-    "/test/": 200,
-    "/test/?page=categories": 200,
-    "/test/api/catalog": 200,
-    "/test/api/deployment-status": 200,
-    "/test/app/config.local.json": 403,
-    "/test/.env": 403,
-    "/test/private/accounts.sqlite": 404,
-    "/test/site.webmanifest": 200,
-    "/test/apple-touch-icon.png": 200,
-    "checkoutBlocked": 409,
-    "mainUnchanged": true,
-    "temporaryHelpersRemoved": true
-  },
-  "worker": {
-    "ok": true,
-    "at": 1794775142,
-    "release": "554e78f543311a4d7e250b89",
-    "blog": {
-      "status": "ok",
-      "published": 0,
-      "failed": 0,
-      "seeded": 0,
-      "checkedAt": "2026-11-15T20:39:02Z",
-      "remaining": 1,
-      "exhausted": false
-    },
-    "externalPublishingEnabled": false,
-    "checkoutEnabled": false
-  },
-  "cron": {
-    "installed": true,
-    "otherJobsUnchanged": true
-  },
-  "restore": {
-    "restored": true,
-    "encrypted": true,
-    "databases": 2,
-    "tables": 41,
-    "rows": 10079,
-    "foreignKeysValid": true,
-    "sourceRelease": "554e78f543311a4d7e250b89",
-    "sha256": "13f8edd83a37759830aaeae4e4c06e691cc5a6bb59af1f0b49d27ac7854644f6"
-  },
-  "beforeAdultReleaseRestore": {
-    "release": "44a795ccb7ae841bc22441ca",
-    "databases": 2,
-    "tables": 41,
-    "rows": 38
-  },
-  "legacyMySqlRestore": {
-    "tables": 91,
-    "rows": 4589,
-    "foreignKeys": 103,
-    "migrations": 30,
-    "checksumMatches": 30
-  },
-  "limitations": [
-    "Yalnız /test; gerçek tahsilat ve satış kapalı.",
-    "1.726 ürün taslak; 43 kaynak fiyatı ve 39 kullanılabilir raster eksik. Üretici/menşe/barkod/belge/depo miktarı uydurulmadı.",
-    "172 kaynak kategori yönetimde kalır; 50 mağaza tanımının 18 alt kategorisi incelenmiş ürünlerle doludur. Boş alt kategoriler vitrinde gösterilmez.",
-    "119 Türkçe SEO başlık grubu ve diğer dillerde birer grup editoryal ayrıştırma bekliyor; alan doluluğu SEO veya sıralama garantisi değildir.",
-    "Diğer dil ürün özetleri otomatik; insan çevirisi ve hukuki onay değildir.",
-    "Tedarikçi gizleme rozeti değişimi görsel aracı reddi nedeniyle yapılmadı; temiz izinli orijinaller gerekir. Gerçek üretici işaretleri korunur.",
-    "Yalnız 468 kapak onaylandı; bütün galeriler incelenmedi. Mevcut fiyatlı/bulunabilir adayların 759 kapağı bu partide henüz incelenmedi.",
-    "B2B miktar/maliyet API bağlantısı ve native kaynak katalog güncelleme zamanlaması kurulmadı.",
-    "Fiziksel iPhone, tam WCAG ve saha CWV ölçümü yapılmadı.",
-    "Sürekli şifreli medya yedeği/rotasyonu ve tam medya geri yükleme tatbikatı açık iştir.",
-    "Aralıklı 20/60/180s bekleme, SSL connect, ECONNRESET ve 46–47s yükleme sıçramaları önceki/ilk kabul koşularında gözlendi. Tekrar sonuçları ayrıca kayıtlı; kökeni kanıtlanmadı, süreklilik veya performans hedefi geçti denmez.",
-    "Trendyol ana sayfa akışı incelendi; otomatik görsel erişim403 nedeniyle piksel birebirlik doğrulanmadı.",
-    "Liora ürün giydirme denemesi görsel aracında reddedildi; çıktı/yeni ürün fotoğrafı oluşmadı.",
-    "GitHub CI hesap faturalama kilidi yüzünden başlamadı; yerel ve sunucu kabulleri uzak CI başarısı değildir.",
-    "Kur uç noktası 503 döndü. İsteğe bağlı kur isteği görsel hazır olma kontrolünden ayrıldı; kur entegrasyonu veya yabancı para tahsilatı başarılı sayılmaz."
-  ],
-  "git": {
-    "implementationCommit": "f6463b36d58e0d53dae47d18788ebee3cf4c9197",
-    "catalogCommit": "46b95eef42255d6393b900be1d2c1a72aa02a46b",
-    "previewRouteFixCommit": "009c67f",
-    "diagnosticsCommit": "d0aee1e",
-    "localeDiagnosticsCommit": "b6ac190",
-    "branch": "codex/local-commerce",
-    "normalPush": true,
-    "readinessHarnessCommit": "f34775e748f35c8b1b280773448242a1ce5c6064"
-  },
-  "ci": {
-    "run": 43757608050,
-    "status": "not_started_billing_locked",
-    "steps": 0,
-    "sourceCommit": "f34775e748f35c8b1b280773448242a1ce5c6064",
-    "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/43757608050",
-    "reason": "The job was not started because your account is locked due to a billing issue."
-  },
-  "sourceProducts": 2194,
-  "sourceCategories": 172,
-  "catalog": {
-    "base": "https://sexogate.com/test",
-    "products": 2194,
-    "priced": 2151,
-    "priceMissing": 43,
-    "sourceCategories": 172,
-    "storeCategories": 50,
-    "visibleSubcategories": 18,
-    "categoryPageVerified": true,
-    "mediaSamplesVerified": 12,
-    "publishedCovers": 468,
-    "markupPercent": 30,
-    "locales": 11,
-    "idempotent": true,
-    "privateDrafts": true,
-    "sourcePriceIsNotCost": true,
-    "pageErrors": 0,
-    "release": "554e78f543311a4d7e250b89",
-    "drafts": 1726,
-    "metadataMissing": true,
-    "photoBadgeReplacement": "not_completed_tool_rejected_requires_clean_originals",
-    "uniquePrivateMedia": 8546
-  },
-  "catalogChecks": {
-    "pythonUnit": 8,
-    "taxonomyUnit": 5,
-    "isolatedPhp": 18,
-    "typescriptAstUrl": 7,
-    "httpInstallerSecurityMediaBackup": 22,
-    "jsSyntaxModules": 66
-  },
-  "observations": [
-    {
-      "scope": "preview_concurrent_acceptance",
-      "result": "admin_loading_20s_timeout",
-      "subsequent": "full33_admin9_public_pass_two_engines_with_60s_remote_budget"
-    },
-    {
-      "scope": "preview_wall_time",
-      "campaignsChromiumSeconds": 46.42,
-      "campaignsWebKitSeconds": 0.69,
-      "cause": "not_proven"
-    },
-    {
-      "scope": "post_release_concurrent",
-      "result": "icon_read_180s_timeout_and_webkit_admin_loading_60s_timeout",
-      "subsequent": "icon24524_bytes_complete_0.11_to_0.14s_http_acceptance_pass_4.73s_and_sequential_smoke_pass_two_engines",
-      "adminProductsRetryChromiumSeconds": 47.44,
-      "adminProductsRetryWebKitSeconds": 2.27,
-      "cause": "not_proven"
-    },
-    {
-      "scope": "catalog_preview_62d",
-      "result": "webkit_networkidle60s_then_ssl_connect_error_and_chromium_product_intro30s",
-      "cause": "not_proven",
-      "activation": false
-    },
-    {
-      "scope": "first_paint_regression",
-      "before": "legacy_main_campaign_first_html",
-      "after": "compact_cards_without_javascript",
-      "release": "554e78f543311a4d7e250b89",
-      "serverLocales": 11,
-      "browsers": [
-        "chromium",
-        "webkit"
+      "scope": "variants-remote",
+      "results": [
+        {
+          "engine": "chromium",
+          "scenario": "isolated-selection-consent-and-bulk",
+          "release": "c4788429f85aec52b435c76e",
+          "selectionRequired": true,
+          "sizeColorCartLines": true,
+          "editMergeReload": true,
+          "legacyCartRepair": true,
+          "sourceMatrix": true,
+          "bulkAllItems": true,
+          "bulkCancellation": true,
+          "consentNormalHoverFocus": "brand-burgundy/wine",
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "rtl": true,
+          "realPayment": false,
+          "isolatedCases": [
+            "consent",
+            "cart-options-edit-and-reload",
+            "legacy-cart-and-responsive-dialog",
+            "real-matrix-english",
+            "bulk-all-products",
+            "bulk-cancel",
+            "rtl"
+          ],
+          "teardownErrors": []
+        },
+        {
+          "engine": "webkit",
+          "scenario": "isolated-selection-consent-and-bulk",
+          "release": "c4788429f85aec52b435c76e",
+          "selectionRequired": true,
+          "sizeColorCartLines": true,
+          "editMergeReload": true,
+          "legacyCartRepair": true,
+          "sourceMatrix": true,
+          "bulkAllItems": true,
+          "bulkCancellation": true,
+          "consentNormalHoverFocus": "brand-burgundy/wine",
+          "widths": [
+            360,
+            390,
+            430,
+            768,
+            1440
+          ],
+          "rtl": true,
+          "realPayment": false,
+          "isolatedCases": [
+            "consent",
+            "cart-options-edit-and-reload",
+            "legacy-cart-and-responsive-dialog",
+            "real-matrix-english",
+            "bulk-all-products",
+            "bulk-cancel",
+            "rtl"
+          ],
+          "teardownErrors": []
+        }
       ]
     },
-    {
-      "scope": "first_paint_prepare",
-      "result": "405_old_router_response",
-      "cause": "obsolete_own_preview_rule_prevented_installer_route",
-      "fixed": "exact_known_route_verified_and_replaced; future_previous_route_hash_required",
-      "mainUnchanged": true
-    },
-    {
-      "scope": "first_paint_preview_full_first_attempt",
-      "result": "ECONNRESET_on_final_health_get_after_chromium33_admin9_public",
-      "subsequent": "same_complete_acceptance_pass_two_engines",
-      "cause": "not_proven",
-      "assertionsWeakened": false
-    },
-    {
-      "scope": "first_paint_preview_languages_first_attempt",
-      "result": "networkidle30s_timeout_on_kk_categories_after_six_locales",
-      "subsequent": "same_11_locale_acceptance_repeated_without_changing_timeouts_or_assertions",
-      "cause": "not_proven",
-      "diagnosticsAdded": "pending_request_paths_only_no_headers_or_query_strings"
-    },
-    {
-      "scope": "post_first_paint_first_attempt",
-      "result": "tls_handshake_WinError10054_during_11_locale_html_loop",
-      "subsequent": "complete_first_html_acceptance_pass_two_engines_and_11_locales",
-      "cause": "not_proven"
-    },
-    {
-      "scope": "post_smoke_initial_attempts",
-      "result": "networkidle60s_timeout_first_on_collections_then_categories",
-      "diagnosis": {
-        "pendingOnly": "/test/api/exchange-rates",
-        "document": "complete",
-        "currencyWidget": true,
-        "loading": false,
-        "pageErrors": 0
-      },
-      "subsequent": "critical_requests_and_ui_readiness_pass_two_engines9_public1_admin; all15_original_assertions_preserved"
-    },
-    {
-      "scope": "post_adult_initial_attempts",
-      "result": "webkit_initial_load60s_timeout_then_catalog_critical30s_timeout",
-      "subsequent": "complete_adult_flow_pass_both_engines_without_changing_the_application_or_increasing_timeouts",
-      "cause": "not_proven"
-    }
-  ],
-  "beforeStorefrontPolishRestore": {
-    "restored": true,
-    "encrypted": true,
-    "databases": 2,
-    "tables": 41,
-    "rows": 6797,
-    "foreignKeysValid": true,
-    "sourceRelease": "4dde26c2a496aaecbef1027e",
-    "sha256": "35eb48f6e8e6bee0f42d33351a7d32d961a1ea9cfbe847cedd16a7623f457794"
-  },
-  "cronReadback": {
-    "checkedAt": "2026-11-15T20:24:14.208784+00:00",
-    "matches": 1,
-    "schedule": {
-      "minute": "*",
-      "hour": "*",
-      "day": "*",
-      "month": "*",
-      "weekday": "*"
-    },
-    "readOnly": true
-  },
-  "storefrontChecks": {
-    "phpPresentation": 14,
-    "compactCampaignCards": 4,
-    "sourcePhotographyChanged": false,
-    "imageBoundsVerified": true,
-    "curtainSeconds": 4.8,
-    "visibleMotionToggle": false,
-    "iconOnlySocialLinks": 4,
-    "footerPrivacyInFlow": true,
-    "fiveWidths": [
-      360,
-      390,
-      430,
-      768,
-      1440
-    ],
-    "firstServerHtmlCompactCards": 4,
-    "serverHtmlLocales": 11,
-    "javascriptDisabledBrowsers": [
-      "chromium",
-      "webkit"
-    ],
-    "firstHtmlWidths": [
-      390,
-      1440
-    ],
-    "legacyHeroRemovedFromFirstHtml": true
-  },
-  "visibleSubcategories": 18,
-  "beforeCatalogExpansionRestore": {
-    "restored": true,
-    "encrypted": true,
-    "databases": 2,
-    "tables": 41,
-    "rows": 6829,
-    "foreignKeysValid": true,
-    "sourceRelease": "6a4df2f12a051e326bf868df",
-    "sha256": "af5f9b5e6cfaafe12a9ac93d2f8c904712585751311399dbeae12051314c22ac"
-  },
-  "readinessHarness": {
-    "command": "python scripts/test-native-browser-ready.py",
-    "httpScenariosPerEngine": 3,
-    "results": [
+    "adminBrandingSmoke": [
       {
         "engine": "chromium",
-        "criticalDataWaited": true,
-        "criticalRequestTimeoutEnforced": true,
-        "loadingUiTimeoutEnforced": true,
-        "optionalFxDoesNotBlockUi": true
+        "release": "c4788429f85aec52b435c76e",
+        "scope": "brand-overrides",
+        "base": "https://sexogate.com/test",
+        "adminRoutes": 1,
+        "publicRoutes": 1,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "mfa": true,
+        "secureCookie": true,
+        "pageErrors": 0,
+        "externalRequests": 0,
+        "readiness": "critical_requests_and_rendered_ui",
+        "optionalFxObserved": false,
+        "sourceSnapshotPreserved": true,
+        "domainAndMountRelocated": true
       },
       {
         "engine": "webkit",
-        "criticalDataWaited": true,
-        "criticalRequestTimeoutEnforced": true,
-        "loadingUiTimeoutEnforced": true,
-        "optionalFxDoesNotBlockUi": true
+        "release": "c4788429f85aec52b435c76e",
+        "scope": "brand-overrides",
+        "base": "https://sexogate.com/test",
+        "adminRoutes": 1,
+        "publicRoutes": 1,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "mfa": true,
+        "secureCookie": true,
+        "pageErrors": 0,
+        "externalRequests": 0,
+        "readiness": "critical_requests_and_rendered_ui",
+        "optionalFxObserved": false,
+        "sourceSnapshotPreserved": true,
+        "domainAndMountRelocated": true
       }
     ],
-    "sourceHashes": {
-      "scripts/native_browser_ready.py": "b160daffbd8593f95fe1cddf0803b53060a5283b785601a1bedcd6fdabf7c907",
-      "scripts/test-native-browser-ready.py": "0432d59994884924daa618e54b53101323855ca7e1db33b1a07af9c2bbb6d4a8"
+    "finalScope": {
+      "at": "2026-11-16T00:52:56.276626+00:00",
+      "release": "c4788429f85aec52b435c76e",
+      "mainUnchanged": true,
+      "activeEntryMatchesPackage": true,
+      "nativeRouteRestored": true,
+      "database": true,
+      "checkoutEnabled": false,
+      "products": 468,
+      "sourceProducts": 2194
     },
-    "functionalAssertionsPreserved": {
-      "browser": 15,
-      "polish": 32,
-      "adult": 23
-    },
-    "excludedFromUiReadinessOnly": [
-      "same_origin_exact_api_exchange_rates"
-    ]
+    "firstAttemptFailure": "WebKit disabled payment status read unfinished at 60 seconds; no page errors; second complete two-engine run passed."
   },
-  "fxIntegration": {
-    "status": "not_connected_503",
-    "seconds": 4.69,
-    "error": "exchange_or_pricing_unavailable",
-    "bytes": 43,
-    "httpStatus": 503,
-    "foreignCurrencyAcceptance": false,
-    "displayOnlyTryVerified": true
+  "operations": {
+    "worker": {
+      "ok": true,
+      "at": 1794789962,
+      "release": "c4788429f85aec52b435c76e",
+      "blog": {
+        "status": "ok",
+        "published": 0,
+        "failed": 0,
+        "seeded": 0,
+        "checkedAt": "2026-11-16T00:46:02Z",
+        "remaining": 1,
+        "exhausted": false
+      },
+      "externalPublishingEnabled": false,
+      "checkoutEnabled": false
+    },
+    "databaseRestore": {
+      "restored": true,
+      "encrypted": true,
+      "databases": 2,
+      "tables": 41,
+      "rows": 10114,
+      "foreignKeysValid": true,
+      "sourceRelease": "c4788429f85aec52b435c76e",
+      "sha256": "64ebfcfa45620175fe12a15a248410c58ffd10a99d8f98da0160fba165de18d0"
+    },
+    "cron": {
+      "installed": true,
+      "otherJobsUnchanged": true
+    },
+    "mediaRestoreTest": "not_run"
   },
-  "catalogNetworkReadback": [
-    {
-      "status": 200,
-      "seconds": 2.56,
-      "requestedEncoding": "identity",
-      "contentEncoding": null,
-      "transferEncoding": "chunked",
-      "contentLength": null,
-      "decodedBytes": 4403917,
-      "products": 468
-    },
-    {
-      "status": 200,
-      "seconds": 0.61,
-      "requestedEncoding": "gzip",
-      "contentEncoding": "gzip",
-      "transferEncoding": "chunked",
-      "contentLength": null,
-      "decodedBytes": 4403917,
-      "products": 468
-    },
-    {
-      "status": 200,
-      "seconds": 1.98,
-      "requestedEncoding": "identity",
-      "contentEncoding": null,
-      "transferEncoding": "chunked",
-      "contentLength": null,
-      "decodedBytes": 4403917,
-      "products": 468
-    }
+  "ci": {
+    "state": "blocked_by_account_billing",
+    "lastVerifiedRuns": [
+      43781811340,
+      43781811248
+    ],
+    "codeCommit": "b40346d",
+    "testsExecutedInThoseRuns": 0
+  },
+  "limits": [
+    "Test storefront only; legal, supplier, payment, tax and carrier acceptance remains pending.",
+    "Independent source options do not invent a supplier SKU; Liona child SKU mapping still needs authorized supplier data.",
+    "Variant-specific physical stock and separate variant price lists are not provided by this patch.",
+    "Intermittent remote resets/timeouts were observed; transport root cause is unverified.",
+    "Language acceptance covers isolated locale entries and real EN/DE/AR in-page switching; prolonged repeated hard-navigation stress is not accepted.",
+    "Browser WebKit is not a physical iOS device test; field Core Web Vitals and full WCAG audit are not measured."
   ],
-  "package": {
-    "release": "554e78f543311a4d7e250b89",
-    "sha256": "1945f47925d1d15dfe567c507280f5ab2c58c5ae2aee930b8c538b0f6bee5214",
-    "bytes": 8381344,
-    "files": 474,
-    "dataset": "d347cf6111d41f5b243e7a3a42f2a37d",
-    "previewOnly": true,
-    "checkoutEnabled": false
+  "sourceCommits": {
+    "application": "7a49a08",
+    "acceptanceHarness": "b40346d",
+    "checkpointRegression": "f9f4528"
+  },
+  "moduleStatus": {
+    "consentTheme": "Çalışıyor ve /test üzerinde test edildi.",
+    "variantSelection": "Yalnız test ortamında çalışıyor; gerçek tahsilat kapalı.",
+    "catalogReadDeadline": "Yalnız test ortamında çalışıyor; uzak taşıma kök nedeni açık.",
+    "payment": "İşletme/ödeme kabulü bekliyor; gerçek tahsilat teknik olarak kapalı.",
+    "supplierChildSkuMapping": "Bağımsız seçenekli Liona ürünlerinde dış erişim/doğrulama bekliyor.",
+    "mediaRestoreAcceptance": "Bu teslimde tamamlanmadı."
   }
 }

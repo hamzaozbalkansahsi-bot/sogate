@@ -1,0 +1,70 @@
+{
+  "base": "https://sexogate.com/test/native-preview-d05bdee836eb79aa",
+  "scope": "variants-preview",
+  "results": [
+    {
+      "engine": "chromium",
+      "scenario": "isolated-selection-consent-and-bulk",
+      "release": "c4788429f85aec52b435c76e",
+      "selectionRequired": true,
+      "sizeColorCartLines": true,
+      "editMergeReload": true,
+      "legacyCartRepair": true,
+      "sourceMatrix": true,
+      "bulkAllItems": true,
+      "bulkCancellation": true,
+      "consentNormalHoverFocus": "brand-burgundy/wine",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "rtl": true,
+      "realPayment": false,
+      "isolatedCases": [
+        "consent",
+        "cart-options-edit-and-reload",
+        "legacy-cart-and-responsive-dialog",
+        "real-matrix-english",
+        "bulk-all-products",
+        "bulk-cancel",
+        "rtl"
+      ],
+      "teardownErrors": []
+    },
+    {
+      "engine": "webkit",
+      "scenario": "isolated-selection-consent-and-bulk",
+      "release": "c4788429f85aec52b435c76e",
+      "selectionRequired": true,
+      "sizeColorCartLines": true,
+      "editMergeReload": true,
+      "legacyCartRepair": true,
+      "sourceMatrix": true,
+      "bulkAllItems": true,
+      "bulkCancellation": true,
+      "consentNormalHoverFocus": "brand-burgundy/wine",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "rtl": true,
+      "realPayment": false,
+      "isolatedCases": [
+        "consent",
+        "cart-options-edit-and-reload",
+        "legacy-cart-and-responsive-dialog",
+        "real-matrix-english",
+        "bulk-all-products",
+        "bulk-cancel",
+        "rtl"
+      ],
+      "teardownErrors": []
+    }
+  ]
+}
