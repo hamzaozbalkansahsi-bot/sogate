@@ -1,7 +1,13 @@
 # Native PHP test yayını
 
+<!-- BEGIN NATIVE_CATEGORY_RELEASE_20261116 -->
+## Güncel test yayını — b1dc3d43d52fecf813c301a9
+
+16 Kasım kategori deneyimi etkin. Kısa resimli kategori kartları, sekme/alt kategori gezintisi ve gerçek varyant filtreleri [kategori rehberinde](native-category-experience.md). Yerel/önizleme 10 kapı ve etkin adreste kategori/CTA/sepet iki motor turu geçti. Worker, şifreli DB geri yükleme ve yalnız `/test` kapsamı yeniden doğrulandı. Ana site aynı, gerçek tahsilat kapalı. Önceki teslim kayıtları aşağıda tarihseldir; kanonik durum [yayın raporundadır](native-deployment-report.json).
+<!-- END NATIVE_CATEGORY_RELEASE_20261116 -->
+
 <!-- BEGIN NATIVE_CART_RELEASE_20261116 -->
-## Güncel test yayını — 324b855ec1f632a73b3221a4
+## Önceki sepet/bildirim yayını — 324b855ec1f632a73b3221a4
 
 16 Kasım: ürün eylemleri, mobil sepet ve bildirim tercihleri aynı PHP test paketinde yayımlandı. Ana site korunur; gerçek tahsilat kapalıdır. Yerel/özel önizleme dokuz kabul grubu ve etkin adreste iki motorlu buton/sepet/API kontrolleri geçti. Gerçek push cihaz teslimi doğrulanmadı; native Chrome aboneliği izin hatası verdi. Güncel kullanım, sınırlar ve testler [sepet/bildirim rehberinde](native-cart-notifications.md), makine kanıtı [yayın raporunda](native-deployment-report.json). Aşağıdaki eski sürüm kayıtları tarihseldir.
 <!-- END NATIVE_CART_RELEASE_20261116 -->

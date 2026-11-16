@@ -386,3 +386,16 @@ Yalnız https://sexogate.com/test üzerinde etkin: `324b855ec1f632a73b3221a4`, �
 
 Kanonik kullanım ve açık işler `docs/native-cart-notifications.md`; gerçek yayın `docs/native-deployment-report.json`; kısa kanıt `docs/native-cart-*-results.json`. Sıradaki somut işler: gerçek kullanıcı cihazında izin/teslim kabulü; doğrulanmış SKU/varyant stok entegrasyonu; uzaktaki aralıklı katalog yükleme hatasının kaynak ölçümü; iOS Canlı Etkinlik için ayrıca native uygulama; işletme/ödeme/vergi/taşıyıcı/hukuk kabulü ve medya felaket kurtarma. Bu teslim bütün platformun canlı satışa hazır olduğu iddiası değildir.
 <!-- END NATIVE_CART_NOTIFICATIONS_20261116 -->
+
+<!-- BEGIN NATIVE_CATEGORY_EXPERIENCE_20261116 -->
+## 16 Kasım — kategori deneyimi /test üzerinde doğrulandı
+
+- Etkin paket `b1dc3d43d52fecf813c301a9`, varlık `e8315eb843bd6543`, ZIP SHA256 `17d8a96a25d7529fabcd7726af3d9c46bd5bae12bc2cf4376c45667633b4fc91` (1.307 dosya, 76 JS modülü). Kaynak `0639b3b` normal push edildi ve uzak hash doğrulandı. Ana site aynı, tahsilat HTTP409 ile kapalı.
+- Kullanıcı görsellerine göre küçük resimli iki sütunlu kategori kartları; yatay kök sekmeleri, sol alt kategori menüsü, görselli alt kategoriler ve ilgili ürün listesi yayımlandı. Tek mağaza korunur; satıcı/puan/sponsorlu mağaza alanı yok. Marka/beden/renk/malzeme/fiyat gerçek kamu verisine bağlı; matrislerde aktif birleşim şartı var. Kategori ilk HTML’si aynı düzende, yeni filtre parametreleri sunucu/istemcide noindex olur. Kaynak NODENO çekirdeği 771 dosyada korundu (768 byte aynı / üç izinli fixture istisnası).
+- Yerel ve önizleme 10 kabul grubu geçti: Chromium/WebKit, 360/390/430/768/1440, motor başına 33 yönetim + 9 müşteri rotası, 11 dil + 3 istemci geçişi. Etkin `/test` üzerinde kategori/CTA/sepet turları iki motorda yeniden geçti. 39 Node, 23 PHP varyant, 18 katalog ve 14 içerik kontrolü geçti. Bildirim/kurucu eski izole test sayıları bu görevde yeniden çalışılmış sayılmadı.
+- Önizleme görünümünün ilk turunda commerce/status isteği 58,3 sn bekledi; etkin sepet/API ilk turunda TLS protokol uyarısı oluştu. Aynı paket ve değişmeyen kontrollerle tam tekrarlar geçti. TLS doğrulaması veya kritik istek denetimi kapatılmadı; aralıklı bağlantı sorununun kök nedeni/saha performansı açık kalır.
+- Worker aynı pakette sağlıklı; şifreli DB yedeği gerçekten geri yüklendi ve FK/satır kontrolünden geçti. Cron tek, diğer işler aynı; geçici yardımcı/istekler temiz ve giriş/htaccess paketle eşleşiyor. Medya restore, fiziksel cihaz ve tam WCAG/saha CWV ölçümü yapılmadı.
+- CI `0639b3b`: native 43862435698 / ana 43862435295, hesap faturalama kilidiyle sıfır adımda kaldı; başarılı sayılmaz. Diğer sohbetlerin çalışma ağacı commitlere alınmadı.
+
+Kanonik kullanım `docs/native-category-experience.md`; yerel/önizleme/etkin kanıt `docs/native-category-*-results.json`, gerçek yayın/geri yükleme durumu `docs/native-deployment-report.json`. Açık işler: bağlantı kök nedeninin ölçümü; gerçek cihaz/erişilebilirlik/saha performansı kabulü; mevcut işletme/ödeme/vergi/taşıyıcı/hukuk kapıları. Kategori teslimi bütün platformun canlı satışa hazır olduğu iddiası değildir.
+<!-- END NATIVE_CATEGORY_EXPERIENCE_20261116 -->

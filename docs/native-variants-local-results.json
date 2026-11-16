@@ -5,7 +5,7 @@
     {
       "engine": "chromium",
       "scenario": "isolated-selection-consent-and-bulk",
-      "release": "324b855ec1f632a73b3221a4",
+      "release": "b1dc3d43d52fecf813c301a9",
       "selectionRequired": true,
       "sizeColorCartLines": true,
       "editMergeReload": true,
@@ -37,7 +37,7 @@
     {
       "engine": "webkit",
       "scenario": "isolated-selection-consent-and-bulk",
-      "release": "324b855ec1f632a73b3221a4",
+      "release": "b1dc3d43d52fecf813c301a9",
       "selectionRequired": true,
       "sizeColorCartLines": true,
       "editMergeReload": true,

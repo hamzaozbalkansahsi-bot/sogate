@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-11-16T12:22:11.870148+00:00",
+  "base": "https://sexogate.com/test",
+  "release": "b1dc3d43d52fecf813c301a9",
+  "packageSha256": "17d8a96a25d7529fabcd7726af3d9c46bd5bae12bc2cf4376c45667633b4fc91",
+  "status": "remote_acceptance_passed",
+  "categories": [
+    {
+      "engine": "chromium",
+      "base": "https://sexogate.com/test",
+      "release": "b1dc3d43d52fecf813c301a9",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "categoryImages": true,
+      "hierarchy": true,
+      "backRestoresSelection": true,
+      "sizeFilter": true,
+      "brandFilter": true,
+      "colorFilter": true,
+      "sortPreservesFilters": true,
+      "invalidPriceRejected": true,
+      "variantSelectionRequired": true,
+      "search": true,
+      "rtl": true,
+      "singleStore": true,
+      "serverCategoryLayout": true,
+      "keyboardDrawer": true,
+      "facetNoindex": true,
+      "pageErrors": 0,
+      "scriptSha256": "ea666c53036cf7d6911b76e906adbe834a21698ed751a4768eca2828bdffedd6"
+    },
+    {
+      "engine": "webkit",
+      "base": "https://sexogate.com/test",
+      "release": "b1dc3d43d52fecf813c301a9",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "categoryImages": true,
+      "hierarchy": true,
+      "backRestoresSelection": true,
+      "sizeFilter": true,
+      "brandFilter": true,
+      "colorFilter": true,
+      "sortPreservesFilters": true,
+      "invalidPriceRejected": true,
+      "variantSelectionRequired": true,
+      "search": true,
+      "rtl": true,
+      "singleStore": true,
+      "serverCategoryLayout": true,
+      "keyboardDrawer": true,
+      "facetNoindex": true,
+      "pageErrors": 0,
+      "scriptSha256": "ea666c53036cf7d6911b76e906adbe834a21698ed751a4768eca2828bdffedd6"
+    }
+  ],
+  "gateEvidenceSha256": {
+    ".local/native-categories-remote.json": "0a24a3a2e36098305ad8fcbbdd03629fd47626ae82a03cf782659273f7c9f19b",
+    ".local/native-actions-remote.json": "a4f164a526b7b18455132d62401b9306117b2b4b112ef840d33ae90a80547f31",
+    ".local/native-cart-notifications-remote.json": "a0d24fa2dd50a6c556bc3cdfb2c9b4b47959b8267f916ce14a293269604043f2"
+  },
+  "realPayment": false,
+  "mainSiteChanged": false,
+  "failedAttempts": [
+    {
+      "checkedAt": "2026-11-16T12:01:54.146921+00:00",
+      "release": "b1dc3d43d52fecf813c301a9",
+      "phase": "preview",
+      "gate": "storefront-polish",
+      "status": "failed_attempt",
+      "error": "critical_request_timeout",
+      "path": "/api/commerce/status",
+      "requestAgeSeconds": 58.3,
+      "optionalFx503Observed": true,
+      "assertionsChanged": false,
+      "rawLog": ".local\\category-failed-polish-preview-1.log"
+    },
+    {
+      "checkedAt": "2026-11-16T12:19:51.407322+00:00",
+      "release": "b1dc3d43d52fecf813c301a9",
+      "phase": "remote",
+      "gate": "cart-notifications",
+      "status": "failed_attempt",
+      "error": "APIRequestContext_GET_TLS_protocol_version_alert",
+      "path": "/api/notifications",
+      "engine": "webkit",
+      "assertionsChanged": false,
+      "tlsVerificationDisabled": false,
+      "rawLog": ".local/category-failed-cart-notifications-remote-1.log"
+    }
+  ]
+}

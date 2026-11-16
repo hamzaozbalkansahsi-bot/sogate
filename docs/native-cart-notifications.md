@@ -1,5 +1,7 @@
 # Ürün düğmeleri, sepet ve stok bildirimleri
 
+Güncel `/test` paketi `b1dc3d43d52fecf813c301a9`; kategori deneyimi eklendi. Buton/sepet/API davranışı aynı pakette yerel, önizleme ve etkin adreste iki motorda yeniden geçti. Yeni kanıt [kategori rehberi](native-category-experience.md) ve [yayın raporunda](native-deployment-report.json); aşağıdaki 324b855 kaynak/test sonuçları önceki teslimin tarihsel kanıtıdır. Gerçek cihaz push teslimi hâlâ doğrulanmadı.
+
 16 Kasım 2026 kullanıcı kapsamı: ürün eylemleri düzgün hizalanır; sepet, verilen mobil örnekteki ürün seçimi/adet/toplam/öneri düzenini SEXOGATE kimliğiyle kullanır; favori stok değişiminde cihaz bildirimi hazırlanır. Ana site ve gerçek tahsilat kapsam dışıdır.
 
 ## Uygulama
@@ -42,17 +44,17 @@ Google/Mozilla/Apple push servisi abonelik ucu ve aktarım metaverisini işler; 
 
 Aşağıdaki son kabul ve yayın kaydı bu ara durumun yerini alır.
 
-Son yerel paket: `324b855ec1f632a73b3221a4`, varlık sürümü `1aba96a6cd66cd2e`, ZIP SHA256 `7320bcd3d17bda125e8829416caea1dad7f4856fd3b5821031b9d348ba220a17`. 1.300 dosya, 72 JS modülü; yayın satış kapalı. Kaynak ve paket PHP bildirim kontrolleri 26/26, ilgili Node kontrolleri 32/32 geçti. Kurucunun 22 izole kontrolü, aynı 1.300 dosyalı ön paket üzerinde güncel kurucu kaynağıyla geçti.
+Önceki sepet/bildirim tesliminin yerel paketi: `324b855ec1f632a73b3221a4`, varlık sürümü `1aba96a6cd66cd2e`, ZIP SHA256 `7320bcd3d17bda125e8829416caea1dad7f4856fd3b5821031b9d348ba220a17`. 1.300 dosya, 72 JS modülü; yayın satış kapalı. Kaynak ve paket PHP bildirim kontrolleri 26/26, ilgili Node kontrolleri 32/32 geçti. Kurucunun 22 izole kontrolü, aynı 1.300 dosyalı ön paket üzerinde güncel kurucu kaynağıyla geçti.
 
 Kurucu testinin ilk 20 saniyelik istemci sınırı aşıldı; logda PHP'nin 30 saniyelik yürütme sınırı da doğrulandı. Yalnız kimliği doğrulanmış geçici bakım isteğine sonlu 90 saniye, test istemcisine 60 saniye ayrıldı. Dosya sayısı/boyutu, hash, sahiplik, token, ZIP yol/symlink kontrolleri korunur. Kötü ZIP reddi ve tutarlı şifreli SQLite yedeği 22 kontrol içinde gerçek çalıştı. Genel hosting veya güvenlik denetimleri kapatılmadı.
 
 ## Son kabul ve yayın — 16 Kasım
 
-**Yalnız https://sexogate.com/test üzerinde etkin sürüm: `324b855ec1f632a73b3221a4`.** Ana site aynı; gerçek tahsilat kapalı. Uygulama kaynağı `f52f18d` normal push edildi. Kanonik ayrıntı `native-deployment-report.json`; güvenli kısa sonuçlar `native-cart-local-results.json`, `native-cart-preview-results.json`, `native-cart-remote-results.json`.
+**Önceki sepet/bildirim tesliminde etkin sürüm: `324b855ec1f632a73b3221a4`.** Ana site aynı; gerçek tahsilat kapalı. Uygulama kaynağı `f52f18d` normal push edildi. Kanonik ayrıntı `native-deployment-report.json`; güvenli kısa sonuçlar `native-cart-local-results.json`, `native-cart-preview-results.json`, `native-cart-remote-results.json`.
 
 Yerel ve özel önizleme aynı paket üzerinde dokuz kabul grubundan geçti: ürün eylemleri, sepet/bildirim API, varyant/bulk ekleme, tam yönetim 33 + müşteri 9 gezinme, gerçek katalog/SEO/içe aktarma, yaş/gizlilik, görsel düzen, JS kapalı ilk HTML ve 11 dil + üç gerçek istemci dil geçişi. Yayın sonrası ürün eylemleri ve sepet/bildirim API iki motorda, 360/390/430/768/1440 px'de tekrar geçti. Farklı cihazın aboneliğini okuma/değiştirme, Origin/CSRF, zararlı hedef ve geçersiz ürün engelleri gerçek HTTP ile doğrulandı. İzin isteme metodu gözlendi; kendiliğinden çağrılmadı.
 
-Güncel sonuçlar: Node 32/32; PHP bildirim 26/26, varyant/sipariş snapshot 23/23, katalog 18/18, içerik 14/14. Kurucu 22 kontrolü aynı yapıdaki ön paketle güncel kurucu kaynağında geçti; nihai paket ayrıca sunucuya hash doğrulamasıyla kuruldu. Gerçek yeni DB yedeği staging alanına geri yüklendi: 2 SQLite / 44 tablo / 10.147 satır, geçerli FK; SHA256 `45c5279b3ffcc94a903924a4c71478c8711a8b96327c9abb92bb25df5eb1856f`. Worker sağlıklı, bildirim sayacı 0; cron tek, diğer işler aynı. Medya geri yüklemesi yapılmadı.
+Önceki 324b855 tesliminin sonuçları: Node 32/32; PHP bildirim 26/26, varyant/sipariş snapshot 23/23, katalog 18/18, içerik 14/14. Kurucu 22 kontrolü aynı yapıdaki ön paketle güncel kurucu kaynağında geçti; nihai paket ayrıca sunucuya hash doğrulamasıyla kuruldu. Gerçek yeni DB yedeği staging alanına geri yüklendi: 2 SQLite / 44 tablo / 10.147 satır, geçerli FK; SHA256 `45c5279b3ffcc94a903924a4c71478c8711a8b96327c9abb92bb25df5eb1856f`. Worker sağlıklı, bildirim sayacı 0; cron tek, diğer işler aynı. Medya geri yüklemesi yapılmadı.
 
 İlk başarısız font/görsel/katalog denemeleri başarı sayılmadı. Görsel testteki 30 sn'lik ön bekleme, uygulamanın iki 20 sn okuma sınırından kısaydı: tüm kritik istekler beklenip ardından gerçek ürün bölümü doğrulanacak sıraya alındı. Yerel ve uzak tam görsel tekrar geçti. Yönetim yenilemesinde de kritik istek hazır olma kontrolü eklendi. Son bildirim API GET'inde ECONNRESET görüldü; Playwright'ın yalnız bu ağ hatasını bir kez tekrarlayan `max_retries=1` seçeneği kullanıldı. HTTP redleri, yazmalar, TLS ve sayfa hatası kontrolleri kaldırılmadı. Tam iki motorlu tekrar geçti. Sunucudaki aralıklı katalog yükleme/bağlantı hatalarının kökü ve saha performansı hâlâ açık risktir; fonksiyonel kabul performans garantisi değildir.
 

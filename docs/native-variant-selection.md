@@ -2,7 +2,7 @@
 
 16 Kasım 2026. Kapsam yalnız PHP `/test` uygulaması; ana site ve korunmuş NODENO kaynak kopyası değiştirilmez.
 
-Güncel etkin sürüm `324b855ec1f632a73b3221a4`: düğme/sepet düzeni ve bildirim tercihleri [güncel rehberdedir](native-cart-notifications.md). Varyant davranışı korunur; yerel ve önizlemede tüm varyant/bulk senaryoları, etkin adreste zorunlu seçim ve sepet etiketleri yeniden doğrulandı. Aşağıdaki c478 kayıtları önceki varyant tesliminin tarihsel kanıtıdır.
+Güncel etkin sürüm `b1dc3d43d52fecf813c301a9`: düğme/sepet düzeni ve bildirim tercihleri [güncel rehberdedir](native-cart-notifications.md). Yeni kategori/filtre kanıtı [kategori rehberindedir](native-category-experience.md). Varyant davranışı korunur; yerel ve önizlemede tüm varyant/bulk senaryoları, etkin adreste zorunlu seçim ve sepet etiketleri yeniden doğrulandı. Aşağıdaki c478 kayıtları önceki varyant tesliminin tarihsel kanıtıdır.
 
 ## Davranış
 

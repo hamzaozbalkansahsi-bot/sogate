@@ -1,11 +1,11 @@
 {
-  "base": "https://sexogate.com/test/native-preview-5dfafb0d3d363ab9",
+  "base": "https://sexogate.com/test/native-preview-5489fd085b348cb9",
   "scope": "variants-preview",
   "results": [
     {
       "engine": "chromium",
       "scenario": "isolated-selection-consent-and-bulk",
-      "release": "324b855ec1f632a73b3221a4",
+      "release": "b1dc3d43d52fecf813c301a9",
       "selectionRequired": true,
       "sizeColorCartLines": true,
       "editMergeReload": true,
@@ -37,7 +37,7 @@
     {
       "engine": "webkit",
       "scenario": "isolated-selection-consent-and-bulk",
-      "release": "324b855ec1f632a73b3221a4",
+      "release": "b1dc3d43d52fecf813c301a9",
       "selectionRequired": true,
       "sizeColorCartLines": true,
       "editMergeReload": true,
