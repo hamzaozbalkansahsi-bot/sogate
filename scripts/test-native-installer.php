@@ -17,6 +17,8 @@ $zip=new ZipArchive();if($zip->open($package['archive'])!==true)throw new Runtim
 function installerCheck(bool $condition,string $name):void{global $checks;if(!$condition)throw new RuntimeException($name);$checks[]=$name;}
 installerCheck(sexogateNativeManifestValid($manifest,$package['release'],$files),'actual_manifest_and_archive_count');
 installerCheck(sexogateNativeCatalogValid($catalog,$manifest),'actual_catalog_provenance');
+installerCheck(sexogateNativeEntrySizeValid('private/catalog.json',26608336,79000000)&&!sexogateNativeEntrySizeValid('private/catalog.json',32000001,79000000),'expanded_catalog_bounded');
+installerCheck(!sexogateNativeEntrySizeValid('private/other.json',25000001,79000000)&&!sexogateNativeEntrySizeValid('private/catalog.json',26608336,80000001)&&!sexogateNativeEntrySizeValid('private/catalog.json',-1,0),'other_file_and_total_limits_preserved');
 installerCheck($manifest['products']===count($catalog['products'])&&$manifest['products']>2194&&$files>2000,'actual_marketplace_and_sdk_package');
 $empty=$manifest;$empty['products']=0;$empty['dataset']=null;
 installerCheck(sexogateNativeManifestValid($empty,$package['release'],$files)&&sexogateNativeCatalogValid(['brand'=>['name'=>'SEXOGATE'],'products'=>[],'categories'=>[]],$empty),'empty_catalog_supported');

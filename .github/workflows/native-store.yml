@@ -44,6 +44,9 @@ jobs:
       - run: php scripts/test-native-returns-php.php --source
       - run: php scripts/test-native-return-ordering.php --source
       - run: python scripts/test-native-marketplaces.py
+      - run: python scripts/test-native-marketplace-taxonomy.py
+      - run: python scripts/test-native-marketplace-paths.py
+      - run: python scripts/test-native-marketplace-review-rules.py
       - run: python scripts/test-native-marketplace-acceptance.py
       - run: node --check native-store/returns/ui.js && node --check native-store/returns/admin.js && node --check native-store/returns/build.mjs
       - run: node --check native-store/catalog/admin-catalog.js && node --check native-store/catalog/apply.mjs && node --check native-store/theme/age-gate.js

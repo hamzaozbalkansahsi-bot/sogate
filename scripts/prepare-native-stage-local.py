@@ -6,6 +6,7 @@
 # Açıklama   : Sunucu paketiyle aynı özel alan ve test alt yolu için ayrı yerel kabul alanı kurar.
 import json,secrets,shutil,subprocess,sys,sqlite3
 from pathlib import Path
+from native_marketplace_paths import marketplace_paths
 ROOT=Path(__file__).resolve().parent.parent;package=json.loads((ROOT/'.local/native-stage-package.json').read_text('utf8'))
 previous=json.loads((ROOT/'.local/native-stage-local.json').read_text('utf8'))if'--reuse-state'in sys.argv else None
 base=Path('D:/sexogate-local-artifacts-20261114/private-installs')/('native-mount-local-'+secrets.token_hex(8));home=base/'private-home/.sexogate-native-test';release=home/'releases'/package['release'];release.parent.mkdir(parents=True);shutil.copytree(package['bundle'],release);state=home/'state';state.mkdir();public=release/'public';private=release/'private'
@@ -24,9 +25,11 @@ selection=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native
 if package.get('products')and selection.is_file():
  import os
  media_selection=json.loads(selection.read_text('utf8'));allowed_base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
- roots=[media_selection['mediaRoot']]+([media_selection['legacyMediaRoot']]if media_selection.get('legacyMediaRoot')else[])
+ if selection.name=='native-marketplace-selection.json':
+  media_paths=marketplace_paths(media_selection);roots=[media_paths.media,media_paths.legacyMedia]
+ else:roots=[media_selection['mediaRoot']]
  for media_path in roots:
-  source=Path(media_path).resolve();assert source in [(allowed_base/'native-catalog-20261115/media'),(allowed_base/'marketplace-catalog-20261116/media')]
+  source=Path(media_path).resolve();assert source in [(allowed_base/'native-catalog-20261115/media'),(allowed_base/'marketplace-catalog-20261116/media'),(allowed_base/'marketplace-catalog-20261117/media')]
   for file in source.iterdir():
    if file.is_file()and not file.is_symlink()and not(home/'media'/file.name).exists():os.link(file,home/'media'/file.name)
 web=base/'web';(web/'test').mkdir(parents=True)

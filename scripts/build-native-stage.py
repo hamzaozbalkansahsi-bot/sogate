@@ -6,6 +6,7 @@
 # Açıklama   : Birebir kaynak kopyasından veri içermeyen, alt yola taşınabilir PHP yayın paketi hazırlar.
 import hashlib,json,re,secrets,shutil,subprocess,zipfile
 from pathlib import Path
+from native_marketplace_paths import marketplace_paths
 
 ROOT=Path(__file__).resolve().parent.parent
 subprocess.run(['python',str(ROOT/'scripts/verify-native-snapshot.py')],check=True)
@@ -61,8 +62,11 @@ for path in [ROOT/'native-store/source-manifest.json',ROOT/'scripts/build-native
 version=theme_hash.hexdigest()[:16]
 selection_file=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native-marketplace-selection.json').is_file()else'.local/native-catalog-selection.json');catalog_count=0;dataset=None
 if selection_file.is_file():
- selection=json.loads(selection_file.read_text('utf8'));prepared=Path(selection['path']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/'+('marketplace-catalog-20261116'if selection_file.name=='native-marketplace-selection.json'else'native-catalog-20261115')).resolve()
- if not prepared.is_relative_to(allowed) or hashlib.sha256((prepared/'catalog-data.json').read_bytes()).hexdigest()!=selection['sha256']:raise RuntimeError('CATALOG_SELECTION_INVALID')
+ selection=json.loads(selection_file.read_text('utf8'))
+ if selection_file.name=='native-marketplace-selection.json':prepared=marketplace_paths(selection).prepared
+ else:
+  prepared=Path(selection['path']).resolve();allowed=Path('D:/sexogate-local-artifacts-20261114/private-installs/native-catalog-20261115').resolve()
+  if not prepared.is_relative_to(allowed) or hashlib.sha256((prepared/'catalog-data.json').read_bytes()).hexdigest()!=selection['sha256']:raise RuntimeError('CATALOG_SELECTION_INVALID')
  data=json.loads((prepared/'catalog-data.json').read_text('utf8'));catalog_count=len(data['products']);dataset=data['dataset']
  if data['catalogOrigin']not in ['sexogate-suppliers-v1','sexogate-catalog-v2'] or catalog_count!=selection['products'] or len(set(p['id']for p in data['products']))!=catalog_count or any(p['published']or not p['hidden']or p['stockKnown']or p['stockQuantity']is not None for p in data['products']):raise RuntimeError('CATALOG_PROVENANCE_INVALID')
  if data['catalogOrigin']=='sexogate-catalog-v2':

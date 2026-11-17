@@ -6,12 +6,15 @@
 # Açıklama   : Hash denetimli kaynak fotoğraflarını yalnız test uygulamasının web dışı alanına aktarır.
 import hashlib,importlib.util,io,json,re,secrets,time,zipfile
 from pathlib import Path
+from native_marketplace_paths import marketplace_paths
 ROOT=Path(__file__).resolve().parent.parent
 spec=importlib.util.spec_from_file_location('publisher',ROOT/'scripts/publish-php-test.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 selection_path=ROOT/('.local/native-marketplace-selection.json'if(ROOT/'.local/native-marketplace-selection.json').is_file()else'.local/native-catalog-selection.json')
 selection=json.loads(selection_path.read_text('utf8'));prepared=Path(selection['path']);allowed_base=Path('D:/sexogate-local-artifacts-20261114/private-installs').resolve()
-media_roots=[Path(selection['mediaRoot']).resolve()]+([Path(selection['legacyMediaRoot']).resolve()]if selection.get('legacyMediaRoot')else[])
-assert all(p in [allowed_base/'native-catalog-20261115/media',allowed_base/'marketplace-catalog-20261116/media']for p in media_roots)
+if selection_path.name=='native-marketplace-selection.json':
+ paths=marketplace_paths(selection);prepared=paths.prepared;media_roots=[paths.media,paths.legacyMedia]
+else:
+ media_roots=[Path(selection['mediaRoot']).resolve()];assert media_roots==[allowed_base/'native-catalog-20261115/media']
 def media_file(name):
  assert re.fullmatch(r'[a-f0-9]{64}\.(jpg|png|webp)',name)
  matches=[folder/name for folder in media_roots if(folder/name).is_file()and not(folder/name).is_symlink()]

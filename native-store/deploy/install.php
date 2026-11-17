@@ -53,6 +53,10 @@ function sexogateNativeCatalogValid(array $catalog,array $manifest):bool{
   return true;
  }catch(Throwable $error){return false;}
 }
+function sexogateNativeEntrySizeValid(string $name,int $bytes,int $total):bool{
+ // Genişleyen gerçek katalog için ayrı üst sınır; SDK/diğer dosyaların sınırı artmaz.
+ return $bytes>=0&&$total>=0&&$bytes<=($name==='private/catalog.json'?32000000:25000000)&&$total<=80000000;
+}
 ini_set('display_errors','0');header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Robots-Tag: noindex,nofollow');
 try{
  $request=json_decode((string)file_get_contents(__DIR__.'/app/native-request.json'),true);
@@ -75,7 +79,7 @@ try{
  for($i=0;$i<$zip->numFiles;$i++){
   $item=$zip->statIndex($i);$name=$item['name'];$zip->getExternalAttributesIndex($i,$system,$attributes);
   if(!preg_match('~^(?:(?:public|private|deploy)/[A-Za-z0-9_./-]+|deployment-manifest\.json)$~D',$name)||str_contains($name,'..')||in_array('.',explode('/',$name),true)||str_contains($name,'//')||isset($seen[$name])||(($attributes>>16)&0170000)===0120000)throw new RuntimeException('archive_path_invalid');
-  $seen[$name]=true;$total+=$item['size'];if($item['size']>25000000||$total>80000000)throw new RuntimeException('archive_too_large');
+  $seen[$name]=true;$total+=$item['size'];if(!sexogateNativeEntrySizeValid($name,$item['size'],$total))throw new RuntimeException('archive_too_large');
   $bytes=$zip->getFromIndex($i);if(!is_string($bytes))throw new RuntimeException('archive_read_failed');
   if($name!=='deployment-manifest.json'&&(!isset($manifest['files'][$name])||!hash_equals($manifest['files'][$name],hash('sha256',$bytes))))throw new RuntimeException('file_hash_mismatch');
   $target=$release.'/'.$name;if($fresh){$directory=dirname($target);if(!is_dir($directory)&&!mkdir($directory,0700,true))throw new RuntimeException('release_create_failed');if(file_put_contents($target,$bytes,LOCK_EX)!==strlen($bytes))throw new RuntimeException('file_write_failed');chmod($target,0600);}

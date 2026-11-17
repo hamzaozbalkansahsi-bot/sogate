@@ -31,7 +31,7 @@ with sync_playwright()as p:
    status=context.request.get(BASE+'/api/deployment-status').json();catalog=context.request.get(BASE+'/api/catalog',timeout=60000).json();public=catalog['products'];assert {v['id']for v in public}==set(expected),'PUBLIC_SET_DIFFERS_FROM_REVIEW'
    for item in public:
     target=expected[item['id']];assert item['code']==target['code']and item['salePriceMinor']==target['salePriceMinor'];assert item['stockKnown']is False and item['stockQuantity']is None;assert 'privateRetailReference'not in item and 'sourceVendor'not in item
-    imageUrl=item['images'][0];imageUrl=BASE+imageUrl if imageUrl.startswith('/media/')else BASE.split('/test')[0]+imageUrl;assert imageUrl.startswith(BASE+'/media/');photo=context.request.get(imageUrl,timeout=60000);assert photo.status==200;assert hashlib.sha256(photo.body()).hexdigest()==work[item['id']]['media'][0]['sha256'],'MEDIA_HASH_CHANGED'
+    imageUrl=item['images'][0];imageUrl=BASE+imageUrl if imageUrl.startswith('/media/')else BASE.split('/test')[0]+imageUrl;assert imageUrl.startswith(BASE+'/media/');photo=context.request.get(imageUrl,timeout=60000);assert photo.status==200;assert hashlib.sha256(photo.body()).hexdigest()==work[item['id']]['media'][target['coverIndex']]['sha256'],'MEDIA_HASH_CHANGED'
    private=next(v for v in source['products'][2194:]if v['id']not in expected and v['images']);assert context.request.get(BASE+'/media/'+private['id']+'/0').status==404,'DRAFT_PHOTO_PUBLIC'
    page.goto(BASE+'/?lang=tr');ready.wait();dismiss(page);ready.wait();assert page.locator('.sg-home-page').count()==1;assert page.locator('.sg-campaign-card').count()==4
    for width in [360,390,430,768,1440]:
