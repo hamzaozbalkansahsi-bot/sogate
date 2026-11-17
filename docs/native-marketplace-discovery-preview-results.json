@@ -1,11 +1,11 @@
 {
-  "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
+  "base": "https://sexogate.com/test/native-preview-ee56761874485c52",
   "scope": "preview",
   "results": [
     {
       "engine": "chromium",
-      "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
-      "release": "b5e7e6913484a652360a2097",
+      "base": "https://sexogate.com/test/native-preview-ee56761874485c52",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "cc856e87ee27d870a96d6ccb7eb0d2cd3e4803390eff6a996e7b2468dfae747b",
       "scope": "preview",
       "widths": [
@@ -15,8 +15,8 @@
         768,
         1440
       ],
-      "publicProducts": 80,
-      "occupiedRoots": 4,
+      "publicProducts": 803,
+      "occupiedRoots": 5,
       "exampleProduct": "sg_ty_644a945eb0461904",
       "exampleCategory": "sg_lingerie",
       "exampleSection": "sg_lingerie_costumes",
@@ -60,8 +60,8 @@
     },
     {
       "engine": "webkit",
-      "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
-      "release": "b5e7e6913484a652360a2097",
+      "base": "https://sexogate.com/test/native-preview-ee56761874485c52",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "cc856e87ee27d870a96d6ccb7eb0d2cd3e4803390eff6a996e7b2468dfae747b",
       "scope": "preview",
       "widths": [
@@ -71,8 +71,8 @@
         768,
         1440
       ],
-      "publicProducts": 80,
-      "occupiedRoots": 4,
+      "publicProducts": 803,
+      "occupiedRoots": 5,
       "exampleProduct": "sg_ty_644a945eb0461904",
       "exampleCategory": "sg_lingerie",
       "exampleSection": "sg_lingerie_costumes",

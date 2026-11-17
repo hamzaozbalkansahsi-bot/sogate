@@ -30,10 +30,16 @@ Kategori düzeltmesi: kaynak Fantezi İç Giyim3096/Fantezi Kostüm3097 ve gerç
 
 SEO regresyonu: markası bilinmeyen üründe yanlış kapsamlı marka kancası SSR503 üretiyordu; kendi türetme katmanında düzeltildi.80yayın adayı×11dil=880sayfa/7.041kontrol; uyarılar hata, gerçek SKU/fiyat, sahte marka/puan/stok bilgisi yok. Kaynak NODENO değiştirilmedi. `scripts/test-native-marketplace-seo.php` bu koşulu her yayın kanıtında zorunlu sınar.
 
-## 17 Kasım etkin test yayını
+## 17 Kasım ilk 80 ürün yayını — tarihsel kayıt
 
 `https://sexogate.com/test` sürümü `b5e7e6913484a652360a2097`:131yeni yönetim kaydı/80kamu ürünü/51inceleme. Eski2.194yönetim kaydı korunur ve eski468ürün yeniden yayımlanmaz. Yönetimde yeni ürünleri `seo-` koduyla arayın; yayımlanmış üründe **Ürüne git** bağlantısı kaydı yeniden yükledikten sonra da çalışır. Kaynak alanı veya belge belirtilmemişse veri uydurulmaz.
 
 Yerel14, gerçek sunucu önizlemesi13 kabul grubu geçti. Etkin adreste Chromium/WebKit yönetim MFA+ürün listesi ve9müşteri rotası, iade girişi, güvenlik başlıkları ve gizli dosya engelleri yeniden sınandı. Geçici önizleme kaldırıldı. Öncesinde ve sonrasında gerçek şifreli veritabanı geri yükleme yapıldı; mevcut cron işleri korunarak yeni worker doğrulandı. Ana hazırlanıyor sayfası/DNS/gerçek tahsilat değiştirilmedi. Kanonik kanıt `native-deployment-report.json`.
 
 Tam pazaryeri aktarımı tamamlanmış değildir; Hepsiburada403 ve ikinci244ek hazır ayrıntının içerik/görsel incelemesi açıktır. Gerçek para iadesi/taşıyıcı/fatura API bağlantısı yerine test veya denetlenmiş manuel referans kullanıldığı açıkça ayrılır.
+
+<!-- BEGIN EXPANSION_ACTIVE_20261117 -->
+## Güncel genişletilmiş katalog
+
+Etkin `/test` sürümü `e7f4feeb57497118bdaf4dd3`: 803 kamu ürünü, 958 yeni yönetim kaydı ve 155 inceleme. 59 kategori tanımı içinde 37 dolu kategori var. İlk 51 incelemeden 45'i çözüldü; altısı gerçek engelde. Önceki ikinci kuyruk sayıları tarihsel kayıttır. Yönetimde `seo-` koduyla arama ve **Ürüne git** bağlantısı kullanılır. Güncel kaynak/fiyat/görsel/inceleme ayrıntısı [genişletme kılavuzunda](native-marketplace-expansion.md), gerçek yayın/test/operasyon sonuçları [yayın raporunda](native-deployment-report.json) tutulur.
+<!-- END EXPANSION_ACTIVE_20261117 -->

@@ -128,9 +128,9 @@ Girişteki üst yazı ve nokta kaldırıldı. Bordo perde açılışı, kemer ç
 Katalog hazırlama, alanların doğruluk sınırları, ürün paneli ve açık SEO/rozet işleri [katalog kılavuzunda](native-catalog-loading.md); gerçek sayımlar [raporda](native-catalog-report.json). `prepare-native-catalog.py` yalnız özel yerel kaynaklarla çalışır. `publish-native-catalog-media.py` geçici token/yol, hash/MIME/boyut denetimi ve ana site fingerprint kontrolüyle web dışı fotoğraf aktarır; payload/helper sonunda kaldırılır. Gerçek ödeme, stok teyidi, vergi/hukuk/ülke/satıcı ve sağlayıcı kabulü halen kapalıdır.
 
 <!-- BEGIN MARKETPLACE_RETURNS_DEPLOY_20261117 -->
-## 17 Kasım pazaryeri ve iade sürümü
+## 17 Kasım ilk pazaryeri ve iade sürümü — tarihsel kayıt
 
-Etkin sürüm b5e7e6913484a652360a2097 yalnız https://sexogate.com/test üzerinde; ana site/DNS aynı. Son sayımlar, testler, rollback/yedek ve sınırlar `native-deployment-report.json` içindedir. Yeni131yönetim/80kamu/51inceleme, eski2.194kayıt korunur. Güncel kullanım `native-marketplace-transfer.md` ve `native-campaign-returns.md`.
+İlk etkin sürüm b5e7e6913484a652360a2097 yalnız https://sexogate.com/test üzerinde; ana site/DNS aynı. Son sayımlar, testler, rollback/yedek ve sınırlar `native-deployment-report.json` içindedir. Yeni131yönetim/80kamu/51inceleme, eski2.194kayıt korunur. Güncel kullanım `native-marketplace-transfer.md` ve `native-campaign-returns.md`.
 
 Yerel kabul: `python -B -X utf8 scripts/run-native-marketplace-acceptance.py --scope local --base https://127.0.0.1:3188/test`. Bu koşu yalnız yerelde ücretli fixture kurar. Tam ilk koşuda odak zamanlaması hatası görüldü; koşul korunarak bekleme düzeltildi, keşif/iade/diller yeniden çalıştı ve sürüme bağlı final14grup kapısı geçti. Eski rapor yeni sürümün kanıtı sayılmaz.
 
@@ -138,3 +138,9 @@ Güvenli sıra: kaynak/payload/kategori/görsel incelemesi → build → yerel h
 
 Rollback: `python scripts/publish-native-test.py rollback` yalnız en son doğrulanmış web girişinin şifreli yedeğini geri alır; SQLite silmez/geriye yazmaz. Ürün idempotent aktarımında mevcut fiyat/içerik korunur. Yıkıcı migration yok; additive sg-returns-001 mevcut veriye eklenir. Worker/cron durumunu `native-stage-operations.py status`/`cron`, şifreli SQLite geri yükleme testini `native-stage-operations.py backup` ile denetleyin. Sırlar yalnız Git dışı yerel dosyada; tam medya restore ve gerçek sağlayıcı onayı bu yayınla tamamlanmış sayılmaz.
 <!-- END MARKETPLACE_RETURNS_DEPLOY_20261117 -->
+
+<!-- BEGIN EXPANSION_ACTIVE_20261117 -->
+## Güncel genişletme yayınının doğrulaması
+
+`e7f4feeb57497118bdaf4dd3` yalnız `/test` üzerinde etkin; yerel15/önizleme14grup ve etkin Chromium/WebKit smoke+iade+HTTP kontrolleri geçti. Kullanılan sıra: mevcut `run-native-marketplace-acceptance.py --scope local` kabulü → şifreli DBrestore → medya aktarımı → `publish-native-test.py prepare` → bildirilen URL ile `run-native-marketplace-acceptance.py --scope preview` → `publish-native-test.py activate` → etkin HTTP/tarayıcı/kopya idempotensi → cron/status/backup → önizleme temizliği. Müşteri kopyası yönetim API'siyle ayrı sürümlenir; aynı sabit paketin kaynak alanları değiştirilmez. Yedek 2DB/52tablo/22873satır olarak gerçekten geri yüklendi. CI faturalama kilidinde0adım; gerçek sağlayıcılar kapalı. Güncel durum [yayın raporunda](native-deployment-report.json), katalog kararları [genişletme kılavuzunda](native-marketplace-expansion.md). Yukarıdaki rollback komutu geçerlidir; ana siteye veya SQLite içeriğine geri yazmaz.
+<!-- END EXPANSION_ACTIVE_20261117 -->

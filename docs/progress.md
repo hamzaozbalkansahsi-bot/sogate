@@ -429,3 +429,9 @@ Başarısız ilk girişimler kaydedildi ve giderildi: yanlış kategoride iç gi
 
 Yayın öncesi2DB/44tablo/11.610satır, sonrası2DB/52tablo/12.460satır AESGCM yedekten gerçekten geri yüklendi; FK/integrity/count PASS. Mevcut cron ve yeni worker kalp atışı sağlıklı, başka cron işleri aynı. Geçici kurucu/bakım dosyaları ve kendi önizleme girişi kaldırıldı. Kanıt docs/native-deployment-report.json; kullanım docs/native-marketplace-transfer.md ve docs/native-campaign-returns.md. Gerçek sağlayıcı/kategori/ülke/vergi/hukuk onayı,51inceleme,7eksikkod,ikinci kuyruk, tam medya restore, fiziksel iPhone/tamWCAG/CWV saha sonucu açık. GitHub push873e452 başarılı. Native-store ve local-commerce CI, GitHub hesabı faturalama kilidi nedeniyle hiç adım başlatmadı; iki işte0test. CI başarılı gösterilmez.
 <!-- END NATIVE_CAMPAIGN_RETURNS_20261116 -->
+
+<!-- BEGIN EXPANSION_ACTIVE_20261117 -->
+## 17 Kasım genişletme — yalnız /test yayımlandı ve test edildi
+
+`e7f4feeb57497118bdaf4dd3` / `057fb50f7d5887fee341e3d5b4a3dd64`: 803görünür/958yeni/155inceleme; 59kategori tanımı/37dolu/5kök. İlk51den45çözüldü6engel; kaynak1.002,44ertelenmiş. %15 ve seo-kod korundu; 785CMS reklam cümlesi gerçek API ile temizlendi, etkin tekrarda0güncelleme/0CTA. Yerel15/önizleme14grup, etkin iki tarayıcı+HTTP+iade,9.607medya hash'i, cronheartbeat ve şifreli 2DB/52tablo/22873satır restore geçti. Önizleme kaldırıldı, ana site/DNS/diğer sohbet değişmedi, gerçek sağlayıcılar kapalı. CI hesap faturalama kilidinde0adım; PASS denmez. Komutlar, kaynak ve kalan altı engel [genişletme kılavuzunda](native-marketplace-expansion.md); sayısal kanıt [yayın raporunda](native-deployment-report.json).
+<!-- END EXPANSION_ACTIVE_20261117 -->

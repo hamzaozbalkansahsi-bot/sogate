@@ -1,0 +1,118 @@
+{
+  "base": "https://sexogate.com/test/native-preview-ee56761874485c52",
+  "scope": "preview",
+  "release": "e7f4feeb57497118bdaf4dd3",
+  "passed": true,
+  "groups": [
+    {
+      "group": "import",
+      "exitCode": 0,
+      "seconds": 197.5,
+      "log": ".local\\acceptance-preview-import.log"
+    },
+    {
+      "group": "customer-copy",
+      "exitCode": 0,
+      "seconds": 1166.6,
+      "log": ".local\\acceptance-preview-customer-copy.log"
+    },
+    {
+      "group": "source",
+      "exitCode": 0,
+      "seconds": 14.5,
+      "log": ".local\\acceptance-preview-source.log"
+    },
+    {
+      "group": "http",
+      "exitCode": 0,
+      "seconds": 5,
+      "log": ".local\\acceptance-preview-http.log"
+    },
+    {
+      "group": "variants",
+      "exitCode": 0,
+      "seconds": 156.5,
+      "log": ".local\\acceptance-preview-variants.log"
+    },
+    {
+      "group": "age",
+      "exitCode": 0,
+      "seconds": 115.6,
+      "log": ".local\\acceptance-preview-age.log"
+    },
+    {
+      "group": "navigation",
+      "exitCode": 0,
+      "seconds": 284.2,
+      "log": ".local\\acceptance-preview-navigation.log"
+    },
+    {
+      "group": "polish",
+      "exitCode": 0,
+      "seconds": 194.6,
+      "log": ".local\\acceptance-preview-polish.log"
+    },
+    {
+      "group": "paint",
+      "exitCode": 0,
+      "seconds": 21.6,
+      "log": ".local\\acceptance-preview-paint.log"
+    },
+    {
+      "group": "cart-notifications",
+      "exitCode": 0,
+      "seconds": 71.7,
+      "log": ".local\\acceptance-preview-cart-notifications.log"
+    },
+    {
+      "group": "returns-public",
+      "exitCode": 0,
+      "seconds": 35.4,
+      "log": ".local\\acceptance-preview-returns-public.log"
+    },
+    {
+      "group": "actions",
+      "exitCode": 0,
+      "log": ".local/expansion-actions-settle-preview.log",
+      "scriptSha256": "6b929ad54b36c7425885ffb02c83492b9fbe46a8b1b9433d66ff4861d0cd870d",
+      "rerunAfterLocalPass": true
+    },
+    {
+      "group": "catalog",
+      "exitCode": 0,
+      "seconds": 202.6,
+      "log": ".local/expansion-preview-resume-catalog.log"
+    },
+    {
+      "group": "discovery",
+      "exitCode": 0,
+      "seconds": 96.5,
+      "log": ".local/expansion-preview-resume-discovery.log"
+    },
+    {
+      "group": "languages",
+      "exitCode": 0,
+      "seconds": 140.9,
+      "log": ".local/expansion-preview-resume-languages.log"
+    }
+  ],
+  "acceptance": {
+    "profile": "marketplace-returns-v1",
+    "groups": 14,
+    "sourceDetails": 1002,
+    "loadedNew": 958,
+    "visibleNew": 803,
+    "independentSourceProof": true,
+    "discoveryProof": true,
+    "customerCopyProof": true,
+    "allTransferred": false
+  },
+  "realPayments": false,
+  "failedAttempts": [
+    {
+      "group": "actions",
+      "error": "Locator.screenshot detached during FX completion render",
+      "resolution": "Waited for actual optional FX completion; all geometry/action assertions unchanged; reran local and preview both engines"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 {
   "status": "local_e2e_pass",
-  "release": "b5e7e6913484a652360a2097",
-  "checkedAt": "2026-11-17T06:26:35.999037+00:00",
+  "release": "e7f4feeb57497118bdaf4dd3",
+  "checkedAt": "2026-11-17T08:13:46.294983+00:00",
   "results": [
     {
       "engine": "chromium",
       "base": "https://127.0.0.1:3188/test",
-      "release": "b5e7e6913484a652360a2097",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "ebe25abeafda71923eb11e47c78d7be25f7ba000bf04c4ef9435cdceb6478d24",
-      "publicProducts": 80,
+      "publicProducts": 803,
       "oldSupplierProductsVisible": false,
       "realPaymentsCalled": false,
       "fiscalApiCalled": false,
@@ -39,9 +39,9 @@
     {
       "engine": "webkit",
       "base": "https://127.0.0.1:3188/test",
-      "release": "b5e7e6913484a652360a2097",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "ebe25abeafda71923eb11e47c78d7be25f7ba000bf04c4ef9435cdceb6478d24",
-      "publicProducts": 80,
+      "publicProducts": 803,
       "oldSupplierProductsVisible": false,
       "realPaymentsCalled": false,
       "fiscalApiCalled": false,
@@ -70,9 +70,6 @@
       "pageErrors": 0
     }
   ],
-  "coreChecksPerExecution": 53,
-  "orderingChecksPerExecution": 17,
-  "paidFixturesEnvironment": "isolated_local_only",
-  "realPaymentOrFiscalApiCalled": false,
-  "physicalDeviceTested": false
+  "realPayments": false,
+  "uploadedFixtures": false
 }
