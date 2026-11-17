@@ -37,8 +37,9 @@
     {
       "group": "actions",
       "exitCode": 0,
-      "seconds": 88.9,
-      "log": ".local\\acceptance-local-actions.log"
+      "log": ".local/expansion-actions-settle-local.log",
+      "scriptSha256": "6b929ad54b36c7425885ffb02c83492b9fbe46a8b1b9433d66ff4861d0cd870d",
+      "rerunAfterPreviewScreenshotFailure": true
     },
     {
       "group": "age",
@@ -149,5 +150,13 @@
     "customerCopyProof": true,
     "allTransferred": false
   },
-  "realPayments": false
+  "realPayments": false,
+  "verificationReruns": [
+    {
+      "group": "actions",
+      "reason": "Actual FX completion render detached screenshot target in preview; no geometry/action checks removed",
+      "localAndPreviewExitCode": 0,
+      "scriptSha256": "6b929ad54b36c7425885ffb02c83492b9fbe46a8b1b9433d66ff4861d0cd870d"
+    }
+  ]
 }
