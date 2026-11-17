@@ -38,4 +38,8 @@ class MarketplaceTest(unittest.TestCase):
   p={'id':7,'name':'Fantezi Giyim','images':[],'variants':[],'merchantListing':{'winnerVariant':{'price':{'currency':'TRY','sellingPrice':{'value':100}}}}}
   doc='<script>window["__envoy__SHARED_PROPS"]='+json.dumps({'product':p})+'</script><script type="application/ld+json">'+json.dumps({'@type':'ProductGroup','sku':'MODEL-XL','description':'İstanbul için ürün açıklaması.'})+'</script>'
   row=detail_page(doc,'https://www.trendyol.com/product-p-7');self.assertEqual(row['sourceCode'],'MODEL-XL');self.assertNotIn('description',row['missingFields'])
+ def test_real_codes_keep_internal_spaces_reject_markup_and_controls(self):
+  for code,expected in [('KD 0367','seo-KD 0367'),('Byzon Telefon Kontrollü 01','seo-Byzon Telefon Kontrollü 01'),('İÇ GİYİM ŞİŞLİ','seo-İÇ GİYİM ŞİŞLİ'),('A\nB',None),('A<B',None),('A\x7fB',None),('x'*121,None)]:
+   product={'id':9,'name':'Gerçek kaynak ürünü','productCode':code};doc='<script>window["__envoy__SHARED_PROPS"]='+json.dumps({'product':product})+'</script>'
+   self.assertEqual(detail_page(doc,'https://www.trendyol.com/p-p-9')['sku'],expected)
 if __name__=='__main__':unittest.main()

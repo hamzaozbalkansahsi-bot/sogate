@@ -91,7 +91,7 @@ def detail_page(document,url):
   except json.JSONDecodeError:continue
  variant=(shared.get('merchantListing')or{}).get('winnerVariant')or{};price=variant.get('price')or{};base=minor((price.get('sellingPrice')or{}).get('value'));currency=price.get('currency')
  if currency!='TRY':base=None
- code=str(shared.get('productCode')or ld.get('sku')or'').strip();code=code if re.fullmatch(r'[^\x00-\x20<>]{1,120}',code)else None
+ code=str(shared.get('productCode')or ld.get('sku')or'').strip();code=code if re.fullmatch(r'[^\x00-\x1f\x7f<>]{1,120}',code)else None
  images=[safe_url(v,{'cdn.dsmcdn.com'})for v in shared.get('images',[])if isinstance(v,str)][:20]
  attributes=[{'name':plain(v.get('key',{}).get('name')),'value':plain(v.get('value',{}).get('name'))}for v in shared.get('attributes',[])if isinstance(v,dict)]
  variants=[]
