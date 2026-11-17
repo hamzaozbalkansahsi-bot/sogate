@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "country": "TR",
+  "reviewStatus": "draft_summary",
+  "checkedAt": "2026-11-17",
+  "source": "https://tuketici.ticaret.gov.tr/yayinlar/tuketici-bilgi-rehberi/mesafeli-sozlesmeler-hakkinda-bilgilendirme",
+  "tr": {
+    "title": "İade ve iptal",
+    "paragraphs": [
+      "Siparişinizle ilgili iade ve iptal talebini hesabınızdan veya güvenli sipariş bağlantınızdan oluşturabilirsiniz."
+    ],
+    "items": [
+      {"title": "Cayma hakkı", "body": "Türkiye teslimatlarında, cayma hakkı kapsamındaki ürünler için teslimden itibaren 14 gün içinde talepte bulunabilirsiniz."},
+      {"title": "Koruyucu ambalaj ve mühür", "body": "Teslimden sonra koruyucu unsurları açılmış, sağlık ve hijyen açısından geri gönderilmeye uygun olmayan ürünlerde cayma hakkı istisnası uygulanır."},
+      {"title": "Eksik, hasarlı veya ayıplı ürün", "body": "Bu durumlarda başvurunuzu siparişiniz üzerinden iletin. Ayıplı ürüne ilişkin yasal haklarınız, hijyen nedeniyle uygulanan cayma istisnasından ayrıdır."},
+      {"title": "Paketi hazırlama ve teslim", "body": "Ürünü ve varsa parçalarını taşıma sırasında zarar görmeyecek sağlam bir pakete yerleştirin. Paketi belirtilen taşıyıcıya teslim etmek ve teslim belgesini saklamak sizin sorumluluğunuzdadır."}
+    ]
+  },
+  "en": {
+    "title": "Returns and cancellation",
+    "paragraphs": [
+      "You can request a return or cancellation from your account or your secure order link."
+    ],
+    "items": [
+      {"title": "Right of withdrawal", "body": "For deliveries in Türkiye, items covered by the right of withdrawal can be reported within 14 days of delivery."},
+      {"title": "Protective packaging and seals", "body": "The withdrawal exception applies to items whose protective packaging or seals have been opened after delivery and which are unsuitable for return for health or hygiene reasons."},
+      {"title": "Missing, damaged or defective items", "body": "Report the issue through your order. Your statutory rights for defective items are separate from hygiene-related withdrawal exceptions."},
+      {"title": "Packing and handover", "body": "Pack the item and any parts securely to prevent damage in transit. You are responsible for handing the parcel to the stated carrier and keeping proof of handover."}
+    ]
+  }
+}

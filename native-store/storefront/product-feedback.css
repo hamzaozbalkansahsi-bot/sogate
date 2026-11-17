@@ -1,0 +1,73 @@
+/*
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : native-store/storefront/product-feedback.css
+ * Açıklama   : Ürün geri bildirimi dialogu ve yönetim incelemesi için marka uyumlu erişilebilir yüzeyler.
+ */
+.sg-feedback-open{overflow:hidden}
+.sg-feedback-dialog{--feedback-wine:#5a0a20;--feedback-ink:#24191d;box-sizing:border-box;width:min(680px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:24px;border:1px solid #e6d8dc;border-radius:16px;background:#fff;color:var(--feedback-ink);font-family:Montserrat,Arial,sans-serif;font-size:14px;line-height:1.55;box-shadow:0 24px 80px #24191d33;overflow:auto;overscroll-behavior:contain}
+.sg-feedback-dialog::backdrop{background:#24191d99}
+.sg-feedback-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sg-feedback-head h2{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.2;color:var(--feedback-wine)}
+.sg-feedback-close{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;border:1px solid #8d737e;border-radius:50%;background:#fff;color:var(--feedback-ink);font:inherit;font-size:26px;cursor:pointer}
+.sg-feedback-dialog fieldset{padding:0;margin:20px 0 16px;border:0;min-width:0}
+.sg-feedback-dialog legend{font-size:15px;font-weight:600;margin-bottom:12px}
+.sg-feedback-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sg-feedback-option{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 12px;border:1px solid #8d737e;border-radius:8px;cursor:pointer;box-sizing:border-box}
+.sg-feedback-option:has(input:checked){border-color:var(--feedback-wine);background:#fbf4ef;box-shadow:inset 0 0 0 1px var(--feedback-wine)}
+.sg-feedback-option input{flex:0 0 18px;width:18px;height:18px;margin:0;accent-color:var(--feedback-wine)}
+.sg-feedback-option span{min-width:0;overflow-wrap:anywhere}
+.sg-feedback-help{font-size:12px;line-height:1.6;color:#716168}
+.sg-feedback-note{display:block;margin:0 0 8px;font-weight:600}
+.sg-feedback-dialog textarea,.sg-feedback-admin textarea,.sg-feedback-admin input,.sg-feedback-admin select{box-sizing:border-box;width:100%;min-height:44px;padding:12px;border:1px solid #8d737e;border-radius:8px;background:#fff;color:#24191d;font:inherit;font-size:16px}
+.sg-feedback-dialog textarea,.sg-feedback-admin textarea{resize:vertical}
+.sg-feedback-count{text-align:end;font-size:12px;margin:4px 0;color:#716168}
+.sg-feedback-error{border-inline-start:3px solid #8e0f38;padding:10px 12px;background:#f3e6e8;color:#5a0a20;font-size:14px;line-height:1.5}
+.sg-feedback-submit,.sg-feedback-secondary{box-sizing:border-box;min-height:44px;padding:12px 18px;border:1px solid #5a0a20;border-radius:8px;background:#5a0a20;color:#fff;font:inherit;font-weight:600;cursor:pointer;white-space:normal}
+.sg-feedback-secondary{background:#fff;color:#5a0a20}
+.sg-feedback-dialog .sg-feedback-submit{width:100%}
+.sg-feedback-submit:disabled,.sg-feedback-secondary:disabled{opacity:.55;cursor:default}
+.sg-feedback-dialog :focus-visible,.sg-feedback-admin :focus-visible{outline:3px solid #8e0f38;outline-offset:3px}
+.sg-feedback-dialog [hidden],.sg-feedback-admin [hidden]{display:none!important}
+.sg-feedback-dialog [data-feedback-reference]{padding:12px;border:1px solid #e6d8dc;border-radius:8px;background:#fbf4ef;overflow-wrap:anywhere;font-weight:600}
+.sg-feedback-admin{box-sizing:border-box;max-width:1100px;margin:0 auto;padding:24px;color:#24191d;background:#fff;font:15px/1.6 Montserrat,Arial,sans-serif}
+.sg-feedback-admin h1{font-size:28px;color:#5a0a20}
+.sg-feedback-admin h2{font-size:19px;margin:0 0 8px;overflow-wrap:anywhere}
+.sg-feedback-admin form{display:grid;gap:12px;margin:16px 0}
+.sg-feedback-admin label{display:grid;gap:6px;font-weight:600}
+.sg-feedback-admin [data-feedback-filter]{grid-template-columns:minmax(160px,300px) auto;align-items:end;justify-content:start}
+.sg-feedback-admin details{padding:12px 0;border-block:1px solid #e6d8dc}
+.sg-feedback-admin summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+.sg-feedback-admin-row{padding:20px 0;border-bottom:1px solid #e6d8dc}
+.sg-feedback-admin-row p{margin:4px 0;overflow-wrap:anywhere}
+.sg-feedback-admin-row button{margin-top:12px}
+.sg-feedback-pagination{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:20px 0}
+.sg-feedback-admin [data-feedback-detail]:not(:empty){padding:24px;margin-block-start:24px;border:1px solid #e6d8dc;border-radius:12px;background:#fbf4ef}
+.sg-feedback-plain-note{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:560px){.sg-feedback-dialog{padding:18px}.sg-feedback-head h2{font-size:24px}.sg-feedback-options{grid-template-columns:1fr}.sg-feedback-admin{padding:16px}.sg-feedback-admin [data-feedback-filter]{grid-template-columns:1fr}.sg-feedback-admin [data-feedback-detail]:not(:empty){padding:16px}}
+@media(prefers-reduced-motion:reduce){.sg-feedback-dialog *,.sg-feedback-admin *{scroll-behavior:auto!important}}
+.sg-feedback-admin-page{margin:0;background:#fbf4ef;color:#24191d;font-family:Montserrat,Arial,sans-serif}
+.sg-feedback-admin-layout{display:grid;grid-template-columns:238px minmax(0,1fr);min-block-size:100dvh}
+.sg-feedback-admin-sidebar{position:sticky;inset-block-start:0;display:flex;flex-direction:column;gap:24px;block-size:100dvh;box-sizing:border-box;padding:28px 16px;background:#5a0a20;color:#fbf4ef}
+.sg-feedback-admin-brand{display:flex;align-items:flex-start;flex-direction:column;gap:12px;padding-inline:8px;text-decoration:none;color:inherit}
+.sg-feedback-admin-brand img{display:block;inline-size:160px;block-size:90px;object-fit:contain;filter:brightness(0) invert(1)}
+.sg-feedback-admin-brand span{font-size:12px;letter-spacing:.04em}
+.sg-feedback-admin-sidebar nav{display:grid;gap:8px}
+.sg-feedback-admin-sidebar nav a,.sg-feedback-admin-store{display:flex;align-items:center;min-block-size:46px;padding:10px 12px;box-sizing:border-box;border-radius:8px;color:#fbf4ef;text-decoration:none;font-size:14px;line-height:1.5}
+.sg-feedback-admin-sidebar nav a:hover,.sg-feedback-admin-store:hover{background:#8e0f38}
+.sg-feedback-admin-sidebar nav a[aria-current=page]{background:#f3e6e8;color:#5a0a20;font-weight:600}
+.sg-feedback-admin-store{margin-block-start:auto;border-block-start:1px solid #e7b4bd66;border-radius:0}
+.sg-feedback-admin-sidebar :focus-visible{outline:2px solid #fbf4ef;outline-offset:3px}
+.sg-feedback-skip{position:absolute;inset-block-start:-100px;inset-inline-start:16px;z-index:100;padding:12px 18px;background:#fff;color:#5a0a20;border:2px solid #5a0a20}
+.sg-feedback-skip:focus{inset-block-start:12px}
+.sg-feedback-admin-page .sg-feedback-admin{inline-size:100%;min-inline-size:0;max-inline-size:1250px;background:transparent;padding:32px}
+.sg-feedback-admin-page .sg-feedback-admin>header{padding-block-end:20px;border-block-end:1px solid #e6d8dc;margin-block-end:20px}
+.sg-feedback-admin-page .sg-feedback-admin>header>a{display:inline-flex;align-items:center;min-block-size:44px;color:#5a0a20;font-size:13px;font-weight:600}
+.sg-feedback-admin-page .sg-feedback-admin h1{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1.25;margin-block:12px}
+.sg-feedback-admin-page [data-feedback-list]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-block-start:20px}
+.sg-feedback-admin-page .sg-feedback-admin-row{padding:20px;border:1px solid #e6d8dc;border-radius:12px;background:#fff}
+.sg-feedback-admin-page .sg-feedback-admin-row h2{font-family:Montserrat,Arial,sans-serif;font-size:15px;font-weight:600}
+.sg-feedback-admin-page .sg-feedback-pagination{grid-column:1/-1}
+@media(max-width:900px){.sg-feedback-admin-page [data-feedback-list]{grid-template-columns:1fr}.sg-feedback-admin-page .sg-feedback-admin{padding:24px}}
+@media(max-width:700px){.sg-feedback-admin-layout{grid-template-columns:minmax(0,1fr)}.sg-feedback-admin-sidebar{position:static;block-size:auto;padding:16px;gap:14px}.sg-feedback-admin-brand{flex-direction:row;align-items:center;gap:16px}.sg-feedback-admin-brand img{inline-size:114px;block-size:64px}.sg-feedback-admin-sidebar nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.sg-feedback-admin-sidebar nav a{font-size:12px;padding:10px}.sg-feedback-admin-store{display:none}.sg-feedback-admin-page .sg-feedback-admin{padding:20px 16px}.sg-feedback-admin-page .sg-feedback-admin h1{font-size:27px}}

@@ -3,12 +3,16 @@
 # Tasarım    : Hamza ÖZBALKAN
 # Dosya      : scripts/native_marketplace_acceptance.py
 # Açıklama   : Katalog değişiminde eski ürünlere bağlı kabuller yerine yeni gerçek kaynak ve iade kanıtlarını zorunlu tutar.
-import hashlib,json,sqlite3
+import hashlib,importlib.util,json,re,sqlite3
 from contextlib import closing
 from pathlib import Path
 
 DISCOVERY_KEYS=('productFirstLayout','compactHeader','compactCampaignCards','balancedSelection','alignedCards','realCategoryTabs','tabsPreserveScrollAndFocus','tabDeepLink','keyboardRail','variantSelectionRequired','blogRoute','serverClientParity','mountedServerLinks','categoryImages','hierarchy','backRestoresSelection','sizeFilter','brandFilter','colorFilter','validCombinedFacets','sortPreservesFilters','invalidPriceRejected','keyboardDrawer','facetNoindex','facetCanonical','search','rtl','singleStore','serverCategoryLayout')
+PRODUCT_EXPERIENCE_KEYS=('titlesNormalized','richDescriptions','featuredFacts','inlineReturns','feedbackPersistence','feedbackSecurity','adminFeedbackMfa','relatedCollections','discoveryLinks','recommendationRails','truthfulPopularity','headingNaturalWrap','footerDivider','illustratedMegaMenu','keyboardAndRtl','breadcrumbProductName','galleryWrap','railArrowsLogical','thumbNoChrome','focusTheme','galleryScrollPreserved')
+PRODUCT_EXPERIENCE_WIDTHS=[360,390,430,768,1440]
 SOURCE_TESTS={'data':'scripts/test-native-marketplace-data.py','payload':'scripts/test-native-marketplace-payload.php','installer':'scripts/test-native-installer.php','seo':'scripts/test-native-marketplace-seo.php','returnsCore':'scripts/test-native-returns-php.php','returnsCoreSource':'scripts/test-native-returns-php.php','returnOrdering':'scripts/test-native-return-ordering.php','returnOrderingSource':'scripts/test-native-return-ordering.php'}
+PRODUCT_MODULE_TESTS={'productExperienceJs':'scripts/test-native-product-experience.mjs','megaMenuJs':'scripts/test-native-mega-menu.mjs','galleryExperienceJs':'scripts/test-native-gallery-experience.mjs','productExperiencePhp':'scripts/test-native-product-experience.php','editorialPhp':'scripts/test-native-product-editorial.php','feedbackSourcePhp':'scripts/test-native-product-feedback.php','feedbackPackagePhp':'scripts/test-native-product-feedback.php','gallerySourcePhp':'scripts/test-native-product-gallery.php','galleryPackagePhp':'scripts/test-native-product-gallery.php','runtimeCatalogPhp':'scripts/test-native-runtime-catalog.php'}
+PRODUCT_MEMORY_MODULES=('public/index.php','deploy/worker.php','private/control-http.php','private/control-catalog.php','private/control-store.php','private/sexogate-catalog.php','private/sexogate-runtime-catalog.php','private/catalog.json','private/catalog-active.json.gz','private/catalog-active.meta.json','private/sexogate-storefront-content.php','private/sexogate-product-editorial.php','private/sexogate-product-editorial-data.json','private/sexogate-product-gallery.php','private/sexogate-product-gallery-data.json','private/sexogate-notifications.php')
 
 def file_sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -60,6 +64,37 @@ def validate_marketplace_source_proof(root,proof,suffix,release,base,selection,v
   result=executions[name]
   if result.get('passed')!=required or len(result.get('checks',[]))!=required or result.get('testSha256')!=file_sha(root/SOURCE_TESTS[name])or result.get('isolatedDatabase')is not True or result.get('realPaymentOrFiscalApiCalled')is not False:raise ValueError('MARKETPLACE_SOURCE_EXECUTION_REQUIRED')
 
+def product_module_fingerprint(root):
+ """Mevcut modül yardımcısını main/test çalıştırmadan yükler ve aynı bayt bağını hesaplar."""
+ root=Path(root);spec=importlib.util.spec_from_file_location('sexogate_product_module_fingerprint',root/'scripts/test-native-product-modules.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+ module.ROOT=root;module.METADATA=root/'.local/native-stage-package.json';module.SELECTION=root/'.local/native-marketplace-selection.json';module.SOURCE=root/'native-store/storefront'
+ return module.fingerprint(full=False)
+
+def validate_product_module_proof(root,proof,release,dataset):
+ expected=product_module_fingerprint(root)
+ if not isinstance(proof,dict)or type(proof.get('schema'))is not int or proof['schema']!=1 or proof.get('profile')!='native-product-modules-v1'or proof.get('passed')is not True or proof.get('release')!=release or proof.get('dataset')!=dataset or proof.get('runnerSha256')!=file_sha(root/'scripts/test-native-product-modules.py')or proof.get('fingerprint')!=expected or expected.get('release')!=release or expected.get('dataset')!=dataset or proof.get('sourceSha256')!=expected.get('sourceSha256')or proof.get('executionEnvironment')!='local-isolated-cli'or proof.get('fullPackageVerifiedBeforeAndAfter')is not True or type(proof.get('fullPackageVerificationPasses'))is not int or proof['fullPackageVerificationPasses']!=2 or proof.get('publishedToRemote')is not False or proof.get('realProviderCalled')is not False:raise ValueError('MARKETPLACE_PRODUCT_MODULE_PROOF_REQUIRED')
+ executions=proof.get('executions')
+ if not isinstance(executions,dict)or set(executions)!=set(PRODUCT_MODULE_TESTS):raise ValueError('MARKETPLACE_PRODUCT_MODULE_EXECUTIONS_REQUIRED')
+ for name,path in PRODUCT_MODULE_TESTS.items():
+  row=executions[name]
+  if not isinstance(row,dict)or type(row.get('exitCode'))is not int or row['exitCode']!=0 or type(row.get('passed'))is not int or row['passed']<1 or row.get('scriptSha256')!=file_sha(root/path):raise ValueError('MARKETPLACE_PRODUCT_MODULE_EXECUTIONS_REQUIRED')
+
+def validate_product_memory_proof(root,proof,release,dataset):
+ if not isinstance(proof,dict)or type(proof.get('schema'))is not int or proof['schema']!=1 or proof.get('passed')is not True or proof.get('executionEnvironment')!='local-isolated-php-128M'or type(proof.get('actualExecutions'))is not int or proof['actualExecutions']!=4 or proof.get('packageUnchanged')is not True or proof.get('realProviderCalled')is not False or proof.get('release')!=release or proof.get('dataset')!=dataset or proof.get('scriptSha256')!=file_sha(root/'scripts/test-native-product-runtime-memory.py'):raise ValueError('MARKETPLACE_PRODUCT_MEMORY_PROOF_REQUIRED')
+ package=json.loads((root/'.local/native-stage-package.json').read_text('utf-8-sig'));bundle=Path(package['bundle']);manifest=json.loads((bundle/'deployment-manifest.json').read_text('utf-8-sig'));hashes=proof.get('moduleHashes')
+ if package.get('release')!=release or package.get('dataset')!=dataset or manifest.get('release')!=release or manifest.get('dataset')!=dataset or proof.get('packageArchiveSha256')!=package.get('sha256')or proof.get('packageArchiveSha256')!=file_sha(Path(package['archive']))or not isinstance(hashes,dict)or set(hashes)!=set(PRODUCT_MEMORY_MODULES):raise ValueError('MARKETPLACE_PRODUCT_MEMORY_PACKAGE_REQUIRED')
+ for relative in PRODUCT_MEMORY_MODULES:
+  checksum=hashes[relative]
+  if not isinstance(checksum,str)or not re.fullmatch('[a-f0-9]{64}',checksum)or checksum!=manifest.get('files',{}).get(relative)or checksum!=file_sha(bundle/relative):raise ValueError('MARKETPLACE_PRODUCT_MEMORY_PACKAGE_REQUIRED')
+ cases=proof.get('cases')
+ if not isinstance(cases,dict)or set(cases)!={'worker','customer','adminSchema','adminProducts'}:raise ValueError('MARKETPLACE_PRODUCT_MEMORY_CASE_REQUIRED')
+ for name,row in cases.items():
+  if not isinstance(row,dict)or row.get('case')!=name or row.get('release')!=release or type(row.get('exitCode'))is not int or row['exitCode']!=0 or row.get('ok')is not True or row.get('memoryLimit')!='128M'or type(row.get('peakBytes'))is not int or not 0<row['peakBytes']<=128*1024*1024 or row.get('fatal')is not False or row.get('realProviderCalled')is not False:raise ValueError('MARKETPLACE_PRODUCT_MEMORY_CASE_REQUIRED')
+ counts={'worker':{'notificationsSent':0},'customer':{'sourceProducts':958,'publicProducts':803,'stories':803},'adminSchema':{'sourceProducts':3152,'publicProducts':803,'schemaProducts':3152,'schemaVisibleProducts':803},'adminProducts':{'sourceProducts':958,'publicProducts':803,'rows':958,'publishedRows':803,'reviewRows':155}}
+ for case,fields in counts.items():
+  if any(type(cases[case].get(key))is not int or cases[case][key]!=value for key,value in fields.items()):raise ValueError('MARKETPLACE_PRODUCT_MEMORY_COUNTS_REQUIRED')
+ if cases['worker'].get('healthOk')is not True or any(cases[case].get('unusedCatalogReleased')is not True for case in ['adminSchema','adminProducts']):raise ValueError('MARKETPLACE_PRODUCT_MEMORY_CASE_REQUIRED')
+
 def marketplace_package(root,package):
  catalog=json.loads((Path(package['bundle'])/'private/catalog.json').read_text('utf8'))
  return catalog.get('catalogOrigin')=='sexogate-catalog-v2'
@@ -80,6 +115,8 @@ def marketplace_acceptance(root,suffix,release,base,minimum_time):
  copy_proof=read('.local/native-marketplace-copy-'+suffix+'.json')
  if type(copy_proof.get('schema'))is not int or copy_proof['schema']!=1 or copy_proof.get('base')!=base or copy_proof.get('release')!=release or copy_proof.get('dataset')!=selection['dataset']or type(copy_proof.get('visible'))is not int or copy_proof['visible']!=imported['visibleNew']or copy_proof.get('scriptSha256')!=file_sha(root/'scripts/clean-native-marketplace-copy.py')or copy_proof.get('helperSha256')!=file_sha(root/'scripts/native_marketplace_copy.py')or type(copy_proof.get('remainingCTAs'))is not int or copy_proof['remainingCTAs']!=0 or copy_proof.get('realPayments')is not False or any(copy_proof.get(key)is not True for key in ['protectedFieldsNoChange','sourcePreserved','idempotent','verifiedAfterReload','expectedSetMatch','actualRequests']):raise ValueError('MARKETPLACE_CUSTOMER_COPY_REQUIRED')
  validate_marketplace_source_proof(root,read('docs/native-marketplace-source-'+suffix+'-results.json'),suffix,release,base,selection,imported['visibleNew'])
+ validate_product_module_proof(root,read('.local/native-product-module-results.json'),release,selection['dataset'])
+ validate_product_memory_proof(root,read('.local/native-product-runtime-memory.json'),release,selection['dataset'])
  discovery=rows('docs/native-marketplace-discovery-'+suffix+'-results.json',DISCOVERY_KEYS,'scripts/test-native-marketplace-discovery.py')
  if any(r.get('publicProducts')!=imported['visibleNew']or r.get('occupiedRoots',0)<1 or r.get('pageErrors')!=0 or r.get('realPayments')is not False or r.get('adminAccessed')is not False for r in discovery):raise ValueError('MARKETPLACE_DISCOVERY_REQUIRED')
  nav=rows('.local/native-browser-marketplace-mount-'+suffix+'.json')
@@ -101,10 +138,14 @@ def marketplace_acceptance(root,suffix,release,base,minimum_time):
  if any(r.get('stickyOverlap')is not False or r.get('notificationApi',{}).get('externalPushSent')is not False for r in basket):raise ValueError('MARKETPLACE_CART_NOTIFICATION_REQUIRED')
  catalog=rows('docs/native-marketplace-'+suffix+'-results.json',['sourceCodesKept','finalMarkup15','noFakeInventory','noLegacyProducts','realImageHashes','draftMediaPrivate','categorySizeFilter','priceSort','facetNoindex','singleStore','adminMfa','adminFieldsAndSeo','adminGoToProductAfterReload','checkoutClosed'],'scripts/test-native-marketplace-browser.py')
  if any(r.get('dataset')!=selection['dataset']or r.get('loadedNew')!=selection['newProducts']or r.get('visibleNew')!=imported['visibleNew']or r.get('allMarketplaceProductsTransferred')is not False for r in catalog):raise ValueError('MARKETPLACE_SOURCE_SET_REQUIRED')
+ experience=rows('.local/native-product-experience-'+suffix+'.json',PRODUCT_EXPERIENCE_KEYS,'scripts/test-native-product-experience-browser.py')
+ for row in experience:
+  if row.get('scope')!=suffix or row.get('dataset')!=selection['dataset']or type(row.get('visibleNew'))is not int or row['visibleNew']!=803 or row['visibleNew']!=imported['visibleNew']or type(row.get('pageErrors'))is not int or row['pageErrors']!=0 or row.get('widths')!=PRODUCT_EXPERIENCE_WIDTHS or any(type(width)is not int for width in row['widths'])or type(row.get('samples'))is not int or row['samples']!=5 or type(row.get('galleryImageCount'))is not int or row['galleryImageCount']<2 or type(row.get('feedbackReviewedVersion'))is not int or row['feedbackReviewedVersion']!=2 or not isinstance(row.get('feedbackReference'),str)or not re.fullmatch(r'SGF-\d{6}-[A-F0-9]{12}',row['feedbackReference'])or row.get('qaFeedbackClearlyLabelled')is not True or any(row.get(key)is not False for key in ['realPayments','ordersCreated','realRefunds','sourceSnapshotChanged']):raise ValueError('MARKETPLACE_PRODUCT_EXPERIENCE_REQUIRED')
  http=read('.local/native-marketplace-http-'+suffix+'.json')
  if http.get('base')!=base or http.get('release')!=release or http.get('scriptSha256')!=hashlib.sha256((root/'scripts/test-native-marketplace-http.py').read_bytes()).hexdigest()or not all(http.get(k)is True for k in ['privatePathsBlocked','guestOrderOwnership','returnCsrfAndOrigin','returnsNoStoreNoindex','adminProtected','checkoutClosed'])or http.get('realPayments')is not False:raise ValueError('MARKETPLACE_HTTP_SECURITY_REQUIRED')
+ if not all(http.get(k)is True for k in ['reviewedGallery','galleryCommercialFieldsUnchanged','galleryAllAssociationsChecked','galleryPrivateNoStore','galleryOwnershipChecked'])or http.get('galleryRegistrySha256')!=file_sha(root/'native-store/storefront/product-gallery-data.json')or type(http.get('galleryOriginalSamples'))is not int or not 1<=http['galleryOriginalSamples']<=24 or type(http.get('galleryApprovedAssets'))is not int or http['galleryApprovedAssets']<http['galleryOriginalSamples']or type(http.get('galleryProductsExtended'))is not int or not 1<=http['galleryProductsExtended']<=imported['visibleNew']:raise ValueError('MARKETPLACE_GALLERY_PROOF_REQUIRED')
  rows('.local/native-returns-public-'+suffix+'.json',['guestLookupProtected','noOrderDataLeaked','trAndEn','rtlLanguageChoice','noStoreNoindex'],'scripts/test-native-returns-public.py')
  if suffix=='local':
   returns=rows('.local/native-returns-local.json',['partialReturn','serverQuote','idempotency','cancelAndHistory','csrfAndOrigin','sessionAndOrderOwnership','warehouseFinancialBoundary','adminMfa','quarantineNoRestock','fiscalConfirmationSeparate','testExcludedFromLiveReport','trAndEn','rtlLanguageChoice','firstHtmlAndNoindex'],'scripts/test-native-returns-browser.py')
   if any(r.get('realPaymentsCalled')is not False or r.get('fiscalApiCalled')is not False or not r.get('localPaidFixturesOnly')for r in returns):raise ValueError('RETURN_ISOLATED_ACCEPTANCE_REQUIRED')
- return {'profile':'marketplace-returns-v1','groups':15 if suffix=='local'else 14,'sourceDetails':selection['sourceProducts'],'loadedNew':selection['newProducts'],'visibleNew':imported['visibleNew'],'independentSourceProof':True,'discoveryProof':True,'customerCopyProof':True,'allTransferred':False}
+ return {'profile':'marketplace-returns-v1','groups':16 if suffix=='local'else 15,'sourceDetails':selection['sourceProducts'],'loadedNew':selection['newProducts'],'visibleNew':imported['visibleNew'],'independentSourceProof':True,'discoveryProof':True,'customerCopyProof':True,'productExperienceProof':True,'productModuleProof':True,'productRuntimeMemoryProof':True,'allTransferred':False}

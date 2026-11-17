@@ -9,6 +9,7 @@ import fs from 'node:fs';import path from 'node:path';import ts from 'typescript
 const root=path.dirname(fileURLToPath(import.meta.url)),bundle=path.resolve(process.argv[2]);if(!bundle.includes('native-stage-'))throw Error('STOREFRONT_BUILD_SCOPE');
 const copy=JSON.parse(fs.readFileSync(path.join(root,'copy.json'),'utf8'));
 for(const [source,target]of [['content.php','private/sexogate-storefront-content.php'],['copy.json','private/sexogate-storefront-copy.json'],['renderers.js','public/sexogate-storefront-renderers.js'],['ui.js','public/sexogate-storefront.js'],['storefront.css','public/sexogate-storefront.css']])fs.copyFileSync(path.join(root,source),path.join(bundle,target));
+for(const [source,target]of [['editorial.php','sexogate-product-editorial.php'],['product-editorial-data.json','sexogate-product-editorial-data.json']])fs.copyFileSync(path.join(root,source),path.join(bundle,'private',target));
 fs.writeFileSync(path.join(bundle,'public/sexogate-storefront-copy.js'),'export const storefrontCopy='+JSON.stringify(copy)+';\n');
 fs.copyFileSync(path.join(root,'home.php'),path.join(bundle,'private/sexogate-storefront-home.php'));
 const dictionaries=await Promise.all(['i18n.js','shop-i18n.js','shopping-i18n.js'].map(name=>import(pathToFileURL(path.join(bundle,'public',name)).href)));

@@ -22,9 +22,20 @@ from native_marketplace_import_guard import canonical_data, fingerprint, frozen_
 from native_marketplace_paths import marketplace_paths
 
 ROOT = Path(__file__).resolve().parent.parent
-EXPECTED_RELEASE = 'e7f4feeb57497118bdaf4dd3'
 EXPECTED_DATASET = '057fb50f7d5887fee341e3d5b4a3dd64'
 EXPECTED_VISIBLE = 803
+
+
+def reviewed_package_release():
+    package = json.loads((ROOT / '.local/native-stage-package.json').read_text('utf8'))
+    manifest = json.loads((Path(package['bundle']) / 'deployment-manifest.json').read_text('utf8'))
+    release = package.get('release')
+    if (not isinstance(release, str) or not re.fullmatch('[a-f0-9]{24}', release)
+        or manifest.get('release') != release or package.get('dataset') != EXPECTED_DATASET
+        or manifest.get('dataset') != EXPECTED_DATASET or manifest.get('checkoutEnabled') is not False
+        or hashlib.sha256(Path(package['archive']).read_bytes()).hexdigest() != package.get('sha256')):
+        raise ValueError('COPY_REVIEWED_PACKAGE_REQUIRED')
+    return release
 
 
 def target_base(value):
@@ -180,7 +191,7 @@ def execute(base, proof_path, proof):
     selection = json.loads((ROOT / '.local/native-marketplace-selection.json').read_text('utf8'))
     paths = marketplace_paths(selection)
     package = json.loads((ROOT / '.local/native-stage-package.json').read_text('utf8'))
-    if package.get('release') != EXPECTED_RELEASE or selection.get('dataset') != EXPECTED_DATASET or package.get('dataset') != EXPECTED_DATASET:
+    if package.get('release') != reviewed_package_release() or selection.get('dataset') != EXPECTED_DATASET or package.get('dataset') != EXPECTED_DATASET:
         raise ValueError('COPY_RELEASE_SCOPE_MISMATCH')
     private = Path(package['bundle']) / 'private'
     catalog = json.loads((private / 'catalog.json').read_text('utf8'))
@@ -267,7 +278,7 @@ def main():
     base = target_base(os.environ.get('SEXOGATE_NATIVE_TEST_URL', 'https://127.0.0.1:3188/test'))
     scope = 'preview' if '/native-preview-' in base else 'remote' if base.startswith('https://sexogate.com') else 'local'
     proof_path = ROOT / ('.local/native-marketplace-copy-' + scope + '.json')
-    proof = {'schema': 1, 'base': base, 'release': EXPECTED_RELEASE, 'dataset': EXPECTED_DATASET,
+    proof = {'schema': 1, 'base': base, 'release': None, 'dataset': EXPECTED_DATASET,
         'scriptSha256': sha(Path(__file__)), 'helperSha256': sha(ROOT / 'scripts/native_marketplace_copy.py'),
         'visible': None, 'updated': 0, 'skipped': 0, 'remainingCTAs': None,
         'protectedFieldsNoChange': False, 'sourcePreserved': False, 'idempotent': False,

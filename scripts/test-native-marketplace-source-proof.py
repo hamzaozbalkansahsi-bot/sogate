@@ -12,7 +12,10 @@ ROOT=Path(__file__).resolve().parent.parent
 
 def execute(name,arguments):
  command=([sys.executable,'-B','-X','utf8']if name=='data'else[str(ROOT/'.local/php-runtime/php.exe'),'-d','extension=pdo_sqlite','-d','extension=sqlite3'])+[str(ROOT/SOURCE_TESTS[name])]+arguments
- completed=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=300)
+ # Sıkıştırılmış yerel kaynakta 958 ayrı ham dosya açılır; gerçek hash denetimi atlanmaz.
+ timeout=900 if name=='data'else 300
+ print(json.dumps({'execution':name,'phase':'started','timeoutSeconds':timeout}),flush=True)
+ completed=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=timeout)
  stdout=completed.stdout.decode('utf-8-sig');stderr=completed.stderr.decode('utf-8-sig')
  if completed.returncode!=0:
   print(json.dumps({'execution':name,'exitCode':completed.returncode,'stdout':stdout[-4000:],'stderr':stderr[-4000:]},ensure_ascii=False),file=sys.stderr)

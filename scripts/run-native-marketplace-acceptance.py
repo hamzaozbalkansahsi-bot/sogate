@@ -11,7 +11,7 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from native_marketplace_acceptance import marketplace_acceptance
 parser=argparse.ArgumentParser();parser.add_argument('--scope',choices=['local','preview'],required=True);parser.add_argument('--base',required=True);args=parser.parse_args()
 assert (args.scope=='local'and args.base=='https://127.0.0.1:3188/test')or(args.scope=='preview'and re.fullmatch(r'https://sexogate\.com/test/native-preview-[a-f0-9]{16}',args.base))
-env=os.environ.copy();env.update(SEXOGATE_NATIVE_TEST_URL=args.base,SEXOGATE_MARKETPLACE_SCOPE=args.scope,PYTHONUTF8='1',PYTHONDONTWRITEBYTECODE='1')
+env=os.environ.copy();env.update(SEXOGATE_NATIVE_TEST_URL=args.base,SEXOGATE_MARKETPLACE_SCOPE=args.scope,SEXOGATE_PRODUCT_EXPERIENCE_SCOPE=args.scope,PYTHONUTF8='1',PYTHONDONTWRITEBYTECODE='1')
 package=json.loads((ROOT/'.local/native-stage-package.json').read_text('utf8'));release=package['release'];results=[]
 def run(name,command,scope=None):
  local=env.copy()
@@ -39,11 +39,13 @@ def lane_b():
 try:
  py('import','import-native-marketplace-batch.py')
  py('customer-copy','clean-native-marketplace-copy.py')
+ if args.scope=='local':py('product-runtime-memory','test-native-product-runtime-memory.py')
  run('source',[sys.executable,'-B','-X','utf8','scripts/test-native-marketplace-source-proof.py','--scope',args.scope,'--base',args.base])
  py('http','test-native-marketplace-http.py')
  with concurrent.futures.ThreadPoolExecutor(max_workers=2)as pool:
   futures=[pool.submit(lane_a),pool.submit(lane_b)]
   for future in futures:future.result()
+ py('product-experience','test-native-product-experience-browser.py')
  py('languages','test-native-languages.py','marketplace-mount-'+args.scope)
  assert json.loads((ROOT/'.local/native-stage-package.json').read_text('utf8'))['release']==release,'PACKAGE_CHANGED_DURING_ACCEPTANCE'
  proof=marketplace_acceptance(ROOT,args.scope,release,args.base,(ROOT/'.local/native-stage-package.json').stat().st_mtime)

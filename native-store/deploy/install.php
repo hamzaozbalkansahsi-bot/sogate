@@ -94,6 +94,7 @@ try{
  file_put_contents($release.'/nodeno-runtime.php','<?php return '.var_export($runtime,true).';',LOCK_EX);chmod($release.'/nodeno-runtime.php',0600);
  foreach([$release.'/private/cache',$home.'/media']as $directory)if(!is_dir($directory))mkdir($directory,0700);
  require $release.'/private/control-auth.php';$db=nodenoControlDatabase($home.'/state');
+ if(is_file($release.'/private/sg-product-feedback.php')){require_once $release.'/private/sg-product-feedback.php';sgProductFeedbackSchema($db);}
  if(!(int)$db->query("SELECT COUNT(*) FROM control_users WHERE role='owner'")->fetchColumn()){
   $uid=nodenoControlId('owner_');$db->prepare('INSERT INTO control_users(id,email,display_name,role,password_hash,totp_secret,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)')->execute([$uid,$body['email'],'Mağaza yöneticisi','owner',$body['passwordHash'],nodenoControlEncrypt($home.'/state',$body['totpSecret'],$uid),time(),time()]);nodenoControlAudit($db,$home.'/state',$uid,'setup','team',$uid);
  }

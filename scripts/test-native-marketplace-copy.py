@@ -8,6 +8,9 @@ import copy
 import importlib.util
 import json
 import unittest
+import hashlib
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from pathlib import Path
 
 from native_marketplace_copy import clean_text, clean_data, has_advertising, plan_copy, apply_copy, protected_data
@@ -207,6 +210,40 @@ class CopyCliBoundaryTest(unittest.TestCase):
         cls.cli = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(cls.cli)
 
+    def package_fixture(self, folder):
+        root = Path(folder)
+        (root / '.local').mkdir()
+        bundle = root / 'native-stage-fixture' / 'bundle'
+        bundle.mkdir(parents=True)
+        archive = root / 'package.zip'
+        archive.write_bytes(b'unit-fixture-only')
+        package = {'release': 'a' * 24, 'bundle': str(bundle), 'archive': str(archive),
+            'dataset': self.cli.EXPECTED_DATASET, 'sha256': hashlib.sha256(archive.read_bytes()).hexdigest()}
+        manifest = {'release': package['release'], 'dataset': package['dataset'], 'checkoutEnabled': False}
+        return root, bundle, package, manifest
+
+    def test_reviewed_package_accepts_new_release_for_same_frozen_dataset(self):
+        with TemporaryDirectory() as folder:
+            root, bundle, package, manifest = self.package_fixture(folder)
+            (root / '.local/native-stage-package.json').write_text(json.dumps(package), 'utf8')
+            (bundle / 'deployment-manifest.json').write_text(json.dumps(manifest), 'utf8')
+            with patch.object(self.cli, 'ROOT', root):
+                self.assertEqual(self.cli.reviewed_package_release(), 'a' * 24)
+
+    def test_reviewed_package_rejects_wrong_archive_manifest_dataset_and_open_checkout(self):
+        mutations = [('archive', None), ('release', 'b' * 24), ('dataset', 'c' * 32), ('checkoutEnabled', True)]
+        for field, value in mutations:
+            with self.subTest(field=field), TemporaryDirectory() as folder:
+                root, bundle, package, manifest = self.package_fixture(folder)
+                if field == 'archive':
+                    Path(package['archive']).write_bytes(b'changed-after-review')
+                else:
+                    manifest[field] = value
+                (root / '.local/native-stage-package.json').write_text(json.dumps(package), 'utf8')
+                (bundle / 'deployment-manifest.json').write_text(json.dumps(manifest), 'utf8')
+                with patch.object(self.cli, 'ROOT', root), self.assertRaisesRegex(ValueError, 'COPY_REVIEWED_PACKAGE_REQUIRED'):
+                    self.cli.reviewed_package_release()
+
     def test_only_exact_test_mounts_are_allowed(self):
         for base in ['https://127.0.0.1:3188/test', 'https://sexogate.com/test/',
                      'https://sexogate.com/test/native-preview-' + 'a' * 16]:
@@ -244,8 +281,8 @@ class RetainedCopyTest(unittest.TestCase):
     def test_real_803_candidates_keep_all_noncopy_fields(self):
         from native_marketplace_import_guard import project_initials
         package = json.loads((ROOT / '.local/native-stage-package.json').read_text('utf8'))
-        if package['release'] != 'e7f4feeb57497118bdaf4dd3':
-            self.skipTest('This source fixture belongs to the e7 release')
+        if package['dataset'] != '057fb50f7d5887fee341e3d5b4a3dd64':
+            self.skipTest('This retained source fixture belongs to the reviewed November dataset')
         private = Path(package['bundle']) / 'private'
         catalog = json.loads((private / 'catalog.json').read_text('utf8'))
         products = [p for p in catalog['products'][2194:] if p['visualApprovedIndices'] and not p['eligibilityHold']]

@@ -22,5 +22,31 @@ assert session.post(BASE+'/api/returns/order',json={'lookupToken':'0'*64},header
 assert session.post(BASE+'/api/returns/order',json={'lookupToken':'0'*64},headers={**headers,'Origin':'https://invalid.example'},timeout=(12,60)).status_code==403
 assert session.get(BASE+'/api/returns/cases/SGR-261116-000000000000',timeout=(12,60)).status_code==403
 closed=session.post(BASE+'/api/payments/checkout',json={},headers=headers,timeout=(12,60));assert closed.status_code==409 and closed.json()['error']=='live_sales_not_approved'
+gallery=json.loads((ROOT/'native-store/storefront/product-gallery-data.json').read_text('utf8'));assert gallery['sourceDataset']==selection['dataset']and gallery['products'],'GALLERY_APPROVED_REGISTRY_REQUIRED'
+public=session.get(BASE+'/api/catalog',timeout=(12,60)).json()['products'];by_id={p['id']:p for p in public};before=json.loads((ROOT/'.local/product-experience-commercial-baseline.json').read_text('utf8'));assert set(by_id)=={p['id']for p in before['products']},'GALLERY_PUBLIC_SET_CHANGED'
+def media_suffix(value):
+ assert isinstance(value,str)and'/media/'in value,'GALLERY_MOUNT_INVALID'
+ return '/media/'+value.split('/media/',1)[1]
+for original in before['products']:
+ current=by_id[original['id']]
+ for key,value in original.items():
+  if key!='images':assert current.get(key)==value,('GALLERY_COMMERCIAL_FIELD_CHANGED',original['id'],key)
+ expected_images=[media_suffix(v)for v in original['images']]+['/media/'+original['id']+'/gallery/'+v['sha256']for v in gallery['products'].get(original['id'],{}).get('images',[])]
+ assert [media_suffix(v)for v in current['images']]==expected_images,('GALLERY_IMAGE_ASSOCIATION_CHANGED',original['id'])
+assets={}
+for identifier,row in sorted(gallery['products'].items()):
+ for image in row['images']:assets.setdefault(image['sha256'],(identifier,image))
+assert assets,'GALLERY_NO_APPROVED_ASSETS';samples=list(assets.values())[:24]
+for identifier,image in samples:
+ route=BASE+'/media/'+identifier+'/gallery/'+image['sha256'];head=session.head(route,timeout=(12,60));assert head.status_code==200 and head.headers.get('Content-Type')==image['mime']and'no-store'in head.headers.get('Cache-Control',''),'GALLERY_HEAD_NOT_PRIVATE'
+ photo=session.get(route,timeout=(12,60));assert photo.status_code==200 and hashlib.sha256(photo.content).hexdigest()==image['sha256']and'no-store'in photo.headers.get('Cache-Control',''),'GALLERY_ORIGINAL_BYTES_NOT_SERVED'
+identifier,image=samples[0];route=BASE+'/media/'+identifier+'/gallery/'+image['sha256']
+assert session.post(route,json={},timeout=(12,60)).status_code==405,'GALLERY_METHOD_NOT_BLOCKED'
+assert session.get(BASE+'/media/'+identifier+'/gallery/'+'0'*64,timeout=(12,60)).status_code==404,'GALLERY_UNKNOWN_HASH_PUBLIC'
+hidden_id=next(p['id']for p in data['products'][2194:]if p['id']not in by_id)
+assert session.get(BASE+'/media/'+hidden_id+'/gallery/'+image['sha256'],timeout=(12,60)).status_code==404,'GALLERY_HIDDEN_PRODUCT_PUBLIC'
+base_hash=next(iter(gallery['products'][identifier]['baseHashes'].values()))
+assert session.get(BASE+'/media/'+identifier+'/gallery/'+base_hash,timeout=(12,60)).status_code==404,'GALLERY_BASE_OR_REJECTED_IMAGE_REINTRODUCED'
 result={'base':BASE,'release':package['release'],'scriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'visibleNew':expected,'routes':routes,'privatePathsBlocked':True,'guestOrderOwnership':True,'returnCsrfAndOrigin':True,'returnsNoStoreNoindex':True,'adminProtected':True,'checkoutClosed':True,'realPayments':False}
+result.update(reviewedGallery=True,galleryCommercialFieldsUnchanged=True,galleryAllAssociationsChecked=True,galleryPrivateNoStore=True,galleryOwnershipChecked=True,galleryOriginalSamples=len(samples),galleryProductsExtended=len(gallery['products']),galleryApprovedAssets=len(assets),galleryRegistrySha256=hashlib.sha256((ROOT/'native-store/storefront/product-gallery-data.json').read_bytes()).hexdigest())
 (ROOT/('.local/native-marketplace-http-'+SCOPE+'.json')).write_text(json.dumps(result,indent=2),'utf8');print(json.dumps(result))

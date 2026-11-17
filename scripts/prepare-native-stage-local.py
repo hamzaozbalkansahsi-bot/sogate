@@ -32,6 +32,15 @@ if package.get('products')and selection.is_file():
   source=Path(media_path).resolve();assert source in [(allowed_base/'native-catalog-20261115/media'),(allowed_base/'marketplace-catalog-20261116/media'),(allowed_base/'marketplace-catalog-20261117/media')]
   for file in source.iterdir():
    if file.is_file()and not file.is_symlink()and not(home/'media'/file.name).exists():os.link(file,home/'media'/file.name)
+ gallery=json.loads((ROOT/'native-store/storefront/product-gallery-data.json').read_text('utf8'));gallery_root=allowed_base/'product-gallery-20261117/media'
+ if gallery.get('sourceDataset')!=package.get('dataset'):raise RuntimeError('LOCAL_GALLERY_DATASET_MISMATCH')
+ for row in gallery['products'].values():
+  for image in row['images']:
+   import hashlib,re
+   if image.get('approved')is not True or not re.fullmatch(image['sha256']+r'\.(jpg|png|webp)',image['file']):raise RuntimeError('LOCAL_GALLERY_NOT_APPROVED')
+   file=gallery_root/image['file']
+   if not file.is_file()or file.is_symlink()or not file.resolve().is_relative_to(gallery_root.resolve())or hashlib.sha256(file.read_bytes()).hexdigest()!=image['sha256']:raise RuntimeError('LOCAL_GALLERY_MEDIA_CHANGED')
+   if not(home/'media'/file.name).exists():os.link(file,home/'media'/file.name)
 web=base/'web';(web/'test').mkdir(parents=True)
 entry="<?php define('SEXOGATE_NATIVE_MOUNT','/test');define('SEXOGATE_NATIVE_RELEASE',"+php_literal(package['release'])+");require "+php_literal(release/'deploy/dispatcher.php')+';'
 (web/'test/index.php').write_text(entry,encoding='utf8')
@@ -42,7 +51,9 @@ seed=state/'local-owner-seed.json';access=json.loads((ROOT/'.local/php-access.js
 code="require $argv[1].'/control-auth.php';$root=$argv[2];$s=json_decode(file_get_contents($root.'/local-owner-seed.json'),true);$db=nodenoControlDatabase($root);if(!$db->query(\"SELECT COUNT(*) FROM control_users WHERE role='owner'\")->fetchColumn()){$id=nodenoControlId('owner_');$db->prepare('INSERT INTO control_users(id,email,display_name,role,password_hash,totp_secret,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)')->execute([$id,$s['email'],'Yerel yönetici','owner',password_hash($s['password'],PASSWORD_BCRYPT),nodenoControlEncrypt($root,$s['totpSecret'],$id),time(),time()]);}"
 try:r=subprocess.run([str(ROOT/'.local/php-runtime/php.exe'),'-d','extension=pdo_sqlite','-d','extension=sqlite3','-r',code,str(private),str(state)],capture_output=True);assert r.returncode==0,'ISOLATED_OWNER_SETUP_FAILED'
 finally:seed.unlink(missing_ok=True)
+(ROOT/'.local/native-stage-local-pending.json').write_text(json.dumps({'home':str(home),'release':package['release'],'purpose':'native-stage-local-preparation'},indent=2),encoding='utf8')
 worker=subprocess.run([str(ROOT/'.local/php-runtime/php.exe'),'-d','extension=pdo_sqlite','-d','extension=sqlite3',str(home/'worker.php')],capture_output=True)
+(ROOT/'.local/native-stage-local-worker.log').write_bytes(worker.stdout+worker.stderr)
 assert worker.returncode==0,'LOCAL_NATIVE_WORKER_FAILED'
 report={'base':str(base),'home':str(home),'web':str(web),'router':str(base/'router.php'),'release':package['release'],'url':'https://127.0.0.1:3188/test','previewUrl':'https://127.0.0.1:3188'+preview}
 (ROOT/'.local/native-stage-local.json').write_text(json.dumps(report,indent=2),encoding='utf8');print(json.dumps({'prepared':True,'release':package['release'],'url':report['url']}))

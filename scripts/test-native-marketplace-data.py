@@ -5,6 +5,7 @@
 # Dosya      : scripts/test-native-marketplace-data.py
 # Açıklama   : Hazırlanmış gerçek kayıtları bağımsız kaynak, değişmez arşiv, görsel hash ve seçenek kanıtlarıyla karşılaştırır.
 import hashlib,json,sqlite3,unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from contextlib import closing
 from native_marketplace_paths import marketplace_paths
@@ -20,9 +21,18 @@ class MarketplaceDataTest(unittest.TestCase):
   cls.work={key:value for f in(cls.prepared/'catalog-workbench').glob('*.json')for key,value in json.loads(f.read_text('utf8')).items()}
  def test_archived_rows_preserved(self):self.assertEqual(self.data['products'][:2194],self.legacy['products'])
  def test_source_codes_and_prices(self):
+  raw_checks=[]
   for p in self.new:
    w=self.work[p['id']];source=self.source[w['source']['url']];self.assertEqual(p['code'],'seo-'+source['sourceCode']);self.assertEqual(w['source']['retailPriceMinor'],source['undiscountedPriceMinor']);self.assertEqual(p['salePriceMinor'],source['salePriceMinor']);self.assertEqual(w['source']['htmlSha256'],source['sourceSha256'])
-   with(self.paths.source/'raw'/(source['sourceId']+'.html')).open('rb')as raw:self.assertEqual(hashlib.file_digest(raw,'sha256').hexdigest(),source['sourceSha256'])
+   raw_checks.append((self.paths.source/'raw'/(source['sourceId']+'.html'),source['sourceSha256']))
+  def verify_raw(check):
+   path,expected=check
+   with path.open('rb')as raw:return hashlib.file_digest(raw,'sha256').hexdigest(),expected
+  # Sıkıştırılmış diskte bağımsız açma beklemelerini paylaşır; her özgün dosya gerçekten okunur.
+  with ThreadPoolExecutor(max_workers=8)as readers:
+   checked=0
+   for actual,expected in readers.map(verify_raw,raw_checks):self.assertEqual(actual,expected);checked+=1
+  self.assertEqual(checked,len(self.new))
  def test_no_invented_variant_combinations(self):
   for p in self.new:
    w=self.work[p['id']];source=self.source[w['source']['url']];actual={v['sourceVariantId']:v for v in source['variants']}

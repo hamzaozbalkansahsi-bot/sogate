@@ -92,6 +92,12 @@ returns_vendor=ROOT/'native-store/returns/vendor'
 if any(p.is_symlink()for p in returns_vendor.rglob('*')):raise RuntimeError('RETURN_VENDOR_LINK_REJECTED')
 shutil.copytree(returns_vendor,bundle/'private/returns-vendor')
 subprocess.run(['node',str(ROOT/'native-store/returns/build.mjs'),str(bundle),version],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/product-experience-build.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/product-feedback-apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/mega-menu-build.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/gallery-experience-build.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/product-gallery-apply.mjs'),str(bundle)],check=True,cwd=ROOT)
+subprocess.run(['node',str(ROOT/'native-store/storefront/runtime-catalog-build.mjs'),str(bundle)],check=True,cwd=ROOT)
 subprocess.run(['node',str(ROOT/'native-store/deploy/apply-store-theme.mjs'),str(bundle),version],check=True,cwd=ROOT)
 admin=bundle/'public/admin.html'
 if admin.is_file():admin.write_text(admin.read_text('utf8').replace('/sexogate-catalog.js"','/sexogate-catalog.js?v='+version+'"').replace('/sexogate-catalog.css"','/sexogate-catalog.css?v='+version+'"'),encoding='utf8')

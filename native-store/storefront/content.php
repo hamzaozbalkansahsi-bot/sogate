@@ -7,17 +7,25 @@
  * Açıklama   : Gerçek ürün verisini kısa anlatım ve okunabilir özelliklere dönüştürür; kaynak kaydı değiştirmez.
  */
 declare(strict_types=1);
+$editorialFile=__DIR__.'/sexogate-product-editorial.php';if(!is_file($editorialFile))$editorialFile=__DIR__.'/editorial.php';require_once $editorialFile;
 function sexogateStorefrontCopy():array{
  static $copy=null;if($copy===null){$file=__DIR__.'/sexogate-storefront-copy.json';if(!is_file($file))$file=__DIR__.'/copy.json';$copy=json_decode((string)file_get_contents($file),true,64,JSON_THROW_ON_ERROR);}return $copy;
 }
+function sexogateStorefrontContextProduct(array $product):array{
+ if(function_exists('sexogateRuntimeAdminSource')&&sexogateRuntimeAdminSource((string)($_SERVER['REQUEST_URI']??'')))return $product;
+ return sexogateStorefrontProduct($product);
+}
 function sexogateStorefrontClean(mixed $value,int $limit=220):string{
  if(!is_string($value))return '';$value=trim(preg_replace('/\s+/u',' ',strip_tags($value))??'');if($value===''||preg_match('/^(?:none|null|undefined)$/iu',$value))return '';
- if(preg_match('/medikal|sertifik|su geçirme|cilt dost|tedavi|kesin sonuç|maksimum|orgazm|performans.{0,30}art/iu',$value))return '';
+ if(in_array(sexogateEditorialLower($value),['tehlikeli değil','güvenli','zararsız','safe','harmless','not dangerous','non-hazardous'],true))return '';
+ if(preg_match('/medikal|sertifik|su geçirme|suya dayan|cilt dost|antialerj|hipoalerj|tedavi|kesin sonuç|maksimum|orgazm|performans.{0,30}art|ilişkiyi uzat|süre.{0,5}uzat|geciktir|ereksiyon|büyüt|kalınlaştır|dikleş/um',sexogateEditorialLower($value)))return '';
  $value=preg_split('/\s*(?:Kullanım\s*(?:Talimatları|Şekli|Tavsiyeleri)|Ürün Açıklaması|Uyarılar|Özellikler)\s*:/iu',$value)[0];
  if(preg_match_all('/./us',$value)>$limit)return '';return trim($value," \t\n\r\0\x0B:;");
 }
-function sexogateStorefrontProduct(array $product):array{
- if(($product['catalogOrigin']??'')!=='sexogate-suppliers-v1')return $product;
+function sexogateStorefrontProduct(array $product,?array $editorial=null):array{
+ if(!in_array(($product['catalogOrigin']??''),['sexogate-suppliers-v1','sexogate-marketplaces-v1'],true))return $product;
+ if(($product['storefrontStory']['tr']['projectionHash']??null)===sexogateEditorialFingerprint($product))return $product;
+ $original=$product;$editorial??=sexogateEditorialData($product);
  $copy=sexogateStorefrontCopy();$facts=$product['facts']??[];$name=(string)($product['name']['tr']??'');$dimensions=(string)($facts['dimensions']??'');$rows=[];
  $add=static function(string $key,mixed $value)use(&$rows):void{$value=sexogateStorefrontClean($value);if($value!=='')$rows[$key]=$value;};
  // İçe aktarılan alan bir reklam paragrafı olabilir; yalnız açık malzeme adını göster.
@@ -39,5 +47,7 @@ function sexogateStorefrontProduct(array $product):array{
  if($trIntro==='')$trIntro=rtrim(sexogateStorefrontClean($name,250),'.').'.';
  $story=[];$specs=[];foreach($rows as $key=>$value){$label=[];$values=[];foreach($copy as $locale=>$labels){$label[$locale]=$labels[$key];$values[$locale]=$value;}$specs[]=['label'=>$label,'value'=>$values];}
  foreach($copy as $locale=>$labels){$intro=$locale==='tr'?$trIntro:rtrim((string)($product['name'][$locale]??$product['name']['en']??''),'.').'.';$story[$locale]=['intro'=>$intro,'care'=>$care,'safety'=>$safety];$paragraphs=[$intro];foreach($rows as $key=>$value)$paragraphs[]=$labels[$key].': '.$value.'.';if($care!=='')$paragraphs[]=$labels['care'].': '.$care;if($safety!=='')$paragraphs[]=$labels['safety'].': '.$safety;$product['description'][$locale]=implode("\n\n",$paragraphs);}
- $product['storefrontStory']=$story;$product['storefrontFacts']=$rows;$product['specs']=$specs;return $product;
+ if(!empty($editorial['activeSizes'])&&(!isset($editorial['catalogFacts'])||$original['facts']===$editorial['catalogFacts']))$rows['sizes']=implode(', ',$editorial['activeSizes']);
+ if(isset($rows['origin']))$rows['origin']=['TR'=>'Türkiye','CN'=>'Çin','US'=>'ABD','GB'=>'Birleşik Krallık','DE'=>'Almanya'][$rows['origin']]??$rows['origin'];
+ $specs=[];foreach($rows as$key=>$value){$label=[];$values=[];foreach($copy as$locale=>$labels){$label[$locale]=$labels[$key]??$key;$values[$locale]=$value;}$specs[]=['label'=>$label,'value'=>$values];}$product['specs']=$specs;return sexogateEditorialEnrich($product,$original,$rows,$editorial);
 }

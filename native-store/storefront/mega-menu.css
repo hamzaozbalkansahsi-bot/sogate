@@ -1,0 +1,37 @@
+/*
+ * Proje      : SEXOGATE
+ * Geliştirici: PTYS Technoligess LLC
+ * Tasarım    : Hamza ÖZBALKAN
+ * Dosya      : native-store/storefront/mega-menu.css
+ * Açıklama   : Masaüstü kategori menüsünü krem/bordo ve gerçek görselli kompakt kartlarla düzenler.
+ */
+#mega-menu.sg-mega-menu{grid-template-columns:232px minmax(0,1fr);max-block-size:min(70dvh,680px);overflow:hidden;background:#fff;border-color:#e6d8dc;box-shadow:0 20px 40px #24191d26}
+#mega-menu.sg-mega-menu .sg-mega-sidebar{min-block-size:0;overflow-y:auto;overscroll-behavior:contain;padding-block:12px;background:#fbf4ef;border-color:#e6d8dc}
+#mega-menu.sg-mega-menu .sg-mega-sidebar button{gap:10px;padding:10px 14px;min-block-size:70px;color:#24191d;font-size:13px;line-height:1.4;border-inline-start:3px solid transparent}
+#mega-menu.sg-mega-menu .sg-mega-sidebar button[aria-pressed=true]{background:#f3e6e8;color:#5a0a20;border-inline-start-color:#5a0a20;font-weight:700}
+#mega-menu.sg-mega-menu .sg-mega-root-photo{display:grid;place-items:center;inline-size:46px;block-size:46px;flex:0 0 46px;border:1px solid #e6d8dc;border-radius:8px;background:#fff;overflow:hidden}
+#mega-menu.sg-mega-menu .sg-mega-root-photo img{inline-size:100%;block-size:100%;object-fit:contain;object-position:center}
+#mega-menu.sg-mega-menu .sg-mega-root-label{display:block;min-inline-size:0;flex:1;overflow-wrap:anywhere}
+#mega-menu.sg-mega-menu .sg-mega-root-label small{display:block;margin-block-start:4px;color:#716168;font-size:12px;font-weight:400}
+#mega-menu.sg-mega-menu .sg-mega-content{min-block-size:0;overflow-y:auto;overscroll-behavior:contain;padding:18px 22px 14px}
+#mega-menu.sg-mega-menu .sg-mega-title{gap:16px;padding-block-end:12px;margin-block-end:16px;border-color:#e6d8dc}
+#mega-menu.sg-mega-menu .sg-mega-title>a{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;color:#5a0a20;font-size:19px;line-height:1.4}
+#mega-menu.sg-mega-menu .sg-mega-title small{color:#716168;font-size:12px;font-weight:400}
+#mega-menu.sg-mega-menu .sg-mega-title .icon-button{flex:0 0 44px;inline-size:44px;min-block-size:44px;color:#5a0a20}
+#mega-menu.sg-mega-menu .sg-mega-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+#mega-menu.sg-mega-menu .sg-mega-card{display:flex;flex-direction:column;align-items:center;gap:10px;min-inline-size:0;padding:12px 8px;border:1px solid #e6d8dc;border-radius:10px;background:#fff;text-decoration:none;text-align:center;line-height:1.4}
+#mega-menu.sg-mega-menu .sg-mega-card:hover{border-color:#8e0f38;background:#fbf4ef}
+#mega-menu.sg-mega-menu .sg-mega-card-photo{display:grid;place-items:center;inline-size:96px;block-size:80px;max-inline-size:100%;border-radius:6px;overflow:hidden;background:#fff}
+#mega-menu.sg-mega-menu .sg-mega-card-photo img{inline-size:100%;block-size:100%;object-fit:contain;object-position:center}
+#mega-menu.sg-mega-menu .sg-mega-card-caption{display:flex;flex-direction:column;gap:5px;min-inline-size:0;inline-size:100%;overflow-wrap:anywhere}
+#mega-menu.sg-mega-menu .sg-mega-card strong{color:#24191d;font-size:13px;font-weight:600}
+#mega-menu.sg-mega-menu .sg-mega-card-caption>span{color:#716168;font-size:12px}
+#mega-menu.sg-mega-menu .sg-mega-card-parent{color:#716168;font-size:12px;line-height:1.4}
+#mega-menu.sg-mega-menu .sg-mega-root-photo svg,#mega-menu.sg-mega-menu .sg-mega-card-photo svg{inline-size:38px;block-size:38px;fill:none;stroke:#8d737e;stroke-width:1.5}
+#mega-menu.sg-mega-menu .sg-mega-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-block-start:16px;padding-block-start:10px;border-block-start:1px solid #e6d8dc}
+#mega-menu.sg-mega-menu .sg-mega-footer a{display:flex;align-items:center;min-block-size:44px;color:#5a0a20;font-size:13px;font-weight:600}
+#mega-menu.sg-mega-menu :focus-visible{outline:3px solid #8e0f38;outline-offset:3px}
+@media(min-width:1300px){#mega-menu.sg-mega-menu .sg-mega-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:701px)and(max-width:900px){#mega-menu.sg-mega-menu{grid-template-columns:190px minmax(0,1fr)}#mega-menu.sg-mega-menu .sg-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#mega-menu.sg-mega-menu .sg-mega-content{padding:16px}}
+@media(max-width:700px){#mega-menu.sg-mega-menu{display:none!important}}
+@media(prefers-reduced-motion:reduce){#mega-menu.sg-mega-menu *{scroll-behavior:auto!important}}
