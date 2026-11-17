@@ -24,6 +24,7 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
   self.selection={'dataset':DATASET,'newProducts':131,'sourceProducts':138,'products':2325,'path':str(self.root/'prepared'),'sha256':'4'*64}
   self.write('.local/native-marketplace-selection.json',self.selection)
   scripts=['test-native-languages.py','test-native-marketplace-variants.py','native_variant_cases.py','test-native-marketplace-browser.py','test-native-marketplace-http.py','test-native-returns-public.py','test-native-returns-browser.py','test-native-returns-php.php','test-native-return-ordering.php','test-native-marketplace-discovery.py','test-native-marketplace-source-proof.py','test-native-marketplace-data.py','test-native-marketplace-payload.php','test-native-installer.php','test-native-marketplace-seo.php']
+  scripts+=['clean-native-marketplace-copy.py','native_marketplace_copy.py']
   for name in scripts:self.bytes('scripts/'+name,('temporary fixture '+name).encode())
   for scope in BASES:self.baseline(scope)
   # Her olumsuz örnekten önce aynı geçici temel gerçekten kabul edilmelidir.
@@ -45,6 +46,7 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
 
  def baseline(self,scope):
   self.write('.local/native-marketplace-import-'+scope+'.json',{'base':BASES[scope],'release':RELEASE,'dataset':DATASET,'loadedNew':131,'visibleNew':82,'idempotent':True,'oldSupplierProductsVisible':False,'genericBrandsNotInvented':True})
+  self.write('.local/native-marketplace-copy-'+scope+'.json',{'schema':1,'base':BASES[scope],'release':RELEASE,'dataset':DATASET,'visible':82,'scriptSha256':self.checksum('scripts/clean-native-marketplace-copy.py'),'helperSha256':self.checksum('scripts/native_marketplace_copy.py'),'remainingCTAs':0,'realPayments':False,**{key:True for key in ['protectedFieldsNoChange','sourcePreserved','idempotent','verifiedAfterReload','expectedSetMatch','actualRequests']}})
   self.write('.local/native-browser-marketplace-mount-'+scope+'.json',self.rows(scope,extra={'adminRoutes':33,'publicRoutes':9,'externalRequests':0,'mfa':True}))
   self.write('.local/native-languages-marketplace-mount-'+scope+'.json',{'base':BASES[scope],'release':RELEASE,'finalized':True,'pageErrors':0,'scriptSha256':self.checksum('scripts/test-native-languages.py'),'locales':[{'status':200,'selected':True,'adultMetadata':True,'clientAdultMetadata':True,'catalogUiReady':True}for _ in range(11)],'clientSwitches':[{'selected':True,'clientMetadata':True,'catalogUiReady':True}for _ in range(3)]})
   self.write('.local/native-adult-marketplace-adult-'+scope+'.json',self.rows(scope,['ageGate','guestBrowsing','keyboardFocus','escapeBypassBlocked'],{'worldMap':False,'furnitureCopy':False,'iconOnlySocialLinks':4}))
@@ -82,6 +84,13 @@ class MarketplaceAcceptanceTest(unittest.TestCase):
 
  def test_existing_import_and_browser_proof_cannot_replace_discovery(self):
   (self.root/'docs/native-marketplace-discovery-local-results.json').unlink();self.assert_rejected()
+
+ def test_customer_copy_requires_fresh_complete_source_bound_http_proof(self):
+  name='.local/native-marketplace-copy-local.json';original=self.read(name);path=self.root/name;path.unlink();self.assert_rejected();self.write(name,original)
+  os.utime(path,(self.minimum-1,self.minimum-1));self.assert_rejected();self.write(name,original)
+  for field,value in [('base',BASES['preview']),('release','9'*24),('dataset','9'*32),('visible',81),('visible',True),('schema',0),('schema',True),('scriptSha256','0'*64),('helperSha256','0'*64),('remainingCTAs',1),('remainingCTAs',False),('realPayments',True)]+[(key,False)for key in ['protectedFieldsNoChange','sourcePreserved','idempotent','verifiedAfterReload','expectedSetMatch','actualRequests']]:
+   with self.subTest(field=field):
+    self.write(name,{**original,field:value});self.assert_rejected()
 
  def test_discovery_rejects_stale_report(self):
   path=self.root/'docs/native-marketplace-discovery-local-results.json';os.utime(path,(self.minimum-1,self.minimum-1));self.assert_rejected()

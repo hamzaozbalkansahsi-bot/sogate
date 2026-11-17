@@ -38,6 +38,7 @@ def lane_b():
  py('returns-public','test-native-returns-public.py')
 try:
  py('import','import-native-marketplace-batch.py')
+ py('customer-copy','clean-native-marketplace-copy.py')
  run('source',[sys.executable,'-B','-X','utf8','scripts/test-native-marketplace-source-proof.py','--scope',args.scope,'--base',args.base])
  py('http','test-native-marketplace-http.py')
  with concurrent.futures.ThreadPoolExecutor(max_workers=2)as pool:
