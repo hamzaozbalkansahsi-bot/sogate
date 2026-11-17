@@ -184,6 +184,8 @@ with sync_playwright()as playwright:
    page.locator('[data-sg-facet=brand]').click();dialog=page.locator('#filter-dialog[open]');dialog.wait_for();select_input(dialog,'brand',product['brand']);dialog.locator('button[type=submit]').click();ready.wait();verify_listing(page,known,{'brand':product['brand']})
    page.locator('[data-sg-facet=size]').click();dialog=page.locator('#filter-dialog[open]');dialog.wait_for();select_input(dialog,'size',values['size']);dialog.locator('button[type=submit]').click();ready.wait();verify_listing(page,known,{'brand':product['brand'],'size':values['size']})
    trigger=page.locator('[data-sg-facet=color]');trigger.focus();page.keyboard.press('Enter');dialog=page.locator('#filter-dialog[open]');dialog.wait_for()
+   # Çekmece showModal ile açılır; hedef grubun gerçek odağı sonraki animasyon karesinde atanır.
+   page.wait_for_function('()=>{const group=document.querySelector("#filter-dialog[open] [data-sg-filter-group=color]");return !!group&&group.open&&group.contains(document.activeElement)}',timeout=3000)
    assert dialog.locator('[data-sg-filter-group=color]').evaluate('e=>e.open&&e.contains(document.activeElement)'),'DRAWER_KEYBOARD_FOCUS'
    select_input(dialog,'color',values['color']);dialog.locator('button[type=submit]').click();ready.wait();verify_listing(page,known,selected_values)
    assert all(query(page).get(k)==v for k,v in selected_values.items()),'COMBINED_FILTER_URL'
