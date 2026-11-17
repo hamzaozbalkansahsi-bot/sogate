@@ -29,6 +29,12 @@ jobs:
       - run: python scripts/test-native-catalog.py
       - run: python scripts/test-native-catalog-taxonomy.py
       - run: npm ci --ignore-scripts
+      - run: node scripts/test-native-product-experience.mjs
+      - run: node --test scripts/test-native-mega-menu.mjs scripts/test-native-gallery-experience.mjs
+      - run: php scripts/test-native-product-experience.php
+      - run: php scripts/test-native-product-feedback.php
+      - run: php scripts/test-native-product-gallery.php
+      - run: php scripts/test-native-runtime-catalog.php
       - run: node --test scripts/test-native-relocation.mjs
       - run: node --test scripts/test-native-variants.mjs
       - run: node --test scripts/test-native-public-read.mjs

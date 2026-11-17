@@ -11,6 +11,8 @@ import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {productDiscovery,productFacts,productStory,visibleProducts} from '../native-store/storefront/product-experience-core.js';
 import {renderProductExplore,renderProductStory,renderProductFeatures,renderProductNavigation,renderProductReturns} from '../native-store/storefront/product-experience-renderers.js';
+const localPhp=fileURLToPath(new URL('../.local/php-runtime/php.exe',import.meta.url));
+const phpBinary=process.env.PHP_BINARY||(process.platform==='win32'&&fs.existsSync(localPhp)?localPhp:'php');
 const copy=JSON.parse(fs.readFileSync(new URL('../native-store/storefront/product-experience-copy.json',import.meta.url),'utf8'));
 const categories=[{id:'root',name:{tr:'İç Giyim'},parentId:null},{id:'night',name:{tr:'Gecelikler'},parentId:'root'},{id:'costume',name:{tr:'Kostümler'},parentId:'root'},{id:'empty',name:{tr:'Boş'},parentId:null}];
 const make=(id,category='night',extra={})=>({id,code:'seo-'+id,name:{tr:'Dantel detaylı model '+id},brand:'JUBELS',images:['/media/'+id+'/0'],categoryIds:['root',category],...extra});
@@ -39,5 +41,5 @@ check('full features keep real SKU without exposing pricing internals',()=>{cons
 check('return navigation stays on product and uses source policy objects',()=>{const html=renderProductNavigation(selected,ctx)+renderProductReturns(selected,{...ctx,returnPolicy:{title:'İade ve iptal',items:[{title:'Koruyucu unsur',body:'Gerçek politika özeti.'}]}});assert(html.includes('href="#product-faq"'));assert(!html.includes('page=help'));assert(html.includes('Gerçek politika özeti.'));assert(!html.includes('[object Object]'));});
 check('feedback is an accessible real product action',()=>{const html=renderProductExplore(selected,ctx);assert(html.includes('data-sg-feedback="one"'));assert(html.includes('Geri bildirim ver'));assert(html.includes('id="product-shelf-productSimilar"'));assert(html.includes('id="product-shelf-productComplementary"'));assert(!html.includes('Popüler ürünler'));assert(html.includes('Seçili ürünler'));});
 check('all supported language copies are complete and text only',()=>{assert.equal(Object.keys(copy).length,11);for(const locale of Object.keys(copy))assert(Object.values(copy[locale]).every(v=>typeof v==='string'&&v.trim()&&!/<[^>]+>/u.test(v)));});
-check('PHP first HTML and client select the identical discovery model',()=>{const php=fileURLToPath(new URL('../.local/php-runtime/php.exe',import.meta.url)),script=fileURLToPath(new URL('test-native-product-experience.php',import.meta.url));const server=JSON.parse(execFileSync(php,[script,'--model-json'],{encoding:'utf8'}));assert.deepEqual(server,productDiscovery(selected,catalog,{}));});
+check('PHP first HTML and client select the identical discovery model',()=>{const script=fileURLToPath(new URL('test-native-product-experience.php',import.meta.url));const server=JSON.parse(execFileSync(phpBinary,[script,'--model-json'],{encoding:'utf8'}));assert.deepEqual(server,productDiscovery(selected,catalog,{}));});
 console.log(JSON.stringify({passed,realProviderCalled:false,sourceSnapshotChanged:false}));
