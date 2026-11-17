@@ -27,7 +27,13 @@ def image_check(page):
   if image.is_visible():image.evaluate('(e)=>e.scrollIntoView({block:"center",behavior:"instant"})');page.wait_for_function('(e)=>e.complete&&e.naturalWidth>0',arg=image.element_handle(),timeout=15000)
  assert page.locator('.image-fallback').count()==0,'PRODUCT_IMAGE_FALLBACK'
 def image_bounds(page):
- assert page.locator('.sg-campaign-image,.sg-home-shortcuts>a>span,.product-card-stage').evaluate_all('(frames)=>frames.every(f=>{const i=f.querySelector("img");if(!i)return true;const a=f.getBoundingClientRect(),b=i.getBoundingClientRect();return getComputedStyle(i).objectFit==="contain"&&b.height<=a.height+1&&b.width<=a.width+1&&b.top>=a.top-1&&b.bottom<=a.bottom+1})'),'CROPPED_PRODUCT_IMAGE'
+ page.mouse.move(0,0)
+ assert page.locator('.sg-home-shortcuts>a>span,.product-card-stage').evaluate_all('(frames)=>frames.every(f=>{const i=f.querySelector("img");if(!i)return true;const a=f.getBoundingClientRect(),b=i.getBoundingClientRect();return getComputedStyle(i).objectFit==="contain"&&b.height<=a.height+1&&b.width<=a.width+1&&b.top>=a.top-1&&b.bottom<=a.bottom+1})'),'CROPPED_PRODUCT_IMAGE'
+ campaigns=page.locator('.sg-home-campaigns .sg-campaign-image')
+ if campaigns.count():
+  page.wait_for_function('''()=>[...document.querySelectorAll('.sg-home-campaigns .sg-campaign-image img')].every(i=>{const transform=getComputedStyle(i).transform;return transform==='none'||Math.abs(new DOMMatrixReadOnly(transform).a-1)<.001})''')
+  metrics=campaigns.evaluate_all('''frames=>frames.map(f=>{const image=f.querySelector('img'),card=f.closest('.sg-campaign-card'),a=f.getBoundingClientRect(),b=image?.getBoundingClientRect(),c=card.getBoundingClientRect(),style=image&&getComputedStyle(image),areaStyle=getComputedStyle(f);return{loaded:!!image&&image.complete&&image.naturalWidth>0,areaWidth:a.width,areaHeight:a.height,imageWidth:b?.width,imageHeight:b?.height,left:b?.left-a.left,top:b?.top-a.top,cardWidth:c.width,fit:style?.objectFit,position:style?.objectPosition,lingerie:new URL(card.href).searchParams.get('category')==='sg_lingerie',padding:[areaStyle.paddingTop,areaStyle.paddingRight,areaStyle.paddingBottom,areaStyle.paddingLeft]}})''')
+  assert len(metrics)==4 and sum(v['lingerie']for v in metrics)==1 and all(v['loaded']and v['fit']=='cover'and v['position']==('50% 70%'if v['lingerie']else'50% 50%')and v['padding']==['0px']*4 and abs(v['imageWidth']-v['areaWidth'])<1 and abs(v['imageHeight']-v['areaHeight'])<1 and abs(v['cardWidth']-v['areaWidth'])<=2 and abs(v['left'])<1 and abs(v['top'])<1 for v in metrics),('CAMPAIGN_IMAGES_NOT_FULL_BLEED',page.viewport_size,metrics)
 
 def no_overflow(page):assert page.evaluate('()=>document.documentElement.scrollWidth<=innerWidth'),page.viewport_size
 with sync_playwright()as p:
