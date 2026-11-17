@@ -1,14 +1,13 @@
 {
-  "checkedAt": "2026-11-17T09:24:35.555094+00:00",
-  "release": "e7f4feeb57497118bdaf4dd3",
-  "previousRelease": "b5e7e6913484a652360a2097",
+  "checkedAt": "2026-11-17T17:09:14.385907+00:00",
+  "release": "929ff578f9c4828e5752174f",
+  "previousRelease": "e7f4feeb57497118bdaf4dd3",
   "url": "https://sexogate.com/test",
   "adminUrl": "https://sexogate.com/test/yonetim",
   "returnsUrl": "https://sexogate.com/test/?page=return-center&lang=tr",
   "activated": true,
   "phase": "active_verified",
   "mainUnchanged": true,
-  "otherWorkspacesChanged": false,
   "runtime": "PHP 8.3 / private SQLite / existing PHP CLI cron; no server Node",
   "products": 803,
   "managementNewProducts": 958,
@@ -21,22 +20,21 @@
     "status": "preview",
     "runtime": "php",
     "database": true,
-    "release": "e7f4feeb57497118bdaf4dd3",
+    "release": "929ff578f9c4828e5752174f",
     "products": 803,
     "sourceProducts": 3152,
+    "activeSourceProducts": 958,
     "checkoutEnabled": false,
     "catalogReady": true,
     "strictMediaHealth": "sales_and_country_acceptance_pending",
     "basePath": "/test"
   },
   "package": {
-    "sha256": "0cb3cfa30be029e8ba68063b4cfa55f1f8aee7f6b186831bb0921e25f6c0fd63",
-    "bytes": 12504223,
-    "files": 2492,
+    "sha256": "3e2d80bf0ce5c376251b6955b66346981204efd8f392284d165a10cb48f23dab",
+    "bytes": 14545274,
+    "files": 3065,
     "dataset": "057fb50f7d5887fee341e3d5b4a3dd64"
   },
-  "javascriptModules": 82,
-  "phpEntrySyntaxChecks": 64,
   "sourceSnapshot": {
     "files": 771,
     "byteIdentical": 768,
@@ -44,48 +42,210 @@
     "donorBusinessDataCopied": false
   },
   "validation": {
-    "localGateGroups": 15,
-    "previewGateGroups": 14,
+    "localGateGroups": 16,
+    "previewGateGroups": 15,
+    "localRunnerCommands": 19,
+    "previewRunnerCommands": 16,
+    "productModuleCommands": 10,
+    "productModuleChecks": {
+      "productExperienceJs": 21,
+      "megaMenuJs": 16,
+      "galleryExperienceJs": 11,
+      "productExperiencePhp": 22,
+      "editorialPhp": 23022,
+      "feedbackSourcePhp": 48,
+      "feedbackPackagePhp": 48,
+      "gallerySourcePhp": 72,
+      "galleryPackagePhp": 72,
+      "runtimeCatalogPhp": 82
+    },
+    "runtimeMemoryCases": 4,
+    "runtimeMemoryPeakBytes": {
+      "worker": 77594624,
+      "customer": 90177536,
+      "adminSchema": 127926272,
+      "adminProducts": 69206016
+    },
+    "memoryLimitBytes": 134217728,
+    "sourceFieldsAndStockProtected": true,
+    "realPaymentsCalled": false,
+    "realRefundsCalled": false,
+    "currentSourceExecutions": {
+      "local": {
+        "data": {
+          "passed": 6,
+          "exitCode": 0,
+          "scriptSha256": "8d98292b59156dd2e49c5ce8037fd712281d15d89615a7c63850f1571586c03b",
+          "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "payload": {
+          "passed": 2884,
+          "exitCode": 0,
+          "newProducts": 958,
+          "publishCandidates": 803,
+          "scriptSha256": "5d8ab724843af4e605f0facad7d17127785f4fe1d5e572f1914b93983ab354f7",
+          "stdoutSha256": "136a4bd50484903d24987078efd8be7a84aabfdf7bf48e96442cc20aa4de3628"
+        },
+        "installer": {
+          "passed": 32,
+          "exitCode": 0,
+          "scriptSha256": "31a9ecaf3d878eabbaff477294d3c44d2aaa21201693e1c0fa47654033ffdbe8",
+          "stdoutSha256": "faae65cca704d753f7d735d5a66cd2e16af7dbdb6e06461bc502bd644a58546b"
+        },
+        "seo": {
+          "passed": 70665,
+          "exitCode": 0,
+          "pages": 8833,
+          "publicProducts": 803,
+          "locales": 11,
+          "scriptSha256": "61a202e63c5a8671504ccd8ef07f7ac5ac062a5eedc21473e626f212bf259866",
+          "stdoutSha256": "9ec4995a7da011fd293f9116eab7b0ec404d262d13616d651e1b47b5c0af6cc4"
+        },
+        "returnsCore": {
+          "passed": 53,
+          "exitCode": 0,
+          "scriptSha256": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+          "stdoutSha256": "24f1cda766440c01cb783e0ce8401cdfa776fc8e9a2ea3a7055b0fc4605b865b"
+        },
+        "returnsCoreSource": {
+          "passed": 53,
+          "exitCode": 0,
+          "scriptSha256": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+          "stdoutSha256": "24f1cda766440c01cb783e0ce8401cdfa776fc8e9a2ea3a7055b0fc4605b865b"
+        },
+        "returnOrdering": {
+          "passed": 17,
+          "exitCode": 0,
+          "scriptSha256": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff",
+          "stdoutSha256": "57a3df91dcc66d6f30b1c321dc3c19837926a4ce8eba86d27c72f4093b5bb165"
+        },
+        "returnOrderingSource": {
+          "passed": 17,
+          "exitCode": 0,
+          "scriptSha256": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff",
+          "stdoutSha256": "57a3df91dcc66d6f30b1c321dc3c19837926a4ce8eba86d27c72f4093b5bb165"
+        }
+      },
+      "preview": {
+        "data": {
+          "passed": 6,
+          "exitCode": 0,
+          "scriptSha256": "8d98292b59156dd2e49c5ce8037fd712281d15d89615a7c63850f1571586c03b",
+          "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "payload": {
+          "passed": 2884,
+          "exitCode": 0,
+          "newProducts": 958,
+          "publishCandidates": 803,
+          "scriptSha256": "5d8ab724843af4e605f0facad7d17127785f4fe1d5e572f1914b93983ab354f7",
+          "stdoutSha256": "136a4bd50484903d24987078efd8be7a84aabfdf7bf48e96442cc20aa4de3628"
+        },
+        "installer": {
+          "passed": 32,
+          "exitCode": 0,
+          "scriptSha256": "31a9ecaf3d878eabbaff477294d3c44d2aaa21201693e1c0fa47654033ffdbe8",
+          "stdoutSha256": "faae65cca704d753f7d735d5a66cd2e16af7dbdb6e06461bc502bd644a58546b"
+        },
+        "seo": {
+          "passed": 70665,
+          "exitCode": 0,
+          "pages": 8833,
+          "publicProducts": 803,
+          "locales": 11,
+          "scriptSha256": "61a202e63c5a8671504ccd8ef07f7ac5ac062a5eedc21473e626f212bf259866",
+          "stdoutSha256": "9ec4995a7da011fd293f9116eab7b0ec404d262d13616d651e1b47b5c0af6cc4"
+        },
+        "returnsCore": {
+          "passed": 53,
+          "exitCode": 0,
+          "scriptSha256": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+          "stdoutSha256": "24f1cda766440c01cb783e0ce8401cdfa776fc8e9a2ea3a7055b0fc4605b865b"
+        },
+        "returnsCoreSource": {
+          "passed": 53,
+          "exitCode": 0,
+          "scriptSha256": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+          "stdoutSha256": "24f1cda766440c01cb783e0ce8401cdfa776fc8e9a2ea3a7055b0fc4605b865b"
+        },
+        "returnOrdering": {
+          "passed": 17,
+          "exitCode": 0,
+          "scriptSha256": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff",
+          "stdoutSha256": "57a3df91dcc66d6f30b1c321dc3c19837926a4ce8eba86d27c72f4093b5bb165"
+        },
+        "returnOrderingSource": {
+          "passed": 17,
+          "exitCode": 0,
+          "scriptSha256": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff",
+          "stdoutSha256": "57a3df91dcc66d6f30b1c321dc3c19837926a4ce8eba86d27c72f4093b5bb165"
+        }
+      }
+    },
     "sourceDataChecks": 6,
-    "sourceParserChecks": 9,
     "catalogPhpChecks": 2884,
     "installerChecks": 32,
-    "seoPages": 8833,
     "seoChecks": 70665,
-    "returnCoreChecksPerExecution": 53,
-    "returnOrderingChecksPerExecution": 17,
-    "negativeAcceptanceTests": 20,
-    "copyTests": 20,
-    "taxonomyTests": 24,
-    "pathTests": 23,
-    "reviewRuleTests": 20,
-    "importGuardTests": 14,
-    "variantJsTestsBefore": 10,
-    "variantJsTestsAfter": 10,
-    "realPaymentsCalled": false,
-    "realInvoiceApiCalled": false,
-    "localRunnerCommands": 17,
-    "previewRunnerCommands": 15
+    "seoPages": 8833,
+    "returnCoreChecks": 53,
+    "returnCoreSourceChecks": 53,
+    "returnOrderingChecks": 17,
+    "returnOrderingSourceChecks": 17,
+    "sourceIoHarnessCases": 7
   },
   "proofs": {
-    "local": "native-marketplace-local-acceptance.json",
-    "sourceLocal": "native-marketplace-source-local-results.json",
-    "sourcePreview": "native-marketplace-source-preview-results.json",
-    "catalogLocal": "native-marketplace-local-results.json",
-    "catalogPreview": "native-marketplace-preview-results.json",
-    "discoveryPreview": "native-marketplace-discovery-preview-results.json",
-    "returnsLocal": "native-returns-local-results.json",
-    "preview": "native-marketplace-preview-acceptance.json",
-    "copyLocal": "native-marketplace-copy-local-results.json",
-    "copyPreview": "native-marketplace-copy-preview-results.json",
-    "copyRemote": "native-marketplace-copy-remote-results.json",
-    "oldReview": "native-marketplace-old-review-results.json"
+    "active-availability-incident": "native-product-experience-active-availability-incident.json",
+    "active-browser": "native-product-experience-active-browser.json",
+    "active-http": "native-product-experience-active-http.json",
+    "active-resource-diagnostic": "native-product-experience-active-resource-diagnostic.json",
+    "active-results": "native-product-experience-active-results.json",
+    "active-returns": "native-product-experience-active-returns.json",
+    "active-sequential-retry": "native-product-experience-active-sequential-retry.json",
+    "backup-before": "native-product-experience-backup-before.json",
+    "backup-restore": "native-product-experience-backup-restore.json",
+    "campaign-layout-diagnostic": "native-product-experience-campaign-layout-diagnostic.json",
+    "campaign-layout-smoke": "native-product-experience-campaign-layout-smoke.json",
+    "catalog-timing": "native-product-experience-catalog-timing.json",
+    "ci-results": "native-product-experience-ci-results.json",
+    "copy-local-results": "native-product-experience-copy-local-results.json",
+    "copy-preview-results": "native-product-experience-copy-preview-results.json",
+    "cron-results": "native-product-experience-cron-results.json",
+    "data-io-harness": "native-product-experience-data-io-harness.json",
+    "deployment-results": "native-product-experience-deployment-results.json",
+    "editorial-results": "native-product-experience-editorial-results.json",
+    "failed-attempts": "native-product-experience-failed-attempts.json",
+    "gallery-collection": "native-product-experience-gallery-collection.json",
+    "gallery-media-upload": "native-product-experience-gallery-media-upload.json",
+    "gallery-renderer-defect-historical": "native-product-experience-gallery-renderer-defect-historical.json",
+    "gallery-review": "native-product-experience-gallery-review.json",
+    "local-acceptance": "native-product-experience-local-acceptance.json",
+    "local-discovery": "native-product-experience-local-discovery.json",
+    "local-http": "native-product-experience-local-http.json",
+    "local-results": "native-product-experience-local-results.json",
+    "local-resume-executions": "native-product-experience-local-resume-executions.json",
+    "memory-results": "native-product-experience-memory-results.json",
+    "module-results": "native-product-experience-module-results.json",
+    "preview-acceptance": "native-product-experience-preview-acceptance.json",
+    "preview-discovery": "native-product-experience-preview-discovery.json",
+    "preview-http": "native-product-experience-preview-http.json",
+    "preview-results": "native-product-experience-preview-results.json",
+    "product-gallery-review-catalog-agent": "native-product-experience-product-gallery-review-catalog-agent.json",
+    "product-gallery-review-root": "native-product-experience-product-gallery-review-root.json",
+    "product-gallery-review-security-agent": "native-product-experience-product-gallery-review-security-agent.json",
+    "product-gallery-review-ui-agent": "native-product-experience-product-gallery-review-ui-agent.json",
+    "raw-source-audit": "native-product-experience-raw-source-audit.json",
+    "source-local-results": "native-product-experience-source-local-results.json",
+    "source-preview-results": "native-product-experience-source-preview-results.json",
+    "v7-preview-cancelled-historical": "native-product-experience-v7-preview-cancelled-historical.json",
+    "v7-preview-deployment-historical": "native-product-experience-v7-preview-deployment-historical.json",
+    "v8-failed-attempt": "native-product-experience-v8-failed-attempt.json",
+    "worker-results": "native-product-experience-worker-results.json"
   },
   "activeVerification": {
     "http": {
       "base": "https://sexogate.com/test",
-      "release": "e7f4feeb57497118bdaf4dd3",
-      "scriptSha256": "a6c772246122b6aa0c476c55cf7d3651351b001b60df3bf4033aafa54301eb4d",
+      "release": "929ff578f9c4828e5752174f",
+      "scriptSha256": "8b5a9e8dd98b6a4472e2bbc8b2f22a3d9d620fdb0299f3c2bee1013820c47ec9",
       "visibleNew": 803,
       "routes": {
         "/": 200,
@@ -106,12 +266,21 @@
       "returnsNoStoreNoindex": true,
       "adminProtected": true,
       "checkoutClosed": true,
-      "realPayments": false
+      "realPayments": false,
+      "reviewedGallery": true,
+      "galleryCommercialFieldsUnchanged": true,
+      "galleryAllAssociationsChecked": true,
+      "galleryPrivateNoStore": true,
+      "galleryOwnershipChecked": true,
+      "galleryOriginalSamples": 24,
+      "galleryProductsExtended": 551,
+      "galleryApprovedAssets": 1443,
+      "galleryRegistrySha256": "e21d80bf2b0b0e3ecf46d44ca4c8f5988ab162140ed1b9dc9f0389499222bf71"
     },
     "browser": [
       {
         "engine": "chromium",
-        "release": "e7f4feeb57497118bdaf4dd3",
+        "release": "929ff578f9c4828e5752174f",
         "scope": "release-smoke",
         "base": "https://sexogate.com/test",
         "adminRoutes": 1,
@@ -134,7 +303,7 @@
       },
       {
         "engine": "webkit",
-        "release": "e7f4feeb57497118bdaf4dd3",
+        "release": "929ff578f9c4828e5752174f",
         "scope": "release-smoke",
         "base": "https://sexogate.com/test",
         "adminRoutes": 1,
@@ -160,7 +329,7 @@
       {
         "engine": "chromium",
         "base": "https://sexogate.com/test",
-        "release": "e7f4feeb57497118bdaf4dd3",
+        "release": "929ff578f9c4828e5752174f",
         "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
         "guestLookupProtected": true,
         "noOrderDataLeaked": true,
@@ -174,7 +343,7 @@
       {
         "engine": "webkit",
         "base": "https://sexogate.com/test",
-        "release": "e7f4feeb57497118bdaf4dd3",
+        "release": "929ff578f9c4828e5752174f",
         "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
         "guestLookupProtected": true,
         "noOrderDataLeaked": true,
@@ -186,11 +355,126 @@
         "pageErrors": 0
       }
     ],
+    "productExperience": [
+      {
+        "engine": "chromium",
+        "base": "https://sexogate.com/test",
+        "scope": "remote",
+        "release": "929ff578f9c4828e5752174f",
+        "dataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+        "scriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+        "visibleNew": 803,
+        "pageErrors": 0,
+        "realPayments": false,
+        "titlesNormalized": true,
+        "richDescriptions": true,
+        "featuredFacts": true,
+        "inlineReturns": true,
+        "feedbackPersistence": true,
+        "feedbackSecurity": true,
+        "adminFeedbackMfa": true,
+        "relatedCollections": true,
+        "discoveryLinks": true,
+        "recommendationRails": true,
+        "truthfulPopularity": true,
+        "headingNaturalWrap": true,
+        "footerDivider": true,
+        "illustratedMegaMenu": true,
+        "keyboardAndRtl": true,
+        "breadcrumbProductName": true,
+        "galleryWrap": true,
+        "railArrowsLogical": true,
+        "thumbNoChrome": true,
+        "focusTheme": true,
+        "galleryScrollPreserved": true,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "samples": 5,
+        "galleryImageCount": 5,
+        "feedbackReference": "SGF-261117-9CA6A9B2AC6A",
+        "feedbackReviewedVersion": 2,
+        "qaFeedbackClearlyLabelled": true,
+        "ordersCreated": false,
+        "realRefunds": false,
+        "sourceSnapshotChanged": false,
+        "localNavigationRetries": 0
+      },
+      {
+        "engine": "webkit",
+        "base": "https://sexogate.com/test",
+        "scope": "remote",
+        "release": "929ff578f9c4828e5752174f",
+        "dataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+        "scriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+        "visibleNew": 803,
+        "pageErrors": 0,
+        "realPayments": false,
+        "titlesNormalized": true,
+        "richDescriptions": true,
+        "featuredFacts": true,
+        "inlineReturns": true,
+        "feedbackPersistence": true,
+        "feedbackSecurity": true,
+        "adminFeedbackMfa": true,
+        "relatedCollections": true,
+        "discoveryLinks": true,
+        "recommendationRails": true,
+        "truthfulPopularity": true,
+        "headingNaturalWrap": true,
+        "footerDivider": true,
+        "illustratedMegaMenu": true,
+        "keyboardAndRtl": true,
+        "breadcrumbProductName": true,
+        "galleryWrap": true,
+        "railArrowsLogical": true,
+        "thumbNoChrome": true,
+        "focusTheme": true,
+        "galleryScrollPreserved": true,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "samples": 5,
+        "galleryImageCount": 5,
+        "feedbackReference": "SGF-261117-02A0D3542134",
+        "feedbackReviewedVersion": 2,
+        "qaFeedbackClearlyLabelled": true,
+        "ordersCreated": false,
+        "realRefunds": false,
+        "sourceSnapshotChanged": false,
+        "localNavigationRetries": 0
+      }
+    ],
     "previewRetired": true,
+    "obsoletePreviewsRetired": [
+      {
+        "release": "45238e6f1cea4949bea2106e",
+        "preview": "/test/native-preview-a4bdfdce14fd0b0c",
+        "retired": true,
+        "filesRemoved": 2,
+        "statusAfter": 404,
+        "mainUnchanged": true,
+        "sourceDeploymentSha256": "dc1d0d7769a1b76e5683a312d27e79ecdc919fc1170d7c79199d56d1b378636c"
+      }
+    ],
     "installerRemoved": true
   },
   "operations": {
     "worker": {
+      "productFeedback": {
+        "commands": 0,
+        "rates": 0,
+        "ownerLinks": 0,
+        "feedback": 0
+      },
       "returns": {
         "processed": 0,
         "blocked": 0,
@@ -200,14 +484,14 @@
         "realProviderEnabled": false
       },
       "ok": true,
-      "at": 1794907382,
-      "release": "e7f4feeb57497118bdaf4dd3",
+      "at": 1794934986,
+      "release": "929ff578f9c4828e5752174f",
       "blog": {
         "status": "ok",
         "published": 0,
         "failed": 0,
         "seeded": 0,
-        "checkedAt": "2026-11-17T09:23:01Z",
+        "checkedAt": "2026-11-17T17:03:02Z",
         "remaining": 0,
         "exhausted": true
       },
@@ -225,62 +509,110 @@
       "restored": true,
       "encrypted": true,
       "databases": 2,
+      "tables": 56,
+      "rows": 22944,
+      "foreignKeysValid": true,
+      "sourceRelease": "929ff578f9c4828e5752174f",
+      "sha256": "baab3c4eb19215a1e5e28c3d1eb7d4888a851a75749dc0c6434f0a737ecac4d7"
+    },
+    "databaseRestoreBefore": {
+      "restored": true,
+      "encrypted": true,
+      "databases": 2,
       "tables": 52,
-      "rows": 22873,
+      "rows": 22889,
       "foreignKeysValid": true,
       "sourceRelease": "e7f4feeb57497118bdaf4dd3",
-      "sha256": "5ffe890b439336afa593109dd3dc38016d1f2116d67b5137e3b51fd02d376010"
+      "sha256": "99b622e96a942872d446eb9a232456a0c72d345c6908ae4f819a45bf3070a25e"
     },
-    "mediaFilesVerified": 9607,
+    "baseMediaFilesVerified": 9607,
+    "additionalGalleryFilesVerified": 1443,
+    "uniqueMediaFilesVerified": 11048,
     "mediaOriginalBytesPreserved": true,
     "fullMediaRestoreTest": "not_run"
   },
   "sourceCommits": [
-    "6c6036f",
-    "5f8cff1",
-    "f5260f7",
-    "fc587bb",
-    "d3e819e"
+    "cf6c7d2",
+    "91ffa0b",
+    "fe325e7",
+    "ac14afa"
   ],
   "ci": {
-    "state": "account_locked_billing",
-    "observedForCommit": "d3e819edb757e93fe8e44bc32c4657d5ab8cabf9",
+    "checkedAt": "2026-11-17T15:44:30.991322+00:00",
+    "release": "929ff578f9c4828e5752174f",
+    "sourceCommit": "ac14afa187e3ae845692df892435953f8f589a41",
+    "sourceCommits": [
+      "cf6c7d2",
+      "91ffa0b",
+      "fe325e7",
+      "ac14afa"
+    ],
+    "pushed": true,
+    "status": "billing_locked_no_test_steps",
+    "passed": false,
+    "testStepsExecuted": 0,
     "runs": [
       {
-        "databaseId": 44054697007,
-        "name": "native-store-checks",
+        "id": 44117594825,
+        "conclusion": "failure",
+        "headSha": "ac14afa187e3ae845692df892435953f8f589a41",
+        "jobs": [
+          {
+            "completedAt": "2026-11-17T15:43:34Z",
+            "conclusion": "failure",
+            "databaseId": 134159830975,
+            "name": "verify",
+            "startedAt": "2026-11-17T15:43:30Z",
+            "status": "completed",
+            "steps": [],
+            "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594825/job/134159830975"
+          }
+        ],
         "status": "completed",
-        "conclusion": "failure",
-        "createdAt": "2026-11-17T09:20:35Z"
-      },
-      {
-        "databaseId": 44054697178,
-        "name": "local-commerce-checks",
-        "status": "completed",
-        "conclusion": "failure",
-        "createdAt": "2026-11-17T09:20:35Z"
-      }
-    ],
-    "jobs": [
-      {
-        "jobId": 133940922973,
-        "conclusion": "failure",
-        "stepsExecuted": 0,
-        "reason": [
-          "The job was not started because your account is locked due to a billing issue."
+        "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594825",
+        "workflowName": "local-commerce-checks",
+        "annotations": [
+          {
+            "message": "The job was not started because your account is locked due to a billing issue.",
+            "level": "failure"
+          },
+          {
+            "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+            "level": "notice"
+          }
         ]
       },
       {
-        "jobId": 133940922805,
+        "id": 44117594592,
         "conclusion": "failure",
-        "stepsExecuted": 0,
-        "reason": [
-          "The job was not started because your account is locked due to a billing issue."
+        "headSha": "ac14afa187e3ae845692df892435953f8f589a41",
+        "jobs": [
+          {
+            "completedAt": "2026-11-17T15:43:32Z",
+            "conclusion": "failure",
+            "databaseId": 134159824168,
+            "name": "source-and-behavior",
+            "startedAt": "2026-11-17T15:43:29Z",
+            "status": "completed",
+            "steps": [],
+            "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594592/job/134159824168"
+          }
+        ],
+        "status": "completed",
+        "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594592",
+        "workflowName": "native-store-checks",
+        "annotations": [
+          {
+            "message": "The job was not started because your account is locked due to a billing issue.",
+            "level": "failure"
+          },
+          {
+            "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+            "level": "notice"
+          }
         ]
       }
-    ],
-    "localChecksAreNotGithubCi": true,
-    "ciTestsExecuted": 0
+    ]
   },
   "moduleStatus": {
     "catalog": "published_in_test_environment",
@@ -290,7 +622,9 @@
     "invoiceCorrection": "manual_external_confirmation_records_only",
     "hepsiburada": "http_403_no_products_imported",
     "fullMarketplaceCatalogueTransferred": false,
-    "customerCopy": "actual_cms_versions_updated_and_reloaded_no_platform_cta"
+    "customerCopy": "actual_cms_versions_updated_and_reloaded_no_platform_cta",
+    "productExperience": "current_local_preview_and_active_two_engine_proofs_verified",
+    "additionalGallery": "reviewed_original_assets_uploaded_with_all_public_associations_checked"
   },
   "limits": [
     "İlk51incelemeden45çözüldü;6ürün uygun fotoğraf veya tutarsız beden nedeniyle kapalı.",
@@ -298,7 +632,16 @@
     "Tam pazaryeri aktarımı tamamlanmadı; Hepsiburada403 nedeniyle bu kaynaktan ürün alınmadı.",
     "Gerçek tahsilat/iade/taşıyıcı/e-belge kabulü ve satıcı/ülke/vergi/hukuk onayları açık.",
     "Fiziksel iPhone, tam WCAG, CWV saha ölçümü ve tam medya geri yükleme çalıştırılmadı.",
-    "GitHubCI hesap faturalama kilidi nedeniyle0adım çalıştırdı; yerel ve gerçek önizleme kabulleri ayrı kanıttır."
+    "Bellek kanıtı aynı arşivin yerel PHP CLI/128M çalışmasıdır; eşzamanlı hosting yükü veya saha performansı ölçümü değildir.",
+    "Admin şema bağlamı 128MiB sınırına yakındır; gerçek tepe değeri validation.runtimeMemoryPeakBytes içinde korunur.",
+    "Ek görsel onayı bütün kaynak fotoğraflarının yayımlandığı anlamına gelmez; bekletilmiş ve mükerrer ilişkiler raporda ayrıdır.",
+    "HTTP üzerinden özgün ek galeri byte denetimi kanıttaki örnek sayısıyla sınırlıdır; bütün onaylı varlıkların aktarım hash doğrulaması ayrıdır.",
+    "Tam CWV/LCP saha ölçümü, fiziksel cihaz ve kontrollü eşzamanlı yük kabulü doğrulanmadı; bu sürümün kabulü işlevseldir.",
+    "İki tarayıcı işi sürerken alınan iki katalog GET örneği yalnız tanısaldır; LCP hedefi veya hızlı backend sonucu çıkarılmaz.",
+    "İstek başına 551 galeri binding dosyası/3.946.911 byte okuma yolu açık optimizasyon konusudur; gecikmenin kök nedeni olduğu kanıtlanmadı.",
+    "Güncel GitHub Actions kaydı faturalama kilidi nedeniyle 2 işi 0 test adımıyla başarısız sonlandırdı; yerel kabul CI başarısı değildir.",
+    "Etkin V8 ilk kontrolünde iki tarayıcı işi sürerken 503/meşgul sunucu yazılı bir sayfa görüntülendi; özgün gezintinin HTTP durum kodu kaydedilmedi ve kök neden kanıtlanmadı. Değişmeyen ürün testinin daha sonra tek iş olarak işlevsel geçmesi eşzamanlı kapasite/erişilebilirlik kabulü değildir; bu konu açıktır.",
+    "Doğrulanmış hedef hesabın iki salt okunur cPanel isteği yalnız bir anlık toplu kaynak örneği verdi. Entry-process, fault/geçmiş ve sayaç zaman damgası dönmedi; istek zamanları ayrı kaydedildi. Bu örnek önceki meşgul sayfanın nedenini veya eşzamanlı kapasite yeterliliğini kanıtlamaz."
   ],
   "resolvedFailures": [
     "İç boşluklu32gerçek ürün kodu ham yanıt hashleriyle yeniden ayrıştırıldı.",
@@ -306,7 +649,7 @@
     "785üründeki pazaryeri reklam cümlesi gerçek CMS sürümleriyle temizlendi; fiyat/SKU/diğer alanlar korundu.",
     "Kur isteği sonundaki render ekran yakalamayı ayırdı; test gerçek istek sonunu bekleyerek aynı geometri/tıklama kontrolleriyle yerel ve önizlemede iki motorda yeniden geçti."
   ],
-  "historicalReport": "native-deployment-history-b5e7e691-20261117.json",
+  "historicalReport": "native-deployment-history-e7f4feeb-20261117.json",
   "sourceDetails": 1002,
   "categoryDefinitions": 59,
   "occupiedCategories": 37,
@@ -317,11 +660,600 @@
     "held": 6,
     "proof": "native-marketplace-old-review-results.json"
   },
-  "failedAttempts": [
-    {
-      "group": "actions",
-      "error": "Locator.screenshot detached during FX completion render",
-      "resolution": "Waited for actual optional FX completion; all geometry/action assertions unchanged; reran local and preview both engines"
+  "failedAttempts": {
+    "local": [
+      {
+        "scope": "local",
+        "release": "929ff578f9c4828e5752174f",
+        "passed": false,
+        "error": "ACCEPTANCE_FAILED_polish",
+        "finishedGroups": [
+          {
+            "group": "import",
+            "exitCode": 0,
+            "seconds": 77.3,
+            "log": ".local\\acceptance-local-import.log"
+          },
+          {
+            "group": "customer-copy",
+            "exitCode": 0,
+            "seconds": 20.5,
+            "log": ".local\\acceptance-local-customer-copy.log"
+          },
+          {
+            "group": "product-runtime-memory",
+            "exitCode": 0,
+            "seconds": 3.6,
+            "log": ".local\\acceptance-local-product-runtime-memory.log"
+          },
+          {
+            "group": "source",
+            "exitCode": 0,
+            "seconds": 101.9,
+            "log": ".local\\acceptance-local-source.log"
+          },
+          {
+            "group": "http",
+            "exitCode": 0,
+            "seconds": 6.4,
+            "log": ".local\\acceptance-local-http.log"
+          },
+          {
+            "group": "variants",
+            "exitCode": 0,
+            "seconds": 258.3,
+            "log": ".local\\acceptance-local-variants.log"
+          },
+          {
+            "group": "navigation",
+            "exitCode": 0,
+            "seconds": 338.8,
+            "log": ".local\\acceptance-local-navigation.log"
+          },
+          {
+            "group": "actions",
+            "exitCode": 0,
+            "seconds": 120.8,
+            "log": ".local\\acceptance-local-actions.log"
+          },
+          {
+            "group": "age",
+            "exitCode": 0,
+            "seconds": 210.7,
+            "log": ".local\\acceptance-local-age.log"
+          },
+          {
+            "group": "polish",
+            "exitCode": 1,
+            "seconds": 11.8,
+            "log": ".local\\acceptance-local-polish.log"
+          },
+          {
+            "group": "catalog",
+            "exitCode": 0,
+            "seconds": 219.6,
+            "log": ".local\\acceptance-local-catalog.log"
+          },
+          {
+            "group": "discovery",
+            "exitCode": 0,
+            "seconds": 145.1,
+            "log": ".local\\acceptance-local-discovery.log"
+          },
+          {
+            "group": "return-fixtures",
+            "exitCode": 0,
+            "seconds": 0.3,
+            "log": ".local\\acceptance-local-return-fixtures.log"
+          },
+          {
+            "group": "returns",
+            "exitCode": 0,
+            "seconds": 161.6,
+            "log": ".local\\acceptance-local-returns.log"
+          }
+        ],
+        "runnerLog": ".local/product-experience-acceptance-local.log",
+        "runnerLogSha256": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+        "failedGroupLog": ".local/acceptance-local-polish.log",
+        "failedGroupLogSha256": "5a5f12b5b0e7cac7ee781aa25f9361e03367038ed61f6e331a86388866c5bbbb",
+        "actualAssertion": "CROPPED_PRODUCT_IMAGE",
+        "originalFailurePreserved": true
+      },
+      {
+        "scope": "local",
+        "release": "c3b269fd6988aae0d5a572eb",
+        "passed": false,
+        "error": "ACCEPTANCE_FAILED_source",
+        "finishedGroups": [
+          {
+            "group": "import",
+            "exitCode": 0,
+            "seconds": 75.4,
+            "log": ".local\\acceptance-local-import.log"
+          },
+          {
+            "group": "customer-copy",
+            "exitCode": 0,
+            "seconds": 27.0,
+            "log": ".local\\acceptance-local-customer-copy.log"
+          },
+          {
+            "group": "product-runtime-memory",
+            "exitCode": 0,
+            "seconds": 3.7,
+            "log": ".local\\acceptance-local-product-runtime-memory.log"
+          },
+          {
+            "group": "source",
+            "exitCode": 1,
+            "seconds": 317.5,
+            "log": ".local\\acceptance-local-source.log"
+          }
+        ],
+        "sourceFailureCode": "TimeoutExpired",
+        "sourceProofCreated": false,
+        "runnerLogSha256": "1ccbc89f48f1190b173009cc13818fc5e9a80808456aa2774f5ad0e30efa74ce",
+        "sourceLogSha256": "628338ca529af68b5524207133e8bc5d2a232a4c47c013c729dd1d5c925104e4"
+      }
+    ],
+    "preview": [],
+    "active": [
+      {
+        "scope": "remote",
+        "release": "929ff578f9c4828e5752174f",
+        "base": "https://sexogate.com/test",
+        "passed": false,
+        "error": "active_verification_failed_product-experience",
+        "failedGroup": "product-experience",
+        "originalRunnerLogSha256": "62acb9e6fc7eb76f88a295d81441f5a9360945719787ce956b508a46bacebc84",
+        "failedExecution": {
+          "group": "product-experience",
+          "exitCode": 1,
+          "seconds": 210.0,
+          "scriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+          "command": [
+            "[private command/path omitted]",
+            "-B",
+            "-X",
+            "utf8",
+            "scripts/test-native-product-experience-browser.py"
+          ],
+          "log": ".local/active-v8-20261117T164929-05e65760-product-experience.log",
+          "logSha256": "f6e1c85ee6cc2c4d212e4e5b6cebf57c986c360248945b60dad09e90066ef1c2"
+        },
+        "successfulExecutionsPreserved": [
+          {
+            "group": "http",
+            "exitCode": 0,
+            "seconds": 12.08,
+            "scriptSha256": "8b5a9e8dd98b6a4472e2bbc8b2f22a3d9d620fdb0299f3c2bee1013820c47ec9",
+            "command": [
+              "[private command/path omitted]",
+              "-B",
+              "-X",
+              "utf8",
+              "scripts/test-native-marketplace-http.py"
+            ],
+            "log": ".local/active-v8-20261117T164929-05e65760-http.log",
+            "logSha256": "b3f1b5d6322516406fe9f2c39f7f70928975eafe12aeaa110e412f4a174f1d43"
+          },
+          {
+            "group": "navigation",
+            "exitCode": 0,
+            "seconds": 294.22,
+            "scriptSha256": "e3329b11779c5f06b7b35ba836a4831999933bb7874fa60f2949436265b32e15",
+            "command": [
+              "[private command/path omitted]",
+              "-B",
+              "-X",
+              "utf8",
+              "scripts/test-native-browser.py",
+              "--release-smoke"
+            ],
+            "log": ".local/active-v8-20261117T164929-05e65760-navigation.log",
+            "logSha256": "ffe7f2841da35058e19ddabe9d93017750b1216f96906f501965b1084ae33cbf"
+          },
+          {
+            "group": "returns-public",
+            "exitCode": 0,
+            "seconds": 71.03,
+            "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+            "command": [
+              "[private command/path omitted]",
+              "-B",
+              "-X",
+              "utf8",
+              "scripts/test-native-returns-public.py"
+            ],
+            "log": ".local/active-v8-20261117T164929-05e65760-returns-public.log",
+            "logSha256": "a289a482ad438dd0ab0708b557bb6e5f011a6e2bfd0372fde709bf4bd1c893b0"
+          }
+        ],
+        "diagnosticScreenshotSha256": "9807c814b4353b9190be11337d371e5b98ed5b763e95fccc5e21bf3c70e9febd",
+        "diagnosticVisual": "503 Service Unavailable; The server is temporarily busy, try again later!",
+        "httpStatusOfOriginalNavigationRecorded": false,
+        "rootCauseProven": false,
+        "maxConcurrentBrowserJobs": 2,
+        "capacityAccepted": false,
+        "incidentProof": "native-product-experience-active-availability-incident.json",
+        "laterFunctionalRetryProof": "native-product-experience-active-sequential-retry.json"
+      }
+    ]
+  },
+  "productExperience": {
+    "publicProducts": 803,
+    "stories": 803,
+    "sourceRecords": 958,
+    "titlesCleaned": 418,
+    "rawDescriptions": {
+      "nonempty": 935,
+      "platformAdvertising": 935,
+      "empty": 23
+    },
+    "galleryProductsExtended": 551,
+    "additionalImageSlots": 1523,
+    "uniqueAdditionalAssets": 1443,
+    "heldAdditionalSlots": 991,
+    "duplicateSlotsExcluded": 14,
+    "publicImageSlots": 2397,
+    "singleImageProducts": 236,
+    "multipleImageProducts": 567,
+    "galleryHttpOriginalSamples": 24,
+    "memoryEnvironment": "local-isolated-php-128M",
+    "moduleEnvironment": "local-isolated-cli"
+  },
+  "performance": {
+    "performanceAcceptance": "not_measured",
+    "singleApiTiming": "diagnostic_only",
+    "proof": "native-product-experience-catalog-timing.json",
+    "sampleCount": 2,
+    "observationRelease": "45238e6f1cea4949bea2106e",
+    "currentReleaseMeasured": false,
+    "knownBindingFanout": {
+      "filesPerRequest": 551,
+      "fullBindingBytes": 3946911,
+      "evidenceKind": "local V7 package file metadata and static request-path inspection",
+      "confirmedRootCause": false
+    },
+    "optimizationStatus": "open_not_implemented_in_frozen_V8"
+  },
+  "availability": {
+    "release": "929ff578f9c4828e5752174f",
+    "firstActiveAttemptPassed": false,
+    "observedBusyPageText": "503 Service Unavailable; The server is temporarily busy, try again later!",
+    "originalHttpStatusRecorded": false,
+    "rootCauseProven": false,
+    "originalConcurrentBrowserJobs": 2,
+    "preservedPassedGroups": [
+      "http",
+      "navigation",
+      "returns-public"
+    ],
+    "sequentialFunctionalRetryPassed": true,
+    "retryBrowserJobs": 1,
+    "strongTestSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+    "currentProductProofSha256": "051b142b1d12c4f9db8e7fade396359620bc2cdcb0194e263a3516f71e29083f",
+    "capacityAccepted": false,
+    "incidentProof": "native-product-experience-active-availability-incident.json",
+    "retryProof": "native-product-experience-active-sequential-retry.json",
+    "resourceDiagnosticProof": "native-product-experience-active-resource-diagnostic.json",
+    "resourceDiagnostic": {
+      "readOnly": true,
+      "targetAccountVerified": true,
+      "recordedRequests": 2,
+      "startedAtUtc": "2026-11-17T17:01:45+00:00",
+      "completedAtUtc": "2026-11-17T17:01:46+00:00",
+      "resourceCounters": [
+        {
+          "resource": "cpu",
+          "usage": 83,
+          "maximum": 100
+        },
+        {
+          "resource": "memory",
+          "usage": 167862272,
+          "maximum": 1073741824
+        },
+        {
+          "resource": "iops",
+          "usage": 0,
+          "maximum": 2000
+        },
+        {
+          "resource": "io",
+          "usage": 2418688,
+          "maximum": 104857600
+        },
+        {
+          "resource": "processes",
+          "usage": 3,
+          "maximum": 100
+        }
+      ],
+      "faultCountersReturned": false,
+      "counterTimestampsReturned": false,
+      "rootCauseEstablished": false,
+      "capacityAccepted": false
     }
-  ]
+  },
+  "campaignLayout": {
+    "currentRelease": "929ff578f9c4828e5752174f",
+    "cssRawSha256": "ce947febd5d61498269e48a032da64063ea39394c4d6bfe8f14e82aefc5e3bec",
+    "cssNewlineNormalizedSha256": "f437840e091e0484963a08b017e04724d8fe511b3bfbd77d2598017050b2ba1b",
+    "diagnosticOnlyProof": "native-product-experience-campaign-layout-diagnostic.json",
+    "diagnosticScenarios": 10,
+    "diagnosticPackageAcceptance": false,
+    "diagnosticNewlineNormalizedMatch": true,
+    "actualTargetedSmokeProof": "native-product-experience-campaign-layout-smoke.json",
+    "actualTargetedSmokeScenarios": 10,
+    "actualTargetedSmokeScreenshotHashesVerified": 4,
+    "actualTargetedSmokeFullReleaseAcceptance": false,
+    "currentPackageDiscoveryProofs": [
+      "native-product-experience-local-discovery.json",
+      "native-product-experience-preview-discovery.json"
+    ],
+    "currentDiscoveryScriptSha256": "61f9faf894656065dd581da56f48d14cba8792f5ce3accba73e06b0f46228717",
+    "currentWidths": [
+      360,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "currentEngines": [
+      "chromium",
+      "webkit"
+    ]
+  },
+  "localAcceptanceResume": {
+    "release": "929ff578f9c4828e5752174f",
+    "helperSha256": "b5a4abe3b480640a2248fa57a6d1b0f297090952cfdcf2e53b99d0f44ab99071",
+    "originalRunnerSha256": "c139ecbce3817824e173bdc4b0814d546505f225839b1fd3ee9d44bbaa2e5015",
+    "originalFailurePreserved": true,
+    "retainedPassedGroups": [
+      "import",
+      "customer-copy",
+      "product-runtime-memory",
+      "source",
+      "http",
+      "variants",
+      "navigation",
+      "actions",
+      "age",
+      "catalog",
+      "discovery",
+      "return-fixtures",
+      "returns"
+    ],
+    "resumedGroups": [
+      "polish",
+      "paint",
+      "cart-notifications",
+      "returns-public",
+      "product-experience",
+      "languages"
+    ],
+    "actualResumeExecutions": 6,
+    "resumeLogSha256": "cd1b030652ad3bd60a5824fd40c84694058e9e09db7c51fcc858f882be0ee773",
+    "resumeStateSha256": "f03c3f399c80be1dda0a67c59c57470aebd17f34bfbc07c2022e9a9c992b7af8",
+    "proof": "native-product-experience-local-resume-executions.json",
+    "failureProof": "native-product-experience-v8-failed-attempt.json"
+  },
+  "supersededPreview": {
+    "release": "45238e6f1cea4949bea2106e",
+    "preview": "https://sexogate.com/test/native-preview-a4bdfdce14fd0b0c",
+    "cancelled": true,
+    "reason": "user_requested_campaign_images_fill_card",
+    "applicationFailureObserved": false,
+    "publicActivated": false,
+    "retirement": {
+      "release": "45238e6f1cea4949bea2106e",
+      "preview": "/test/native-preview-a4bdfdce14fd0b0c",
+      "retired": true,
+      "filesRemoved": 2,
+      "statusAfter": 404,
+      "mainUnchanged": true,
+      "sourceDeploymentSha256": "dc1d0d7769a1b76e5683a312d27e79ecdc919fc1170d7c79199d56d1b378636c"
+    },
+    "proof": "native-product-experience-v7-preview-cancelled-historical.json",
+    "retirementProof": "native-product-experience-deployment-results.json"
+  },
+  "sourceSnapshotFingerprint": {
+    "release": "929ff578f9c4828e5752174f",
+    "dataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+    "sourceDetails": 1002,
+    "loadedNew": 958,
+    "packageMetadataSha256": "fef112cbf09041e5d4071fe62c4c3c586e2fe4759531892cffa9ea51c1867b18",
+    "packageManifestSha256": "f8edb33a3b582382596a28981036b1cf35dd0a17aa9ec3a020aa9fba98f956e6",
+    "packageArchiveSha256": "3e2d80bf0ce5c376251b6955b66346981204efd8f392284d165a10cb48f23dab",
+    "selectionSha256": "330ce5f2baaa42801d85be67c2eb248d92a3eec47b43705c3c4a2658264383b5",
+    "catalogDataSha256": "e654988016af9f7a9d537d46ff5fae7cad298e00c06edcd6de221dd3083b1ad4",
+    "bundleCatalogSha256": "b690ed4663d2bf20a4020cd81e4f25f1cd5ee50a5413d015bf1dc76913155ab0",
+    "legacyCatalogSha256": "b2b6d0e36933267e9a16826087b103ce6d8786ee5146788ec4b9eb3c23f92b6f",
+    "catalogSourcesSha256": "242863f617411219e0dec691e5cdf297156e6e2f6956570eed8793935a1a3a94",
+    "bundleCatalogSourcesSha256": "242863f617411219e0dec691e5cdf297156e6e2f6956570eed8793935a1a3a94",
+    "coverReviewSha256": "ffdc476b0fe8c4f3b5f880ad065ecdc080ad6a03f5bb83e30ffa3329aa80c0e0",
+    "workbenchSha256": "3df1a36a8f0c6fe82e50e4d32e389c3a4408e9e353bdcffc16128ebe21029099",
+    "reviewedMediaSha256": "7f454965b250b9a97e3d6ec06158f626560cfe07c62a113501c14aaa82a4b828",
+    "sourceReadyRowsSha256": "8109e37b921c65bc61bffac9307c9acfacb430efbf5252062abba56158e94ec0",
+    "sourceTestSha256": {
+      "data": "8d98292b59156dd2e49c5ce8037fd712281d15d89615a7c63850f1571586c03b",
+      "payload": "5d8ab724843af4e605f0facad7d17127785f4fe1d5e572f1914b93983ab354f7",
+      "installer": "31a9ecaf3d878eabbaff477294d3c44d2aaa21201693e1c0fa47654033ffdbe8",
+      "seo": "61a202e63c5a8671504ccd8ef07f7ac5ac062a5eedc21473e626f212bf259866",
+      "returnsCore": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+      "returnsCoreSource": "9259e65dab227601288922a6957800dbfedb97b9bb1dd64442ee24e2c585f85f",
+      "returnOrdering": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff",
+      "returnOrderingSource": "8d12ede4f01f2fab0aa063e3300fddd70a383ecce4480400a991947d1f255eff"
+    },
+    "returnSourcesSha256": {
+      "core.php": "cfb78a419e5ed0f8b1f280828df6e4bc21f0fc86e174e2aedadaea084484f428",
+      "jobs.php": "41a476c19cb12021becd4b496859f73bd2c140bbd20fc561a6268b19ae21bcae",
+      "sg-returns-001.sql": "313c53a0a257d96167658380317bed5af6597c4990850ee733ee41fabd324cfb"
+    },
+    "installerSha256": "0a4791ffb1b0ef9a92e902aa9457acbe375a4f8d11a8077ed83801313914c6f0",
+    "runnerSha256": "bc37fa28cd9165345556e96b148f8e8ff2b7abfc786698ed09ea09c9ee411153",
+    "acceptanceHelperSha256": "93b7a7d5ede566eadaa1a1978a95c5ce98a3ef4cfb345fef039ec71ba98730bd"
+  },
+  "galleryRendererDefectResolution": {
+    "historicalProof": "native-product-experience-gallery-renderer-defect-historical.json",
+    "historicalRelease": "c3b269fd6988aae0d5a572eb",
+    "currentRelease": "929ff578f9c4828e5752174f",
+    "resolvedSeparately": true,
+    "browserScriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+    "currentBrowserExecutions": 6,
+    "checksPerExecution": 21,
+    "historicalFixedValuePreserved": false,
+    "historicalPublishedValuePreserved": false
+  },
+  "previousSourceCommits": [
+    "6c6036f",
+    "5f8cff1",
+    "f5260f7",
+    "fc587bb",
+    "d3e819e"
+  ],
+  "sourceCommit": "ac14afa187e3ae845692df892435953f8f589a41",
+  "finalEvidence": {
+    "finalizerSha256": "dc686bd318d78a569cb951da8e7f61239c3e164f51b0a6681c369d1cb7c317aa",
+    "sourceProofHashes": {
+      ".local/native-stage-package.json": "fef112cbf09041e5d4071fe62c4c3c586e2fe4759531892cffa9ea51c1867b18",
+      ".local/native-stage-deployment.json": "43ad0493821cf184d585c2ae7c2315146aec0534337bcedd0c8cc69cac4b516b",
+      ".local/native-marketplace-acceptance-local.json": "16bcebcfb745695e7c060f05defbed06749f5311037f4fc0f4eea463f6734eea",
+      "docs/native-marketplace-source-local-results.json": "8d4abffc8411e6093109e7b36efa148913f5f33aad1330b958cc9171886df799",
+      ".local/native-product-experience-local.json": "2bd77edc5dfdba79752893e6e5a151d808f7347a04a8a1653be35d48f347bf1d",
+      ".local/native-marketplace-http-local.json": "3147661554fe64c55daa02528256aa6130b71600e30aedca8eaefb86abc6f4b9",
+      ".local/native-marketplace-copy-local.json": "2ac60ea10f69f0eb5ab9a76ebbcec460a90b084d3a5a68f9bf3bf02e8888747a",
+      "docs/native-marketplace-discovery-local-results.json": "979c1f2a3ba2a004eb4d2a92dff5cd199012102ef04ebbc79ddfa3d35a4b967e",
+      ".local/native-marketplace-acceptance-preview.json": "9ca139fd29fb30a8cc6ee6e29ea439818f400e25cfcb8c09f5afdfd0fc86fb9c",
+      "docs/native-marketplace-source-preview-results.json": "b44005da8cb027105c658e7ea89394f611e84087c07977ec5f17710a54a4b322",
+      ".local/native-product-experience-preview.json": "d9433704cf0d5be9cc25579417d1f3289fdbab6ca40c97f5902ad6d9ab53e98d",
+      ".local/native-marketplace-http-preview.json": "ada72e085028239dbfe2f9bea1bd02e08262e7e643d1e9303a574943779ab663",
+      ".local/native-marketplace-copy-preview.json": "039559d94c465dd8f4d0f38e4881f4001fceebffa904ba377b3c27053668887e",
+      "docs/native-marketplace-discovery-preview-results.json": "2a53b9a75a9567901bb5d423297a6ce032e3cca72987ebe1344eff7d7a36b938",
+      ".local/product-experience-acceptance-local-timeout.log": "1ccbc89f48f1190b173009cc13818fc5e9a80808456aa2774f5ad0e30efa74ce",
+      ".local/product-experience-source-timeout.log": "628338ca529af68b5524207133e8bc5d2a232a4c47c013c729dd1d5c925104e4",
+      ".local/product-experience-acceptance-local.log": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+      ".local/acceptance-local-polish.log": "5a5f12b5b0e7cac7ee781aa25f9361e03367038ed61f6e331a86388866c5bbbb",
+      ".local/acceptance-local-import.log": "cc04dc663abbe3c0c34385853fa0ac8eadeac626b893c1901be7d959f71b4371",
+      ".local/acceptance-local-customer-copy.log": "e3c5a932170b7881d7bd74340762d6b334ab9d4dcb0f93cd271ec4de35c65148",
+      ".local/acceptance-local-product-runtime-memory.log": "5b1b68f5a1581978de9472d7fb02050ba37f63336952c727870178b05dc0aaa3",
+      ".local/acceptance-local-source.log": "bf7d76623c6c7e62d402e85ac9bad8cd3c83215b475b52a80aef21185b44cfc5",
+      ".local/acceptance-local-http.log": "c0a75641ab680d536f330fb3fb0f4fd27ace78f0b047750122889d9907889fdc",
+      ".local/acceptance-local-variants.log": "ebf1cdcf21acada4edfe837e0a1153ff14cd06acaf7abaf0eb1b76e24ac75381",
+      ".local/acceptance-local-navigation.log": "631cfb50194be55fc133692c5a56ead1e9d2935bdf0f6e3de99a54c245eb00d0",
+      ".local/acceptance-local-actions.log": "e37eb2f6dfdd4a208e9692b58774ae4f8cb4714ffaccce911e91505df58a30c4",
+      ".local/acceptance-local-age.log": "d013a84b8da175d07bb326707c25cef10293432b5fc6372d2eb1edafab7556cc",
+      ".local/acceptance-local-catalog.log": "54906bf2f1cae35d2be3117e5b954899fdd52e24130c2ca92155d5298da60bea",
+      ".local/acceptance-local-discovery.log": "db54e93f7da6c0874ac1e49e7769e3a7945b09b2fcdfab022ec83954ddd69a47",
+      ".local/acceptance-local-return-fixtures.log": "28434256d83c9d0b55109a1db2b0355153ef7a7baa86b09bf2b908c136e2977c",
+      ".local/acceptance-local-returns.log": "1bdbe9ce6ff0a09b07e096ca4f28baf2d9e5614bf8d90c9d2a64ce0c831cab1c",
+      ".local/product-experience-local-v8-resume-state.json": "f03c3f399c80be1dda0a67c59c57470aebd17f34bfbc07c2022e9a9c992b7af8",
+      ".local/acceptance-local-v8-resume-polish-1.log": "7f5dad71171a4f4a3d12b8539bf9f81bf14c57a736ace1c9cf93d17d8ff95368",
+      ".local/acceptance-local-v8-resume-paint-1.log": "5a27d2c564549884bf87fe2570aa4d38b78a8eca5106adefed66384fb951ed5f",
+      ".local/acceptance-local-v8-resume-cart-notifications-1.log": "6f3a7010cafc8c72b7bdd7aa8c1b53521ad40122522c7d6a9622fc2e44f74545",
+      ".local/acceptance-local-v8-resume-returns-public-1.log": "13d07fe4fb329687fc1601b279cbd97f1db53397c314b1f70e8e3ab63e6c1312",
+      ".local/acceptance-local-v8-resume-product-experience-1.log": "ae2d029accc784f0358bd8518c9ff6b35f571100919817824050fa3e4bc2eb96",
+      ".local/acceptance-local-v8-resume-languages-1.log": "8f775e2218880a632287972159c1bc4a09e074c8531efd3752ddbba7269e31d6",
+      ".local/product-experience-acceptance-local-resume-v8.log": "cd1b030652ad3bd60a5824fd40c84694058e9e09db7c51fcc858f882be0ee773",
+      ".local/native-product-module-results.json": "95b0bd6f178f4e2eab3b80a925d61e95c599078b145856d7fc36d6b6ca16a8bc",
+      ".local/native-product-runtime-memory.json": "8d728921e6ff23cf2e4554792591810fbfd66f6d900d47cdb414e27cbb124c3a",
+      ".local/native-ci-product-experience-final.json": "e658c7103faa9af3658d56fd42d5592bd8e3676d33b42e8429ed71ffdfa43ce6",
+      ".local/native-product-module-logs/editorialPhp.stdout": "99d339f157f5b4e41ebb7bbe2a4607c9d30a074e14b19b1eff7c3cf89e8f87ac",
+      ".local/native-product-editorial-source-results.json": "6219e1a18f9d1e4b62ed9de872a49f83658ccd365955144bec03b1f9c3c93c3a",
+      ".local/product-source-parallel-harness.json": "3517b1a8764620aae59843f3243ac66c88466eda3967875bae47b0b797c88226",
+      ".local/native-product-experience-remote.json": "051b142b1d12c4f9db8e7fade396359620bc2cdcb0194e263a3516f71e29083f",
+      ".local/product-experience-active-v8-availability-incident.json": "f76b86dc207554ed145fad3f0d35d5d82cb684e1d9fe9bcc5b6e617505df617f",
+      ".local/product-experience-active-v8.log": "62acb9e6fc7eb76f88a295d81441f5a9360945719787ce956b508a46bacebc84",
+      ".local/active-v8-20261117T164929-05e65760-http.log": "b3f1b5d6322516406fe9f2c39f7f70928975eafe12aeaa110e412f4a174f1d43",
+      ".local/native-marketplace-http-remote.json": "fa8711f6b9ca098816b8a434f29f540c3f66764230f41aaaf18689c47d67838d",
+      ".local/active-v8-20261117T164929-05e65760-product-experience.log": "f6e1c85ee6cc2c4d212e4e5b6cebf57c986c360248945b60dad09e90066ef1c2",
+      ".local/active-v8-20261117T164929-05e65760-navigation.log": "ffe7f2841da35058e19ddabe9d93017750b1216f96906f501965b1084ae33cbf",
+      ".local/native-browser-marketplace-mount-remote.json": "368fd1055d465756dd0ca841a2629545308d3f09a541a54f22507defa18ac312",
+      ".local/active-v8-20261117T164929-05e65760-returns-public.log": "a289a482ad438dd0ab0708b557bb6e5f011a6e2bfd0372fde709bf4bd1c893b0",
+      ".local/native-returns-public-remote.json": "9d89032145a87609c18da2d158700788654c2eca5520c6c476b2dfc74dbb1c50",
+      ".local/product-experience-active-v8-503.png": "9807c814b4353b9190be11337d371e5b98ed5b763e95fccc5e21bf3c70e9febd",
+      ".local/product-experience-active-v8-sequential-retry.json": "27ee116b3630e40297f4eeb80276276f7e56d1912de1ec5d41160639748cdd5c",
+      ".local/product-experience-active-product-retry-v8.log": "76ffd17adc2e5fe36d4715153998674cb626d566f5471e30cd597ab3bc34b74d",
+      ".local/product-active-resource-diagnostic-v8.json": "2fafb66474097d23149b2df2c7940c20399c990eee851e3de7733e6bb384ab5b",
+      ".local/native-product-gallery-renderer-defect.json": "3b8569e95a94681ba38f5e555efb3dd35795c72370ef519df094ff54b9ddb416",
+      ".local/product-experience-v7-preview-deployment.json": "dc1d0d7769a1b76e5683a312d27e79ecdc919fc1170d7c79199d56d1b378636c",
+      ".local/product-experience-v7-preview-cancelled.json": "360935437af6a1c4f693f2bad660b230d44b29bb0f2c7cad51599eab1ae26e14",
+      ".local/product-catalog-performance-diagnostic.json": "4976e292534651a22b61f3bcc6be9712d2e75fa44f761a0d1e282f94cc12d69a",
+      ".local/home-campaign-image-review/diagnostic-layout.json": "cc2f48dde03875c08519b57ee2e9548a69fa29440e009da16cc925e7a3cbe06f",
+      ".local/home-campaign-v8-actual.json": "059ada33b8ac92700ff73096391f26c26d121ef90928d0add00d8e85acfd0a41",
+      ".local/home-campaign-v8-actual/chromium-390.png": "9dcbf918e2ae87dbe381ca825b364290232decc7149191382df4ceb7e9f93e48",
+      ".local/home-campaign-v8-actual/chromium-1440.png": "d82b34b3748f512b881f3b1b9a9bddd8c9ad399fee1b1e6f9b9fe274dd9a5164",
+      ".local/home-campaign-v8-actual/webkit-390.png": "0e7baf8eef5cf231b678374aa9d9646a6ded844807410dfebb593daeab60ceea",
+      ".local/home-campaign-v8-actual/webkit-1440.png": "fb9b3a5d9d570eee2c87735a974c59ac5a33ae8685bd84b02989bbb99b0d9a3e",
+      "native-store/storefront/product-gallery-data.json": "e21d80bf2b0b0e3ecf46d44ca4c8f5988ab162140ed1b9dc9f0389499222bf71",
+      ".local/native-product-gallery-review.json": "689a1b234ff8729064403ea9b51fad2e1db2dc78f91abede0f792e0038528b3c",
+      ".local/native-product-gallery-collector-results.json": "53129b7ad657e20a9686c46fcad4dfadfb162f93351fcd43ef5ae1f37ad8169d",
+      ".local/product-gallery-review-root.json": "67e6998e7bcc1cd38a4394fb197ac978499086a5544be0f09d62743adc8103e9",
+      ".local/product-gallery-review-ui-agent.json": "de340fe3e55b62e0bbb635d969f50e58f9a5599c034940b391d63b2056e42f76",
+      ".local/product-gallery-review-security-agent.json": "8651d61447cfd857cb855685c529659b660bf534d68eda3433f72ee5875741d8",
+      ".local/product-gallery-review-catalog-agent.json": "aad23c9362bcc3263c71417a1d3125bd39e028a9d7c81c916b08a864907c03bb",
+      ".local/native-product-gallery-media-upload.json": "b7e5943a3bf14d6a75408c4b64238b8088b778d97470cf097af25191ce1cb875",
+      ".local/native-stage-worker.json": "372131baf06fc1601789a65809582a6de07a69d2145ba82ead54a3643f88db22",
+      ".local/native-backup-restore.json": "f662beb889deb81e5789957092a4121d0ddb78a08a5c663007889d7784bbccb8",
+      ".local/product-experience-backup-before.json": "e9c9cd9137612c0214d2cb8d730ea37770501d0930d843b8172fcabd8df1ce09",
+      ".local/native-stage-cron.json": "30995229d0065eea04f9cbfa5298b08a3549f0e8b3d7196f94b0ed43d22c4e93",
+      "docs/native-deployment-report.json": "91ae469f8523ed652f25ce703f20f1b928b0fad0fab5a9a1701cf1b64ea07796",
+      ".local/product-experience-e7-canonical-before.json": "41e5f97bc6301af57fff8f80b21931ac63d54f0ce82c5474fee4840d1357310d",
+      "docs/native-deployment-history-e7f4feeb-20261117.json": "fde703463356a4180c86b1e114191cc3968cf7c8508edf9f3841157ac459a595",
+      ".local/native-marketplace-selection.json": "330ce5f2baaa42801d85be67c2eb248d92a3eec47b43705c3c4a2658264383b5",
+      ".local/product-experience-commercial-baseline.json": "f6cb703ffc7962ddf2b15d4a180a25eb68559eab82eb81ffca3fc02d7a8f9526",
+      ".local/native-catalog-media-upload.json": "c7bad3f56a80c667b70c054d4bff4c689c1af17cc14dfe587dda0d1a637c0375"
+    },
+    "publicProofCopies": [
+      "native-product-experience-active-availability-incident.json",
+      "native-product-experience-active-browser.json",
+      "native-product-experience-active-http.json",
+      "native-product-experience-active-resource-diagnostic.json",
+      "native-product-experience-active-results.json",
+      "native-product-experience-active-returns.json",
+      "native-product-experience-active-sequential-retry.json",
+      "native-product-experience-backup-before.json",
+      "native-product-experience-backup-restore.json",
+      "native-product-experience-campaign-layout-diagnostic.json",
+      "native-product-experience-campaign-layout-smoke.json",
+      "native-product-experience-catalog-timing.json",
+      "native-product-experience-ci-results.json",
+      "native-product-experience-copy-local-results.json",
+      "native-product-experience-copy-preview-results.json",
+      "native-product-experience-cron-results.json",
+      "native-product-experience-data-io-harness.json",
+      "native-product-experience-deployment-results.json",
+      "native-product-experience-editorial-results.json",
+      "native-product-experience-failed-attempts.json",
+      "native-product-experience-gallery-collection.json",
+      "native-product-experience-gallery-media-upload.json",
+      "native-product-experience-gallery-renderer-defect-historical.json",
+      "native-product-experience-gallery-review.json",
+      "native-product-experience-local-acceptance.json",
+      "native-product-experience-local-discovery.json",
+      "native-product-experience-local-http.json",
+      "native-product-experience-local-results.json",
+      "native-product-experience-local-resume-executions.json",
+      "native-product-experience-memory-results.json",
+      "native-product-experience-module-results.json",
+      "native-product-experience-preview-acceptance.json",
+      "native-product-experience-preview-discovery.json",
+      "native-product-experience-preview-http.json",
+      "native-product-experience-preview-results.json",
+      "native-product-experience-product-gallery-review-catalog-agent.json",
+      "native-product-experience-product-gallery-review-root.json",
+      "native-product-experience-product-gallery-review-security-agent.json",
+      "native-product-experience-product-gallery-review-ui-agent.json",
+      "native-product-experience-raw-source-audit.json",
+      "native-product-experience-source-local-results.json",
+      "native-product-experience-source-preview-results.json",
+      "native-product-experience-v7-preview-cancelled-historical.json",
+      "native-product-experience-v7-preview-deployment-historical.json",
+      "native-product-experience-v8-failed-attempt.json",
+      "native-product-experience-worker-results.json"
+    ],
+    "privatePathsSanitized": true
+  }
 }

@@ -1,0 +1,233 @@
+{
+  "schema": 1,
+  "release": "929ff578f9c4828e5752174f",
+  "dataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+  "archiveSha256": "3e2d80bf0ce5c376251b6955b66346981204efd8f392284d165a10cb48f23dab",
+  "base": "https://127.0.0.1:3188/test",
+  "scriptSha256": "b5a4abe3b480640a2248fa57a6d1b0f297090952cfdcf2e53b99d0f44ab99071",
+  "originalLog": ".local/product-experience-acceptance-local.log",
+  "originalLogSha256": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+  "originalRunnerSha256": "c139ecbce3817824e173bdc4b0814d546505f225839b1fd3ee9d44bbaa2e5015",
+  "originalGroupLogHashes": {
+    ".local/acceptance-local-import.log": "cc04dc663abbe3c0c34385853fa0ac8eadeac626b893c1901be7d959f71b4371",
+    ".local/acceptance-local-customer-copy.log": "e3c5a932170b7881d7bd74340762d6b334ab9d4dcb0f93cd271ec4de35c65148",
+    ".local/acceptance-local-product-runtime-memory.log": "5b1b68f5a1581978de9472d7fb02050ba37f63336952c727870178b05dc0aaa3",
+    ".local/acceptance-local-source.log": "bf7d76623c6c7e62d402e85ac9bad8cd3c83215b475b52a80aef21185b44cfc5",
+    ".local/acceptance-local-http.log": "c0a75641ab680d536f330fb3fb0f4fd27ace78f0b047750122889d9907889fdc",
+    ".local/acceptance-local-variants.log": "ebf1cdcf21acada4edfe837e0a1153ff14cd06acaf7abaf0eb1b76e24ac75381",
+    ".local/acceptance-local-navigation.log": "631cfb50194be55fc133692c5a56ead1e9d2935bdf0f6e3de99a54c245eb00d0",
+    ".local/acceptance-local-actions.log": "e37eb2f6dfdd4a208e9692b58774ae4f8cb4714ffaccce911e91505df58a30c4",
+    ".local/acceptance-local-age.log": "d013a84b8da175d07bb326707c25cef10293432b5fc6372d2eb1edafab7556cc",
+    ".local/acceptance-local-polish.log": "5a5f12b5b0e7cac7ee781aa25f9361e03367038ed61f6e331a86388866c5bbbb",
+    ".local/acceptance-local-catalog.log": "54906bf2f1cae35d2be3117e5b954899fdd52e24130c2ca92155d5298da60bea",
+    ".local/acceptance-local-discovery.log": "db54e93f7da6c0874ac1e49e7769e3a7945b09b2fcdfab022ec83954ddd69a47",
+    ".local/acceptance-local-return-fixtures.log": "28434256d83c9d0b55109a1db2b0355153ef7a7baa86b09bf2b908c136e2977c",
+    ".local/acceptance-local-returns.log": "1bdbe9ce6ff0a09b07e096ca4f28baf2d9e5614bf8d90c9d2a64ce0c831cab1c"
+  },
+  "originalFailure": {
+    "scope": "local",
+    "release": "929ff578f9c4828e5752174f",
+    "passed": false,
+    "error": "ACCEPTANCE_FAILED_polish",
+    "finishedGroups": [
+      {
+        "group": "import",
+        "exitCode": 0,
+        "seconds": 77.3,
+        "log": ".local\\acceptance-local-import.log"
+      },
+      {
+        "group": "customer-copy",
+        "exitCode": 0,
+        "seconds": 20.5,
+        "log": ".local\\acceptance-local-customer-copy.log"
+      },
+      {
+        "group": "product-runtime-memory",
+        "exitCode": 0,
+        "seconds": 3.6,
+        "log": ".local\\acceptance-local-product-runtime-memory.log"
+      },
+      {
+        "group": "source",
+        "exitCode": 0,
+        "seconds": 101.9,
+        "log": ".local\\acceptance-local-source.log"
+      },
+      {
+        "group": "http",
+        "exitCode": 0,
+        "seconds": 6.4,
+        "log": ".local\\acceptance-local-http.log"
+      },
+      {
+        "group": "variants",
+        "exitCode": 0,
+        "seconds": 258.3,
+        "log": ".local\\acceptance-local-variants.log"
+      },
+      {
+        "group": "navigation",
+        "exitCode": 0,
+        "seconds": 338.8,
+        "log": ".local\\acceptance-local-navigation.log"
+      },
+      {
+        "group": "actions",
+        "exitCode": 0,
+        "seconds": 120.8,
+        "log": ".local\\acceptance-local-actions.log"
+      },
+      {
+        "group": "age",
+        "exitCode": 0,
+        "seconds": 210.7,
+        "log": ".local\\acceptance-local-age.log"
+      },
+      {
+        "group": "polish",
+        "exitCode": 1,
+        "seconds": 11.8,
+        "log": ".local\\acceptance-local-polish.log"
+      },
+      {
+        "group": "catalog",
+        "exitCode": 0,
+        "seconds": 219.6,
+        "log": ".local\\acceptance-local-catalog.log"
+      },
+      {
+        "group": "discovery",
+        "exitCode": 0,
+        "seconds": 145.1,
+        "log": ".local\\acceptance-local-discovery.log"
+      },
+      {
+        "group": "return-fixtures",
+        "exitCode": 0,
+        "seconds": 0.3,
+        "log": ".local\\acceptance-local-return-fixtures.log"
+      },
+      {
+        "group": "returns",
+        "exitCode": 0,
+        "seconds": 161.6,
+        "log": ".local\\acceptance-local-returns.log"
+      }
+    ],
+    "runnerLog": ".local/product-experience-acceptance-local.log",
+    "runnerLogSha256": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+    "failedGroupLog": ".local/acceptance-local-polish.log",
+    "failedGroupLogSha256": "5a5f12b5b0e7cac7ee781aa25f9361e03367038ed61f6e331a86388866c5bbbb",
+    "actualAssertion": "CROPPED_PRODUCT_IMAGE",
+    "originalFailurePreserved": true
+  },
+  "executions": [
+    {
+      "group": "polish",
+      "exitCode": 0,
+      "seconds": 299.4,
+      "log": ".local/acceptance-local-v8-resume-polish-1.log",
+      "logSha256": "7f5dad71171a4f4a3d12b8539bf9f81bf14c57a736ace1c9cf93d17d8ff95368",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-storefront-polish.py"
+      ],
+      "nativeTestScope": "marketplace-polish-local",
+      "scriptSha256": "369dda9781243f5223ac462496084911e90390c3ac501b02b33df5d3fe3a156a",
+      "reusedFromOriginal": false
+    },
+    {
+      "group": "paint",
+      "exitCode": 0,
+      "seconds": 11.8,
+      "log": ".local/acceptance-local-v8-resume-paint-1.log",
+      "logSha256": "5a27d2c564549884bf87fe2570aa4d38b78a8eca5106adefed66384fb951ed5f",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-first-paint.py"
+      ],
+      "nativeTestScope": "marketplace-paint-local",
+      "scriptSha256": "3ccb4a9d92f16d701f3bbfd8b0b719e25b6e84a8da5d6271db02f95a2db3d85c",
+      "reusedFromOriginal": false
+    },
+    {
+      "group": "cart-notifications",
+      "exitCode": 0,
+      "seconds": 73.4,
+      "log": ".local/acceptance-local-v8-resume-cart-notifications-1.log",
+      "logSha256": "6f3a7010cafc8c72b7bdd7aa8c1b53521ad40122522c7d6a9622fc2e44f74545",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-marketplace-cart-notifications.py"
+      ],
+      "nativeTestScope": "marketplace-cart-notifications-local",
+      "scriptSha256": "1af3afb2354d30223c850840510bba8cfd9dc90060f23970656bc842daf01a04",
+      "reusedFromOriginal": false
+    },
+    {
+      "group": "returns-public",
+      "exitCode": 0,
+      "seconds": 52.1,
+      "log": ".local/acceptance-local-v8-resume-returns-public-1.log",
+      "logSha256": "13d07fe4fb329687fc1601b279cbd97f1db53397c314b1f70e8e3ab63e6c1312",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-returns-public.py"
+      ],
+      "nativeTestScope": null,
+      "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+      "reusedFromOriginal": false
+    },
+    {
+      "group": "product-experience",
+      "exitCode": 0,
+      "seconds": 320.3,
+      "log": ".local/acceptance-local-v8-resume-product-experience-1.log",
+      "logSha256": "ae2d029accc784f0358bd8518c9ff6b35f571100919817824050fa3e4bc2eb96",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-product-experience-browser.py"
+      ],
+      "nativeTestScope": null,
+      "scriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+      "reusedFromOriginal": false
+    },
+    {
+      "group": "languages",
+      "exitCode": 0,
+      "seconds": 212.5,
+      "log": ".local/acceptance-local-v8-resume-languages-1.log",
+      "logSha256": "8f775e2218880a632287972159c1bc4a09e074c8531efd3752ddbba7269e31d6",
+      "command": [
+        "[private command/path omitted]",
+        "-B",
+        "-X",
+        "utf8",
+        "scripts/test-native-languages.py"
+      ],
+      "nativeTestScope": "marketplace-mount-local",
+      "scriptSha256": "dc7bb614f89cb7cb3286bce4ee826952f81f62429dc3b0d17ac5a99be41b98a6",
+      "reusedFromOriginal": false
+    }
+  ],
+  "_publicEvidence": {
+    "originalSha256": "f03c3f399c80be1dda0a67c59c57470aebd17f34bfbc07c2022e9a9c992b7af8",
+    "purpose": "Actual executed b5 resume helper: original successes reused, each missing-group execution and retry log retained, final full acceptance checked independently."
+  }
+}

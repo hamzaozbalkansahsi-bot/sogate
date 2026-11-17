@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "observedAt": "2026-11-17T13:53:48.665482+00:00",
+  "release": "c3b269fd6988aae0d5a572eb",
+  "base": "https://127.0.0.1:3188/test",
+  "productId": "sg_ty_9cd764efaae7ee4d",
+  "productUrl": "https://127.0.0.1:3188/test/?product=sg_ty_9cd764efaae7ee4d&lang=tr",
+  "apiImages": [
+    "/test/media/sg_ty_9cd764efaae7ee4d/1",
+    "/test/media/sg_ty_9cd764efaae7ee4d/2",
+    "/test/media/sg_ty_9cd764efaae7ee4d/3",
+    "/test/media/sg_ty_9cd764efaae7ee4d/gallery/438ea7ca60dbbb2dbe64cd1d3788d02a61d41407d52d6415b47c21557a253bf4",
+    "/test/media/sg_ty_9cd764efaae7ee4d/gallery/e6b8217e0df731393f202583e7fb56e6de015142b17fa06f6bfad6d01f5e738e"
+  ],
+  "apiImageCount": 5,
+  "actualDiagnosticChromiumDom": {
+    "thumbnailButtons": 5,
+    "thumbnailImgElements": 3,
+    "thumbnailFallbacks": 2,
+    "fallbackText": "Görsel hazırlanıyor"
+  },
+  "extraHttp": {
+    "url": "https://127.0.0.1:3188/test/media/sg_ty_9cd764efaae7ee4d/gallery/438ea7ca60dbbb2dbe64cd1d3788d02a61d41407d52d6415b47c21557a253bf4",
+    "status": 200,
+    "mime": "image/webp",
+    "bytes": 171474,
+    "sha256": "438ea7ca60dbbb2dbe64cd1d3788d02a61d41407d52d6415b47c21557a253bf4"
+  },
+  "screenshot": {
+    "file": "docs\\screenshots\\native-store-product-experience-local\\chromium-mega-1440.png",
+    "sha256": "4243c8e2a4be1b506a3d44d676878559a2ba64297e2a7aab2ec7f470891ae293"
+  },
+  "priorBrowserProofSha256": "b8f239472c7d21b01066c59fd16b617f7306d5a4bad25d2bcdd47a1c46ead225",
+  "priorBrowserProof": [
+    {
+      "engine": "chromium",
+      "release": "c3b269fd6988aae0d5a572eb",
+      "scriptSha256": "ec1bf2be36744fbe101b0eb2f091b15d379a1e0597dca0ab82a3e50ba23a353f",
+      "galleryWrap": true
+    },
+    {
+      "engine": "webkit",
+      "release": "c3b269fd6988aae0d5a572eb",
+      "scriptSha256": "ec1bf2be36744fbe101b0eb2f091b15d379a1e0597dca0ab82a3e50ba23a353f",
+      "galleryWrap": true
+    }
+  ],
+  "rendererCause": "Client image() accepts only numeric media paths; own gallery hash paths fall back before requesting image. JS and PHP SEO image filters also omit gallery paths.",
+  "careRootAfter1500ms": {
+    "loaded": true,
+    "naturalWidth": 1200
+  },
+  "fixed": false,
+  "published": false,
+  "realPayments": false,
+  "_publicEvidence": {
+    "originalSha256": "3b8569e95a94681ba38f5e555efb3dd35795c72370ef519df094ff54b9ddb416",
+    "purpose": "Historical c3 renderer defect: original fixed=false/published=false retained; a later strong browser proof resolves it separately."
+  }
+}

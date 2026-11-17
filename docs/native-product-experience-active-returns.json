@@ -1,0 +1,30 @@
+[
+  {
+    "engine": "chromium",
+    "base": "https://sexogate.com/test",
+    "release": "929ff578f9c4828e5752174f",
+    "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+    "guestLookupProtected": true,
+    "noOrderDataLeaked": true,
+    "trAndEn": true,
+    "rtlLanguageChoice": true,
+    "noStoreNoindex": true,
+    "fakeOrdersCreated": false,
+    "realRefunds": false,
+    "pageErrors": 0
+  },
+  {
+    "engine": "webkit",
+    "base": "https://sexogate.com/test",
+    "release": "929ff578f9c4828e5752174f",
+    "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+    "guestLookupProtected": true,
+    "noOrderDataLeaked": true,
+    "trAndEn": true,
+    "rtlLanguageChoice": true,
+    "noStoreNoindex": true,
+    "fakeOrdersCreated": false,
+    "realRefunds": false,
+    "pageErrors": 0
+  }
+]

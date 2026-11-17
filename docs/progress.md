@@ -435,3 +435,31 @@ Yayın öncesi2DB/44tablo/11.610satır, sonrası2DB/52tablo/12.460satır AESGCM 
 
 `e7f4feeb57497118bdaf4dd3` / `057fb50f7d5887fee341e3d5b4a3dd64`: 803görünür/958yeni/155inceleme; 59kategori tanımı/37dolu/5kök. İlk51den45çözüldü6engel; kaynak1.002,44ertelenmiş. %15 ve seo-kod korundu; 785CMS reklam cümlesi gerçek API ile temizlendi, etkin tekrarda0güncelleme/0CTA. Yerel15/önizleme14grup, etkin iki tarayıcı+HTTP+iade,9.607medya hash'i, cronheartbeat ve şifreli 2DB/52tablo/22873satır restore geçti. Önizleme kaldırıldı, ana site/DNS/diğer sohbet değişmedi, gerçek sağlayıcılar kapalı. CI hesap faturalama kilidinde0adım; PASS denmez. Komutlar, kaynak ve kalan altı engel [genişletme kılavuzunda](native-marketplace-expansion.md); sayısal kanıt [yayın raporunda](native-deployment-report.json).
 <!-- END EXPANSION_ACTIVE_20261117 -->
+
+<!-- BEGIN PRODUCT_EXPERIENCE_20261117 -->
+## 17 Kasım 2026 — ürün içeriği, galeri ve keşif /test yayını doğrulandı
+
+Etkin sürüm `929ff578f9c4828e5752174f`, arşiv SHA `3e2d80bf0ce5c376251b6955b66346981204efd8f392284d165a10cb48f23dab`. Yalnız [sexogate.com/test](https://sexogate.com/test) değişti; ana site, NODENO, kaynak katalog, ürün SKU/fiyat/varyant/stokları ve diğer sohbetlerin alanları korundu. Kanonik kayıtlar [ürün deneyimi rehberi](native-product-experience.md) ve [gerçek yayın raporu](native-deployment-report.json).
+
+- 958 yeni yönetim kaydı: 803 kamu ürünü, 155 incelemede; 44 kaynak kayıt ertelendi. 3.152 kaynak/arşiv kaydı korunur. 59 kategori tanımı/37 dolu kategori/5 dolu kök.
+- İçe alınan açıklama alanlarında 935 reklam metni/23 boş alan bulundu; bu, kaynak sitenin bütün alanlarının boş olduğu iddiası değildir. Gerçek niteliklerden TR/EN anlatım ve 418 temiz başlık; uydurma malzeme, sağlık veya belge iddiası yok. Editoryal 23.022 gerçek kontrol geçti.
+- 551 ürüne 1.523 ek görsel slotu/1.443 özgün varlık: kamu galeri slotları 874→2.397; 236 tek/567 çok fotoğraflı ürün. 991 ek slot bekletildi, 14 tekrar dışlandı; önceki 46 ret otomatik geri alınmadı. Medya baytları değişmedi.
+- Yerel 16/önizleme 15 kabul grubu; ürün deneyiminin 21 davranışı Chromium/WebKit ile yerel, önizleme ve etkin `/test` üzerinde 6 gerçek koşuda doğrulandı. Kampanya fotoğrafları için gerçek CSS ile 2 motor×5 genişlik=10 hedefli smoke senaryosu ve 4 ekran hash'i ayrıca doğrulandı; hedefli smoke tek başına tam sürüm kabulü değildir.
+- İlk V8 `polish` koşusu eski kampanya `contain` beklentisinde başarısız kaldı; hata ve eski loglar silinmedi. Yalnız test beklentisi kampanya `cover`/ürün `contain` ayrımına düzeltildi; 13 başarı tekrar çalıştırılmadan kalan 6 grup tamamlandı ve tam kapı yeniden doğrulandı. Önceki c3 kaynak TimeoutExpired ve etkinleştirilmeyen V7 önizleme de tarihsel kayıtlarda korundu.
+- Etkin V8 ilk kontrolünde iki tarayıcı işi sürerken ürün testinin ekranında “503 Service Unavailable / temporarily busy” yazısı görüldü; özgün gezintinin HTTP durum kodu kaydedilmedi. İlk başarısızlık, log ve ekran hashleri korundu; HTTP, gezinti ve iade grupları geçmişti. Değişmeyen güçlü ürün testi daha sonra tek iş olarak iki motorda geçti. Bu yalnız işlevsel tekrardır; kök neden ve eşzamanlı kapasite doğrulanmış veya düzelmiş sayılmaz.
+- Doğru hesabı doğrulayan iki salt okunur cPanel isteği HTTP 200/API success ile tamamlandı. 17 Kasım 17:01:45–46 UTC istek aralığındaki tek toplu örnekte kullanım/üst sınır: CPU 83/100, bellek 167.862.272/1.073.741.824, IOPS 0/2000, IO 2.418.688/104.857.600, süreç 3/100. Entry-process, fault/geçmiş ve sayaç zaman damgası verilmedi. Bu tek örnek önceki meşgul sayfanın kök nedenini veya kapasite yeterliliğini kanıtlamaz.
+- Gerçek 128M bellek tepeleri worker/customer/adminSchema/adminProducts: 74/86/122/66 MiB. Güncel şifreli veritabanı yedeği 2 DB/56 tablo/22.944 satır olarak gerçekten geri yüklendi; yayın öncesi e7 yedeği 2 DB/52 tablo/22.889 satır ayrıca korundu. Worker/cron ve iki sahipli önizlemenin kaldırılması doğrulandı; ana site aynı.
+- Kod commitleri `cf6c7d2`, `91ffa0b`, `fe325e7`, `ac14afa` yetkili depoya gönderildi. Güncel GitHub iki işi faturalama kilidi nedeniyle 0 test adımında başarısız: CI PASS değildir. Gerçek ödeme/iade/fatura/taşıyıcı işlemi açılmadı.
+
+| Gerçek kontrol | Sonuç |
+| --- | --- |
+| `python -B -X utf8 scripts/test-native-product-modules.py` | 10 komut; JS ürün/menü/galeri 21/16/11; PHP ürün 22, editoryal 23.022, geri bildirim 48/48, galeri 72/72, runtime 82. |
+| `python -B -X utf8 scripts/test-native-product-runtime-memory.py` | 4 gerçek PHP CLI yolu, `memory_limit=128M`; worker/customer/adminSchema/adminProducts 74/86/122/66 MiB. |
+| `python -B -X utf8 .local/resume-product-experience-local-v8.py` | Önceden geçen 13 grup korundu; kesilen 6 grubun 6 gerçek yürütmesi kaydedildi; son tam kapı 16 grup. |
+| `python -B -X utf8 scripts/run-native-marketplace-acceptance.py --scope preview --base https://sexogate.com/test/native-preview-5204cb2040336112` | 15 kabul grubu/16 gerçek komut; sonrasında önizleme emekliye ayrıldı. |
+| Kaynak/PHP/kurulum/SEO/iade | 6/2884/32/70.665 kontrol; 8.833 SEO sayfası; iade çekirdeği 53, sıralama 17. |
+
+Ekranlar: [Chromium 390](screenshots/native-store-product-experience-campaign-v8/chromium-390.png), [Chromium 1440](screenshots/native-store-product-experience-campaign-v8/chromium-1440.png), [Webkit 390](screenshots/native-store-product-experience-campaign-v8/webkit-390.png), [Webkit 1440](screenshots/native-store-product-experience-campaign-v8/webkit-1440.png). Ayrıntılı yürütme/hash kayıtları kanonik rapordaki `proofs` alanındadır.
+
+**Açık sınırlar:** CWV saha ölçümü ve LCP/INP/CLS hedefleri, kontrollü eşzamanlı hosting yükü, fiziksel cihaz testi ve bütün medyanın yedekten geri yüklenmesi doğrulanmadı. 551 galeri binding dosyası/3.946.911 byte okuma yolu açık optimizasyon konusudur; V7 altında alınmış iki kontrolsüz katalog GET örneği V8 performans kabulü veya gecikmenin kök neden kanıtı değildir. Etkin V8 meşgul sayfa olayı için kök neden/kapasite konusu açık kalır; son sıralı işlevsel geçiş bunu kapatmaz. Gerçek tahsilat, para iadesi, fatura düzeltmesi ve taşıyıcı işlemleri işletme/hukuk/sağlayıcı kabulleri tamamlanmadan kapalıdır.
+<!-- END PRODUCT_EXPERIENCE_20261117 -->

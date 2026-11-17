@@ -1,0 +1,4849 @@
+{
+  "actualRequests": true,
+  "base": "https://sexogate.com/test/native-preview-5204cb2040336112",
+  "cmsProtectedSha256": "5080f9b09b66a815ed93c7c38e0d69fc792747ff62b8058094f5e461b085aa8d",
+  "dataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+  "expectedSetMatch": true,
+  "helperSha256": "d5643a3b2a6eea8d9182e139c07afb0b17a9352c37eef31eacb9c8849a884fc5",
+  "idempotent": true,
+  "protectedFieldsNoChange": true,
+  "realPayments": false,
+  "records": [
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_010bf086574fe9b7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0140a0687cf7ba45",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0262be9660185d96",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_02ddaf2d17391db4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_02eb1f01a4b6dfa4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_02ff5c12d67f91e1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_03f3f28a5fa9adcd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_04013f158c149b3c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0408a49b64f034d4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_042ce9a5c241a967",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_043854ab6a69f99f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0443f9cee0ba2772",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_04947f1eb898d137",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_05284340578ebe09",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_05fb4bdc53a648fa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0684de3eaa0a3ff7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_068936a607cd3d52",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_06a863dc16d8595a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_06e5afb0fe58d5a7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_076a25d4f7b5ca14",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_07f7c450aef62f49",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0855b2ee35ab1689",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_086f959b506badef",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_088de68ace5284a6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_089b39c24bc11e0d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_08c29fd3c0bb3bc7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_08eb32b00482f005",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0963717509a1c9da",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_098dc948eed19670",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_09a851fa33a0b9f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0ae6ad6fb21561c6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0c386fd6229ae5e0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0d3e070466707b3a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0d7901e1a47e44c0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0e03f9bfd107a79c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0eff0d54f2467947",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0f878af74300128d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0f9c9ed10cf4e0e4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_0fce3c064b885132",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_105ff9a961747ae9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_107c40f523592dd3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_110b2216334a05a4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_112b72f001090147",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1168764c3e1b4c52",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_11843e6fb6c074f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_11c80bc90902db99",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_12352d41f2494e5f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_12a41f9d9a030e3f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_12e7eda66cf191bc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1310e5655a82b141",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1321f6c1ba80009c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_13875670a6cd5821",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1388b5f3daa21beb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_13b310c23cc035a5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_13e740a391e78010",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_143e7eaf3a68e1c3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_14b0a0d945887499",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_158cd220900e06ce",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_15ad6a92d1603c0b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_161a805a02e2ada4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_162d1d5607009f02",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_16644392740b7178",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_16e5e35dedce2f40",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_17045fa8612f40eb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_178f5accbd5a5b09",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_17a289b455ac6c9f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_17b2f8e8fbfb428e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_17e77504c0c29b29",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_17ea4da5447c3ed1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_182bf75e49983361",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_18589cda260899df",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_18904c38ca3c6373",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_195f847c428f379f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_19871fbea88d1c0b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_19bb2b5ade0d8f88",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_19cf1630411d16ce",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_19f8d780b5c2ea18",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1a5f84c4cdfb5f49",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1a61381bb297f81b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1b2a37eacebe9e76",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1bbdf2a8b57c7fbc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1c073c962c6c38a7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1c6e260e0f42e3f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1cb256a6b55f53f4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1d011ed2bf98ca78",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1d2c964a09197e24",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1d8a1ce255e78f5e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1e4425e1696a2b5d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1e7bed1fba284100",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1f2716d310ae2655",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1f5e4d4d8b2bb185",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_1f76a3145ab7bb25",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_20346a030706c11f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2081e287a563b051",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_20e20e8310bd8533",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_20e78334620dfe1b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2107e4be3184755a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_211008ac8ca29a44",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_216f42ff6262b39e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_21b1113f25ffc4f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_224afbf89bccf018",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2274eecfb232eebe",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2281e9c11795e406",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_22c60d58b8dfa192",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_23090d6ea3c001ab",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_237ac5f8e5b4ff05",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_23a684a1d23adfd0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_24436799b954bffc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2448a58b0788da3e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_245bfbb340094bb7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_249c15db1abad3f6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2508114581fed309",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_250c4f5ea10f4c16",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_253e6d1d8ad848b3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2694009bd3af7edb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_26aa3b37f8949c2a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_26e1cacdd7924532",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_27a1edf89cc0a267",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_27e17b4c8136e9cc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_282ac028a1505c13",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2848eeb393bb024b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_290e322ead2c84ad",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_291881356b2d9053",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_29e1af121a2628b5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2a23c6264d1d0e95",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2a75542cb78033d8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2abeabbae986ba85",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2ae362d24707797d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2af7869297d4bae6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2b3c3baffb92444e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2bb2620b3f5c67ba",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2bbf0dc0666e1ff9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2c27b36e65097721",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2c42afce4014a558",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2c689cccea33e44e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2d30780826d7fd10",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2d42d991159f3dff",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2dd9ce05733f09ce",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2e0e3941137aa0dd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2e12858e93de35f7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2e3b0d3257c7c81f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2eb4673c6780a0f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_2fa43c8fcb4fc247",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_309ed472d38f33a4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_30a8a386a7d1a2f1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_31058c8bad97540d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_315ebe4c4cf75b8f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_31964425bc951f11",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_31c13052e30fc4e0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_32056e5ea35f69d9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_322f5c84e212a086",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_329a78ae2acfbfe4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_32df0d8261bc0121",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_331d08b3b0420ea4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3320fc2d941156f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_333f6ba9c6dad489",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_33e15fd8b4a66757",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_33f60435efb179bd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_341fc104f10c3a5c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_34e0928dd9815003",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_34e6c124e2acb794",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_350bd43eecf9a0e7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_355fe1d800df9d68",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_359b2acc0c4595b0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_35ced00b9712bb34",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3638eb48e22be68a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_36bde89248525992",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_36d6b44c81ac0655",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_375241822a202902",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3759f93a438186a4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_37fdb65baf7e1976",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_38146da3a3a2d2cc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3831383bcf4ddc02",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_38f155d802f6767c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3904d041c8bd5053",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_391179349b794300",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_39370ebaca6d5d55",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_39460deb5145e901",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3a0246926bd55954",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3a79039752f72f17",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3a7a1de71fec8504",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3ad51f478a7c524c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3b42a5f2d9b62a00",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3b6742a90190c52a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3befab8ccf206d46",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3c34c60d34df63a8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3c58a4938fb4e579",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3c7113f09e90403e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3d3a1c2adad2e223",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3d449807cd41c9ce",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3d4c35a63d51cc79",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3d6ea2f001af8f77",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3d90f3f481a6d258",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3dbcceb364d82d48",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3dcba5bbc455b074",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3dfab1fe54177a16",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3e2cb10f8beabdd6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3f3bb4e15cac1c72",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3f973d8a49a16e27",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3fd56deefdd5154a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3fd8452ce9d6e39e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_3fdafcfa3e50c718",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4059be9122c928d9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_40b70744f4c622f7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4128585a0f45e865",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_41464d46c5a133f1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_41a3add0353753e8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_41b5ac19db28c5b8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_424e6653596f1d2d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_426546cb4545eb5c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_42dc4f781fb98bb7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_435965fdf2781873",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_43a050f68a0356aa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_43e659568f2e6a03",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4494abc09b0a9a4b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4496b2546f9aa58c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_44c08fb1d5a1354c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_44eb1cfc9cb6d577",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4529f202e3cb908a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_456c4925be4be2df",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_45ed50112adc20dc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_45f92483f6583d22",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_466c760699e36f24",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_46770c32cde9d7f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4697050b1e4caee1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_46a9a5ecc7aab6bd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_46dab3e77c5ff199",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_481e9db8b745db7c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_481ed695e18169a3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_484669fda05a70ca",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_48a161a91df529af",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_48c625f02f90d646",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_49271763347920b5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4aae67fa42133081",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4b4bb01b9177f764",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4b594e68bec75db9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4b5a32a51e806a8f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4bec27fe3651b85e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4c14b388875b7a65",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4ce64e7e5290b3e6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4d02249f5f6fdb5f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4d7123dc915ba0f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4d81ac971fe1fd5f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4d8938381b7b1346",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4da875d925c46cc5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4dc2b0dee38edd8a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4e2b9a8e358d157a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4e8e84d6b8be9e3c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4eb90bd2f3992326",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4ed6aeed44de1c45",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4f1e80a8ef95255f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4f5579cc8ae588b8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4fee12ffe7a602ba",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_4ff7d8a5971959d4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_508b43388abf4ba7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_508cb7c362a6ad65",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_50c442cc0f29290b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_511a5cbd52c3e222",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_51c5f65c43e84ceb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_51d9af0da5e5a74a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_522556a593f3489e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_524a49a2cc14c24d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_537b205acc28e335",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_538c78cad27a5d76",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_546323543913e89b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_54c563bfff14f76e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_54e2fce8c173f6c6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_553627b10902789a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_55bef6151220b107",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5675190e3e9352af",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56bc8a6fe4c05a2b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56c2a9bed350ed28",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56e0813883fde95a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56e508e80600d27e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56eabe50491a9e16",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_56eb92df84332fbb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5720ae71f2a497ac",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_574efb57d63a0cc1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5771b67f26dd0a5b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_57a36206071812ba",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_57e698d2ef2e42ff",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_583c32471bb9b7e4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5853c5de33efc7e8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_58c23bc45c1fbad9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_59276f7094e470f1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_599d0dfe8fa988b7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5a21a93dae345ebc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5a6abd28bf7fed38",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5aa1ca6eed2314bb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5b03e0dd23209ba9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5b4b1009d1720eee",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5b6a0ce0af3b1bf1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5ba04dbf6ee2fd1d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5baffac3a9bacddd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5bb650d31bdaeceb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5c5ba25f5245690e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5ccd27906a022090",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5ce8934704fb9722",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5d52d471c3fec8b4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5dfed9cb2a764277",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5e116f3418e3239c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5e7221bd47bc59e2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5ef5d4bec0909113",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5f1fb17c73381c94",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5f51660a2541fa0b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_5fac984707c5039f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_600caf050fe01bfa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_60cb7e7b538ce317",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_61caec7fa3553add",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_61e1b476f662cda3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_61f8d3a0eb617b1e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_61fd84955b28695c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6316989e30bf2493",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6336c38b11e9e10b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_634274e712dbb3c3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6375c3ef743d39d3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_63daa6162208d9db",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_641e30a0ca23bef1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_642cecd5bd154489",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_64344374da727c06",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_644610a560752066",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_644a945eb0461904",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_65acd9c1c34c4580",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_65fc7c0a36989b7b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6619ef95c3253677",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6620aa5bf094cf4f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_664db35ac4a19db6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_668555678f713e17",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_66de4539e07283d2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_66e0ecf0b2cbb170",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6790152b98e5afb4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_68077f85138acd52",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_686f79827ff7d71f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_690efaf98d3ec3d9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6926a37c8df54ae6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6935c0ce16c6cd40",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_69c8c8a7415ac1ba",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6a6dace8c9cd0c54",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6aa34accab28aa86",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6b3c14ac01148946",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6b58f0c7ef5e4bc9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6b85e5a4c5b14ba5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6cad490d9e840e7f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6e05efe9a1b6b7f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6e27c1d4c892ea8d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6e723d33ffa90084",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6e8325d4ca84a60f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6f36002623fe1bff",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6f412ee8c3620d16",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6fbd413720f00aa3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_6fef525a12ad4516",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7166f7cd20d2974c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_718b381e61df601b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_71cf3eaa88b33301",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_72dc3142a855e11f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_73265adf552e450e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_736b84df4252e53c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_736efb13b4b725be",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_73e45eaf6e38237b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_741cb9641898d177",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7440ddb1a8ac02cc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_749e47ea11be36ea",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_74b08e4eb8562fb6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_74b7ae2fdac2286f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_74d7f0dbc7ce008a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7513cd412dc81b93",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_751d8f2131cf7eb0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_760a24a0bcff861b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7631240616d45904",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_780683c41463a020",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_78231d07b6bacbd3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_78a888ac479c9999",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_78beaa8bca5f5ff8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_78c6ce8ecfcbb054",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_791f89265dfc66e4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_795e274989e4c6a1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_79d5b0397e888321",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_79e10813869336b2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7ab1d85e8d155e56",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7b0a3a412b40bae5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7bef16f7d5125ae6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7c17fb07898282b3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7cde5e6a9c9e9a1f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7cf261b091ed9bb2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7d0c7b7e22022993",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7d50b5b84fc610df",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7d8bab6daeb5374b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7db078fd769b8f21",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7de5d10cbee2ae1c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7df3ebb2138b82ed",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7e6463708d7677d9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7e75714019126024",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7e95d1b6dbf1b560",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7ec064effdfc190e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7edb5fc2af942509",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7ef67d02e54b6741",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7efce6cacd857261",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_7f865a00a711fe7a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8116185f1c409c4f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_81414471e9254606",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8161400cc5de2532",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8165ab3ad522d089",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_824144c0f03ec244",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_82a560335fab723b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_82db95a390cb8218",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_82e51a9d9b8573f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_839bf9a1c87a2fd6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8483318373a79223",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_84b8b7ef9364d85e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_84c8ce7ced8ea796",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_84d4b6d0e52ec622",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_85966778607af7ba",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_85b303e227fb9206",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_85cf7479647f0288",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_861be655ecb32297",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_86a1f9287fe084dc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_86b66b7cf4273e61",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8704d93dbaf6ea9e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_872b31ae2bf912fb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8750ca7e982fc6bb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_876239ac8881490a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8771e7df51c0c06e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8828d56ebf56acd2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_883687a24bdfa58b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_88424506b0373c07",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_884f7ebbc5a7d499",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_88739900c366b82e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_888ed44eb58b82e9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_88a87384da700221",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8953e4a99eddbe6a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_89e9605f70b53a1d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8a29ede447a60eaa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8a476bc674204f53",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8a9735fced57796f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8ad358be92da7d11",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8b24ffa4dfc6fc57",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8b7ff983b6df54b2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8bcf3fdcd618862f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8c6068ca2dde6031",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8c7fd55c1091aa85",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8d35c7aebf3217cd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8d36d3bc96465107",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8d7cda87a09b2fa4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8d8e80d2f5ab29a6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8e625c282fd664b1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8e71b8be1ddfbe84",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8e7957a302f954fe",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8f4db10f47cb5c93",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8f96afe75a776d8d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8fb492cb9dea1723",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_8fd1c7c2389ad6f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_904ca66cb46910a5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_90c166c27137af47",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_90da143202b39827",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_910581b7f43fca8f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9242d06a563755df",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_925e6ed7b74d387e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_92fb520c1873aee3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_92ff9071f9e8fdf2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_94016702ee347323",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9440591e4570fae6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_94d09c61ca50b76e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_950224df1fd29a58",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_952b64b223af668a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_953f51839171eb2e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_962d639b53942018",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_96408f49c0a4a7fc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_96880f4293483886",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_96a46078b32dfe2c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9733e6d92c67c8ed",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_974c94fb13f94840",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_97cae528d7666d3f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_981b1fa2af3288e9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9824dbf4913d4ae6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9890d1057670e3c4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_98b0290383ade283",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_990d779d55510e8e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9918ae06b37bdc9c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9920e9e5d69a8679",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9a2e84b5b0a338ee",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9a756b68ca49df56",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9abec1f528fc602b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9ae32e74a37d31a0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9b16da6cee90760e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9b99fd64a97dc67b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9ba2de1e0e0cae13",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9ba9e81a07a630df",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9bee722cad9af925",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9c5ffebfb8ac2583",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9c8b820798ee5f5a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9cd764efaae7ee4d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9d9b334199a2da56",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9df3bde43e5de56d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9e5497f218bdc217",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9e6551bbea576ea6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9e6ee5a79ccf042b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9e9e7e0573bc6c1d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9f67048e142da40b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_9f730419b69baf4a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a026b08a473c0605",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a039e428b437518f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a03dc03af140e664",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a133a47bd3eac85a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a13dac92e9e19311",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a16ded089ca19c3d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a18e68bfe335e7c1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a1b4f1ec4cda918f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a1b7d57c8309b833",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a1f0b812b122540a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a228735cb0761f41",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a24b0c78d0b302ff",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a25bb29ea2b69834",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a26bc5c6dd4cf6f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a2dc2ca63d435313",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a37524e008f371f5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a384df11749b932d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a3f428e659362896",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a43062e5d3382bd0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a65f4aa9b94408d5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a708e689ac9e2003",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a769e2d783c45767",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a77d2560da3adc7a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a77e973e06a63e1a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a783ea231ced9469",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a7d789254ff143cb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a8399354dbb4a8fa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a8ac5adb3d83e4f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a8ec65b74122fe95",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a92a56f5448b913b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a97b4fa30e38630d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a99c736c50aa300f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a9cbf0df7aa55eda",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a9e0e77624175120",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_a9e6ee0c498e9572",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ab4e5f90e840997b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ab74bc33a924d825",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ac0ebef86f35f61b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ac3ec85fcac78745",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ac87f07376d841c2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_aca353147c9d5b54",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_acf46d17835b61ae",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ad064314e80dfb67",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ad21f6b843b56d7c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ad4a31323fd18c91",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ad88ccfbb8d494da",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ae6041160e42bb08",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_af02a194159bdb32",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_af87d84e4a3fb8f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_afb5274c24b8aee8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b03bdcb03afb5b6e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b04131121e42885a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b0864af62736f0af",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b088b8a87de87914",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b12bf22c96c49302",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b193cd4a348f0661",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b203dcae1929af6b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b22677b782733007",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b23610f00f84eda3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b286f7ef0029a13c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b2d8618ebdc0ca8e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b33802ad45b539e2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b34ac65f702bc522",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b356def17fadaef2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b35721d9426b9625",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b39a8e45786174ef",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3a667e2705ff7d7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3b1cf73fd548838",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3cd4772d3e0a5a9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3d0ab09ee470243",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3d6dc5bcced6f42",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b3fd469fbe86680b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b4d99a573f6a5a5a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b4ebcfee8d6581d3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b4ebd558e66a8b25",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b4f222b35bea9841",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b4f9083ad11d94a4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b5131e1df6f346fc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b543b50254e80950",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b581f6d02801d32d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b5b5f0cb60949284",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b5ba62252a784cd7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b5e9575e1cbf2a5c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b60657104c655045",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b71aafafc52fe838",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b74e8534f4959647",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b796c6a45b6f6731",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b7b1a5b086f1a697",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b807289d95083544",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b81c64bbb68cd7e7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b89d67255a7d659c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b8d9c1c88310a676",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b902e61c24b1d03c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b99ab393dc5e53a5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_b9db84f645c24277",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ba08e1e573ca6aed",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ba431d0d7cc01f9e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ba5a7c7f0aea46a0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ba8ccbebfccf988d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bb40d91a2a560527",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bb52d70cb8721f49",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bb876000f4d72361",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bbd2357e0ce3b9bf",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bc407a860f3a76e0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bc5631cb3a812078",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bc8ca14a631101be",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bcccfbd10c65cd11",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bcfa50fa792b6d20",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bd623c485a94c0d9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bd7e29ed869973ed",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bd9a70d5ff48480f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bdc3f69bf2833940",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bdd938e0fb292c7b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bec6be7285b14544",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bed72ccdc5d2b6b5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_beec1d046028220c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bf128722ced14e2a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bf774ade86e37276",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bfb74306552a239a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_bfd5f6bf31260005",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c0acfcfb9d8d10a6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c0af4dc616990552",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c0b9022b36df38aa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c26cc30cfd26f185",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c2789c181bf42a9b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c29da01f43e596ec",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c3c21bd02c16abe7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c3f4c73e19f0d7f1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c45541421fc02088",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c45ec84c22c1f70c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c47dd4ea940ff7f4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c481a53021f5166b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c49b7752836e135f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c4a192e9be35959b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c4d7ce9e37036470",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c588aa68197b51e8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c5e9e9a09d05ac4f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c612a647bbff7307",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c6640dbebb9084bc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c6702416908096a2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c73f50ff292a18c7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c74074ae38195aca",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c7a659d68b9ef29c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c82cef1fd4d7c722",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c873b15fb2426e19",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c985b86222321672",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_c9f22ac30035f369",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ca11169b58970b7e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ca62a7d04e5656aa",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ca6eebf8cae702c4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cb3a2cb8535441de",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cb5a63d4f18808c8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cba407622012902d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cbfc42f7afda77de",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ccf75eaeb6d75181",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cda32f54b4590e9c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cf8ab0895e005ad2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cf944771929ba728",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_cff5720c63a88b34",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d08640f78dc999de",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d15dc6ebb6d25161",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d195234daff8e6e3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d1a1b4f601866696",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d1f6cce54c2e4109",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d25599d288dacb09",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d2d232cdf80fdc41",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d2efba2d1ff63c63",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d3377e79558a508f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d33c2b4ffc924d68",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d3e9beee81d2c073",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d466660346c3d2f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d4afc5301c02b5d6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d5100ca6cbf3a56d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d59bf407f08b28f1",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d64cadc84d7f60e0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d681672bc4cf9bc7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d69026a3265f0c8f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d6f9671ee5653a19",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d7c07f973a8eed6c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d7ddb0e168989d53",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d842bac9eaf5c9a7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d88529c6106a6bf7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d88cff4614aece27",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d8d8d76f56d8026f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d93fa96fdcbc20d7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_d9e3e6fc7687e07d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_dcabb21409a01f5c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_dd67aa7f784942d2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_de87f564ebd5680b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_deb578a33c089284",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_df13a089dad6e61d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_df28f4284be3c39c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_df66ac77e1d0578d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_df7b2dd72e0f86d2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e0645892e89390b0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e0b95dd13b786446",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e0bb70eca75c4c6b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e0d5f56bae61588c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e10e21cc28569c45",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e1182c3e68cffb09",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e1b7044b44946f38",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e1ba9c627fce3a04",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e1bc94ee06b77902",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e1fd34d4bd301e70",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e25d4b7c224e813b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e27f5340342be04c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e2b5a6d944f58e89",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e2d051cc016846fb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e2ef80996e526c12",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e36fc7977ef4074a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e37a4e317cddadb9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e3a3d2f4253aae9b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e3b619c3e6589503",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e4493ba426e65509",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e45e30f46af36461",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e47b23149602e026",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e4e4d77761085d85",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e50b28310657faa8",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e515bf49b0e8dd40",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e552c49295dd9d4e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e5fb83bc2f6cddae",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e605e755e661217f",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e6371b6771ba128e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e6eebd1d54579e7b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e762fe16f28d9bee",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e81fb195882fae60",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e8679face49adc44",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e8c7b798425a578a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e8cf260b00db619b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e8f4585141ad9b42",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e906b5fc3d975492",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e92216fed4968b2c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e99e150529747cf0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e9ee839f5ec3e809",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_e9f048db31f9486c",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ea016dc7710013ee",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ea074bdae5ef2118",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ea59a20afe858929",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_eb595f0538043668",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ec298c9009bd1a55",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ec80605b78120837",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ec82a106b95800da",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ec8355c94b35d998",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ed246858e7390141",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ed6e230581ea8cda",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ede3585caa9b548b",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ee03523b5be849c5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_eedde4f177cf10bb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_eef401b749569ab6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ef0bb0cb64a28f27",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ef1fab19e61904c6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ef57c2452013bfcd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_efa6778b79a77b48",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_efdedc6495232d43",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f0156a9550964624",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f01b844120474dd5",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f04d93f948e0d12d",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f0669652efe018c7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f085eb8651016824",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f08b9d8a18356d30",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f0cded8575970d36",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f1510937585ca1f2",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f165f656953b30b4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f17ddfc1d0328af3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f196d80049b6cc39",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f1db921eb4899cb7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f1f9967a6e8c4884",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f20c9376c03b6bd4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f2c117a069cb7bc3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f2d0c375c06328d6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f3c89cf773526a4e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f3e219c5e3b72fdd",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f40656fe504366d6",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f43d9c8a111c00b4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f451fca87f8c0ba0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f4ef807b845adf5a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f60eb6f79f3280d4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f6af3b2e525769ee",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f6ba2fa652a80af7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f6f6f3b6b00f93a3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f718b320ada03430",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f742b3fd984fa725",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f83cc6415d49bd22",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f8d0838f6de87c0e",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f96431e5dd5aa8bb",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f9e5ea41278c8d26",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_f9f232f7b18159f0",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fa66afb4c52203b3",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_faea46ffa6f7d16a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fb036d2bdf682cb7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fb0f034047fc45c7",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fbdcd6a237d16d5a",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fc017c8f79940185",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fc21d0a2aaf852c4",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fc45c043704e7146",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fc944dd8234f81f9",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fccda1a91ba12d45",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fec095a5043e6171",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_fef4513be14a6814",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ff8f1ba0a42a17bc",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ff93622554067095",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ff9b25a68fd00d54",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ffa41f51a076a496",
+      "reason": "no_matching_advertising_sentence"
+    },
+    {
+      "action": "already_clean",
+      "changedFields": [],
+      "id": "sg_ty_ffd483bfc270c5f9",
+      "reason": "no_matching_advertising_sentence"
+    }
+  ],
+  "release": "929ff578f9c4828e5752174f",
+  "remainingCTAs": 0,
+  "requestCount": 10,
+  "runtimeTimestampKeysExcluded": {},
+  "schema": 1,
+  "scriptSha256": "b361371d3a84c63657a0bf2e81ea2552467e890199708053f2ba856375969393",
+  "skipped": 0,
+  "sourceAfterSha256": "720db707c1e1f39e23b5af05a2df25ca16ea84ed607a6fba0a46aeddeeb26a7e",
+  "sourceBeforeSha256": "720db707c1e1f39e23b5af05a2df25ca16ea84ed607a6fba0a46aeddeeb26a7e",
+  "sourceFiles": 786,
+  "sourcePreserved": true,
+  "updated": 0,
+  "verifiedAfterReload": true,
+  "visible": 803,
+  "_publicEvidence": {
+    "originalSha256": "039559d94c465dd8f4d0f38e4881f4001fceebffa904ba377b3c27053668887e",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

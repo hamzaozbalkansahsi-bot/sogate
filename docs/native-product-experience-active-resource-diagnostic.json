@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "target": "https://sexogate.com/test",
+  "release": "929ff578f9c4828e5752174f",
+  "readOnly": true,
+  "maximumRequests": 2,
+  "targetAccountVerified": true,
+  "requests": [
+    {
+      "endpoint": "/execute/DomainInfo/list_domains",
+      "requestedAtUtc": "2026-11-17T17:01:45+00:00",
+      "httpStatus": 200,
+      "apiSuccess": true,
+      "completedAtUtc": "2026-11-17T17:01:45+00:00"
+    },
+    {
+      "endpoint": "/execute/ResourceUsage/get_usages",
+      "requestedAtUtc": "2026-11-17T17:01:45+00:00",
+      "httpStatus": 200,
+      "apiSuccess": true,
+      "completedAtUtc": "2026-11-17T17:01:46+00:00"
+    }
+  ],
+  "resourceCounters": [
+    {
+      "resource": "cpu",
+      "usage": 83,
+      "maximum": 100
+    },
+    {
+      "resource": "memory",
+      "usage": 167862272,
+      "maximum": 1073741824
+    },
+    {
+      "resource": "iops",
+      "usage": 0,
+      "maximum": 2000
+    },
+    {
+      "resource": "io",
+      "usage": 2418688,
+      "maximum": 104857600
+    },
+    {
+      "resource": "processes",
+      "usage": 3,
+      "maximum": 100
+    }
+  ],
+  "faultCountersReturned": false,
+  "counterTimestampsReturned": false,
+  "rootCauseEstablished": false,
+  "limitation": "A single current counter sample cannot establish the cause of a prior transient response.",
+  "startedAtUtc": "2026-11-17T17:01:45+00:00",
+  "requestedCountersAvailable": true,
+  "resourceEndpointAvailable": true,
+  "completedAtUtc": "2026-11-17T17:01:46+00:00",
+  "capacityAccepted": false,
+  "diagnosticOnly": true,
+  "recordedRequests": 2,
+  "officialEndpointDocumentation": "https://api.docs.cpanel.net/specifications/cpanel.openapi/resource-usage-and-statistics/resourceusage-get_usages",
+  "_publicEvidence": {
+    "originalSha256": "2fafb66474097d23149b2df2c7940c20399c990eee851e3de7733e6bb384ab5b",
+    "purpose": "Two read-only cPanel requests and one aggregate sample for the verified target account; context only, not proof of the prior busy-page cause or capacity acceptance."
+  }
+}

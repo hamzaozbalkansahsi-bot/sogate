@@ -1,0 +1,148 @@
+{
+  "passed": 23022,
+  "products": 958,
+  "titlesCleaned": 418,
+  "minimumTrDescriptionBytes": 47,
+  "jubels": {
+    "title": "Bordo Kalp ve Dantel Detaylı Mini Gecelik Takımı",
+    "titleEn": "Burgundy Mini Nightwear Set with Heart and Lace Details",
+    "description": "Mini gecelik takımı, kalp ve dantel özelliklerini bir araya getirir. Renk: bordo.\n\nTakım içeriği: Babydol, Etek, File Çorap.\n\nMateryal bileşeni 100% Polyester.\n\nKumaşı örme yapıdadır.\n\nBeden seçenekleri: L/XL, 2XL/3XL; Menşe: Türkiye.\n\nMalzeme: Polyester.\n\nBeden seçenekleri: L/XL, 2XL/3XL.\n\nRenk seçenekleri: Bordo.\n\nMenşe: Türkiye.\n\nMateryal bileşeni: 100% Polyester.\n\nKumaş yapısı: Örme.\n\nDesen: Düz.\n\nÜrün kodu: seo-16561-Serisi.\n\nParça sayısı: 3.\n\nTasarım ayrıntıları: kalp, dantel.",
+    "descriptionEn": "This mini nightwear set features heart detail, lace detail. Colour: burgundy.\n\nThe set contains babydoll, skirt, fishnet stockings.\n\nMaterial composition: 100% polyester.\n\nFabric construction: knitted.\n\nSize options: L/XL, 2XL/3XL; Origin: Turkey.\n\nMaterial: polyester.\n\nSize options: L/XL, 2XL/3XL.\n\nColour options: burgundy.\n\nOrigin: Turkey.\n\nPattern: plain.\n\nProduct code: seo-16561-Serisi.\n\nPiece count: 3.\n\nDesign details: heart detail, lace detail.",
+    "story": {
+      "intro": "Mini gecelik takımı, kalp ve dantel özelliklerini bir araya getirir. Renk: bordo.",
+      "paragraphs": [
+        "Takım içeriği: Babydol, Etek, File Çorap.",
+        "Materyal bileşeni 100% Polyester.",
+        "Kumaşı örme yapıdadır.",
+        "Beden seçenekleri: L/XL, 2XL/3XL; Menşe: Türkiye."
+      ],
+      "bullets": [
+        "Kalp",
+        "Dantel"
+      ],
+      "packageContents": [
+        "Babydol",
+        "Etek",
+        "File Çorap"
+      ],
+      "care": "",
+      "safety": "",
+      "fields": [
+        {
+          "title": "Malzeme",
+          "value": "Polyester",
+          "key": "materials"
+        },
+        {
+          "title": "Beden seçenekleri",
+          "value": "L/XL, 2XL/3XL",
+          "key": "sizes"
+        },
+        {
+          "title": "Renk seçenekleri",
+          "value": "Bordo",
+          "key": "colors"
+        },
+        {
+          "title": "Menşe",
+          "value": "Türkiye",
+          "key": "origin"
+        },
+        {
+          "title": "Materyal bileşeni",
+          "value": "100% Polyester",
+          "key": "composition"
+        },
+        {
+          "title": "Kumaş yapısı",
+          "value": "Örme",
+          "key": "fabric"
+        },
+        {
+          "title": "Desen",
+          "value": "Düz",
+          "key": "pattern"
+        },
+        {
+          "title": "Ürün kodu",
+          "value": "seo-16561-Serisi",
+          "key": "productCode"
+        },
+        {
+          "title": "Parça sayısı",
+          "value": "3",
+          "key": "pieceCount"
+        },
+        {
+          "title": "Tasarım ayrıntıları",
+          "value": "kalp, dantel",
+          "key": "design"
+        }
+      ],
+      "specGroups": [
+        {
+          "title": "Ürün özellikleri",
+          "fields": [
+            {
+              "title": "Malzeme",
+              "value": "Polyester",
+              "key": "materials"
+            },
+            {
+              "title": "Beden seçenekleri",
+              "value": "L/XL, 2XL/3XL",
+              "key": "sizes"
+            },
+            {
+              "title": "Renk seçenekleri",
+              "value": "Bordo",
+              "key": "colors"
+            },
+            {
+              "title": "Menşe",
+              "value": "Türkiye",
+              "key": "origin"
+            },
+            {
+              "title": "Materyal bileşeni",
+              "value": "100% Polyester",
+              "key": "composition"
+            },
+            {
+              "title": "Kumaş yapısı",
+              "value": "Örme",
+              "key": "fabric"
+            },
+            {
+              "title": "Desen",
+              "value": "Düz",
+              "key": "pattern"
+            },
+            {
+              "title": "Ürün kodu",
+              "value": "seo-16561-Serisi",
+              "key": "productCode"
+            },
+            {
+              "title": "Parça sayısı",
+              "value": "3",
+              "key": "pieceCount"
+            },
+            {
+              "title": "Tasarım ayrıntıları",
+              "value": "kalp, dantel",
+              "key": "design"
+            }
+          ]
+        }
+      ],
+      "projectionHash": "6113168955bd3d572741b061bdbbebd29fb95899e054814069262c77017bcc48"
+    }
+  },
+  "sourcePreserved": true,
+  "realApiCalled": false,
+  "_publicEvidence": {
+    "originalSha256": "99d339f157f5b4e41ebb7bbe2a4607c9d30a074e14b19b1eff7c3cf89e8f87ac",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

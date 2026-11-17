@@ -1,0 +1,123 @@
+{
+  "base": "https://sexogate.com/test/native-preview-5204cb2040336112",
+  "scope": "preview",
+  "release": "929ff578f9c4828e5752174f",
+  "passed": true,
+  "groups": [
+    {
+      "group": "import",
+      "exitCode": 0,
+      "seconds": 159.3,
+      "log": ".local\\acceptance-preview-import.log"
+    },
+    {
+      "group": "customer-copy",
+      "exitCode": 0,
+      "seconds": 23.6,
+      "log": ".local\\acceptance-preview-customer-copy.log"
+    },
+    {
+      "group": "source",
+      "exitCode": 0,
+      "seconds": 91.0,
+      "log": ".local\\acceptance-preview-source.log"
+    },
+    {
+      "group": "http",
+      "exitCode": 0,
+      "seconds": 12.1,
+      "log": ".local\\acceptance-preview-http.log"
+    },
+    {
+      "group": "variants",
+      "exitCode": 0,
+      "seconds": 324.9,
+      "log": ".local\\acceptance-preview-variants.log"
+    },
+    {
+      "group": "age",
+      "exitCode": 0,
+      "seconds": 252.1,
+      "log": ".local\\acceptance-preview-age.log"
+    },
+    {
+      "group": "navigation",
+      "exitCode": 0,
+      "seconds": 613.1,
+      "log": ".local\\acceptance-preview-navigation.log"
+    },
+    {
+      "group": "actions",
+      "exitCode": 0,
+      "seconds": 159.4,
+      "log": ".local\\acceptance-preview-actions.log"
+    },
+    {
+      "group": "polish",
+      "exitCode": 0,
+      "seconds": 555.1,
+      "log": ".local\\acceptance-preview-polish.log"
+    },
+    {
+      "group": "paint",
+      "exitCode": 0,
+      "seconds": 38.6,
+      "log": ".local\\acceptance-preview-paint.log"
+    },
+    {
+      "group": "cart-notifications",
+      "exitCode": 0,
+      "seconds": 156.0,
+      "log": ".local\\acceptance-preview-cart-notifications.log"
+    },
+    {
+      "group": "returns-public",
+      "exitCode": 0,
+      "seconds": 121.4,
+      "log": ".local\\acceptance-preview-returns-public.log"
+    },
+    {
+      "group": "catalog",
+      "exitCode": 0,
+      "seconds": 688.4,
+      "log": ".local\\acceptance-preview-catalog.log"
+    },
+    {
+      "group": "discovery",
+      "exitCode": 0,
+      "seconds": 203.9,
+      "log": ".local\\acceptance-preview-discovery.log"
+    },
+    {
+      "group": "product-experience",
+      "exitCode": 0,
+      "seconds": 462.5,
+      "log": ".local\\acceptance-preview-product-experience.log"
+    },
+    {
+      "group": "languages",
+      "exitCode": 0,
+      "seconds": 310.7,
+      "log": ".local\\acceptance-preview-languages.log"
+    }
+  ],
+  "acceptance": {
+    "profile": "marketplace-returns-v1",
+    "groups": 15,
+    "sourceDetails": 1002,
+    "loadedNew": 958,
+    "visibleNew": 803,
+    "independentSourceProof": true,
+    "discoveryProof": true,
+    "customerCopyProof": true,
+    "productExperienceProof": true,
+    "productModuleProof": true,
+    "productRuntimeMemoryProof": true,
+    "allTransferred": false
+  },
+  "realPayments": false,
+  "_publicEvidence": {
+    "originalSha256": "9ca139fd29fb30a8cc6ee6e29ea439818f400e25cfcb8c09f5afdfd0fc86fb9c",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

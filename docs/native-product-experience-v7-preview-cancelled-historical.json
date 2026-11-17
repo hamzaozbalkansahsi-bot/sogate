@@ -1,0 +1,15 @@
+{
+  "release": "45238e6f1cea4949bea2106e",
+  "scope": "preview",
+  "passed": false,
+  "cancelled": true,
+  "reason": "user_requested_campaign_images_fill_card",
+  "applicationFailureObserved": false,
+  "publicActivated": false,
+  "preview": "https://sexogate.com/test/native-preview-a4bdfdce14fd0b0c",
+  "at": "2026-11-17T15:09:06.275838+00:00",
+  "_publicEvidence": {
+    "originalSha256": "360935437af6a1c4f693f2bad660b230d44b29bb0f2c7cad51599eab1ae26e14",
+    "purpose": "Historical preview acceptance cancelled for a new user-requested layout change; not an application failure or successful acceptance."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "release": "929ff578f9c4828e5752174f",
+  "attempts": [
+    {
+      "scope": "local",
+      "release": "c3b269fd6988aae0d5a572eb",
+      "passed": false,
+      "error": "ACCEPTANCE_FAILED_source",
+      "finishedGroups": [
+        {
+          "group": "import",
+          "exitCode": 0,
+          "seconds": 75.4,
+          "log": ".local\\acceptance-local-import.log"
+        },
+        {
+          "group": "customer-copy",
+          "exitCode": 0,
+          "seconds": 27.0,
+          "log": ".local\\acceptance-local-customer-copy.log"
+        },
+        {
+          "group": "product-runtime-memory",
+          "exitCode": 0,
+          "seconds": 3.7,
+          "log": ".local\\acceptance-local-product-runtime-memory.log"
+        },
+        {
+          "group": "source",
+          "exitCode": 1,
+          "seconds": 317.5,
+          "log": ".local\\acceptance-local-source.log"
+        }
+      ],
+      "sourceFailureCode": "TimeoutExpired",
+      "sourceProofCreated": false,
+      "runnerLogSha256": "1ccbc89f48f1190b173009cc13818fc5e9a80808456aa2774f5ad0e30efa74ce",
+      "sourceLogSha256": "628338ca529af68b5524207133e8bc5d2a232a4c47c013c729dd1d5c925104e4"
+    }
+  ],
+  "finalLocalAcceptancePassed": true,
+  "_publicEvidence": {
+    "originalSha256": "1ccbc89f48f1190b173009cc13818fc5e9a80808456aa2774f5ad0e30efa74ce",
+    "purpose": "Actual failed source-proof attempt retained as failed; final acceptance is a separate execution."
+  }
+}

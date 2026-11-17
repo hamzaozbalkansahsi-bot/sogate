@@ -1,0 +1,15 @@
+{
+  "restored": true,
+  "encrypted": true,
+  "databases": 2,
+  "tables": 52,
+  "rows": 22889,
+  "foreignKeysValid": true,
+  "sourceRelease": "e7f4feeb57497118bdaf4dd3",
+  "privateArchive": "[private value omitted]",
+  "sha256": "99b622e96a942872d446eb9a232456a0c72d345c6908ae4f819a45bf3070a25e",
+  "_publicEvidence": {
+    "originalSha256": "e9c9cd9137612c0214d2cb8d730ea37770501d0930d843b8172fcabd8df1ce09",
+    "purpose": "Verified restore of previous active e7 release before the product-experience deployment; distinct from current release restore."
+  }
+}

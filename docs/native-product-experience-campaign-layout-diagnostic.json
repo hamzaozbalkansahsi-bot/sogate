@@ -1,0 +1,118 @@
+{
+  "sourceCssSha256": "f437840e091e0484963a08b017e04724d8fe511b3bfbd77d2598017050b2ba1b",
+  "rows": [
+    {
+      "engine": "chromium",
+      "width": 360,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "chromium",
+      "width": 430,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "chromium",
+      "width": 768,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "webkit",
+      "width": 360,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "webkit",
+      "width": 430,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "webkit",
+      "width": 768,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    },
+    {
+      "engine": "webkit",
+      "width": 1440,
+      "fullBleed": true,
+      "lingerieFocalPoint": "50% 70%",
+      "otherFocalPoints": "50% 50%",
+      "productImagesContain": true,
+      "noHorizontalOverflow": true,
+      "imagesLoaded": 4
+    }
+  ],
+  "diagnosticCssResponseOverride": true,
+  "packageAcceptance": false,
+  "realPayments": false,
+  "diagnosticOnly": true,
+  "currentRelease": "929ff578f9c4828e5752174f",
+  "currentSourceCssRawSha256": "ce947febd5d61498269e48a032da64063ea39394c4d6bfe8f14e82aefc5e3bec",
+  "currentSourceCssNewlineNormalizedSha256": "f437840e091e0484963a08b017e04724d8fe511b3bfbd77d2598017050b2ba1b",
+  "newlineNormalizedMatch": true,
+  "currentSourceBoundToModuleProof": true,
+  "_publicEvidence": {
+    "originalSha256": "cc2f48dde03875c08519b57ee2e9548a69fa29440e009da16cc925e7a3cbe06f",
+    "purpose": "CSS-response-override diagnostic only; current package acceptance is independently provided by the pinned two-engine discovery executions."
+  }
+}

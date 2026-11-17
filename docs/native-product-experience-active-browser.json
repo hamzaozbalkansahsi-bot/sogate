@@ -1,0 +1,48 @@
+[
+  {
+    "engine": "chromium",
+    "release": "929ff578f9c4828e5752174f",
+    "scope": "release-smoke",
+    "base": "https://sexogate.com/test",
+    "adminRoutes": 1,
+    "publicRoutes": 9,
+    "widths": [
+      360,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "mfa": true,
+    "secureCookie": true,
+    "pageErrors": 0,
+    "externalRequests": 0,
+    "readiness": "critical_requests_and_rendered_ui",
+    "optionalFxObserved": true,
+    "sourceSnapshotPreserved": true,
+    "domainAndMountRelocated": true
+  },
+  {
+    "engine": "webkit",
+    "release": "929ff578f9c4828e5752174f",
+    "scope": "release-smoke",
+    "base": "https://sexogate.com/test",
+    "adminRoutes": 1,
+    "publicRoutes": 9,
+    "widths": [
+      360,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "mfa": true,
+    "secureCookie": true,
+    "pageErrors": 0,
+    "externalRequests": 0,
+    "readiness": "critical_requests_and_rendered_ui",
+    "optionalFxObserved": true,
+    "sourceSnapshotPreserved": true,
+    "domainAndMountRelocated": true
+  }
+]

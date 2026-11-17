@@ -1,0 +1,15 @@
+{
+  "restored": true,
+  "encrypted": true,
+  "databases": 2,
+  "tables": 56,
+  "rows": 22944,
+  "foreignKeysValid": true,
+  "sourceRelease": "929ff578f9c4828e5752174f",
+  "privateArchive": "[private value omitted]",
+  "sha256": "baab3c4eb19215a1e5e28c3d1eb7d4888a851a75749dc0c6434f0a737ecac4d7",
+  "_publicEvidence": {
+    "originalSha256": "f662beb889deb81e5789957092a4121d0ddb78a08a5c663007889d7784bbccb8",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

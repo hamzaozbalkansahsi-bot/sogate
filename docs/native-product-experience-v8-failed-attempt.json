@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "release": "929ff578f9c4828e5752174f",
+  "attempt": {
+    "scope": "local",
+    "release": "929ff578f9c4828e5752174f",
+    "passed": false,
+    "error": "ACCEPTANCE_FAILED_polish",
+    "finishedGroups": [
+      {
+        "group": "import",
+        "exitCode": 0,
+        "seconds": 77.3,
+        "log": ".local\\acceptance-local-import.log"
+      },
+      {
+        "group": "customer-copy",
+        "exitCode": 0,
+        "seconds": 20.5,
+        "log": ".local\\acceptance-local-customer-copy.log"
+      },
+      {
+        "group": "product-runtime-memory",
+        "exitCode": 0,
+        "seconds": 3.6,
+        "log": ".local\\acceptance-local-product-runtime-memory.log"
+      },
+      {
+        "group": "source",
+        "exitCode": 0,
+        "seconds": 101.9,
+        "log": ".local\\acceptance-local-source.log"
+      },
+      {
+        "group": "http",
+        "exitCode": 0,
+        "seconds": 6.4,
+        "log": ".local\\acceptance-local-http.log"
+      },
+      {
+        "group": "variants",
+        "exitCode": 0,
+        "seconds": 258.3,
+        "log": ".local\\acceptance-local-variants.log"
+      },
+      {
+        "group": "navigation",
+        "exitCode": 0,
+        "seconds": 338.8,
+        "log": ".local\\acceptance-local-navigation.log"
+      },
+      {
+        "group": "actions",
+        "exitCode": 0,
+        "seconds": 120.8,
+        "log": ".local\\acceptance-local-actions.log"
+      },
+      {
+        "group": "age",
+        "exitCode": 0,
+        "seconds": 210.7,
+        "log": ".local\\acceptance-local-age.log"
+      },
+      {
+        "group": "polish",
+        "exitCode": 1,
+        "seconds": 11.8,
+        "log": ".local\\acceptance-local-polish.log"
+      },
+      {
+        "group": "catalog",
+        "exitCode": 0,
+        "seconds": 219.6,
+        "log": ".local\\acceptance-local-catalog.log"
+      },
+      {
+        "group": "discovery",
+        "exitCode": 0,
+        "seconds": 145.1,
+        "log": ".local\\acceptance-local-discovery.log"
+      },
+      {
+        "group": "return-fixtures",
+        "exitCode": 0,
+        "seconds": 0.3,
+        "log": ".local\\acceptance-local-return-fixtures.log"
+      },
+      {
+        "group": "returns",
+        "exitCode": 0,
+        "seconds": 161.6,
+        "log": ".local\\acceptance-local-returns.log"
+      }
+    ],
+    "runnerLog": ".local/product-experience-acceptance-local.log",
+    "runnerLogSha256": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+    "failedGroupLog": ".local/acceptance-local-polish.log",
+    "failedGroupLogSha256": "5a5f12b5b0e7cac7ee781aa25f9361e03367038ed61f6e331a86388866c5bbbb",
+    "actualAssertion": "CROPPED_PRODUCT_IMAGE",
+    "originalFailurePreserved": true
+  },
+  "finalLocalAcceptancePassed": true,
+  "resumedHelperSha256": "b5a4abe3b480640a2248fa57a6d1b0f297090952cfdcf2e53b99d0f44ab99071",
+  "actualResumeLogSha256": "cd1b030652ad3bd60a5824fd40c84694058e9e09db7c51fcc858f882be0ee773",
+  "actualResumeStateSha256": "f03c3f399c80be1dda0a67c59c57470aebd17f34bfbc07c2022e9a9c992b7af8",
+  "_publicEvidence": {
+    "originalSha256": "886114d0afae7698099cf330dce2506d4fd813ded30f58b69123a512991135be",
+    "purpose": "Original V8 outdated campaign-contain test failure stays failed and unchanged; a separate sequential resume passed the corrected assertion and full gate."
+  }
+}

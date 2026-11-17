@@ -1,0 +1,39 @@
+{
+  "base": "https://sexogate.com/test",
+  "release": "929ff578f9c4828e5752174f",
+  "scriptSha256": "8b5a9e8dd98b6a4472e2bbc8b2f22a3d9d620fdb0299f3c2bee1013820c47ec9",
+  "visibleNew": 803,
+  "routes": {
+    "/": 200,
+    "/api/catalog": 200,
+    "/api/deployment-status": 200,
+    "/app/config.local.json": 403,
+    "/.env": 403,
+    "/private/accounts.sqlite": 404,
+    "/site.webmanifest": 200,
+    "/apple-touch-icon.png": 200,
+    "/api/admin/return-center": 401,
+    "/yonetim/iade-merkezi": 200,
+    "/?page=return-center&lang=tr": 200
+  },
+  "privatePathsBlocked": true,
+  "guestOrderOwnership": true,
+  "returnCsrfAndOrigin": true,
+  "returnsNoStoreNoindex": true,
+  "adminProtected": true,
+  "checkoutClosed": true,
+  "realPayments": false,
+  "reviewedGallery": true,
+  "galleryCommercialFieldsUnchanged": true,
+  "galleryAllAssociationsChecked": true,
+  "galleryPrivateNoStore": true,
+  "galleryOwnershipChecked": true,
+  "galleryOriginalSamples": 24,
+  "galleryProductsExtended": 551,
+  "galleryApprovedAssets": 1443,
+  "galleryRegistrySha256": "e21d80bf2b0b0e3ecf46d44ca4c8f5988ab162140ed1b9dc9f0389499222bf71",
+  "_publicEvidence": {
+    "originalSha256": "fa8711f6b9ca098816b8a434f29f540c3f66764230f41aaaf18689c47d67838d",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "release": "929ff578f9c4828e5752174f",
+  "base": "https://sexogate.com/test",
+  "exitCode": 0,
+  "seconds": 395.54,
+  "scriptSha256": "fd8e91e3cd252efd67a144f88ccbd455973d1e2392658a493cf341c9b517f312",
+  "logSha256": "76ffd17adc2e5fe36d4715153998674cb626d566f5471e30cd597ab3bc34b74d",
+  "sequentialRetry": true,
+  "originalFailurePreserved": true,
+  "realPayments": false,
+  "passed": true,
+  "proofSha256": "051b142b1d12c4f9db8e7fade396359620bc2cdcb0194e263a3516f71e29083f",
+  "_publicEvidence": {
+    "originalSha256": "27ee116b3630e40297f4eeb80276276f7e56d1912de1ec5d41160639748cdd5c",
+    "purpose": "Only the failed unchanged product test was rerun sequentially; functional recovery is not a capacity or availability acceptance."
+  }
+}

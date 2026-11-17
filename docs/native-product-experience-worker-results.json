@@ -1,0 +1,39 @@
+{
+  "productFeedback": {
+    "commands": 0,
+    "rates": 0,
+    "ownerLinks": 0,
+    "feedback": 0
+  },
+  "returns": {
+    "processed": 0,
+    "blocked": 0,
+    "failed": 0,
+    "pending": 0,
+    "succeeded": 0,
+    "realProviderEnabled": false
+  },
+  "ok": true,
+  "at": 1794934986,
+  "release": "929ff578f9c4828e5752174f",
+  "blog": {
+    "status": "ok",
+    "published": 0,
+    "failed": 0,
+    "seeded": 0,
+    "checkedAt": "2026-11-17T17:03:02Z",
+    "remaining": 0,
+    "exhausted": true
+  },
+  "notifications": {
+    "queued": 0,
+    "sent": 0,
+    "retryOrFailed": 0
+  },
+  "externalPublishingEnabled": false,
+  "checkoutEnabled": false,
+  "_publicEvidence": {
+    "originalSha256": "372131baf06fc1601789a65809582a6de07a69d2145ba82ead54a3643f88db22",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

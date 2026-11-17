@@ -1,0 +1,197 @@
+{
+  "reviewer": "root",
+  "humanVisualReview": true,
+  "sheets": [
+    {
+      "file": "gallery-review-0001.jpg",
+      "sha256": "5f558c1fd096aa7bcc8e04db0de999efafa49c67cd9b97c4a405b9b32cffbbf1",
+      "decisions": [
+        {
+          "position": 0,
+          "sha256": "5d60fdfad2e06aa55196efaa1d3cf74d26f4f940ef4f24e82712046897e428ec",
+          "decision": "hold",
+          "reason": "Anatomical close-up excluded by brand imagery policy"
+        },
+        {
+          "position": 1,
+          "sha256": "a4a8af573f4452b34ce818f5b5562f394db91f46a26596c8abca827069232b6a",
+          "decision": "hold",
+          "reason": "Anatomical close-up excluded by brand imagery policy"
+        },
+        {
+          "position": 2,
+          "sha256": "39434b2125972f933657a6e96364f4922ea0cf205326a519e37bcfafff874dce",
+          "decision": "hold",
+          "reason": "Sheer garment coverage uncertain at review size"
+        },
+        {
+          "position": 3,
+          "sha256": "ae159d183e573e9de0e6acff7817777b199fe57938e1bd5d279cd2ba7f1d3c42",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 4,
+          "sha256": "893ef899efd78db96a6b2df8435c63be72f3ce4568d488a8db61ae6dce46e8d5",
+          "decision": "hold",
+          "reason": "Sheer garment coverage uncertain at review size"
+        },
+        {
+          "position": 5,
+          "sha256": "2a1e9a670a66b64636f43c85977e43d3f8fc50e2201ac7901c436474899634a2",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 6,
+          "sha256": "91c4b9bee9d6896b951c408fbc6534c0d7f0efd0aeca33e11c20fc29befd3ccc",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 7,
+          "sha256": "1f2176e40a5c078f95a52b551121266df496ab55243058fd5ba483096bacb553",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 8,
+          "sha256": "18f568d394b7a9e7d81f19a115a71c5c70124b48886794cccecedcb896a11c82",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 9,
+          "sha256": "006de591e834f6304a46fb919dc2ebf0fe8bb41e09ddcac32e87190cc1e80d7b",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 10,
+          "sha256": "b529e0a9ace6d7da78e38ac0ff6654288d1d8624d7557966e103fe0bec9b0daf",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 11,
+          "sha256": "74aded36741df956fedf4cd20dfd4d9816998eb481d50e1aeddae2fd7d5fff61",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 12,
+          "sha256": "6b65da5015ad359bb1a5f1968f7b27b580ffad441d6e274b118239cb7cdeb90a",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 13,
+          "sha256": "ba45adac24dc479d62671e9005ef40a0178a79df0b499ed2f01d704503457841",
+          "decision": "hold",
+          "reason": "Anatomical close-up excluded by brand imagery policy"
+        },
+        {
+          "position": 14,
+          "sha256": "0722ba8a19924dfc469f69b3d3208519e3615c67d89e35a3015dc499ca01a9a3",
+          "decision": "hold",
+          "reason": "Anatomical close-up excluded by brand imagery policy"
+        },
+        {
+          "position": 15,
+          "sha256": "f2b89e6af4197117f35c8a02beb9536370b3df7825c33649f57c41b4874f800d",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 16,
+          "sha256": "3c1e84c40d800905fe8ec4e9095caf3fed44f01ef96cc33fa0b555f8da946747",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 17,
+          "sha256": "1242b66b57d78ed0d245de61a44ed36effe8d7e273eddd4eef57e9e3b08cec98",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 18,
+          "sha256": "a023d2e7fb84ed82bbacae9cf99f48f5a00e7e0b8f11abb917ad26a896ab4a11",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 19,
+          "sha256": "aa893d71b28e41e3b0ab1160e62d27b714b436671369be9aa63d9a892147340f",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 20,
+          "sha256": "57fb67981a7fd141dc1b3a7cb87051403f4f2dffa737a311821773f2be8b617f",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 21,
+          "sha256": "e93856779ecf066a7dd3ce8825b5c6007a9fe230c3241cadefcb7f6e99744f9e",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        },
+        {
+          "position": 22,
+          "sha256": "5f3d952527e5fa67bdd7cd9f9e8b513772ec9616e3532bed85c222a827beb538",
+          "decision": "hold",
+          "reason": "Unverified promotional claim overlay"
+        },
+        {
+          "position": 23,
+          "sha256": "4b3b8d0f8b4cc47299e6b5b1b2e3a706bc7df3701c3e99731cafc0b766f381a6",
+          "decision": "hold",
+          "reason": "Unverified skin-friendly claim overlay"
+        },
+        {
+          "position": 24,
+          "sha256": "58aff520431e1df87c36bf77a4356d48a66e5e53b295bb9d05b1f2606a40506f",
+          "decision": "hold",
+          "reason": "Product infographic requires claim/measurement reconciliation"
+        },
+        {
+          "position": 25,
+          "sha256": "8e74f1a1ecaff3e60463b113f7cdfe5586b62b9a777cdf27b9b54b220c5dbe03",
+          "decision": "hold",
+          "reason": "Unverified soft/comfort claim overlay"
+        },
+        {
+          "position": 26,
+          "sha256": "14bee9c5e4352b9b5e4466eae17ea23cb6e5d686bf75bc278b77b199046f5e61",
+          "decision": "hold",
+          "reason": "Variant set promotional overlay requires reconciliation"
+        },
+        {
+          "position": 27,
+          "sha256": "351fd053611db22d8e8cb21d0f38718c068a1cca6a38935ce16acfd2428abb71",
+          "decision": "hold",
+          "reason": "Product promotional overlay requires reconciliation"
+        },
+        {
+          "position": 28,
+          "sha256": "7bfab69eac1b4c09a02e4d88a1dadbd0d6a56388a3cd123fccef8159de7a7dd6",
+          "decision": "hold",
+          "reason": "Supplier promotional packaging image"
+        },
+        {
+          "position": 29,
+          "sha256": "fc298e96c8952d6b78da9dd0c56a5212bf3a841a9ad56439df0c575d56bd026b",
+          "decision": "approve",
+          "reason": "Viewed clean catalog product image; no explicit action or supplier promotion observed"
+        }
+      ]
+    }
+  ],
+  "reviewedAt": "2026-11-17T11:54:46.912057+00:00",
+  "_publicEvidence": {
+    "originalSha256": "67e6998e7bcc1cd38a4394fb197ac978499086a5544be0f09d62743adc8103e9",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

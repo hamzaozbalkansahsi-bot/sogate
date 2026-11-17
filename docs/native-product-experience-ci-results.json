@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-11-17T15:44:30.991322+00:00",
+  "release": "929ff578f9c4828e5752174f",
+  "sourceCommit": "ac14afa187e3ae845692df892435953f8f589a41",
+  "sourceCommits": [
+    "cf6c7d2",
+    "91ffa0b",
+    "fe325e7",
+    "ac14afa"
+  ],
+  "pushed": true,
+  "status": "billing_locked_no_test_steps",
+  "passed": false,
+  "testStepsExecuted": 0,
+  "runs": [
+    {
+      "id": 44117594825,
+      "conclusion": "failure",
+      "headSha": "ac14afa187e3ae845692df892435953f8f589a41",
+      "jobs": [
+        {
+          "completedAt": "2026-11-17T15:43:34Z",
+          "conclusion": "failure",
+          "databaseId": 134159830975,
+          "name": "verify",
+          "startedAt": "2026-11-17T15:43:30Z",
+          "status": "completed",
+          "steps": [],
+          "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594825/job/134159830975"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594825",
+      "workflowName": "local-commerce-checks",
+      "annotations": [
+        {
+          "message": "The job was not started because your account is locked due to a billing issue.",
+          "level": "failure"
+        },
+        {
+          "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+          "level": "notice"
+        }
+      ]
+    },
+    {
+      "id": 44117594592,
+      "conclusion": "failure",
+      "headSha": "ac14afa187e3ae845692df892435953f8f589a41",
+      "jobs": [
+        {
+          "completedAt": "2026-11-17T15:43:32Z",
+          "conclusion": "failure",
+          "databaseId": 134159824168,
+          "name": "source-and-behavior",
+          "startedAt": "2026-11-17T15:43:29Z",
+          "status": "completed",
+          "steps": [],
+          "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594592/job/134159824168"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/hamzaozbalkansahsi-bot/sogate/actions/runs/44117594592",
+      "workflowName": "native-store-checks",
+      "annotations": [
+        {
+          "message": "The job was not started because your account is locked due to a billing issue.",
+          "level": "failure"
+        },
+        {
+          "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+          "level": "notice"
+        }
+      ]
+    }
+  ],
+  "_publicEvidence": {
+    "originalSha256": "e658c7103faa9af3658d56fd42d5592bd8e3676d33b42e8429ed71ffdfa43ce6",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

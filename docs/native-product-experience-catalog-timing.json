@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-17T14:54:55.023263+00:00",
+  "requestBudget": 2,
+  "actualGetAttempts": 2,
+  "measurements": [
+    {
+      "scope": "active-e7",
+      "url": "https://sexogate.com/test/api/catalog",
+      "status": 200,
+      "responseElapsedSeconds": 2.384117,
+      "totalSeconds": 2.541681700036861,
+      "decompressedBytes": 6163241,
+      "contentEncoding": "br",
+      "contentLength": null,
+      "transferEncoding": "chunked",
+      "cacheControl": "no-cache",
+      "products": 803,
+      "productsWithStories": 803,
+      "storyBytes": 792195,
+      "descriptionBytes": 850530,
+      "imageSlots": 874,
+      "catalogDataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+      "revision": 2576
+    },
+    {
+      "scope": "preview-v7",
+      "url": "https://sexogate.com/test/native-preview-a4bdfdce14fd0b0c/api/catalog",
+      "status": 200,
+      "responseElapsedSeconds": 4.430099,
+      "totalSeconds": 4.609310299973004,
+      "decompressedBytes": 7799525,
+      "contentEncoding": "br",
+      "contentLength": null,
+      "transferEncoding": "chunked",
+      "cacheControl": "no-cache",
+      "products": 803,
+      "productsWithStories": 803,
+      "storyBytes": 1960211,
+      "descriptionBytes": 1131426,
+      "imageSlots": 2397,
+      "catalogDataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+      "revision": 2576
+    }
+  ],
+  "browsersRun": false,
+  "sourceChanged": false,
+  "customerDataRecorded": false,
+  "delta": {
+    "responseElapsedSeconds": 2.0459820000000004,
+    "totalSeconds": 2.0676285999361426,
+    "decompressedBytes": 1636284,
+    "totalRatio": 1.8134884080513136,
+    "decompressedRatio": 1.2654908350979623,
+    "storyBytes": 1168016,
+    "descriptionBytes": 280896,
+    "imageSlots": 1523
+  },
+  "memoryProof": {
+    "release": "45238e6f1cea4949bea2106e",
+    "cases": {
+      "worker": {
+        "peakBytes": 77594624
+      },
+      "customer": {
+        "peakBytes": 90177536,
+        "encodedBytes": 7710836,
+        "encodedPayload": "actual_customer_catalog"
+      },
+      "adminSchema": {
+        "peakBytes": 127926272,
+        "encodedBytes": 1321690,
+        "encodedPayload": "actual_admin_schema"
+      },
+      "adminProducts": {
+        "peakBytes": 69206016,
+        "encodedBytes": 4384217,
+        "encodedPayload": "actual_admin_product_rows"
+      }
+    }
+  },
+  "galleryStaticInspection": {
+    "release": "45238e6f1cea4949bea2106e",
+    "moduleSha256": "7c376a907f7ec8c2d4a830e8f1118daac8ee9ec115f8b37db98fdf3db8dfed93",
+    "bindingFiles": 551,
+    "bindingBytesTotal": 3946911,
+    "bindingBytesMin": 4686,
+    "bindingBytesMax": 11327,
+    "bindingBytesMean": 7163.177858439201,
+    "registryBytes": 1054478,
+    "projectionBindingPolicy": "Per PHP request: one static registry JSON read; one full binding JSON read/decode for each of551 extended public products, retaining only thin fields in static cache. Catalog does not open or hash media bytes. Image endpoint loads full binding only for requested product and validates requested media hash/MIME."
+  },
+  "limitations": [
+    "One sequential GET per target; simultaneous preview browser jobs may affect shared-host timing.",
+    "requests.response.elapsed measures time to response headers, used here as requested TTFB proxy.",
+    "Content-Length unavailable and br transfer chunked; compressed wire bytes not measured.",
+    "Static code inspection identifies I/O fan-out but does not attribute measured regression causally."
+  ],
+  "interpretation": {
+    "observedMaterialDifference": true,
+    "observedHeaderDelayIncreaseSeconds": 2.0459820000000004,
+    "route18SecondDelayFullyExplained": false,
+    "causalAttributionProven": false,
+    "note": "A single paired observation found an approximately2-second API increase; it does not isolate queueing, filesystem metadata, editorial computation, JSON encoding or payload transport. No optimization was performed."
+  },
+  "performanceAcceptance": "not_measured",
+  "singleApiTiming": "diagnostic_only",
+  "observationRelease": "45238e6f1cea4949bea2106e",
+  "currentRelease": "929ff578f9c4828e5752174f",
+  "currentReleaseMeasured": false,
+  "observedLoadContext": "two preview browser jobs running; uncontrolled single observation per API target",
+  "knownBindingFanout": {
+    "filesPerRequest": 551,
+    "fullBindingBytes": 3946911,
+    "evidenceKind": "local V7 package file metadata and static request-path inspection",
+    "confirmedRootCause": false
+  },
+  "_publicEvidence": {
+    "originalSha256": "4976e292534651a22b61f3bcc6be9712d2e75fa44f761a0d1e282f94cc12d69a",
+    "purpose": "Historical e7/V7 single API observations while two V7 preview browsers were running; uncontrolled diagnostic, not current V8 CWV/LCP or performance acceptance."
+  }
+}

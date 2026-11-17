@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "passed": true,
+  "sourceTestSha256": "8d98292b59156dd2e49c5ce8037fd712281d15d89615a7c63850f1571586c03b",
+  "methodExecutions": 7,
+  "fixtureProducts": 12,
+  "cases": [
+    {
+      "case": "success",
+      "passed": true,
+      "actualException": null,
+      "rawOpenAttempts": 12
+    },
+    {
+      "case": "wrong_hash",
+      "passed": true,
+      "actualException": "AssertionError",
+      "rawOpenAttempts": 12
+    },
+    {
+      "case": "missing_file",
+      "passed": true,
+      "actualException": "FileNotFoundError",
+      "rawOpenAttempts": 12
+    },
+    {
+      "case": "wrong_code",
+      "passed": true,
+      "actualException": "AssertionError",
+      "rawOpenAttempts": 0
+    },
+    {
+      "case": "wrong_retail",
+      "passed": true,
+      "actualException": "AssertionError",
+      "rawOpenAttempts": 0
+    },
+    {
+      "case": "wrong_sale",
+      "passed": true,
+      "actualException": "AssertionError",
+      "rawOpenAttempts": 0
+    },
+    {
+      "case": "wrong_source_sha",
+      "passed": true,
+      "actualException": "AssertionError",
+      "rawOpenAttempts": 0
+    }
+  ],
+  "frozenSourceReadOrWritten": false,
+  "sourceTestChanged": false,
+  "packageChanged": false,
+  "externalNetworkCalled": false,
+  "_publicEvidence": {
+    "originalSha256": "3517b1a8764620aae59843f3243ac66c88466eda3967875bae47b0b797c88226",
+    "purpose": "Seven isolated executions of the current data-test method; fixture-only evidence, not a replacement for the full source run."
+  }
+}

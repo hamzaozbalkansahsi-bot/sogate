@@ -1,0 +1,53 @@
+{
+  "release": "45238e6f1cea4949bea2106e",
+  "mainBefore": {
+    "index.html": "db15c20afdd43cd3f1cbb798d46ec701ab9e72b43ec63224c12f409b7c1fad1f",
+    ".htaccess": "eaa273430366b2264cbcb9e08177051ebc0998da9dc72ae221d7d64fe93390bd",
+    "robots.txt": "7fc2297f117fc2a5ce918dbf235150bd025d7fe703ad34de23a0fb3efffa9ba6"
+  },
+  "activated": false,
+  "preview": "/test/native-preview-a4bdfdce14fd0b0c",
+  "phase": "preview",
+  "acceptanceProfile": "marketplace-returns-v1",
+  "rollback": {
+    "path": "[private path omitted]",
+    "sha256": "4a44e949609171002da1189497e785e6f54745a2435ef95811b496da8fc71162",
+    "verified": true,
+    "files": {
+      "/test/index.php": "6c09091c1a4dad6ecf89ea70dae5a9e1da11c3aa27c6a04cc9c65d8103e441a6",
+      "/test/.htaccess": "9794eaff8d685565443cd627267f36d8ae2f9e1d7327919dcb3137c624989666",
+      "/test/app/active.php": "974d3167f2fafe1443cab76800c2142ee09745142c754dd798721e66e2a20a7b",
+      "/test/app/config.local.json": "55dfe7517c0267563f89d848d777f62c41d456151c089ae9be1f44bb941dcc91",
+      "/test/app/owner.json": "574c285261e874267a7a8da57f91d3b1f0f3be6f4e195e00ab8c33906311bdb5"
+    }
+  },
+  "previewRoutingSha256": "752c9b785fc1ee8ca90765155e174f50be1cfad90a35f5cb030a74dada537529",
+  "installation": {
+    "installed": true,
+    "release": "45238e6f1cea4949bea2106e",
+    "privateRoot": "[private path omitted]",
+    "phpCli": "[private command/path omitted]",
+    "products": 3152,
+    "checkoutEnabled": false,
+    "ownerCount": 1
+  },
+  "previewHealth": {
+    "status": "preview",
+    "runtime": "php",
+    "database": true,
+    "release": "45238e6f1cea4949bea2106e",
+    "products": 803,
+    "sourceProducts": 3152,
+    "activeSourceProducts": 958,
+    "checkoutEnabled": false,
+    "catalogReady": true,
+    "strictMediaHealth": "sales_and_country_acceptance_pending",
+    "basePath": "/test/native-preview-a4bdfdce14fd0b0c"
+  },
+  "mainUnchanged": true,
+  "installerRemoved": true,
+  "_publicEvidence": {
+    "originalSha256": "dc1d0d7769a1b76e5683a312d27e79ecdc919fc1170d7c79199d56d1b378636c",
+    "purpose": "Historical V7 preview installation; never activated as the public application."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "installed": true,
+  "command": "[private command/path omitted]",
+  "linekey": 3251084118,
+  "otherJobsUnchanged": true,
+  "at": 1794935032,
+  "_publicEvidence": {
+    "originalSha256": "30995229d0065eea04f9cbfa5298b08a3549f0e8b3d7196f94b0ed43d22c4e93",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

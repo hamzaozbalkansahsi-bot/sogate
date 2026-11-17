@@ -1,0 +1,4014 @@
+{
+  "schema": 1,
+  "sourceDataset": "057fb50f7d5887fee341e3d5b4a3dd64",
+  "firstSheet": 56,
+  "lastSheet": 85,
+  "reviewer": "catalog-agent",
+  "complete": true,
+  "sheets": [
+    {
+      "file": "gallery-review-0056.jpg",
+      "sha256": "b78d95c63db94de00e2b75457add65e8df659bc703af7b56947b5245f7b2ff40",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "e96f92a10a41ad227a5bb644357e9e6248dc6fea7a20f0732b719e38f08893ae",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 1,
+          "sha256": "4dc56b1bc316c3711363edd1e3110d57b808622f36ce801674d249b021729b96",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 2,
+          "sha256": "49ba33ceef202dbe4f6d37a544012f576ca93b2549eb1ef877bef581645ff498",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 3,
+          "sha256": "6ec288e39dcaa130634bb9b3280dc8e986ed0f68507ed9f5cfefc336114d0c1c",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 4,
+          "sha256": "ba13efe7863cb5b7facfd4dadf48d814bff79d996e2ca6a47e57e052ef952274",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 5,
+          "sha256": "0091653b69f778b4e2dd1726bc8bc646f48c3dd5857743114f6df7894cb7ddaa",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 6,
+          "sha256": "f1bc27ef7325a6cbdcd27e19534be3916d2bdb1a2e9e0dbe2377074e72ffcbf1",
+          "decision": "hold",
+          "reason": "Kullanım broşüründe cinsel eylem/genital bölge çizimleri var."
+        },
+        {
+          "position": 7,
+          "sha256": "4f136b3bd8e580fe4a9738f6bbe8cb7bae3cd471463b0913eca551970dd906e7",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 8,
+          "sha256": "5af884c3c4a936c658284f4dda41515dc826d539eca7679dc7edc03a57c60f39",
+          "decision": "hold",
+          "reason": "Zarın üstünde cinsel eylem pozisyon çizimleri var."
+        },
+        {
+          "position": 9,
+          "sha256": "f572231dcb6df428656245ceb94c42aad4e40e474b2b6ae059675ceffc0de719",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 10,
+          "sha256": "693ebff07a4a3648007e8e3cb62d13424284c7d9bb12b46cd7ffffb4748fdc2d",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 11,
+          "sha256": "fbec2acef3fc750a1ec00699e53ead54c7cb3533a9500cbea8b2ebb73c2068b0",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 12,
+          "sha256": "6a5c1d355ba67534d592445c28c8e9e723f07f068e84171480e90017719db2e3",
+          "decision": "hold",
+          "reason": "Ürünün üstünde cinsel eylem pozisyon çizimleri var."
+        },
+        {
+          "position": 13,
+          "sha256": "9f22706c238a366a41a55ad23c89d2ec814bba9ceb0c761c50d1270636860e8e",
+          "decision": "hold",
+          "reason": "Ambalajdaki pozisyon zarında cinsel eylem çizimi seçiliyor; ek galeri için muhafazakâr hold."
+        },
+        {
+          "position": 14,
+          "sha256": "568d97c9fe9ead6561bfe7a39742e2ec79c3f5f957ea73c274f0db34ba4bd98f",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 15,
+          "sha256": "c648b7cb6447475b4d3ed6ff5c93f0efa07ba0f557d5a7097b0d1cb00a2b7005",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 16,
+          "sha256": "80b00733cd1f742694a9a7f7109bef30d2445fa7ddfebaf50cf7235b958c4730",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyen tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 17,
+          "sha256": "48ac715890eeda6e564b46429d6fb6830ecc6c6cbbc26d27dde10ca160501124",
+          "decision": "hold",
+          "reason": "Uzman tavsiyesi ve yüzdeli performans iddiaları içeren reklam infografiği."
+        },
+        {
+          "position": 18,
+          "sha256": "5c1a2304af4bf6644380302f665837e86adb8d5293b91c8ebf48b6c32021dc3a",
+          "decision": "hold",
+          "reason": "Kayganlaştırıcı için doğrulanmamış uygunluk/performans iddialı reklam infografiği."
+        },
+        {
+          "position": 19,
+          "sha256": "c11027ee3396c555447a3c51907a2cea755211158db37a98ba86bcacaed4f1fa",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 20,
+          "sha256": "a04f67d6dd7253ba3cf93a6c19da5da92a8bd24f278f68916c3d8641a50696eb",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 21,
+          "sha256": "d0c797fa1704ff8edab8b82d626536303dd5f5058983da923b842b644932ac79",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 22,
+          "sha256": "71838ede3dcfd64d9f87f6da9207ab5d7909b2fbbc84a7c6c10ebec555d82295",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 23,
+          "sha256": "8f3683c87553cf308416bee8a967168b5655f5f637c11a284e3d3516e89741c6",
+          "decision": "hold",
+          "reason": "Zarın üstünde cinsel eylem pozisyon çizimleri var."
+        },
+        {
+          "position": 24,
+          "sha256": "f23aafd293ee7bc17cd8cf44c4c00bcb5209c1ec2b80ae4d06a278208509d3ac",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 25,
+          "sha256": "3fa657cb64c7ad76ff714750ad518e2fe42adee47950b60fe189793affec0694",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 26,
+          "sha256": "42fa225f725efde56262c39e929800bb513cf7d6af7a11fe7412919ceeec5a31",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 27,
+          "sha256": "ed4e72fc77a4567c80b368e7f2e759c4bb0efccf7ba0cdc47d8e70673557f620",
+          "decision": "hold",
+          "reason": "Kart/zar üzerinde cinsel eylem pozisyon çizimleri var."
+        },
+        {
+          "position": 28,
+          "sha256": "907c232af843221127617f026caab2a704a1520c65e711ad8d6185ee8f2276e9",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        },
+        {
+          "position": 29,
+          "sha256": "9b2bca6bc05d10ec6ec63e7eb1ac8256b7ab093bfc8c625e277c4a6a53ddc7b9",
+          "decision": "approve",
+          "reason": "Gerçek ürün, aksesuar veya açıkça yetişkin giyim modeli; ek filigran/uygunsuz eylem yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0057.jpg",
+      "sha256": "f79c9b8e968e2042b281d0ae850a680d89ec4089f70e1dc1de719a660ee25037",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "64418f344b2b47afe7abfcce11c15fe436951b5856ec21aad96440a2e570ca93",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "517fbf68ecf8adfcc28cb5d6cb0d61bd84b9dd9a5762df3c53152d82aa307ecd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "77bf91627825e7675ad0362353de99b5b2d58a3312c61c4a94d3e1014579f526",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "84a3fb889f2aa10515584744d98c86908fe6b0e92afd8c6492c4bea3aaedbb11",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "cceb189b09fe9d1151632ad6d8df5d2eeec768bc4b9f1aac34102033a228c3f9",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "0907df6f329dbf7f3a1769b63214433ffa28d6c46c962ae3adce16544e122f2c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "fc52a8a775ccd02bafb52a6460bd5ee2de318d46a70951bcc56f5d090f665cf9",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "cc3dbbea1516443004b8e6e0f9b32d25dee79eae5e20568c71d97d9a478c1517",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "bffec8411b6ca429e40249a276e4c38d8aa2f6a257339da03e5a03f651b54ec2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "43c2687aa5d9c8263d230d9d98a9e681fc26a68de93bf46351a9aa73ec34aed8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "55192088d422aefb6b61cc6a9d5bdc1b2783b469accdd6958e8e60e6709579f1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "335f8a78464a000d5a36e56f238ba09636a1ebb51be32c8fb832f589288c1a5d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "b797d15053674d07fdcd7bc745032829f641f9de8ecba473ebb2976eefba6647",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "78ce399551edffa4dcd72ff42f0b943ade836a45d3f50140b7d2f827695038bf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "c2fd0b2f05bb4c71f455cca0f15a2b15f3c75cb76ea39f3be080ed38e11ac844",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "a732af87b73996c7a35aa534ff680838f5ea32824a71ee6d92df38ccd0d06e2c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "fee76594870f3d059793389e51549a4ae50ca26c143e1055317a00cb22fdd67f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "d89902539b907efff94423be3bbbdc553ed7a1ff187fc241dd2d6c67c14cdb32",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "968d5763918810d4453ba830a7fbc6812727992a2f89c806fa09123390182314",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "9b2568a193de81e016f61534a4d965dd38b8c0025bb099ba114031a8b891e9c7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "dd957f5d70c4168a245677304928a16697057bad55bb2770b1845c67c43915b4",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri var."
+        },
+        {
+          "position": 21,
+          "sha256": "d5074eb1df549986c16154e21e2f801627d9ed7c037545a48c405484ba15fd19",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "4bb5e711408c184c1c70267c21b0b9c0157a55c7ded42996922f19e3591ec29a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "d1eaff2dae6b39318438ee753efa92ce8d73f57ba471813d5b6c96ce08d8c22b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "e39a830b9456126e27b24c0f83741f0b4949abc9ffa80ba54cd78365d4c31359",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "7a0e4c589b465182c9e9f4104c54a2403322e78779ac19c04cd419c6977e3a62",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "fe377e978467bdb543529334c324b1f330ec3f291a8bf9591c608f31e0274f1d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "675dc894ba6b0a054c8f50de893529f01d481926a98d7fa651ad8f161d59d29c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "8c09dbbcf05da65a56a053ccd471f40333264f34b9fad7c3ac6541002129d1d0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "e1948267f614c805826690989099c0f21d015277e1efe8b0327a2eb987f8c624",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal üretici ambalajı/olgusal teknik şema; ek filigran yok."
+        }
+      ],
+      "additionalViews": [
+        {
+          "sha256": "0907df6f329dbf7f3a1769b63214433ffa28d6c46c962ae3adce16544e122f2c",
+          "reason": "Tam boy görüntüde filigran olmadığı ve yetişkin model olduğu kontrol edildi."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0058.jpg",
+      "sha256": "8cf8f9b870279b391f80ba26d82471bd3895bd76735ca322b0e4cb537c981014",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "90766c53fe439ec8ea77e6d11e885cc45a3c1b3436a8aecafa4d17107bba9be8",
+          "decision": "hold",
+          "reason": "Genital anatomiyi yakın planda taklit eden görsel; ek galeri için muhafazakâr hold."
+        },
+        {
+          "position": 1,
+          "sha256": "972e4843f29cab29d202274cd4be52dd43f90e087f1cf314a87ceaee8cc96aee",
+          "decision": "hold",
+          "reason": "Genital anatomiyi yakın planda taklit eden görsel; ek galeri için muhafazakâr hold."
+        },
+        {
+          "position": 2,
+          "sha256": "14218077d525a08d032e7c9b61ec34a7ae3ed06d54de96f5739b28659a2b2bcf",
+          "decision": "hold",
+          "reason": "Cilt dostu/kalite uygunluğu iddialı reklam infografiği."
+        },
+        {
+          "position": 3,
+          "sha256": "71e313a7d1852452af347c66a5c6ec1b6b6dd61339aa3a1f7610993b0fbd35db",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "8c77ee46906c47c91c3fd1a90d16d73e92bdb366bb6458872bc58b0519dee634",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "92f19da3e3c17fff143f5da3aa0a02eb75f5ac0b3e18e54818b759c3bb1ee892",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "048df781cc93a34bf7990f341b8296f00775ba4167657d67aa2ef0096a856f50",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "b3c07f527a5bb8cb8844a1ffb9a21d99bd80e03c9a055ca5813bff921734f0f0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "9b864de86e1f2a413cffa0c540474366601c031fa1cc6a61c7ceb82ea6ef6a90",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "6ba801ae00c71663cb2bf8b88f3f789c8fd70d600daf82082dbb9311962fdd93",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "7e0fbbb7156e2771914c09d681742e76ac890d24e9ffded647496037b098c86c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "0bf99f8134452f52ef3fb5ca3a1e7dba62556c16e8a3cd9515286c482739ee2c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "8f99642c50aa5619ec64921e89900bbf75c17cb3aef6fbfe59422329b2850c54",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "a5de5267d8dfa7392d55b988a3a5aef9411d3e7a8b4f2f7342b49b7cc6ae8fd5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "f69ad5bbd8cd760b956ea1ae3eb1fb5a24886397923ee1dea51a9b5d17e840fc",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "a8e39e918e76d10d0c06a5e4dff39e61c2cb17122440f1873a75775229c98f0c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "81c9003c0d0bf1e21268548f7ed907d8322ed760b815819acbfab271c247fa19",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "e8250966fc30f2be4e0f07e087159adadbb62c5d54b6fd577b71fe13ceed8b0d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "d2419979e107ae4340c3d0960f8cc14c76c7b0b4d9dc6c6e75c12d1a385f2151",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "681d15dc164c7b6182d9e5629446bec515b726f2139a4553f5114f884e3d03ff",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "ad72ec4469e61162b66352af553a6eb30fa3e7636054c70b2e2631aa0c6aeaf3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "c63e360c471b3fc31c68e8c2f098ab257a53130bc6291f884c9ed2977de59dd0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "194481e2e2fd21ac2f0fe9ad47f5625d709b7fe0412df5266e670a2f0391f945",
+          "decision": "hold",
+          "reason": "Ultra güçlü uyarım/performans vaatli reklam ve logo bindirmesi."
+        },
+        {
+          "position": 23,
+          "sha256": "46643abb85fb2813a2b5d156ca5401a3b1ba917381ea0addaa87dedf2773f6d3",
+          "decision": "hold",
+          "reason": "Ultra güçlü uyarım/performans vaatli reklam ve logo bindirmesi."
+        },
+        {
+          "position": 24,
+          "sha256": "d188ca841b2708fa3df92ffdb06700dfc9535e1e5dd7c7e734e718edbae873f0",
+          "decision": "hold",
+          "reason": "Daha etkili performans iddiası ve reklam/logo bindirmesi."
+        },
+        {
+          "position": 25,
+          "sha256": "764f953427ac1229e57a1fd2844b235d50e02e3413eec3bedaef5a1f40f3aad7",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam infografiği."
+        },
+        {
+          "position": 26,
+          "sha256": "8cd438ebe20f5130c7c2a4b7ee440fc4fcb520eed192174d039f179a44fdbb13",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam infografiği."
+        },
+        {
+          "position": 27,
+          "sha256": "aadf9e9d4dcf9535f825eaa2bc13bb29faf7c42b632acb9b31ac1b9f25bae92b",
+          "decision": "hold",
+          "reason": "Doğrulanmamış su geçirmezlik iddiası."
+        },
+        {
+          "position": 28,
+          "sha256": "9c1451c5048bab088d16c4066b616d004f8cc9655cacd0f44c2685d20adbc45b",
+          "decision": "hold",
+          "reason": "Medikal silikon/cilt güvenliği/zararsızlık iddiaları."
+        },
+        {
+          "position": 29,
+          "sha256": "893a4437c192fe315524105be319fce729adb22166fb85165a1028bd6bdb1606",
+          "decision": "hold",
+          "reason": "Geciktirme ve cilt güvenliği/performans iddialı reklam."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0059.jpg",
+      "sha256": "fa7427d5b8aa3e8d3a6e52234d7f42ae3781c8d0a1f7455c10788441b6be66bd",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "a3bc09b03d1c8b15e2a8579a6e03431fbf7e725b7d278c163feff28e01c0c230",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam infografiği."
+        },
+        {
+          "position": 1,
+          "sha256": "d45f2258f38dc9074dbf824089c583cefb43e08c5df1c622fc2ae6819bf187a1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "bff0e9b976eadb2a4b850bac817fcd1f932024ff3dbb81365143655f84c4ab69",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "7493999a7dd99dae1d7e58a6333fbedaf9c1d42d66a8cb611b219da29ee587f9",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 4,
+          "sha256": "f25f53f7fc367a18a8ef3c78a96eba8d0d0b6a14cb1ce445216e99243794a7b1",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 5,
+          "sha256": "57a0d106b6ba73334f7f5b79ba81763ecc57cbcfad63aec9b033120010925dd2",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 6,
+          "sha256": "44cc68f13cd6692e261fdd4afd2ffd3040d8494232b57b4fc2b1ab14f28f5565",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 7,
+          "sha256": "f671b768e7ab054a6e0a37003c8bfc866086bb538416d53d315d45081e8d0612",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 8,
+          "sha256": "88ec4c2b5b5084b03b72206d9a202fa5f9bb2f5c3d5d9f1ea14901f50e1ebdbb",
+          "decision": "hold",
+          "reason": "Ürünün üstüne/arkasına tedarikçi marka filigranı bindirilmiş."
+        },
+        {
+          "position": 9,
+          "sha256": "6044610397b1c20d9add034af48af2f645246f987269e80e27e7d01608051955",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "29e2d85ec9c863da814bcaa1cd2d0bcde489828111691abf8656a2a784021a3b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "5e2cd0eef1389cc3866a5e52539487ef58bf937f6d1eaf840aae4fbbd1065513",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "63b180c48f42bff04561049ec6415997cb62da6bd79c530a1c73f2f41cf17ada",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "f10f19c57925ba97fb1a3cd31a35affbc5976d33dd0f3ded20641aaeebf6dcca",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "da14a013c78a0ebc082799f4cf5f07e9af3de06ea93122f0dcfb9127478c639e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "aa2d5ec0909a982f9c12d3d089f719eb3c8f362d072ede96e125a98ed777c015",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "d1793549355c48e45751dc5287b01474d32642d1ad97166d6d8c214f935e19b7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "ce2ae7ef84b3ad39641af2e1cd8d4306cc985b63352a2dbf6694d44e9e9c60d4",
+          "decision": "hold",
+          "reason": "Ülke tercihi/güvence hakkında doğrulanmamış tedarikçi reklamı."
+        },
+        {
+          "position": 18,
+          "sha256": "f4cad9f71d4ba6dbba234f2c9fdbddd51ac9c77f02e69ab95a68ca79dfe58de7",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyen tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 19,
+          "sha256": "e2eee6a0515adefa77d3fe35c3457f66b42a89d36209c68446e562451d4a64f7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "eba2598880305f420e9d5c1f355d842ee5ad430d2a6dcddbebaba2d5ab8772b5",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve satış reklamı bindirmesi."
+        },
+        {
+          "position": 21,
+          "sha256": "60ce7f9bafa7e88f75c129d5fe5f04ac1ae349fad8fe1fdc0fc18e270952cabb",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "256d1498461b7e31f2e3eaf02ec46513567cda8ade85fc3653545650bade5ae4",
+          "decision": "hold",
+          "reason": "Ambalaj üzerinde cinsel eylem/pozisyon gösterimleri."
+        },
+        {
+          "position": 23,
+          "sha256": "cfae10b9a312638a2c44a0422d45421ec832ae194f726c2153bd02b76c23d170",
+          "decision": "hold",
+          "reason": "Ürün dışı reklam/tedarikçi logosu ve uygunluk vurgulu infografik."
+        },
+        {
+          "position": 24,
+          "sha256": "5a0472e7bc5fb2cbd082b51a154a737cc16a469027a22ca838a471aa37853789",
+          "decision": "hold",
+          "reason": "Cinsel performans vaatli reklam infografiği."
+        },
+        {
+          "position": 25,
+          "sha256": "990eec2c9b55565161628d95c386a69b25abfd954a6970be09a3f2832ecf02d0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "be3bec25060442befb9af264be34dfef6210f9f05c19848041d84d7b176a7cfd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "83e22acff8c2b0ec666ed82efbe3c6a940834f6904f0f75ae4046156a2e8c7e2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "e88dce9d687d38b802e3936d3cda86f95952f42120da5d5da245f39c00e50d08",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "096d331cb1d60d347bdd8e933dc7e5cc950202763e93f19e2a35367a32f0fa64",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0060.jpg",
+      "sha256": "4400a92e47233c68285fff7d9198aa20b0f486c60e91fa545c8c031cec9a607d",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "f35af6ccbc7588b982c2b4490f0b4882f6436095efafdc0d976062ddff0e6865",
+          "decision": "hold",
+          "reason": "Yüzdeli kalınlaştırma/performans vaadi."
+        },
+        {
+          "position": 1,
+          "sha256": "bb7ab56ba04732cecca602eb3ed0840a8e10b45ff3b9da9c3bfa5bae2ed944bd",
+          "decision": "hold",
+          "reason": "Doğrulanmamış medikal silikon iddiası."
+        },
+        {
+          "position": 2,
+          "sha256": "a73d7554d1ca15a0c0092c9e8403827ba41cc6e4e9e6daa0209458c1c0c30bd5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "92947e53e8f401118258899ce3fc724c462690f1a8372e56e3282fcc374d5cb3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "3ef5601f9ea28ada78601391769257a1deb7ce3817624d29eb809d3b470020e6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "755bf36d9722d9077ff4303644d5a36a8e62941c13a04e128ff7b37ce31cc2d8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "8ef635bdfdae8c937cadaf79238fb75613426f540adfdfe2fbbbc3319f2936d5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "b783ac4918dccab9d3ce7017e5d8a00c11450046641e0f8ea80718e7d0c0bb2a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "7be36f22d6f4018e8465dd18b0e31024b0aab472429b2efa6558895bc145124c",
+          "decision": "hold",
+          "reason": "Doğrulanmamış waterproof/su geçirmezlik reklamı."
+        },
+        {
+          "position": 9,
+          "sha256": "f08d0a308ce979a8cd89ea9a4cd8403843b31a1ec8279e4b96e6c6ecc440af84",
+          "decision": "hold",
+          "reason": "Anatomik genital yakın plan ve double pleasure performans reklamı."
+        },
+        {
+          "position": 10,
+          "sha256": "9b2125c2987f732e0fda46eec1d42200eabc0d03e76649d0136c7f6ce4841f69",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "8ddca3a58333ad88841c7c316c77b4114b7cf02f6e396d41efe331fa98b7efee",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "66c146bd1324d793671a052668f72178ae5b534160d2f52e5c8fa520950912fe",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "6793ad720e1be074c8c620538a62ac8188d4494f7230dd6ff0542e852f1b4bc0",
+          "decision": "hold",
+          "reason": "Kalıcı nemlendirme/hassasiyet hakkında reklam iddiası."
+        },
+        {
+          "position": 14,
+          "sha256": "daffd1ebcb5a02f56c2ed89d58aa33693b5a25a3c14d959e51d7297cad623fdd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "6a3502dcb8fa539df1ee395cb70e1e8bffd4c3194b9891d9fc1fe024faf8697f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "a915cf8b60f18cba9ed18eaf305c5605c8a29e108cc624582206f60e67c217bd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "ff66836163199611b0e12eee89de86fd81f2084b7bdc20ffd158b03e7ec48ed7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "a42f4f166e1e902ce2e4e2db3393d666af8c58b1ea363a7b0e2646944e7ecd8f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "e9fe0b609fcd2afe1317f2d51aee81747fcc4df7607eaa36ab65b7d36076861b",
+          "decision": "hold",
+          "reason": "Su geçirmezlik ve süre/performans iddialı infografik."
+        },
+        {
+          "position": 20,
+          "sha256": "9d33c35c1681ab998e7099b4b0600bf58472eb2754fc6541ab6c4a01de402b89",
+          "decision": "hold",
+          "reason": "Cinsel performans vaatli reklam afişi."
+        },
+        {
+          "position": 21,
+          "sha256": "04a50bf37c4887eecfd491364b99be3c97927c6de64e603ac8674300a640d9c2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "6cd193856a9388bc2128795b393b4268fc46506851a238f9d24bdd3c3009151e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "3ce2b87f26f800df56d199c36e7006c648dd7c242c1cc886221c9c6c867d439c",
+          "decision": "hold",
+          "reason": "Gizliliği koruma ve belirli desibel performans iddiası."
+        },
+        {
+          "position": 24,
+          "sha256": "87e3cf4c12754eec08b98ca6fdd59d26aaad50fdca0cfa913d3b7f30ced0576e",
+          "decision": "hold",
+          "reason": "Yüzde100 sızdırmazlık/maksimum vakum iddiası."
+        },
+        {
+          "position": 25,
+          "sha256": "69e015f12661a1cea0dff3232fbc0c467cee2975977c27803f237be38c465a1b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "fa2f3d1affc7ef7e27ec10028df606eb7328fb0d45dbe6001161f5e9f2134fad",
+          "decision": "hold",
+          "reason": "Maksimum kullanıcı güvenliği/üstün malzeme güvenliği iddiası."
+        },
+        {
+          "position": 27,
+          "sha256": "855c2d05eadcec92d44e0878ecdcf55977a4faf4aa9e14aee3ea14d4d0a093c1",
+          "decision": "hold",
+          "reason": "Tahriş etmeme/sızdırmazlık iddialı reklam."
+        },
+        {
+          "position": 28,
+          "sha256": "e3613c0880828443994d14d4ca4e074e37c84e02569fd4c3f32c61401e321e30",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "d7ae08a1a69e644ba45d04c3e2229a44d1d72c144535d3a0602ddeeefbd4b197",
+          "decision": "hold",
+          "reason": "Tahriş etmeme/sızdırmazlık iddialı reklam."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0061.jpg",
+      "sha256": "89ef698b1e29eafa37083de6d9d19d8fcfd8cb51aa56c4c6c413f557b3ecbadc",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "16dd74269413123ecc17ab438d9e088ace70b23c7d7f442d8153cc99343cdc91",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli paketleme reklamı."
+        },
+        {
+          "position": 1,
+          "sha256": "639402a3f6ce3fbb3891eb6c2bb6e4091f63c4f8852663c12ec93bcc869ac871",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "bb39276c9514405ea9e67d5eb5e111cdd3099c5e50aca8c0cdd495bdb21716eb",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "e7ecfdaa71d313dadc18df862697f815a27a7f188cda525ebb52236916e84534",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "c6245f688ef8f4615f00c47e6fe6ac91338c06fd8cfcb3562e0f9d1a9d5df2fd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "8bc0541dcd2f1fde65394322af0c32b1c396646e7cffbcb944dfa2a24d702528",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "e299cccdd83048449f81bbe7d9f4300a2315191eccb9f811d704b89df1724b91",
+          "decision": "hold",
+          "reason": "Farklı giysi ve üretici markası içeren genel beden reklam tablosu; ürüne uygunluğu belirsiz."
+        },
+        {
+          "position": 7,
+          "sha256": "8c406625d8c4f23309d3e7ae7d89fdd6cbe9c5efd20950169c113a8eaf938561",
+          "decision": "hold",
+          "reason": "Ürün dışı gizli paket/fatura içeriği reklamı."
+        },
+        {
+          "position": 8,
+          "sha256": "8e7519a6e1c60db041cc1ddc71c0d48c37c4bba0c8f9a0aca45b95027467e268",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 9,
+          "sha256": "49acbb9cb420732833694e0112b23c83c7c032a7d45e0f84f82cc9e642daf9c4",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem/pozisyon çizimi."
+        },
+        {
+          "position": 10,
+          "sha256": "787e370428c731cf2282aa66b9bff7705c7a6d04d0da7719a82b7ce5a358fb43",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 11,
+          "sha256": "02f511e17b82dc83f0fbd9f25ee667fda963defae8e46c51fd70c196b8967fd9",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyen tedarikçi erotik reklam metni."
+        },
+        {
+          "position": 12,
+          "sha256": "9d000ec694e6baef1d384e1e9f8be52282318742162c125b5fe18a840972d503",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "b9a65c362cc4240968d2717ab35de0530475986c4411fede5e8898fc5b58ce41",
+          "decision": "hold",
+          "reason": "İlgisiz çift görseli ve tedarikçi erotik reklamı."
+        },
+        {
+          "position": 14,
+          "sha256": "f89be381399f9efa34d614b6e1fbfcfa798bbdc9c185f9b4ce81802896cf27a1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "ad37fa8b3fe10b497503813716946538f8039bfa67f362d5d88b097b12f734d0",
+          "decision": "hold",
+          "reason": "Ürün dışı marka ve mağaza reklam panosu."
+        },
+        {
+          "position": 16,
+          "sha256": "49f0950471d9c7f73e6da3a4f74540e1445d6960d27a4f0f39f9ec0a5c1b11c9",
+          "decision": "hold",
+          "reason": "Ürün dışı marka ve mağaza reklam panosu."
+        },
+        {
+          "position": 17,
+          "sha256": "3af11c77b5df27405acb3dadc65ac0a02cd72eec4b29e337d175fcd0b8186bb6",
+          "decision": "hold",
+          "reason": "Ürün dışı marka ve mağaza reklam panosu."
+        },
+        {
+          "position": 18,
+          "sha256": "041cc9f8634a8156ba7a4e292aedaa09aae80ff13978a4f52296c8171d568e9d",
+          "decision": "hold",
+          "reason": "Ürün dışı marka ve mağaza reklam panosu."
+        },
+        {
+          "position": 19,
+          "sha256": "851298332cc6679e7a82fdcc758fe49a55224fba650fe74f485325e467f35a8a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "04c5451925b820038f16448587ee9d2b4890f730958a122fa71e1569d7e58aa1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "6d61b4b64bb883f3cf833cd4c20a4ebe7ff9e687edc05f99f9ded0abc04a76d5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "22caed3634565e615ec160d57be631039b2662fa008cc562bbe265cf0af37b45",
+          "decision": "hold",
+          "reason": "Genital anatomisini yakın planda gösteren kesit/detay görseli."
+        },
+        {
+          "position": 23,
+          "sha256": "94e74cd663ab2f4aeaf67b552a57958093b468143f407096c948a9ac8edebea6",
+          "decision": "hold",
+          "reason": "Genital anatomisini yakın planda gösteren reklam görseli."
+        },
+        {
+          "position": 24,
+          "sha256": "2a39f4719fdd4dcce34b41ff6f5c79970f3cf3d6856107bd2bdee6337a123e9f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "b8e15512affa4ee15dcc2c7c38466ec93d9ce5dc3e20982ca90ab07b1ab3ff56",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "da77fa4a48149937d0f564043f859f2c4ba1f572b6aefc8d1440ad424376c0a4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "2075f50a56ce650fccf73ae9879704681657fa6fb30802bc2da47edb645aa274",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "42b23c7e8603f5da9021db8dc1334d1e2b61a00b0db7d70a0e0d2c87693eb50a",
+          "decision": "hold",
+          "reason": "Genital anatomisini yakın planda gösteren kesit/detay görseli."
+        },
+        {
+          "position": 29,
+          "sha256": "128f2958120a5627d2b19cb656296b0075d93c6f9baceedc32c5a9d24f8e006c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0062.jpg",
+      "sha256": "e4047f54f2faa4ee0bfbba425ab7ef50150317a5619bedb3c947552a5ed3e936",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "f70eccde24bffd397f4eef8e0c08de959cab3da9eb291ac4ea28a20e1404128a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "b8d31117730792b95eeb756d0ba79c955631562458901e2f5d7a9c53fe400483",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "76dcf40699a344f0391f3c4a4801d2a817c26d774c24a4a8bf0f261c33953c95",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "9c7cc83089023957ee437b5f58f8b6f21443e9d584f22cead6fe7f9991d823e1",
+          "decision": "hold",
+          "reason": "Cinsel eylem çizimli zar ve tedarikçi satış reklamı."
+        },
+        {
+          "position": 4,
+          "sha256": "c273b15013339aec5020b0e81c8f3ff972f9e468bc05f4b9352f5ac21d4b1270",
+          "decision": "hold",
+          "reason": "Cinsel eylem çizimli zar içeren satış reklamı."
+        },
+        {
+          "position": 5,
+          "sha256": "8db738bc565d678cd6d8da3ce397a973eae60c1aae7de428c2ac1836a944cd4e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "1bb73e57016a2a5500797c6d7b1067ff719569888e7d071b13f33c235f850bee",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "910c1fb5dd077430051ecc5dd205274fdbcbb0faf43d83670e4a6c5dd30b56d0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "46e3cc306b61d9ca18683145879052355e63e7513ea99d3232b09bc94c4a8770",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "b08233b6543f1c77d1aa4de784297cd5655985ee6ac44bc831e203e498cb9408",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "3eae84d1228ffa5741ddb2d794dec83680eae13a165b752e200f2ba255cccf92",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "bca9b177cf372ef613e81ee9048fa9e7dcca9e58e0cbc9f196b08cec5bc47699",
+          "decision": "hold",
+          "reason": "Belirli desibel/gizlilik performans iddiası."
+        },
+        {
+          "position": 12,
+          "sha256": "1a4b674cc513e000460faef3cee0028822977cd0ce92685d03d68a4dec0acdcc",
+          "decision": "hold",
+          "reason": "Jetonlarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 13,
+          "sha256": "eadcd0e37ff983d3404ce0f3c2a6143da463de22e294fb0cca18eb48ffbe8717",
+          "decision": "hold",
+          "reason": "Jetonlarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 14,
+          "sha256": "9b41d9bc27ec37a25f6163657e64abead32c1ea5d0b8549f6a1dcb9f910aa910",
+          "decision": "hold",
+          "reason": "Jetonlarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 15,
+          "sha256": "62decdae0b0c468ee36549b6a93b0d929f0b8c924b2a3cc3899027a097c5378d",
+          "decision": "hold",
+          "reason": "Jetonda cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 16,
+          "sha256": "26e5244047050b2cdffc0cf5085e5c79d4c67cbc1b4938fa58b4378bf1131255",
+          "decision": "hold",
+          "reason": "Maksimum çekim gücü/güvenlik vaatli reklam."
+        },
+        {
+          "position": 17,
+          "sha256": "0d6a05d96edf1b89408f5746db987839b07b3b9d4ec2b7e2cbdf5aaa5ff5d320",
+          "decision": "hold",
+          "reason": "Düzenli kullanımda büyüme/uzama sonucu vaat eden önce-sonra reklamı."
+        },
+        {
+          "position": 18,
+          "sha256": "7ed9fe314a057423e1cc7e23ad524052d18f89a857ad8f14fc635210c4e4c085",
+          "decision": "hold",
+          "reason": "Güvenlik ve performans iddialı reklam infografiği."
+        },
+        {
+          "position": 19,
+          "sha256": "b6e792cd7e109ced2749ab007c847c8c88df756ffb65f0c5457944b006c2d776",
+          "decision": "hold",
+          "reason": "Performans/güvenlik vaatlerini yineleyen kullanım reklamı."
+        },
+        {
+          "position": 20,
+          "sha256": "8ae1157fe72a21b3f2c5acb60dc952913cc1ca62363480a4be13c3c83c00a50f",
+          "decision": "hold",
+          "reason": "Güç/güvenlik vaatli reklam infografiği."
+        },
+        {
+          "position": 21,
+          "sha256": "c3b0f468bd1d96d44049cf5ad0725ea22e765cd091c12fb34ff5cd6cf4ffa010",
+          "decision": "hold",
+          "reason": "Maksimum hijyen ve su teması hakkında reklam iddiaları."
+        },
+        {
+          "position": 22,
+          "sha256": "eb68232e1c6a35ccc19ec4c419ec79dc18149da10f2dc608d348e9b28aaf0652",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem/pozisyon çizimleri."
+        },
+        {
+          "position": 23,
+          "sha256": "a367c29fe0f8d423551c0e5f6d8921585a8faf273afc1e392f7e629b4baa9223",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem/pozisyon çizimleri."
+        },
+        {
+          "position": 24,
+          "sha256": "681da2c36a94f1499c6581ec7c871f8500414d30712b3163dada086a2b45aa53",
+          "decision": "hold",
+          "reason": "Tedarikçi marka ve reklam infografiği; normal ambalaj fotoğrafı değil."
+        },
+        {
+          "position": 25,
+          "sha256": "6b9505af7eafe3d2e89100133a2fa4d47aefb3df664258ba4fb86cde8c5dafca",
+          "decision": "hold",
+          "reason": "Ürün dışı marka/logolu kalite reklamı."
+        },
+        {
+          "position": 26,
+          "sha256": "0636ec58d6568a7181f0770cdf9a2d9927512ca7fb5f08109fda6446ee5381c8",
+          "decision": "hold",
+          "reason": "Su geçirmezlik/IPX7 iddialı reklam."
+        },
+        {
+          "position": 27,
+          "sha256": "514e38ef8dc52793e784615cb617dc683a3a458bd72ebb0f5feab44378e55cf6",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam infografiği."
+        },
+        {
+          "position": 28,
+          "sha256": "b503d08dcc4a5094d69a5aa857b4b4e8d9c5345b10c60331d47c517886030ab5",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 29,
+          "sha256": "6bd31248d2adea2563cda823c141003f5d2702e79cfc86ad97c2931070c340e9",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0063.jpg",
+      "sha256": "7ddc4634bb1a754d84e93d976834713bc2dd13d67ef529a15aa3a6451eace2cd",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "1be2421f4fb57a1818a8607e49df9a41f1914c9c7abfa848d7f0576d40fe4e98",
+          "decision": "hold",
+          "reason": "Kart ve zarda cinsel eylem çizimleri."
+        },
+        {
+          "position": 1,
+          "sha256": "0574a860b6e24423ef7f6245eaaebd0e28ccaec5048602b95df227eaecd0fbca",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 2,
+          "sha256": "78bcc1cc018e34c13cfe5b1f72440ae6ff1d17bf54a27266b05234c561b8d6a1",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyen tedarikçi erotik reklam metni."
+        },
+        {
+          "position": 3,
+          "sha256": "98d0105b2b5883c0825c81310b2629ab7bc8592c4fc2651026f277b2896b1fc3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "cb31f61118d6805fff14b685b9e1997ee908a8299703603b65e4bf10e2fa28c2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "e6b3c0f92fdcb154e5bedaa155e6982bf9b12de33842325086348b77a4ef7758",
+          "decision": "hold",
+          "reason": "Güç/hız performans iddialı satış infografiği."
+        },
+        {
+          "position": 6,
+          "sha256": "ad69d336697a6e39180c7f9deef3d52cad1315372216e4f5d3e084f49d73ff63",
+          "decision": "hold",
+          "reason": "Kullanım şemasında cinsel eylem pozisyonları gösteriliyor."
+        },
+        {
+          "position": 7,
+          "sha256": "724844764be52ba41327762a6f24861ba9f339d7bc70803e3eab58dbbe61e965",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "4b99af8cd3bd7d72c746d8934f8187e5ded074089e52854d3fcc9494a4d4610f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "c1f3f13b36c13e9aae6a34d7df40d83d3d85c266f0f86a64efb19cd7a50e4a89",
+          "decision": "hold",
+          "reason": "Belirli desibel performans iddiası."
+        },
+        {
+          "position": 10,
+          "sha256": "219c95c9be12144bf8cd1559117e2411ea674d48c39f0e7a8665c0e7859ca9d4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "d0b5b3ebd5704f9f1b174a60e5cee3c83ba83eb82a000634fb58f6d6e620afee",
+          "decision": "hold",
+          "reason": "Doğrulanmamış waterproof/su geçirmezlik reklamı."
+        },
+        {
+          "position": 12,
+          "sha256": "319b95829a4c0d326c25b7c0bb63f576439048fc35ae4ea7db00064c6a60f679",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "f2eb6daf34c41e4b28ecc3fc70702fdacc08e58d147ab663197bd0debd52ac82",
+          "decision": "hold",
+          "reason": "Ürün üstüne üretici marka ve gerçek ten hissi reklamı bindirilmiş."
+        },
+        {
+          "position": 14,
+          "sha256": "0a0d2aef236b9b20467cfc0b9e8f91ecbdf4d601e14c33dadb7c6ca490fdb318",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "6e248363e2a220316cc01214c62a82c328dbfb6ec8b30daae747fbefde64f55b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "0c5b9413aa123b1cb29d080a89043b888075d01703cb9a028ac8b89630a9fcc3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "fa08f0901a636939f7ceacfe1e501420b196f950bf91c18180691d0c1abb3801",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "83aefc873fc4ea53c13bd80ecd8eaaa621443e6679dedbd92197f80d9ea19854",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "eb919ff165ee5fa143771fe02e8ec5324a50e7684505a8f5b6da9c79e88cebcf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "3ee308f9de5e0a62b12612104bf808c9196d2b917d89df3c8eed6afaea603c25",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 21,
+          "sha256": "6997e2c01fd87e2010d65cb13078b93fe16c990d8fbe4d2d692acd727dd8fa5f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "b566bb7d989eed2e2b0e82e0389e760d7a20195726de639d10e69d205619993d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "c0be28516d5b8d2980a0056d44817862d5b616aa8604eb97bc5ebc90e37b056b",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 24,
+          "sha256": "cbf7e716b13036b0092eb1f8610b45acda861285b742d5d1775aee38ddb2e881",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "d6f06a73aa696e397aed5f46e5cf34bf13967b29fe5a0fb01e7876a8841d4b35",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "774d56bd58af1e813abd8a2f050c52be9a63912922250803c4fcdc833007b045",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "ad86c1128f7c686f00b9731e622e9baf68c552610b232887d452ee9ea10c3cc9",
+          "decision": "hold",
+          "reason": "Ürün dışı marka/logo ve erotik reklam metni bindirmesi."
+        },
+        {
+          "position": 28,
+          "sha256": "105a13edbbc5ac309bb5d529ac438e7b3fb3f5596608ee3b4220ed4002656255",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam infografiği."
+        },
+        {
+          "position": 29,
+          "sha256": "8f421e3556f4c53de3840b72e14d98b0bb8e13faee1236a27a28800f7441542a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0064.jpg",
+      "sha256": "84a28f0f898ebb45494e2368608b6863cc5ba35f95f519da95cb5c0f956f6181",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "82813e85e3e0f40112e78f2585af1e302574971cae7545578c794e28a2526dc2",
+          "decision": "hold",
+          "reason": "Elektronik üründe doğrulanmamış suya dayanım algısı veren su görseli."
+        },
+        {
+          "position": 1,
+          "sha256": "9ddf1e1f9ed9daf98f803ef24f6cf1360a99a0072e8dfebb2228ace81cb913b1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "9207df7290d1173da8676ca832e5c90de88ecbc38f28b0aac3010389d8e4bf13",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "d3f2c1113a83862852d477366c40c647fdf307a07959039f81568b0f4ff38715",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "bcb120a2dba2d3e4208dcfb6d46e89e47793c04199ec4e7990e9a49ee4684a22",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "dd46811d00d6eb8dbd4f4aeba228d73c93954415367afad57b67c7921691f968",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "6f81d6f95b494d5d8c7815ded085bb4c217dab334435027cc2821e0a49a48f79",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "1569b14cbf4f590dbc91a050f07e41be5129c2fff905930e9c3e399ff3189176",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "ec141498c785136a389a0e3c97c913bdd3a6e769051513dbf32df1187b4233b5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "25be53dd1f04e4b954c44636ba115b8884db0cd5be566ce7811a36fc4bf73dcd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "2a6c785852227b3c73be0fd104cce9b984957cac69dd28d8111aac337540d488",
+          "decision": "hold",
+          "reason": "Ambalaj üzerinde büyütme/enlargement vaadi."
+        },
+        {
+          "position": 11,
+          "sha256": "7d5d60f9c3d98d3f08619ab74871a8b988562ea410e384bf4b413c0b89e6b02a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "5aacea5ce5c819ba2882f8f5c1fa8b73ae32776cc9a81a3cae42d6dfd13996ff",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "26b26d9b6739e7f0fb20e06ad0c69c919e13222bc6ecb8e6dede7492a1e37907",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "555908d1088ea9b3e0673d580e5396d99810d98e56cede97cf8910303bd6e110",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "98998c39d49a2575966b22a93d412fff1e33d7d9f755471ad1f656fe05027de5",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 16,
+          "sha256": "3d32bf5f7ba803411c4fd02be2721f31e3439c3ff645bff1529027b9b7d27cba",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 17,
+          "sha256": "e62a7d2793d3fc079f8e3b4c93a960ea9926c10acc86a81b596b3a7bf96553bd",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 18,
+          "sha256": "12d180ecfa40eefeb8e3798d582d3a44837c3f8e3ac3e2b09fec7220c48b0955",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 19,
+          "sha256": "938734f1a76f8ce67a2a9598c08d62281465b2d8ad593fe2db370e024ab61152",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 20,
+          "sha256": "5139e8b57bf6f897826484973941bb2b5b6fa59cae5bcc685b621f07a4b8a66d",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 21,
+          "sha256": "6555976b24a75c5b63212b004008454431148a19ce716f58ec87a620f84c902a",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi/marka filigranı bindirilmiş."
+        },
+        {
+          "position": 22,
+          "sha256": "182193eed33cc05ccffe651da55022d89172d0f15846886bbbef8fcdeb830eec",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "6e6a79549e79879c7744eef95921565b4abc1c92a7f3fdebdc65f9808ed4fc14",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "194434df10e95b11eb19349aa982899997d00b021993a3f10406eebd33d420ea",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "7ba8b839d2b4bdb860b9241c3409bf8cde2cbeb01d5c0df9154dcce1c53d32d9",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "05c104c71211fb864260458cac56abe977b209fd61c7ca4211492e70a5427dd4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "244c7c635ced72d2e038186c18b4a94be9932f6fc53f13218ca7e9971a5affb0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "9d9cde2a78c3f7faff41dcc14bec88b2598dc620106167f666181cda9dee8ab9",
+          "decision": "hold",
+          "reason": "Zar üzerinde cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 29,
+          "sha256": "00998fc1b5f30d978d441f270db1f0969adcfe73ede7c1fc964e10673b7deaca",
+          "decision": "hold",
+          "reason": "Zar üzerinde cinsel eylem pozisyon çizimi."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0065.jpg",
+      "sha256": "7a77cc9eb506957d17c747b10b6f510fff5f78fbe1eea938ba2a06356236527c",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "aef60584737af81214854d96bd67bdfeb7b5494ad488d6af379e29d0badefdd0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "21f42a61891a8977eabf49b16fa9c2962e497378b77af4dbc332991f3c60753e",
+          "decision": "hold",
+          "reason": "En iyi/en güçlü titreşim performans iddiası."
+        },
+        {
+          "position": 2,
+          "sha256": "b6a6d78f558902d4c0b684b16a9a471c161dfa8dd4832b7a586004217483da5a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "f70711250f8c73b2e95aeb5681ee4902825dffd4f608b711aab39a39250392bd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "d1003e2a4d5c61b418c247cb5ccc52e93929a6a76aede8c2da43fb6ce6798a41",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "28e24a87ce3cda41c56a6339914fe08a3e34b16496af6b9dce3a83c91a90796b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "70d8c560308985459fe77ee865b49bc4c3dafef5b7d3f72149ad059c83dd95ed",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "d463b117a87848ce26f65fd4c5771eb537a3b6bf384970b0511d176026a3bb46",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "689e7d26fd3ba5ebac50c8544c3b11a9332f20b22332b2f5850cde5182fefaf3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "e7cdef770505625efbaad2e662f688cb731660147eb2ee3a499f9e0a8d085a30",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "51d1c42b65dbcbf19b9ac4475cfb437bffd2dd106e7146a28f4abb4a5b519f58",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "461d5d0c027eccf681d976536641fa8ac04136bde0bbd28e2dfe5f166dee9bf4",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 12,
+          "sha256": "6cdc5d553af367ee9079f0d4041b0a06d1d2ba502dc985aafb4575cd32369245",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "5070cabeb215732678fbfdacf72a5f9629bba6bb1e91fed1cb44635527e14caa",
+          "decision": "hold",
+          "reason": "Zarar vermeme/tüm ciltlere uygunluk ve içerik güvenliği iddiaları."
+        },
+        {
+          "position": 14,
+          "sha256": "13e899cfce0610f92c651038d09ce555e40e35501c2144fd8c518d12402eb6b2",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 15,
+          "sha256": "ae77cec07771f9d9ba963ae7028bd2921221c63638fd3dc38e9dba96190c5ebb",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu/çoklu performans reklamı."
+        },
+        {
+          "position": 16,
+          "sha256": "a0765a7d3adb5a6ade6a6adbb474019a8aad995c824da1669485396cdc103666",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve kullanım/şarj performans iddiaları."
+        },
+        {
+          "position": 17,
+          "sha256": "f3d41553d0d96b0d47b73a3ac500f2dfa2fa2236004a1867f5f8e30d37af1cb1",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam."
+        },
+        {
+          "position": 18,
+          "sha256": "80d7d4608c690b4285a86faa68dcbb7970fd874357944d1881b2540fddeafe8c",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve kalite iddiası."
+        },
+        {
+          "position": 19,
+          "sha256": "f1e65b4063eaaea6572ddc123593f033522df3b945ea7c17701b0a87cf006baa",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam."
+        },
+        {
+          "position": 20,
+          "sha256": "d179a9778d6da9664fe26f4f17dd87c0bba8c227d799f04917b93d455ae8836d",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam."
+        },
+        {
+          "position": 21,
+          "sha256": "77a2139794449669610e07ed9edf1bc33db1cd9a1278d98f1d8f74bb22f4e655",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam."
+        },
+        {
+          "position": 22,
+          "sha256": "4ffdb902098899d1e8faa708c3078cc1a77cf3722e30d4ddcf1c8169b9a83dc0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "461c4826cedce8644d24c032b88bc74ffa8a0c3096a58490719b9f553684fac2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "a1d110d61de3da05bf31bd9e50fbd47b4aa3aa5d7fe49536b0db49acdeef9429",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "3b74c687691677494682a52162f31182f74339757e75dba1c93a71ad12705836",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "01ecf5937262462e6254fd07d205a8938e0a59cfd0197744825fb62bd099f147",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "8351cabb43658d6cfcdf8ed61a9fbf17a8119d5c586afdcd414b3e609d6602ec",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "10cd7824714430adb49dd413aa504ba4e605b57052a90108c5f210b3f1a7e400",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "f0ee0e503ae57ec93ad28794e182b3e3040155c6e38f3a0d5c2af7ab350baa35",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0066.jpg",
+      "sha256": "59d5fdef5e25bf3cc8fc4d163c08a8bedc90f05a86778625ae5cf103a51bcb84",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "79dcc4ba27824121c55e25a7dd832ac03417695d89739279e7542e0ca442852f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "42ee08ebc383a53f48288f42beb3b479f90ef96979e425542ca914a41e04c546",
+          "decision": "hold",
+          "reason": "Tedarikçi yüzde100 gizli gönderim reklamı."
+        },
+        {
+          "position": 2,
+          "sha256": "2440cba315564d6361afa605a0a57c98384c4865ba03b488ae2854c9c737c85b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "eb2fc2220e9f08cebdaf70ab172f8a2cef3b9e9fc53c1c1eaafc9fc2c254ee68",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "0e106ae0131baa84c30adb49801173d8af1c2f13461e8ebee520775b2c0a4b3a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "8b790bde94cb5d0f548c6dd96feac9b6c85117b97f90b21112c9c77516a61ec0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "cf4631703bc617a45f3e13385615055dc512da87dafbf0c896035ec865b23146",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "634a7d26b6dd836aa93a46271b27a5fe2630f261a94af844ca01a251d4b794e3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "83da643e40c51145f9e394a8e540cede2adbe34ef842c265839e66fe8fa9a53e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "fc2b743b806c617efcf61a154089fbfac0564ff3e821bdf07cdcbbfbcd2445d0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "54bc25a4341c099b4438ee10f65dfa6261d127584f4b66bf5e2b7bc24ff5ffcf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "a7b28c538bf64e93ebd661f8fc9729d5e09b6fac2f3cdd904def15e2010f99e6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "f58a9398065b7c735e65c89cd2660e4b4511577b3b0a266e6d60a735b5b6dfcd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "8f0ede99423fe535d2222697a1231ed92372167fc96609be76f536b56eb8c2ea",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "79eaf8004fd1157f7866f8d7f7d1d207612deef6c3df361249b2af07d5a5bb01",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "0cf89bc26926e25400ee4100edd300420bdf36c26ddde5125976926887251a1a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "64644356cb2809bee53adf51039edf24c83ac5aeca4ba68f4150520c1e6ef050",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "284fa63bc93c3f2b491b6077bbd5cb1d43232034fe8a9677574e9a29ebb646ed",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "080552c42bd1a91e7e1fed7d3eec4149e1a872d23b730fafc6b7c96c2eefaab1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "dab8e1f90dce7dd7ee18de9c6457ff0007630b48a8f392778663471b873dc97d",
+          "decision": "hold",
+          "reason": "Aynı gün kargo/gizli gönderim tedarikçi reklamı."
+        },
+        {
+          "position": 20,
+          "sha256": "d8b85863d3c9342b0f723417784eed01ad341ba42000a44e60f05d98d8cd026a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "c6f9c7c336539202ac10a3901be4c80925cbca1de710dd217f2737c975bdb4f5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "ea3446893b4629a0d3630ac7907e8475b87108663eac50e76ec27724a99cf9ff",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "7f6495a659c8629e387b3f794c373a619fc1328d725cfaaf1a282634bb827cbe",
+          "decision": "hold",
+          "reason": "Dildo kaydında ayrı kayganlaştırıcı şişesi; paket kapsamı belirsiz/farklı ürün."
+        },
+        {
+          "position": 24,
+          "sha256": "19bc8108ec9767d48a3769c62c785d8fb7fcb2c69155c9c34a7050500158619d",
+          "decision": "hold",
+          "reason": "Genital anatomisini ayrıntılı yakın planda taklit eden görsel."
+        },
+        {
+          "position": 25,
+          "sha256": "f13fe21b4ed082660f316faa34b30f44685b17aea6e36d2989623edc26d04707",
+          "decision": "hold",
+          "reason": "Genital anatomisini ayrıntılı yakın planda taklit eden görsel."
+        },
+        {
+          "position": 26,
+          "sha256": "a879aafffd521061f950396ada6547e549686e022a377f01d7bd2b19a26c9ab4",
+          "decision": "hold",
+          "reason": "Genital anatomisini ayrıntılı yakın planda taklit eden görsel."
+        },
+        {
+          "position": 27,
+          "sha256": "4bbc1c90800b4e372f800993f67e7c610b3b11e99ff48d89d9059c10877ac9b5",
+          "decision": "hold",
+          "reason": "Kullanım şemasında genital anatomiyi yakın planda gösteren çizimler."
+        },
+        {
+          "position": 28,
+          "sha256": "81f7de01c2824b64c365ea0822c60a4bd3ec317ffb2c659c7fe8c93eb2ba8216",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "44a0cf76338d0c2851ee74d1b7bb6ac7157412a7e8416c9333fba156751d73b8",
+          "decision": "hold",
+          "reason": "Bir numaralı tercih ve güvenlik/performans vaatli reklam infografiği."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0067.jpg",
+      "sha256": "8b26ec698c125d9674a1e9494a8222b29c59f321e687f64b1490a9fb2247d61c",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "e91e7296cbf01855f74dc21fd89e15b6297e8c356509f8c7193c815747200eed",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "ad39103b26f0c446e44e133eb812dd989fdeab5d073474ca4277c0bddf3af6f6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "8742fc13afadbe2f16d9f3160154eed6e286e429d73312dfff4b377f29500772",
+          "decision": "hold",
+          "reason": "Genital bölge üzerinde anatomik kullanım gösterimi; ek galeri için hold."
+        },
+        {
+          "position": 3,
+          "sha256": "712e666b1a2bb64ecad2ef5b4e3ed1f2613719eaa7cf22321b01f9e1701bf6f2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "8d9d0b9827074ee600b1457e8b6404695e7b9c2277ffb0898d9949b9f8e7f3e2",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 5,
+          "sha256": "8f4a5ac45b82e624b051dcf0579c46904eb0fd21da74b21e67fa8c1fd9eb0ab9",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 6,
+          "sha256": "795447ce9b207e084281d5fa4d96556bcf21df7d3dae9c383f46531cac5a5823",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "4f50a5bde9d59a027a451687aaa9395dfbb910ce9153992cc66daa0fc773f2e5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "2358f45f885f1463c35c0533f21782757213040cb6224577f93952b35085c496",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "9d081814227645d20f85afa10b59568b5fbfad840afdcde9046280e921a90091",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve cinsel performans reklamı."
+        },
+        {
+          "position": 10,
+          "sha256": "276d8745f71f922f26977d9ef4b3ec061f542fbe3ef3e98487fb6101705c3397",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve performans reklamı."
+        },
+        {
+          "position": 11,
+          "sha256": "389b429a447f0328b82f2f3f5f4182df4142d7521cdebcd34db92c9f6d090deb",
+          "decision": "hold",
+          "reason": "Medikal silikon/cilt güvenliği iddiası."
+        },
+        {
+          "position": 12,
+          "sha256": "1586c99030592f6141031d54b2b8c4e4c6772dd527cc5e93017fbd486b7591bf",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu ve cinsel performans reklamı."
+        },
+        {
+          "position": 13,
+          "sha256": "813892f5a1f026c48830174d4ad77a40bd242e1ceb31e4e4b85d595214ce8888",
+          "decision": "hold",
+          "reason": "Sıvı geçirmezlik/zarar vermeme/sessizlik iddiaları."
+        },
+        {
+          "position": 14,
+          "sha256": "fdb3fbae00e3e63b7a3573bff50b00b91a87472ff3a347d11fc6d3ecf8d3ad6e",
+          "decision": "hold",
+          "reason": "Sıvı geçirmezlik iddiası."
+        },
+        {
+          "position": 15,
+          "sha256": "721914df9eb52761f31f6ca355e86562f39f992d94a99c959958cda6dcb09aca",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş reklam."
+        },
+        {
+          "position": 16,
+          "sha256": "1c3de400b3bc5fbb4b9626770659083c393794f329f1c5e9fc8587ed08788d70",
+          "decision": "hold",
+          "reason": "Genital anatomi üzerinde kullanım çizimi."
+        },
+        {
+          "position": 17,
+          "sha256": "5c1d50c83cf73414dc1ab6a0370567e07e301a428ea2f38c8f07c3daa3842306",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "fcbe65612e4dd742035f6c7263c0596800adbf454abe7125b6edf63893ab16f9",
+          "decision": "hold",
+          "reason": "Yüzde100 doğal ve suyla kullanım/temizleme uygunluğu iddialı reklam."
+        },
+        {
+          "position": 19,
+          "sha256": "942bad2cc0ed73cce01c79b975e59d9acd77706a77f31c33b00c3985b0d75076",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "d7db0ad21dc612edde41be807f9c5b0c3b66b52f2be062bb14cb26895d169dde",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "537dc86e4c771fdb56cc407203968b1ec9f0e2760f10f47a5a7ec22c20ca35a2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "387d1cc6b2839256ad0050681b8c4e5901b6e236ae1e7a026ea2816188e6e657",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "325cd8924dc6656c12391be91e42798386137826f942bd7676e045c3fe2268d2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "e9e8c5a10cb04ace763ebb53c91673cd1ecb38d08fec464751593fedae8dc60b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "eebd84b2b8a2655c393b6a231234584eb8ca7e422a056fcfe4119fca632b34eb",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "31c72e0d34c714a5f3ff997f30b7f38631a70fd82ef5adc874d7be942a9e7f04",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "6b927a5527c57a19ffc31ede3f4fa07486d637b666062e087e5fdd8033c599ae",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "1b4c9445e0a12d867058c2c63480c8a7b25d5b05d691b1b7589277813447f4f3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "4b2b758d5ce211d03bda911b4003990273e53c2fb3c182d45147a18a5d1b0889",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0068.jpg",
+      "sha256": "bf4217b349d0227957c96c0f71e0ea3cc1572a815fd9cf023aa40e4b0130d545",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "977878fd97094923c1d8ffe9a25b1ca452c6f064590fa59db2d77b7454fdb2e6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "f9c68dcb36811c7d72adad0863685be6d91835f0c4ea940df9fd774ed076b220",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "c6e4c194ed824bd492517eeb51528529332e54303a5720a2a7df9326ecd7c972",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "75f464a7446eb6afb509b48678a720489fbcec44c483564a8e7ef9532d6290d4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "f765ffb9f78471cf69187f82cc96c25b98de9d7b928810b255b2dda0690304c0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "f3b0c5c36ee07ea1b740719e67e7214a5f09b8f3612f64596a6a0ea6ffb4dd30",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "2374550c6079d717db3db1f715c1c7d5f2c9debd84bd0004b8b537dec7bbedbf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "9f6e19b0ff51a639d5855be5b42fee2684b6bccfc3fb1dfb4f7fbaa5a0a361d2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "dfd1525cc672f94bf773e21d94aae3197d8da842298f83414cb0de118a634fe9",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "c48de32ac20227608a5d6740f35c7837a40b743d7897a39c1869df987f4ff683",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "26a8a1ce0d9e8eec849fdba1d1e0802d3cfbdde40357f96d3f68f9fc9e3bc66a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "477fa1e69efbddd7195b782f59a563e3fd4916826b43ec527cecc078565a8d72",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "759c553647b997fa9c00f15053ed8b1e9470dc5f41065271c79ac121e1733432",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "0045a8f3c79bf65373eec0f034ca2effd1c965e4aa08307956196d2f3b2a96fc",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "5d8f3e0cc53719bbcea344b75bc76bdcdb21f69e465cb64640988f2c1c521e4b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "f26323836e333177f9cbb9a3d711e0a67bf535fff62d71e795b6fbad268db7a3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "165e5dff4a8db112a6be6d1b3e48293dc2000d5970ff4d2703cbbfd59e01bac7",
+          "decision": "hold",
+          "reason": "Siyah X örtülerinin ürün ayrıntısı mı sansür bindirmesi mi olduğu belirsiz."
+        },
+        {
+          "position": 17,
+          "sha256": "99475426938a5ae49d1c149360c98223717cbe22c5f5a9672ad95a81e9677c32",
+          "decision": "hold",
+          "reason": "Siyah X örtülerinin ürün ayrıntısı mı sansür bindirmesi mi olduğu belirsiz."
+        },
+        {
+          "position": 18,
+          "sha256": "04b5c0e10ab3b178c634dffd37bc3440dbed2d62d635e5cb6083aa0631021164",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "a44ccea9b1d255fcc7a44c2bb7a2b6b55a8e3dc4aa4c7b8a31777b0b96e19276",
+          "decision": "hold",
+          "reason": "Siyah X örtülerinin ürün ayrıntısı mı sansür bindirmesi mi olduğu belirsiz."
+        },
+        {
+          "position": 20,
+          "sha256": "36b4a27a3d4937999905a75e753fac147467a7eabbe08b18150a4f50fcda0e30",
+          "decision": "hold",
+          "reason": "Siyah X örtülerinin ürün ayrıntısı mı sansür bindirmesi mi olduğu belirsiz."
+        },
+        {
+          "position": 21,
+          "sha256": "2518b2bab597cd070bf38a77859277988e7e65fb7eaf793765b6f71e4e5a0a59",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "99ecb5a94a2b42f097b6848a1ed6c25b4d7d49bb16107459af20e15f89d3bf3b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "6d5ea23b018afbc4642be8b6fc8a9bb97dc43c05001d06a36e071da5b034eb3c",
+          "decision": "hold",
+          "reason": "Sessizlik ve çoklu haz performans iddialı reklam."
+        },
+        {
+          "position": 24,
+          "sha256": "fb6da01c8e76d1d144a1b56678cc086763b92a1ebe71986080f2d9400c2fa1c5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "455350380d839b644d132035f16bb402aab9436aa536a8e57ac91f988370cbeb",
+          "decision": "hold",
+          "reason": "Doğrulanmamış waterproof/suya dayanım reklamı."
+        },
+        {
+          "position": 26,
+          "sha256": "ede8d02287e9e9acd09b461e74d4ec58b69d08a42044d0c661032185bdd83fd2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "6a6e790acf026cbeb6365858f79d549522c432b23f241ad708b2ec040e1cc359",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "f9956ef2e45e31f027b9fb29fb8d24d9d435aa83f2f353887f87e4d09633ba11",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "79ea1b2572a801723644d3b97f22cba43d466192d1771ed3c5b1432b3f5c8e7c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0069.jpg",
+      "sha256": "52fd3586f2f5af8de1f6cc6756d0f0ef9d268b892008b1f21afe27759e667925",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "f18e45849c933805b0569816ad90cdd9de5d27fec3a060b714de2e164de110e9",
+          "decision": "hold",
+          "reason": "Tüm kapılara uygunluk/azami kurulum süresi garantili reklam."
+        },
+        {
+          "position": 1,
+          "sha256": "e570d2e3c3e16f1c78361fd440decd4a73f8a301d4bfdb449a8b7225037502e4",
+          "decision": "hold",
+          "reason": "Ürün dışı marka logosu bindirilmiş satış reklamı."
+        },
+        {
+          "position": 2,
+          "sha256": "6e19776b38be01044dcd5f3419d5924fc135acf4625f0a549bb6ed2ae46234d8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "1068ab348a5c10344cbfd2700a3af115ad11edbb725b30260409aa0e091cff02",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "bde3407a4e5806ac3b4ed4f93a7a5daf1951e0a2f54cda41bc6f438c9725e333",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "6e014b3a9f6f379f63f8c13d1193fca9470e8d0df865feba56eb36b66e07182a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "270eabdde3328c76539e452ea699bb8edd9202c91067a8f2245ae1390e7eab66",
+          "decision": "hold",
+          "reason": "Yüzde100 waterproof, sıcaklık ve güvenlik iddialı reklam."
+        },
+        {
+          "position": 7,
+          "sha256": "70c78d053965b5cf2170b909a830c0e8169e8e62445da949551837b1021b57e5",
+          "decision": "hold",
+          "reason": "Kartlarda cinsel eylem/pozisyon gösterimleri seçiliyor."
+        },
+        {
+          "position": 8,
+          "sha256": "7f18d9be5d5ee010c8e3dcb20f41d73485a31bea88db3a081f51d44795bb8a9a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "ffce813fc96c3094f86be4e9ace50a299f805063ab2b87170afbd5494a2516ed",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "35a71d06ce1f8566c62a38b6e8c5c68d49a22e7eeca884deafcd9af2c211f0ba",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "6b6474afa5ff192b4ca77c06864144be91089cb23de3429e00f13616606f984e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "4d4f7cda754fc850ddcb6d3c9292bc7b72054e8563dfa59e99652fa6172b4156",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "268ce393b965fbedb6e84258241cfb842d6ee3e013d9360e1f551dc493992c8c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "e50eac93032ed9974b8cb11dfcd8de58c6ce5cc04fd3b9634f5ae24c044b6e78",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "c5a8765d9458cca0f2951aff9e88e46bddfef09372372fde7464aeb5860128f4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "c3d983c07c563d6ee17f3af65e7099b7a68df6647dacef17b4af2df000b1f768",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "887e49d14077e4519d28ea333e18f4ea24c62795bb89e68675daf7abe8ddc413",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "aa7912075aa6d3b8220ed57a411ca77532d5d8df0dcbf4048439bf6bff0e6595",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "b68ccaf91bb9c54b80f97ac596b6bfebfc8de7be0d40f8a58078fb5bdfaa7d84",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "b89c15e9b4ebee43106b8daeeab155a52526dfa20036ef07400bfb07c479b094",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "e07140855264803e1b894c5fbb014d3d8452cb5b62a32b7405ef88acde385f31",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "c0c90416292f51d43444da45f57ffb15e89a6d16fdca37e1eef6a6dfffba83a9",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyi aşan tedarikçi erotik reklam metni."
+        },
+        {
+          "position": 23,
+          "sha256": "53445fbf1359ebaeea491872102248e6064ea6d9fbcc00f39851d83884c17138",
+          "decision": "hold",
+          "reason": "Ürünü göstermeyi aşan tedarikçi erotik reklam metni."
+        },
+        {
+          "position": 24,
+          "sha256": "df26651fe899f8155068c5b9e2d695178d899bb2f5b71478a3e7eeb82b4d2ae4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "8fda7017843a50ac3173af30b5c27a846bde08980b7975f289903f85947dbe15",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "c32a83e77cb6fb27fe535c7438f98943a7a268e3345d4b4686b1c35ab953bd5e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "531c725c8a5243798aa3c4d07327146e66b4411a586fc637c3867840edd5e6f7",
+          "decision": "hold",
+          "reason": "Açık göğüs/nipel gösterimli giysi fotoğrafı; ek galeri için hold."
+        },
+        {
+          "position": 28,
+          "sha256": "303f3a2669652ca04046f5bc72e4a63efea8645734efa34359f54dd1ed36a302",
+          "decision": "hold",
+          "reason": "Açık göğüs/nipel yakın planlı giysi fotoğrafı; ek galeri için hold."
+        },
+        {
+          "position": 29,
+          "sha256": "ecf9c1b265ee246aefb8a6b53b0cfc187de627c291c2ceefb876951b5a73f4f7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0070.jpg",
+      "sha256": "518539492247d0cd3ce92dd8646deaefee97ea12f5e7f80e22aedcd5cb2d530c",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "c216d356eb4ce1857dee432e9434c885a604c2a61f3c88ca4ec5f096a7b652d0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "0002907a866976edafbeac67a64e8ed813481afeffa68dce8b49ce7498c6f926",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "1340210c8815888717606154cbaaddeb5bd7353c8d52cd6dbe317c831b9e17cf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "3b17978441d696e9204f6985bc58b5d65229a4e5bb8c389ee42bf99bba2cfd60",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "bbf3251f86c524b856cc758353eb203be45650edef6995ef494c8272e4bdc62f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "a5e65e9cd64d624f8673ca3b7555afaa92adf52adfb5726863bdacb23b8dc088",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "aadd4cfa12b91cd4e47a952cc52cdc86174899cda0872c3c787b855b927125be",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "8b48243606a9839a8569f526bbf79ca83b8cffb85e71ef971b50dfda7a34a208",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "37d7b68cc680d88436548a7fd3146378822f1c48e13925688986e49289dfe48e",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 9,
+          "sha256": "c5aeae7fa1de37971ce86c96e2dc0f197785b089b77531d975212a1bd377dc44",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 10,
+          "sha256": "e21d27449dcbe0f751d835bfe88cd9f8a9703ab3e7c66aac8eeffbfdb3aae01b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "43df4687a0f2e394aa6ed69e6fbc3a3a6aa259d3fac1d73ea7aaf4e9e0a50a15",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı."
+        },
+        {
+          "position": 12,
+          "sha256": "83a2ebbb1d9564bc689ba5584699315b16e0ea7f1c7e5b4eafd8ede6a71166a7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "2f926756f792dc1cfa238f35275ff1d368f1364cc6892374a4b76ce1174e1993",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "81bd16e1dbaefd139956724f8a56b095ded5db07cf61ebf2dc4673116fa4ccfb",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "cd1cf5a069ca0b4af862bedc3c22f7fb9e68dfd5f6561a064aa0ee10aa9d4bd6",
+          "decision": "hold",
+          "reason": "Halka tutacaklı penis kılıfı kaydında farklı tabanlı/testisli dildo modeli; yanlış ürün."
+        },
+        {
+          "position": 16,
+          "sha256": "c678f2e8a6012f94a3bb5a1ef708ba95f418aa83b8e7f7419951f03ebf8f3abe",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "354ffd9c76f4d8f6b822bbbab0caff7dfefb42cd5f19e0608b46eeb93fe454ad",
+          "decision": "hold",
+          "reason": "Halka tutacaklı penis kılıfı kaydında farklı tabanlı/testisli dildo modeli; yanlış ürün."
+        },
+        {
+          "position": 18,
+          "sha256": "edbf7d505866802f7c363f4d543f677918cb6c17447069862c32bae561ae93d7",
+          "decision": "hold",
+          "reason": "Halka tutacaklı penis kılıfı kaydında farklı tabanlı/testisli dildo modeli; yanlış ürün."
+        },
+        {
+          "position": 19,
+          "sha256": "5caef96a18cf18ec9f456931ec7f2c114184e8fa57ca5a54756d4c0b54440f6d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "38c217fa55cdd2f5628b07ef4911c918c6ad07239c39d7a0c3f0dd538d050972",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "0aad4e0a62f6e8e69ef2a061019d9b8e74f1b212e034795bacc815205a21d30a",
+          "decision": "hold",
+          "reason": "Elektronik üründe doğrulanmamış suyla kullanım algısı veren reklam."
+        },
+        {
+          "position": 22,
+          "sha256": "526047fa996c62372bf118504fdfaf76a3c34266b49e67aefcebfce83d620c4d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "61b4abe341a87f5865702a78188b3e2f9781f575541e4418aa015d1b74616dfa",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "55020623ef53fb26de8e17cdfa99247d490a548d8e239bb97aa362b79388b426",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "81d6a3a97a98edb2c280cf1ff4ee00c1c64adeae0b842269ed6edf07ef4977c0",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "ec868c5dc12c7b2cc2bc9aa4c073b81d23f60fa47ebd1d1607a826de97780567",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "9318263c6c3fd71b29ad71e42cb66caff5101fa2b31ae2551ad5dbc4d90aaa02",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "047eaaf3b8a4be8c6f7bbb78f4da1bb3cdccecb8cd0d8f9210303bb704fac39a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "5caef371cd21e90009bef21dce96e0b0b31a3d9726e317c37953f0e4f6e8c9a4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0071.jpg",
+      "sha256": "d594175643da9671563cd484c0d742f169128326cc92d77bb7e62d57de4ac179",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "97c667cabd98bf53e4a89c504f6d10eaebec718348b362599ca3cd8c0c44ae2e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "cdd3469438b9be9c8d9afaacecc8d4c1daca2f383b69cd8a046e3474c5f37e73",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "9756f8949e739619f807a188d01f90ac6f0758fe4bfd39129d20ba3d5c7dc286",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "dc4c71700ff7b65e7ff3f3516dc8289ed9b05b58a57ac430bdc8d26b1055adb2",
+          "decision": "hold",
+          "reason": "Ürün yerine yalnız tedarikçi/marka logosu gösterilmiş."
+        },
+        {
+          "position": 4,
+          "sha256": "c63e5675db1f6a5a18639644b4fcd7b44e59cc7c256199247e5c55ccbced84a5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "7c3aa0af5ef714e298cb2451e76e322ed6401cb98ffd7856ebc667f8ffd603b6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "d878a141a64b1ac560626182f4dddad9d6d20a1250549fc033947e39b63c8fdc",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "78159b36ae37ef3e8cc6ecae81b2969d9391e587e1a5507efa9f7ef559ade98b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "cd9024bb9d06197163829ee6f3bac423700f8641125837aeaaed288eefa2d9c6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "976484a0a168a0c99c7e68c33dfe1fef244d9c3ce2b19301b7f54faeee7fb0c1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "593811c17c6a36ab3ce224ef3e39ed0af2814ab410ea499a175a4be71c864d33",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "96df072703338dacdd6a46e2d337be017d9a291124dcb48d8baad8867410270f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "846eecf372a9432df03cbeddcd32b5c9cb99d06b937d25db2a5512061e328c47",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "5d5ef8fdacca960f58e52e841ac1dd0829eb3a0c5ee0ac4626575a8ce6a7eb43",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "740ae1510e552ac72f4004f7ae65738c5351b69ce594979be01964df6b0679f3",
+          "decision": "hold",
+          "reason": "Yüzdeli kalınlaştırma/uzatma ve uzun süreli etki vaatleri."
+        },
+        {
+          "position": 15,
+          "sha256": "b55b30a8a7fda8a68e5036ca1f1bea540523500baa2b260e7af20051fafcad24",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "e16e6af686c1be5515c60385087372747677ede631d7b74c354a550cfa0519c6",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 17,
+          "sha256": "fdea8e08cb26b788567942735abe7400dc2073e29847e710672006226cd87fef",
+          "decision": "hold",
+          "reason": "Kartlarda cinsel eylem/pozisyon gösterimleri."
+        },
+        {
+          "position": 18,
+          "sha256": "9e30f5124dd90fb3c0b11daf15cf9d8976861775529106509f89786a4ed38a6b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "3465874e6089d52e354d3be6f2405bc55fe1496908ef5c425946404a798b15a4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "cc2da456f595d095d3faa8c85a394a9880ae4f131288e904c5d9e406dc544203",
+          "decision": "hold",
+          "reason": "Zar ve kılavuzda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 21,
+          "sha256": "41fafa487c8d4f406a93f141f7b63a636c084b0610d61038504e5d9317b23993",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "6213b1a6dea54305e5e7f5009ab79353bdac346dc7f8c3eb27a3d78bce632c5e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "99414866412cf9e0629d47060ad25242813b8f784c403dc0771904abb9f8d3a1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "a1133130ecce03c549cf3aa32c7dbfdb067d4580354eec4c6f2a98c1f15f89f9",
+          "decision": "hold",
+          "reason": "Doğrulanmamış su geçirmezlik reklamı."
+        },
+        {
+          "position": 25,
+          "sha256": "d43bbd4ce41726623e454d1c2b1b2f1f1d4bdac8488e556e0a6ebd3293647697",
+          "decision": "hold",
+          "reason": "Güvenli/kokusuz malzeme uygunluğu iddiası."
+        },
+        {
+          "position": 26,
+          "sha256": "81b16e3984a0ff678a3372e8f825d62d9aa0b0d494b828278f2a509abb076296",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "115237b34035a6984fb24c8cf9a7f975f9eb2df90af2e2f7feccf19a42b2c65d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "898652b45b545e60d7684e914c3d4344c1db250b76a39b8a4b8d3107d93ea6fc",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "48a464ef987eaeeaf839015407fb0fb27fee5f817da04d0954e4d0ec0293cbd5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0072.jpg",
+      "sha256": "62f6d55d72f3d41a88f7d815fccc58d60827db8dae1f024c1efcfbd5a578cdf0",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "47621396eb7d069b146456b31e6fa3fb5c06049aba40f385cb90760596440323",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 1,
+          "sha256": "0b04bdb4c8b0f7cba43409a453d5dc6b34e05fe6c31ba46e2153ad2587b98cd4",
+          "decision": "hold",
+          "reason": "Kartlarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 2,
+          "sha256": "2f77f7a8c89a79b7e092b33b9189daa42b31d0e2f435e2844bd2273e9a14d55a",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 3,
+          "sha256": "099443e1b032d1423dbf8a5850bb632d76c6de419b50de33563b8c395a4bb7a8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "6fb067de2c8a72519fb6b78ac121fc2711827c2469ae59234db615ed2fa0bb45",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "62aba0e94cba8f88e879c849406ba2e0af444c5cf0d84eec68fe90969887aef8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "51abc1a5c7762d8994b992bc91bad57a46b92478b2a0587e238b3f8b66202c53",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "68b2e23abd6ef6688cb9eb864d49ab74eb4f757af91112073d42f95d3cf7f43a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "433ceb8bfa26fc2e7d97597adc5d32938321451ed715a0dd024cbc359641c02e",
+          "decision": "hold",
+          "reason": "Tahriş etmeme/malzeme güvenliği iddiası."
+        },
+        {
+          "position": 9,
+          "sha256": "8aece1a20539e93a1293679081a4c78208b8285aacf7ea2925b1c3e290beb88f",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim ve erotik satış reklamı."
+        },
+        {
+          "position": 10,
+          "sha256": "a5867795613a8ab25798bceb33c3d9cf267ff06c6db6e98ad60413bb5e72d749",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "2f6967bd2bf654a0c937f4a32c940a17702ea099e760604fef17d254952f8d2b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "1491aa72a0c77372d059fa1b384c278e63cdaf4002a121a0f020735fe2afd402",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 13,
+          "sha256": "f8df49c5e51805c3a63d0588bed6b7b9d6969014786f0ad9c6c35eb06cbd5806",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "7b52a072b966b0f44349d9b42ea242f847d651a8d9c3736dfa43036bd9417807",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "5c957720fdfc3792ad0a038ecbd44f7e07060256cda6ca31b9c4f8f7a266ba4c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "a73b584cdb729c3c2004468a323a6d658eca9de6cf96cb2585890d4178bec120",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "efb6f12faf892511172b4a75f3bd6dbaa6f605f97a73ca22bab83fd705abe94f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "705e9c84212f7eee615ba68e505904b8a43e19d3b115dcaaa0ff2557b9478847",
+          "decision": "hold",
+          "reason": "Oyunun kutu/parçalarında cinsel eylem pozisyonları gösteriliyor."
+        },
+        {
+          "position": 19,
+          "sha256": "99ec85e1316bc68edd24afacde98bbe62a3c0662b58af68fccc6847dbfefdde8",
+          "decision": "hold",
+          "reason": "Oyun parçalarında cinsel eylem pozisyonları gösteriliyor."
+        },
+        {
+          "position": 20,
+          "sha256": "235318f6305156e619fe7dc829f8d42422d7f4a05b82f2732ff58e253e2277ed",
+          "decision": "hold",
+          "reason": "Oyun parçalarında cinsel eylem pozisyonları gösteriliyor."
+        },
+        {
+          "position": 21,
+          "sha256": "eb2d9873aba074f4674232ff79f71113362725c89b99eb55fd477bfd23fab062",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli hediye gönderim reklamı."
+        },
+        {
+          "position": 22,
+          "sha256": "5e7e42ffdf0ab75ecd25e7f31f4904e839397ad82e22caeebff8cf15352f1cc4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "1af728fe2146f2023ce121cc2e1ec38d0b7fa20c5fd4c5551e7a6f9d126abe05",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "840036644536425e5a2ee1e00a19530ba0b8fd724bdb1779f43ff5ad01d67961",
+          "decision": "hold",
+          "reason": "Hızlı şarj/uzun kullanım performans iddialı reklam."
+        },
+        {
+          "position": 25,
+          "sha256": "7a9b1193e45d9225dc5e163ff07a66a7df092a85dbd79f005e97051975d16bc9",
+          "decision": "hold",
+          "reason": "Body-safe silikon/CE/waterproof iddiaları."
+        },
+        {
+          "position": 26,
+          "sha256": "60ea403b44bccc5c90fbaef684bcfe52e777545c0383501fcf3ce453d500f258",
+          "decision": "hold",
+          "reason": "Totally waterproof/su geçirmezlik iddiası."
+        },
+        {
+          "position": 27,
+          "sha256": "3874c17fb5fd1345f8499321adc70eae4c819f9aa93f65677d1698a060527d33",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "79ebb1ac489db8bf9728fece890e8260724bddc871489f0c3d7b60b3d79d092b",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 29,
+          "sha256": "d8d00b7cf726a4c96ecea12b8298c5f39b524527db2640eb74b1563afe758d18",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0073.jpg",
+      "sha256": "7722424993610d0160f3ead48d81d2fa60af0dfded9c33ceda0f9b0f4d15c852",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "1767e0347b591ed9fa1613bc571af2320ed8f9fd8a624ee3490f9b81aeb5de6f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "e91a45317243d47d124b0c86ce66e429efbe36b314259fb447e9e99e76e35637",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "b51ac9bc49a7d4b078847d062124b0818adc5e45d7df9825336c47b8f2bf8d66",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "1ea6d2988feadedaa4c3c3e0288b6cca4712753edc94f33368a8aa555bdfa54b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "efd69cc60508d9f31bb78d4535d65306b5a0c9307f933baa6f36bb2c2bf1dda6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "aba019782d7de84f30c22cd5f11498ce522f9f49f07a9b4d38353f4d31951776",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "74adbfbc620b79b3372db30e8f421f060c8f8a633cd3c6aa85dd149cf4af8ece",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "2d6d171b3e1658fe4ca0b6411b9cdb1db1d53a87a9bc10cd72afab3b1e795a24",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "06f78837122a76342bed65f1def3a57a1a27f1c87514b623a20bae706f79c5d9",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "6874c345c2324195cb7395937600cd530be50926c8814ab26107288801c5d9b3",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "fd3cf1dfa945b91995484ca066c6e0e689a41936c7f49c8c1b21bbf4fbca3a16",
+          "decision": "hold",
+          "reason": "Açık kasık/genital bölge görünen giysi fotoğrafı; ek galeri için hold."
+        },
+        {
+          "position": 11,
+          "sha256": "c8e4b67b8be94f36f553edb4704c5f676985407d9576fcbed6fded0c8e373950",
+          "decision": "hold",
+          "reason": "Açık kasık/genital bölge görünen giysi fotoğrafı; ek galeri için hold."
+        },
+        {
+          "position": 12,
+          "sha256": "b5c5deaeb3874b5ce4a509792f7f893dfb5c7aecaefddbdfcaee7c09bc956ae5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "eece00b7bd68cb04912668f2704acbe3c63b9360471b490165ad1c5423ac3e8c",
+          "decision": "hold",
+          "reason": "Açık kasık/genital bölge görünen giysi fotoğrafı; ek galeri için hold."
+        },
+        {
+          "position": 14,
+          "sha256": "aa740188eaaff5bc3e4f8baeb10b882e74c94038c417ab1a91899b7ac9c3166a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "038ac789ba567415db296a6d51da5a997a430a35818ff92128be5ef6f9d3fd2c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "c6e3a25e8c03360f7918d4a1a3b66e747b07df0d17f44cae2a33a97c7163d8e5",
+          "decision": "hold",
+          "reason": "Paslanmazlık/durabilite iddialı reklam infografiği."
+        },
+        {
+          "position": 17,
+          "sha256": "c38c01417d5f2419c78ebaa656f35310710d845ca75e3a8beb1c31c41c57566f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "942fc426dc97f4a7242e3bc126191ad63b4cc893e789dde9e203c222465f28df",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "ef973841269228e348a95fb059f237d1d6e816990586d4c0fce0c5c2d5449a57",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "ded6a27a3bb91e40beb6426979c7038fd2ffb38035800fa0d27f2d7ce4837077",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "a03659613d2dd06745770cf90e39b9d99204c9207716cb70ea20aad8d7aaca3b",
+          "decision": "hold",
+          "reason": "Kabartma zar üzerinde cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 22,
+          "sha256": "0e823ebe7f366f79232cc33cbca48f2926bd47d3cddc870c69155acb243b8ad6",
+          "decision": "hold",
+          "reason": "Üretici/ülke ve içerik uygunluğu reklam infografiği."
+        },
+        {
+          "position": 23,
+          "sha256": "2bd0497ae50a08cc8b286d1276135901483e3978014b4a523204a9c223509409",
+          "decision": "hold",
+          "reason": "Tüm/hassas ciltlere uygunluk ve pH uyumu iddiaları."
+        },
+        {
+          "position": 24,
+          "sha256": "d94de87b740135f90b1711b864409bb260780d1c53811ac8453ecf30f5a2483e",
+          "decision": "hold",
+          "reason": "pH ve prezervatif uyumluluğu iddialı reklam infografiği."
+        },
+        {
+          "position": 25,
+          "sha256": "d6497ef640b0a8c9b62856f398fb1ae7c5402268f9a5fc03c04107d85d99d187",
+          "decision": "hold",
+          "reason": "Performans ve pH/cilt uygunluğu iddialı reklam."
+        },
+        {
+          "position": 26,
+          "sha256": "63971cad4f7e131b89a7ac54b72f2373bd0f65dd481ec92fbcbe0eb501d53dec",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "8ea6dde6ffe1dd1b53c13aef99f0e059467e960d7d4f4810bcb11fb6a3cc50ed",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "d66ad0d91725383fa355d6d8f70094721f338c0d28373c2d53ed29c7e8508dfe",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "fa02ee4040baa72eebf9d4d531f56b27854da8a4d8a2c3735c5c32a263613611",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0074.jpg",
+      "sha256": "1c528208fadd138af58fc355dc4251e1ba0034b847e433915bcac4721d0b5719",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "e3aa19f17b397e94ad2d5cd0feece24da000cbdbdd26b29f402b1178343f45df",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "b9866a61aede9486258fc81c5833ce89ed9af5d949236767393bc9ee6ba2b7b8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "62031f829b349d4ac603041779e614d44ee9f87e48153ef5310b1dc0ffb25929",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "8f7a8a224f4ec3b5670ab138d058eaf980a6210d7c691646c8a1826c2877bffd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "a47ed71996636003c0e72ac5d661e9affb7fd62612a4c64f386e9423f38f4aaf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "7fd5c2c3bde67556795bdc6f51fafaa77d5c68722a25b98965520f8c8541ef19",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "4f5812056ce4fdaa3f88c974b07d8dc1641a8b68ff37a717ad131bac2983f591",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "79af415048aa1abc92c56db7b490e10c140c76e73ca88e61f3a269f154c6eb3f",
+          "decision": "hold",
+          "reason": "Genital yakın plan üzerinde 18+ sansür/logosu bindirmesi."
+        },
+        {
+          "position": 8,
+          "sha256": "a18e3f9d8d54865125af1d48c6bb10aaa93c17ed27494d40055195fd7a1dcdab",
+          "decision": "hold",
+          "reason": "Genital ürün görselinde 18+ sansür/logosu bindirmesi."
+        },
+        {
+          "position": 9,
+          "sha256": "e008c235398ecd2d55b289331c82ec1a433af519c08ffe7e3bb0302e0d511c43",
+          "decision": "hold",
+          "reason": "Genital yakın plan üzerinde 18+ sansür/logosu bindirmesi."
+        },
+        {
+          "position": 10,
+          "sha256": "3b658967efa7558001d5f48ddb8c426cc83e3b988477bf8033f9ef61a57a598b",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "9c8f7de6c1daa195ff42734ccb49bd1d9ba13c42a6df362bb05513d2494f173b",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 12,
+          "sha256": "c5cdf588357da07cf2efd68386698bf9cc16cec5e229f047ae8c221ebc720cd6",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 13,
+          "sha256": "462294f1d7c872f46949d3f8e98e5f90473bfe753644a263dadda28f37580d9f",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 14,
+          "sha256": "0bcc1da5f4647441f9a859a961b60b035b11836cfa72a2c9169772af01798122",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 15,
+          "sha256": "1ea84270d937f857df0c6dc06357ebceca519177274e0971335e85bf950adb6c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "3dccd6403dcf06db1b62c538d4e20a4df91c7948e7306481282f6ed4c0fd8fa7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "5be9be33bf3abb729fa3adea7842ec3a826ffd0604c112ba0f970ca7e21df210",
+          "decision": "hold",
+          "reason": "Kart üzerinde cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 18,
+          "sha256": "47838959aab8594cc7ab6c85f1b74960d33463d373fc560c0707f1f1461bac82",
+          "decision": "hold",
+          "reason": "Kart üzerinde cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 19,
+          "sha256": "a0bc3247016315037e76a8c04bf239875a91db626cbed960285363351a3a0b25",
+          "decision": "hold",
+          "reason": "Powerful/güçlü titreşim performans reklamı."
+        },
+        {
+          "position": 20,
+          "sha256": "b614404d11efef7b381dbbb9d7e53878bbabe906dd9026e9cf113286f1e397b9",
+          "decision": "hold",
+          "reason": "IPX7 waterproof iddiası."
+        },
+        {
+          "position": 21,
+          "sha256": "24008256a7f332cb612dd43820003b2c2873b1a2c510566d3a3803b834a9c468",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "cc8e7e0d97f611da2e95f9747ea8f0ddcdb02dd7df6dabbd7fc5a87c9df8cb09",
+          "decision": "hold",
+          "reason": "Hedef anatomik noktayı doğru uyarma/performans vaadi."
+        },
+        {
+          "position": 23,
+          "sha256": "93e708feb5ca141c1aa5c3e46f2b46b58f63482c36b0bd90b1e7515af4ebb54c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "c27dba5a85e7bc3906f55ed270369a286607e4fc71bf7e76929df2e767d1861e",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren ürün yakın planı."
+        },
+        {
+          "position": 25,
+          "sha256": "0e73f471a402677eda8c2aac7ab250170bb72f0ad5b2ff13007f5686b49e9b2d",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren kesit yakın planı."
+        },
+        {
+          "position": 26,
+          "sha256": "a5ea5dcf3cc90fd4a185aa8b25b512736e7080ab1607a8778d080729d841e1bd",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren ürün yakın planı."
+        },
+        {
+          "position": 27,
+          "sha256": "9a5f287ce55d40fd3183f4269226b0df9beb481572aa9f685581200002a19b3d",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren ürün yakın planı."
+        },
+        {
+          "position": 28,
+          "sha256": "17476ca4320f1b0e1cffc4bbc2dc1c9f9710f7cda942ceea4376d304aecde76e",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren kesit yakın planı."
+        },
+        {
+          "position": 29,
+          "sha256": "19f55f8e1a8994b1d2ef14ca6daf28e85d7fe3e94986da192f66c31ad9e4280e",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren açık ürün ve ambalaj görseli."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0075.jpg",
+      "sha256": "367d4bbf762dd2fd674ae420a94bde78584dbee490d7da77facc11402c38458b",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "962f485a7e4f6e66c785e1ba0f972fb6eaf630bd9d917c8259f0a93cb3f2c05e",
+          "decision": "hold",
+          "reason": "Fotoğraf köşesinde tedarikçi/marka filigranı bindirmesi."
+        },
+        {
+          "position": 1,
+          "sha256": "27acfa3265f290704c154e0e5f755c2116fd48b34f5a4e47e6719544900fe692",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "b288063175edceb67754e01b27fa5284cbd4e629124133beea1b6ad32226dd89",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "ae5a715ab968313417f9e51593108b486dadd92fbba32c111c7e146ad9aa7e7d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "44779fd0f09a6cc59f4dc66b5c53f57b083be26556a1d0580a45e7f8191b08ab",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren ürün yakın planı."
+        },
+        {
+          "position": 5,
+          "sha256": "fca08781116d52464d88dd32079e80f8eb86a34e6e8e202308ac4b4631b86833",
+          "decision": "hold",
+          "reason": "Genital anatomiyi ayrıntılı gösteren ürün yakın planı."
+        },
+        {
+          "position": 6,
+          "sha256": "0e31268c0e839a9af0c08667556afa690cf924cd26eb4e1c7f21aeb0bd66ebca",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "f0897ef7ab227b880a7f6df18a72c38ed6943a54a93a4fbdb2c9e5bae6a61ee0",
+          "decision": "hold",
+          "reason": "Elektronik üründe doğrulanmamış suyla kullanım algısı veren reklam."
+        },
+        {
+          "position": 8,
+          "sha256": "b720a919b857ce6a05890044fc905f848491ab692b903a47be49d41cf5839d11",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "a8604bf0733d815aaf1f622935c28d0b9c78cfea198d8ddac10f8aab76601e65",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "c2bc1cc1ba7abc9b94de95dae818b77f105ef14ebc6f70a870937da91daf6e9a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 11,
+          "sha256": "d195632726cc97f0a9879b10dc7172a46c099a2ab2e3cffe3b797ecbcfd144d4",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "5f2fadc279a4c3e80bdc1da30d1e92d3fe9fbb9038216ee47275379ee24a7c05",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "0c0bc0d48ede48421ebc842667b7a44313c71f41a79d437c4ebc7de438f0faaf",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "3256a5b1f83c66b7da9d55c4e1d02a61567fe2c5a23d6f980fe81fdc64914869",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 15,
+          "sha256": "13f8aef7aff8d0aa863177a1bac244e70c0062e956e7039f32f974b589ff95a5",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 16,
+          "sha256": "dc4f8c86f52c28cc125a49a4e131106a4bf42c77fa987b2b4490c485d40d9ea8",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 17,
+          "sha256": "c5e77600bd6f186a38a372bf4ab580eacd19306cb4ffcb9bd28082dad0c1283c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 18,
+          "sha256": "04070da52eb22cbef403957566504cae76ff08c71e2285c6084b93303e46303e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 19,
+          "sha256": "36cf8906c9561be9f32ee6aa0cdef15eea8755c672d1fe8733b366472c4948d1",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 20,
+          "sha256": "868db8623b81bf2e47c4ea0ac238af287ce26094d5050aa5ad97c5b4de8bf691",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "67125b27c3743f1b5e51fb235a5240f2004a8dbfd1a90dbcd0307f7ac1c9cdff",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "00f52938772445890d587e4817771663c630489ff2aafa8d45259bbae3fb2d61",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "5e3e9793d6be33193a0dff0c6f3025ca3e9322504cd680127c07e6c70967a2f2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "9a3bf265da54c66e829558b56ce14c191d12334c96bb910917a739938a5e20aa",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "02e4217edf082485f50decbe84f73b35280d065f81649fc2c48e98e8cf4dab2c",
+          "decision": "hold",
+          "reason": "Güçlü motor/yoğun uyarım performans vaadi."
+        },
+        {
+          "position": 26,
+          "sha256": "0d284784973292142e211f3615b09ce25f75fd64354faf5a3553c0707e3774d4",
+          "decision": "hold",
+          "reason": "Yoğun his/hedef odaklı fizyolojik etki vaatli reklam."
+        },
+        {
+          "position": 27,
+          "sha256": "7e2f4c3f195447fd64c9f77302e08cd2c5f661e15a4b3fe3596b9d02db7d05db",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 28,
+          "sha256": "a322211cd7471ae70bd6d57104bc91cf4c74e164cdaee60e2659f7153445b39c",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 29,
+          "sha256": "54b4e0cda50f0a4e8e7b29d0809daafa6b366511baa3702b681058ea7699be2f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0076.jpg",
+      "sha256": "1244ad741af309e68270a0c5600f016105d67029398654dbcc1bf52195c1da4c",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "0d8f8b88b5f8c6c5ec6af565769cbbb7c0cb614a68d07efc2d06ea3d8d5f107f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 1,
+          "sha256": "2faf2bc3c83343556b71440e2a5d102156365365d0c27efd6fe786891f711341",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 2,
+          "sha256": "0513b5b139002d03bb0f22abac6b7372fadc60b970e82b1a9a5b1cca350bf798",
+          "decision": "hold",
+          "reason": "Kusursuz sabitleme/güçlü vantuz performans garantisi."
+        },
+        {
+          "position": 3,
+          "sha256": "8b968334ed7eaca2f5106e1d37c2de214c21377b8ad97febe4b5048b00a4e4d2",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "589437ad78ca42fefd04ece15561eda24d04799c469af8ae0f5054740e21cd94",
+          "decision": "hold",
+          "reason": "Kokusuzluk/kolay temizlenme uygunluğu iddialı reklam."
+        },
+        {
+          "position": 5,
+          "sha256": "0e3c3c78f3a10ea5460a97e288b7f4f191ead9f300d07e90b81f33de04cdc70a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "fcc62c3ed640a76a5448c487d601ae539d7d13befc255d142357f33a5591b26a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 7,
+          "sha256": "c012fcd4b3b69c638b1f47b3d1755333d019d23e316acf1625b5006751597f06",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 8,
+          "sha256": "1513b6267b6e9498950880aec283c05408a49f7e40e24af04462abd0f4f8e4bd",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 9,
+          "sha256": "af4394ed914a976c2da66cb77759b6a925af0071423c920cd60e4c555df62354",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 10,
+          "sha256": "3501e28e1c8296867524a8f95875795f26e1643dbf300d3bb9f687a8e19098b9",
+          "decision": "hold",
+          "reason": "Kart ve zarda cinsel eylem pozisyon çizimleri."
+        },
+        {
+          "position": 11,
+          "sha256": "ffede258fd8c8acec3a09de2d7fa53dbc8530b147fdae6744e24652189e04deb",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 12,
+          "sha256": "024e151f08f5f2661a4c8c0dbd92023bf6667549704cde1b844c4b2dc63db87e",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 13,
+          "sha256": "a887d16db498e8b11758a6b5ad6f557bea7354c08ec17f9dbfb2e04fd0ace5d7",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 14,
+          "sha256": "d9fd58fcf0728565af1d9e5f3af3cd2338c7d07be5a8020c41571b1f99640850",
+          "decision": "hold",
+          "reason": "Ürün yerine tedarikçi açıklama/marka tanıtım kartı."
+        },
+        {
+          "position": 15,
+          "sha256": "294eba2c7c5e9cec1492895ad39ec774bd70b29e32a8a2fb0b1245ab15c51cbf",
+          "decision": "hold",
+          "reason": "Kartlar üzerinde açık cinsel eylem/anatomi çizimleri."
+        },
+        {
+          "position": 16,
+          "sha256": "2978df100861453af3e75e4031c1461fc1e87724960c0cbe33aa11f49e0b193a",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 17,
+          "sha256": "b10fedf4819f57929f6c040eecc844fd522c980d34eea8e46e6d2bbd6bb6b925",
+          "decision": "hold",
+          "reason": "Kartlarda açık cinsel eylem/anatomi çizimleri."
+        },
+        {
+          "position": 18,
+          "sha256": "17062c747a1fc1ca6b9957a473c8c8a8e065b56e9a2eeedabaa8410df6ffb723",
+          "decision": "hold",
+          "reason": "Zarda cinsel eylem pozisyon çizimi."
+        },
+        {
+          "position": 19,
+          "sha256": "1daa6fe1ace6a863c20e1da1ecdd545662ae00b356a5ef1abfa43f6e6fc49773",
+          "decision": "hold",
+          "reason": "Tedarikçi gizli gönderim reklamı ve cinsel eylem çizimleri."
+        },
+        {
+          "position": 20,
+          "sha256": "eb8e656aa46348cb14c852c28a81a34f1f089e6f6e2fb618817ddeb17dd78a7d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 21,
+          "sha256": "f7e773723d4390801affeadbc88c1c1d031e5aff65150f1268e2c42d74262c92",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 22,
+          "sha256": "115f8c359343fd1477cb2e73f9280dfe6382a224d13035ed6b3f068f783979cc",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 23,
+          "sha256": "cb9e2a85e86d6247fcb721186a51e3d7f8ae9089a412152677a5bd498703d824",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 24,
+          "sha256": "28db3c4f572130aab2bab24f69a8f8bb0e204ae871a55334a1351dd74cfb4168",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 25,
+          "sha256": "4c02e38eb8a4938abbf65c328cb410e6b6e95ddbb52011c8d145a7e43bcf495f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 26,
+          "sha256": "4b1b691dcc7a48ef30d8c655f1e2efe51077763b90ab229b341803f006d8605d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 27,
+          "sha256": "b21a443c6d40236b87d27cc3ad8db46711546b62b8dc2851c7585b673f05717d",
+          "decision": "hold",
+          "reason": "Ürünün ötesinde ilişki/duygusal sonuç vaatli tedarikçi reklamı."
+        },
+        {
+          "position": 28,
+          "sha256": "25fb12c767644da01e859c53eb739d7d03c6a563aff42382b7eacd76a19e25f3",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi tanıtım ve performans reklamı."
+        },
+        {
+          "position": 29,
+          "sha256": "1f3eef230e6fd4d8eb626837853df57efce3acbedd9ace44c4e05eb8aa6b8ba6",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi tanıtım ve performans reklamı."
+        }
+      ]
+    },
+    {
+      "file": "gallery-review-0077.jpg",
+      "sha256": "2077d1bc5304489e7a8d9efaacb62afa35acaa12750312d1b49a3829d20193e6",
+      "viewedWith": "view_image",
+      "images": [
+        {
+          "position": 0,
+          "sha256": "cb0811ff6377c72ef278688038bc6ef46b7c84a0e7946ba7b256c05f7063b647",
+          "decision": "hold",
+          "reason": "Ürünün ötesinde ilişki/duygusal sonuç vaatli tedarikçi reklamı."
+        },
+        {
+          "position": 1,
+          "sha256": "c658e038eaa41e90857b614202ef66e4a833df2aa14dae403fe4511290f90fbc",
+          "decision": "hold",
+          "reason": "Ürün dışı tedarikçi hediye/lifestyle reklamı."
+        },
+        {
+          "position": 2,
+          "sha256": "d0e31899c658fba84f47dfbcbb5bd2070d9c37804f7ba61a7dd187da0417c57a",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 3,
+          "sha256": "ae51577336844217dc9bf92cbcd3647e26060953a411b6fbecb8d15060f25c18",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 4,
+          "sha256": "c044a3aa78f93e5e530727868c513030ee8858b840ffd7c601139877137fcd1d",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 5,
+          "sha256": "2f432ce520ebc78b11add8eefbd528f37b063f313441335fd22b650a4a11f72f",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        },
+        {
+          "position": 6,
+          "sha256": "1f43d2ee1a65e94907fa4c47704409424c35b6c71bc11563ac3ed1208d80f2a6",
+          "decision": "approve",
+          "reason": "Gerçek ürün/aksesuar veya açıkça yetişkin giyim modeli; normal ambalaj/olgusal kullanım-ölçü şeması, ek filigran yok."
+        }
+      ]
+    }
+  ],
+  "imagesEdited": false,
+  "publishedOrUploaded": false,
+  "reviewedImages": 637,
+  "approvedImages": 412,
+  "heldImages": 225,
+  "actualLastSheet": 77,
+  "uncreatedAssignedSheets": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85
+  ],
+  "sourceManifestSha256": "47ff9cbe2f7b1e17f309e39bdd09c62fe055601e8eb31987cfefddf5c29148fc",
+  "sourceFilesUnmodified": true,
+  "_publicEvidence": {
+    "originalSha256": "aad23c9362bcc3263c71417a1d3125bd39e028a9d7c81c916b08a864907c03bb",
+    "purpose": "Actual recorded execution; private paths sanitized."
+  }
+}

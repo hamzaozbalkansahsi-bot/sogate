@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "release": "929ff578f9c4828e5752174f",
+  "base": "https://sexogate.com/test",
+  "firstAttemptPassed": false,
+  "failedGroup": "product-experience",
+  "actualAssertionLine": 557,
+  "diagnosticVisual": "503 Service Unavailable; The server is temporarily busy, try again later!",
+  "httpStatusOfOriginalNavigationRecorded": false,
+  "rootCauseProven": false,
+  "maxConcurrentBrowserJobs": 2,
+  "originalRunnerLog": ".local/product-experience-active-v8.log",
+  "originalRunnerLogSha256": "62acb9e6fc7eb76f88a295d81441f5a9360945719787ce956b508a46bacebc84",
+  "diagnosticScreenshot": "product-experience-active-v8-503.png",
+  "diagnosticScreenshotSha256": "9807c814b4353b9190be11337d371e5b98ed5b763e95fccc5e21bf3c70e9febd",
+  "successfulGroupsPreserved": [
+    "http",
+    "navigation",
+    "returns-public"
+  ],
+  "realPayments": false,
+  "_publicEvidence": {
+    "originalSha256": "f76b86dc207554ed145fad3f0d35d5d82cb684e1d9fe9bcc5b6e617505df617f",
+    "purpose": "Original failed active verification and saved busy-page screenshot retained; original HTTP status and root cause were not recorded/proven."
+  }
+}

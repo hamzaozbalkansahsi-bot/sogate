@@ -1,0 +1,331 @@
+{
+  "checkedAt": "2026-11-17T09:24:35.555094+00:00",
+  "release": "e7f4feeb57497118bdaf4dd3",
+  "previousRelease": "b5e7e6913484a652360a2097",
+  "url": "https://sexogate.com/test",
+  "adminUrl": "https://sexogate.com/test/yonetim",
+  "returnsUrl": "https://sexogate.com/test/?page=return-center&lang=tr",
+  "activated": true,
+  "phase": "active_verified",
+  "mainUnchanged": true,
+  "otherWorkspacesChanged": false,
+  "runtime": "PHP 8.3 / private SQLite / existing PHP CLI cron; no server Node",
+  "products": 803,
+  "managementNewProducts": 958,
+  "sourceProducts": 3152,
+  "legacyManagementRecordsPreserved": 2194,
+  "reviewHeld": 155,
+  "sourceDeferred": 44,
+  "checkoutEnabled": false,
+  "health": {
+    "status": "preview",
+    "runtime": "php",
+    "database": true,
+    "release": "e7f4feeb57497118bdaf4dd3",
+    "products": 803,
+    "sourceProducts": 3152,
+    "checkoutEnabled": false,
+    "catalogReady": true,
+    "strictMediaHealth": "sales_and_country_acceptance_pending",
+    "basePath": "/test"
+  },
+  "package": {
+    "sha256": "0cb3cfa30be029e8ba68063b4cfa55f1f8aee7f6b186831bb0921e25f6c0fd63",
+    "bytes": 12504223,
+    "files": 2492,
+    "dataset": "057fb50f7d5887fee341e3d5b4a3dd64"
+  },
+  "javascriptModules": 82,
+  "phpEntrySyntaxChecks": 64,
+  "sourceSnapshot": {
+    "files": 771,
+    "byteIdentical": 768,
+    "documentedSyntheticFixtureExceptions": 3,
+    "donorBusinessDataCopied": false
+  },
+  "validation": {
+    "localGateGroups": 15,
+    "previewGateGroups": 14,
+    "sourceDataChecks": 6,
+    "sourceParserChecks": 9,
+    "catalogPhpChecks": 2884,
+    "installerChecks": 32,
+    "seoPages": 8833,
+    "seoChecks": 70665,
+    "returnCoreChecksPerExecution": 53,
+    "returnOrderingChecksPerExecution": 17,
+    "negativeAcceptanceTests": 20,
+    "copyTests": 20,
+    "taxonomyTests": 24,
+    "pathTests": 23,
+    "reviewRuleTests": 20,
+    "importGuardTests": 14,
+    "variantJsTestsBefore": 10,
+    "variantJsTestsAfter": 10,
+    "realPaymentsCalled": false,
+    "realInvoiceApiCalled": false,
+    "localRunnerCommands": 17,
+    "previewRunnerCommands": 15
+  },
+  "proofs": {
+    "local": "native-marketplace-local-acceptance.json",
+    "sourceLocal": "native-marketplace-source-local-results.json",
+    "sourcePreview": "native-marketplace-source-preview-results.json",
+    "catalogLocal": "native-marketplace-local-results.json",
+    "catalogPreview": "native-marketplace-preview-results.json",
+    "discoveryPreview": "native-marketplace-discovery-preview-results.json",
+    "returnsLocal": "native-returns-local-results.json",
+    "preview": "native-marketplace-preview-acceptance.json",
+    "copyLocal": "native-marketplace-copy-local-results.json",
+    "copyPreview": "native-marketplace-copy-preview-results.json",
+    "copyRemote": "native-marketplace-copy-remote-results.json",
+    "oldReview": "native-marketplace-old-review-results.json"
+  },
+  "activeVerification": {
+    "http": {
+      "base": "https://sexogate.com/test",
+      "release": "e7f4feeb57497118bdaf4dd3",
+      "scriptSha256": "a6c772246122b6aa0c476c55cf7d3651351b001b60df3bf4033aafa54301eb4d",
+      "visibleNew": 803,
+      "routes": {
+        "/": 200,
+        "/api/catalog": 200,
+        "/api/deployment-status": 200,
+        "/app/config.local.json": 403,
+        "/.env": 403,
+        "/private/accounts.sqlite": 404,
+        "/site.webmanifest": 200,
+        "/apple-touch-icon.png": 200,
+        "/api/admin/return-center": 401,
+        "/yonetim/iade-merkezi": 200,
+        "/?page=return-center&lang=tr": 200
+      },
+      "privatePathsBlocked": true,
+      "guestOrderOwnership": true,
+      "returnCsrfAndOrigin": true,
+      "returnsNoStoreNoindex": true,
+      "adminProtected": true,
+      "checkoutClosed": true,
+      "realPayments": false
+    },
+    "browser": [
+      {
+        "engine": "chromium",
+        "release": "e7f4feeb57497118bdaf4dd3",
+        "scope": "release-smoke",
+        "base": "https://sexogate.com/test",
+        "adminRoutes": 1,
+        "publicRoutes": 9,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "mfa": true,
+        "secureCookie": true,
+        "pageErrors": 0,
+        "externalRequests": 0,
+        "readiness": "critical_requests_and_rendered_ui",
+        "optionalFxObserved": true,
+        "sourceSnapshotPreserved": true,
+        "domainAndMountRelocated": true
+      },
+      {
+        "engine": "webkit",
+        "release": "e7f4feeb57497118bdaf4dd3",
+        "scope": "release-smoke",
+        "base": "https://sexogate.com/test",
+        "adminRoutes": 1,
+        "publicRoutes": 9,
+        "widths": [
+          360,
+          390,
+          430,
+          768,
+          1440
+        ],
+        "mfa": true,
+        "secureCookie": true,
+        "pageErrors": 0,
+        "externalRequests": 0,
+        "readiness": "critical_requests_and_rendered_ui",
+        "optionalFxObserved": true,
+        "sourceSnapshotPreserved": true,
+        "domainAndMountRelocated": true
+      }
+    ],
+    "returnsPublic": [
+      {
+        "engine": "chromium",
+        "base": "https://sexogate.com/test",
+        "release": "e7f4feeb57497118bdaf4dd3",
+        "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+        "guestLookupProtected": true,
+        "noOrderDataLeaked": true,
+        "trAndEn": true,
+        "rtlLanguageChoice": true,
+        "noStoreNoindex": true,
+        "fakeOrdersCreated": false,
+        "realRefunds": false,
+        "pageErrors": 0
+      },
+      {
+        "engine": "webkit",
+        "base": "https://sexogate.com/test",
+        "release": "e7f4feeb57497118bdaf4dd3",
+        "scriptSha256": "022b12ce0a3a5efaabeb0b6319151145784992802c8644d4c7c5155970a00379",
+        "guestLookupProtected": true,
+        "noOrderDataLeaked": true,
+        "trAndEn": true,
+        "rtlLanguageChoice": true,
+        "noStoreNoindex": true,
+        "fakeOrdersCreated": false,
+        "realRefunds": false,
+        "pageErrors": 0
+      }
+    ],
+    "previewRetired": true,
+    "installerRemoved": true
+  },
+  "operations": {
+    "worker": {
+      "returns": {
+        "processed": 0,
+        "blocked": 0,
+        "failed": 0,
+        "pending": 0,
+        "succeeded": 0,
+        "realProviderEnabled": false
+      },
+      "ok": true,
+      "at": 1794907382,
+      "release": "e7f4feeb57497118bdaf4dd3",
+      "blog": {
+        "status": "ok",
+        "published": 0,
+        "failed": 0,
+        "seeded": 0,
+        "checkedAt": "2026-11-17T09:23:01Z",
+        "remaining": 0,
+        "exhausted": true
+      },
+      "notifications": {
+        "queued": 0,
+        "sent": 0,
+        "retryOrFailed": 0
+      },
+      "externalPublishingEnabled": false,
+      "checkoutEnabled": false
+    },
+    "cronInstalled": true,
+    "otherCronJobsUnchanged": true,
+    "databaseRestore": {
+      "restored": true,
+      "encrypted": true,
+      "databases": 2,
+      "tables": 52,
+      "rows": 22873,
+      "foreignKeysValid": true,
+      "sourceRelease": "e7f4feeb57497118bdaf4dd3",
+      "sha256": "5ffe890b439336afa593109dd3dc38016d1f2116d67b5137e3b51fd02d376010"
+    },
+    "mediaFilesVerified": 9607,
+    "mediaOriginalBytesPreserved": true,
+    "fullMediaRestoreTest": "not_run"
+  },
+  "sourceCommits": [
+    "6c6036f",
+    "5f8cff1",
+    "f5260f7",
+    "fc587bb",
+    "d3e819e"
+  ],
+  "ci": {
+    "state": "account_locked_billing",
+    "observedForCommit": "d3e819edb757e93fe8e44bc32c4657d5ab8cabf9",
+    "runs": [
+      {
+        "databaseId": 44054697007,
+        "name": "native-store-checks",
+        "status": "completed",
+        "conclusion": "failure",
+        "createdAt": "2026-11-17T09:20:35Z"
+      },
+      {
+        "databaseId": 44054697178,
+        "name": "local-commerce-checks",
+        "status": "completed",
+        "conclusion": "failure",
+        "createdAt": "2026-11-17T09:20:35Z"
+      }
+    ],
+    "jobs": [
+      {
+        "jobId": 133940922973,
+        "conclusion": "failure",
+        "stepsExecuted": 0,
+        "reason": [
+          "The job was not started because your account is locked due to a billing issue."
+        ]
+      },
+      {
+        "jobId": 133940922805,
+        "conclusion": "failure",
+        "stepsExecuted": 0,
+        "reason": [
+          "The job was not started because your account is locked due to a billing issue."
+        ]
+      }
+    ],
+    "localChecksAreNotGithubCi": true,
+    "ciTestsExecuted": 0
+  },
+  "moduleStatus": {
+    "catalog": "published_in_test_environment",
+    "cartAndVariants": "local_and_remote_preview_verified",
+    "returns": "local_paid_fixture_e2e_and_remote_public_entry_verified",
+    "refundMoneyTransfer": "real_provider_disabled",
+    "invoiceCorrection": "manual_external_confirmation_records_only",
+    "hepsiburada": "http_403_no_products_imported",
+    "fullMarketplaceCatalogueTransferred": false,
+    "customerCopy": "actual_cms_versions_updated_and_reloaded_no_platform_cta"
+  },
+  "limits": [
+    "İlk51incelemeden45çözüldü;6ürün uygun fotoğraf veya tutarsız beden nedeniyle kapalı.",
+    "Toplam155yönetim ürünü incelemede;43kod çakışması ve1eksik indirimsiz fiyat nedeniyle44kaynak ertelendi.",
+    "Tam pazaryeri aktarımı tamamlanmadı; Hepsiburada403 nedeniyle bu kaynaktan ürün alınmadı.",
+    "Gerçek tahsilat/iade/taşıyıcı/e-belge kabulü ve satıcı/ülke/vergi/hukuk onayları açık.",
+    "Fiziksel iPhone, tam WCAG, CWV saha ölçümü ve tam medya geri yükleme çalıştırılmadı.",
+    "GitHubCI hesap faturalama kilidi nedeniyle0adım çalıştırdı; yerel ve gerçek önizleme kabulleri ayrı kanıttır."
+  ],
+  "resolvedFailures": [
+    "İç boşluklu32gerçek ürün kodu ham yanıt hashleriyle yeniden ayrıştırıldı.",
+    "128MB seçenek derleyicisi sınırı kaynak kovalarını sırayla okuyarak düzeltildi;3152şema tam eşleşti, tepe109051904bayt.",
+    "785üründeki pazaryeri reklam cümlesi gerçek CMS sürümleriyle temizlendi; fiyat/SKU/diğer alanlar korundu.",
+    "Kur isteği sonundaki render ekran yakalamayı ayırdı; test gerçek istek sonunu bekleyerek aynı geometri/tıklama kontrolleriyle yerel ve önizlemede iki motorda yeniden geçti."
+  ],
+  "historicalReport": "native-deployment-history-b5e7e691-20261117.json",
+  "sourceDetails": 1002,
+  "categoryDefinitions": 59,
+  "occupiedCategories": 37,
+  "occupiedRoots": 5,
+  "oldReview": {
+    "audited": 51,
+    "resolved": 45,
+    "held": 6,
+    "proof": "native-marketplace-old-review-results.json"
+  },
+  "failedAttempts": [
+    {
+      "group": "actions",
+      "error": "Locator.screenshot detached during FX completion render",
+      "resolution": "Waited for actual optional FX completion; all geometry/action assertions unchanged; reran local and preview both engines"
+    }
+  ],
+  "_publicEvidence": {
+    "originalSha256": "41e5f97bc6301af57fff8f80b21931ac63d54f0ce82c5474fee4840d1357310d",
+    "purpose": "Historical previous active release; private path values sanitized."
+  }
+}
