@@ -35,7 +35,7 @@ COPIES = {
     'runtime-catalog.php': 'private/sexogate-runtime-catalog.php',
 }
 EXTRA_SOURCE = (
-    'apply.mjs', 'renderers.js', 'ui.js', 'storefront.css',
+    'apply.mjs', 'renderers.js', 'ui.js', 'storefront.css', 'home.css',
     'product-experience-core.js', 'product-experience-renderers.js',
     'product-experience-ui.js', 'product-experience.css', 'product-experience-build.mjs',
     'product-feedback.js', 'product-feedback.css', 'product-feedback-apply.mjs',

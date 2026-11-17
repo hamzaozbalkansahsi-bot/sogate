@@ -122,13 +122,21 @@ with sync_playwright()as playwright:
    selection_ids=page.locator('[data-home-shelf=selection] [data-add]').evaluate_all('ns=>ns.map(e=>e.dataset.add)')
    assert len(selection_ids)==len(set(selection_ids))==8 and set(selection_ids)<=set(known),'SELECTION_NOT_EIGHT_UNIQUE_REAL_PRODUCTS'
    for width in WIDTHS:
-    page.set_viewport_size({'width':width,'height':1000});page.evaluate('()=>document.fonts.ready');no_overflow(page,('HOME_OVERFLOW',width))
+    page.set_viewport_size({'width':width,'height':1000});page.evaluate('()=>document.fonts.ready');page.mouse.move(0,0);no_overflow(page,('HOME_OVERFLOW',width))
     assert page.locator('.sg-campaign-card').evaluate_all('ns=>ns.length===4&&ns.every(e=>e.getBoundingClientRect().height<240)'),'COMPACT_CAMPAIGN_CARDS'
+    page.wait_for_function('''()=>[...document.querySelectorAll('.sg-home-campaigns .sg-campaign-image')].every(area=>{const image=area.querySelector('img');return image&&image.complete&&image.naturalWidth>0})''')
+    campaign_images=page.locator('.sg-home-campaigns .sg-campaign-image').evaluate_all('''areas=>areas.map(area=>{const image=area.querySelector('img'),card=area.closest('.sg-campaign-card'),a=area.getBoundingClientRect(),i=image.getBoundingClientRect(),c=card.getBoundingClientRect(),style=getComputedStyle(image),areaStyle=getComputedStyle(area);return{areaWidth:a.width,areaHeight:a.height,imageWidth:i.width,imageHeight:i.height,cardWidth:c.width,left:i.left-a.left,top:i.top-a.top,fit:style.objectFit,position:style.objectPosition,lingerie:new URL(card.href).searchParams.get('category')==='sg_lingerie',padding:[areaStyle.paddingTop,areaStyle.paddingRight,areaStyle.paddingBottom,areaStyle.paddingLeft]}})''')
+    assert len(campaign_images)==4 and all(v['fit']=='cover'and v['position']==('50% 70%'if v['lingerie']else'50% 50%')and v['padding']==['0px']*4 and abs(v['imageWidth']-v['areaWidth'])<1 and abs(v['imageHeight']-v['areaHeight'])<1 and abs(v['areaWidth']-v['cardWidth'])<=2 and abs(v['left'])<1 and abs(v['top'])<1 for v in campaign_images),('CAMPAIGN_IMAGES_NOT_FULL_BLEED',width,campaign_images)
     assert page.locator('.store-header').evaluate('e=>e.getBoundingClientRect().height')<=(180 if width<=900 else 160),'OVERSIZED_HEADER'
     metrics=page.locator('[data-home-shelf=selection] .product-card').evaluate_all('ns=>ns.map(e=>({price:e.querySelector(".card-price-compact").getBoundingClientRect().top,add:e.querySelector(".card-add").getBoundingClientRect().top}))')
     assert max(v['price']for v in metrics)-min(v['price']for v in metrics)<2,('HOME_PRICE_ALIGNMENT',width,metrics)
     assert max(v['add']for v in metrics)-min(v['add']for v in metrics)<2,('HOME_BUTTON_ALIGNMENT',width,metrics)
-    if width in [390,1440]:page.screenshot(path=str(FOLDER/(engine+'-home-'+str(width)+'.png')))
+    if width in [390,1440]:
+     page.screenshot(path=str(FOLDER/(engine+'-home-'+str(width)+'.png')))
+     page.locator('.sg-home-campaigns').evaluate("e=>e.scrollIntoView({block:'center'})")
+     page.mouse.move(0,0)
+     page.locator('.sg-home-campaigns').screenshot(path=str(FOLDER/(engine+'-home-campaigns-'+str(width)+'.png')))
+     page.evaluate('()=>scrollTo(0,0)')
    mounted_links(page,'.sg-home-page')
    page.set_viewport_size({'width':390,'height':844});rail=page.locator('[data-home-shelf=selection] .product-row');rail.scroll_into_view_if_needed();rail.focus();page.keyboard.press('ArrowRight');page.wait_for_function('e=>Math.abs(e.scrollLeft)>20',arg=rail.element_handle())
    discovery=page.locator('#sg-home-discovery');discovery.scroll_into_view_if_needed();start=page.evaluate('()=>scrollY')
