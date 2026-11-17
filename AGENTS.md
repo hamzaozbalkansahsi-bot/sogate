@@ -42,3 +42,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - NODENO katalog/ürün/müşteri/işletme verisi taşınmaz. Mobilya, kurulum, haritalı karşılama veya başka işletmenin satıcı unvanı SEXOGATE müşteri ekranına konmaz. 18+ marka bildirimi ve onaydan sonra üyelik istemeyen gezinti korunur; ülke bazlı gerçek yaş kabulü ayrıca gerekir.
 - Sunucuda Node çalıştırılmaz. PHP/SQLite özel state web kökü dışındadır; legacy MySQL verisi korunur. Gerçek tahsilat teknik olarak kapalıdır; boş katalog medya/sağlayıcı kabulü geçmiş sayılmaz. Ana site/DNS/gerçek tahsilat bu yayın yetkisinin dışındadır.
 <!-- END NATIVE_TEST_ADULT_RELEASE_20261115 -->
+
+<!-- BEGIN NATIVE_CAMPAIGN_RETURNS_20261116 -->
+- Kasım kampanyası ve iade merkezi kanonik kaydı docs/native-campaign-returns.md. NODENO yalnız kaynak davranış referansı; kendi fiyat geçmişi/satıcı/ürün verisi taşınmaz. SGR başvuru numarası gerçek taşıyıcı kodu değildir. İade kodu yetkilendirme yerine geçmez; ödeme, vergi, gider ve mali belge olayları ayrı, mükerrerliğe dayanıklı ve kanıtlıdır. Kısmi iade bütün faturayı otomatik iptal etmez; gerçekleşmiş gider otomatik silinmez. Müşteri paketleme/teslim yükümlülüğü zorunlu tüketici haklarını veya kargo masrafı kurallarını kaldırmaz.
+- 17Kasım etkin `/test` sürümü b5e7e6913484a652360a2097; native PHP/SQLite,80kamu ürünü/131yeni yönetim kaydı/51inceleme. Kaynak indirimsiz+%15 nihai fiyat, seo-özgünkod; ek Kasım%20 yok. Eski2.194yönetim kaydı arşivde korunur. Kanonik katalog docs/native-marketplace-transfer.md, yayın docs/native-deployment-report.json. Gerçek tahsilat/iade/fatura/taşıyıcı kabulü kapalıdır; SGR gerçek kargo kodu değildir.
+<!-- END NATIVE_CAMPAIGN_RETURNS_20261116 -->

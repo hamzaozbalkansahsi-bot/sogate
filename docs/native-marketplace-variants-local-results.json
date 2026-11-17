@@ -1,0 +1,74 @@
+{
+  "base": "https://127.0.0.1:3188/test",
+  "scope": "marketplace-variants-local",
+  "results": [
+    {
+      "engine": "chromium",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "b5e7e6913484a652360a2097",
+      "scriptSha256": "adcd3bd0623802cb2ae515cc65f22c7da462b4f53c2311c0b9c64e3cae192719",
+      "source": "trendyol_individual_pages",
+      "selectionRequired": true,
+      "sizeColorCartLines": true,
+      "editMergeReload": true,
+      "legacyCartRepair": true,
+      "sourceMatrix": true,
+      "bulkAllItems": true,
+      "bulkCancellation": true,
+      "consentNormalHoverFocus": "brand-burgundy/wine",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "rtl": true,
+      "realPayment": false,
+      "isolatedCases": [
+        "consent",
+        "cart-options-edit-and-reload",
+        "legacy-cart-and-responsive-dialog",
+        "real-matrix-english",
+        "bulk-all-products",
+        "bulk-cancel",
+        "rtl"
+      ],
+      "teardownErrors": []
+    },
+    {
+      "engine": "webkit",
+      "base": "https://127.0.0.1:3188/test",
+      "release": "b5e7e6913484a652360a2097",
+      "scriptSha256": "adcd3bd0623802cb2ae515cc65f22c7da462b4f53c2311c0b9c64e3cae192719",
+      "source": "trendyol_individual_pages",
+      "selectionRequired": true,
+      "sizeColorCartLines": true,
+      "editMergeReload": true,
+      "legacyCartRepair": true,
+      "sourceMatrix": true,
+      "bulkAllItems": true,
+      "bulkCancellation": true,
+      "consentNormalHoverFocus": "brand-burgundy/wine",
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ],
+      "rtl": true,
+      "realPayment": false,
+      "isolatedCases": [
+        "consent",
+        "cart-options-edit-and-reload",
+        "legacy-cart-and-responsive-dialog",
+        "real-matrix-english",
+        "bulk-all-products",
+        "bulk-cancel",
+        "rtl"
+      ],
+      "teardownErrors": []
+    }
+  ]
+}

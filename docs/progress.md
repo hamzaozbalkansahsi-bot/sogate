@@ -413,3 +413,19 @@ Kanonik kullanım `docs/native-category-experience.md`; yerel/önizleme/etkin ka
 
 Kanonik kullanım `docs/native-home-experience.md`; kanıt `docs/native-home-*-results.json` ve `docs/native-deployment-report.json`. Diğer sohbetlerin Next/MySQL/sosyal değişiklikleri bu commitlere alınmadı.
 <!-- END NATIVE_HOME_EXPERIENCE_20261116 -->
+
+<!-- BEGIN NATIVE_CAMPAIGN_RETURNS_20261116 -->
+## 16–17 Kasım — pazaryeri kataloğu, iade ve doğrulanmış test yayını
+
+17Kasımda yalnız https://sexogate.com/test etkinleştirildi: b5e7e6913484a652360a2097, datasete9cecfa1c6c675fdf6886b58bb85e451, ZIP11.304.180bayt/2.492dosya/82JS. Sunucuda Node yok; PHP8.3/özel SQLite/mevcut CLI cron. Ana site fingerprinti aynı; DNS/gerçek tahsilat ve diğer sohbet dosyaları değiştirilmedi. Kaynak771dosya:768byteözdeş+3belgeli sentetik sabit istisnası. NODENO işletme/müşteri/ürün/secret verisi taşınmadı.
+
+Eski468kamu ürünü taze şifreli gerçek restore ve MFA API ardından arşivlendi.2.194yönetim kaydı/sipariş ilişkisi korundu.138ayrı Trendyol ayrıntısı/28kaynak kategori:131yeni yönetim kaydı,80yayın,51inceleme;7ürün kod eksikliği/çakışmasıyla ertelendi.40üründe gerçek seçenek matrisi; kaynak indirimsiz+%15 nihai fiyat/seo-özgünkod, ek Kasım%20 yok.8genel/markasız etiketi bilinmeyen marka olarak temizlendi.8682toplam medya dosyası hash ile sunucuda doğrulandı; görsel baytları değiştirilmedi. Kaynak bulunabilirliği depo stoğu veya bayi maliyeti yapılmadı. Hepsiburada403:0aktarım. İkinci ayrı kuyruk487toplam/382hazır/105inceleme; ilk138dahildir,244ek ayrıntı yayımlanmadı. Tam katalog aktarımı tamamlanmadı.
+
+İade merkezi gerçek sipariş snapshot’ı, SGR başvuru kodu, sunucu tutar önizlemesi, idempotency, sahiplik/CSRF/Origin/MFA, paketleme/teslim, karantina/QC, finans kabulü ve ayrı ödeme/mali belge durumlarıyla çalışır. Kabulde satış düzeltmesi; sağlayıcı teyidinde nakit, belge teyidinde vergi olayı ayrıdır. Gerçek gider silinmez; kısmi iade tüm faturayı iptal etmez. Benzersiz mali belge/gider anahtarı ve gözlem zamanı/lease/20saat mutabakat koruması var. Gerçek sağlayıcı worker içinde null; gerçek Stripe/fatura/taşıyıcı çağrısı yapılmadı.
+
+Gerçek sonuç: parser8, bağımsız kaynak6, PHPkatalog403, kurucu30,80ürün×11dil=880SSR/şema7.041kontrol, iade çekirdek53+source53, sıralama/lease17+source17, negatif kapı19, mevcutJS23+45 PASS. Yerel14/sunucuönizleme13 kabul grubu PASS. Chromium/WebKit:33yönetim+9müşteri rotası;5genişlik; kaynakfiyat/SKU/medya/SEO/MFA/Ürünegit;4dolu kök/gerçekbeden-renk-marka filtreleri;sepet/RTL/klavye/yaşgirişi/gizlilik/ilkboya. Yerelde ücretli fixture ile kısmi iade, rol/sahiplik, mali iş akışı PASS; bu fixturelar sunucuya yüklenmedi. Aktif/test’te iki motorda MFA/1yönetim+9müşteri rotası ve mahrem iade girişi, HTTP/private/no-store/noindex/kapalıcheckout yeniden PASS.
+
+Başarısız ilk girişimler kaydedildi ve giderildi: yanlış kategoride iç giyim/bakım; bilinmeyen markada yanlış kapsama yerleşen $data nedeniyle SSR503; testin requestAnimationFrame odak yarışını erken ölçmesi. Aynı odak koşulu korunup3sn bekleme eklendi, iki motorda tekrar geçti. Donmuş kaynak manifesti PASS; güncel NODENO klasörü sonradan değiştiği için eski canlı-donor karşılaştırması docs/catalogue-pricing.md farkıyla FAIL; NODENO değiştirilmedi. Kontroller kapatılmadı.
+
+Yayın öncesi2DB/44tablo/11.610satır, sonrası2DB/52tablo/12.460satır AESGCM yedekten gerçekten geri yüklendi; FK/integrity/count PASS. Mevcut cron ve yeni worker kalp atışı sağlıklı, başka cron işleri aynı. Geçici kurucu/bakım dosyaları ve kendi önizleme girişi kaldırıldı. Kanıt docs/native-deployment-report.json; kullanım docs/native-marketplace-transfer.md ve docs/native-campaign-returns.md. Gerçek sağlayıcı/kategori/ülke/vergi/hukuk onayı,51inceleme,7eksikkod,ikinci kuyruk, tam medya restore, fiziksel iPhone/tamWCAG/CWV saha sonucu açık. GitHub CI yerel test diye gösterilmez.
+<!-- END NATIVE_CAMPAIGN_RETURNS_20261116 -->

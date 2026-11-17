@@ -126,3 +126,15 @@ Gerçek Stripe/taşıyıcı/fatura kabulü, gerçek ürün/stok/görsel belgeler
 Girişteki üst yazı ve nokta kaldırıldı. Bordo perde açılışı, kemer çizgisi ve ışık katmanı kullanılır; üyelik istenmez, ek hareket ayarı arayüzü yoktur. Mevcut30 günlük yaş beyanı korunur. Yeni ilk ekran gizli pencerede görülebilir. Ekranlar `docs/screenshots/native-store-adult-remote/`, hareket kaydı `docs/screenshots/native-store-adult-local/age-opening.webm`.
 
 Katalog hazırlama, alanların doğruluk sınırları, ürün paneli ve açık SEO/rozet işleri [katalog kılavuzunda](native-catalog-loading.md); gerçek sayımlar [raporda](native-catalog-report.json). `prepare-native-catalog.py` yalnız özel yerel kaynaklarla çalışır. `publish-native-catalog-media.py` geçici token/yol, hash/MIME/boyut denetimi ve ana site fingerprint kontrolüyle web dışı fotoğraf aktarır; payload/helper sonunda kaldırılır. Gerçek ödeme, stok teyidi, vergi/hukuk/ülke/satıcı ve sağlayıcı kabulü halen kapalıdır.
+
+<!-- BEGIN MARKETPLACE_RETURNS_DEPLOY_20261117 -->
+## 17 Kasım pazaryeri ve iade sürümü
+
+Etkin sürüm b5e7e6913484a652360a2097 yalnız https://sexogate.com/test üzerinde; ana site/DNS aynı. Son sayımlar, testler, rollback/yedek ve sınırlar `native-deployment-report.json` içindedir. Yeni131yönetim/80kamu/51inceleme, eski2.194kayıt korunur. Güncel kullanım `native-marketplace-transfer.md` ve `native-campaign-returns.md`.
+
+Yerel kabul: `python -B -X utf8 scripts/run-native-marketplace-acceptance.py --scope local --base https://127.0.0.1:3188/test`. Bu koşu yalnız yerelde ücretli fixture kurar. Tam ilk koşuda odak zamanlaması hatası görüldü; koşul korunarak bekleme düzeltildi, keşif/iade/diller yeniden çalıştı ve sürüme bağlı final14grup kapısı geçti. Eski rapor yeni sürümün kanıtı sayılmaz.
+
+Güvenli sıra: kaynak/payload/kategori/görsel incelemesi → build → yerel hazırlık/test → şifreli gerçek restore → medya hash aktarımı → `publish-native-test.py prepare` → önizlemede `run-native-marketplace-acceptance.py --scope preview --base <bildirilen URL>` → `publish-native-test.py activate`. Önizleme131ürünü yalnız MFA API üzerinden yükledi; ödenmiş fixture/kullanıcı/sipariş sunucuya taşımadı.13önizleme grubu PASS, sonra atomik geçiş; geçici önizleme kaldırıldı.
+
+Rollback: `python scripts/publish-native-test.py rollback` yalnız en son doğrulanmış web girişinin şifreli yedeğini geri alır; SQLite silmez/geriye yazmaz. Ürün idempotent aktarımında mevcut fiyat/içerik korunur. Yıkıcı migration yok; additive sg-returns-001 mevcut veriye eklenir. Worker/cron durumunu `native-stage-operations.py status`/`cron`, şifreli SQLite geri yükleme testini `native-stage-operations.py backup` ile denetleyin. Sırlar yalnız Git dışı yerel dosyada; tam medya restore ve gerçek sağlayıcı onayı bu yayınla tamamlanmış sayılmaz.
+<!-- END MARKETPLACE_RETURNS_DEPLOY_20261117 -->

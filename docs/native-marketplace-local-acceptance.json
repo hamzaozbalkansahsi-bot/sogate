@@ -1,0 +1,16 @@
+{
+  "release": "b5e7e6913484a652360a2097",
+  "checkedAt": "2026-11-17T06:20:04.981012+00:00",
+  "acceptance": {
+    "profile": "marketplace-returns-v1",
+    "groups": 14,
+    "sourceDetails": 138,
+    "loadedNew": 131,
+    "visibleNew": 80,
+    "independentSourceProof": true,
+    "discoveryProof": true,
+    "allTransferred": false
+  },
+  "passed": true,
+  "realPayments": false
+}

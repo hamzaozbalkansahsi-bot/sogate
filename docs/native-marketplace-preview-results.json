@@ -1,0 +1,69 @@
+{
+  "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
+  "results": [
+    {
+      "engine": "chromium",
+      "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
+      "release": "b5e7e6913484a652360a2097",
+      "dataset": "e9cecfa1c6c675fdf6886b58bb85e451",
+      "scriptSha256": "b85d448e115afc035626b0b8a51c704d0cdefcfc685054b9a0022e569c5dd224",
+      "loadedNew": 131,
+      "visibleNew": 80,
+      "allMarketplaceProductsTransferred": false,
+      "sourceCodesKept": true,
+      "finalMarkup15": true,
+      "noFakeInventory": true,
+      "noLegacyProducts": true,
+      "realImageHashes": true,
+      "draftMediaPrivate": true,
+      "categorySizeFilter": true,
+      "priceSort": true,
+      "facetNoindex": true,
+      "singleStore": true,
+      "adminMfa": true,
+      "adminFieldsAndSeo": true,
+      "adminGoToProductAfterReload": true,
+      "checkoutClosed": true,
+      "pageErrors": 0,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ]
+    },
+    {
+      "engine": "webkit",
+      "base": "https://sexogate.com/test/native-preview-34ee1e3477d0c1f7",
+      "release": "b5e7e6913484a652360a2097",
+      "dataset": "e9cecfa1c6c675fdf6886b58bb85e451",
+      "scriptSha256": "b85d448e115afc035626b0b8a51c704d0cdefcfc685054b9a0022e569c5dd224",
+      "loadedNew": 131,
+      "visibleNew": 80,
+      "allMarketplaceProductsTransferred": false,
+      "sourceCodesKept": true,
+      "finalMarkup15": true,
+      "noFakeInventory": true,
+      "noLegacyProducts": true,
+      "realImageHashes": true,
+      "draftMediaPrivate": true,
+      "categorySizeFilter": true,
+      "priceSort": true,
+      "facetNoindex": true,
+      "singleStore": true,
+      "adminMfa": true,
+      "adminFieldsAndSeo": true,
+      "adminGoToProductAfterReload": true,
+      "checkoutClosed": true,
+      "pageErrors": 0,
+      "widths": [
+        360,
+        390,
+        430,
+        768,
+        1440
+      ]
+    }
+  ]
+}
