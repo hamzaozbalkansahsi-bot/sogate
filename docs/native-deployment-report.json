@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-17T06:39:17.849487+00:00",
+  "checkedAt": "2026-11-17T06:51:17.697855+00:00",
   "release": "b5e7e6913484a652360a2097",
   "previousRelease": "0c0e76d696171c6fba60f5da",
   "url": "https://sexogate.com/test",
@@ -229,8 +229,46 @@
     "995fe6d"
   ],
   "ci": {
-    "state": "not_rechecked_after_final_push",
-    "localChecksAreNotGithubCi": true
+    "state": "account_locked_billing",
+    "observedForCommit": "873e452ea55009c5c3933c02def512bd93b67d1d",
+    "runs": [
+      {
+        "conclusion": "failure",
+        "createdAt": "2026-11-17T06:48:22Z",
+        "databaseId": 44033935399,
+        "headSha": "873e452ea55009c5c3933c02def512bd93b67d1d",
+        "name": "native-store-checks",
+        "status": "completed"
+      },
+      {
+        "conclusion": "failure",
+        "createdAt": "2026-11-17T06:48:22Z",
+        "databaseId": 44033935363,
+        "headSha": "873e452ea55009c5c3933c02def512bd93b67d1d",
+        "name": "local-commerce-checks",
+        "status": "completed"
+      }
+    ],
+    "jobs": [
+      {
+        "jobId": 133872168161,
+        "conclusion": "failure",
+        "stepsExecuted": 0,
+        "reason": [
+          "The job was not started because your account is locked due to a billing issue."
+        ]
+      },
+      {
+        "jobId": 133872168091,
+        "conclusion": "failure",
+        "stepsExecuted": 0,
+        "reason": [
+          "The job was not started because your account is locked due to a billing issue."
+        ]
+      }
+    ],
+    "localChecksAreNotGithubCi": true,
+    "ciTestsExecuted": 0
   },
   "moduleStatus": {
     "catalog": "published_in_test_environment",
