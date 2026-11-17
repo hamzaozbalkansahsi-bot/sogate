@@ -5,7 +5,7 @@
     {
       "engine": "chromium",
       "base": "https://127.0.0.1:3188/test",
-      "release": "b5e7e6913484a652360a2097",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "adcd3bd0623802cb2ae515cc65f22c7da462b4f53c2311c0b9c64e3cae192719",
       "source": "trendyol_individual_pages",
       "selectionRequired": true,
@@ -39,7 +39,7 @@
     {
       "engine": "webkit",
       "base": "https://127.0.0.1:3188/test",
-      "release": "b5e7e6913484a652360a2097",
+      "release": "e7f4feeb57497118bdaf4dd3",
       "scriptSha256": "adcd3bd0623802cb2ae515cc65f22c7da462b4f53c2311c0b9c64e3cae192719",
       "source": "trendyol_individual_pages",
       "selectionRequired": true,

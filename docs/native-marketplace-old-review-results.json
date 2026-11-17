@@ -1,0 +1,100 @@
+{
+  "resolved": [
+    "sg_ty_9cd764efaae7ee4d",
+    "sg_ty_e906b5fc3d975492",
+    "sg_ty_839bf9a1c87a2fd6",
+    "sg_ty_8bcf3fdcd618862f",
+    "sg_ty_ac0ebef86f35f61b",
+    "sg_ty_1d8a1ce255e78f5e",
+    "sg_ty_088de68ace5284a6",
+    "sg_ty_44eb1cfc9cb6d577",
+    "sg_ty_5fac984707c5039f",
+    "sg_ty_8d35c7aebf3217cd",
+    "sg_ty_cb3a2cb8535441de",
+    "sg_ty_8a9735fced57796f",
+    "sg_ty_57e698d2ef2e42ff",
+    "sg_ty_9a2e84b5b0a338ee",
+    "sg_ty_a9e0e77624175120",
+    "sg_ty_2e12858e93de35f7",
+    "sg_ty_3d4c35a63d51cc79",
+    "sg_ty_88424506b0373c07",
+    "sg_ty_61e1b476f662cda3",
+    "sg_ty_7f865a00a711fe7a",
+    "sg_ty_06e5afb0fe58d5a7",
+    "sg_ty_b23610f00f84eda3",
+    "sg_ty_a783ea231ced9469",
+    "sg_ty_a37524e008f371f5",
+    "sg_ty_6935c0ce16c6cd40",
+    "sg_ty_24436799b954bffc",
+    "sg_ty_b3a667e2705ff7d7",
+    "sg_ty_6e723d33ffa90084",
+    "sg_ty_d64cadc84d7f60e0",
+    "sg_ty_3a7a1de71fec8504",
+    "sg_ty_7e95d1b6dbf1b560",
+    "sg_ty_953f51839171eb2e",
+    "sg_ty_4fee12ffe7a602ba",
+    "sg_ty_1f2716d310ae2655",
+    "sg_ty_61f8d3a0eb617b1e",
+    "sg_ty_5f1fb17c73381c94",
+    "sg_ty_6fbd413720f00aa3",
+    "sg_ty_71cf3eaa88b33301",
+    "sg_ty_b356def17fadaef2",
+    "sg_ty_6f36002623fe1bff",
+    "sg_ty_bc8ca14a631101be",
+    "sg_ty_8704d93dbaf6ea9e",
+    "sg_ty_9a756b68ca49df56",
+    "sg_ty_950224df1fd29a58",
+    "sg_ty_6620aa5bf094cf4f"
+  ],
+  "remaining": [
+    {
+      "id": "sg_ty_8e26676397e967e7",
+      "sku": "seo-KokteylFWM1",
+      "holds": [],
+      "visualApproved": false,
+      "reason": "Sekiz kaynak fotoğrafı incelendi; doğrulanmamış su/sağlık veya gönderim iddiaları içermeyen kapak bulunamadı."
+    },
+    {
+      "id": "sg_ty_15a821e7c51bac79",
+      "sku": "seo-AJM9106",
+      "holds": [
+        "inconsistent_youth_size_source",
+        "variant_price_review"
+      ],
+      "visualApproved": true,
+      "reason": "Kaynakta0-3AY ile yetişkin bedenleri aynı matriste; bütün ürün tutarsızlık giderilene kadar kapalı."
+    },
+    {
+      "id": "sg_ty_a9a2529d6231f16e",
+      "sku": "seo-g6",
+      "holds": [],
+      "visualApproved": false,
+      "reason": "Beş kaynak fotoğrafı performans/süre veya gönderim vaadi içeriyor; temiz ürün fotoğrafı bekliyor."
+    },
+    {
+      "id": "sg_ty_1e1cd3323a23e6c6",
+      "sku": "seo-v-0009990",
+      "holds": [],
+      "visualApproved": false,
+      "reason": "Altı kaynak fotoğrafında tedarikçi işareti var; değiştirilmiş görsel üretildiği iddia edilmez."
+    },
+    {
+      "id": "sg_ty_2e4877c26cb159d5",
+      "sku": "seo-TM0027",
+      "holds": [],
+      "visualApproved": false,
+      "reason": "Üç fotoğrafta18+ gizleme işareti var; temiz kaynak fotoğrafı bekliyor."
+    },
+    {
+      "id": "sg_ty_b9b14c0d246652f8",
+      "sku": "seo-FU1032",
+      "holds": [],
+      "visualApproved": false,
+      "reason": "İki fotoğrafta teyitsiz paketleme/gönderim vaadi var; temiz kaynak fotoğrafı bekliyor."
+    }
+  ],
+  "all51Audited": true,
+  "sourceDetails": 1002,
+  "newProducts": 958,
+  "publishCandidates": 803
+}

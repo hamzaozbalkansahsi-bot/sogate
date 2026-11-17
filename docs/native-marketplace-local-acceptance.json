@@ -1,16 +1,153 @@
 {
-  "release": "b5e7e6913484a652360a2097",
-  "checkedAt": "2026-11-17T06:20:04.981012+00:00",
+  "base": "https://127.0.0.1:3188/test",
+  "scope": "local",
+  "release": "e7f4feeb57497118bdaf4dd3",
+  "passed": true,
+  "groups": [
+    {
+      "group": "import",
+      "exitCode": 0,
+      "seconds": 131.9,
+      "log": ".local\\acceptance-local-import.log"
+    },
+    {
+      "group": "source",
+      "exitCode": 0,
+      "seconds": 16.6,
+      "log": ".local\\acceptance-local-source.log"
+    },
+    {
+      "group": "http",
+      "exitCode": 0,
+      "seconds": 2.3,
+      "log": ".local\\acceptance-local-http.log"
+    },
+    {
+      "group": "variants",
+      "exitCode": 0,
+      "seconds": 210.6,
+      "log": ".local\\acceptance-local-variants.log"
+    },
+    {
+      "group": "navigation",
+      "exitCode": 0,
+      "seconds": 253.4,
+      "log": ".local\\acceptance-local-navigation.log"
+    },
+    {
+      "group": "actions",
+      "exitCode": 0,
+      "seconds": 88.9,
+      "log": ".local\\acceptance-local-actions.log"
+    },
+    {
+      "group": "age",
+      "exitCode": 0,
+      "seconds": 152.3,
+      "log": ".local\\acceptance-local-age.log"
+    },
+    {
+      "group": "polish",
+      "exitCode": 0,
+      "seconds": 260.8,
+      "log": ".local\\acceptance-local-polish.log"
+    },
+    {
+      "group": "paint",
+      "exitCode": 0,
+      "seconds": 7.9,
+      "log": ".local\\acceptance-local-paint.log"
+    },
+    {
+      "group": "cart-notifications",
+      "exitCode": 0,
+      "seconds": 53.9,
+      "log": ".local\\acceptance-local-cart-notifications.log"
+    },
+    {
+      "group": "returns-public",
+      "exitCode": 0,
+      "seconds": 40.2,
+      "log": ".local\\acceptance-local-returns-public.log"
+    },
+    {
+      "group": "catalog",
+      "exitCode": 0,
+      "seconds": 443.6,
+      "log": ".local\\acceptance-local-catalog.log"
+    },
+    {
+      "group": "discovery",
+      "exitCode": 0,
+      "seconds": 108.3,
+      "log": ".local\\acceptance-local-discovery.log"
+    },
+    {
+      "group": "return-fixtures",
+      "exitCode": 0,
+      "seconds": 0.3,
+      "log": ".local\\acceptance-local-return-fixtures.log"
+    },
+    {
+      "group": "returns",
+      "exitCode": 0,
+      "seconds": 136.1,
+      "log": ".local\\acceptance-local-returns.log"
+    },
+    {
+      "group": "languages",
+      "exitCode": 0,
+      "seconds": 160.6,
+      "log": ".local\\acceptance-local-languages.log"
+    },
+    {
+      "group": "customer-copy",
+      "exitCode": 0,
+      "proof": ".local/native-marketplace-copy-local.json",
+      "afterCopySsr": [
+        {
+          "category": "sg_lingerie",
+          "status": 200,
+          "productSchema": true,
+          "noPlatformCTA": true
+        },
+        {
+          "category": "sg_couples",
+          "status": 200,
+          "productSchema": true,
+          "noPlatformCTA": true
+        },
+        {
+          "category": "sg_toys",
+          "status": 200,
+          "productSchema": true,
+          "noPlatformCTA": true
+        },
+        {
+          "category": "sg_accessories",
+          "status": 200,
+          "productSchema": true,
+          "noPlatformCTA": true
+        },
+        {
+          "category": "sg_care",
+          "status": 200,
+          "productSchema": true,
+          "noPlatformCTA": true
+        }
+      ]
+    }
+  ],
   "acceptance": {
     "profile": "marketplace-returns-v1",
-    "groups": 14,
-    "sourceDetails": 138,
-    "loadedNew": 131,
-    "visibleNew": 80,
+    "groups": 15,
+    "sourceDetails": 1002,
+    "loadedNew": 958,
+    "visibleNew": 803,
     "independentSourceProof": true,
     "discoveryProof": true,
+    "customerCopyProof": true,
     "allTransferred": false
   },
-  "passed": true,
   "realPayments": false
 }
